@@ -1,0 +1,454 @@
+{
+  "dataset_version": "V1",
+  "document_count": 15,
+  "chunk_count": 2765,
+  "chunk_file": {
+    "path": "Data_Processing/KhoaLuan_Data_HoanChinh.json",
+    "size_bytes": 2781988,
+    "sha256": "7bdb170543734804c64945a02d5388a32399dd391ff3b2a3d029add1d3fe3fb4"
+  },
+  "statistics": {
+    "chunks_per_document": {
+      "min": 4,
+      "max": 884,
+      "mean": 184.33,
+      "median": 50.0,
+      "by_document": {
+        "BLLD_2019": 884,
+        "ND_12_2022": 323,
+        "ND_135_2020": 50,
+        "ND_145_2020": 495,
+        "ND_152_2020": 312,
+        "ND_219_2025": 205,
+        "ND_70_2023": 35,
+        "ND_74_2024": 22,
+        "ND_83_2022": 21,
+        "ND_99_2024": 4,
+        "QD_992_2025": 16,
+        "TT_09_2020": 186,
+        "TT_10_2020": 164,
+        "TT_11_2020": 6,
+        "TT_20_2023": 42
+      }
+    },
+    "token_distribution": {
+      "min": 4,
+      "max": 142533,
+      "mean": 146.53,
+      "median": 49.0,
+      "p25": 21.0,
+      "p75": 104.0,
+      "p95": 321.8
+    },
+    "word_distribution": {
+      "min": 3,
+      "max": 109641,
+      "mean": 112.72,
+      "median": 38.0,
+      "p25": 16.0,
+      "p75": 80.0,
+      "p95": 247.8
+    },
+    "character_distribution": {
+      "min": 11,
+      "max": 507616,
+      "mean": 522.08,
+      "median": 172.0,
+      "p25": 81.0,
+      "p75": 370.0,
+      "p95": 1133.6
+    },
+    "token_bins": {
+      "chunks_lt_50_tokens": 1398,
+      "chunks_lt_50_pct": 50.56,
+      "chunks_lt_100_tokens": 2035,
+      "chunks_lt_100_pct": 73.6,
+      "chunks_gt_500_tokens": 70,
+      "chunks_gt_500_pct": 2.53,
+      "chunks_gt_1000_tokens": 10,
+      "chunks_gt_1000_pct": 0.36
+    },
+    "largest_chunk": {
+      "index": 2722,
+      "ID_Chunk": "TT_11_2020_Chưaxácđịnh_Điều3_K3",
+      "Van_ban": "11/2020/TT-BLĐTBXH\n \n\n\n\nLoại văn bản:\n\n\n Thông tư",
+      "Chuong": "Chưa xác định",
+      "Dieu": "Điều 3",
+      "Khoan": "3",
+      "character_count": 507616,
+      "word_count": 109641,
+      "estimated_tokens": 142533,
+      "preview": "3. Thời gian người lao động làm các nghề, công việc ban hành kèm theo các Quyết định, Thông tư bị bãi bỏ theo quy định tại Khoản 2 Điều này vẫn được tính là thời gian làm các nghề, công việc nặng nhọc, độc hại, nguy hiểm hoặc đặc biệt nặng nhọc, độc hại, nguy hiểm cho đến ngày Thông tư này có hiệu l..."
+    }
+  },
+  "metadata_coverage": {
+    "document_id": {
+      "present_in_chunk_schema": false,
+      "present_in_raw_meta": true,
+      "coverage_in_chunks_pct": 0.0,
+      "note": "Only embedded inside ID_Chunk string prefix, not a dedicated clean field."
+    },
+    "document_number": {
+      "present_in_chunk_schema": false,
+      "present_in_raw_meta": true,
+      "coverage_in_chunks_pct": 0.0,
+      "note": "Raw field so_hieu contains dirty newlines and text. Not exposed in chunk."
+    },
+    "document_title": {
+      "present_in_chunk_schema": true,
+      "present_in_raw_meta": false,
+      "coverage_in_chunks_pct": 100.0,
+      "note": "Field Van_ban exists for 100% of chunks, but contains raw newlines and text fragments."
+    },
+    "document_type": {
+      "present_in_chunk_schema": false,
+      "present_in_raw_meta": true,
+      "coverage_in_chunks_pct": 0.0,
+      "note": "Raw field loai_van_ban is empty string (0/15). Not present in chunk."
+    },
+    "chapter": {
+      "present_in_chunk_schema": true,
+      "present_in_raw_meta": false,
+      "coverage_in_chunks_pct": 100.0,
+      "valid_coverage_pct": 88.97,
+      "note": "Field Chuong exists, but 11.03% is 'Chưa xác định' and has severe false-positive chapter corruption."
+    },
+    "article": {
+      "present_in_chunk_schema": true,
+      "present_in_raw_meta": false,
+      "coverage_in_chunks_pct": 100.0,
+      "valid_coverage_pct": 99.17,
+      "note": "Field Dieu exists for 100% chunks (0.83% 'Chưa xác định')."
+    },
+    "clause": {
+      "present_in_chunk_schema": true,
+      "present_in_raw_meta": false,
+      "coverage_in_chunks_pct": 100.0,
+      "valid_coverage_pct": 77.83,
+      "note": "Field Khoan exists, but 22.17% is '0'."
+    },
+    "point": {
+      "present_in_chunk_schema": false,
+      "present_in_raw_meta": false,
+      "coverage_in_chunks_pct": 0.0,
+      "note": "Missing entirely. Sub-clauses (Điểm a, b, c) are not parsed."
+    },
+    "effective_date": {
+      "present_in_chunk_schema": true,
+      "present_in_raw_meta": true,
+      "coverage_in_chunks_pct": 0.0,
+      "note": "Field Thoi_diem_hieu_luc is empty string '' for 100% of chunks (0/2765). In raw meta it is also empty."
+    },
+    "legal_status": {
+      "present_in_chunk_schema": false,
+      "present_in_raw_meta": true,
+      "coverage_in_chunks_pct": 0.0,
+      "note": "Missing in chunks. In raw meta, 14/15 documents are dirty string 'Đã biết'."
+    },
+    "source_url": {
+      "present_in_chunk_schema": false,
+      "present_in_raw_meta": true,
+      "coverage_in_chunks_pct": 0.0,
+      "note": "Missing in chunks. Stored in raw metadata source."
+    }
+  },
+  "duplicate_analysis": {
+    "exact_duplicate_chunks_count": 105,
+    "exact_duplicate_pct": 3.8,
+    "unique_exact_duplicate_texts": 36,
+    "near_duplicate_chunks_count": 128,
+    "near_duplicate_pct": 4.63,
+    "id_collision_count": 117,
+    "id_collision_affected_chunks": 434,
+    "id_collision_pct": 15.7,
+    "top_duplicate_ids": [
+      {
+        "ID_Chunk": "ND_152_2020_ChươngIV_Điều29_K1",
+        "count": 18
+      },
+      {
+        "ID_Chunk": "ND_152_2020_ChươngIV_Điều29_K2",
+        "count": 17
+      },
+      {
+        "ID_Chunk": "ND_152_2020_ChươngIV_Điều29_K3",
+        "count": 13
+      },
+      {
+        "ID_Chunk": "ND_12_2022_ChươngIV_Điều49_K0",
+        "count": 9
+      },
+      {
+        "ID_Chunk": "TT_09_2020_ChươngV_Điều13_K1",
+        "count": 9
+      },
+      {
+        "ID_Chunk": "TT_09_2020_ChươngV_Điều13_K2",
+        "count": 9
+      },
+      {
+        "ID_Chunk": "ND_152_2020_ChươngIV_Điều29_K4",
+        "count": 7
+      },
+      {
+        "ID_Chunk": "ND_152_2020_ChươngIV_Điều29_K5",
+        "count": 7
+      },
+      {
+        "ID_Chunk": "ND_152_2020_ChươngIV_Điều29_K7",
+        "count": 7
+      },
+      {
+        "ID_Chunk": "ND_219_2025_ChươngV_Điều36_K1",
+        "count": 7
+      }
+    ],
+    "top_exact_duplicate_texts": [
+      {
+        "text": "Điều 2. Đối tượng áp dụng",
+        "count": 10
+      },
+      {
+        "text": "Chương IV Nghị định này; d) Áp dụng hình thức xử phạt bổ sung quy định tại Chương II, Chương III và ",
+        "count": 5
+      },
+      {
+        "text": "Chương IV Nghị định này.",
+        "count": 5
+      },
+      {
+        "text": "Chương I NHỮNG QUY ĐỊNH CHUNG",
+        "count": 4
+      },
+      {
+        "text": "Chương I QUY ĐỊNH CHUNG",
+        "count": 4
+      },
+      {
+        "text": "2. Giấy khám sức khỏe do cơ sở khám bệnh, chữa bệnh có đủ điều kiện cấp, trừ trường hợp kết quả khám",
+        "count": 4
+      },
+      {
+        "text": "3. Chính phủ quy định chi tiết Điều này.",
+        "count": 3
+      },
+      {
+        "text": "4. Chính phủ quy định chi tiết Điều này.",
+        "count": 3
+      },
+      {
+        "text": "5. Chính phủ quy định chi tiết Điều này.",
+        "count": 3
+      },
+      {
+        "text": "2. Trong thời hạn 07 ngày làm việc kể từ ngày nhận được yêu cầu giải quyết tranh chấp theo quy định ",
+        "count": 3
+      }
+    ]
+  },
+  "anomalies": [
+    {
+      "type": "MONSTER_CHUNK",
+      "severity": "CRITICAL",
+      "count": 1,
+      "description": "Chunk ID TT_11_2020_Chưaxácđịnh_Điều3_K3 contains 507,616 chars (~142,533 tokens), exceeding all standard embedding/LLM context limits.",
+      "sample_id": "TT_11_2020_Chưaxácđịnh_Điều3_K3"
+    },
+    {
+      "type": "ID_COLLISION",
+      "severity": "CRITICAL",
+      "count": 117,
+      "affected_chunks": 434,
+      "description": "117 distinct ID_Chunk values collide across 434 chunks (15.70%), causing silent overwrite in vector databases.",
+      "sample_id": "ND_152_2020_ChươngIV_Điều29_K1 (appears 18 times)"
+    },
+    {
+      "type": "CONTEXTLESS_MICRO_CHUNKS",
+      "severity": "HIGH",
+      "count": 1398,
+      "description": "1398 chunks (50.56%) have < 50 tokens, containing fragments with no legal context (e.g. '4. Sa thải.', '1. Khiển trách.').",
+      "sample_id": "BLLD_2019_ChươngVIII_Điều124_K4"
+    },
+    {
+      "type": "TITLE_ONLY_CHUNKS",
+      "severity": "HIGH",
+      "count": 396,
+      "description": "396 chunks contain only Article or Chapter headings with Khoan = '0', separated from subsequent clauses.",
+      "sample_id": "BLLD_2019_ChươngI_Điều2_K0 ('Điều 2. Đối tượng áp dụng')"
+    },
+    {
+      "type": "CORRUPTED_CHAPTER_TRANSITION",
+      "severity": "HIGH",
+      "count": 1,
+      "affected_articles": "BLLD 2019 Điều 3 (Clause 2+) through Điều 8",
+      "description": "In-text reference 'Mục 1 \\n Chương XI' in Điều 3 triggered regex_chuong, falsely reassigning Điều 4 to 8 to Chương XI instead of Chương I.",
+      "sample_id": "BLLD_2019_ChươngXI_Điều4_K0"
+    },
+    {
+      "type": "FORM_TEMPLATE_GARBAGE",
+      "severity": "MEDIUM",
+      "count": 59,
+      "description": "Chunks containing administrative preambles, dotted fill-in-the-blank lines, sign-off blocks, and distribution lists.",
+      "sample_id": "ND_219_2025_ChươngV_Điều36_K5 ('5. Địa chỉ 3 :………………………………………………………………………………………….')"
+    },
+    {
+      "type": "BROKEN_SENTENCES",
+      "severity": "MEDIUM",
+      "count": 582,
+      "description": "582 chunks (21.05%) do not end with terminal punctuation due to premature line splitting.",
+      "sample_id": "BLLD_2019_ChươngI_Điều3_K1"
+    }
+  ],
+  "source_files": [
+    {
+      "doc_id": "BLLD_2019",
+      "txt_file": "BLLD_2019.txt",
+      "txt_size_bytes": 261507,
+      "txt_sha256": "3d134a8393f2e6e26584a501b0e6cdefe8ef49ef23592ae5ee702df2e5fa0255",
+      "meta_file": "BLLD_2019_meta.json",
+      "meta_size_bytes": 411,
+      "meta_sha256": "20da0e8bd42f8117e822492a0771f33ab6dcf450b3c1700895d6add529e9238d",
+      "chunks_generated": 884
+    },
+    {
+      "doc_id": "ND_12_2022",
+      "txt_file": "ND_12_2022.txt",
+      "txt_size_bytes": 246142,
+      "txt_sha256": "ff7cea749568c74c91d35e7a83e3087c92939aacb47b92eeb13132a5b40632b2",
+      "meta_file": "ND_12_2022_meta.json",
+      "meta_size_bytes": 489,
+      "meta_sha256": "b1c7ebbd6d235acb1e452010c88bb12ef4856ad6af3bcc921427217ce34bcca0",
+      "chunks_generated": 323
+    },
+    {
+      "doc_id": "ND_135_2020",
+      "txt_file": "ND_135_2020.txt",
+      "txt_size_bytes": 49343,
+      "txt_sha256": "adb0d882113443fa1141a2a39107b25265ebcd5fe10b78768fbc34175fa3e34f",
+      "meta_file": "ND_135_2020_meta.json",
+      "meta_size_bytes": 435,
+      "meta_sha256": "f98719fd90037957419f62cf2448e1d6aaea471f34f0175e5739b0e13fdd6c72",
+      "chunks_generated": 50
+    },
+    {
+      "doc_id": "ND_145_2020",
+      "txt_file": "ND_145_2020.txt",
+      "txt_size_bytes": 264261,
+      "txt_sha256": "946665a04233be906ed856c0d6fb2c31eb9ab611de94c0c0f040478d301a1fa4",
+      "meta_file": "ND_145_2020_meta.json",
+      "meta_size_bytes": 487,
+      "meta_sha256": "2c2a34faa176037f453193c06039564354d483d5daa28ae348ca6b57f29b21a6",
+      "chunks_generated": 495
+    },
+    {
+      "doc_id": "ND_152_2020",
+      "txt_file": "ND_152_2020.txt",
+      "txt_size_bytes": 166493,
+      "txt_sha256": "1a1657ebb0db35066dc789b3d667eb67b181d664187ce8169f234dae46da7337",
+      "meta_file": "ND_152_2020_meta.json",
+      "meta_size_bytes": 477,
+      "meta_sha256": "fd6921831fd332e234c2fd03feac381d0acdd9df429775539bb1490f7898488e",
+      "chunks_generated": 312
+    },
+    {
+      "doc_id": "ND_219_2025",
+      "txt_file": "ND_219_2025.txt",
+      "txt_size_bytes": 99685,
+      "txt_sha256": "583fc4a69062a2cc1f370734381b7ebe4ea4d4d535fcb286687a7a8c13b70636",
+      "meta_file": "ND_219_2025_meta.json",
+      "meta_size_bytes": 469,
+      "meta_sha256": "b36afdc181df957b87181e08bfd24be0cf9aad15a299057980341cd31ae9789b",
+      "chunks_generated": 205
+    },
+    {
+      "doc_id": "ND_70_2023",
+      "txt_file": "ND_70_2023.txt",
+      "txt_size_bytes": 63795,
+      "txt_sha256": "e9e311f687d9441263fe957cc648ea421dc0263e225ce24f2526c93abd3e05d2",
+      "meta_file": "ND_70_2023_meta.json",
+      "meta_size_bytes": 471,
+      "meta_sha256": "8ab011c2c1e5dde620c84d8f822ee2e14321d9c22631f2c8d0ee94ac2ec5429d",
+      "chunks_generated": 35
+    },
+    {
+      "doc_id": "ND_74_2024",
+      "txt_file": "ND_74_2024.txt",
+      "txt_size_bytes": 20877,
+      "txt_sha256": "a4c58ed14070cd8cf9720fe1a304be6571cbd23a1cf1f1e415a7cb00530dcfdf",
+      "meta_file": "ND_74_2024_meta.json",
+      "meta_size_bytes": 470,
+      "meta_sha256": "602ff56e471d5de955147bbe6b8bd14c2fc621cfbd1109fd2a205cf4067bb9a8",
+      "chunks_generated": 22
+    },
+    {
+      "doc_id": "ND_83_2022",
+      "txt_file": "ND_83_2022.txt",
+      "txt_size_bytes": 9601,
+      "txt_sha256": "0f8e21a38a61178fa4f680ae8cd47bd9b757720b7b9a8ca80b7f4b0a9aaa6635",
+      "meta_file": "ND_83_2022_meta.json",
+      "meta_size_bytes": 488,
+      "meta_sha256": "fd904949dcac13a24c48fea67728f9d43d358839d6d7844c48825ab34eff8bc0",
+      "chunks_generated": 21
+    },
+    {
+      "doc_id": "ND_99_2024",
+      "txt_file": "ND_99_2024.txt",
+      "txt_size_bytes": 4617,
+      "txt_sha256": "1ed174d211486420e7efe2facd252119a7244573d1a975deda1d7b07620c8921",
+      "meta_file": "ND_99_2024_meta.json",
+      "meta_size_bytes": 470,
+      "meta_sha256": "9653a981d9798b4db98007348403589695f8a2f6e154a9822f2bf5281ef14585",
+      "chunks_generated": 4
+    },
+    {
+      "doc_id": "QD_992_2025",
+      "txt_file": "QD_992_2025.txt",
+      "txt_size_bytes": 7858,
+      "txt_sha256": "a9b58473c45ddacf8565cc1bc84e86c086a3b783d24b27060960a0d7ae7a5b11",
+      "meta_file": "QD_992_2025_meta.json",
+      "meta_size_bytes": 459,
+      "meta_sha256": "12996be9a86b32010dc5a724c7c4b9531dadb7aa07ef1dbe4f4640067cccd6bc",
+      "chunks_generated": 16
+    },
+    {
+      "doc_id": "TT_09_2020",
+      "txt_file": "TT_09_2020.txt",
+      "txt_size_bytes": 57357,
+      "txt_sha256": "085f938ba39c6475fcab7fdc20aaf29820edb0b999ca36b1e3131c199e1ed86f",
+      "meta_file": "TT_09_2020_meta.json",
+      "meta_size_bytes": 478,
+      "meta_sha256": "3aa1fda0e6008651b18ebb03f8138bb9713058f5567775e81fd8f3e473c429f3",
+      "chunks_generated": 186
+    },
+    {
+      "doc_id": "TT_10_2020",
+      "txt_file": "TT_10_2020.txt",
+      "txt_size_bytes": 46416,
+      "txt_sha256": "4525961eaa4da6da4a86feb4ef13a5031ad0f025f99fad0b75803d19e4683d55",
+      "meta_file": "TT_10_2020_meta.json",
+      "meta_size_bytes": 477,
+      "meta_sha256": "eb9d9b616fd69144088b0f65fb6ab53526fea224f6de5071833e988d4a1be0f3",
+      "chunks_generated": 164
+    },
+    {
+      "doc_id": "TT_11_2020",
+      "txt_file": "TT_11_2020.txt",
+      "txt_size_bytes": 770547,
+      "txt_sha256": "674bc481b8775320d297659bd148fa3dcb6b7344b65d7c87247922af58dee223",
+      "meta_file": "TT_11_2020_meta.json",
+      "meta_size_bytes": 475,
+      "meta_sha256": "c3d0f7728d03ff126122f88686a03c313d8f91e6bf2b9d6c14198822b00219da",
+      "chunks_generated": 6
+    },
+    {
+      "doc_id": "TT_20_2023",
+      "txt_file": "TT_20_2023.txt",
+      "txt_size_bytes": 15924,
+      "txt_sha256": "34e14ca0b4d0ef4ca26d9b0d02c49d65b03e3d120bfda714716fa245d5ef241c",
+      "meta_file": "TT_20_2023_meta.json",
+      "meta_size_bytes": 496,
+      "meta_sha256": "f00256eb68cc514f457667104eb330e1097115c0a37ac4b9922e0f4361bc3b66",
+      "chunks_generated": 42
+    }
+  ]
+}
