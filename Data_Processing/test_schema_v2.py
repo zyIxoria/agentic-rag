@@ -319,7 +319,7 @@ class TestLegalDatasetV2Schema(unittest.TestCase):
         self.assertIsNone(chunk.section_title)
         self.assertIsNone(chunk.clause_number)
         self.assertIsNone(chunk.effective_from)
-        self.assertIsNone(chunk.legal_status)
+        self.assertEqual(chunk.legal_status, "unknown")
         self.assertIsNone(chunk.source_url)
 
     def test_09_invalid_records_rejected(self):

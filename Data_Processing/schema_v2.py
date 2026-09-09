@@ -6,6 +6,8 @@ cho Legal Dataset V2.
 
 from __future__ import annotations
 import json
+import re
+import hashlib
 from typing import Dict, Any, List, Tuple, Optional
 from pydantic import ValidationError
 
@@ -109,9 +111,10 @@ def create_chunk_v2(
     article_title: Optional[str] = None,
     clause_number: Optional[str] = None,
     point_number: Optional[str] = None,
+    issue_date: Optional[str] = None,
     effective_from: Optional[str] = None,
     effective_to: Optional[str] = None,
-    legal_status: Optional[str] = None,
+    legal_status: Optional[str] = "unknown",
     source_url: Optional[str] = None,
     parent_article: Optional[str] = None,
     content_type: str = "text",
@@ -133,6 +136,7 @@ def create_chunk_v2(
         clause_number=clause_number,
         point_number=point_number,
         content=content,
+        issue_date=issue_date,
         effective_from=effective_from,
         effective_to=effective_to,
         legal_status=legal_status,
@@ -166,3 +170,77 @@ def export_dataset_v2(
 
     with open(filepath, "w", encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=False, indent=indent)
+
+
+def export_dataset_v2_jsonl(
+    chunks: List[LegalChunkV2],
+    filepath: str,
+    target_format_only: bool = True
+) -> None:
+    """Xuất danh sách LegalChunkV2 ra tệp JSON Lines (.jsonl) chuẩn với mỗi dòng là 1 JSON chunk.
+    
+    Args:
+        chunks: Danh sách các LegalChunkV2.
+        filepath: Đường dẫn tệp đích (.jsonl).
+        target_format_only: Nếu True, xuất đúng 21 trường cốt lõi theo đặc tả DATA-02.
+    """
+    with open(filepath, "w", encoding="utf-8") as f:
+        for c in chunks:
+            record = c.to_target_dict() if target_format_only else c.model_dump()
+            line = json.dumps(record, ensure_ascii=False)
+            f.write(line + "\n")
+
+
+def generate_chunk_id(
+    document_id: str,
+    article_number: Optional[str] = None,
+    clause_number: Optional[str] = None,
+    point_number: Optional[str] = None,
+    chunk_index: int = 0,
+    appendix_number: Optional[str] = None,
+    extra_suffix: Optional[str] = None
+) -> str:
+    """Tạo chunk_id chuẩn mực cho Legal Dataset V2 theo TASK DATA-09.
+    
+    Cấu trúc khuyến nghị:
+    {document_id}_{article}_{clause}_{point}_{chunk_index}
+    Đảm bảo 100% globally unique, deterministic, và reproducible.
+    """
+    parts = [document_id]
+
+    if article_number:
+        clean_art = re.sub(r'\s+', '', article_number)
+        parts.append(clean_art)
+
+    if clause_number:
+        clean_clause = re.sub(r'\s+', '', clause_number)
+        parts.append(clean_clause)
+
+    if point_number:
+        clean_pt = re.sub(r'\s+', '', point_number)
+        parts.append(clean_pt)
+
+    if appendix_number and not article_number:
+        clean_app = re.sub(r'\s+', '', appendix_number)
+        parts.append(clean_app)
+
+    if extra_suffix:
+        clean_suffix = re.sub(r'\s+', '', extra_suffix)
+        parts.append(clean_suffix)
+
+    parts.append(str(chunk_index))
+    return "_".join(parts)
+
+
+def generate_content_hash_id(
+    document_id: str,
+    hierarchy: str,
+    content: str,
+    chunk_index: int
+) -> str:
+    """Tạo chunk_id băm SHA-256 ổn định và bất biến theo TASK DATA-09:
+    sha256(document_id + hierarchy + content + chunk_index)
+    """
+    raw_str = f"{document_id}|{hierarchy}|{content}|{chunk_index}".encode("utf-8")
+    return hashlib.sha256(raw_str).hexdigest()[:24]
+

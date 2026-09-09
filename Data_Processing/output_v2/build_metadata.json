@@ -1,0 +1,97 @@
+{
+  "status": "SUCCESS",
+  "build_timestamp": "2026-09-09T07:50:11Z",
+  "elapsed_seconds": 0.529,
+  "input": {
+    "raw_dir": "D:\\Filehoc\\KLCN\\agentic-rag\\Data_Processing\\data_corpus_raw",
+    "total_documents": 15,
+    "document_ids": [
+      "BLLD_2019",
+      "ND_12_2022",
+      "ND_135_2020",
+      "ND_145_2020",
+      "ND_152_2020",
+      "ND_219_2025",
+      "ND_70_2023",
+      "ND_74_2024",
+      "ND_83_2022",
+      "ND_99_2024",
+      "QD_992_2025",
+      "TT_09_2020",
+      "TT_10_2020",
+      "TT_11_2020",
+      "TT_20_2023"
+    ]
+  },
+  "output": {
+    "json_path": "D:\\Filehoc\\KLCN\\agentic-rag\\Data_Processing\\output_v2\\legal_dataset_v2.json",
+    "json_sha256": "e48c6a3bece6819a0e25da8d985c8391ec162561c985e26d69dc3d13f2c87d92",
+    "jsonl_path": "D:\\Filehoc\\KLCN\\agentic-rag\\Data_Processing\\output_v2\\legal_dataset_v2.jsonl",
+    "jsonl_sha256": "bcd6d0f05b0239b6250a6aa30e93d27093599d6da08bf80344cfd3a8ce834265",
+    "total_chunks": 1390,
+    "unique_chunk_ids": 1390,
+    "collisions_count": 0
+  },
+  "token_statistics": {
+    "min_tokens": 26,
+    "max_tokens": 800,
+    "avg_tokens": 264.75,
+    "median_tokens": 211.0,
+    "distribution": {
+      "under_100_tokens": {
+        "count": 145,
+        "percentage": 10.43
+      },
+      "100_to_350_tokens": {
+        "count": 987,
+        "percentage": 71.01
+      },
+      "350_to_800_tokens": {
+        "count": 258,
+        "percentage": 18.56
+      },
+      "over_800_tokens": {
+        "count": 0,
+        "percentage": 0.0
+      }
+    }
+  },
+  "content_type_distribution": {
+    "article": 1390
+  },
+  "metadata_coverage": {
+    "document_number": {
+      "count": 1390,
+      "pct": 100.0
+    },
+    "document_type": {
+      "count": 1390,
+      "pct": 100.0
+    },
+    "issue_date": {
+      "count": 0,
+      "pct": 0.0
+    },
+    "effective_from": {
+      "count": 294,
+      "pct": 21.15
+    },
+    "source_url": {
+      "count": 1390,
+      "pct": 100.0
+    },
+    "known_legal_status": {
+      "count": 294,
+      "pct": 21.15
+    },
+    "unknown_legal_status": {
+      "count": 1096,
+      "pct": 78.85
+    }
+  },
+  "v1_preservation": {
+    "v1_path": "D:\\Filehoc\\KLCN\\agentic-rag\\Data_Processing\\KhoaLuan_Data_HoanChinh.json",
+    "v1_sha256": "7bdb170543734804c64945a02d5388a32399dd391ff3b2a3d029add1d3fe3fb4",
+    "is_frozen": true
+  }
+}

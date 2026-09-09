@@ -1,0 +1,990 @@
+{
+  "dataset": {
+    "name": "Legal Dataset V2",
+    "file_path": "d:\\Filehoc\\KLCN\\agentic-rag\\Data_Processing\\output_v2\\legal_dataset_v2.json",
+    "file_size_bytes": 3280390,
+    "jsonl_path": "d:\\Filehoc\\KLCN\\agentic-rag\\Data_Processing\\output_v2\\legal_dataset_v2.jsonl",
+    "jsonl_size_bytes": 3126368,
+    "sha256": "d54c43ad775b4d6cf4a885e94ccd7544ef1c2bf1f159e8762da39062a9789577",
+    "jsonl_sha256": "ebe889faf91008d3929f81b7b0c6bce19bb853b86f31f10e7897fccd080822f8",
+    "format": "JSON array of 21-field objects + JSONL",
+    "record_count": 1363,
+    "pipeline_module": "Data_Processing.build_dataset_v2"
+  },
+  "statistics": {
+    "document_count": 15,
+    "total_chunks": 1363,
+    "chunks_per_document": {
+      "min": 3,
+      "max": 288,
+      "mean": 90.87,
+      "median": 37,
+      "by_document": {
+        "BLLD_2019": 288,
+        "ND_12_2022": 233,
+        "ND_135_2020": 22,
+        "ND_145_2020": 257,
+        "ND_152_2020": 107,
+        "ND_219_2025": 89,
+        "ND_70_2023": 38,
+        "ND_74_2024": 15,
+        "ND_83_2022": 9,
+        "ND_99_2024": 3,
+        "QD_992_2025": 6,
+        "TT_09_2020": 35,
+        "TT_10_2020": 37,
+        "TT_11_2020": 209,
+        "TT_20_2023": 15
+      }
+    },
+    "content_type_distribution": {
+      "article": 357,
+      "clause": 575,
+      "appendix": 79,
+      "point": 140,
+      "other": 212
+    }
+  },
+  "schema_validation": {
+    "schema_version": "Pydantic V2 LegalChunkV2 (21 standard fields)",
+    "fields_table": {
+      "chunk_id": {
+        "present": 1363,
+        "missing": 0,
+        "null": 0,
+        "coverage_pct": 100.0
+      },
+      "document_id": {
+        "present": 1363,
+        "missing": 0,
+        "null": 0,
+        "coverage_pct": 100.0
+      },
+      "document_number": {
+        "present": 1363,
+        "missing": 0,
+        "null": 0,
+        "coverage_pct": 100.0
+      },
+      "document_title": {
+        "present": 1363,
+        "missing": 0,
+        "null": 0,
+        "coverage_pct": 100.0
+      },
+      "document_type": {
+        "present": 1363,
+        "missing": 0,
+        "null": 0,
+        "coverage_pct": 100.0
+      },
+      "chapter_number": {
+        "present": 1363,
+        "missing": 0,
+        "null": 382,
+        "coverage_pct": 71.97
+      },
+      "chapter_title": {
+        "present": 1363,
+        "missing": 0,
+        "null": 382,
+        "coverage_pct": 71.97
+      },
+      "section_number": {
+        "present": 1363,
+        "missing": 0,
+        "null": 847,
+        "coverage_pct": 37.86
+      },
+      "section_title": {
+        "present": 1363,
+        "missing": 0,
+        "null": 847,
+        "coverage_pct": 37.86
+      },
+      "article_number": {
+        "present": 1363,
+        "missing": 0,
+        "null": 290,
+        "coverage_pct": 78.72
+      },
+      "article_title": {
+        "present": 1363,
+        "missing": 0,
+        "null": 344,
+        "coverage_pct": 74.76
+      },
+      "clause_number": {
+        "present": 1363,
+        "missing": 0,
+        "null": 660,
+        "coverage_pct": 51.58
+      },
+      "point_number": {
+        "present": 1363,
+        "missing": 0,
+        "null": 1223,
+        "coverage_pct": 10.27
+      },
+      "content": {
+        "present": 1363,
+        "missing": 0,
+        "null": 0,
+        "coverage_pct": 100.0
+      },
+      "effective_from": {
+        "present": 1363,
+        "missing": 0,
+        "null": 1075,
+        "coverage_pct": 21.13
+      },
+      "effective_to": {
+        "present": 1363,
+        "missing": 0,
+        "null": 1363,
+        "coverage_pct": 0.0
+      },
+      "legal_status": {
+        "present": 1363,
+        "missing": 0,
+        "null": 0,
+        "coverage_pct": 100.0
+      },
+      "source_url": {
+        "present": 1363,
+        "missing": 0,
+        "null": 0,
+        "coverage_pct": 100.0
+      },
+      "parent_document": {
+        "present": 1363,
+        "missing": 0,
+        "null": 0,
+        "coverage_pct": 100.0
+      },
+      "parent_article": {
+        "present": 1363,
+        "missing": 0,
+        "null": 290,
+        "coverage_pct": 78.72
+      },
+      "chunk_index": {
+        "present": 1363,
+        "missing": 0,
+        "null": 0,
+        "coverage_pct": 100.0
+      }
+    },
+    "datatype_issues_count": 0,
+    "datatype_issues": [],
+    "null_analysis": {
+      "effective_to": "100.0% null (documents still in force)",
+      "effective_from": "78.87% null (raw metadata absent for 14 documents; 21.13% present for BLLD_2019)",
+      "section_number": "62.14% null (many chapters do not contain sections)",
+      "point_number": "89.73% null (most provisions are at article/clause level)",
+      "article_number": "21.28% null (290 chunks are standalone appendix/forms without articles)"
+    }
+  },
+  "chunk_analysis": {
+    "token_summary": {
+      "min": 4,
+      "max": 800,
+      "mean": 264.64,
+      "median": 207,
+      "percentiles": {
+        "p25": 132.0,
+        "p50": 207,
+        "p75": 318.0,
+        "p90": 620.2,
+        "p95": 713.9,
+        "p99": 780.76
+      }
+    },
+    "distribution_buckets": {
+      "<20": 4,
+      "20-49": 35,
+      "50-99": 117,
+      "100-199": 497,
+      "200-299": 319,
+      "300-499": 203,
+      "500-999": 188,
+      "1000-1999": 0,
+      "2000-3999": 0,
+      "4000+": 0
+    },
+    "under_50_tokens": {
+      "count": 39,
+      "percentage": 2.86
+    },
+    "under_100_tokens": {
+      "count": 156,
+      "percentage": 11.45
+    },
+    "over_500_tokens": {
+      "count": 187,
+      "percentage": 13.72
+    },
+    "over_1000_tokens": {
+      "count": 0,
+      "percentage": 0.0
+    },
+    "monster_chunks": {
+      "count": 0,
+      "max_allowed": 800,
+      "status": "PASS (0 monster chunks > 800 tokens)"
+    },
+    "tiny_chunks": {
+      "classification": {
+        "ORPHAN_FRAGMENT": 2,
+        "VALID_SHORT": 28
+      },
+      "samples": [
+        {
+          "chunk_id": "ND_135_2020_Phụ_lục_Lao_động_nam_1_13",
+          "document_id": "ND_135_2020",
+          "document_title": "Nghị định số 135/2020/NĐ-CP QUY ĐỊNH VỀ TUỔI NGHỈ HƯU",
+          "article": null,
+          "clause": null,
+          "point": null,
+          "tokens": 4,
+          "chars": 12,
+          "content": "Lao động nam",
+          "category": "ORPHAN_FRAGMENT"
+        },
+        {
+          "chunk_id": "ND_135_2020_Phụ_lục_II_Lao_động_nam_1_17",
+          "document_id": "ND_135_2020",
+          "document_title": "Nghị định số 135/2020/NĐ-CP QUY ĐỊNH VỀ TUỔI NGHỈ HƯU",
+          "article": null,
+          "clause": null,
+          "point": null,
+          "tokens": 4,
+          "chars": 12,
+          "content": "Lao động nam",
+          "category": "ORPHAN_FRAGMENT"
+        },
+        {
+          "chunk_id": "TT_10_2020_Điều142_1",
+          "document_id": "TT_10_2020",
+          "document_title": "Thông tư số 10/2020/TT-BLĐTBXH QUY ĐỊNH CHI TIẾT VÀ HƯỚNG DẪN THI HÀNH MỘT SỐ ĐIỀU CỦA BỘ LUẬT LAO ĐỘNG VỀ NỘI DUNG CỦA HỢP ĐỒNG LAO ĐỘNG, HỘI ĐỒNG THƯƠNG LƯỢNG TẬP THỂ VÀ NGHỀ, CÔNG VIỆC CÓ ẢNH HƯỞNG XẤU TỚI CHỨC NĂNG SINH SẢN, NUÔI CON",
+          "article": "Điều 142",
+          "clause": null,
+          "point": null,
+          "tokens": 4,
+          "chars": 10,
+          "content": "Điều 142 .",
+          "category": "VALID_SHORT"
+        },
+        {
+          "chunk_id": "ND_219_2025_Điều8_Khoản4_17",
+          "document_id": "ND_219_2025",
+          "document_title": "Nghị định số 219/2025/NĐ-CP QUY ĐỊNH VỀ NGƯỜI LAO ĐỘNG NƯỚC NGOÀI LÀM VIỆC TẠI VIỆT NAM",
+          "article": "Điều 8",
+          "clause": "Khoản 4",
+          "point": null,
+          "tokens": 19,
+          "chars": 56,
+          "content": "Điều 8. Hồ sơ đề nghị cấp giấy 4. Hộ chiếu còn thời hạn.",
+          "category": "VALID_SHORT"
+        },
+        {
+          "chunk_id": "ND_70_2023_Điều3_Khoản1_21",
+          "document_id": "ND_70_2023",
+          "document_title": "Nghị định số 70/2023/NĐ-CP SỬA ĐỔI, BỔ SUNG MỘT SỐ ĐIỀU CỦA NGHỊ ĐỊNH SỐ 152/2020/NĐ-CP NGÀY 30 THÁNG 12 NĂM 2020 CỦA CHÍNH PHỦ QUY ĐỊNH VỀ NGƯỜI LAO ĐỘNG NƯỚC NGOÀI LÀM VIỆC TẠI VIỆT NAM VÀ TUYỂN DỤNG, QUẢN LÝ NGƯỜI LAO ĐỘNG VIỆT NAM LÀM VIỆC CHO TỔ CHỨC, CÁ NHÂN NƯỚC NGOÀI TẠI VIỆT NAM",
+          "article": "Điều 3",
+          "clause": "Khoản 1",
+          "point": null,
+          "tokens": 25,
+          "chars": 79,
+          "content": "Điều 3. Điều 1. Nghị định này có hiệu lực thi hành từ ngày 18 tháng 9 năm 2023.",
+          "category": "VALID_SHORT"
+        },
+        {
+          "chunk_id": "ND_74_2024_DM_Vùng_IV_14",
+          "document_id": "ND_74_2024",
+          "document_title": "Nghị định số 74/2024/NĐ-CP QUY ĐỊNH MỨC LƯƠNG TỐI THIỂU ĐỐI VỚI NGƯỜI LAO ĐỘNG LÀM VIỆC THEO HỢP ĐỒNG LAO ĐỘNG",
+          "article": null,
+          "clause": null,
+          "point": null,
+          "tokens": 26,
+          "chars": 83,
+          "content": "THÁNG 7 NĂM 2024 - 1. Vùng I, gồm các địa bàn:  4. Vùng IV, gồm các địa bàn cònlại.",
+          "category": "VALID_SHORT"
+        },
+        {
+          "chunk_id": "ND_99_2024_Điều2_1",
+          "document_id": "ND_99_2024",
+          "document_title": "Nghị định số 99/2024/NĐ-CP SỬA ĐỔI, BỔ SUNG ĐIỂM P KHOẢN 1 ĐIỀU 2 NGHỊ ĐỊNH SỐ 83/2022/NĐ-CP NGÀY 18 THÁNG 10 NĂM 2022 CỦA CHÍNH PHỦ QUY ĐỊNH VỀ NGHỈ HƯU Ở TUỔI CAO HƠN ĐỐI VỚI CÁN BỘ, CÔNG CHỨC GIỮ CHỨC VỤ LÃNH ĐẠO, QUẢN LÝ",
+          "article": "Điều 2",
+          "clause": null,
+          "point": null,
+          "tokens": 26,
+          "chars": 85,
+          "content": "Điều 2. Hiệu lực thi hành  Nghị định này có hiệu lực thi hành kể từ ngày ký ban hành.",
+          "category": "VALID_SHORT"
+        },
+        {
+          "chunk_id": "ND_145_2020_Điều114_Khoản1_249",
+          "document_id": "ND_145_2020",
+          "document_title": "Nghị định số 145/2020/NĐ-CP QUY ĐỊNH CHI TIẾT VÀ HƯỚNG DẪN THI HÀNH MỘT SỐ ĐIỀU CỦA BỘ LUẬT LAO ĐỘNG VỀ ĐIỀU KIỆN LAO ĐỘNG VÀ QUAN HỆ LAO ĐỘNG",
+          "article": "Điều 114",
+          "clause": "Khoản 1",
+          "point": null,
+          "tokens": 29,
+          "chars": 93,
+          "content": "Điều 114. Hiệu lực thi 1. Nghị định này có hiệu lực thi hành kể từ ngày 01 tháng 02 năm 2021.",
+          "category": "VALID_SHORT"
+        },
+        {
+          "chunk_id": "TT_10_2020_Điều12_Khoản1_29",
+          "document_id": "TT_10_2020",
+          "document_title": "Thông tư số 10/2020/TT-BLĐTBXH QUY ĐỊNH CHI TIẾT VÀ HƯỚNG DẪN THI HÀNH MỘT SỐ ĐIỀU CỦA BỘ LUẬT LAO ĐỘNG VỀ NỘI DUNG CỦA HỢP ĐỒNG LAO ĐỘNG, HỘI ĐỒNG THƯƠNG LƯỢNG TẬP THỂ VÀ NGHỀ, CÔNG VIỆC CÓ ẢNH HƯỞNG XẤU TỚI CHỨC NĂNG SINH SẢN, NUÔI CON",
+          "article": "Điều 12",
+          "clause": "Khoản 1",
+          "point": null,
+          "tokens": 30,
+          "chars": 96,
+          "content": "Điều 12. Hiệu lực thi hành 1. Thông tư này có hiệu lực thi hành kể từ ngày 01 tháng 01 năm 2021.",
+          "category": "VALID_SHORT"
+        },
+        {
+          "chunk_id": "BLLD_2019_Điều106_139",
+          "document_id": "BLLD_2019",
+          "document_title": "Bộ luật Lao động 2019 số 45/2019/QH14",
+          "article": "Điều 106",
+          "clause": null,
+          "point": null,
+          "tokens": 32,
+          "chars": 102,
+          "content": "Điều 106. Giờ làm việc ban đêm  Giờ làm việc ban đêm được tính từ 22 giờ đến 06 giờ sáng ngày hôm sau.",
+          "category": "VALID_SHORT"
+        },
+        {
+          "chunk_id": "ND_135_2020_Điều1_0",
+          "document_id": "ND_135_2020",
+          "document_title": "Nghị định số 135/2020/NĐ-CP QUY ĐỊNH VỀ TUỔI NGHỈ HƯU",
+          "article": "Điều 1",
+          "clause": null,
+          "point": null,
+          "tokens": 32,
+          "chars": 107,
+          "content": "Điều 1. Phạm vi điều chỉnh  Nghị định này quy định chi tiết Điều 169 của Bộ luật Lao động về tuổi nghỉ hưu.",
+          "category": "VALID_SHORT"
+        },
+        {
+          "chunk_id": "ND_145_2020_Điều90_188",
+          "document_id": "ND_145_2020",
+          "document_title": "Nghị định số 145/2020/NĐ-CP QUY ĐỊNH CHI TIẾT VÀ HƯỚNG DẪN THI HÀNH MỘT SỐ ĐIỀU CỦA BỘ LUẬT LAO ĐỘNG VỀ ĐIỀU KIỆN LAO ĐỘNG VÀ QUAN HỆ LAO ĐỘNG",
+          "article": "Điều 90",
+          "clause": null,
+          "point": null,
+          "tokens": 32,
+          "chars": 109,
+          "content": "Điều 90. Nghĩa vụ của người sử dụng lao động, người lao động  1. Thực hiện các nghĩa vụ theo quy định tại các",
+          "category": "VALID_SHORT"
+        },
+        {
+          "chunk_id": "ND_219_2025_Điều27_Khoản4_56",
+          "document_id": "ND_219_2025",
+          "document_title": "Nghị định số 219/2025/NĐ-CP QUY ĐỊNH VỀ NGƯỜI LAO ĐỘNG NƯỚC NGOÀI LÀM VIỆC TẠI VIỆT NAM",
+          "article": "Điều 27",
+          "clause": "Khoản 4 đến Khoản 5",
+          "point": null,
+          "tokens": 33,
+          "chars": 105,
+          "content": "Điều 27. Hồ sơ đề nghị gia hạn 4. Giấy phép lao động còn thời hạn đã được cấp.  5. Hộ chiếu còn thời hạn.",
+          "category": "VALID_SHORT"
+        },
+        {
+          "chunk_id": "BLLD_2019_Điều50_71",
+          "document_id": "BLLD_2019",
+          "document_title": "Bộ luật Lao động 2019 số 45/2019/QH14",
+          "article": "Điều 50",
+          "clause": null,
+          "point": null,
+          "tokens": 34,
+          "chars": 116,
+          "content": "Điều 50. Thẩm quyền tuyên bố hợp đồng lao động vô hiệu  Tòa án nhân dân có quyền tuyên bố hợp đồng lao động vô hiệu.",
+          "category": "VALID_SHORT"
+        },
+        {
+          "chunk_id": "BLLD_2019_Điều110_145",
+          "document_id": "BLLD_2019",
+          "document_title": "Bộ luật Lao động 2019 số 45/2019/QH14",
+          "article": "Điều 110",
+          "clause": null,
+          "point": null,
+          "tokens": 34,
+          "chars": 122,
+          "content": "Điều 110. Nghỉ chuyển ca  Người lao động làm việc theo ca được nghỉ ít nhất 12 giờ trước khi chuyển sang ca làm việc khác.",
+          "category": "VALID_SHORT"
+        },
+        {
+          "chunk_id": "ND_152_2020_Mẫu_số_04_PLII_99",
+          "document_id": "ND_152_2020",
+          "document_title": "Nghị định số 152/2020/NĐ-CP QUY ĐỊNH VỀ NGƯỜI LAO ĐỘNG NƯỚC NGOÀI LÀM VIỆC TẠI VIỆT NAM VÀ TUYỂN DỤNG, QUẢN LÝ NGƯỜI LAO ĐỘNG VIỆT NAM LÀM VIỆC CHO TỔ CHỨC, CÁ NHÂN NƯỚC NGOÀI TẠI VIỆT NAM",
+          "article": null,
+          "clause": null,
+          "point": null,
+          "tokens": 36,
+          "chars": 126,
+          "content": "số 04/PLII  Báo cáo tình hình  cung ứng, cho thuê lại lao động Việt Nam làm việc cho tổ chức, cá nhân nước  ngoài tại Việt Nam",
+          "category": "VALID_SHORT"
+        },
+        {
+          "chunk_id": "ND_145_2020_Điều89_180",
+          "document_id": "ND_145_2020",
+          "document_title": "Nghị định số 145/2020/NĐ-CP QUY ĐỊNH CHI TIẾT VÀ HƯỚNG DẪN THI HÀNH MỘT SỐ ĐIỀU CỦA BỘ LUẬT LAO ĐỘNG VỀ ĐIỀU KIỆN LAO ĐỘNG VÀ QUAN HỆ LAO ĐỘNG",
+          "article": "Điều 89",
+          "clause": null,
+          "point": null,
+          "tokens": 37,
+          "chars": 124,
+          "content": "Điều 89. Một số quy định riêng đối với lao động là người giúp việc gia đình  1. Quy định về hình thức hợp đồng lao động theo",
+          "category": "VALID_SHORT"
+        },
+        {
+          "chunk_id": "ND_152_2020_Mẫu_số_04_PLII_97",
+          "document_id": "ND_152_2020",
+          "document_title": "Nghị định số 152/2020/NĐ-CP QUY ĐỊNH VỀ NGƯỜI LAO ĐỘNG NƯỚC NGOÀI LÀM VIỆC TẠI VIỆT NAM VÀ TUYỂN DỤNG, QUẢN LÝ NGƯỜI LAO ĐỘNG VIỆT NAM LÀM VIỆC CHO TỔ CHỨC, CÁ NHÂN NƯỚC NGOÀI TẠI VIỆT NAM",
+          "article": null,
+          "clause": null,
+          "point": null,
+          "tokens": 37,
+          "chars": 136,
+          "content": "số 04/PLII       Báo cáo tình hình  cung ứng, cho thuê lại lao động Việt Nam làm việc cho tổ chức, cá nhân nước  ngoài tại Việt Nam  Mẫu",
+          "category": "VALID_SHORT"
+        },
+        {
+          "chunk_id": "TT_09_2020_Điều12_17",
+          "document_id": "TT_09_2020",
+          "document_title": "Thông tư số 09/2020/TT-BLĐTBXH QUY ĐỊNH CHI TIẾT VÀ HƯỚNG DẪN THI HÀNH MỘT SỐ ĐIỀU CỦA BỘ LUẬT LAO ĐỘNG VỀ LAO ĐỘNG CHƯA THÀNH NIÊN",
+          "article": "Điều 12",
+          "clause": null,
+          "point": null,
+          "tokens": 38,
+          "chars": 129,
+          "content": "Điều 12. Trách nhiệm của người sử dụng lao động  1. Lập Sổ theo dõi tình hình sử dụng lao động chưa thành niên theo Mẫu số 06 tại",
+          "category": "VALID_SHORT"
+        },
+        {
+          "chunk_id": "BLLD_2019_Điều87_120",
+          "document_id": "BLLD_2019",
+          "document_title": "Bộ luật Lao động 2019 số 45/2019/QH14",
+          "article": "Điều 87",
+          "clause": null,
+          "point": null,
+          "tokens": 39,
+          "chars": 132,
+          "content": "Điều 87. Thẩm quyền tuyên bố thỏa ước lao động tập thể vô hiệu  Tòa án nhân dân có quyền tuyên bố thỏa ước lao động tập thể vô hiệu.",
+          "category": "VALID_SHORT"
+        },
+        {
+          "chunk_id": "ND_74_2024_Điều3_Khoản2_3",
+          "document_id": "ND_74_2024",
+          "document_title": "Nghị định số 74/2024/NĐ-CP QUY ĐỊNH MỨC LƯƠNG TỐI THIỂU ĐỐI VỚI NGƯỜI LAO ĐỘNG LÀM VIỆC THEO HỢP ĐỒNG LAO ĐỘNG",
+          "article": "Điều 3",
+          "clause": "Khoản 2",
+          "point": null,
+          "tokens": 39,
+          "chars": 132,
+          "content": "Điều 3. Mức lương tối thiểu 2. Danh mục địa bàn vùng I, vùng II, vùng III, vùng IV được quy định tại Phụ lục kèm theo Nghị định này.",
+          "category": "VALID_SHORT"
+        },
+        {
+          "chunk_id": "BLLD_2019_Điều66_91",
+          "document_id": "BLLD_2019",
+          "document_title": "Bộ luật Lao động 2019 số 45/2019/QH14",
+          "article": "Điều 66",
+          "clause": null,
+          "point": null,
+          "tokens": 41,
+          "chars": 159,
+          "content": "Điều 66. Nguyên tắc thương lượng tập thể  Thương lượng tập thể được tiến hành theo nguyên tắc tự nguyện, hợp tác, thiện chí, bình đẳng, công khai và m",
+          "category": "VALID_SHORT"
+        },
+        {
+          "chunk_id": "ND_70_2023_Mẫu_số_01_PLI_25",
+          "document_id": "ND_70_2023",
+          "document_title": "Nghị định số 70/2023/NĐ-CP SỬA ĐỔI, BỔ SUNG MỘT SỐ ĐIỀU CỦA NGHỊ ĐỊNH SỐ 152/2020/NĐ-CP NGÀY 30 THÁNG 12 NĂM 2020 CỦA CHÍNH PHỦ QUY ĐỊNH VỀ NGƯỜI LAO ĐỘNG NƯỚC NGOÀI LÀM VIỆC TẠI VIỆT NAM VÀ TUYỂN DỤNG, QUẢN LÝ NGƯỜI LAO ĐỘNG VIỆT NAM LÀM VIỆC CHO TỔ CHỨC, CÁ NHÂN NƯỚC NGOÀI TẠI VIỆT NAM",
+          "article": null,
+          "clause": null,
+          "point": null,
+          "tokens": 41,
+          "chars": 157,
+          "content": "Mẫu số 17/PLI       Báo cáo tình hình người lao động  nước ngoài đến làm việc.  Mẫu số 01/PLI  Về việc giải trình nhu cầu sử  dụng người lao động nước",
+          "category": "VALID_SHORT"
+        },
+        {
+          "chunk_id": "ND_83_2022_Điều1_0",
+          "document_id": "ND_83_2022",
+          "document_title": "Nghị định số 83/2022/NĐ-CP QUY ĐỊNH VỀ NGHỈ HƯU Ở TUỔI CAO HƠN ĐỐI VỚI CÁN BỘ, CÔNG CHỨC GIỮ CHỨC VỤ LÃNH ĐẠO, QUẢN LÝ",
+          "article": "Điều 1",
+          "clause": null,
+          "point": null,
+          "tokens": 41,
+          "chars": 134,
+          "content": "Điều 1. Phạm vi điều chỉnh  Nghị định này quy định về nghỉ hưu ở tuổi cao hơn đối với cán bộ, công chức giữ chức vụ lãnh đạo, quản lý.",
+          "category": "VALID_SHORT"
+        },
+        {
+          "chunk_id": "BLLD_2019_Điều167_211",
+          "document_id": "BLLD_2019",
+          "document_title": "Bộ luật Lao động 2019 số 45/2019/QH14",
+          "article": "Điều 167",
+          "clause": null,
+          "point": null,
+          "tokens": 42,
+          "chars": 144,
+          "content": "Điều 167. Người lao động nhận công việc về làm tại nhà  Người lao động có thể thỏa thuận với người sử dụng lao động để nhận việc về làm tại nhà.",
+          "category": "VALID_SHORT"
+        },
+        {
+          "chunk_id": "ND_219_2025_Điều15_Khoản3_29",
+          "document_id": "ND_219_2025",
+          "document_title": "Nghị định số 219/2025/NĐ-CP QUY ĐỊNH VỀ NGƯỜI LAO ĐỘNG NƯỚC NGOÀI LÀM VIỆC TẠI VIỆT NAM",
+          "article": "Điều 15",
+          "clause": "Khoản 3 đến Khoản 4",
+          "point": null,
+          "tokens": 42,
+          "chars": 140,
+          "content": "Điều 15. Hồ sơ đề nghị gia hạn 3. Giấy xác nhận không thuộc diện cấp giấy phép lao động còn thời hạn đã được cấp.  4. Hộ chiếu còn thời hạn.",
+          "category": "VALID_SHORT"
+        },
+        {
+          "chunk_id": "ND_219_2025_Mẫu_số_04_79",
+          "document_id": "ND_219_2025",
+          "document_title": "Nghị định số 219/2025/NĐ-CP QUY ĐỊNH VỀ NGƯỜI LAO ĐỘNG NƯỚC NGOÀI LÀM VIỆC TẠI VIỆT NAM",
+          "article": null,
+          "clause": null,
+          "point": null,
+          "tokens": 42,
+          "chars": 159,
+          "content": "Mẫu số 03       Về việc giải trình nhu cầu sử dụng người lao động  nước ngoài và cấp/cấp lại/gia hạn giấy phép lao động  Mẫu số 04       Mẫu giấy phép",
+          "category": "VALID_SHORT"
+        },
+        {
+          "chunk_id": "ND_70_2023_Mẫu_số_07_PLI_26",
+          "document_id": "ND_70_2023",
+          "document_title": "Nghị định số 70/2023/NĐ-CP SỬA ĐỔI, BỔ SUNG MỘT SỐ ĐIỀU CỦA NGHỊ ĐỊNH SỐ 152/2020/NĐ-CP NGÀY 30 THÁNG 12 NĂM 2020 CỦA CHÍNH PHỦ QUY ĐỊNH VỀ NGƯỜI LAO ĐỘNG NƯỚC NGOÀI LÀM VIỆC TẠI VIỆT NAM VÀ TUYỂN DỤNG, QUẢN LÝ NGƯỜI LAO ĐỘNG VIỆT NAM LÀM VIỆC CHO TỔ CHỨC, CÁ NHÂN NƯỚC NGOÀI TẠI VIỆT NAM",
+          "article": null,
+          "clause": null,
+          "point": null,
+          "tokens": 42,
+          "chars": 156,
+          "content": "Mẫu số 02/PLI  Về việc giải trình thay đổi  nhu cầu sử dụng người lao động nước ngoài.  Mẫu số 07/PLI  Báo cáo tình hình sử dụng người  lao động nước ",
+          "category": "VALID_SHORT"
+        },
+        {
+          "chunk_id": "ND_83_2022_Điều2_Khoản2_3",
+          "document_id": "ND_83_2022",
+          "document_title": "Nghị định số 83/2022/NĐ-CP QUY ĐỊNH VỀ NGHỈ HƯU Ở TUỔI CAO HƠN ĐỐI VỚI CÁN BỘ, CÔNG CHỨC GIỮ CHỨC VỤ LÃNH ĐẠO, QUẢN LÝ",
+          "article": "Điều 2",
+          "clause": "Khoản 2",
+          "point": null,
+          "tokens": 42,
+          "chars": 143,
+          "content": "Điều 2. Đối tượng áp dụng 2. Công chức được bổ nhiệm chức danh Thẩm phán Tòa án nhân dân tối cao, Kiểm sát viên Viện kiểm sát nhân dân tối cao.",
+          "category": "VALID_SHORT"
+        },
+        {
+          "chunk_id": "ND_219_2025_Mẫu_số_04_81",
+          "document_id": "ND_219_2025",
+          "document_title": "Nghị định số 219/2025/NĐ-CP QUY ĐỊNH VỀ NGƯỜI LAO ĐỘNG NƯỚC NGOÀI LÀM VIỆC TẠI VIỆT NAM",
+          "article": null,
+          "clause": null,
+          "point": null,
+          "tokens": 43,
+          "chars": 154,
+          "content": "Mẫu số 03  Về việc giải trình nhu cầu sử dụng người lao động  nước ngoài và cấp/cấp lại/gia hạn giấy phép lao động  Mẫu số 04  Mẫu giấy phép lao động ",
+          "category": "VALID_SHORT"
+        }
+      ]
+    }
+  },
+  "id_validation": {
+    "total_chunks": 1363,
+    "unique_chunk_ids": 1363,
+    "duplicate_chunk_ids": {},
+    "collision_count": 0,
+    "acceptance_status": "PASS",
+    "determinism_verified": true
+  },
+  "hierarchy_validation": {
+    "chapter_assignment_status": "PASS (Điều 3 bug fixed; 0 corrupted chapter assignments)",
+    "chapter_assignment_issues": [],
+    "muc_chuong_issues": [],
+    "article_mismatch_count": 0,
+    "clause_mismatch_count": 0,
+    "point_mismatch_count": 0,
+    "orphan_issues_count": 0,
+    "article_validation_accuracy_pct": 100.0
+  },
+  "metadata_validation": {
+    "consistency_within_document": {
+      "status": "PASS",
+      "inconsistencies_count": 0,
+      "inconsistencies": []
+    },
+    "legal_status_distribution": {
+      "Còn hiệu lực": 288,
+      "unknown": 1075
+    },
+    "effective_from_distribution": {
+      "01/01/2021": 288,
+      "null": 1075
+    },
+    "effective_to_distribution": {
+      "null": 1363
+    },
+    "date_status_pollution_count": 0
+  },
+  "appendix_validation": {
+    "appendix_chunks_count": 100,
+    "largest_appendix_tokens": 800,
+    "largest_appendix_chunk_id": "ND_135_2020_Phụ_lục_Lao_động_nữ_2_1_14",
+    "v1_comparison": {
+      "v1_largest_appendix_tokens": 142533,
+      "v2_largest_appendix_tokens": 800,
+      "improvement": "Eliminated 142,533 token monster chunk into 209 bounded chunks"
+    }
+  },
+  "duplicate_analysis": {
+    "exact_duplicate_groups": 5,
+    "exact_duplicate_chunks": 10,
+    "exact_duplicate_pct": 0.73,
+    "duplicate_hierarchy_groups": 13,
+    "expected_multiple_chunks": 243,
+    "suspicious_duplicate": 5
+  },
+  "content_preservation": {
+    "status": "PASS (0 documents lost, 100% raw text preserved; 4 articles merged into prior chunks)",
+    "documents_preserved": "15 / 15 (100%)",
+    "raw_text_loss": "0.0%",
+    "per_document_report": {
+      "BLLD_2019": {
+        "raw_char_len": 190926,
+        "raw_words": 41747,
+        "raw_articles_count": 227,
+        "v2_chunks_count": 288,
+        "v2_articles_count": 219,
+        "matched_articles": 226,
+        "missing_articles": [
+          "Điều 125. Áp dụng hình thức xử lý kỷ luật sa thải"
+        ],
+        "has_appendix_raw": false,
+        "v2_appendix_chunks_count": 1
+      },
+      "ND_12_2022": {
+        "raw_char_len": 180920,
+        "raw_words": 39447,
+        "raw_articles_count": 71,
+        "v2_chunks_count": 233,
+        "v2_articles_count": 64,
+        "matched_articles": 71,
+        "missing_articles": [],
+        "has_appendix_raw": false,
+        "v2_appendix_chunks_count": 0
+      },
+      "ND_135_2020": {
+        "raw_char_len": 36896,
+        "raw_words": 5840,
+        "raw_articles_count": 9,
+        "v2_chunks_count": 22,
+        "v2_articles_count": 9,
+        "matched_articles": 9,
+        "missing_articles": [],
+        "has_appendix_raw": true,
+        "v2_appendix_chunks_count": 4
+      },
+      "ND_145_2020": {
+        "raw_char_len": 193977,
+        "raw_words": 42808,
+        "raw_articles_count": 118,
+        "v2_chunks_count": 257,
+        "v2_articles_count": 115,
+        "matched_articles": 117,
+        "missing_articles": [
+          "Điều 85. Quy định của"
+        ],
+        "has_appendix_raw": true,
+        "v2_appendix_chunks_count": 0
+      },
+      "ND_152_2020": {
+        "raw_char_len": 126644,
+        "raw_words": 22660,
+        "raw_articles_count": 34,
+        "v2_chunks_count": 107,
+        "v2_articles_count": 30,
+        "matched_articles": 34,
+        "missing_articles": [],
+        "has_appendix_raw": true,
+        "v2_appendix_chunks_count": 7
+      },
+      "ND_219_2025": {
+        "raw_char_len": 72063,
+        "raw_words": 14950,
+        "raw_articles_count": 37,
+        "v2_chunks_count": 89,
+        "v2_articles_count": 35,
+        "matched_articles": 36,
+        "missing_articles": [
+          "Điều 6. Quy định về giao dịch"
+        ],
+        "has_appendix_raw": false,
+        "v2_appendix_chunks_count": 5
+      },
+      "ND_70_2023": {
+        "raw_char_len": 46804,
+        "raw_words": 8903,
+        "raw_articles_count": 3,
+        "v2_chunks_count": 38,
+        "v2_articles_count": 3,
+        "matched_articles": 3,
+        "missing_articles": [],
+        "has_appendix_raw": false,
+        "v2_appendix_chunks_count": 7
+      },
+      "ND_74_2024": {
+        "raw_char_len": 15690,
+        "raw_words": 3298,
+        "raw_articles_count": 5,
+        "v2_chunks_count": 15,
+        "v2_articles_count": 5,
+        "matched_articles": 5,
+        "missing_articles": [],
+        "has_appendix_raw": true,
+        "v2_appendix_chunks_count": 0
+      },
+      "ND_83_2022": {
+        "raw_char_len": 7168,
+        "raw_words": 1553,
+        "raw_articles_count": 6,
+        "v2_chunks_count": 9,
+        "v2_articles_count": 6,
+        "matched_articles": 6,
+        "missing_articles": [],
+        "has_appendix_raw": false,
+        "v2_appendix_chunks_count": 0
+      },
+      "ND_99_2024": {
+        "raw_char_len": 3519,
+        "raw_words": 746,
+        "raw_articles_count": 3,
+        "v2_chunks_count": 3,
+        "v2_articles_count": 3,
+        "matched_articles": 3,
+        "missing_articles": [],
+        "has_appendix_raw": false,
+        "v2_appendix_chunks_count": 0
+      },
+      "QD_992_2025": {
+        "raw_char_len": 5847,
+        "raw_words": 1242,
+        "raw_articles_count": 5,
+        "v2_chunks_count": 6,
+        "v2_articles_count": 5,
+        "matched_articles": 5,
+        "missing_articles": [],
+        "has_appendix_raw": false,
+        "v2_appendix_chunks_count": 0
+      },
+      "TT_09_2020": {
+        "raw_char_len": 42411,
+        "raw_words": 8156,
+        "raw_articles_count": 13,
+        "v2_chunks_count": 35,
+        "v2_articles_count": 12,
+        "matched_articles": 12,
+        "missing_articles": [
+          "Điều 13.\nHiệu lực thi hành"
+        ],
+        "has_appendix_raw": true,
+        "v2_appendix_chunks_count": 4
+      },
+      "TT_10_2020": {
+        "raw_char_len": 34591,
+        "raw_words": 7340,
+        "raw_articles_count": 14,
+        "v2_chunks_count": 37,
+        "v2_articles_count": 14,
+        "matched_articles": 13,
+        "missing_articles": [
+          "Điều 76 của Bộ luật Lao động ."
+        ],
+        "has_appendix_raw": true,
+        "v2_appendix_chunks_count": 0
+      },
+      "TT_11_2020": {
+        "raw_char_len": 567247,
+        "raw_words": 110430,
+        "raw_articles_count": 3,
+        "v2_chunks_count": 209,
+        "v2_articles_count": 3,
+        "matched_articles": 3,
+        "missing_articles": [],
+        "has_appendix_raw": false,
+        "v2_appendix_chunks_count": 44
+      },
+      "TT_20_2023": {
+        "raw_char_len": 11974,
+        "raw_words": 2555,
+        "raw_articles_count": 12,
+        "v2_chunks_count": 15,
+        "v2_articles_count": 12,
+        "matched_articles": 12,
+        "missing_articles": [],
+        "has_appendix_raw": false,
+        "v2_appendix_chunks_count": 0
+      }
+    },
+    "false_citation_merges": [
+      {
+        "doc": "BLLD_2019",
+        "merged_article": "Điều 125",
+        "into_chunk": "BLLD_2019_Điều124_163",
+        "reason": "Title starts with 'Áp dụng' which matched re_ref_suffix in _is_citation_article"
+      },
+      {
+        "doc": "ND_145_2020",
+        "merged_article": "Điều 85",
+        "into_chunk": "ND_145_2020_Điều84",
+        "reason": "Title starts with 'Quy định' which matched re_ref_suffix"
+      },
+      {
+        "doc": "ND_219_2025",
+        "merged_article": "Điều 6",
+        "into_chunk": "ND_219_2025_Điều5",
+        "reason": "Title starts with 'Quy định' which matched re_ref_suffix"
+      }
+    ],
+    "premature_appendix_boundary": [
+      {
+        "doc": "TT_09_2020",
+        "affected_article": "Điều 13",
+        "placed_in": "TT_09_2020_Phụ_lục_P1_18",
+        "reason": "In-text appendix reference triggered appendix_lines early"
+      }
+    ]
+  },
+  "source_traceability": {
+    "document_id_coverage_pct": 100.0,
+    "source_url_coverage_pct": 100.0,
+    "parent_document_coverage_pct": 100.0,
+    "parent_article_coverage_pct": 78.72,
+    "traceability_verdict": "PASS (100% of chunks trace to source document and official URL)"
+  },
+  "rag_readiness": {
+    "dense_retrieval": {
+      "score": "HIGH",
+      "comment": "All chunks bounded <= 800 tokens (median 207), perfectly fits bge-m3, text-embedding-3-small, and multilingual BERT."
+    },
+    "hybrid_retrieval": {
+      "score": "HIGH",
+      "comment": "Full legal titles, prefixes, and keywords retained for BM25 and keyword search."
+    },
+    "reranking": {
+      "score": "HIGH",
+      "comment": "Chunk sizes (<=800 tokens) align with standard CrossEncoder / reranker context limits (512-1024 tokens)."
+    },
+    "legal_citation": {
+      "score": "MEDIUM_HIGH",
+      "comment": "Citation metadata (Văn bản, Điều, Khoản, Điểm) accurate for 99.3% of articles; 3 merged articles cite prior article."
+    },
+    "corrective_rag": {
+      "score": "HIGH",
+      "comment": "Rich metadata allows evaluator agents to filter by doc_type, issue_date, and source."
+    },
+    "agentic_rag": {
+      "score": "HIGH",
+      "comment": "Clean JSON/JSONL format with structured schema allows tool-using agents to navigate document hierarchy."
+    }
+  },
+  "embedding_readiness": {
+    "can_start_embedding_immediately": false,
+    "recommendation": "FIX DATASET FIRST (Fix regex false-merge in _is_citation_article before embedding to avoid dirty citation metadata)",
+    "blockers": [
+      {
+        "issue": "False citation merge in chunker_v2._is_citation_article",
+        "severity": "HIGH",
+        "affected_articles": [
+          "BLLD_2019 Điều 125",
+          "ND_145_2020 Điều 85",
+          "ND_219_2025 Điều 6"
+        ],
+        "blocking": true,
+        "description": "re_ref_suffix matches 'áp dụng' and 'quy định', wrongly classifying genuine articles as citation fragments and merging them into prior chunks."
+      },
+      {
+        "issue": "Premature appendix boundary in TT_09_2020",
+        "severity": "MEDIUM",
+        "affected_articles": [
+          "TT_09_2020 Điều 13"
+        ],
+        "blocking": false,
+        "description": "Điều 13 (Hiệu lực thi hành) was grouped into appendix chunks with article_number=null."
+      },
+      {
+        "issue": "Isolated heading chunk TT_10_2020_Điều142_1",
+        "severity": "LOW",
+        "affected_articles": [
+          "TT_10_2020 Điều 142"
+        ],
+        "blocking": false,
+        "description": "Ghost chunk of 4 tokens containing only 'Điều 142 .' from a raw line-break citation."
+      },
+      {
+        "issue": "Micro table headers in ND_135_2020",
+        "severity": "LOW",
+        "affected_articles": [
+          "ND_135_2020 Phụ lục I & II"
+        ],
+        "blocking": false,
+        "description": "Chunks 13 and 17 contain only 'Lao động nam' (4 tokens)."
+      }
+    ]
+  },
+  "issues": [
+    {
+      "id": "ISSUE-01",
+      "severity": "HIGH",
+      "type": "FALSE_CITATION_MERGE",
+      "description": "BLLD_2019 Điều 125 ('Áp dụng hình thức xử lý kỷ luật sa thải') merged into Điều 124 chunk because title matched 'áp dụng' in re_ref_suffix.",
+      "count": 3,
+      "example": "BLLD_2019_Điều124_163 contains text of Điều 125",
+      "blocking": true
+    },
+    {
+      "id": "ISSUE-02",
+      "severity": "MEDIUM",
+      "type": "PREMATURE_APPENDIX_BOUNDARY",
+      "description": "TT_09_2020 Điều 13 ('Hiệu lực thi hành') grouped into appendix chunks with article_number=null.",
+      "count": 1,
+      "example": "TT_09_2020_Phụ_lục_P1_18",
+      "blocking": false
+    },
+    {
+      "id": "ISSUE-03",
+      "severity": "LOW",
+      "type": "GHOST_HEADING_CHUNK",
+      "description": "TT_10_2020 contains ghost chunk 'Điều 142 .' (4 tokens) parsed from line-wrapped citation.",
+      "count": 1,
+      "example": "TT_10_2020_Điều142_1",
+      "blocking": false
+    },
+    {
+      "id": "ISSUE-04",
+      "severity": "LOW",
+      "type": "MICRO_TABLE_HEADER_CHUNK",
+      "description": "ND_135_2020 has isolated 4-token chunks containing only 'Lao động nam'.",
+      "count": 2,
+      "example": "ND_135_2020_Phụ_lục_Lao_động_nam_1_13",
+      "blocking": false
+    }
+  ],
+  "final_verdict": {
+    "status": "READY WITH WARNINGS",
+    "recommendation": "FIX DATASET FIRST",
+    "summary": "Dataset V2 represents a monumental improvement over V1: 0 monster chunks (max 800 vs 142,533 tokens in V1), 0 ID collisions (100% unique), 100% document preservation, and clean schema validation. However, due to an overly broad regex in _is_citation_article, Điều 125 of BLLD 2019 (Disciplinary Discharge) and 2 other articles were falsely merged into previous chunks. It is strongly recommended to fix this regex before computing vector embeddings."
+  }
+}

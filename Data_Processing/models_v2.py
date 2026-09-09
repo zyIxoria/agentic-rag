@@ -6,6 +6,8 @@ Hỗ trợ Phụ lục (Appendix), Bảng biểu (Table), Mẫu đơn/Biểu m�
 """
 
 from __future__ import annotations
+import re
+from datetime import datetime
 from enum import Enum
 from typing import Optional, Any, Dict
 from pydantic import BaseModel, Field, field_validator, model_validator, ConfigDict
@@ -30,15 +32,19 @@ class LegalStatus(str, Enum):
     HET_HIEU_LUC_MOT_PHAN = "Hết hiệu lực một phần"
     CHUA_CO_HIEU_LUC = "Chưa có hiệu lực"
     NGUNG_HIEU_LUC = "Ngưng hiệu lực"
+    UNKNOWN = "unknown"
 
 
 class ContentType(str, Enum):
-    """Phân loại bản chất nội dung của Chunk."""
-    TEXT = "text"              # Đoạn văn bản quy phạm thông thường
-    ARTICLE_TITLE = "article_title"  # Tiêu đề điều luật
-    TABLE = "table"            # Bảng số liệu, danh mục phân loại
-    FORM = "form"              # Mẫu tờ khai, đơn từ hành chính
-    APPENDIX = "appendix"      # Nội dung phụ lục quy định chi tiết
+    """Phân loại bản chất nội dung của Chunk theo TASK DATA-05."""
+    ARTICLE = "article"        # Nội dung cấp Điều (hoặc Điều không chia khoản)
+    CLAUSE = "clause"          # Nội dung cấp Khoản
+    POINT = "point"            # Nội dung cấp Điểm
+    APPENDIX = "appendix"      # Nội dung Phụ lục quy định chi tiết
+    TABLE = "table"            # Bảng biểu số liệu, ma trận phân loại, danh mục dạng bảng
+    FORM = "form"              # Mẫu tờ khai, đơn từ, hợp đồng mẫu
+    OTHER = "other"            # Phần mở đầu (preamble), lời chứng, hiệu lực thi hành, khác
+    TEXT = "article"           # Alias tương thích ngược với code cũ
 
 
 # Danh sách các chuỗi rác/placeholder cần chuẩn hóa thành None (null)
@@ -156,7 +162,11 @@ class LegalChunkV2(BaseModel):
         description="Nội dung văn bản quy phạm hoặc bảng biểu/phụ lục của chunk."
     )
 
-    # 7. Thuộc tính Hiệu lực Pháp lý (Validity Metadata)
+    # 7. Thuộc tính Hiệu lực & Ban hành Pháp lý (Validity & Issuance Metadata)
+    issue_date: Optional[str] = Field(
+        default=None,
+        description="Ngày ban hành văn bản (VD: DD/MM/YYYY hoặc ISO YYYY-MM-DD). null nếu chưa rõ."
+    )
     effective_from: Optional[str] = Field(
         default=None,
         description="Ngày bắt đầu có hiệu lực (ISO YYYY-MM-DD hoặc DD/MM/YYYY). null nếu chưa rõ."
@@ -166,8 +176,8 @@ class LegalChunkV2(BaseModel):
         description="Ngày hết hiệu lực. Mặc định null nếu đang còn hiệu lực."
     )
     legal_status: Optional[str] = Field(
-        default=None,
-        description="Tình trạng hiệu lực (VD: Còn hiệu lực, Hết hiệu lực). null nếu chưa rõ."
+        default="unknown",
+        description="Tình trạng hiệu lực (VD: Còn hiệu lực, Hết hiệu lực, unknown). Mặc định 'unknown' nếu chưa rõ."
     )
 
     # 8. Nguồn gốc & Liên kết Phân cấp (Provenance & Lineage)
@@ -192,8 +202,8 @@ class LegalChunkV2(BaseModel):
 
     # 9. Các trường mở rộng hỗ trợ Phụ lục & Bảng biểu (Optional Extensions)
     content_type: Optional[str] = Field(
-        default=ContentType.TEXT.value,
-        description="Phân loại nội dung: text, table, form, appendix."
+        default=ContentType.ARTICLE.value,
+        description="Phân loại nội dung: article, clause, point, appendix, table, form, other."
     )
     appendix_number: Optional[str] = Field(
         default=None,
@@ -237,7 +247,6 @@ class LegalChunkV2(BaseModel):
         "section_number", "section_title",
         "article_number", "article_title",
         "clause_number", "point_number",
-        "effective_from", "effective_to", "legal_status",
         "source_url", "parent_article",
         "appendix_number", "appendix_title",
         mode="before"
@@ -246,6 +255,64 @@ class LegalChunkV2(BaseModel):
     def normalize_optional_metadata(cls, v: Any) -> Optional[str]:
         """Chuẩn hóa mọi giá trị rỗng hoặc placeholder ('Chưa xác định', '0', 'Đã biết') về null."""
         return sanitize_null(v)
+
+    @field_validator("legal_status", mode="before")
+    @classmethod
+    def normalize_legal_status(cls, v: Any) -> str:
+        """Chuẩn hóa legal_status: nếu thiếu, rỗng, placeholder hoặc 'unknown' thì trả về 'unknown'."""
+        if v is None:
+            return "unknown"
+        if isinstance(v, str):
+            clean = v.strip()
+            if not clean or clean.lower() in NULL_PLACEHOLDERS:
+                return "unknown"
+            return clean
+        return str(v)
+
+    @field_validator("issue_date", "effective_from", "effective_to", mode="before")
+    @classmethod
+    def validate_dates(cls, v: Any, info: Any) -> Optional[str]:
+        """Kiểm tra và chuẩn hóa ngày tháng pháp lý.
+        
+        Quy tắc:
+        - Không convert text status (VD: 'Đã biết', 'Chưa xác định') thành date.
+        - Trả về None nếu giá trị rỗng, None, hoặc là placeholder.
+        - Kiểm tra tính hợp lệ lịch thực tế (ngày trong tháng, năm nhuận).
+        - Chấp nhận định dạng DD/MM/YYYY hoặc YYYY-MM-DD.
+        - Báo lỗi ValueError nếu chuỗi ngày không hợp lệ.
+        """
+        if v is None:
+            return None
+        if isinstance(v, str):
+            s = v.strip()
+            if not s or s.lower() in NULL_PLACEHOLDERS:
+                return None
+
+            # Kiểm tra định dạng DD/MM/YYYY hoặc D/M/YYYY
+            m1 = re.match(r'^(\d{1,2})/(\d{1,2})/(\d{4})$', s)
+            if m1:
+                d, m, y = int(m1.group(1)), int(m1.group(2)), int(m1.group(3))
+                try:
+                    datetime(y, m, d)
+                    return f"{d:02d}/{m:02d}/{y:04d}"
+                except ValueError:
+                    raise ValueError(f"Ngày không hợp lệ trong trường '{info.field_name}': '{v}'")
+
+            # Kiểm tra định dạng ISO YYYY-MM-DD
+            m2 = re.match(r'^(\d{4})-(\d{1,2})-(\d{1,2})$', s)
+            if m2:
+                y, m, d = int(m2.group(1)), int(m2.group(2)), int(m2.group(3))
+                try:
+                    datetime(y, m, d)
+                    return f"{y:04d}-{m:02d}-{d:02d}"
+                except ValueError:
+                    raise ValueError(f"Ngày không hợp lệ trong trường '{info.field_name}': '{v}'")
+
+            raise ValueError(
+                f"Định dạng ngày không hợp lệ trong trường '{info.field_name}': '{v}' (yêu cầu DD/MM/YYYY hoặc YYYY-MM-DD)"
+            )
+
+        raise ValueError(f"Kiểu dữ liệu ngày không hợp lệ trong trường '{info.field_name}': {type(v)}")
 
     @model_validator(mode="after")
     def validate_hierarchy_consistency(self) -> LegalChunkV2:

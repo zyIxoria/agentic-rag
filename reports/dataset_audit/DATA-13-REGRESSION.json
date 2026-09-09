@@ -1,0 +1,103 @@
+{
+  "audit_metadata": {
+    "task_id": "DATA-13",
+    "task_name": "FIX ARTICLE FALSE-MERGE & APPENDIX BOUNDARY",
+    "timestamp": "2026-09-09T07:51:00Z",
+    "status": "PASS",
+    "version": "Dataset V2.1"
+  },
+  "comparison": {
+    "before": {
+      "documents": 15,
+      "chunks": 1385,
+      "unique_chunk_ids": 1385,
+      "duplicate_ids": 0,
+      "min_tokens": 4,
+      "max_tokens": 800,
+      "median_tokens": 210.0,
+      "avg_tokens": 264.4,
+      "under_50_tokens": 36,
+      "under_100_tokens": 147,
+      "over_800_tokens": 0,
+      "article_errors_count": 3,
+      "appendix_errors_count": 1,
+      "ghost_heading_count": 1,
+      "micro_table_headers_count": 1
+    },
+    "after": {
+      "documents": 15,
+      "chunks": 1390,
+      "unique_chunk_ids": 1390,
+      "duplicate_ids": 0,
+      "min_tokens": 26,
+      "max_tokens": 800,
+      "median_tokens": 211,
+      "avg_tokens": 264.75,
+      "under_50_tokens": 33,
+      "under_100_tokens": 145,
+      "over_800_tokens": 0,
+      "article_errors_count": 0,
+      "appendix_errors_count": 0,
+      "ghost_heading_count": 0,
+      "micro_table_headers_count": 0
+    }
+  },
+  "specific_fixes": [
+    {
+      "issue": "BLLD 2019 Điều 125",
+      "category": "BLOCKING_ARTICLE_FALSE_MERGE",
+      "before": "False-merge into Điều 124 chunk BLLD_2019_Điều124_163",
+      "after": "2 standalone chunks with article_number='Điều 125', article_title='Áp dụng hình thức xử lý kỷ luật sa thải'",
+      "status": "PASS"
+    },
+    {
+      "issue": "ND 145/2020 Điều 85",
+      "category": "BLOCKING_ARTICLE_FALSE_MERGE",
+      "before": "False-merge into Điều 84 chunk ND_145_2020_Điều84_169",
+      "after": "2 standalone chunks with article_number='Điều 85', article_title='Quy định của người sử dụng lao động về phòng, chống quấy rối tình dục tại nơi làm việc'",
+      "status": "PASS"
+    },
+    {
+      "issue": "ND 219/2025 Điều 6",
+      "category": "BLOCKING_ARTICLE_FALSE_MERGE",
+      "before": "False-merge into Điều 5 chunk ND_219_2025_Điều5_7",
+      "after": "2 standalone chunks with article_number='Điều 6', article_title='Quy định về giao dịch điện tử trong cấp, cấp lại, gia hạn giấy phép lao động và giấy xác nhận không thuộc diện cấp giấy phép lao động'",
+      "status": "PASS"
+    },
+    {
+      "issue": "TT 09/2020 Điều 13",
+      "category": "MEDIUM_APPENDIX_FALSE_CLASSIFICATION",
+      "before": "Classified as appendix with content_type='appendix', article_number=null due to in-text Phụ lục reference in Điều 12",
+      "after": "2 standalone chunks with content_type='clause'/'point', article_number='Điều 13', article_title='Hiệu lực thi hành', chapter_number='Chương V'",
+      "status": "PASS"
+    },
+    {
+      "issue": "TT 10/2020 Điều 142",
+      "category": "LOW_GHOST_HEADING",
+      "before": "Ghost heading chunk 'Điều 142 .' (4 tokens) created from line-wrapped reference phrase",
+      "after": "Ghost chunk eliminated (count=0), citation text preserved inside containing Điều 1 chunk",
+      "status": "PASS"
+    },
+    {
+      "issue": "ND 135/2020 Lao động nam",
+      "category": "LOW_MICRO_TABLE_HEADER",
+      "before": "Isolated 4-token micro table-header chunks 'Lao động nam'",
+      "after": "Buffered into preamble and attached to table content, standalone micro header eliminated (count=0)",
+      "status": "PASS"
+    }
+  ],
+  "verification_results": {
+    "dataset_v2_unit_tests": "123/123 PASSED",
+    "data_13_regression_tests": "7/7 PASSED",
+    "total_tests_passing": "130/130 PASSED",
+    "duplicate_ids": 0,
+    "monster_chunks": 0,
+    "legal_text_loss": 0,
+    "deterministic_rebuild": {
+      "is_deterministic": true,
+      "json_sha256": "e48c6a3bece6819a0e25da8d985c8391ec162561c985e26d69dc3d13f2c87d92",
+      "jsonl_sha256": "bcd6d0f05b0239b6250a6aa30e93d27093599d6da08bf80344cfd3a8ce834265"
+    }
+  },
+  "verdict": "PASS"
+}
