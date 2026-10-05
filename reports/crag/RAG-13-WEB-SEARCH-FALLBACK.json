@@ -1,0 +1,22 @@
+{
+  "task": "RAG-13",
+  "name": "Build Query Transformation & Web Search Fallback",
+  "status": "COMPLETED",
+  "modules_created": [
+    "CRAG/transformation/schema.py",
+    "CRAG/transformation/query_rewriter.py",
+    "CRAG/transformation/__init__.py",
+    "CRAG/search/schema.py",
+    "CRAG/search/base.py",
+    "CRAG/search/mock_searcher.py",
+    "CRAG/search/web_searcher.py",
+    "CRAG/search/__init__.py"
+  ],
+  "unit_tests": {
+    "test_file": "tests/crag/test_web_search_fallback.py",
+    "total_tests": 6,
+    "passed": 6,
+    "failed": 0,
+    "execution_time_seconds": 0.001
+  }
+}

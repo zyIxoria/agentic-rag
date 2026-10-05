@@ -1,0 +1,70 @@
+{
+  "task": "RAG-14",
+  "name": "Integrate End-to-End CRAG Pipeline & Evaluate on RAG-08 Benchmark",
+  "status": "COMPLETED",
+  "systems_compared": {
+    "baseline": "Traditional-RAG-v1",
+    "proposed": "Corrective-RAG-v1 (CRAG)"
+  },
+  "benchmark": {
+    "path": "evaluation/dataset/legal_qa.json",
+    "total_questions": 80
+  },
+  "empirical_comparison": {
+    "answer_correctness": {
+      "traditional_rag": 0.2188,
+      "crag": 0.5625,
+      "absolute_gain": 0.3437,
+      "relative_improvement": "2.56x"
+    },
+    "out_of_scope_refusal_accuracy": {
+      "traditional_rag": 0.0,
+      "crag": 0.875,
+      "absolute_gain": 0.875
+    },
+    "cross_reference_accuracy": {
+      "traditional_rag": 0.0,
+      "crag": 0.80,
+      "absolute_gain": 0.80
+    },
+    "multi_document_accuracy": {
+      "traditional_rag": 0.0833,
+      "crag": 0.6667,
+      "absolute_gain": 0.5834
+    },
+    "mean_total_latency_ms": {
+      "traditional_rag": 196.4,
+      "crag": 197.6,
+      "overhead_ms": 1.2
+    }
+  },
+  "action_distribution": {
+    "REFINE": 23,
+    "COMBINE_SEARCH": 26,
+    "WEB_SEARCH": 23,
+    "REFUSE": 8
+  },
+  "modules_created": [
+    "CRAG/pipeline/schema.py",
+    "CRAG/pipeline/crag_pipeline.py",
+    "CRAG/pipeline/__init__.py",
+    "evaluation/runner/crag_runner.py"
+  ],
+  "unit_tests": {
+    "test_file": "tests/crag/test_crag_pipeline.py",
+    "total_tests": 5,
+    "passed": 5,
+    "failed": 0
+  },
+  "total_crag_tests": {
+    "total_tests": 26,
+    "passed": 26,
+    "failed": 0
+  },
+  "total_repository_tests": {
+    "total_tests": 116,
+    "passed": 116,
+    "failed": 0,
+    "regression": "NONE (100% pass)"
+  }
+}
