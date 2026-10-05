@@ -1,0 +1,323 @@
+{
+  "task_id": "RAG-00",
+  "task_name": "INSPECT EXISTING PROJECT & FREEZE TRADITIONAL RAG BASELINE ARCHITECTURE",
+  "project": "Nghiên cứu cơ chế điều phối thích ứng trong hệ thống Agentic RAG tích hợp Corrective RAG hỗ trợ tra cứu pháp luật lao động Việt Nam",
+  "status": "PASS",
+  "date": "2026-09-09",
+  "auditor": "Antigravity AI Pair Programmer",
+  "architecture_version": "Traditional-RAG-Baseline-v1.0",
+  "frozen": true,
+
+  "dataset_specification": {
+    "dataset_name": "Legal Dataset V2.1 (Post DATA-13 Regression)",
+    "json_path": "Data_Processing/output_v2/legal_dataset_v2.json",
+    "json_sha256": "e48c6a3bece6819a0e25da8d985c8391ec162561c985e26d69dc3d13f2c87d92",
+    "jsonl_path": "Data_Processing/output_v2/legal_dataset_v2.jsonl",
+    "jsonl_sha256": "bcd6d0f05b0239b6250a6aa30e93d27093599d6da08bf80344cfd3a8ce834265",
+    "build_metadata_path": "Data_Processing/output_v2/build_metadata.json",
+    "total_documents": 15,
+    "total_chunks": 1390,
+    "unique_chunk_ids": 1390,
+    "id_collisions": 0,
+    "collision_rate_percent": 0.0,
+    "monster_chunks_over_800_tokens": 0,
+    "token_metrics": {
+      "min_tokens": 26,
+      "max_tokens": 800,
+      "avg_tokens": 264.75,
+      "median_tokens": 211.0,
+      "distribution": {
+        "under_100_tokens": 145,
+        "under_100_tokens_pct": 10.43,
+        "100_to_350_tokens": 987,
+        "100_to_350_tokens_pct": 71.01,
+        "350_to_800_tokens": 258,
+        "350_to_800_tokens_pct": 18.56,
+        "over_800_tokens": 0,
+        "over_800_tokens_pct": 0.0
+      }
+    },
+    "content_field": "content",
+    "schema_fields_count": 21,
+    "schema_fields": [
+      "chunk_id",
+      "document_id",
+      "document_number",
+      "document_title",
+      "document_type",
+      "chapter_number",
+      "chapter_title",
+      "section_number",
+      "section_title",
+      "article_number",
+      "article_title",
+      "clause_number",
+      "point_number",
+      "content",
+      "effective_from",
+      "effective_to",
+      "legal_status",
+      "source_url",
+      "parent_document",
+      "parent_article",
+      "chunk_index"
+    ],
+    "hierarchy_metadata_fields": {
+      "chapter": ["chapter_number", "chapter_title"],
+      "section": ["section_number", "section_title"],
+      "article": ["article_number", "article_title", "parent_article"],
+      "clause": ["clause_number"],
+      "point": ["point_number"]
+    },
+    "provenance_metadata_fields": [
+      "document_id",
+      "document_number",
+      "document_title",
+      "document_type",
+      "source_url",
+      "parent_document",
+      "chunk_index"
+    ],
+    "temporal_validity_metadata_fields": [
+      "effective_from",
+      "effective_to",
+      "legal_status"
+    ]
+  },
+
+  "existing_project_analysis": {
+    "inspected_paths": [
+      "Data_Processing/output_v2/",
+      "Data_Processing/models_v2.py",
+      "Data_Processing/schema_v2.py",
+      "Data_Processing/config_v2.py",
+      "Data_Processing/test_*.py",
+      "KhoaLuan_Crawler/",
+      "reports/dataset_audit/"
+    ],
+    "runtime_rag_code_exists": false,
+    "existing_llm_wrappers": null,
+    "existing_vector_store": null,
+    "existing_retriever": null,
+    "python_version": "3.13.0",
+    "hardware": {
+      "gpu": "NVIDIA GeForce RTX 5060 Laptop GPU",
+      "vram_mb": 8151,
+      "cuda_driver": "581.91",
+      "cuda_version": "13.0"
+    },
+    "discovered_api_keys": [
+      "OPENAI_API_KEY",
+      "GEMINI_API_KEY"
+    ],
+    "reusable_modules": [
+      {
+        "module": "Data_Processing/models_v2.py",
+        "symbols": ["LegalChunkV2", "DocumentType", "LegalStatus", "ContentType", "sanitize_null"],
+        "purpose": "Load and model records from legal_dataset_v2.json, validate chunk typing, sanitize nulls for vector DB ingestion."
+      },
+      {
+        "module": "Data_Processing/schema_v2.py",
+        "symbols": ["validate_chunk", "validate_dataset"],
+        "purpose": "Validate dataset chunks integrity prior to indexing."
+      },
+      {
+        "module": "Data_Processing/config_v2.py",
+        "symbols": ["ChunkerConfigV2.count_tokens", "ChunkerConfigV2.tokens_to_words"],
+        "purpose": "Provide deterministic token counting for context budgeting without external tokenizer dependencies."
+      },
+      {
+        "module": "Data_Processing/output_v2/",
+        "symbols": ["legal_dataset_v2.json", "legal_dataset_v2.jsonl"],
+        "purpose": "Single Source of Truth frozen corpus for vector store indexing."
+      }
+    ],
+    "new_modules_required": [
+      "rag/config.py",
+      "rag/schema.py",
+      "rag/prompt.py",
+      "rag/embedding/base.py",
+      "rag/embedding/bge_provider.py",
+      "rag/embedding/openai_provider.py",
+      "rag/vectorstore/base.py",
+      "rag/vectorstore/chroma_store.py",
+      "rag/retriever/base.py",
+      "rag/retriever/dense_retriever.py",
+      "rag/llm/base.py",
+      "rag/llm/openai_llm.py",
+      "rag/llm/gemini_llm.py",
+      "rag/context_builder.py",
+      "rag/citation.py",
+      "rag/pipeline.py",
+      "rag/indexer.py"
+    ]
+  },
+
+  "llm_specification": {
+    "default_provider": "openai",
+    "default_model": "gpt-4o-mini",
+    "fallback_provider": "gemini",
+    "fallback_model": "gemini-1.5-flash",
+    "temperature": 0.0,
+    "max_output_tokens": 1024,
+    "inference_type": "Cloud API",
+    "api_key_env_var": "OPENAI_API_KEY",
+    "fallback_api_key_env_var": "GEMINI_API_KEY",
+    "strict_refusal_mechanism": true,
+    "refusal_message": "Căn cứ theo tài liệu pháp luật lao động được cung cấp, hiện chưa có đủ thông tin quy định cụ thể về vấn đề này."
+  },
+
+  "embedding_specification": {
+    "primary_recommendation": {
+      "model_id": "BAAI/bge-m3",
+      "provider": "bge-m3",
+      "type": "Local GPU Transformer",
+      "dimension": 1024,
+      "max_sequence_length": 8192,
+      "languages": ["vi", "multilingual"],
+      "device": "cuda",
+      "dependencies": ["sentence-transformers", "torch"],
+      "expected_vram_mb": 2200,
+      "suitability": "Optimal for Vietnamese legal text up to 800 tokens, 1024 dimensions, state-of-the-art dense retrieval."
+    },
+    "fallback_recommendation": {
+      "model_id": "text-embedding-3-small",
+      "provider": "openai",
+      "type": "Cloud API",
+      "dimension": 1536,
+      "max_sequence_length": 8191,
+      "languages": ["vi", "multilingual"],
+      "device": "cloud",
+      "dependencies": ["openai"],
+      "suitability": "Zero local VRAM footprint, high throughput."
+    }
+  },
+
+  "vector_db_specification": {
+    "engine": "ChromaDB",
+    "version_spec": ">=0.5.0",
+    "mode": "PersistentClient",
+    "storage_path": "data/chroma_db",
+    "collection_name": "legal_labor_baseline_bge_m3",
+    "distance_metric": "cosine",
+    "indexing_algorithm": "HNSW",
+    "metadata_handling": "Sanitize null values to empty strings or omit keys to ensure ChromaDB compatibility."
+  },
+
+  "configuration_design": {
+    "config_class": "rag.config.RAGConfig",
+    "parameters": {
+      "DATASET_PATH": "Data_Processing/output_v2/legal_dataset_v2.json",
+      "VECTOR_DB_TYPE": "chromadb",
+      "VECTOR_DB_PATH": "data/chroma_db",
+      "COLLECTION_NAME": "legal_labor_baseline_bge_m3",
+      "EMBEDDING_PROVIDER": "bge-m3",
+      "EMBEDDING_MODEL": "BAAI/bge-m3",
+      "EMBEDDING_DIMENSION": 1024,
+      "EMBEDDING_DEVICE": "cuda",
+      "EMBEDDING_BATCH_SIZE": 64,
+      "TOP_K": 5,
+      "SIMILARITY_THRESHOLD": 0.45,
+      "LLM_PROVIDER": "openai",
+      "LLM_MODEL": "gpt-4o-mini",
+      "TEMPERATURE": 0.0,
+      "MAX_OUTPUT_TOKENS": 1024,
+      "MAX_CONTEXT_TOKENS": 3000
+    }
+  },
+
+  "strict_baseline_scope": {
+    "linear_pipeline_steps": [
+      "User Question",
+      "Query Preparation (trim, validate length)",
+      "Dense Vector Embedding",
+      "Dense Vector Retrieval (ChromaDB HNSW Cosine Search)",
+      "Top-K Chunks Selection (K=5, similarity threshold filter)",
+      "Context Builder (metadata headers, token budgeting max 3000 tokens)",
+      "LLM Generation (temperature=0.0, strict Vietnamese legal prompt)",
+      "Answer + Citation / Strict Refusal Output"
+    ],
+    "explicit_non_goals": [
+      "BM25 / Sparse Keyword Retrieval",
+      "Hybrid Search (RRF / Weighted Fusion)",
+      "Cross-Encoder Reranker (bge-reranker, Cohere)",
+      "Query Rewriting / Expansion",
+      "Multi-Query Generation",
+      "HyDE (Hypothetical Document Embeddings)",
+      "Query Decomposition",
+      "Corrective RAG (CRAG)",
+      "Document Relevance Grader",
+      "Retrieval Retry Loops",
+      "Self-Reflection / Self-Correction",
+      "Agent / ReAct Agent / Tool Use",
+      "Agentic Workflow",
+      "Adaptive Router / Complexity Classifier",
+      "Retrieval Confidence Router"
+    ]
+  },
+
+  "implementation_milestones": [
+    {
+      "step": "RAG-01",
+      "name": "SETUP DEPENDENCIES & ENVIRONMENT",
+      "description": "Establish environment, create requirements-rag.txt, verify PyTorch CUDA on RTX 5060, install chromadb."
+    },
+    {
+      "step": "RAG-02",
+      "name": "CONFIGURATION & SCHEMA IMPLEMENTATION",
+      "description": "Implement rag/config.py and rag/schema.py, integrating with Data_Processing/models_v2.py."
+    },
+    {
+      "step": "RAG-03",
+      "name": "EMBEDDING PROVIDER IMPLEMENTATION",
+      "description": "Build EmbeddingProvider abstract interface, implement BAAI/bge-m3 (CUDA) and OpenAI fallback, write unit tests."
+    },
+    {
+      "step": "RAG-04",
+      "name": "CHROMADB VECTOR STORE & INDEXING CLI",
+      "description": "Implement ChromaVectorStore, create batch indexer rag/indexer.py, ingest 1,390 chunks of Dataset V2.1."
+    },
+    {
+      "step": "RAG-05",
+      "name": "DENSE RETRIEVER IMPLEMENTATION",
+      "description": "Implement DenseRetriever with Top-K and similarity threshold filtering, add retrieval unit tests."
+    },
+    {
+      "step": "RAG-06",
+      "name": "CONTEXT BUILDER & TOKEN BUDGET MANAGER",
+      "description": "Implement structured context builder, enforce 3,000 token budget, preserve legal article/clause headers."
+    },
+    {
+      "step": "RAG-07",
+      "name": "LEGAL PROMPT ENGINEERING & LLM WRAPPER",
+      "description": "Design Vietnamese legal system instructions and refusal logic, implement OpenAI and Gemini LLM providers."
+    },
+    {
+      "step": "RAG-08",
+      "name": "CITATION FORMATTER & GROUNDING VALIDATOR",
+      "description": "Implement legal citation parser, verify alignment with retrieved chunks, format source URLs."
+    },
+    {
+      "step": "RAG-09",
+      "name": "END-TO-END TRADITIONAL RAG PIPELINE",
+      "description": "Assemble TraditionalRAGPipeline orchestrating all components, write comprehensive E2E tests and CLI entry point."
+    },
+    {
+      "step": "RAG-10",
+      "name": "BASELINE EVALUATION & FREEZING",
+      "description": "Evaluate on benchmark query set (Hit@K, MRR, Faithfulness), produce baseline report and freeze metrics."
+    }
+  ],
+
+  "acceptance_criteria": {
+    "dataset_v2_1_path_identified": true,
+    "existing_code_inspected": true,
+    "reusable_modules_identified": true,
+    "no_duplicate_architecture": true,
+    "traditional_rag_scope_frozen": true,
+    "no_corrective_adaptive_components": true,
+    "interfaces_defined": true,
+    "rag_01_to_10_documented": true,
+    "no_runtime_rag_implemented": true
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "task": "RAG-08",
+  "title": "Build Legal RAG Evaluation Dataset",
+  "status": "COMPLETED",
+  "timestamp": "2026-09-16T08:08:10+07:00",
+  "dataset_path": "evaluation/dataset/legal_qa.json",
+  "schema_path": "evaluation/dataset/schema.json",
+  "metrics": {
+    "total_questions": 80,
+    "target_range": "80-120 (minimum 50)",
+    "answerable_questions": 64,
+    "refusal_questions": 16,
+    "refusal_percentage": 20.0,
+    "category_distribution": {
+      "single_article": 18,
+      "single_doc_multi_chunk": 12,
+      "multi_document": 12,
+      "cross_reference": 10,
+      "complex_conditions": 12,
+      "insufficient_evidence": 8,
+      "out_of_scope": 8
+    },
+    "gold_sources": {
+      "total_gold_chunk_references": 295,
+      "traceable_gold_chunks": 295,
+      "traceability_rate": 1.0,
+      "avg_chunks_per_answerable_question": 4.61,
+      "unique_documents_referenced": 15,
+      "corpus_coverage": [
+        "BLLD_2019",
+        "ND_145_2020",
+        "ND_12_2022",
+        "ND_135_2020",
+        "ND_152_2020",
+        "ND_219_2025",
+        "ND_70_2023",
+        "ND_74_2024",
+        "ND_83_2022",
+        "ND_99_2024",
+        "QD_992_2025",
+        "TT_09_2020",
+        "TT_10_2020",
+        "TT_11_2020",
+        "TT_20_2023"
+      ]
+    }
+  },
+  "quality_control": {
+    "schema_validation": "PASS (JSON Schema Draft-07)",
+    "duplicate_question_ids": 0,
+    "duplicate_questions": 0,
+    "unverified_synthetic_questions": 0,
+    "grounding_check": "100% grounded in Legal Corpus Dataset V2.1",
+    "evaluation_test_suite": "PASS (7/7 tests passed in evaluation/tests/test_dataset.py)",
+    "regression_test_suite": "PASS (81/81 tests passed in tests/)"
+  },
+  "benchmark_reusability": {
+    "frozen_specification": true,
+    "supported_architectures": [
+      "Traditional RAG Baseline",
+      "Corrective RAG (CRAG)",
+      "Adaptive Agentic RAG"
+    ],
+    "invariable_across_systems": true
+  }
+}

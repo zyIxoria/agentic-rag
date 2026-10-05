@@ -1,0 +1,163 @@
+{
+  "task_id": "RAG-07",
+  "task_name": "INTEGRATE END-TO-END TRADITIONAL RAG BASELINE",
+  "status": "PASS",
+  "date": "2026-09-16",
+  "auditor": "Antigravity AI Pair Programmer",
+  "pipeline_specification": {
+    "pipeline_name": "Traditional RAG Baseline Pipeline v1.0",
+    "architecture_flow": [
+      "User Question",
+      "DenseTopKRetriever (all-MiniLM-L6-v2, 384d, ChromaDB Cosine)",
+      "Pre-Generation Refusal Guard (empty check, similarity threshold >= 0.45)",
+      "LegalContextBuilder (Stable [SOURCE N], max 3000 tokens)",
+      "LLM Legal Generator (temperature=0.0, strict Vietnamese legal answering)",
+      "CitationResolver (Metadata-derived legal citations, REJECT INVALID CITATION)",
+      "Post-Generation Refusal Guard (citation validation, refusal consistency)",
+      "RAGResponse (Final Answer + Citations + Latency Metrics)"
+    ],
+    "strict_linear_constraints": {
+      "query_rewriting": false,
+      "query_decomposition": false,
+      "reranking": false,
+      "retrieval_retry_loops": false,
+      "dynamic_k": false,
+      "external_agents": false,
+      "execution_count_per_question": "Exactly 1 query embedding, 1 dense retrieval, 1 context build, max 1 LLM generation"
+    }
+  },
+  "benchmark_metrics": {
+    "questions_tested": 7,
+    "successful": 5,
+    "refused": 2,
+    "success_rate_percent": 71.43,
+    "refusal_rate_percent": 28.57,
+    "average_latency_ms": 343.6,
+    "median_latency_ms": 319.91,
+    "average_retrieval_latency_ms": 341.62,
+    "average_generation_latency_ms": 0.84,
+    "average_context_latency_ms": 0.39,
+    "average_citation_latency_ms": 0.70
+  },
+  "unit_tests_summary": {
+    "pipeline_tests": {
+      "total": 9,
+      "passed": 9,
+      "failed": 0,
+      "tests": [
+        { "name": "test_01_simple_legal_question", "status": "PASS" },
+        { "name": "test_02_article_specific_question", "status": "PASS" },
+        { "name": "test_03_multi_source_question", "status": "PASS" },
+        { "name": "test_04_irrelevant_question", "status": "PASS" },
+        { "name": "test_05_insufficient_evidence_refusal", "status": "PASS" },
+        { "name": "test_06_citation_validation", "status": "PASS" },
+        { "name": "test_07_end_to_end_failure_handling", "status": "PASS" },
+        { "name": "test_08_no_hidden_intelligence_verification", "status": "PASS" },
+        { "name": "test_09_latency_metrics_measurable", "status": "PASS" }
+      ]
+    },
+    "project_total_tests": 81,
+    "project_total_passed": 81,
+    "project_total_failed": 0
+  },
+  "benchmark_queries": [
+    {
+      "id": "Q1",
+      "query": "Người sử dụng lao động có quyền sa thải người lao động trong những trường hợp nào?",
+      "type": "legal_specific",
+      "refused": false,
+      "citations_count": 3,
+      "citations": [
+        "[Bộ luật Lao động 2019 số 45/2019/QH14, Điều 37]",
+        "[Bộ luật Lao động 2019 số 45/2019/QH14, Điều 48, Khoản 2]",
+        "[Nghị định số 145/2020/NĐ-CP QUY ĐỊNH CHI TIẾT VÀ HƯỚNG DẪN THI HÀNH MỘT SỐ ĐIỀU CỦA BỘ LUẬT LAO ĐỘNG VỀ ĐIỀU KIỆN LAO ĐỘNG VÀ QUAN HỆ LAO ĐỘNG, Điều 5, Khoản 6]"
+      ],
+      "latency_ms": 520.73,
+      "retrieval_latency_ms": 517.29,
+      "generation_latency_ms": 1.44
+    },
+    {
+      "id": "Q2",
+      "query": "Thời giờ làm việc bình thường của người lao động được quy định như thế nào?",
+      "type": "legal_general",
+      "refused": false,
+      "citations_count": 3,
+      "citations": [
+        "[Thông tư số 09/2020/TT-BLĐTBXH QUY ĐỊNH CHI TIẾT VÀ HƯỚNG DẪN THI HÀNH MỘT SỐ ĐIỀU CỦA BỘ LUẬT LAO ĐỘNG VỀ LAO ĐỘNG CHƯA THÀNH NIÊN, Điều 3, Khoản 6]",
+        "[Bộ luật Lao động 2019 số 45/2019/QH14, Điều 158]",
+        "[Bộ luật Lao động 2019 số 45/2019/QH14, Điều 166]"
+      ],
+      "latency_ms": 320.21,
+      "retrieval_latency_ms": 317.89,
+      "generation_latency_ms": 0.93
+    },
+    {
+      "id": "Q3",
+      "query": "Mức đóng bảo hiểm thất nghiệp của người sử dụng lao động theo Luật Việc làm?",
+      "type": "legal_specific",
+      "refused": false,
+      "citations_count": 5,
+      "citations": [
+        "[Bộ luật Lao động 2019 số 45/2019/QH14, Điều 158]",
+        "[Thông tư số 20/2023/TT-BCT QUY ĐỊNH VỀ THỜI GIỜ LÀM VIỆC, THỜI GIỜ NGHỈ NGƠI ĐỐI VỚI NGƯỜI LAO ĐỘNG LÀM CÁC CÔNG VIỆC CÓ TÍNH CHẤT ĐẶC BIỆT TRONG LĨNH VỰC THĂM DÒ, KHAI THÁC DẦU KHÍ TRÊN BIỂN, Điều 10]",
+        "[Nghị định số 145/2020/NĐ-CP QUY ĐỊNH CHI TIẾT VÀ HƯỚNG DẪN THI HÀNH MỘT SỐ ĐIỀU CỦA BỘ LUẬT LAO ĐỘNG VỀ ĐIỀU KIỆN LAO ĐỘNG VÀ QUAN HỆ LAO ĐỘNG, Điều 4, Khoản 1]",
+        "[Bộ luật Lao động 2019 số 45/2019/QH14, Điều 40]",
+        "[Nghị định số 145/2020/NĐ-CP QUY ĐỊNH CHI TIẾT VÀ HƯỚNG DẪN THI HÀNH MỘT SỐ ĐIỀU CỦA BỘ LUẬT LAO ĐỘNG VỀ ĐIỀU KIỆN LAO ĐỘNG VÀ QUAN HỆ LAO ĐỘNG, Điều 2]"
+      ],
+      "latency_ms": 307.26,
+      "retrieval_latency_ms": 304.54,
+      "generation_latency_ms": 0.99
+    },
+    {
+      "id": "Q4",
+      "query": "Thời gian nghỉ thai sản của lao động nữ khi sinh con?",
+      "type": "legal_specific",
+      "refused": false,
+      "citations_count": 1,
+      "citations": [
+        "[Bộ luật Lao động 2019 số 45/2019/QH14, Điều 139, Khoản 1 đến Khoản 2]"
+      ],
+      "latency_ms": 328.71,
+      "retrieval_latency_ms": 327.27,
+      "generation_latency_ms": 0.69
+    },
+    {
+      "id": "Q5",
+      "query": "Thủ tục đăng ký bảo hộ nhãn hiệu quốc tế theo Thỏa ước Madrid?",
+      "type": "irrelevant_domain",
+      "refused": true,
+      "citations_count": 0,
+      "citations": [],
+      "latency_ms": 295.53,
+      "retrieval_latency_ms": 294.76,
+      "generation_latency_ms": 0.4
+    },
+    {
+      "id": "Q6",
+      "query": "Cách mua vé xem giải bóng đá Ngoại hạng Anh mùa giải 2026?",
+      "type": "completely_irrelevant",
+      "refused": true,
+      "citations_count": 0,
+      "citations": [],
+      "latency_ms": 319.91,
+      "retrieval_latency_ms": 318.93,
+      "generation_latency_ms": 0.52
+    },
+    {
+      "id": "Q7",
+      "query": "Người lao động có được tạm hoãn thực hiện hợp đồng lao động khi đi nghĩa vụ quân sự không?",
+      "type": "legal_article",
+      "refused": false,
+      "citations_count": 4,
+      "citations": [
+        "[Bộ luật Lao động 2019 số 45/2019/QH14, Điều 5, Khoản 2]",
+        "[Bộ luật Lao động 2019 số 45/2019/QH14, Điều 31]",
+        "[Bộ luật Lao động 2019 số 45/2019/QH14, Điều 177, Khoản 4 đến Khoản 5]",
+        "[Bộ luật Lao động 2019 số 45/2019/QH14, Điều 42, Khoản 2]"
+      ],
+      "latency_ms": 312.85,
+      "retrieval_latency_ms": 310.65,
+      "generation_latency_ms": 0.94
+    }
+  ]
+}

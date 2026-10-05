@@ -1,0 +1,80 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "LegalRAGEvaluationDatasetSchema",
+  "description": "JSON Schema định nghĩa cấu trúc chuẩn cho bộ dữ liệu đánh giá đối chuẩn Legal RAG Benchmark (TASK RAG-08).",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": [
+      "question_id",
+      "question",
+      "category",
+      "gold_sources",
+      "reference_answer",
+      "requires_refusal"
+    ],
+    "properties": {
+      "question_id": {
+        "type": "string",
+        "pattern": "^Q\\d{3}$",
+        "description": "Mã định danh duy nhất của câu hỏi (VD: 'Q001', 'Q080')"
+      },
+      "question": {
+        "type": "string",
+        "minLength": 10,
+        "description": "Nội dung câu hỏi pháp lý của người dùng"
+      },
+      "category": {
+        "type": "string",
+        "enum": [
+          "single_article",
+          "single_doc_multi_chunk",
+          "multi_document",
+          "cross_reference",
+          "complex_conditions",
+          "insufficient_evidence",
+          "out_of_scope"
+        ],
+        "description": "Phân loại câu hỏi theo 7 nhóm đánh giá chuẩn"
+      },
+      "gold_sources": {
+        "type": "array",
+        "description": "Danh sách các nguồn căn cứ pháp lý vàng đối chiếu trực tiếp từ Dataset V2.1",
+        "items": {
+          "type": "object",
+          "required": [
+            "document_id",
+            "article_number",
+            "chunk_ids"
+          ],
+          "properties": {
+            "document_id": {
+              "type": "string",
+              "description": "Mã định danh văn bản pháp luật trong Dataset V2.1 (VD: 'BLLD_2019', 'ND_145_2020')"
+            },
+            "article_number": {
+              "type": ["string", "null"],
+              "description": "Số hiệu Điều luật liên quan (VD: 'Điều 125')"
+            },
+            "chunk_ids": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "description": "Danh sách các chunk_id chính xác trong Dataset V2.1 chứa bằng chứng trả lời"
+            }
+          }
+        }
+      },
+      "reference_answer": {
+        "type": "string",
+        "minLength": 10,
+        "description": "Câu trả lời chuẩn mực dựa 100% trên căn cứ pháp lý trong dataset (hoặc câu từ chối chuẩn khi requires_refusal=true)"
+      },
+      "requires_refusal": {
+        "type": "boolean",
+        "description": "True nếu câu hỏi thiếu căn cứ (insufficient_evidence) hoặc ngoài phạm vi (out_of_scope) cần từ chối"
+      }
+    }
+  }
+}

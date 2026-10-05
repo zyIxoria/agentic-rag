@@ -1,0 +1,147 @@
+{
+  "freeze_metadata": {
+    "baseline_name": "Traditional RAG Baseline",
+    "baseline_version": "Traditional-RAG-v1",
+    "status": "FROZEN",
+    "frozen_at": "2026-09-16T11:23:40+0700",
+    "purpose": "Official Thesis Baseline Benchmark across Traditional RAG, Corrective RAG (CRAG), and Adaptive Agentic RAG"
+  },
+  "frozen_architecture_specification": {
+    "pipeline_flow": "Question -> Dense Retrieval -> Pre-Guard -> Context Builder -> LLM Generator -> Citation Resolver -> Post-Guard -> RAGResponse",
+    "retrieval": {
+      "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+      "dimension": 384,
+      "distance_metric": "cosine",
+      "top_k": 5,
+      "similarity_threshold": 0.45,
+      "corpus_size": 1390,
+      "collection_name": "legal_labor_baseline_minilm"
+    },
+    "context": {
+      "max_tokens": 3000,
+      "source_label_format": "[SOURCE N]"
+    },
+    "generation": {
+      "generator": "MockLegalGenerator / Conservative Legal Engine",
+      "temperature": 0.0,
+      "refusal_message": "Không tìm thấy đủ căn cứ pháp lý trong dữ liệu được cung cấp để đưa ra kết luận đáng tin cậy."
+    },
+    "citation": {
+      "format": "[Tên văn bản, Điều X]",
+      "replace_in_text": true,
+      "append_footnotes": true
+    }
+  },
+  "frozen_benchmark_results": {
+    "recall@5_chunk": 0.1431,
+    "recall@5_article": 0.2109,
+    "mrr_chunk": 0.1932,
+    "hit_rate@5": 0.2969,
+    "answer_correctness_rate": 0.5,
+    "strict_answer_correctness": 0.2656,
+    "faithfulness_rate": 0.9375,
+    "unsupported_claim_rate": 0.0625,
+    "citation_accuracy": 0.3438,
+    "citation_coverage": 1.0,
+    "citation_precision": 0.1305,
+    "invalid_citation_rate": 0.0427,
+    "refusal_accuracy": 0.4375,
+    "false_answer_rate": 0.5625,
+    "false_refusal_rate": 0.0,
+    "mean_latency_ms": 291.46,
+    "p95_latency_ms": 305.46,
+    "mean_input_tokens": 611.0,
+    "mean_output_tokens": 1087.0,
+    "token_usage_note": "N/A (Local / Mock Engine - Token counts estimated via subword ratio)"
+  },
+  "frozen_category_breakdown": {
+    "single_article": {
+      "count": 18,
+      "type": "answerable",
+      "answer_correctness_rate": 0.3889,
+      "strict_correctness_rate": 0.3889,
+      "faithfulness_rate": 0.9444,
+      "unsupported_claim_rate": 0.0556,
+      "citation_coverage": 1.0,
+      "citation_accuracy": 0.3889,
+      "false_refusal_rate": 0.0,
+      "mean_latency_ms": 304.42,
+      "median_latency_ms": 292.49,
+      "p95_latency_ms": 499.18
+    },
+    "single_doc_multi_chunk": {
+      "count": 12,
+      "type": "answerable",
+      "answer_correctness_rate": 0.5833,
+      "strict_correctness_rate": 0.3333,
+      "faithfulness_rate": 0.9167,
+      "unsupported_claim_rate": 0.0833,
+      "citation_coverage": 1.0,
+      "citation_accuracy": 0.4167,
+      "false_refusal_rate": 0.0,
+      "mean_latency_ms": 296.54,
+      "median_latency_ms": 296.31,
+      "p95_latency_ms": 305.46
+    },
+    "multi_document": {
+      "count": 12,
+      "type": "answerable",
+      "answer_correctness_rate": 0.5833,
+      "strict_correctness_rate": 0.1667,
+      "faithfulness_rate": 1.0,
+      "unsupported_claim_rate": 0.0,
+      "citation_coverage": 1.0,
+      "citation_accuracy": 0.25,
+      "false_refusal_rate": 0.0,
+      "mean_latency_ms": 285.37,
+      "median_latency_ms": 287.4,
+      "p95_latency_ms": 296.55
+    },
+    "cross_reference": {
+      "count": 10,
+      "type": "answerable",
+      "answer_correctness_rate": 0.6,
+      "strict_correctness_rate": 0.3,
+      "faithfulness_rate": 1.0,
+      "unsupported_claim_rate": 0.0,
+      "citation_coverage": 1.0,
+      "citation_accuracy": 0.4,
+      "false_refusal_rate": 0.0,
+      "mean_latency_ms": 295.27,
+      "median_latency_ms": 297.03,
+      "p95_latency_ms": 317.93
+    },
+    "complex_conditions": {
+      "count": 12,
+      "type": "answerable",
+      "answer_correctness_rate": 0.4167,
+      "strict_correctness_rate": 0.0833,
+      "faithfulness_rate": 0.8333,
+      "unsupported_claim_rate": 0.1667,
+      "citation_coverage": 1.0,
+      "citation_accuracy": 0.25,
+      "false_refusal_rate": 0.0,
+      "mean_latency_ms": 286.3,
+      "median_latency_ms": 284.62,
+      "p95_latency_ms": 309.04
+    },
+    "insufficient_evidence": {
+      "count": 8,
+      "type": "refusal",
+      "refusal_accuracy": 0.0,
+      "false_answer_rate": 1.0,
+      "mean_latency_ms": 280.1,
+      "median_latency_ms": 280.52,
+      "p95_latency_ms": 296.15
+    },
+    "out_of_scope": {
+      "count": 8,
+      "type": "refusal",
+      "refusal_accuracy": 0.875,
+      "false_answer_rate": 0.125,
+      "mean_latency_ms": 278.11,
+      "median_latency_ms": 277.13,
+      "p95_latency_ms": 288.01
+    }
+  }
+}

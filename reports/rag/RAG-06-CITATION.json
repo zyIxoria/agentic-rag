@@ -1,0 +1,150 @@
+{
+  "task_id": "RAG-06",
+  "task_name": "IMPLEMENT CITATION MAPPING & REFUSAL GUARD",
+  "status": "PASS",
+  "date": "2026-09-16",
+  "auditor": "Antigravity AI Pair Programmer",
+  "citation_specifications": {
+    "citation_format_pattern": "[Document Title, Article, Clause, Point]",
+    "metadata_derived_only": true,
+    "no_invented_metadata": true,
+    "in_text_replacement": true,
+    "footnote_reference_list": true,
+    "url_mapping": true,
+    "supported_fields": [
+      "document_title",
+      "document_number",
+      "article_number",
+      "article_title",
+      "clause_number",
+      "point_number",
+      "source_url",
+      "chunk_id"
+    ]
+  },
+  "invalid_citation_handling": {
+    "rule": "REJECT INVALID CITATION",
+    "behavior": "Phát hiện mọi nhãn nguồn không tồn tại trong metadata (VD: [SOURCE 99]), loại bỏ thẻ khỏi văn bản, ghi nhận vào invalid_citations, và tuyệt đối không tạo metadata giả mạo.",
+    "fake_citation_rendered": false
+  },
+  "refusal_guard_specifications": {
+    "pre_generation_guard": {
+      "enabled": true,
+      "empty_retrieval_refusal": true,
+      "similarity_threshold": 0.45,
+      "token_saving_mechanism": "Chặn sớm trước khi gọi LLM Generator khi retrieval rỗng hoặc độ tương đồng quá thấp"
+    },
+    "post_generation_guard": {
+      "enabled": true,
+      "reject_unsupported_answers": true,
+      "all_invalid_citations_refusal": true
+    },
+    "refusal_message": "Không tìm thấy đủ căn cứ pháp lý trong dữ liệu được cung cấp để đưa ra kết luận đáng tin cậy."
+  },
+  "unit_tests_matrix": {
+    "citation_tests": {
+      "total": 8,
+      "passed": 8,
+      "failed": 0,
+      "tests": [
+        { "name": "test_01_valid_single_citation", "status": "PASS" },
+        { "name": "test_02_multiple_citations", "status": "PASS" },
+        { "name": "test_03_invalid_source_number", "status": "PASS" },
+        { "name": "test_04_missing_source_in_mapping", "status": "PASS" },
+        { "name": "test_05_citation_metadata_correctness", "status": "PASS" },
+        { "name": "test_06_url_mapping", "status": "PASS" },
+        { "name": "test_07_in_text_replacement_and_footnotes", "status": "PASS" },
+        { "name": "test_08_no_invented_citation", "status": "PASS" }
+      ]
+    },
+    "guard_tests": {
+      "total": 7,
+      "passed": 7,
+      "failed": 0,
+      "tests": [
+        { "name": "test_01_empty_retrieval_refusal", "status": "PASS" },
+        { "name": "test_02_low_similarity_threshold_refusal", "status": "PASS" },
+        { "name": "test_03_valid_retrieval_pass", "status": "PASS" },
+        { "name": "test_04_post_generation_all_invalid_citations", "status": "PASS" },
+        { "name": "test_05_post_generation_valid_citations_pass", "status": "PASS" },
+        { "name": "test_06_standard_refusal_message", "status": "PASS" },
+        { "name": "test_07_configurable_threshold", "status": "PASS" }
+      ]
+    },
+    "project_total_tests": 72,
+    "project_total_passed": 72,
+    "project_total_failed": 0
+  },
+  "pipeline_simulation": [
+    {
+      "query_id": "SIM-01",
+      "query": "Người sử dụng lao động có quyền sa thải người lao động trong những trường hợp nào?",
+      "pre_guard_passed": true,
+      "refused": false,
+      "valid_citations": [
+        "[Bộ luật Lao động 2019 số 45/2019/QH14, Điều 37]",
+        "[Bộ luật Lao động 2019 số 45/2019/QH14, Điều 48, Khoản 2]",
+        "[Nghị định số 145/2020/NĐ-CP QUY ĐỊNH CHI TIẾT VÀ HƯỚNG DẪN THI HÀNH MỘT SỐ ĐIỀU CỦA BỘ LUẬT LAO ĐỘNG VỀ ĐIỀU KIỆN LAO ĐỘNG VÀ QUAN HỆ LAO ĐỘNG, Điều 5, Khoản 6]"
+      ],
+      "invalid_citations": [],
+      "latency_ms": 411.81
+    },
+    {
+      "query_id": "SIM-02",
+      "query": "Thời giờ làm việc bình thường của người lao động được quy định như thế nào?",
+      "pre_guard_passed": true,
+      "refused": false,
+      "valid_citations": [
+        "[Thông tư số 09/2020/TT-BLĐTBXH QUY ĐỊNH CHI TIẾT VÀ HƯỚNG DẪN THI HÀNH MỘT SỐ ĐIỀU CỦA BỘ LUẬT LAO ĐỘNG VỀ LAO ĐỘNG CHƯA THÀNH NIÊN, Điều 3, Khoản 6]",
+        "[Bộ luật Lao động 2019 số 45/2019/QH14, Điều 158]",
+        "[Bộ luật Lao động 2019 số 45/2019/QH14, Điều 166]"
+      ],
+      "invalid_citations": [],
+      "latency_ms": 257.32
+    },
+    {
+      "query_id": "SIM-03",
+      "query": "Mức đóng bảo hiểm thất nghiệp của người sử dụng lao động theo Luật Việc làm?",
+      "pre_guard_passed": true,
+      "refused": false,
+      "valid_citations": [
+        "[Bộ luật Lao động 2019 số 45/2019/QH14, Điều 158]",
+        "[Thông tư số 20/2023/TT-BCT QUY ĐỊNH VỀ THỜI GIỜ LÀM VIỆC, THỜI GIỜ NGHỈ NGƠI ĐỐI VỚI NGƯỜI LAO ĐỘNG LÀM CÁC CÔNG VIỆC CÓ TÍNH CHẤT ĐẶC BIỆT TRONG LĨNH VỰC THĂM DÒ, KHAI THÁC DẦU KHÍ TRÊN BIỂN, Điều 10]",
+        "[Nghị định số 145/2020/NĐ-CP QUY ĐỊNH CHI TIẾT VÀ HƯỚNG DẪN THI HÀNH MỘT SỐ ĐIỀU CỦA BỘ LUẬT LAO ĐỘNG VỀ ĐIỀU KIỆN LAO ĐỘNG VÀ QUAN HỆ LAO ĐỘNG, Điều 4, Khoản 1]",
+        "[Bộ luật Lao động 2019 số 45/2019/QH14, Điều 40]",
+        "[Nghị định số 145/2020/NĐ-CP QUY ĐỊNH CHI TIẾT VÀ HƯỚNG DẪN THI HÀNH MỘT SỐ ĐIỀU CỦA BỘ LUẬT LAO ĐỘNG VỀ ĐIỀU KIỆN LAO ĐỘNG VÀ QUAN HỆ LAO ĐỘNG, Điều 2]"
+      ],
+      "invalid_citations": [],
+      "latency_ms": 244.78
+    },
+    {
+      "query_id": "SIM-04",
+      "query": "Thời gian nghỉ thai sản của lao động nữ khi sinh con?",
+      "pre_guard_passed": true,
+      "refused": false,
+      "valid_citations": [
+        "[Bộ luật Lao động 2019 số 45/2019/QH14, Điều 139, Khoản 1 đến Khoản 2]"
+      ],
+      "invalid_citations": [],
+      "latency_ms": 262.94
+    },
+    {
+      "query_id": "SIM-05",
+      "query": "Thủ tục đăng ký bảo hộ nhãn hiệu quốc tế theo Thỏa ước Madrid?",
+      "pre_guard_passed": true,
+      "refused": true,
+      "valid_citations": [],
+      "invalid_citations": [],
+      "latency_ms": 246.83
+    },
+    {
+      "query_id": "SIM-06",
+      "query": "Cách mua vé xem bóng đá Ngoại hạng Anh mùa giải 2026?",
+      "pre_guard_passed": true,
+      "refused": true,
+      "valid_citations": [],
+      "invalid_citations": [],
+      "latency_ms": 253.09
+    }
+  ]
+}
