@@ -1,0 +1,1704 @@
+{
+  "timestamp": "2026-10-05 21:59:09",
+  "classifier_name": "QueryComplexityClassifier",
+  "version": "1.0.0",
+  "golden_benchmark_metrics": {
+    "total_samples": 50,
+    "accuracy": 1.0,
+    "macro_f1": 1.0,
+    "complex_to_simple_error_rate": 0.0,
+    "complex_to_simple_count": 0,
+    "per_class": {
+      "SIMPLE": {
+        "tp": 20,
+        "fp": 0,
+        "fn": 0,
+        "support": 20,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "MODERATE": {
+        "tp": 15,
+        "fp": 0,
+        "fn": 0,
+        "support": 15,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "COMPLEX": {
+        "tp": 15,
+        "fp": 0,
+        "fn": 0,
+        "support": 15,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    "confusion_matrix": {
+      "classes": [
+        "SIMPLE",
+        "MODERATE",
+        "COMPLEX"
+      ],
+      "matrix": [
+        [
+          20,
+          0,
+          0
+        ],
+        [
+          0,
+          15,
+          0
+        ],
+        [
+          0,
+          0,
+          15
+        ]
+      ],
+      "interpretation": "Rows are True labels, Columns are Predicted labels"
+    }
+  },
+  "latency_statistics": {
+    "mean_ms": 0.579,
+    "median_ms": 0.319,
+    "p95_ms": 0.773,
+    "min_ms": 0.153,
+    "max_ms": 9.675
+  },
+  "determinism_consistency_pass": true,
+  "legal_qa_80_analysis": {
+    "total_questions": 80,
+    "category_distribution": {
+      "single_article": {
+        "SIMPLE": 10,
+        "MODERATE": 7,
+        "COMPLEX": 1,
+        "TOTAL": 18
+      },
+      "single_doc_multi_chunk": {
+        "SIMPLE": 7,
+        "MODERATE": 5,
+        "COMPLEX": 0,
+        "TOTAL": 12
+      },
+      "multi_document": {
+        "SIMPLE": 0,
+        "MODERATE": 1,
+        "COMPLEX": 11,
+        "TOTAL": 12
+      },
+      "cross_reference": {
+        "SIMPLE": 0,
+        "MODERATE": 3,
+        "COMPLEX": 7,
+        "TOTAL": 10
+      },
+      "complex_conditions": {
+        "SIMPLE": 0,
+        "MODERATE": 11,
+        "COMPLEX": 1,
+        "TOTAL": 12
+      },
+      "insufficient_evidence": {
+        "SIMPLE": 2,
+        "MODERATE": 3,
+        "COMPLEX": 3,
+        "TOTAL": 8
+      },
+      "out_of_scope": {
+        "SIMPLE": 8,
+        "MODERATE": 0,
+        "COMPLEX": 0,
+        "TOTAL": 8
+      }
+    },
+    "complex_categories_to_simple_count": 0,
+    "complex_categories_to_simple_rate": 0.0
+  },
+  "golden_sample_evaluations": [
+    {
+      "id": "SMP_01",
+      "query": "Thời giờ làm việc bình thường của người lao động được quy định tối đa bao nhiêu giờ trong một ngày?",
+      "gold": "SIMPLE",
+      "predicted": "SIMPLE",
+      "confidence": 0.94,
+      "strategy": "DIRECT_RAG",
+      "is_correct": true,
+      "reasons": [
+        "Câu hỏi đơn giản, tập trung vào 1 vấn đề pháp lý duy nhất, có thể xử lý bằng truy xuất trực tiếp."
+      ],
+      "latency_ms": 9.675
+    },
+    {
+      "id": "SMP_02",
+      "query": "Thời gian nghỉ giữa giờ trong ca làm việc bình thường là bao nhiêu phút?",
+      "gold": "SIMPLE",
+      "predicted": "SIMPLE",
+      "confidence": 0.94,
+      "strategy": "DIRECT_RAG",
+      "is_correct": true,
+      "reasons": [
+        "Câu hỏi đơn giản, tập trung vào 1 vấn đề pháp lý duy nhất, có thể xử lý bằng truy xuất trực tiếp."
+      ],
+      "latency_ms": 0.646
+    },
+    {
+      "id": "SMP_03",
+      "query": "Tuổi nghỉ hưu của người lao động trong điều kiện lao động bình thường?",
+      "gold": "SIMPLE",
+      "predicted": "SIMPLE",
+      "confidence": 0.94,
+      "strategy": "DIRECT_RAG",
+      "is_correct": true,
+      "reasons": [
+        "Câu hỏi đơn giản, tập trung vào 1 vấn đề pháp lý duy nhất, có thể xử lý bằng truy xuất trực tiếp."
+      ],
+      "latency_ms": 0.293
+    },
+    {
+      "id": "SMP_04",
+      "query": "Thời hạn của hợp đồng lao động xác định thời hạn tối đa là bao nhiêu tháng?",
+      "gold": "SIMPLE",
+      "predicted": "SIMPLE",
+      "confidence": 0.94,
+      "strategy": "DIRECT_RAG",
+      "is_correct": true,
+      "reasons": [
+        "Câu hỏi đơn giản, tập trung vào 1 vấn đề pháp lý duy nhất, có thể xử lý bằng truy xuất trực tiếp."
+      ],
+      "latency_ms": 0.401
+    },
+    {
+      "id": "SMP_05",
+      "query": "Mức lương tối thiểu vùng hiện nay do cơ quan nào công bố?",
+      "gold": "SIMPLE",
+      "predicted": "SIMPLE",
+      "confidence": 0.94,
+      "strategy": "DIRECT_RAG",
+      "is_correct": true,
+      "reasons": [
+        "Câu hỏi đơn giản, tập trung vào 1 vấn đề pháp lý duy nhất, có thể xử lý bằng truy xuất trực tiếp."
+      ],
+      "latency_ms": 0.252
+    },
+    {
+      "id": "SMP_06",
+      "query": "Người lao động được nghỉ bao nhiêu ngày khi kết hôn?",
+      "gold": "SIMPLE",
+      "predicted": "SIMPLE",
+      "confidence": 0.94,
+      "strategy": "DIRECT_RAG",
+      "is_correct": true,
+      "reasons": [
+        "Câu hỏi đơn giản, tập trung vào 1 vấn đề pháp lý duy nhất, có thể xử lý bằng truy xuất trực tiếp."
+      ],
+      "latency_ms": 0.221
+    },
+    {
+      "id": "SMP_07",
+      "query": "Tiền lương làm việc vào ban đêm được trả thêm ít nhất bao nhiêu phần trăm?",
+      "gold": "SIMPLE",
+      "predicted": "SIMPLE",
+      "confidence": 0.94,
+      "strategy": "DIRECT_RAG",
+      "is_correct": true,
+      "reasons": [
+        "Câu hỏi đơn giản, tập trung vào 1 vấn đề pháp lý duy nhất, có thể xử lý bằng truy xuất trực tiếp."
+      ],
+      "latency_ms": 0.295
+    },
+    {
+      "id": "SMP_08",
+      "query": "Định nghĩa về quấy rối tình dục tại nơi làm việc trong Bộ luật Lao động?",
+      "gold": "SIMPLE",
+      "predicted": "SIMPLE",
+      "confidence": 0.94,
+      "strategy": "DIRECT_RAG",
+      "is_correct": true,
+      "reasons": [
+        "Câu hỏi đơn giản, tập trung vào 1 vấn đề pháp lý duy nhất, có thể xử lý bằng truy xuất trực tiếp."
+      ],
+      "latency_ms": 0.308
+    },
+    {
+      "id": "SMP_09",
+      "query": "Hình thức xử lý kỷ luật kéo dài thời hạn nâng lương không quá bao nhiêu tháng?",
+      "gold": "SIMPLE",
+      "predicted": "SIMPLE",
+      "confidence": 0.94,
+      "strategy": "DIRECT_RAG",
+      "is_correct": true,
+      "reasons": [
+        "Câu hỏi đơn giản, tập trung vào 1 vấn đề pháp lý duy nhất, có thể xử lý bằng truy xuất trực tiếp."
+      ],
+      "latency_ms": 0.295
+    },
+    {
+      "id": "SMP_10",
+      "query": "Điều 125 Bộ luật Lao động 2019 quy định về nội dung gì?",
+      "gold": "SIMPLE",
+      "predicted": "SIMPLE",
+      "confidence": 0.94,
+      "strategy": "DIRECT_RAG",
+      "is_correct": true,
+      "reasons": [
+        "Câu hỏi đơn giản, tập trung vào 1 vấn đề pháp lý duy nhất, có thể xử lý bằng truy xuất trực tiếp."
+      ],
+      "latency_ms": 0.244
+    },
+    {
+      "id": "SMP_11",
+      "query": "Mức đóng bảo hiểm y tế của người lao động là bao nhiêu phần trăm?",
+      "gold": "SIMPLE",
+      "predicted": "SIMPLE",
+      "confidence": 0.94,
+      "strategy": "DIRECT_RAG",
+      "is_correct": true,
+      "reasons": [
+        "Câu hỏi đơn giản, tập trung vào 1 vấn đề pháp lý duy nhất, có thể xử lý bằng truy xuất trực tiếp."
+      ],
+      "latency_ms": 0.27
+    },
+    {
+      "id": "SMP_12",
+      "query": "Thời hiệu xử lý kỷ luật lao động tối đa là bao nhiêu tháng?",
+      "gold": "SIMPLE",
+      "predicted": "SIMPLE",
+      "confidence": 0.94,
+      "strategy": "DIRECT_RAG",
+      "is_correct": true,
+      "reasons": [
+        "Câu hỏi đơn giản, tập trung vào 1 vấn đề pháp lý duy nhất, có thể xử lý bằng truy xuất trực tiếp."
+      ],
+      "latency_ms": 0.246
+    },
+    {
+      "id": "SMP_13",
+      "query": "Hồ sơ đề nghị cấp giấy phép lao động nộp trước bao nhiêu ngày làm việc?",
+      "gold": "SIMPLE",
+      "predicted": "SIMPLE",
+      "confidence": 0.94,
+      "strategy": "DIRECT_RAG",
+      "is_correct": true,
+      "reasons": [
+        "Câu hỏi đơn giản, tập trung vào 1 vấn đề pháp lý duy nhất, có thể xử lý bằng truy xuất trực tiếp."
+      ],
+      "latency_ms": 0.288
+    },
+    {
+      "id": "SMP_14",
+      "query": "Thời giờ làm việc ban đêm được tính từ mấy giờ đến mấy giờ?",
+      "gold": "SIMPLE",
+      "predicted": "SIMPLE",
+      "confidence": 0.94,
+      "strategy": "DIRECT_RAG",
+      "is_correct": true,
+      "reasons": [
+        "Câu hỏi đơn giản, tập trung vào 1 vấn đề pháp lý duy nhất, có thể xử lý bằng truy xuất trực tiếp."
+      ],
+      "latency_ms": 0.228
+    },
+    {
+      "id": "SMP_15",
+      "query": "Ai có thẩm quyền công bố mức lương tối thiểu vùng?",
+      "gold": "SIMPLE",
+      "predicted": "SIMPLE",
+      "confidence": 0.94,
+      "strategy": "DIRECT_RAG",
+      "is_correct": true,
+      "reasons": [
+        "Câu hỏi đơn giản, tập trung vào 1 vấn đề pháp lý duy nhất, có thể xử lý bằng truy xuất trực tiếp."
+      ],
+      "latency_ms": 0.208
+    },
+    {
+      "id": "MOD_01",
+      "query": "Người lao động thử việc có được hưởng lương trong thời gian thử việc không?",
+      "gold": "MODERATE",
+      "predicted": "MODERATE",
+      "confidence": 0.88,
+      "strategy": "CRAG",
+      "is_correct": true,
+      "reasons": [
+        "Câu hỏi có điều kiện tình huống (nếu... thì, trường hợp...), cần thẩm định bằng chứng.",
+        "Câu hỏi đề cập 2 khía cạnh pháp lý liên đới trong cùng một văn bản.",
+        "Câu hỏi yêu cầu thẩm định điều kiện quyền lợi/nghĩa vụ pháp lý theo tình huống."
+      ],
+      "latency_ms": 0.221
+    },
+    {
+      "id": "MOD_02",
+      "query": "Trình tự, thủ tục các bước tiến hành xử lý kỷ luật sa thải người lao động theo quy định?",
+      "gold": "MODERATE",
+      "predicted": "MODERATE",
+      "confidence": 0.88,
+      "strategy": "CRAG",
+      "is_correct": true,
+      "reasons": [
+        "Câu hỏi về trình tự, thủ tục, hồ sơ nhiều bước, cần thu hồi và đối chiếu kiểm tra qua CRAG.",
+        "Câu hỏi đề cập 2 khía cạnh pháp lý liên đới trong cùng một văn bản."
+      ],
+      "latency_ms": 0.327
+    },
+    {
+      "id": "MOD_03",
+      "query": "Người lao động có quyền đơn phương chấm dứt hợp đồng lao động không cần báo trước trong trường hợp nào?",
+      "gold": "MODERATE",
+      "predicted": "MODERATE",
+      "confidence": 0.88,
+      "strategy": "CRAG",
+      "is_correct": true,
+      "reasons": [
+        "Câu hỏi có điều kiện tình huống (nếu... thì, trường hợp...), cần thẩm định bằng chứng.",
+        "Câu hỏi đề cập 2 khía cạnh pháp lý liên đới trong cùng một văn bản."
+      ],
+      "latency_ms": 0.391
+    },
+    {
+      "id": "MOD_04",
+      "query": "Thủ tục đăng ký nội quy lao động tại cơ quan chuyên môn về lao động cấp tỉnh gồm những gì?",
+      "gold": "MODERATE",
+      "predicted": "MODERATE",
+      "confidence": 0.88,
+      "strategy": "CRAG",
+      "is_correct": true,
+      "reasons": [
+        "Câu hỏi về trình tự, thủ tục, hồ sơ nhiều bước, cần thu hồi và đối chiếu kiểm tra qua CRAG."
+      ],
+      "latency_ms": 0.343
+    },
+    {
+      "id": "MOD_05",
+      "query": "Người lao động có được tạm hoãn thực hiện hợp đồng lao động khi phải thực hiện nghĩa vụ quân sự không?",
+      "gold": "MODERATE",
+      "predicted": "MODERATE",
+      "confidence": 0.88,
+      "strategy": "CRAG",
+      "is_correct": true,
+      "reasons": [
+        "Câu hỏi có điều kiện tình huống (nếu... thì, trường hợp...), cần thẩm định bằng chứng.",
+        "Câu hỏi yêu cầu thẩm định điều kiện quyền lợi/nghĩa vụ pháp lý theo tình huống."
+      ],
+      "latency_ms": 0.274
+    },
+    {
+      "id": "MOD_06",
+      "query": "Trong trường hợp người sử dụng lao động không trả lương đúng hạn thì người lao động có quyền gì?",
+      "gold": "MODERATE",
+      "predicted": "MODERATE",
+      "confidence": 0.88,
+      "strategy": "CRAG",
+      "is_correct": true,
+      "reasons": [
+        "Câu hỏi có điều kiện tình huống (nếu... thì, trường hợp...), cần thẩm định bằng chứng.",
+        "Câu hỏi yêu cầu thẩm định điều kiện quyền lợi/nghĩa vụ pháp lý theo tình huống."
+      ],
+      "latency_ms": 0.276
+    },
+    {
+      "id": "MOD_07",
+      "query": "Cho em hỏi ad ơi, người lao động bị đuổi việc thì công ty phải báo trước mấy ngày ạ?",
+      "gold": "MODERATE",
+      "predicted": "MODERATE",
+      "confidence": 0.88,
+      "strategy": "CRAG",
+      "is_correct": true,
+      "reasons": [
+        "Câu hỏi mang tính đàm thoại hoặc dùng từ đời thường, cần viết lại qua Query Rewriter."
+      ],
+      "latency_ms": 0.365
+    },
+    {
+      "id": "MOD_08",
+      "query": "Điều kiện để người sử dụng lao động được chuyển người lao động làm công việc khác so với hợp đồng lao động?",
+      "gold": "MODERATE",
+      "predicted": "MODERATE",
+      "confidence": 0.88,
+      "strategy": "CRAG",
+      "is_correct": true,
+      "reasons": [
+        "Câu hỏi yêu cầu thẩm định điều kiện quyền lợi/nghĩa vụ pháp lý theo tình huống."
+      ],
+      "latency_ms": 0.411
+    },
+    {
+      "id": "MOD_09",
+      "query": "Thời hạn giải quyết quyền lợi của người lao động kể từ ngày chấm dứt hợp đồng lao động?",
+      "gold": "MODERATE",
+      "predicted": "MODERATE",
+      "confidence": 0.88,
+      "strategy": "CRAG",
+      "is_correct": true,
+      "reasons": [
+        "Câu hỏi về trình tự, thủ tục, hồ sơ nhiều bước, cần thu hồi và đối chiếu kiểm tra qua CRAG.",
+        "Câu hỏi đề cập 2 khía cạnh pháp lý liên đới trong cùng một văn bản."
+      ],
+      "latency_ms": 0.321
+    },
+    {
+      "id": "MOD_10",
+      "query": "Quy trình xử lý tai nạn lao động tại cơ sở sản xuất kinh doanh gồm các bước nào?",
+      "gold": "MODERATE",
+      "predicted": "MODERATE",
+      "confidence": 0.88,
+      "strategy": "CRAG",
+      "is_correct": true,
+      "reasons": [
+        "Câu hỏi về trình tự, thủ tục, hồ sơ nhiều bước, cần thu hồi và đối chiếu kiểm tra qua CRAG."
+      ],
+      "latency_ms": 0.312
+    },
+    {
+      "id": "MOD_11",
+      "query": "Người lao động làm công việc nặng nhọc, độc hại được nghỉ hằng năm tăng thêm bao nhiêu ngày?",
+      "gold": "MODERATE",
+      "predicted": "MODERATE",
+      "confidence": 0.88,
+      "strategy": "CRAG",
+      "is_correct": true,
+      "reasons": [
+        "Câu hỏi đề cập 2 khía cạnh pháp lý liên đới trong cùng một văn bản."
+      ],
+      "latency_ms": 0.34
+    },
+    {
+      "id": "MOD_12",
+      "query": "Thủ tục cấp lại giấy phép lao động cho người lao động nước ngoài hết hạn?",
+      "gold": "MODERATE",
+      "predicted": "MODERATE",
+      "confidence": 0.88,
+      "strategy": "CRAG",
+      "is_correct": true,
+      "reasons": [
+        "Câu hỏi về trình tự, thủ tục, hồ sơ nhiều bước, cần thu hồi và đối chiếu kiểm tra qua CRAG."
+      ],
+      "latency_ms": 0.276
+    },
+    {
+      "id": "MOD_13",
+      "query": "Người sử dụng lao động có phải trả sổ bảo hiểm xã hội khi chấm dứt hợp đồng lao động?",
+      "gold": "MODERATE",
+      "predicted": "MODERATE",
+      "confidence": 0.88,
+      "strategy": "CRAG",
+      "is_correct": true,
+      "reasons": [
+        "Câu hỏi đề cập 2 khía cạnh pháp lý liên đới trong cùng một văn bản.",
+        "Câu hỏi yêu cầu thẩm định điều kiện quyền lợi/nghĩa vụ pháp lý theo tình huống."
+      ],
+      "latency_ms": 0.303
+    },
+    {
+      "id": "MOD_14",
+      "query": "Người lao động làm việc chưa đủ 12 tháng thì số ngày nghỉ hằng năm tính thế nào?",
+      "gold": "MODERATE",
+      "predicted": "MODERATE",
+      "confidence": 0.88,
+      "strategy": "CRAG",
+      "is_correct": true,
+      "reasons": [
+        "Câu hỏi có điều kiện tình huống (nếu... thì, trường hợp...), cần thẩm định bằng chứng.",
+        "Câu hỏi có yếu tố tính toán số liệu cần đối chiếu công thức qua CRAG."
+      ],
+      "latency_ms": 0.316
+    },
+    {
+      "id": "MOD_15",
+      "query": "Khi người lao động bị tạm giữ, tạm giam thì hợp đồng lao động có bị chấm dứt không?",
+      "gold": "MODERATE",
+      "predicted": "MODERATE",
+      "confidence": 0.88,
+      "strategy": "CRAG",
+      "is_correct": true,
+      "reasons": [
+        "Câu hỏi có điều kiện tình huống (nếu... thì, trường hợp...), cần thẩm định bằng chứng."
+      ],
+      "latency_ms": 0.256
+    },
+    {
+      "id": "CPX_01",
+      "query": "Người lao động nữ đang mang thai có được làm thêm giờ vào ban đêm không, và nếu được thì tiền lương được tính như thế nào?",
+      "gold": "COMPLEX",
+      "predicted": "COMPLEX",
+      "confidence": 0.92,
+      "strategy": "DECOMPOSITION_CRAG",
+      "is_correct": true,
+      "reasons": [
+        "Câu hỏi chứa nhiều câu hỏi con hoặc ghép nhiều vấn đề pháp lý phức tạp cần phân rã (Query Decomposition).",
+        "Câu hỏi yêu cầu tính toán số học phức hợp kết hợp nhiều điều kiện ràng buộc/thời điểm.",
+        "Câu hỏi bao quát 4 vấn đề pháp lý khác nhau cùng lúc."
+      ],
+      "latency_ms": 0.281
+    },
+    {
+      "id": "CPX_02",
+      "query": "So sánh quy định về thời giờ làm việc và làm thêm giờ giữa Bộ luật Lao động 2019 và Nghị định 145/2020/NĐ-CP?",
+      "gold": "COMPLEX",
+      "predicted": "COMPLEX",
+      "confidence": 0.92,
+      "strategy": "DECOMPOSITION_CRAG",
+      "is_correct": true,
+      "reasons": [
+        "Câu hỏi đa văn bản quy phạm pháp luật (phát hiện: Bộ luật Lao động 2019, Nghị định 145/2020/NĐ-CP).",
+        "Câu hỏi chứa nhiều câu hỏi con hoặc ghép nhiều vấn đề pháp lý phức tạp cần phân rã (Query Decomposition)."
+      ],
+      "latency_ms": 0.448
+    },
+    {
+      "id": "CPX_03",
+      "query": "Người lao động vừa tự ý bỏ việc 5 ngày cộng dồn vừa đang nuôi con nhỏ dưới 12 tháng thì người sử dụng lao động có được áp dụng sa thải không và phải xử lý như thế nào?",
+      "gold": "COMPLEX",
+      "predicted": "COMPLEX",
+      "confidence": 0.92,
+      "strategy": "DECOMPOSITION_CRAG",
+      "is_correct": true,
+      "reasons": [
+        "Câu hỏi chứa nhiều câu hỏi con hoặc ghép nhiều vấn đề pháp lý phức tạp cần phân rã (Query Decomposition)."
+      ],
+      "latency_ms": 0.419
+    },
+    {
+      "id": "CPX_04",
+      "query": "Cách tính tiền lương làm thêm giờ vào ban đêm ngày nghỉ lễ tết trùng với ngày nghỉ hằng tuần?",
+      "gold": "COMPLEX",
+      "predicted": "COMPLEX",
+      "confidence": 0.92,
+      "strategy": "DECOMPOSITION_CRAG",
+      "is_correct": true,
+      "reasons": [
+        "Câu hỏi chứa nhiều câu hỏi con hoặc ghép nhiều vấn đề pháp lý phức tạp cần phân rã (Query Decomposition).",
+        "Câu hỏi yêu cầu tính toán số học phức hợp kết hợp nhiều điều kiện ràng buộc/thời điểm.",
+        "Câu hỏi bao quát 4 vấn đề pháp lý khác nhau cùng lúc."
+      ],
+      "latency_ms": 0.322
+    },
+    {
+      "id": "CPX_05",
+      "query": "Đối chiếu quy định tại Điều 169 và Điều 219 Bộ luật Lao động 2019 về điều kiện và tuổi nghỉ hưu của lao động nữ?",
+      "gold": "COMPLEX",
+      "predicted": "COMPLEX",
+      "confidence": 0.92,
+      "strategy": "DECOMPOSITION_CRAG",
+      "is_correct": true,
+      "reasons": [
+        "Câu hỏi chứa viện dẫn chéo giữa nhiều điều khoản (phát hiện: Điều 169, Điều 219).",
+        "Câu hỏi chứa nhiều câu hỏi con hoặc ghép nhiều vấn đề pháp lý phức tạp cần phân rã (Query Decomposition)."
+      ],
+      "latency_ms": 0.457
+    },
+    {
+      "id": "CPX_06",
+      "query": "Mức xử phạt vi phạm hành chính đối với hành vi cưỡng bức lao động theo Nghị định 12/2022 và các trường hợp bị truy cứu trách nhiệm hình sự?",
+      "gold": "COMPLEX",
+      "predicted": "COMPLEX",
+      "confidence": 0.92,
+      "strategy": "DECOMPOSITION_CRAG",
+      "is_correct": true,
+      "reasons": [
+        "Câu hỏi đa văn bản quy phạm pháp luật (phát hiện: Nghị định 12/2022/NĐ-CP, Bộ luật Hình sự).",
+        "Câu hỏi chứa nhiều câu hỏi con hoặc ghép nhiều vấn đề pháp lý phức tạp cần phân rã (Query Decomposition)."
+      ],
+      "latency_ms": 2.076
+    },
+    {
+      "id": "CPX_07",
+      "query": "Hồ sơ, thủ tục cấp giấy phép lao động cho chuyên gia nước ngoài theo Nghị định 152/2020 và Nghị định 70/2023 sửa đổi?",
+      "gold": "COMPLEX",
+      "predicted": "COMPLEX",
+      "confidence": 0.92,
+      "strategy": "DECOMPOSITION_CRAG",
+      "is_correct": true,
+      "reasons": [
+        "Câu hỏi đa văn bản quy phạm pháp luật (phát hiện: Nghị định 152/2020/NĐ-CP, Nghị định 70/2023/NĐ-CP).",
+        "Câu hỏi chứa nhiều câu hỏi con hoặc ghép nhiều vấn đề pháp lý phức tạp cần phân rã (Query Decomposition)."
+      ],
+      "latency_ms": 0.7
+    },
+    {
+      "id": "CPX_08",
+      "query": "Nếu người lao động bị tai nạn lao động suy giảm khả năng lao động 35% thì trách nhiệm bồi thường của người sử dụng lao động và chế độ bảo hiểm xã hội được tính như thế nào?",
+      "gold": "COMPLEX",
+      "predicted": "COMPLEX",
+      "confidence": 0.92,
+      "strategy": "DECOMPOSITION_CRAG",
+      "is_correct": true,
+      "reasons": [
+        "Câu hỏi chứa nhiều câu hỏi con hoặc ghép nhiều vấn đề pháp lý phức tạp cần phân rã (Query Decomposition).",
+        "Câu hỏi yêu cầu tính toán số học phức hợp kết hợp nhiều điều kiện ràng buộc/thời điểm."
+      ],
+      "latency_ms": 0.424
+    },
+    {
+      "id": "CPX_09",
+      "query": "Trường hợp chấm dứt hợp đồng lao động do thay đổi cơ cấu công nghệ thì quy trình xây dựng phương án sử dụng lao động và mức trợ cấp mất việc làm được tính ra sao?",
+      "gold": "COMPLEX",
+      "predicted": "COMPLEX",
+      "confidence": 0.92,
+      "strategy": "DECOMPOSITION_CRAG",
+      "is_correct": true,
+      "reasons": [
+        "Câu hỏi chứa nhiều câu hỏi con hoặc ghép nhiều vấn đề pháp lý phức tạp cần phân rã (Query Decomposition).",
+        "Câu hỏi yêu cầu tính toán số học phức hợp kết hợp nhiều điều kiện ràng buộc/thời điểm."
+      ],
+      "latency_ms": 0.542
+    },
+    {
+      "id": "CPX_10",
+      "query": "Người lao động làm công việc đặc biệt nặng nhọc độc hại theo Thông tư 09/2020 thì tuổi nghỉ hưu thấp hơn tối đa bao nhiêu tuổi và mức lương hưu tính theo quy định nào?",
+      "gold": "COMPLEX",
+      "predicted": "COMPLEX",
+      "confidence": 0.92,
+      "strategy": "DECOMPOSITION_CRAG",
+      "is_correct": true,
+      "reasons": [
+        "Câu hỏi bao quát 3 vấn đề pháp lý khác nhau cùng lúc."
+      ],
+      "latency_ms": 0.832
+    },
+    {
+      "id": "CPX_11",
+      "query": "Quy định về thời giờ làm việc ban đêm, số giờ làm thêm tối đa và cách tính lương tăng ca cho lao động chưa thành niên?",
+      "gold": "COMPLEX",
+      "predicted": "COMPLEX",
+      "confidence": 0.92,
+      "strategy": "DECOMPOSITION_CRAG",
+      "is_correct": true,
+      "reasons": [
+        "Câu hỏi chứa nhiều câu hỏi con hoặc ghép nhiều vấn đề pháp lý phức tạp cần phân rã (Query Decomposition).",
+        "Câu hỏi bao quát 4 vấn đề pháp lý khác nhau cùng lúc."
+      ],
+      "latency_ms": 0.599
+    },
+    {
+      "id": "CPX_12",
+      "query": "Điều kiện thành lập tổ chức của người lao động tại doanh nghiệp và quan hệ với tổ chức Công đoàn theo Bộ luật Lao động và các văn bản hướng dẫn?",
+      "gold": "COMPLEX",
+      "predicted": "COMPLEX",
+      "confidence": 0.92,
+      "strategy": "DECOMPOSITION_CRAG",
+      "is_correct": true,
+      "reasons": [
+        "Câu hỏi đa văn bản quy phạm pháp luật (phát hiện: Bộ luật Lao động 2019).",
+        "Câu hỏi chứa nhiều câu hỏi con hoặc ghép nhiều vấn đề pháp lý phức tạp cần phân rã (Query Decomposition)."
+      ],
+      "latency_ms": 0.625
+    },
+    {
+      "id": "CPX_13",
+      "query": "Nếu doanh nghiệp đơn phương chấm dứt hợp đồng lao động trái pháp luật đối với lao động nữ mang thai thì nghĩa vụ bồi thường gồm những khoản nào và có bị xử phạt theo Nghị định 12/2022 không?",
+      "gold": "COMPLEX",
+      "predicted": "COMPLEX",
+      "confidence": 0.92,
+      "strategy": "DECOMPOSITION_CRAG",
+      "is_correct": true,
+      "reasons": [
+        "Câu hỏi bao quát 3 vấn đề pháp lý khác nhau cùng lúc."
+      ],
+      "latency_ms": 0.44
+    },
+    {
+      "id": "CPX_14",
+      "query": "So sánh chế độ bồi thường tai nạn lao động giữa người sử dụng lao động có lỗi và không có lỗi theo Luật ATVSLĐ 2015?",
+      "gold": "COMPLEX",
+      "predicted": "COMPLEX",
+      "confidence": 0.92,
+      "strategy": "DECOMPOSITION_CRAG",
+      "is_correct": true,
+      "reasons": [
+        "Câu hỏi đa văn bản quy phạm pháp luật (phát hiện: Luật An toàn vệ sinh lao động 2015).",
+        "Câu hỏi chứa nhiều câu hỏi con hoặc ghép nhiều vấn đề pháp lý phức tạp cần phân rã (Query Decomposition)."
+      ],
+      "latency_ms": 0.556
+    },
+    {
+      "id": "CPX_15",
+      "query": "Cách tính tiền trợ cấp thôi việc cho người lao động làm việc từ năm 2005 đến năm 2023 có thời gian đóng bảo hiểm thất nghiệp từ 2009?",
+      "gold": "COMPLEX",
+      "predicted": "COMPLEX",
+      "confidence": 0.92,
+      "strategy": "DECOMPOSITION_CRAG",
+      "is_correct": true,
+      "reasons": [
+        "Câu hỏi chứa nhiều câu hỏi con hoặc ghép nhiều vấn đề pháp lý phức tạp cần phân rã (Query Decomposition)."
+      ],
+      "latency_ms": 0.499
+    },
+    {
+      "id": "EDG_01",
+      "query": "Xin chào bot, bạn có khỏe không?",
+      "gold": "SIMPLE",
+      "predicted": "SIMPLE",
+      "confidence": 0.98,
+      "strategy": "DIRECT_RAG",
+      "is_correct": true,
+      "reasons": [
+        "Câu hỏi chào hỏi/xã giao, không yêu cầu tra cứu văn bản pháp luật."
+      ],
+      "latency_ms": 0.153
+    },
+    {
+      "id": "EDG_02",
+      "query": "Thủ tục đăng ký kết hôn với người nước ngoài tại Sở Tư pháp gồm những giấy tờ gì?",
+      "gold": "SIMPLE",
+      "predicted": "SIMPLE",
+      "confidence": 0.95,
+      "strategy": "DIRECT_RAG",
+      "is_correct": true,
+      "reasons": [
+        "Câu hỏi nằm ngoài phạm vi pháp luật lao động, cần từ chối an toàn ngay cửa ngõ."
+      ],
+      "latency_ms": 0.308
+    },
+    {
+      "id": "EDG_03",
+      "query": "Giá vàng SJC hôm nay bao nhiêu một lượng?",
+      "gold": "SIMPLE",
+      "predicted": "SIMPLE",
+      "confidence": 0.94,
+      "strategy": "DIRECT_RAG",
+      "is_correct": true,
+      "reasons": [
+        "Câu hỏi đơn giản, tập trung vào 1 vấn đề pháp lý duy nhất, có thể xử lý bằng truy xuất trực tiếp."
+      ],
+      "latency_ms": 0.176
+    },
+    {
+      "id": "EDG_04",
+      "query": "Quy định xử phạt vi phạm nồng độ cồn khi điều khiển xe máy theo Nghị định 100/2019?",
+      "gold": "SIMPLE",
+      "predicted": "SIMPLE",
+      "confidence": 0.95,
+      "strategy": "DIRECT_RAG",
+      "is_correct": true,
+      "reasons": [
+        "Câu hỏi nằm ngoài phạm vi pháp luật lao động, cần từ chối an toàn ngay cửa ngõ."
+      ],
+      "latency_ms": 0.329
+    },
+    {
+      "id": "EDG_05",
+      "query": "Thời tiết Hà Nội tuần này như thế nào?",
+      "gold": "SIMPLE",
+      "predicted": "SIMPLE",
+      "confidence": 0.95,
+      "strategy": "DIRECT_RAG",
+      "is_correct": true,
+      "reasons": [
+        "Câu hỏi nằm ngoài phạm vi pháp luật lao động, cần từ chối an toàn ngay cửa ngõ."
+      ],
+      "latency_ms": 0.166
+    }
+  ],
+  "legal_qa_sample_evaluations": [
+    {
+      "question_id": "Q001",
+      "category": "single_article",
+      "question": "Người sử dụng lao động có quyền áp dụng hình thức xử lý kỷ luật sa thải trong những trường hợp nào?",
+      "complexity": "MODERATE",
+      "strategy": "CRAG",
+      "confidence": 0.88,
+      "reasons": [
+        "Câu hỏi đề cập 2 khía cạnh pháp lý liên đới trong cùng một văn bản."
+      ]
+    },
+    {
+      "question_id": "Q002",
+      "category": "single_article",
+      "question": "Thời giờ làm việc bình thường của người lao động được quy định tối đa bao nhiêu giờ trong một ngày và một tuần?",
+      "complexity": "SIMPLE",
+      "strategy": "DIRECT_RAG",
+      "confidence": 0.94,
+      "reasons": [
+        "Câu hỏi đơn giản, tập trung vào 1 vấn đề pháp lý duy nhất, có thể xử lý bằng truy xuất trực tiếp."
+      ]
+    },
+    {
+      "question_id": "Q003",
+      "category": "single_article",
+      "question": "Số giờ làm thêm của người lao động được quy định bảo đảm không quá bao nhiêu giờ trong một ngày và trong một tháng?",
+      "complexity": "SIMPLE",
+      "strategy": "DIRECT_RAG",
+      "confidence": 0.94,
+      "reasons": [
+        "Câu hỏi đơn giản, tập trung vào 1 vấn đề pháp lý duy nhất, có thể xử lý bằng truy xuất trực tiếp."
+      ]
+    },
+    {
+      "question_id": "Q004",
+      "category": "single_article",
+      "question": "Lao động nữ sinh con được nghỉ chế độ thai sản trước và sau khi sinh là bao nhiêu tháng?",
+      "complexity": "SIMPLE",
+      "strategy": "DIRECT_RAG",
+      "confidence": 0.94,
+      "reasons": [
+        "Câu hỏi đơn giản, tập trung vào 1 vấn đề pháp lý duy nhất, có thể xử lý bằng truy xuất trực tiếp."
+      ]
+    },
+    {
+      "question_id": "Q005",
+      "category": "single_article",
+      "question": "Người lao động làm việc theo hợp đồng lao động xác định thời hạn có quyền đơn phương chấm dứt hợp đồng lao động phải báo trước bao nhiêu ngày?",
+      "complexity": "MODERATE",
+      "strategy": "CRAG",
+      "confidence": 0.88,
+      "reasons": [
+        "Câu hỏi đề cập 2 khía cạnh pháp lý liên đới trong cùng một văn bản."
+      ]
+    },
+    {
+      "question_id": "Q006",
+      "category": "single_article",
+      "question": "Người sử dụng lao động có quyền đơn phương chấm dứt hợp đồng lao động trong những trường hợp nào?",
+      "complexity": "MODERATE",
+      "strategy": "CRAG",
+      "confidence": 0.88,
+      "reasons": [
+        "Câu hỏi đề cập 2 khía cạnh pháp lý liên đới trong cùng một văn bản."
+      ]
+    },
+    {
+      "question_id": "Q007",
+      "category": "single_article",
+      "question": "Người lao động làm thêm giờ vào ngày nghỉ hằng tuần được trả lương tính theo đơn giá tiền lương ít nhất bằng bao nhiêu phần trăm?",
+      "complexity": "COMPLEX",
+      "strategy": "DECOMPOSITION_CRAG",
+      "confidence": 0.92,
+      "reasons": [
+        "Câu hỏi chứa nhiều câu hỏi con hoặc ghép nhiều vấn đề pháp lý phức tạp cần phân rã (Query Decomposition).",
+        "Câu hỏi bao quát 3 vấn đề pháp lý khác nhau cùng lúc."
+      ]
+    },
+    {
+      "question_id": "Q008",
+      "category": "single_article",
+      "question": "Số ngày nghỉ hằng năm của người lao động làm việc trong điều kiện bình thường đủ 12 tháng cho một người sử dụng lao động là bao nhiêu ngày?",
+      "complexity": "SIMPLE",
+      "strategy": "DIRECT_RAG",
+      "confidence": 0.94,
+      "reasons": [
+        "Câu hỏi đơn giản, tập trung vào 1 vấn đề pháp lý duy nhất, có thể xử lý bằng truy xuất trực tiếp."
+      ]
+    },
+    {
+      "question_id": "Q009",
+      "category": "single_article",
+      "question": "Những hành vi nào bị nghiêm cấm đối với người sử dụng lao động khi xử lý kỷ luật lao động?",
+      "complexity": "SIMPLE",
+      "strategy": "DIRECT_RAG",
+      "confidence": 0.94,
+      "reasons": [
+        "Câu hỏi đơn giản, tập trung vào 1 vấn đề pháp lý duy nhất, có thể xử lý bằng truy xuất trực tiếp."
+      ]
+    },
+    {
+      "question_id": "Q010",
+      "category": "single_article",
+      "question": "Thời hạn được xóa kỷ luật lao động đối với người lao động bị khiển trách là bao lâu?",
+      "complexity": "SIMPLE",
+      "strategy": "DIRECT_RAG",
+      "confidence": 0.94,
+      "reasons": [
+        "Câu hỏi đơn giản, tập trung vào 1 vấn đề pháp lý duy nhất, có thể xử lý bằng truy xuất trực tiếp."
+      ]
+    },
+    {
+      "question_id": "Q011",
+      "category": "single_article",
+      "question": "Người lao động được nghỉ việc riêng mà vẫn hưởng nguyên lương trong những trường hợp nào?",
+      "complexity": "MODERATE",
+      "strategy": "CRAG",
+      "confidence": 0.88,
+      "reasons": [
+        "Câu hỏi đề cập 2 khía cạnh pháp lý liên đới trong cùng một văn bản."
+      ]
+    },
+    {
+      "question_id": "Q012",
+      "category": "single_article",
+      "question": "Thời hạn người sử dụng lao động và người lao động có trách nhiệm thanh toán đầy đủ các khoản tiền liên quan đến quyền lợi của mỗi bên sau khi chấm dứt hợp đồng lao động là bao lâu?",
+      "complexity": "MODERATE",
+      "strategy": "CRAG",
+      "confidence": 0.88,
+      "reasons": [
+        "Câu hỏi đề cập 2 khía cạnh pháp lý liên đới trong cùng một văn bản."
+      ]
+    },
+    {
+      "question_id": "Q013",
+      "category": "single_article",
+      "question": "Điều kiện và mức chi trả trợ cấp thôi việc cho người lao động được quy định như thế nào?",
+      "complexity": "SIMPLE",
+      "strategy": "DIRECT_RAG",
+      "confidence": 0.94,
+      "reasons": [
+        "Câu hỏi đơn giản, tập trung vào 1 vấn đề pháp lý duy nhất, có thể xử lý bằng truy xuất trực tiếp."
+      ]
+    },
+    {
+      "question_id": "Q014",
+      "category": "single_article",
+      "question": "Người sử dụng lao động có trách nhiệm trả trợ cấp mất việc làm cho người lao động trong trường hợp nào và mức chi trả tối thiểu là bao nhiêu?",
+      "complexity": "MODERATE",
+      "strategy": "CRAG",
+      "confidence": 0.88,
+      "reasons": [
+        "Câu hỏi có điều kiện tình huống (nếu... thì, trường hợp...), cần thẩm định bằng chứng.",
+        "Câu hỏi có yếu tố tính toán số liệu cần đối chiếu công thức qua CRAG."
+      ]
+    },
+    {
+      "question_id": "Q015",
+      "category": "single_article",
+      "question": "Điều kiện để lao động là công dân nước ngoài vào làm việc tại Việt Nam là gì?",
+      "complexity": "SIMPLE",
+      "strategy": "DIRECT_RAG",
+      "confidence": 0.94,
+      "reasons": [
+        "Câu hỏi đơn giản, tập trung vào 1 vấn đề pháp lý duy nhất, có thể xử lý bằng truy xuất trực tiếp."
+      ]
+    },
+    {
+      "question_id": "Q016",
+      "category": "single_article",
+      "question": "Giờ làm việc ban đêm được tính từ mấy giờ đến mấy giờ?",
+      "complexity": "SIMPLE",
+      "strategy": "DIRECT_RAG",
+      "confidence": 0.94,
+      "reasons": [
+        "Câu hỏi đơn giản, tập trung vào 1 vấn đề pháp lý duy nhất, có thể xử lý bằng truy xuất trực tiếp."
+      ]
+    },
+    {
+      "question_id": "Q017",
+      "category": "single_article",
+      "question": "Các trường hợp tạm hoãn thực hiện hợp đồng lao động theo quy định của pháp luật?",
+      "complexity": "MODERATE",
+      "strategy": "CRAG",
+      "confidence": 0.88,
+      "reasons": [
+        "Câu hỏi yêu cầu thẩm định điều kiện quyền lợi/nghĩa vụ pháp lý theo tình huống."
+      ]
+    },
+    {
+      "question_id": "Q018",
+      "category": "single_article",
+      "question": "Có những hình thức xử lý kỷ luật lao động nào được pháp luật quy định?",
+      "complexity": "SIMPLE",
+      "strategy": "DIRECT_RAG",
+      "confidence": 0.94,
+      "reasons": [
+        "Câu hỏi đơn giản, tập trung vào 1 vấn đề pháp lý duy nhất, có thể xử lý bằng truy xuất trực tiếp."
+      ]
+    },
+    {
+      "question_id": "Q019",
+      "category": "single_doc_multi_chunk",
+      "question": "Phân loại các loại hợp đồng lao động và hiệu lực của phụ lục hợp đồng lao động được quy định như thế nào?",
+      "complexity": "SIMPLE",
+      "strategy": "DIRECT_RAG",
+      "confidence": 0.94,
+      "reasons": [
+        "Câu hỏi đơn giản, tập trung vào 1 vấn đề pháp lý duy nhất, có thể xử lý bằng truy xuất trực tiếp."
+      ]
+    },
+    {
+      "question_id": "Q020",
+      "category": "single_doc_multi_chunk",
+      "question": "Quy định về thời gian thử việc tối đa đối với các loại công việc và mức tiền lương trong thời gian thử việc?",
+      "complexity": "MODERATE",
+      "strategy": "CRAG",
+      "confidence": 0.88,
+      "reasons": [
+        "Câu hỏi có điều kiện tình huống (nếu... thì, trường hợp...), cần thẩm định bằng chứng.",
+        "Câu hỏi đề cập 2 khía cạnh pháp lý liên đới trong cùng một văn bản."
+      ]
+    },
+    {
+      "question_id": "Q021",
+      "category": "single_doc_multi_chunk",
+      "question": "Điều kiện để người sử dụng lao động được tổ chức làm thêm giờ và các trường hợp được làm thêm đến 300 giờ trong một năm?",
+      "complexity": "MODERATE",
+      "strategy": "CRAG",
+      "confidence": 0.88,
+      "reasons": [
+        "Câu hỏi có điều kiện tình huống (nếu... thì, trường hợp...), cần thẩm định bằng chứng."
+      ]
+    },
+    {
+      "question_id": "Q022",
+      "category": "single_doc_multi_chunk",
+      "question": "Nguyên tắc xử lý kỷ luật lao động và trình tự, thủ tục tiến hành xử lý kỷ luật lao động?",
+      "complexity": "MODERATE",
+      "strategy": "CRAG",
+      "confidence": 0.88,
+      "reasons": [
+        "Câu hỏi về trình tự, thủ tục, hồ sơ nhiều bước, cần thu hồi và đối chiếu kiểm tra qua CRAG."
+      ]
+    },
+    {
+      "question_id": "Q023",
+      "category": "single_doc_multi_chunk",
+      "question": "Thời gian nghỉ trong giờ làm việc và nghỉ chuyển ca của người lao động được quy định như thế nào?",
+      "complexity": "SIMPLE",
+      "strategy": "DIRECT_RAG",
+      "confidence": 0.94,
+      "reasons": [
+        "Câu hỏi đơn giản, tập trung vào 1 vấn đề pháp lý duy nhất, có thể xử lý bằng truy xuất trực tiếp."
+      ]
+    },
+    {
+      "question_id": "Q024",
+      "category": "single_doc_multi_chunk",
+      "question": "Người sử dụng lao động được tạm thời chuyển người lao động làm công việc khác so với hợp đồng lao động trong trường hợp nào và quyền lợi của người lao động ra sao?",
+      "complexity": "MODERATE",
+      "strategy": "CRAG",
+      "confidence": 0.88,
+      "reasons": [
+        "Câu hỏi có điều kiện tình huống (nếu... thì, trường hợp...), cần thẩm định bằng chứng.",
+        "Câu hỏi yêu cầu thẩm định điều kiện quyền lợi/nghĩa vụ pháp lý theo tình huống."
+      ]
+    },
+    {
+      "question_id": "Q025",
+      "category": "single_doc_multi_chunk",
+      "question": "Quyền và nghĩa vụ cơ bản của người lao động và người sử dụng lao động được quy định tại Bộ luật Lao động?",
+      "complexity": "SIMPLE",
+      "strategy": "DIRECT_RAG",
+      "confidence": 0.94,
+      "reasons": [
+        "Câu hỏi đơn giản, tập trung vào 1 vấn đề pháp lý duy nhất, có thể xử lý bằng truy xuất trực tiếp."
+      ]
+    },
+    {
+      "question_id": "Q026",
+      "category": "single_doc_multi_chunk",
+      "question": "Trách nhiệm bồi thường thiệt hại và trình tự bồi thường thiệt hại do làm hư hỏng dụng cụ, thiết bị?",
+      "complexity": "MODERATE",
+      "strategy": "CRAG",
+      "confidence": 0.88,
+      "reasons": [
+        "Câu hỏi về trình tự, thủ tục, hồ sơ nhiều bước, cần thu hồi và đối chiếu kiểm tra qua CRAG."
+      ]
+    },
+    {
+      "question_id": "Q027",
+      "category": "single_doc_multi_chunk",
+      "question": "Lộ trình điều chỉnh tuổi nghỉ hưu của người lao động trong điều kiện lao động bình thường theo Nghị định 135/2020/NĐ-CP?",
+      "complexity": "SIMPLE",
+      "strategy": "DIRECT_RAG",
+      "confidence": 0.94,
+      "reasons": [
+        "Câu hỏi đơn giản, tập trung vào 1 vấn đề pháp lý duy nhất, có thể xử lý bằng truy xuất trực tiếp."
+      ]
+    },
+    {
+      "question_id": "Q028",
+      "category": "single_doc_multi_chunk",
+      "question": "Các trường hợp người lao động có thể nghỉ hưu ở tuổi thấp hơn tuổi nghỉ hưu trong điều kiện lao động bình thường theo Nghị định 135/2020/NĐ-CP?",
+      "complexity": "SIMPLE",
+      "strategy": "DIRECT_RAG",
+      "confidence": 0.94,
+      "reasons": [
+        "Câu hỏi đơn giản, tập trung vào 1 vấn đề pháp lý duy nhất, có thể xử lý bằng truy xuất trực tiếp."
+      ]
+    },
+    {
+      "question_id": "Q029",
+      "category": "single_doc_multi_chunk",
+      "question": "Quy định về thời hiệu và thành phần tham dự phiên họp xử lý kỷ luật lao động theo Nghị định 145/2020/NĐ-CP?",
+      "complexity": "SIMPLE",
+      "strategy": "DIRECT_RAG",
+      "confidence": 0.94,
+      "reasons": [
+        "Câu hỏi đơn giản, tập trung vào 1 vấn đề pháp lý duy nhất, có thể xử lý bằng truy xuất trực tiếp."
+      ]
+    },
+    {
+      "question_id": "Q030",
+      "category": "single_doc_multi_chunk",
+      "question": "Điều kiện và hồ sơ đề nghị cấp giấy phép lao động cho người nước ngoài theo Nghị định 152/2020/NĐ-CP?",
+      "complexity": "SIMPLE",
+      "strategy": "DIRECT_RAG",
+      "confidence": 0.94,
+      "reasons": [
+        "Câu hỏi đơn giản, tập trung vào 1 vấn đề pháp lý duy nhất, có thể xử lý bằng truy xuất trực tiếp."
+      ]
+    },
+    {
+      "question_id": "Q031",
+      "category": "multi_document",
+      "question": "Người sử dụng lao động không trả hoặc trả không đủ trợ cấp thôi việc theo Bộ luật Lao động bị xử phạt vi phạm hành chính như thế nào theo Nghị định 12/2022/NĐ-CP?",
+      "complexity": "COMPLEX",
+      "strategy": "DECOMPOSITION_CRAG",
+      "confidence": 0.92,
+      "reasons": [
+        "Câu hỏi đa văn bản quy phạm pháp luật (phát hiện: Bộ luật Lao động 2019, Nghị định 12/2022/NĐ-CP).",
+        "Câu hỏi chứa nhiều câu hỏi con hoặc ghép nhiều vấn đề pháp lý phức tạp cần phân rã (Query Decomposition)."
+      ]
+    },
+    {
+      "question_id": "Q032",
+      "category": "multi_document",
+      "question": "Thời giờ làm việc đối với người chưa đủ 15 tuổi theo Bộ luật Lao động và Thông tư 09/2020/TT-BLĐTBXH được quy định như thế nào?",
+      "complexity": "COMPLEX",
+      "strategy": "DECOMPOSITION_CRAG",
+      "confidence": 0.92,
+      "reasons": [
+        "Câu hỏi đa văn bản quy phạm pháp luật (phát hiện: Bộ luật Lao động 2019, Thông tư 09/2020/TT-BLĐTBXH).",
+        "Câu hỏi chứa nhiều câu hỏi con hoặc ghép nhiều vấn đề pháp lý phức tạp cần phân rã (Query Decomposition)."
+      ]
+    },
+    {
+      "question_id": "Q033",
+      "category": "multi_document",
+      "question": "Các trường hợp giảm tuổi nghỉ hưu do làm nghề, công việc nặng nhọc, độc hại, nguy hiểm theo Nghị định 135/2020/NĐ-CP và Thông tư 11/2020/TT-BLĐTBXH?",
+      "complexity": "COMPLEX",
+      "strategy": "DECOMPOSITION_CRAG",
+      "confidence": 0.92,
+      "reasons": [
+        "Câu hỏi đa văn bản quy phạm pháp luật (phát hiện: Nghị định 135/2020/NĐ-CP, Thông tư 11/2020/TT-BLĐTBXH).",
+        "Câu hỏi chứa nhiều câu hỏi con hoặc ghép nhiều vấn đề pháp lý phức tạp cần phân rã (Query Decomposition)."
+      ]
+    },
+    {
+      "question_id": "Q034",
+      "category": "multi_document",
+      "question": "Nội dung bắt buộc phải có trong hợp đồng lao động theo Bộ luật Lao động 2019 và hướng dẫn chi tiết tại Thông tư 10/2020/TT-BLĐTBXH?",
+      "complexity": "COMPLEX",
+      "strategy": "DECOMPOSITION_CRAG",
+      "confidence": 0.92,
+      "reasons": [
+        "Câu hỏi đa văn bản quy phạm pháp luật (phát hiện: Bộ luật Lao động 2019, Thông tư 10/2020/TT-BLĐTBXH).",
+        "Câu hỏi chứa nhiều câu hỏi con hoặc ghép nhiều vấn đề pháp lý phức tạp cần phân rã (Query Decomposition)."
+      ]
+    },
+    {
+      "question_id": "Q035",
+      "category": "multi_document",
+      "question": "Quy định về thời giờ làm việc, thời giờ nghỉ ngơi đối với người lao động làm công việc đặc biệt trong lĩnh vực dầu khí theo Thông tư 20/2023/TT-BCT và Bộ luật Lao động?",
+      "complexity": "MODERATE",
+      "strategy": "CRAG",
+      "confidence": 0.88,
+      "reasons": [
+        "Câu hỏi đề cập 2 khía cạnh pháp lý liên đới trong cùng một văn bản."
+      ]
+    },
+    {
+      "question_id": "Q036",
+      "category": "multi_document",
+      "question": "Người sử dụng lao động yêu cầu thử việc đối với hợp đồng lao động dưới 01 tháng bị xử phạt như thế nào theo Nghị định 12/2022/NĐ-CP đối chiếu Bộ luật Lao động?",
+      "complexity": "COMPLEX",
+      "strategy": "DECOMPOSITION_CRAG",
+      "confidence": 0.92,
+      "reasons": [
+        "Câu hỏi đa văn bản quy phạm pháp luật (phát hiện: Bộ luật Lao động 2019, Nghị định 12/2022/NĐ-CP).",
+        "Câu hỏi chứa nhiều câu hỏi con hoặc ghép nhiều vấn đề pháp lý phức tạp cần phân rã (Query Decomposition)."
+      ]
+    },
+    {
+      "question_id": "Q037",
+      "category": "multi_document",
+      "question": "Thủ tục tiến hành xử lý kỷ luật lao động sa thải theo Bộ luật Lao động 2019 và Nghị định 145/2020/NĐ-CP?",
+      "complexity": "COMPLEX",
+      "strategy": "DECOMPOSITION_CRAG",
+      "confidence": 0.92,
+      "reasons": [
+        "Câu hỏi đa văn bản quy phạm pháp luật (phát hiện: Bộ luật Lao động 2019, Nghị định 145/2020/NĐ-CP).",
+        "Câu hỏi chứa nhiều câu hỏi con hoặc ghép nhiều vấn đề pháp lý phức tạp cần phân rã (Query Decomposition)."
+      ]
+    },
+    {
+      "question_id": "Q038",
+      "category": "multi_document",
+      "question": "Các trường hợp người lao động nước ngoài không thuộc diện cấp giấy phép lao động theo Bộ luật Lao động và Nghị định 152/2020/NĐ-CP?",
+      "complexity": "COMPLEX",
+      "strategy": "DECOMPOSITION_CRAG",
+      "confidence": 0.92,
+      "reasons": [
+        "Câu hỏi đa văn bản quy phạm pháp luật (phát hiện: Bộ luật Lao động 2019, Nghị định 152/2020/NĐ-CP).",
+        "Câu hỏi chứa nhiều câu hỏi con hoặc ghép nhiều vấn đề pháp lý phức tạp cần phân rã (Query Decomposition)."
+      ]
+    },
+    {
+      "question_id": "Q039",
+      "category": "multi_document",
+      "question": "Mức xử phạt hành vi vi phạm quy định về thời giờ làm thêm vượt quá quy định theo Nghị định 12/2022/NĐ-CP đối chiếu Bộ luật Lao động?",
+      "complexity": "COMPLEX",
+      "strategy": "DECOMPOSITION_CRAG",
+      "confidence": 0.92,
+      "reasons": [
+        "Câu hỏi đa văn bản quy phạm pháp luật (phát hiện: Bộ luật Lao động 2019, Nghị định 12/2022/NĐ-CP).",
+        "Câu hỏi chứa nhiều câu hỏi con hoặc ghép nhiều vấn đề pháp lý phức tạp cần phân rã (Query Decomposition)."
+      ]
+    },
+    {
+      "question_id": "Q040",
+      "category": "multi_document",
+      "question": "Quy định về bảo vệ thai sản và chế độ làm việc rút ngắn cho lao động nữ nuôi con nhỏ theo Bộ luật Lao động và Nghị định 145/2020/NĐ-CP?",
+      "complexity": "COMPLEX",
+      "strategy": "DECOMPOSITION_CRAG",
+      "confidence": 0.92,
+      "reasons": [
+        "Câu hỏi đa văn bản quy phạm pháp luật (phát hiện: Bộ luật Lao động 2019, Nghị định 145/2020/NĐ-CP).",
+        "Câu hỏi chứa nhiều câu hỏi con hoặc ghép nhiều vấn đề pháp lý phức tạp cần phân rã (Query Decomposition)."
+      ]
+    },
+    {
+      "question_id": "Q041",
+      "category": "multi_document",
+      "question": "Danh mục nơi làm việc cấm sử dụng người lao động từ 15 tuổi đến chưa đủ 18 tuổi theo Bộ luật Lao động và Thông tư 09/2020/TT-BLĐTBXH?",
+      "complexity": "COMPLEX",
+      "strategy": "DECOMPOSITION_CRAG",
+      "confidence": 0.92,
+      "reasons": [
+        "Câu hỏi đa văn bản quy phạm pháp luật (phát hiện: Bộ luật Lao động 2019, Thông tư 09/2020/TT-BLĐTBXH).",
+        "Câu hỏi chứa nhiều câu hỏi con hoặc ghép nhiều vấn đề pháp lý phức tạp cần phân rã (Query Decomposition)."
+      ]
+    },
+    {
+      "question_id": "Q042",
+      "category": "multi_document",
+      "question": "Mức xử phạt đối với hành vi phân biệt đối xử trong lao động theo Nghị định 12/2022/NĐ-CP đối chiếu quy định cấm tại Bộ luật Lao động?",
+      "complexity": "COMPLEX",
+      "strategy": "DECOMPOSITION_CRAG",
+      "confidence": 0.92,
+      "reasons": [
+        "Câu hỏi đa văn bản quy phạm pháp luật (phát hiện: Bộ luật Lao động 2019, Nghị định 12/2022/NĐ-CP).",
+        "Câu hỏi chứa nhiều câu hỏi con hoặc ghép nhiều vấn đề pháp lý phức tạp cần phân rã (Query Decomposition)."
+      ]
+    },
+    {
+      "question_id": "Q043",
+      "category": "cross_reference",
+      "question": "Nghị định 70/2023/NĐ-CP sửa đổi, bổ sung quy định nào về giải trình nhu cầu sử dụng người lao động nước ngoài tại Nghị định 152/2020/NĐ-CP?",
+      "complexity": "COMPLEX",
+      "strategy": "DECOMPOSITION_CRAG",
+      "confidence": 0.92,
+      "reasons": [
+        "Câu hỏi đa văn bản quy phạm pháp luật (phát hiện: Nghị định 152/2020/NĐ-CP, Nghị định 70/2023/NĐ-CP).",
+        "Câu hỏi chứa nhiều câu hỏi con hoặc ghép nhiều vấn đề pháp lý phức tạp cần phân rã (Query Decomposition)."
+      ]
+    },
+    {
+      "question_id": "Q044",
+      "category": "cross_reference",
+      "question": "Dẫn chiếu quyền đơn phương chấm dứt hợp đồng lao động không cần báo trước do bị quấy rối tình dục theo Điều 35 BLLĐ và định nghĩa quấy rối tình dục theo Nghị định 145/2020/NĐ-CP?",
+      "complexity": "COMPLEX",
+      "strategy": "DECOMPOSITION_CRAG",
+      "confidence": 0.92,
+      "reasons": [
+        "Câu hỏi đa văn bản quy phạm pháp luật (phát hiện: Bộ luật Lao động 2019, Nghị định 145/2020/NĐ-CP).",
+        "Câu hỏi chứa viện dẫn chéo giữa nhiều điều khoản (phát hiện: Điều 35).",
+        "Câu hỏi chứa nhiều câu hỏi con hoặc ghép nhiều vấn đề pháp lý phức tạp cần phân rã (Query Decomposition)."
+      ]
+    },
+    {
+      "question_id": "Q045",
+      "category": "cross_reference",
+      "question": "Quy định về thời hạn báo trước khi đơn phương chấm dứt hợp đồng lao động đối với ngành, nghề, công việc đặc thù được Chính phủ quy định chi tiết tại Nghị định 145/2020/NĐ-CP?",
+      "complexity": "MODERATE",
+      "strategy": "CRAG",
+      "confidence": 0.88,
+      "reasons": [
+        "Câu hỏi đề cập 2 khía cạnh pháp lý liên đới trong cùng một văn bản."
+      ]
+    },
+    {
+      "question_id": "Q046",
+      "category": "cross_reference",
+      "question": "Quy định trả lương khi ngừng việc do sự cố điện, nước hoặc nguyên nhân khách quan theo Điều 99 Bộ luật Lao động 2019?",
+      "complexity": "MODERATE",
+      "strategy": "CRAG",
+      "confidence": 0.88,
+      "reasons": [
+        "Câu hỏi có điều kiện tình huống (nếu... thì, trường hợp...), cần thẩm định bằng chứng."
+      ]
+    },
+    {
+      "question_id": "Q047",
+      "category": "cross_reference",
+      "question": "Nghị định 70/2023/NĐ-CP sửa đổi điều kiện xác định chuyên gia và lao động kỹ thuật nước ngoài tại Nghị định 152/2020/NĐ-CP như thế nào?",
+      "complexity": "COMPLEX",
+      "strategy": "DECOMPOSITION_CRAG",
+      "confidence": 0.92,
+      "reasons": [
+        "Câu hỏi đa văn bản quy phạm pháp luật (phát hiện: Nghị định 152/2020/NĐ-CP, Nghị định 70/2023/NĐ-CP).",
+        "Câu hỏi chứa nhiều câu hỏi con hoặc ghép nhiều vấn đề pháp lý phức tạp cần phân rã (Query Decomposition)."
+      ]
+    },
+    {
+      "question_id": "Q048",
+      "category": "cross_reference",
+      "question": "Mối liên hệ giữa hành vi cưỡng bức lao động bị cấm theo Điều 8 BLLĐ và mức phạt hành chính theo Nghị định 12/2022/NĐ-CP?",
+      "complexity": "COMPLEX",
+      "strategy": "DECOMPOSITION_CRAG",
+      "confidence": 0.92,
+      "reasons": [
+        "Câu hỏi đa văn bản quy phạm pháp luật (phát hiện: Bộ luật Lao động 2019, Nghị định 12/2022/NĐ-CP).",
+        "Câu hỏi chứa nhiều câu hỏi con hoặc ghép nhiều vấn đề pháp lý phức tạp cần phân rã (Query Decomposition)."
+      ]
+    },
+    {
+      "question_id": "Q049",
+      "category": "cross_reference",
+      "question": "Tiền lương làm căn cứ tính trả trợ cấp thôi việc, trợ cấp mất việc làm được dẫn chiếu và quy định chi tiết tại Nghị định 145/2020/NĐ-CP?",
+      "complexity": "COMPLEX",
+      "strategy": "DECOMPOSITION_CRAG",
+      "confidence": 0.92,
+      "reasons": [
+        "Câu hỏi chứa viện dẫn chéo giữa nhiều điều khoản (phát hiện: ).",
+        "Câu hỏi chứa nhiều câu hỏi con hoặc ghép nhiều vấn đề pháp lý phức tạp cần phân rã (Query Decomposition)."
+      ]
+    },
+    {
+      "question_id": "Q050",
+      "category": "cross_reference",
+      "question": "Các trường hợp được tổ chức làm thêm từ trên 200 giờ đến 300 giờ trong năm dẫn chiếu giữa Điều 107 BLLĐ và Điều 61 Nghị định 145/2020/NĐ-CP?",
+      "complexity": "COMPLEX",
+      "strategy": "DECOMPOSITION_CRAG",
+      "confidence": 0.92,
+      "reasons": [
+        "Câu hỏi đa văn bản quy phạm pháp luật (phát hiện: Bộ luật Lao động 2019, Nghị định 145/2020/NĐ-CP).",
+        "Câu hỏi chứa viện dẫn chéo giữa nhiều điều khoản (phát hiện: Điều 107, Điều 61).",
+        "Câu hỏi chứa nhiều câu hỏi con hoặc ghép nhiều vấn đề pháp lý phức tạp cần phân rã (Query Decomposition)."
+      ]
+    },
+    {
+      "question_id": "Q051",
+      "category": "cross_reference",
+      "question": "Hậu quả pháp lý khi hợp đồng lao động bị tuyên bố vô hiệu từng phần và vô hiệu toàn bộ theo Bộ luật Lao động 2019?",
+      "complexity": "MODERATE",
+      "strategy": "CRAG",
+      "confidence": 0.88,
+      "reasons": [
+        "Câu hỏi có điều kiện tình huống (nếu... thì, trường hợp...), cần thẩm định bằng chứng."
+      ]
+    },
+    {
+      "question_id": "Q052",
+      "category": "cross_reference",
+      "question": "Thời hạn và thủ tục cấp lại giấy phép lao động cho người lao động nước ngoài theo Nghị định 152/2020/NĐ-CP được sửa đổi bởi Nghị định 70/2023/NĐ-CP?",
+      "complexity": "COMPLEX",
+      "strategy": "DECOMPOSITION_CRAG",
+      "confidence": 0.92,
+      "reasons": [
+        "Câu hỏi đa văn bản quy phạm pháp luật (phát hiện: Nghị định 152/2020/NĐ-CP, Nghị định 70/2023/NĐ-CP).",
+        "Câu hỏi chứa nhiều câu hỏi con hoặc ghép nhiều vấn đề pháp lý phức tạp cần phân rã (Query Decomposition)."
+      ]
+    },
+    {
+      "question_id": "Q053",
+      "category": "complex_conditions",
+      "question": "Điều kiện để lao động nam làm công việc nặng nhọc, độc hại loại V nghỉ hưu vào năm 2026 ở tuổi thấp hơn quy định?",
+      "complexity": "MODERATE",
+      "strategy": "CRAG",
+      "confidence": 0.88,
+      "reasons": [
+        "Câu hỏi đề cập 2 khía cạnh pháp lý liên đới trong cùng một văn bản."
+      ]
+    },
+    {
+      "question_id": "Q054",
+      "category": "complex_conditions",
+      "question": "Người sử dụng lao động muốn sa thải người lao động tự ý bỏ việc 05 ngày cộng dồn trong 30 ngày phải đáp ứng những điều kiện và trình tự nào?",
+      "complexity": "MODERATE",
+      "strategy": "CRAG",
+      "confidence": 0.88,
+      "reasons": [
+        "Câu hỏi về trình tự, thủ tục, hồ sơ nhiều bước, cần thu hồi và đối chiếu kiểm tra qua CRAG."
+      ]
+    },
+    {
+      "question_id": "Q055",
+      "category": "complex_conditions",
+      "question": "Trách nhiệm và nghĩa vụ bồi thường của người sử dụng lao động khi đơn phương chấm dứt hợp đồng lao động trái pháp luật?",
+      "complexity": "MODERATE",
+      "strategy": "CRAG",
+      "confidence": 0.88,
+      "reasons": [
+        "Câu hỏi đề cập 2 khía cạnh pháp lý liên đới trong cùng một văn bản."
+      ]
+    },
+    {
+      "question_id": "Q056",
+      "category": "complex_conditions",
+      "question": "Điều kiện hoạt động cho thuê lại lao động và các trường hợp doanh nghiệp không được cho thuê lại lao động?",
+      "complexity": "MODERATE",
+      "strategy": "CRAG",
+      "confidence": 0.88,
+      "reasons": [
+        "Câu hỏi có điều kiện tình huống (nếu... thì, trường hợp...), cần thẩm định bằng chứng."
+      ]
+    },
+    {
+      "question_id": "Q057",
+      "category": "complex_conditions",
+      "question": "Quyền lợi của người lao động khi doanh nghiệp chia, tách, hợp nhất, sáp nhập hoặc bán, cho thuê tài sản mà không thể bố trí được việc làm?",
+      "complexity": "MODERATE",
+      "strategy": "CRAG",
+      "confidence": 0.88,
+      "reasons": [
+        "Câu hỏi có điều kiện tình huống (nếu... thì, trường hợp...), cần thẩm định bằng chứng."
+      ]
+    },
+    {
+      "question_id": "Q058",
+      "category": "complex_conditions",
+      "question": "Điều kiện sử dụng người chưa đủ 15 tuổi vào làm việc theo quy định của pháp luật lao động?",
+      "complexity": "MODERATE",
+      "strategy": "CRAG",
+      "confidence": 0.88,
+      "reasons": [
+        "Câu hỏi có điều kiện tình huống (nếu... thì, trường hợp...), cần thẩm định bằng chứng."
+      ]
+    },
+    {
+      "question_id": "Q059",
+      "category": "complex_conditions",
+      "question": "Người sử dụng lao động muốn tổ chức làm thêm giờ từ trên 200 giờ đến 300 giờ trong năm phải thực hiện những thủ tục gì?",
+      "complexity": "MODERATE",
+      "strategy": "CRAG",
+      "confidence": 0.88,
+      "reasons": [
+        "Câu hỏi về trình tự, thủ tục, hồ sơ nhiều bước, cần thu hồi và đối chiếu kiểm tra qua CRAG."
+      ]
+    },
+    {
+      "question_id": "Q060",
+      "category": "complex_conditions",
+      "question": "Quy định về việc tạm thời chuyển người lao động làm công việc khác và quyền từ chối của người lao động khi quá thời hạn 60 ngày?",
+      "complexity": "MODERATE",
+      "strategy": "CRAG",
+      "confidence": 0.88,
+      "reasons": [
+        "Câu hỏi yêu cầu thẩm định điều kiện quyền lợi/nghĩa vụ pháp lý theo tình huống."
+      ]
+    },
+    {
+      "question_id": "Q061",
+      "category": "complex_conditions",
+      "question": "Các trường hợp hạn chế quyền xử lý kỷ luật sa thải hoặc chấm dứt hợp đồng lao động đối với lao động nữ mang thai và nuôi con nhỏ?",
+      "complexity": "COMPLEX",
+      "strategy": "DECOMPOSITION_CRAG",
+      "confidence": 0.92,
+      "reasons": [
+        "Câu hỏi bao quát 4 vấn đề pháp lý khác nhau cùng lúc."
+      ]
+    },
+    {
+      "question_id": "Q062",
+      "category": "complex_conditions",
+      "question": "Điều kiện và giới hạn khấu trừ tiền lương của người lao động khi làm hư hỏng tài sản của người sử dụng lao động?",
+      "complexity": "MODERATE",
+      "strategy": "CRAG",
+      "confidence": 0.88,
+      "reasons": [
+        "Câu hỏi có điều kiện tình huống (nếu... thì, trường hợp...), cần thẩm định bằng chứng."
+      ]
+    },
+    {
+      "question_id": "Q063",
+      "category": "complex_conditions",
+      "question": "Điều kiện, thời hạn và chế độ tiền lương trong thời gian tạm đình chỉ công việc của người lao động?",
+      "complexity": "MODERATE",
+      "strategy": "CRAG",
+      "confidence": 0.88,
+      "reasons": [
+        "Câu hỏi có điều kiện tình huống (nếu... thì, trường hợp...), cần thẩm định bằng chứng."
+      ]
+    },
+    {
+      "question_id": "Q064",
+      "category": "complex_conditions",
+      "question": "Hành vi giữ bản chính giấy tờ tùy thân, văn bằng, chứng chỉ của người lao động bị xử phạt như thế nào theo Nghị định 12/2022/NĐ-CP?",
+      "complexity": "MODERATE",
+      "strategy": "CRAG",
+      "confidence": 0.88,
+      "reasons": [
+        "Câu hỏi về trình tự, thủ tục, hồ sơ nhiều bước, cần thu hồi và đối chiếu kiểm tra qua CRAG."
+      ]
+    },
+    {
+      "question_id": "Q065",
+      "category": "insufficient_evidence",
+      "question": "Mức đóng kinh phí công đoàn của doanh nghiệp bằng bao nhiêu phần trăm quỹ tiền lương làm căn cứ đóng BHXH theo Luật Công đoàn 2012?",
+      "complexity": "COMPLEX",
+      "strategy": "DECOMPOSITION_CRAG",
+      "confidence": 0.92,
+      "reasons": [
+        "Câu hỏi chứa nhiều câu hỏi con hoặc ghép nhiều vấn đề pháp lý phức tạp cần phân rã (Query Decomposition).",
+        "Câu hỏi bao quát 3 vấn đề pháp lý khác nhau cùng lúc."
+      ]
+    },
+    {
+      "question_id": "Q066",
+      "category": "insufficient_evidence",
+      "question": "Tỷ lệ hưởng lương hưu tối đa của lao động nữ tham gia bảo hiểm xã hội bắt buộc theo Luật Bảo hiểm xã hội 2014 là bao nhiêu phần trăm?",
+      "complexity": "COMPLEX",
+      "strategy": "DECOMPOSITION_CRAG",
+      "confidence": 0.92,
+      "reasons": [
+        "Câu hỏi chứa nhiều câu hỏi con hoặc ghép nhiều vấn đề pháp lý phức tạp cần phân rã (Query Decomposition)."
+      ]
+    },
+    {
+      "question_id": "Q067",
+      "category": "insufficient_evidence",
+      "question": "Mức trợ cấp một lần đối với người lao động bị suy giảm khả năng lao động 15% do tai nạn lao động theo Luật An toàn, vệ sinh lao động 2015?",
+      "complexity": "MODERATE",
+      "strategy": "CRAG",
+      "confidence": 0.88,
+      "reasons": [
+        "Câu hỏi có yếu tố tính toán số liệu cần đối chiếu công thức qua CRAG."
+      ]
+    },
+    {
+      "question_id": "Q068",
+      "category": "insufficient_evidence",
+      "question": "Thời hạn người lao động phải nộp hồ sơ hưởng trợ cấp thất nghiệp tại Trung tâm Dịch vụ việc làm theo quy định của Luật Việc làm là bao nhiêu tháng kể từ ngày chấm dứt HĐLĐ?",
+      "complexity": "COMPLEX",
+      "strategy": "DECOMPOSITION_CRAG",
+      "confidence": 0.92,
+      "reasons": [
+        "Câu hỏi bao quát 3 vấn đề pháp lý khác nhau cùng lúc."
+      ]
+    },
+    {
+      "question_id": "Q069",
+      "category": "insufficient_evidence",
+      "question": "Tiêu chuẩn và số lượng thành viên tối thiểu để thành lập tổ chức của người lao động tại doanh nghiệp ngoài hệ thống Công đoàn Việt Nam?",
+      "complexity": "SIMPLE",
+      "strategy": "DIRECT_RAG",
+      "confidence": 0.94,
+      "reasons": [
+        "Câu hỏi đơn giản, tập trung vào 1 vấn đề pháp lý duy nhất, có thể xử lý bằng truy xuất trực tiếp."
+      ]
+    },
+    {
+      "question_id": "Q070",
+      "category": "insufficient_evidence",
+      "question": "Điều kiện để người lao động được hưởng chế độ ốm đau dài ngày và mức trợ cấp theo Luật Bảo hiểm xã hội?",
+      "complexity": "MODERATE",
+      "strategy": "CRAG",
+      "confidence": 0.88,
+      "reasons": [
+        "Câu hỏi có yếu tố tính toán số liệu cần đối chiếu công thức qua CRAG."
+      ]
+    },
+    {
+      "question_id": "Q071",
+      "category": "insufficient_evidence",
+      "question": "Thủ tục đăng ký nội quy an toàn bức xạ và cấp chứng chỉ nhân viên bức xạ trong y tế theo quy định của Luật Năng lượng nguyên tử?",
+      "complexity": "MODERATE",
+      "strategy": "CRAG",
+      "confidence": 0.88,
+      "reasons": [
+        "Câu hỏi về trình tự, thủ tục, hồ sơ nhiều bước, cần thu hồi và đối chiếu kiểm tra qua CRAG."
+      ]
+    },
+    {
+      "question_id": "Q072",
+      "category": "insufficient_evidence",
+      "question": "Mức hỗ trợ học nghề và đào tạo duy trì việc làm cho người lao động từ Quỹ Bảo hiểm thất nghiệp theo Luật Việc làm?",
+      "complexity": "SIMPLE",
+      "strategy": "DIRECT_RAG",
+      "confidence": 0.94,
+      "reasons": [
+        "Câu hỏi đơn giản, tập trung vào 1 vấn đề pháp lý duy nhất, có thể xử lý bằng truy xuất trực tiếp."
+      ]
+    },
+    {
+      "question_id": "Q073",
+      "category": "out_of_scope",
+      "question": "Thủ tục đăng ký bảo hộ nhãn hiệu hàng hóa quốc tế theo Thỏa ước Madrid và Nghị định thư Madrid gồm những bước nào?",
+      "complexity": "SIMPLE",
+      "strategy": "DIRECT_RAG",
+      "confidence": 0.95,
+      "reasons": [
+        "Câu hỏi nằm ngoài phạm vi pháp luật lao động, cần từ chối an toàn ngay cửa ngõ."
+      ]
+    },
+    {
+      "question_id": "Q074",
+      "category": "out_of_scope",
+      "question": "Cách mua vé xem trực tiếp các trận bóng đá giải Ngoại hạng Anh mùa giải 2026 dành cho khách du lịch?",
+      "complexity": "SIMPLE",
+      "strategy": "DIRECT_RAG",
+      "confidence": 0.95,
+      "reasons": [
+        "Câu hỏi nằm ngoài phạm vi pháp luật lao động, cần từ chối an toàn ngay cửa ngõ."
+      ]
+    },
+    {
+      "question_id": "Q075",
+      "category": "out_of_scope",
+      "question": "Mức xử phạt người điều khiển xe mô tô, xe gắn máy vượt đèn đỏ theo quy định xử phạt vi phạm giao thông đường bộ?",
+      "complexity": "SIMPLE",
+      "strategy": "DIRECT_RAG",
+      "confidence": 0.95,
+      "reasons": [
+        "Câu hỏi nằm ngoài phạm vi pháp luật lao động, cần từ chối an toàn ngay cửa ngõ."
+      ]
+    },
+    {
+      "question_id": "Q076",
+      "category": "out_of_scope",
+      "question": "Hồ sơ và thủ tục xin cấp visa du lịch Schengen tại Đại sứ quán Pháp năm 2026 gồm những giấy tờ gì?",
+      "complexity": "SIMPLE",
+      "strategy": "DIRECT_RAG",
+      "confidence": 0.95,
+      "reasons": [
+        "Câu hỏi nằm ngoài phạm vi pháp luật lao động, cần từ chối an toàn ngay cửa ngõ."
+      ]
+    },
+    {
+      "question_id": "Q077",
+      "category": "out_of_scope",
+      "question": "Điều kiện và thủ tục đăng ký kết hôn giữa công dân Việt Nam và người nước ngoài theo Luật Hôn nhân và Gia đình?",
+      "complexity": "SIMPLE",
+      "strategy": "DIRECT_RAG",
+      "confidence": 0.95,
+      "reasons": [
+        "Câu hỏi nằm ngoài phạm vi pháp luật lao động, cần từ chối an toàn ngay cửa ngõ."
+      ]
+    },
+    {
+      "question_id": "Q078",
+      "category": "out_of_scope",
+      "question": "Mức thuế suất thuế giá trị gia tăng áp dụng đối với dịch vụ viễn thông quốc tế năm 2026 là bao nhiêu phần trăm?",
+      "complexity": "SIMPLE",
+      "strategy": "DIRECT_RAG",
+      "confidence": 0.95,
+      "reasons": [
+        "Câu hỏi nằm ngoài phạm vi pháp luật lao động, cần từ chối an toàn ngay cửa ngõ."
+      ]
+    },
+    {
+      "question_id": "Q079",
+      "category": "out_of_scope",
+      "question": "Công thức và quy trình chế biến nước dùng phở bò truyền thống Hà Nội chuẩn vị?",
+      "complexity": "SIMPLE",
+      "strategy": "DIRECT_RAG",
+      "confidence": 0.95,
+      "reasons": [
+        "Câu hỏi nằm ngoài phạm vi pháp luật lao động, cần từ chối an toàn ngay cửa ngõ."
+      ]
+    },
+    {
+      "question_id": "Q080",
+      "category": "out_of_scope",
+      "question": "Biểu thuế suất thuế thu nhập cá nhân đối với thu nhập từ chuyển nhượng chứng khoán và đầu tư vốn hiện hành?",
+      "complexity": "SIMPLE",
+      "strategy": "DIRECT_RAG",
+      "confidence": 0.95,
+      "reasons": [
+        "Câu hỏi nằm ngoài phạm vi pháp luật lao động, cần từ chối an toàn ngay cửa ngõ."
+      ]
+    }
+  ]
+}

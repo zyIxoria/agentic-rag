@@ -1,0 +1,65 @@
+{
+  "task": "RAG-18",
+  "name": "Integrate End-to-End Adaptive Agentic RAG Pipeline & Evaluate on RAG-08 Benchmark",
+  "status": "COMPLETED",
+  "systems_evaluated": [
+    "Traditional-RAG-v1",
+    "Corrective-RAG-v1 (CRAG)",
+    "Adaptive-Agentic-RAG-v1"
+  ],
+  "benchmark": {
+    "dataset": "evaluation/dataset/legal_qa.json",
+    "total_questions": 80
+  },
+  "comparative_metrics": {
+    "answer_correctness": {
+      "traditional_rag": 0.2188,
+      "crag": 0.5625,
+      "adaptive_rag": 0.4844
+    },
+    "faithfulness_rate": {
+      "traditional_rag": 0.2031,
+      "crag": 0.1875,
+      "adaptive_rag": 0.5781,
+      "gain_over_traditional": "2.85x"
+    },
+    "multi_document_faithfulness": {
+      "traditional_rag": 0.0833,
+      "crag": 0.0833,
+      "adaptive_rag": 1.0000
+    },
+    "out_of_scope_refusal_accuracy": {
+      "traditional_rag": 0.0,
+      "crag": 0.875,
+      "adaptive_rag": 0.875
+    },
+    "cross_reference_accuracy": {
+      "traditional_rag": 0.0,
+      "crag": 0.80,
+      "adaptive_rag": 0.70
+    },
+    "mean_total_latency_ms": {
+      "traditional_rag": 196.4,
+      "crag": 197.6,
+      "adaptive_rag": 177.71
+    },
+    "min_latency_ms": {
+      "traditional_rag": 124.6,
+      "crag": 127.0,
+      "adaptive_rag": 0.01
+    }
+  },
+  "adaptive_route_distribution": {
+    "DIRECT_ANSWER": 0,
+    "DIRECT_REFUSAL": 7,
+    "TRADITIONAL_RAG": 5,
+    "CORRECTIVE_RAG": 43,
+    "DECOMPOSE_AGENTIC": 25
+  },
+  "total_repository_tests": {
+    "total_tests": 138,
+    "passed": 138,
+    "failed": 0,
+    "status": "100% PASSED"
+  }
+}

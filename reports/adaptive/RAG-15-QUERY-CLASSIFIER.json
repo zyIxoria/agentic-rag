@@ -1,0 +1,27 @@
+{
+  "task": "RAG-15",
+  "name": "Design Adaptive RAG Architecture & Build Query Complexity & Intent Classifier",
+  "status": "COMPLETED",
+  "modules_created": [
+    "Adaptive_RAG/config.py",
+    "Adaptive_RAG/classifier/schema.py",
+    "Adaptive_RAG/classifier/base.py",
+    "Adaptive_RAG/classifier/hybrid_classifier.py",
+    "Adaptive_RAG/classifier/__init__.py",
+    "Adaptive_RAG/__init__.py"
+  ],
+  "routing_decisions": [
+    "DIRECT_ANSWER",
+    "DIRECT_REFUSAL",
+    "TRADITIONAL_RAG",
+    "CORRECTIVE_RAG",
+    "DECOMPOSE_AGENTIC"
+  ],
+  "unit_tests": {
+    "test_file": "tests/adaptive/test_query_classifier.py",
+    "total_tests": 7,
+    "passed": 7,
+    "failed": 0,
+    "execution_time_seconds": 0.001
+  }
+}

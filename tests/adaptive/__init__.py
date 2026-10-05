@@ -1,0 +1,3 @@
+"""
+Adaptive RAG test package.
+"""

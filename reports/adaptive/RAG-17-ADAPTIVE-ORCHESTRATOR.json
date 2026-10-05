@@ -1,0 +1,25 @@
+{
+  "task": "RAG-17",
+  "name": "Build Adaptive Orchestrator & Multi-Hop Retrieval Dispatcher",
+  "status": "COMPLETED",
+  "modules_created": [
+    "Adaptive_RAG/orchestration/schema.py",
+    "Adaptive_RAG/orchestration/synthesizer.py",
+    "Adaptive_RAG/orchestration/orchestrator.py",
+    "Adaptive_RAG/orchestration/__init__.py"
+  ],
+  "supported_routes": [
+    "DIRECT_ANSWER",
+    "DIRECT_REFUSAL",
+    "TRADITIONAL_RAG",
+    "CORRECTIVE_RAG",
+    "DECOMPOSE_AGENTIC"
+  ],
+  "unit_tests": {
+    "test_file": "tests/adaptive/test_adaptive_orchestrator.py",
+    "total_tests": 6,
+    "passed": 6,
+    "failed": 0,
+    "execution_time_seconds": 0.014
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "task": "RAG-16",
+  "name": "Implement Query Decomposition & Sub-query Planner",
+  "status": "COMPLETED",
+  "modules_created": [
+    "Adaptive_RAG/decomposition/schema.py",
+    "Adaptive_RAG/decomposition/base.py",
+    "Adaptive_RAG/decomposition/legal_decomposer.py",
+    "Adaptive_RAG/decomposition/__init__.py"
+  ],
+  "execution_strategies": [
+    "PARALLEL",
+    "SEQUENTIAL",
+    "HYBRID"
+  ],
+  "unit_tests": {
+    "test_file": "tests/adaptive/test_query_decomposition.py",
+    "total_tests": 4,
+    "passed": 4,
+    "failed": 0,
+    "execution_time_seconds": 0.001
+  }
+}
