@@ -1,0 +1,66 @@
+{
+  "traditional_rag": {
+    "TOP_K": 5,
+    "SIMILARITY_THRESHOLD": 0.45,
+    "LLM_PROVIDER": "mock",
+    "TEMPERATURE": 0.0,
+    "ENABLE_PRE_GUARD": true,
+    "ENABLE_POST_GUARD": true,
+    "status": "FROZEN"
+  },
+  "corrective_rag": {
+    "TOP_K": 5,
+    "SIMILARITY_THRESHOLD": 0.45,
+    "CORRECTIVE_THRESHOLD_UPPER": 0.7,
+    "CORRECTIVE_THRESHOLD_LOWER": 0.35,
+    "MAX_CORRECTIVE_RETRIES": 1,
+    "FALLBACK_SEARCH": "mock_web_search",
+    "status": "FROZEN"
+  },
+  "query_complexity_classifier": {
+    "module": "Module 0",
+    "classes": [
+      "SIMPLE",
+      "MODERATE",
+      "COMPLEX"
+    ],
+    "routing": [
+      "DIRECT_RAG",
+      "CRAG",
+      "DECOMPOSITION_CRAG"
+    ],
+    "max_words_threshold": 30,
+    "status": "COMPLETED"
+  },
+  "query_decomposition": {
+    "module": "Module 11",
+    "taxonomy": [
+      "MULTI_ISSUE",
+      "MULTI_CONDITION",
+      "CROSS_REFERENCE",
+      "MULTI_DOCUMENT",
+      "CONDITIONAL_TEMPORAL"
+    ],
+    "validation_criteria": [
+      "Coverage",
+      "Context Preservation",
+      "Redundancy",
+      "Atomicity",
+      "Retrieval Suitability"
+    ],
+    "max_retries": 1,
+    "fusion_strategy": "Reciprocal Rank Fusion (RRF) + Round Robin",
+    "status": "COMPLETED"
+  },
+  "adaptive_agentic_rag": {
+    "pipeline": "AdaptiveRAGPipeline",
+    "orchestrator": "AdaptiveOrchestrator",
+    "routes": [
+      "DIRECT_REFUSAL",
+      "TRADITIONAL_RAG",
+      "CORRECTIVE_RAG",
+      "DECOMPOSE_AGENTIC"
+    ],
+    "status": "COMPLETED_EVALUATED"
+  }
+}

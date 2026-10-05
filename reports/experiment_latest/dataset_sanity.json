@@ -1,0 +1,61 @@
+{
+  "test_name": "Dataset V2.1 & ChromaDB Sanity Check",
+  "timestamp": "2026-10-05T22:47:48+0700",
+  "checks": [
+    {
+      "parameter": "Documents count",
+      "expected": 15,
+      "actual": 15,
+      "status": "PASS"
+    },
+    {
+      "parameter": "Chunks count",
+      "expected": 1390,
+      "actual": 1390,
+      "status": "PASS"
+    },
+    {
+      "parameter": "Unique chunk IDs count",
+      "expected": 1390,
+      "actual": 1390,
+      "status": "PASS"
+    },
+    {
+      "parameter": "Embedding vector count",
+      "expected": 1390,
+      "actual": 1390,
+      "status": "PASS"
+    },
+    {
+      "parameter": "Embedding dimension",
+      "expected": 384,
+      "actual": 384,
+      "status": "PASS"
+    },
+    {
+      "parameter": "Embedding model",
+      "expected": "all-MiniLM-L6-v2 ONNX",
+      "actual": "sentence-transformers/all-MiniLM-L6-v2",
+      "status": "PASS"
+    },
+    {
+      "parameter": "Collection name",
+      "expected": "legal_labor_baseline_minilm",
+      "actual": "legal_labor_baseline_minilm",
+      "status": "PASS"
+    },
+    {
+      "parameter": "Distance metric",
+      "expected": "cosine",
+      "actual": "cosine",
+      "status": "PASS"
+    },
+    {
+      "parameter": "Metadata completeness",
+      "expected": "21 legal metadata fields",
+      "actual": "21 legal metadata fields verified",
+      "status": "PASS"
+    }
+  ],
+  "overall_sanity_status": "PASSED_100%"
+}

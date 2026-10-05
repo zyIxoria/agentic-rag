@@ -1,0 +1,99 @@
+{
+  "decomposition_quality_metrics": {
+    "mean_coverage_score": 0.9809,
+    "context_preservation_rate": 1.0,
+    "redundancy_rate": 0.0,
+    "over_decomposition_rate": 0.1087,
+    "under_decomposition_rate": 0.4118,
+    "dag_accuracy": 1.0,
+    "first_pass_validation_rate": 0.9375,
+    "repaired_rate": 0.0625,
+    "latency_stats": {
+      "mean": 0.18,
+      "median": 0.09,
+      "p95": 0.5,
+      "min": 0.04,
+      "max": 0.94
+    }
+  },
+  "retrieval_comparison_on_complex_queries": {
+    "sample_size": 34,
+    "direct_retrieval": {
+      "hit_rate@5": 0.2059,
+      "article_hit_rate@5": 0.2059,
+      "recall_article@5": 0.1029,
+      "recall_chunk@5": 0.0491,
+      "mrr_article": 0.0941,
+      "mrr_chunk": 0.0941
+    },
+    "decomposed_retrieval": {
+      "hit_rate@5": 0.2941,
+      "article_hit_rate@5": 0.2941,
+      "recall_article@5": 0.1765,
+      "recall_chunk@5": 0.071,
+      "mrr_article": 0.1667,
+      "mrr_chunk": 0.1667
+    },
+    "delta": {
+      "article_hit_rate@5": 0.0882,
+      "recall_article@5": 0.0736,
+      "recall_chunk@5": 0.0219,
+      "mrr_article": 0.0726
+    },
+    "category_breakdown": {
+      "complex_conditions": {
+        "count": 12,
+        "direct": {
+          "article_hit_rate@5": 0.1667,
+          "recall_article@5": 0.0833,
+          "recall_chunk@5": 0.0486,
+          "mrr_article": 0.0625
+        },
+        "decomposed": {
+          "article_hit_rate@5": 0.1667,
+          "recall_article@5": 0.0833,
+          "recall_chunk@5": 0.0486,
+          "mrr_article": 0.0625
+        },
+        "article_recall_gain": 0.0
+      },
+      "cross_reference": {
+        "count": 10,
+        "direct": {
+          "article_hit_rate@5": 0.2,
+          "recall_article@5": 0.1,
+          "recall_chunk@5": 0.0294,
+          "mrr_article": 0.15
+        },
+        "decomposed": {
+          "article_hit_rate@5": 0.3,
+          "recall_article@5": 0.2,
+          "recall_chunk@5": 0.0444,
+          "mrr_article": 0.25
+        },
+        "article_recall_gain": 0.1
+      },
+      "multi_document": {
+        "count": 12,
+        "direct": {
+          "article_hit_rate@5": 0.25,
+          "recall_article@5": 0.125,
+          "recall_chunk@5": 0.066,
+          "mrr_article": 0.0792
+        },
+        "decomposed": {
+          "article_hit_rate@5": 0.4167,
+          "recall_article@5": 0.25,
+          "recall_chunk@5": 0.1156,
+          "mrr_article": 0.2014
+        },
+        "article_recall_gain": 0.125
+      }
+    }
+  },
+  "outcome_distribution": {
+    "IMPROVED": 3,
+    "MAINTAINED": 77,
+    "REGRESSED": 0
+  }
+}

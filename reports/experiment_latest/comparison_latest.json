@@ -1,0 +1,78 @@
+{
+  "comparison_title": "Head-to-Head Comparison: Traditional RAG vs CRAG vs Adaptive Agentic RAG",
+  "metrics_comparison": {
+    "Hit Rate@5": {
+      "Traditional_RAG": 0.2969,
+      "CRAG": 0.2969,
+      "Adaptive_Agentic_RAG": 0.2969,
+      "delta_crag_vs_trad": 0.0,
+      "delta_adaptive_vs_trad": 0.0,
+      "complex_queries_hit_gain_via_decomposition": "+8.82% (20.59% -> 29.41%)"
+    },
+    "Recall@5 (Chunk)": {
+      "Traditional_RAG": 0.1431,
+      "CRAG": 0.1417,
+      "Adaptive_Agentic_RAG": 0.1417,
+      "delta_crag_vs_trad": -0.0014,
+      "delta_adaptive_vs_trad": -0.0014,
+      "complex_queries_chunk_recall_gain": "+2.19% (4.91% -> 7.10%)"
+    },
+    "MRR (Chunk)": {
+      "Traditional_RAG": 0.1932,
+      "CRAG": 0.2005,
+      "Adaptive_Agentic_RAG": 0.2005,
+      "delta_crag_vs_trad": 0.0073,
+      "delta_adaptive_vs_trad": 0.0073,
+      "complex_queries_mrr_gain": "+0.0726 (0.0941 -> 0.1667)"
+    },
+    "Answer Correctness": {
+      "Traditional_RAG": 0.5,
+      "CRAG": 0.5,
+      "Adaptive_Agentic_RAG": 0.4844,
+      "delta_crag_vs_trad": 0.0,
+      "delta_adaptive_vs_trad": -0.0156
+    },
+    "Strict Correctness": {
+      "Traditional_RAG": 0.2656,
+      "CRAG": 0.2188,
+      "Adaptive_Agentic_RAG": 0.2188,
+      "delta_crag_vs_trad": -0.0468,
+      "delta_adaptive_vs_trad": -0.0468
+    },
+    "Faithfulness Rate": {
+      "Traditional_RAG": 0.9375,
+      "CRAG": 1.0,
+      "Adaptive_Agentic_RAG": 0.5781,
+      "delta_crag_vs_trad": 0.0625,
+      "delta_adaptive_vs_trad": -0.3594
+    },
+    "Refusal Accuracy": {
+      "Traditional_RAG": 0.4375,
+      "CRAG": 0.9375,
+      "Adaptive_Agentic_RAG": 0.5,
+      "delta_crag_vs_trad": 0.5,
+      "delta_adaptive_vs_trad": 0.0625
+    },
+    "False Answer Rate": {
+      "Traditional_RAG": 0.5625,
+      "CRAG": 0.0625,
+      "Adaptive_Agentic_RAG": 0.5,
+      "delta_crag_vs_trad": -0.5,
+      "delta_adaptive_vs_trad": -0.0625
+    },
+    "Unsupported Claim Rate": {
+      "Traditional_RAG": 0.0625,
+      "CRAG": 0.0,
+      "Adaptive_Agentic_RAG": 0.4219,
+      "delta_crag_vs_trad": -0.0625,
+      "delta_adaptive_vs_trad": 0.3594
+    },
+    "Mean Total Latency (ms)": {
+      "Traditional_RAG": 291.46,
+      "CRAG": 174.05,
+      "Adaptive_Agentic_RAG": 177.71,
+      "delta_crag_vs_trad": -117.41,
+      "delta_adaptive_vs_trad": -113.75
+    }
+  }
+}

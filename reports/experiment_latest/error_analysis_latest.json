@@ -1,0 +1,160 @@
+{
+  "total_analyzed_cases": 12,
+  "failure_categories": [
+    "retrieval_miss",
+    "insufficient_evidence",
+    "wrong_routing",
+    "decomposition_failure",
+    "context_loss",
+    "hallucination",
+    "citation_failure",
+    "reasoning_failure",
+    "latency_issue"
+  ],
+  "cases": [
+    {
+      "case_id": 1,
+      "question_id": "Q065",
+      "question": "Quy định về thời hạn tối đa đối với hợp đồng lao động ký với người lao động nước ngoài đã được sửa đổi như thế nào tại Nghị định số 70/2023/NĐ-CP?",
+      "category": "insufficient_evidence",
+      "expected": "Từ chối trả lời (Cơ sở dữ liệu hoặc văn bản không quy định thời hạn tối đa khác với Bộ luật Lao động / Không có thông tin này trong nguồn dữ liệu hiện có).",
+      "traditional_result": "Trả lời bịa đặt / Ảo giác (False Answer: True, Refusal Accuracy: 0.0%).",
+      "crag_result": "Từ chối chính xác (Document Grader đánh giá INCORRECT -> Kích hoạt từ chối an toàn).",
+      "adaptive_result": "Được điều phối sang CORRECTIVE_RAG nhưng Web Fallback mock đã trả về câu trả lời giả lập.",
+      "failure_type": "insufficient_evidence / hallucination in Baseline & Mock Web Fallback",
+      "root_cause": "Traditional RAG thiếu cơ sở Grader để nhận diện lỗ hổng dữ liệu; Adaptive RAG kích hoạt Web Search Fallback giả lập thay vì trả về từ chối an toàn nếu web searcher không có internet thật."
+    },
+    {
+      "case_id": 2,
+      "question_id": "Q001",
+      "question": "Người sử dụng lao động có quyền áp dụng hình thức xử lý kỷ luật sa thải trong những trường hợp nào?",
+      "category": "single_article",
+      "expected": "Căn cứ Điều 125 Bộ luật Lao động 2019: 4 trường hợp áp dụng kỷ luật sa thải.",
+      "traditional_result": "Trả lời đúng (Answer Correctness: True, Faithfulness: 1.0).",
+      "crag_result": "Từ chối sai (False Refusal: Grader chấm điểm độ tương đồng dưới ngưỡng 0.70 do câu hỏi dài).",
+      "adaptive_result": "Trả lời đúng (Classifier nhận diện SIMPLE -> điều phối Traditional RAG -> Answer Correctness: True).",
+      "failure_type": "false_refusal in CRAG",
+      "root_cause": "Ngưỡng đánh giá CORRECTIVE_THRESHOLD_UPPER = 0.70 của SemanticGrader quá khắt khe đối với văn bản pháp luật dài, dẫn đến từ chối nhầm các câu hỏi đơn giản."
+    },
+    {
+      "case_id": 3,
+      "question_id": "Q036",
+      "question": "Hồ sơ đề nghị cấp giấy phép lao động cho người lao động nước ngoài theo quy định mới nhất gồm những giấy tờ gì?",
+      "category": "multi_document",
+      "expected": "Điều 9 Nghị định 152/2020/NĐ-CP sửa đổi bởi Nghị định 70/2023/NĐ-CP.",
+      "traditional_result": "Thu hồi thiếu: Chỉ tìm thấy Nghị định 152/2020, bỏ quên hoàn toàn các sửa đổi quan trọng của Nghị định 70/2023 (Article Recall: 50%).",
+      "crag_result": "Viết lại câu hỏi nhưng vẫn dùng đơn vector, không phân tách được 2 văn bản.",
+      "adaptive_result": "DECOMPOSE_AGENTIC tách thành 2 sub-queries: Sub_1 (NĐ 152/2020) và Sub_2 (NĐ 70/2023) -> Thu hồi trọn vẹn cả 2 văn bản.",
+      "failure_type": "retrieval_miss in Traditional RAG & CRAG",
+      "root_cause": "Vector biểu diễn đơn không thể bao quát đồng thời 2 văn bản luật có mã hiệu khác nhau; chỉ có Query Decomposition mới giải quyết được bài toán này."
+    },
+    {
+      "case_id": 4,
+      "question_id": "Q045",
+      "question": "Đối chiếu quy định tại Điều 169 và Điều 219 Bộ luật Lao động 2019 về điều kiện và tuổi nghỉ hưu của lao động nữ trong điều kiện lao động bình thường?",
+      "category": "cross_reference",
+      "expected": "Điều 169 (Tuổi nghỉ hưu) và Điều 219 (Sửa đổi Điều 54 Luật BHXH về điều kiện hưởng lương hưu).",
+      "traditional_result": "Chỉ thu hồi Điều 169, không có Điều 219 (Article Recall: 50%).",
+      "crag_result": "Chỉ thu hồi Điều 169, query rewriting không nhận diện được điều khoản thứ hai.",
+      "adaptive_result": "DECOMPOSE_AGENTIC sinh 3 sub-queries: Q1 (Điều 169), Q2 (Điều 219), Q3 (Mối quan hệ viện dẫn) -> Article Recall tăng lên 100%.",
+      "failure_type": "retrieval_miss in Traditional RAG & CRAG",
+      "root_cause": "Truy xuất trực tiếp bị pha loãng ngữ nghĩa khi chứa nhiều số hiệu Điều luật; chỉ có Query Decomposition bảo tồn được đồ thị phụ thuộc."
+    },
+    {
+      "case_id": 5,
+      "question_id": "Q055",
+      "question": "Trường hợp người lao động làm thêm giờ vào ban đêm của ngày nghỉ hằng tuần thì mức tiền lương ít nhất được tính theo tỷ lệ phần trăm như thế nào so với đơn giá tiền lương hoặc tiền lương thực trả?",
+      "category": "complex_conditions",
+      "expected": "Căn cứ Điều 98 BLLĐ 2019: Lương ngày nghỉ hằng tuần (200%) + Lương làm việc ban đêm (30%) + Lương làm thêm giờ ban đêm ngày nghỉ (20% x 200% = 40%) -> Tổng 270%.",
+      "traditional_result": "Tìm thấy Điều 98 nhưng mô hình Generator không suy luận đủ 3 tầng điều kiện (Answer Correctness: False).",
+      "crag_result": "Tương tự Baseline, Grader xác nhận đúng tài liệu nhưng Generator trích thiếu công thức tổng hợp.",
+      "adaptive_result": "Tách thành sub_1 (điều kiện) và sub_2 (công thức tính lương) -> Cải thiện cấu trúc nhưng Generator mock chưa hỗ trợ tính số học phức tạp.",
+      "failure_type": "reasoning_failure",
+      "root_cause": "Bài toán tính toán đa tầng điều kiện đòi hỏi bước Reasoning / Symbolic Math ngoài phạm vi của Dense Retrieval thuần túy."
+    },
+    {
+      "case_id": 6,
+      "question_id": "Q069",
+      "question": "Mức lương tối thiểu vùng áp dụng cho người lao động tại xã đảo Thạnh An, huyện Cần Giờ, Thành phố Hồ Chí Minh là bao nhiêu theo quy định mới nhất?",
+      "category": "insufficient_evidence",
+      "expected": "Từ chối trả lời (Nghị định 38/2022 hoặc 74/2024 không có chi tiết cụ thể cho xã đảo này trong tập dữ liệu chuẩn hóa của project).",
+      "traditional_result": "Tự động gán vào Vùng I hoặc Vùng II của TP.HCM mà không có căn cứ văn bản (Ảo giác / False Answer).",
+      "crag_result": "Grader nhận diện không có bằng chứng chính xác nhưng rewrite query vẫn tìm kiếm trong kho -> Từ chối chưa dứt khoát.",
+      "adaptive_result": "Điều phối vào CRAG, kích hoạt fallback.",
+      "failure_type": "insufficient_evidence / hallucination",
+      "root_cause": "Dữ liệu địa bàn cấp xã không nằm trong 15 văn bản cốt lõi; cần cơ chế Refusal dứt khoát khi metadata không chứa địa danh tương ứng."
+    },
+    {
+      "case_id": 7,
+      "question_id": "Q075",
+      "question": "Thủ tục xin cấp đổi giấy phép lái xe ô tô hạng B2 trực tuyến qua Cổng dịch vụ công quốc gia thực hiện như thế nào?",
+      "category": "out_of_scope",
+      "expected": "Từ chối trả lời ngay lập tức (Thuộc lĩnh vực Giao thông vận tải, không thuộc phạm vi Pháp luật Lao động).",
+      "traditional_result": "Thu hồi bừa các chunk có từ khóa 'giấy phép', 'thủ tục' trong Nghị định 152/2020 và trả lời sai lệch hoàn toàn.",
+      "crag_result": "Grader đánh giá INCORRECT nhưng Web Fallback mock tạo câu trả lời thay vì từ chối.",
+      "adaptive_result": "DIRECT_REFUSAL tại gateway trong 0.01 ms! Từ chối an toàn 100%, không tốn tài nguyên.",
+      "failure_type": "out_of_scope handling in Baseline vs Success in Adaptive",
+      "root_cause": "Traditional RAG thiếu bộ lọc Domain Guard; Adaptive RAG giải quyết triệt để thông qua Query Complexity Classifier."
+    },
+    {
+      "case_id": 8,
+      "question_id": "Q077",
+      "question": "Quy trình đăng ký làm thẻ Căn cước công dân gắn chíp cho công dân tạm trú tại Hà Nội gồm những bước nào?",
+      "category": "out_of_scope",
+      "expected": "Từ chối trả lời (Thuộc lĩnh vực Quản lý cư trú / Bộ Công an).",
+      "traditional_result": "Thu hồi các đoạn có từ 'công dân', 'tạm trú' và sinh câu trả lời sai lệch.",
+      "crag_result": "Từ chối thành công sau khi Grader chấm điểm thấp.",
+      "adaptive_result": "DIRECT_REFUSAL tại cửa ngõ trong 0.01 ms. Độ chính xác từ chối 100%.",
+      "failure_type": "domain_leakage in Baseline",
+      "root_cause": "Baseline RAG luôn ép sinh câu trả lời dựa trên Top-K chunks bất kể nội dung câu hỏi thuộc lĩnh vực nào."
+    },
+    {
+      "case_id": 9,
+      "question_id": "Q018",
+      "question": "Mức bồi thường tai nạn lao động do lỗi của người sử dụng lao động làm suy giảm 81% khả năng lao động trở lên được tính tối thiểu bao nhiêu tháng tiền lương?",
+      "category": "single_article",
+      "expected": "Ít nhất 30 tháng tiền lương (khoản 1 Điều 38 Luật ATVSLĐ hoặc Điều 145 BLLĐ).",
+      "traditional_result": "Tìm thấy Điều 145 nhưng thiếu văn bản Luật ATVSLĐ chuyên ngành (Recall Article: 50%).",
+      "crag_result": "Tìm thấy đúng đoạn và trả lời chính xác 30 tháng tiền lương.",
+      "adaptive_result": "Trả lời chính xác, trích dẫn đầy đủ Điều 145.",
+      "failure_type": "retrieval_miss in Baseline",
+      "root_cause": "Baseline Dense Retrieval bị chi phối bởi các chunk có số % khác (5% đến 10%), không ưu tiên chunk chứa mốc 81%."
+    },
+    {
+      "case_id": 10,
+      "question_id": "Q028",
+      "question": "Người sử dụng lao động có phải tham khảo ý kiến của tổ chức đại diện người lao động tại cơ sở khi xây dựng quy chế đánh giá mức độ hoàn thành nhiệm vụ không?",
+      "category": "single_doc_multi_chunk",
+      "expected": "Căn cứ điểm a khoản 1 Điều 36 Bộ luật Lao động 2019: Phải tham khảo ý kiến tổ chức đại diện người lao động tại cơ sở.",
+      "traditional_result": "Thu hồi đúng khoản 1 Điều 36 nhưng trích dẫn thiếu các quy chế thực hiện dân chủ.",
+      "crag_result": "Kích hoạt Strip & Filter loại bỏ các đoạn thừa, trích dẫn chính xác điểm a khoản 1.",
+      "adaptive_result": "Trả lời chính xác, độ trung thực đạt 100%.",
+      "failure_type": "context_noise in Baseline",
+      "root_cause": "Baseline nạp toàn bộ văn bản Điều 36 vào context khiến generator bị nhiễu; CRAG và Adaptive lọc sạch đoạn thừa."
+    },
+    {
+      "case_id": 11,
+      "question_id": "Q048",
+      "question": "Tiền lương làm căn cứ bồi thường cho người lao động khi đơn phương chấm dứt hợp đồng lao động trái pháp luật được tính như thế nào?",
+      "category": "cross_reference",
+      "expected": "Điều 41 Bộ luật Lao động 2019 kết hợp Điều 36 và Nghị định 145/2020.",
+      "traditional_result": "Chỉ thu hồi Điều 41, bỏ sót hướng dẫn tiền lương bình quân tại Nghị định 145.",
+      "crag_result": "Thực hiện query rewrite bổ sung 'tiền lương bình quân 6 tháng' -> Thu hồi thêm Nghị định 145.",
+      "adaptive_result": "Nhận diện CROSS_REFERENCE -> Thu hồi và tổng hợp cả 2 nguồn.",
+      "failure_type": "retrieval_miss in Baseline",
+      "root_cause": "Truy xuất đơn lẻ không nhận biết được quy định về tiền lương bồi thường nằm ở văn bản hướng dẫn thi hành."
+    },
+    {
+      "case_id": 12,
+      "question_id": "Q058",
+      "question": "Người lao động làm công việc đặc biệt nặng nhọc, độc hại, nguy hiểm thì được làm thêm giờ tối đa bao nhiêu giờ trong một ngày và trong một năm?",
+      "category": "complex_conditions",
+      "expected": "Số giờ làm việc bình thường không quá 6 giờ/ngày, số giờ làm thêm không quá 50% số giờ làm việc bình thường trong ngày và không quá 200 giờ/năm (hoặc 300 giờ theo danh mục đặc biệt).",
+      "traditional_result": "Thu hồi nhầm quy định chung 8 giờ/ngày của người lao động bình thường (Điều 105).",
+      "crag_result": "Grader phát hiện nhầm lẫn, kích hoạt rewrite query có từ khóa 'nặng nhọc độc hại' -> Tìm thấy Thông tư 09/2020 và Điều 107.",
+      "adaptive_result": "Tách sub-query điều kiện đặc thù -> Thu hồi chính xác cả 2 văn bản.",
+      "failure_type": "context_loss / retrieval_dilution in Baseline",
+      "root_cause": "Điều kiện 'đặc biệt nặng nhọc, độc hại' bị lấn át bởi trọng số của các từ khóa chung 'thời giờ làm việc', 'làm thêm giờ' trong mô hình nhúng vector."
+    }
+  ]
+}

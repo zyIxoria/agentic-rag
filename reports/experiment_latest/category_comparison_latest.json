@@ -1,0 +1,186 @@
+{
+  "categories": [
+    "A Single Article",
+    "B Multi-Chunk",
+    "C Multi-Document",
+    "D Cross-Reference",
+    "E Complex Conditions",
+    "F Insufficient Evidence",
+    "G Out-of-Scope"
+  ],
+  "breakdown": {
+    "A Single Article": {
+      "code": "single_article",
+      "count": 18,
+      "Traditional_RAG": {
+        "answer_correctness": 0.3889,
+        "faithfulness": 0.9444,
+        "strict_correctness": 0.3889
+      },
+      "CRAG": {
+        "answer_correctness": 0.5,
+        "faithfulness": 1.0,
+        "strict_correctness": 0.3889
+      },
+      "Adaptive_Agentic_RAG": {
+        "answer_correctness": 0.4444,
+        "faithfulness": 0.6111,
+        "routes": {
+          "DIRECT_ANSWER": 0,
+          "DIRECT_REFUSAL": 0,
+          "TRADITIONAL_RAG": 5,
+          "CORRECTIVE_RAG": 7,
+          "DECOMPOSE_AGENTIC": 6
+        }
+      }
+    },
+    "B Multi-Chunk": {
+      "code": "single_doc_multi_chunk",
+      "count": 12,
+      "Traditional_RAG": {
+        "answer_correctness": 0.5833,
+        "faithfulness": 0.9167,
+        "strict_correctness": 0.3333
+      },
+      "CRAG": {
+        "answer_correctness": 0.5,
+        "faithfulness": 1.0,
+        "strict_correctness": 0.25
+      },
+      "Adaptive_Agentic_RAG": {
+        "answer_correctness": 0.5,
+        "faithfulness": 0.5,
+        "routes": {
+          "DIRECT_ANSWER": 0,
+          "DIRECT_REFUSAL": 0,
+          "TRADITIONAL_RAG": 0,
+          "CORRECTIVE_RAG": 9,
+          "DECOMPOSE_AGENTIC": 3
+        }
+      }
+    },
+    "C Multi-Document": {
+      "code": "multi_document",
+      "count": 12,
+      "Traditional_RAG": {
+        "answer_correctness": 0.5833,
+        "faithfulness": 1.0,
+        "strict_correctness": 0.1667
+      },
+      "CRAG": {
+        "answer_correctness": 0.5,
+        "faithfulness": 1.0,
+        "strict_correctness": 0.0833
+      },
+      "Adaptive_Agentic_RAG": {
+        "answer_correctness": 0.5,
+        "faithfulness": 1.0,
+        "routes": {
+          "DIRECT_ANSWER": 0,
+          "DIRECT_REFUSAL": 0,
+          "TRADITIONAL_RAG": 0,
+          "CORRECTIVE_RAG": 0,
+          "DECOMPOSE_AGENTIC": 12
+        }
+      }
+    },
+    "D Cross-Reference": {
+      "code": "cross_reference",
+      "count": 10,
+      "Traditional_RAG": {
+        "answer_correctness": 0.6,
+        "faithfulness": 1.0,
+        "strict_correctness": 0.3
+      },
+      "CRAG": {
+        "answer_correctness": 0.6,
+        "faithfulness": 1.0,
+        "strict_correctness": 0.3
+      },
+      "Adaptive_Agentic_RAG": {
+        "answer_correctness": 0.7,
+        "faithfulness": 0.5,
+        "routes": {
+          "DIRECT_ANSWER": 0,
+          "DIRECT_REFUSAL": 0,
+          "TRADITIONAL_RAG": 0,
+          "CORRECTIVE_RAG": 6,
+          "DECOMPOSE_AGENTIC": 4
+        }
+      }
+    },
+    "E Complex Conditions": {
+      "code": "complex_conditions",
+      "count": 12,
+      "Traditional_RAG": {
+        "answer_correctness": 0.4167,
+        "faithfulness": 0.8333,
+        "strict_correctness": 0.0833
+      },
+      "CRAG": {
+        "answer_correctness": 0.4167,
+        "faithfulness": 1.0,
+        "strict_correctness": 0.0
+      },
+      "Adaptive_Agentic_RAG": {
+        "answer_correctness": 0.3333,
+        "faithfulness": 0.25,
+        "routes": {
+          "DIRECT_ANSWER": 0,
+          "DIRECT_REFUSAL": 0,
+          "TRADITIONAL_RAG": 0,
+          "CORRECTIVE_RAG": 12,
+          "DECOMPOSE_AGENTIC": 0
+        }
+      }
+    },
+    "F Insufficient Evidence": {
+      "code": "insufficient_evidence",
+      "count": 8,
+      "Traditional_RAG": {
+        "refusal_accuracy": 0.0,
+        "false_answer_rate": 1.0
+      },
+      "CRAG": {
+        "refusal_accuracy": 0.875,
+        "false_answer_rate": 0.125
+      },
+      "Adaptive_Agentic_RAG": {
+        "refusal_accuracy": 0.0,
+        "answer_correctness": 1.0,
+        "faithfulness": 1.0,
+        "routes": {
+          "DIRECT_ANSWER": 0,
+          "DIRECT_REFUSAL": 0,
+          "TRADITIONAL_RAG": 0,
+          "CORRECTIVE_RAG": 8,
+          "DECOMPOSE_AGENTIC": 0
+        },
+        "note": "Routed to CORRECTIVE_RAG; fallback web searcher triggered response."
+      }
+    },
+    "G Out-of-Scope": {
+      "code": "out_of_scope",
+      "count": 8,
+      "Traditional_RAG": {
+        "refusal_accuracy": 0.875,
+        "false_answer_rate": 0.125
+      },
+      "CRAG": {
+        "refusal_accuracy": 1.0,
+        "false_answer_rate": 0.0
+      },
+      "Adaptive_Agentic_RAG": {
+        "refusal_accuracy": 1.0,
+        "routes": {
+          "DIRECT_ANSWER": 0,
+          "DIRECT_REFUSAL": 7,
+          "TRADITIONAL_RAG": 0,
+          "CORRECTIVE_RAG": 1,
+          "DECOMPOSE_AGENTIC": 0
+        },
+        "note": "7/8 queries intercepted at gateway DIRECT_REFUSAL in 0.01 ms."
+      }
+    }
+  }
+}
