@@ -222,6 +222,7 @@ agentic-rag/
 ├── run_crag.py                  # CLI chạy Corrective RAG
 ├── run_adaptive.py              # CLI chạy Adaptive Agentic RAG
 ├── requirements.txt             # Danh mục thư viện Python chuẩn
+├── HUONG_DAN_CHAY_THUC_NGHIEM.md # Sổ tay hướng dẫn chạy thực nghiệm toàn diện
 └── README.md                    # Tài liệu hướng dẫn chính của dự án
 ```
 
@@ -229,7 +230,8 @@ agentic-rag/
 
 ## 📑 DANH MỤC TÀI LIỆU & BÁO CÁO NGHIỆM THU CHI TIẾT
 
-* **Tài liệu hướng dẫn thực nghiệm chi tiết**: [`HUONG_DAN_CHAY_RAG_BASELINE.md`](file:///d:/Filehoc/KLCN/agentic-rag/HUONG_DAN_CHAY_RAG_BASELINE.md)
+* **Sổ tay thực nghiệm toàn diện (3 mô hình)**: [`HUONG_DAN_CHAY_THUC_NGHIEM.md`](file:///d:/Filehoc/KLCN/agentic-rag/HUONG_DAN_CHAY_THUC_NGHIEM.md)
+* **Hướng dẫn riêng Baseline**: [`HUONG_DAN_CHAY_RAG_BASELINE.md`](file:///d:/Filehoc/KLCN/agentic-rag/HUONG_DAN_CHAY_RAG_BASELINE.md)
 * **Báo cáo thực nghiệm tổng hợp mới nhất**: [`reports/experiment_latest/LATEST-EXPERIMENT-REPORT.md`](file:///d:/Filehoc/KLCN/agentic-rag/reports/experiment_latest/LATEST-EXPERIMENT-REPORT.md)
 * **Văn bản đóng băng Traditional RAG Baseline**: [`reports/rag/TRADITIONAL-RAG-BASELINE-FROZEN.md`](file:///d:/Filehoc/KLCN/agentic-rag/reports/rag/TRADITIONAL-RAG-BASELINE-FROZEN.md)
 * **Báo cáo đối sánh Baseline vs CRAG**: [`reports/rag/CRAG-07-COMPARISON.md`](file:///d:/Filehoc/KLCN/agentic-rag/reports/rag/CRAG-07-COMPARISON.md)

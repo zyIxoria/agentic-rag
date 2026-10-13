@@ -1,6 +1,9 @@
 # TÀI LIỆU HƯỚNG DẪN CHẠY MÔ HÌNH TRADITIONAL RAG BASELINE
 *(Phiên bản chuẩn hóa đối sánh: `Traditional-RAG-v1`)*
 
+> [!TIP]
+> **Sổ tay thực nghiệm toàn diện**: Để xem hướng dẫn chi tiết cho cả 3 mô hình (**Traditional Baseline**, **Corrective RAG (CRAG)** và **Adaptive Agentic RAG**), vui lòng tham khảo tệp: [`HUONG_DAN_CHAY_THUC_NGHIEM.md`](HUONG_DAN_CHAY_THUC_NGHIEM.md).
+
 ---
 
 ## 1. TỔNG QUAN HỆ THỐNG
