@@ -1,0 +1,21 @@
+# Core Vector Store & Embedding Pipeline
+chromadb==1.5.9
+onnxruntime==1.29.0
+numpy>=2.0.0
+tokenizers>=0.20.0
+
+# Data Modeling & Configuration
+pydantic==2.13.5
+pydantic-settings>=2.0.0
+python-dotenv==1.2.3
+
+# Testing & Benchmarking
+pytest==9.1.1
+
+# Utilities
+tqdm>=4.66.0
+requests>=2.31.0
+
+# Optional: LLM Cloud Providers (chỉ cần nếu kết nối OpenAI / Gemini thay cho mock offline)
+# openai>=1.50.0
+# google-genai>=0.1.0
