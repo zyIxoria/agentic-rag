@@ -90,6 +90,17 @@ Hệ thống tự động kích hoạt bộ đánh giá chứng cứ (`Retrieval
   python run_crag.py --query "Người lao động làm việc 5 năm thì được bao nhiêu ngày phép năm?"
   ```
 
+### 3. Chạy Adaptive Agentic RAG
+Tự động phân loại độ phức tạp câu hỏi (7 Intent), bẻ nhỏ câu hỏi đa chặng (Sub-queries Decomposition), tra cứu song song và tổng hợp câu trả lời:
+* **Hỏi đáp tương tác liên tục**:
+  ```bash
+  python run_adaptive.py
+  ```
+* **Tra cứu 1 câu hỏi (hiển thị chi tiết Adaptive Routing Trace & Sub-queries Plan)**:
+  ```bash
+  python run_adaptive.py --query "So sánh quy định về thời giờ làm việc và làm thêm giờ giữa Bộ luật Lao động 2019 và Nghị định 145/2020?"
+  ```
+
 ---
 
 ## 🧪 HƯỚNG DẪN CHẠY BENCHMARK THỰC NGHIỆM (EVALUATION RUNNERS)
@@ -192,6 +203,7 @@ agentic-rag/
 ├── tests/                       # Toàn bộ 391 bài kiểm thử tự động
 ├── run_rag_baseline.py          # CLI chạy Traditional RAG Baseline
 ├── run_crag.py                  # CLI chạy Corrective RAG
+├── run_adaptive.py              # CLI chạy Adaptive Agentic RAG
 ├── requirements.txt             # Danh mục thư viện Python chuẩn
 └── README.md                    # Tài liệu hướng dẫn chính của dự án
 ```
