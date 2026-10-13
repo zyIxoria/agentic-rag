@@ -53,7 +53,7 @@ python run_rag_baseline.py --query "Người lao động có được đơn phư
 ```
 
 ### C. Tùy chỉnh tham số nâng cao
-* **Đổi số lượng chunks thu hồi (`--top-k`)**:
+* **Đổi số lượng chunks truy xuất (`--top-k`)**:
   ```bash
   python run_rag_baseline.py --query "Quy định về thời gian thử việc" --top-k 10
   ```
@@ -106,11 +106,11 @@ print("\n--- TRẠNG THÁI TỪ CHỐI ---")
 print(f"Bị từ chối: {response.refused} (Lý do: {response.refusal_reason})")
 
 print("\n--- THÔNG SỐ ĐỘ TRỄ ---")
-print(f"Độ trễ thu hồi: {response.retrieval_latency} ms")
+print(f"Độ trễ truy xuất: {response.retrieval_latency} ms")
 print(f"Độ trễ sinh: {response.generation_latency} ms")
 print(f"Tổng thời gian: {response.latency} ms")
 
-print("\n--- DANH SÁCH CHUNKS THU HỒI ---")
+print("\n--- DANH SÁCH CHUNKS TRUY XUẤT ---")
 for chunk in response.retrieved_chunks:
     print(f"• [{chunk.chunk_id}] (Score: {chunk.score:.4f}): {chunk.content[:100]}...")
 ```
@@ -121,7 +121,7 @@ for chunk in response.retrieved_chunks:
 
 Để tái hiện lại toàn bộ kết quả đo lường khoa học phục vụ luận văn:
 
-### A. Đánh giá riêng tầng Thu hồi (Retrieval Evaluation - RAG-09)
+### A. Đánh giá riêng tầng Truy xuất (Retrieval Evaluation - RAG-09)
 Chạy đánh giá các chỉ số `Recall@K`, `Hit Rate@K`, `Precision@K`, `MRR` trên 80 câu hỏi:
 ```bash
 python evaluation/evaluate_retrieval.py
@@ -224,7 +224,7 @@ MAX_CONTEXT_TOKENS=3000
 | `question` | `str` | Câu hỏi gốc của người dùng. |
 | `answer` | `str` | Câu trả lời cuối cùng đã được thay thế trích dẫn nội văn và gắn phụ lục chân trang. |
 | `citations` | `List[LegalCitation]` | Danh sách các đối tượng trích dẫn pháp lý chính xác (gồm `document_title`, `article_number`, `source_url`, v.v.). |
-| `retrieved_chunks` | `List[RetrievedChunk]` | Danh sách Top-K đoạn văn bản được thu hồi từ ChromaDB kèm điểm tương đồng `score` và `rank`. |
+| `retrieved_chunks` | `List[RetrievedChunk]` | Danh sách Top-K đoạn văn bản được truy xuất từ ChromaDB kèm điểm tương đồng `score` và `rank`. |
 | `refused` | `bool` | `True` nếu hệ thống kích hoạt cơ chế từ chối do câu hỏi thiếu dữ liệu hoặc ngoài phạm vi. |
 | `refusal_reason` | `Optional[str]` | Lý do từ chối cụ thể (từ Pre-guard hoặc Generator). |
 | `retrieval_latency` | `float` | Thời gian tính vector embedding và truy vấn ChromaDB (ms). |

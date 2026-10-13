@@ -49,15 +49,15 @@ def print_response(res):
     print("-" * 80)
     print("📊 THÔNG SỐ VẬN HÀNH:")
     print(f"   • Trạng thái từ chối (Refused) : {res.refused} {f'({res.refusal_reason})' if res.refused else ''}")
-    print(f"   • Số chunks thu hồi (Top-K)    : {len(res.retrieved_chunks)}")
+    print(f"   • Số chunks truy xuất (Top-K)  : {len(res.retrieved_chunks)}")
     print(f"   • Số trích dẫn hợp lệ          : {len(res.citations)}")
-    print(f"   • Độ trễ thu hồi (Retrieval)   : {res.retrieval_latency:.2f} ms")
+    print(f"   • Độ trễ truy xuất (Retrieval) : {res.retrieval_latency:.2f} ms")
     print(f"   • Độ trễ sinh mẫu (Generation) : {res.generation_latency:.2f} ms")
     print(f"   • Tổng độ trễ toàn chuỗi       : {res.latency:.2f} ms")
     print(f"   • Mô hình LLM                  : {res.model_name} ({res.provider})")
     
     if res.retrieved_chunks:
-        print("\n🔍 CÁC ĐOẠN VĂN BẢN ĐÃ THU HỒI:")
+        print("\n🔍 CÁC ĐOẠN VĂN BẢN ĐÃ TRUY XUẤT:")
         for idx, c in enumerate(res.retrieved_chunks, start=1):
             doc = c.metadata.get("document_id", "")
             art = c.metadata.get("article_number", "")
@@ -72,7 +72,7 @@ def main():
     parser.add_argument("--query", "-q", type=str, default=None, help="Câu hỏi pháp lý cần tra cứu trực tiếp")
     parser.add_argument("--provider", "-p", type=str, default="mock", choices=["mock", "openai", "gemini", "auto"],
                         help="Nhà cung cấp LLM: 'mock' (mặc định ngoại tuyến), 'openai', 'gemini'")
-    parser.add_argument("--top-k", "-k", type=int, default=5, help="Số lượng chunk thu hồi (mặc định: 5)")
+    parser.add_argument("--top-k", "-k", type=int, default=5, help="Số lượng chunk truy xuất (mặc định: 5)")
     parser.add_argument("--threshold", "-t", type=float, default=0.45, help="Ngưỡng tương đồng tối thiểu (mặc định: 0.45)")
     parser.add_argument("--model", "-m", type=str, default=None, help="Tên mô hình LLM cụ thể")
 
