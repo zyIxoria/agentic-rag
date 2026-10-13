@@ -203,25 +203,73 @@ python evaluation/runner/adaptive_runner.py
 
 ## 5. CÁCH 4: CHẠY BỘ KIỂM THỬ TỰ ĐỘNG (UNIT & INTEGRATION TESTS)
 
-Dự án duy trì hệ thống kiểm thử toàn diện gồm **391 bài test** tự động với cơ chế chống hồi quy (Zero Regression):
+Dự án duy trì hệ thống kiểm thử toàn diện gồm **264+ bài test** tự động với cơ chế chống hồi quy (Zero Regression):
 
 ```powershell
-# 1. Chạy TOÀN BỘ 391 bài test của toàn dự án:
+# 1. Chạy TOÀN BỘ bài test của toàn dự án:
 pytest tests/ -v
 
-# 2. Chạy 97 bài test của Traditional RAG Baseline:
-pytest tests/rag tests/retriever tests/context tests/generator tests/citation tests/guards tests/embedding tests/vector_store tests/evaluation evaluation/tests -v
+# 2. Chạy kiểm thử hệ thống cơ sở dữ liệu lịch sử truy vấn:
+pytest tests/test_query_history.py -v
 
-# 3. Chạy 66 bài test của Corrective RAG (CRAG):
+# 3. Chạy các bài test của Traditional RAG Baseline:
+pytest tests/rag tests/retriever tests/context tests/generator tests/citation tests/guards tests/embedding tests/vector_store -v
+
+# 4. Chạy các bài test của Corrective RAG (CRAG):
 pytest tests/crag tests/test_corrective_evaluator.py tests/test_corrective_loop.py tests/test_corrective_pipeline.py tests/test_query_rewriter.py -v
 
-# 4. Chạy 91 bài test của Adaptive Agentic RAG:
+# 5. Chạy các bài test của Adaptive Agentic RAG:
 pytest tests/adaptive tests/test_query_complexity_classifier.py tests/test_query_decomposer.py -v
 ```
 
 ---
 
-## 6. PHÂN TÍCH CASE STUDY ĐỐI ĐẦU THỰC TẾ GIỮA 3 MÔ HÌNH
+## 6. CÁCH 5: TÍNH TOÁN VÀ QUY ĐỔI CHI PHÍ TOKEN TRÊN LLM THƯƠNG MẠI
+
+Hệ thống cung cấp công cụ tự động tính toán số lượng Token và quy đổi chi phí ra USD ($) và VNĐ trên các mô hình hàng đầu (Gemini 1.5 Flash, GPT-4o-mini, Gemini 1.5 Pro, GPT-4o, Claude 3.5 Sonnet):
+
+```powershell
+# Chạy hiển thị bảng quy đổi chi phí trên console và lưu báo cáo vào reports/
+python evaluation/cost_calculator.py --save
+
+# Xuất dữ liệu chi tiết ra JSON
+python evaluation/cost_calculator.py --json
+
+# Tùy chỉnh tỷ giá USD/VND (mặc định 25,500)
+python evaluation/cost_calculator.py --rate 25400
+```
+* **Báo cáo chi tiết**: [`reports/experiment_latest/BANG_TINH_CHI_PHI_TOKEN_LLM.md`](file:///d:/Filehoc/KLCN/agentic-rag/reports/experiment_latest/BANG_TINH_CHI_PHI_TOKEN_LLM.md)
+
+---
+
+## 7. CÁCH 6: TRA CỨU VÀ QUẢN LÝ LỊCH SỬ TRUY VẤN (SQLITE DATABASE)
+
+Tất cả các câu hỏi chạy qua `run_rag_baseline.py`, `run_crag.py`, hoặc `run_adaptive.py` đều được tự động lưu vào CSDL SQLite tại `data/history/query_history.db`. Bạn có thể tra cứu và quản lý thông qua file thực thi: [`show_history.py`](file:///d:/Filehoc/KLCN/agentic-rag/show_history.py)
+
+```powershell
+# 1. Xem tổng hợp thống kê toàn bộ lịch sử (số câu, tỉ lệ từ chối, latency, tokens, cost):
+python show_history.py --summary
+
+# 2. Liệt kê danh sách các câu hỏi gần nhất:
+python show_history.py --list --limit 10
+
+# 3. Tìm kiếm câu hỏi hoặc câu trả lời theo từ khóa:
+python show_history.py --search "thử việc"
+
+# 4. Xem chi tiết toàn diện một phiên hỏi đáp theo ID:
+python show_history.py --view 1
+
+# 5. Xuất dữ liệu lịch sử ra JSON hoặc CSV để nghiên cứu/vẽ biểu đồ:
+python show_history.py --export-json lich_su_hoi_dap.json
+python show_history.py --export-csv lich_su_hoi_dap.csv
+
+# 6. Chấm điểm và gửi nhận xét phản hồi cho câu trả lời:
+python show_history.py --rate 1 --score 5 --feedback "Căn cứ pháp lý viện dẫn rất đầy đủ"
+```
+
+---
+
+## 8. PHÂN TÍCH CASE STUDY ĐỐI ĐẦU THỰC TẾ GIỮA 3 MÔ HÌNH
 
 Ví dụ thực nghiệm đối đầu trên câu hỏi đa văn bản phức tạp:  
 > *"So sánh quy định về thời giờ làm việc và làm thêm giờ giữa Bộ luật Lao động 2019 và Nghị định 145/2020?"*
@@ -237,8 +285,9 @@ Ví dụ thực nghiệm đối đầu trên câu hỏi đa văn bản phức t�
 
 ---
 
-## 7. BẢNG CHỈ MỤC BÁO CÁO VÀ KẾT QUẢ THỰC NGHIỆM
+## 9. BẢNG CHỈ MỤC BÁO CÁO VÀ KẾT QUẢ THỰC NGHIỆM
 
+* **Bảng quy đổi chi phí Token trên LLM thương mại**: [`reports/experiment_latest/BANG_TINH_CHI_PHI_TOKEN_LLM.md`](file:///d:/Filehoc/KLCN/agentic-rag/reports/experiment_latest/BANG_TINH_CHI_PHI_TOKEN_LLM.md)
 * **Báo cáo thực nghiệm tổng hợp mới nhất**: [`reports/experiment_latest/LATEST-EXPERIMENT-REPORT.md`](file:///d:/Filehoc/KLCN/agentic-rag/reports/experiment_latest/LATEST-EXPERIMENT-REPORT.md)
 * **Văn bản đóng băng Traditional RAG Baseline**: [`reports/rag/TRADITIONAL-RAG-BASELINE-FROZEN.md`](file:///d:/Filehoc/KLCN/agentic-rag/reports/rag/TRADITIONAL-RAG-BASELINE-FROZEN.md)
 * **Báo cáo nghiệm thu Corrective RAG (CRAG)**: [`reports/crag/RAG-14-CRAG-EVALUATION.md`](file:///d:/Filehoc/KLCN/agentic-rag/reports/crag/RAG-14-CRAG-EVALUATION.md)

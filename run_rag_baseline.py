@@ -24,6 +24,7 @@ if str(project_root) not in sys.path:
 
 from RAG.pipeline.config import PipelineConfig
 from RAG.pipeline.traditional_rag import TraditionalRAGPipeline
+from storage.query_history import QueryHistoryDatabase
 
 
 def print_banner():
@@ -75,6 +76,7 @@ def main():
     parser.add_argument("--top-k", "-k", type=int, default=5, help="Số lượng chunk truy xuất (mặc định: 5)")
     parser.add_argument("--threshold", "-t", type=float, default=0.45, help="Ngưỡng tương đồng tối thiểu (mặc định: 0.45)")
     parser.add_argument("--model", "-m", type=str, default=None, help="Tên mô hình LLM cụ thể")
+    parser.add_argument("--no-history", action="store_true", help="Không lưu trữ phiên hỏi đáp vào cơ sở dữ liệu")
 
     args = parser.parse_args()
 
@@ -89,6 +91,8 @@ def main():
         ENABLE_POST_GUARD=True,
     )
 
+    history_db = QueryHistoryDatabase() if not args.no_history else None
+
     print(f"Đang khởi tạo Traditional RAG Pipeline (Provider: {args.provider}, Top-K: {args.top_k})...")
     pipeline = TraditionalRAGPipeline(config=config)
     print("Khởi tạo thành công!\n")
@@ -97,6 +101,9 @@ def main():
         # Chạy câu hỏi đơn từ tham số dòng lệnh
         res = pipeline.answer(args.query)
         print_response(res)
+        if history_db:
+            rec_id = history_db.log_rag_response(res)
+            print(f"💾 [Lịch sử] Đã ghi nhận truy vấn vào CSDL (Record ID: #{rec_id})\n")
     else:
         # Chạy chế độ tương tác liên tục
         print_banner()
@@ -111,6 +118,9 @@ def main():
 
                 res = pipeline.answer(user_query)
                 print_response(res)
+                if history_db:
+                    rec_id = history_db.log_rag_response(res)
+                    print(f"💾 [Lịch sử] Đã ghi nhận truy vấn vào CSDL (Record ID: #{rec_id})\n")
 
             except KeyboardInterrupt:
                 print("\nĐã ngắt chương trình.")

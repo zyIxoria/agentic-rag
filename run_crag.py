@@ -25,6 +25,7 @@ if str(project_root) not in sys.path:
 from RAG.corrective.config import CRAGConfig
 from RAG.corrective.corrective_rag import CorrectiveRAGPipeline
 from RAG.pipeline.config import PipelineConfig
+from storage.query_history import QueryHistoryDatabase
 
 
 def print_banner():
@@ -95,6 +96,7 @@ def main():
     parser.add_argument("--confidence-threshold", "-c", type=float, default=0.6,
                         help="Ngưỡng đánh giá truy xuất tự tin (mặc định: 0.6)")
     parser.add_argument("--model", "-m", type=str, default=None, help="Tên mô hình LLM cụ thể")
+    parser.add_argument("--no-history", action="store_true", help="Không lưu trữ phiên hỏi đáp vào cơ sở dữ liệu")
 
     args = parser.parse_args()
 
@@ -114,6 +116,8 @@ def main():
         MAX_CORRECTIVE_RETRIES=1,
     )
 
+    history_db = QueryHistoryDatabase() if not args.no_history else None
+
     print(f"Đang khởi tạo Corrective RAG Pipeline (Provider: {args.provider}, Top-K: {args.top_k})...")
     pipeline = CorrectiveRAGPipeline(config=crag_cfg)
     print("Khởi tạo thành công!\n")
@@ -121,6 +125,9 @@ def main():
     if args.query:
         res = pipeline.answer(args.query)
         print_crag_response(res)
+        if history_db:
+            rec_id = history_db.log_crag_response(res)
+            print(f"💾 [Lịch sử] Đã ghi nhận truy vấn vào CSDL (Record ID: #{rec_id})\n")
     else:
         print_banner()
         while True:
@@ -133,6 +140,9 @@ def main():
                     break
                 res = pipeline.answer(user_input)
                 print_crag_response(res)
+                if history_db:
+                    rec_id = history_db.log_crag_response(res)
+                    print(f"💾 [Lịch sử] Đã ghi nhận truy vấn vào CSDL (Record ID: #{rec_id})\n")
             except KeyboardInterrupt:
                 print("\n\nĐã nhận tín hiệu dừng. Tạm biệt!\n")
                 break

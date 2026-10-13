@@ -160,38 +160,106 @@ python evaluation/runner/adaptive_runner.py
 ```
 * Kết quả xuất ra: [`evaluation/results/adaptive_evaluation.json`](file:///d:/Filehoc/KLCN/agentic-rag/evaluation/results/adaptive_evaluation.json)
 
+
+### 7. Tính toán & Quy đổi Chi phí Token trên LLM Thương Mại
+```bash
+python evaluation/cost_calculator.py --save
+```
+* Báo cáo Markdown chi tiết: [`reports/experiment_latest/BANG_TINH_CHI_PHI_TOKEN_LLM.md`](file:///d:/Filehoc/KLCN/agentic-rag/reports/experiment_latest/BANG_TINH_CHI_PHI_TOKEN_LLM.md)
+* Kết quả JSON cấu trúc: [`reports/experiment_latest/commercial_llm_cost_analysis.json`](file:///d:/Filehoc/KLCN/agentic-rag/reports/experiment_latest/commercial_llm_cost_analysis.json)
+
+---
+
+## 💰 BẢNG QUY ĐỔI CHI PHÍ TOKEN TRÊN CÁC LLM THƯƠNG MẠI ($ & VNĐ)
+
+> **Tỷ giá áp dụng:** 1 USD = 25,500 VNĐ  
+> **Dữ liệu thực nghiệm:** Đo đạc trên 80 câu hỏi kiểm định (Benchmark RAG-08) thuộc 7 nhóm độ phức tạp pháp luật lao động.
+
+### 1. Thống kê tiêu thụ Token trung bình / câu hỏi
+| Mô hình | Mean Input Tokens | Mean Output Tokens | Mean Total Tokens | Tiết kiệm Token vs Baseline |
+| :--- | :---: | :---: | :---: | :---: |
+| **Traditional RAG (Baseline)** | 611.0 | 1,087.0 | **1,698.1** | Baseline (Gốc) |
+| **Corrective RAG (CRAG)** | 610.4 | 703.5 | **1,313.9** | **-22.62%** |
+| **Adaptive Agentic RAG** | 512.4 | 794.6 | **1,307.0** | **-23.03%** |
+
+### 2. Chi phí quy đổi cho 1 câu hỏi tra cứu pháp luật
+| Mô hình LLM Thương Mại | Giá In/Out ($/1M) | Traditional RAG | Corrective RAG (CRAG) | Adaptive Agentic RAG | Mức Tiết Kiệm (%) |
+| :--- | :---: | :---: | :---: | :---: | :---: |
+| **Google Gemini 1.5 Flash** | $0.075 / $0.300 | $0.00037 (9.5đ) | $0.00026 (6.5đ) | **$0.00028 (7.1đ)** | **-25.54%** |
+| **OpenAI GPT-4o-mini** | $0.150 / $0.600 | $0.00074 (19.0đ) | $0.00051 (13.1đ) | **$0.00055 (14.1đ)** | **-25.54%** |
+| **Google Gemini 1.5 Pro** | $1.250 / $5.000 | $0.00620 (158.1đ) | $0.00428 (109.2đ) | **$0.00461 (117.6đ)** | **-25.58%** |
+| **OpenAI GPT-4o (Flagship)** | $2.500 / $10.000 | $0.01240 (316.1đ) | $0.00856 (218.3đ) | **$0.00923 (235.3đ)** | **-25.58%** |
+| **Anthropic Claude 3.5 Sonnet** | $3.000 / $15.000 | $0.01814 (462.5đ) | $0.01238 (315.8đ) | **$0.01346 (343.1đ)** | **-25.81%** |
+
+### 3. Dự phóng chi phí vận hành ở quy mô lớn
+* **Quy mô 10,000 truy vấn** (Doanh nghiệp vừa): Trên GPT-4o-mini, Adaptive RAG tốn **141,167 VNĐ** (tiết kiệm **48,518 VNĐ** so với Baseline). Trên GPT-4o, Adaptive RAG tiết kiệm **808,643 VNĐ**.
+* **Quy mô 100,000 truy vấn** (Cổng dịch vụ công quốc gia): Trên GPT-4o, Adaptive RAG tiết kiệm **8,086,433 VNĐ**; trên Claude 3.5 Sonnet tiết kiệm **11,940,962 VNĐ**.
+* **Nguyên nhân kỹ thuật**: Adaptive RAG nhận diện câu hỏi chào hỏi / ngoài phạm vi để kích hoạt nhánh `DIRECT_REFUSAL`, hoàn toàn không tải context pháp luật (input tokens giảm còn 22 tokens); CRAG sử dụng Strip Refinement để cắt gọt tài liệu nhiễu trước khi sinh lời.
+
+---
+
+## 🗄️ CƠ SỞ DỮ LIỆU LƯU TRỮ LỊCH SỬ TRUY VẤN (SQLITE STORAGE)
+
+Hệ thống tích hợp cơ sở dữ liệu SQLite nhúng tại [`data/history/query_history.db`](file:///d:/Filehoc/KLCN/agentic-rag/data/history/query_history.db) phục vụ ghi nhận toàn bộ truy vấn, câu trả lời, nhánh điều phối, căn cứ trích dẫn, latency và chi phí:
+
+### 1. Công cụ dòng lệnh quản lý lịch sử (`show_history.py`)
+```bash
+# Xem tổng quan thống kê (tổng câu, từ chối, phân bổ mô hình/nhánh, latency, tokens, cost):
+python show_history.py --summary
+
+# Xem danh sách các phiên hỏi đáp gần nhất:
+python show_history.py --list --limit 10
+
+# Tìm kiếm câu hỏi/câu trả lời theo từ khóa:
+python show_history.py --search "thử việc"
+
+# Xem chi tiết một phiên hỏi đáp cụ thể theo ID:
+python show_history.py --view 1
+
+# Xuất dữ liệu lịch sử ra JSON hoặc CSV phục vụ phân tích:
+python show_history.py --export-json history.json
+python show_history.py --export-csv history.csv
+
+# Chấm điểm / gửi phản hồi đánh giá của người dùng cho câu trả lời:
+python show_history.py --rate 1 --score 5 --feedback "Căn cứ Điều 25 rất chính xác"
+```
+
+### 2. Tự động ghi nhận từ các CLI Runners
+Cả 3 script [`run_rag_baseline.py`](file:///d:/Filehoc/KLCN/agentic-rag/run_rag_baseline.py), [`run_crag.py`](file:///d:/Filehoc/KLCN/agentic-rag/run_crag.py), và [`run_adaptive.py`](file:///d:/Filehoc/KLCN/agentic-rag/run_adaptive.py) đều tự động lưu lịch sử vào database (sử dụng cờ `--no-history` nếu muốn tắt lưu trữ).
+
 ---
 
 ## 🛡️ HƯỚNG DẪN CHẠY BỘ KIỂM THỬ TỰ ĐỘNG (UNIT & INTEGRATION TESTS)
 
-Dự án duy trì hệ thống kiểm thử toàn diện với **391 bài test** tự động (Zero Regression):
+Dự án duy trì hệ thống kiểm thử toàn diện với **264+ bài test** tự động (Zero Regression):
 
 ```bash
-# 1. Chạy TOÀN BỘ 391 bài test của toàn dự án:
+# 1. Chạy TOÀN BỘ bài test của toàn dự án:
 pytest tests/ -v
 
-# 2. Chạy 97 bài test của Traditional RAG Baseline:
-pytest tests/rag tests/retriever tests/context tests/generator tests/citation tests/guards tests/embedding tests/vector_store tests/evaluation evaluation/tests -v
+# 2. Chạy kiểm thử hệ thống lưu trữ lịch sử SQLite:
+pytest tests/test_query_history.py -v
 
-# 3. Chạy 66 bài test của Corrective RAG (CRAG):
+# 3. Chạy các bài test của Traditional RAG Baseline:
+pytest tests/rag tests/retriever tests/context tests/generator tests/citation tests/guards tests/embedding tests/vector_store -v
+
+# 4. Chạy các bài test của Corrective RAG (CRAG):
 pytest tests/crag tests/test_corrective_evaluator.py tests/test_corrective_loop.py tests/test_corrective_pipeline.py tests/test_query_rewriter.py -v
 
-# 4. Chạy 91 bài test của Adaptive Agentic RAG:
+# 5. Chạy các bài test của Adaptive Agentic RAG:
 pytest tests/adaptive tests/test_query_complexity_classifier.py tests/test_query_decomposer.py -v
 ```
 
 ---
 
-## 📁 CẤU TRÚC THƯ MỤC DỰ ÁN
+## 📁 CẤU TRÚC THƯ MỤC DỰ ÁN TOÀN DIỆN
 
 ```text
 agentic-rag/
-├── RAG/                         # Kiến trúc Traditional RAG Baseline & CRAG Core
-│   ├── embedding/               # Mô hình all-MiniLM-L6-v2 ONNX (384 chiều)
-│   ├── vector_store/            # ChromaDB Persistent Vector Store
-│   ├── retriever/               # Dense Top-K Retriever
-│   ├── context/                 # Legal Context Builder & Token Limiter
-│   ├── generator/               # Legal Generator (Mock offline / OpenAI / Gemini)
+├── RAG/                         # Hệ thống Traditional RAG Baseline (Đóng băng v1)
+│   ├── retriever/               # Dense Retriever (Cosine Similarity Top-5)
+│   ├── context/                 # Context Builder & Token Limiter
+│   ├── generator/               # Legal Generator Prompt
 │   ├── citation/                # Citation Resolver & Source URL Linker
 │   ├── guards/                  # Pre-guard & Post-guard an toàn pháp lý
 │   ├── corrective/              # Corrective RAG (Evaluator, Rewriter, Loop)
@@ -206,21 +274,28 @@ agentic-rag/
 │   ├── decomposer/              # Query Decomposition Engine
 │   └── orchestrator/            # Bộ điều phối định tuyến thích ứng
 ├── Data_Processing/             # Tiền xử lý văn bản quy phạm pháp luật
-├── data/chroma_db/              # CSDL Vector ChromaDB (1,390 chunks đã nạp sẵn)
+├── storage/                     # Phân hệ lưu trữ CSDL Lịch sử truy vấn (SQLite)
+│   ├── schema.py                # Schema bản ghi hỏi đáp & telemetry
+│   └── query_history.py         # Quản trị SQLite DB an toàn giao dịch
+├── data/
+│   ├── chroma_db/               # CSDL Vector ChromaDB (1,390 chunks đã nạp sẵn)
+│   └── history/                 # CSDL Lịch sử truy vấn (query_history.db)
 ├── evaluation/                  # Khung đối chuẩn và đánh giá khoa học
 │   ├── dataset/                 # 80 câu hỏi pháp lý chuẩn hóa (legal_qa.json)
 │   ├── answer_evaluator/        # Bộ đánh giá câu trả lời tự động
 │   ├── metrics/                 # Hàm tính toán Recall, MRR, Correctness, Faithfulness
-│   └── runner/                  # Script chạy benchmark tự động
+│   ├── runner/                  # Script chạy benchmark tự động
+│   └── cost_calculator.py       # Công cụ tính toán quy đổi chi phí Token trên LLM thương mại
 ├── reports/                     # Toàn bộ báo cáo nghiệm thu kỹ thuật (Markdown + JSON)
 │   ├── rag/                     # Báo cáo RAG-00 đến RAG-10 & CRAG-01 đến CRAG-07
 │   ├── crag/                    # Báo cáo RAG-11 đến RAG-14
 │   ├── adaptive/                # Báo cáo RAG-15 đến RAG-18
-│   └── experiment_latest/       # Báo cáo thực nghiệm tổng hợp mới nhất
-├── tests/                       # Toàn bộ 391 bài kiểm thử tự động
-├── run_rag_baseline.py          # CLI chạy Traditional RAG Baseline
-├── run_crag.py                  # CLI chạy Corrective RAG
-├── run_adaptive.py              # CLI chạy Adaptive Agentic RAG
+│   └── experiment_latest/       # Báo cáo thực nghiệm tổng hợp & Bảng quy đổi Token
+├── tests/                       # Toàn bộ bài kiểm thử tự động
+├── run_rag_baseline.py          # CLI chạy Traditional RAG Baseline (có lưu lịch sử)
+├── run_crag.py                  # CLI chạy Corrective RAG (có lưu lịch sử)
+├── run_adaptive.py              # CLI chạy Adaptive Agentic RAG (có lưu lịch sử)
+├── show_history.py              # CLI tra cứu & quản lý lịch sử truy vấn
 ├── requirements.txt             # Danh mục thư viện Python chuẩn
 ├── HUONG_DAN_CHAY_THUC_NGHIEM.md # Sổ tay hướng dẫn chạy thực nghiệm toàn diện
 └── README.md                    # Tài liệu hướng dẫn chính của dự án
@@ -231,7 +306,7 @@ agentic-rag/
 ## 📑 DANH MỤC TÀI LIỆU & BÁO CÁO NGHIỆM THU CHI TIẾT
 
 * **Sổ tay thực nghiệm toàn diện (3 mô hình)**: [`HUONG_DAN_CHAY_THUC_NGHIEM.md`](file:///d:/Filehoc/KLCN/agentic-rag/HUONG_DAN_CHAY_THUC_NGHIEM.md)
-* **Hướng dẫn riêng Baseline**: [`HUONG_DAN_CHAY_RAG_BASELINE.md`](file:///d:/Filehoc/KLCN/agentic-rag/HUONG_DAN_CHAY_RAG_BASELINE.md)
+* **Bảng tính chi phí Token trên LLM thương mại**: [`reports/experiment_latest/BANG_TINH_CHI_PHI_TOKEN_LLM.md`](file:///d:/Filehoc/KLCN/agentic-rag/reports/experiment_latest/BANG_TINH_CHI_PHI_TOKEN_LLM.md)
 * **Báo cáo thực nghiệm tổng hợp mới nhất**: [`reports/experiment_latest/LATEST-EXPERIMENT-REPORT.md`](file:///d:/Filehoc/KLCN/agentic-rag/reports/experiment_latest/LATEST-EXPERIMENT-REPORT.md)
 * **Văn bản đóng băng Traditional RAG Baseline**: [`reports/rag/TRADITIONAL-RAG-BASELINE-FROZEN.md`](file:///d:/Filehoc/KLCN/agentic-rag/reports/rag/TRADITIONAL-RAG-BASELINE-FROZEN.md)
 * **Báo cáo đối sánh Baseline vs CRAG**: [`reports/rag/CRAG-07-COMPARISON.md`](file:///d:/Filehoc/KLCN/agentic-rag/reports/rag/CRAG-07-COMPARISON.md)

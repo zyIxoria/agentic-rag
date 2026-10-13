@@ -31,6 +31,7 @@ from CRAG.config import CRAGConfig
 from Adaptive_RAG.config import AdaptiveRAGConfig
 from Adaptive_RAG.pipeline.adaptive_pipeline import AdaptiveRAGPipeline
 from Adaptive_RAG.classifier.schema import RoutingDecision
+from storage.query_history import QueryHistoryDatabase
 
 
 def print_banner():
@@ -126,6 +127,7 @@ def main():
     parser.add_argument("--threshold", "-t", type=float, default=0.45, help="Ngưỡng tương đồng tối thiểu (mặc định: 0.45)")
     parser.add_argument("--max-sub-queries", type=int, default=4, help="Số lượng sub-query tối đa khi phân rã (mặc định: 4)")
     parser.add_argument("--model", "-m", type=str, default=None, help="Tên mô hình LLM cụ thể")
+    parser.add_argument("--no-history", action="store_true", help="Không lưu trữ phiên hỏi đáp vào cơ sở dữ liệu")
 
     args = parser.parse_args()
 
@@ -150,6 +152,8 @@ def main():
         MAX_SUB_QUERIES=args.max_sub_queries,
     )
 
+    history_db = QueryHistoryDatabase() if not args.no_history else None
+
     print(f"Đang khởi tạo Adaptive Agentic RAG Pipeline (Provider: {args.provider}, Top-K: {args.top_k})...")
     pipeline = AdaptiveRAGPipeline(
         config=adaptive_cfg,
@@ -161,6 +165,9 @@ def main():
     if args.query:
         res = pipeline.answer(args.query)
         print_adaptive_response(res)
+        if history_db:
+            rec_id = history_db.log_adaptive_response(res)
+            print(f"💾 [Lịch sử] Đã ghi nhận truy vấn vào CSDL (Record ID: #{rec_id})\n")
     else:
         print_banner()
         while True:
@@ -173,6 +180,9 @@ def main():
                     break
                 res = pipeline.answer(user_input)
                 print_adaptive_response(res)
+                if history_db:
+                    rec_id = history_db.log_adaptive_response(res)
+                    print(f"💾 [Lịch sử] Đã ghi nhận truy vấn vào CSDL (Record ID: #{rec_id})\n")
             except KeyboardInterrupt:
                 print("\n\nĐã nhận tín hiệu dừng. Tạm biệt!\n")
                 break
