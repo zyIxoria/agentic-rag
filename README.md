@@ -39,6 +39,23 @@ Toàn bộ kết quả được đo lường khách quan trên tập đối chu�
 
 ---
 
+## 🔬 CASE STUDY: ĐỐI CHIẾU THỰC NGHIỆM TRỰC QUAN 3 MÔ HÌNH
+
+Ví dụ đối chiếu thực tế khi chạy cả 3 mô hình trên câu hỏi pháp lý đa văn bản:  
+> *"So sánh quy định về thời giờ làm việc và làm thêm giờ giữa Bộ luật Lao động 2019 và Nghị định 145/2020?"*
+
+| Tiêu chí đối sánh | Traditional RAG Baseline (`run_rag_baseline.py`) | Corrective RAG (`run_crag.py`) | Adaptive Agentic RAG (`run_adaptive.py`) |
+| :--- | :---: | :---: | :---: |
+| **Cơ chế xử lý** | Nhồi toàn bộ câu hỏi dài vào ChromaDB | Đánh giá nhầm là đủ (`SUFFICIENT` 0.96) ➔ Direct Pass | **Phân loại `LEGAL_MULTI_DOC` ➔ Bẻ 2 sub-queries song song** |
+| **Bao phủ văn bản luật** | ❌ **Bỏ sót Nghị định 145/2020** (Bị trôi sang NĐ 12/2022) | ❌ **Bỏ sót Nghị định 145/2020** (Chỉ lấy BLLD 2019 & NĐ 12) | ✅ **Bao phủ trọn vẹn cả BLLD 2019 & NĐ 145/2020** |
+| **Số chunks truy xuất** | 5 chunks | 3 chunks | **6 chunks (3 BLLD 2019 + 3 NĐ 145/2020)** |
+| **Độ trễ toàn chuỗi** | **167.89 ms** (Nhanh nhất) | 185.20 ms | 286.27 ms (+118 ms để phân rã và tổng hợp) |
+| **Kết luận chất lượng** | *Nhanh nhưng thiếu một nửa văn bản cần so sánh* | *Nhanh nhưng trôi ngữ cảnh đa văn bản* | ⭐ **Chính xác, đầy đủ và chuẩn xác nhất theo yêu cầu câu hỏi** |
+
+> **Ý nghĩa khoa học**: Trong tư vấn pháp luật, độ trễ thấp không có giá trị nếu câu trả lời bỏ sót văn bản luật đối chiếu. Adaptive Agentic RAG chấp nhận đánh đổi ~118ms để phân rã câu hỏi, từ đó đạt độ bao phủ văn bản đối chiếu tuyệt đối (100% Multi-Doc Coverage).
+
+---
+
 ## 🚀 CÀI ĐẶT & KHỞI CHẠY HỆ THỐNG
 
 ### 1. Cài đặt môi trường & Thư viện
