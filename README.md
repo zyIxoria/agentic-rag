@@ -78,95 +78,42 @@ pip install -r requirements.txt
 
 ---
 
-## 💻 HƯỚNG DẪN SỬ DỤNG GIAO DIỆN DÒNG LỆNH (CLI)
+## 🛠️ HƯỚNG DẪN THỰC THI & CHẠY THỰC NGHIỆM
 
-Hệ thống cung cấp sẵn các công cụ CLI độc lập, hỗ trợ cả chế độ chat tương tác và tra cứu đơn lẻ:
+> 📖 **Xem chi tiết đầy đủ**: [`HUONG_DAN_CHAY_THUC_NGHIEM.md`](HUONG_DAN_CHAY_THUC_NGHIEM.md) *(Bao gồm cả quản lý lịch sử SQLite, test suite và Python API)*.
 
-### 1. Chạy Traditional RAG Baseline
-* **Hỏi đáp tương tác liên tục**:
-  ```bash
-  python run_rag_baseline.py
-  ```
-* **Tra cứu nhanh 1 câu hỏi**:
+### 1. Chạy tương tác qua giao diện dòng lệnh (CLI)
+* **Traditional RAG Baseline**:
   ```bash
   python run_rag_baseline.py --query "Thời giờ làm việc bình thường của người lao động là bao nhiêu?"
   ```
-* **Tùy chỉnh số chunk truy xuất (`--top-k`) và ngưỡng tương đồng (`--threshold`)**:
-  ```bash
-  python run_rag_baseline.py --query "Quy định về thử việc" --top-k 10 --threshold 0.50
-  ```
-
-### 2. Chạy Corrective RAG (CRAG)
-Hệ thống tự động kích hoạt bộ đánh giá chứng cứ (`RetrievalEvaluator`) và cơ chế viết lại câu hỏi (`QueryRewriter`) khi truy xuất thiếu:
-* **Hỏi đáp tương tác liên tục**:
-  ```bash
-  python run_crag.py
-  ```
-* **Tra cứu 1 câu hỏi (hiển thị chi tiết CRAG Trace, vòng 1 & vòng 2)**:
+* **Corrective RAG (CRAG)** *(Tự kích hoạt Grader, Strip & Filter và Query Rewriter)*:
   ```bash
   python run_crag.py --query "Người lao động làm việc 5 năm thì được bao nhiêu ngày phép năm?"
   ```
-
-### 3. Chạy Adaptive Agentic RAG
-Tự động phân loại độ phức tạp câu hỏi (7 Intent), bẻ nhỏ câu hỏi đa chặng (Sub-queries Decomposition), tra cứu song song và tổng hợp câu trả lời:
-* **Hỏi đáp tương tác liên tục**:
-  ```bash
-  python run_adaptive.py
-  ```
-* **Tra cứu 1 câu hỏi (hiển thị chi tiết Adaptive Routing Trace & Sub-queries Plan)**:
+* **Adaptive Agentic RAG** *(Tự phân loại intent, bẻ sub-queries và tổng hợp)*:
   ```bash
   python run_adaptive.py --query "So sánh quy định về thời giờ làm việc và làm thêm giờ giữa Bộ luật Lao động 2019 và Nghị định 145/2020?"
   ```
+*(Chạy không kèm `--query` để vào chế độ chat tương tác liên tục).*
 
----
-
-## 🧪 HƯỚNG DẪN CHẠY BENCHMARK THỰC NGHIỆM (EVALUATION RUNNERS)
-
-Để tái hiện lại 100% số liệu thực nghiệm phục vụ viết báo cáo khóa luận:
-
-### 1. Đánh giá tầng Dense Retrieval Baseline (RAG-09)
+### 2. Chạy Benchmark đối chuẩn thực nghiệm (80 câu hỏi)
 ```bash
-python evaluation/evaluate_retrieval.py
-```
-* Kết quả xuất ra: [`evaluation/results/retrieval_baseline.json`](file:///d:/Filehoc/KLCN/agentic-rag/evaluation/results/retrieval_baseline.json)
-
-### 2. Đánh giá End-to-End Traditional RAG Baseline (RAG-10)
-```bash
+# 1. Chạy đánh giá End-to-End Traditional RAG Baseline:
 python evaluation/runner/baseline_runner.py
-```
-* Kết quả xuất ra: [`evaluation/results/traditional_baseline_full_eval.json`](file:///d:/Filehoc/KLCN/agentic-rag/evaluation/results/traditional_baseline_full_eval.json)
 
-### 3. Đánh giá End-to-End Corrective RAG (CRAG) (RAG-14)
-```bash
+# 2. Chạy đánh giá End-to-End Corrective RAG (CRAG):
 python evaluation/runner/corrective_runner.py
-```
-* Kết quả xuất ra: [`evaluation/results/corrective_full_eval.json`](file:///d:/Filehoc/KLCN/agentic-rag/evaluation/results/corrective_full_eval.json)
 
-### 4. Đánh giá Bộ Phân loại độ phức tạp (Query Complexity Classifier)
-```bash
-python evaluation/runner/evaluate_classifier.py
-```
-* Kết quả xuất ra: [`evaluation/results/query_complexity_evaluation.json`](file:///d:/Filehoc/KLCN/agentic-rag/evaluation/results/query_complexity_evaluation.json)
-
-### 5. Đánh giá Bộ Phân rã câu hỏi (Query Decomposition)
-```bash
-python evaluation/runner/evaluate_decomposer.py
-```
-* Kết quả xuất ra: [`evaluation/results/query_decomposition_evaluation.json`](file:///d:/Filehoc/KLCN/agentic-rag/evaluation/results/query_decomposition_evaluation.json)
-
-### 6. Đánh giá End-to-End Toàn diện Adaptive Agentic RAG (RAG-18)
-```bash
+# 3. Chạy đánh giá End-to-End Adaptive Agentic RAG:
 python evaluation/runner/adaptive_runner.py
-```
-* Kết quả xuất ra: [`evaluation/results/adaptive_evaluation.json`](file:///d:/Filehoc/KLCN/agentic-rag/evaluation/results/adaptive_evaluation.json)
 
+# 4. Đánh giá Cải tiến Retrieval V0 -> V4 (Hybrid BM25 + Reranker):
+python evaluation/evaluate_improved_retrieval.py
 
-### 7. Tính toán & Quy đổi Chi phí Token trên LLM Thương Mại
-```bash
+# 5. Tính toán và quy đổi chi phí Token trên các LLM thương mại:
 python evaluation/cost_calculator.py --save
 ```
-* Báo cáo Markdown chi tiết: [`reports/experiment_latest/BANG_TINH_CHI_PHI_TOKEN_LLM.md`](file:///d:/Filehoc/KLCN/agentic-rag/reports/experiment_latest/BANG_TINH_CHI_PHI_TOKEN_LLM.md)
-* Kết quả JSON cấu trúc: [`reports/experiment_latest/commercial_llm_cost_analysis.json`](file:///d:/Filehoc/KLCN/agentic-rag/reports/experiment_latest/commercial_llm_cost_analysis.json)
 
 ---
 
