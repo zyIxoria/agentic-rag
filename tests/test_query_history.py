@@ -108,6 +108,34 @@ def test_filter_and_search(temp_db):
     assert res_kw[0].query == "Tiền lương làm thêm giờ vào ban đêm?"
 
 
+def test_chat_session_titles_and_search(temp_db):
+    """Session names default to the first question and can be renamed."""
+    first = QueryHistoryRecord(
+        session_id="session_a",
+        model_name="Adaptive-Agentic-RAG",
+        query="Thời gian thử việc tối đa là bao lâu?",
+        answer="Theo quy định hiện hành...",
+    )
+    second = QueryHistoryRecord(
+        session_id="session_b",
+        model_name="Traditional-RAG",
+        query="Nghỉ phép năm được tính thế nào?",
+        answer="Theo quy định hiện hành...",
+    )
+    temp_db.save_record(first)
+    temp_db.save_record(second)
+
+    sessions = temp_db.get_chat_sessions()
+    assert sessions[0]["title"] == second.query
+    assert sessions[1]["title"] == first.query
+    assert len(temp_db.get_chat_sessions(search_keyword="thử việc")) == 1
+
+    temp_db.rename_chat_session("session_a", "Hợp đồng thử việc")
+    renamed = temp_db.get_chat_sessions(search_keyword="Hợp đồng")
+    assert len(renamed) == 1
+    assert renamed[0]["title"] == "Hợp đồng thử việc"
+
+
 def test_update_feedback(temp_db):
     """Kiểm tra cập nhật đánh giá rating và phản hồi."""
     rec = QueryHistoryRecord(
@@ -341,4 +369,3 @@ def test_log_adaptive_response_adapter(temp_db):
     assert record.intent == "LEGAL_MULTI_DOC"
     assert record.complexity == "COMPLEX_MULTI_HOP"
     assert record.total_latency_ms == 210.0
-
