@@ -97,7 +97,14 @@ pip install -r requirements.txt
   ```
 *(Chạy không kèm `--query` để vào chế độ chat tương tác liên tục).*
 
-### 2. Chạy Benchmark đối chuẩn thực nghiệm (80 câu hỏi)
+### 2. Chạy giao diện web
+```bash
+pip install -r requirements.txt
+streamlit run app.py
+```
+Giao diện hỗ trợ ba phương thức tra cứu, chủ đề đọc trắng/sepia với bảng màu tương phản nhất quán, lịch sử hội thoại có thể tìm kiếm và đổi tên, thống kê, xem chi tiết, xuất JSON/CSV và đánh giá câu trả lời. Chế độ ngoại tuyến dùng mặc định; để dùng OpenAI hoặc Gemini, cài thư viện tương ứng (`openai` hoặc `google-genai`) và cấu hình thông tin truy cập trong môi trường.
+
+### 3. Chạy Benchmark đối chuẩn thực nghiệm (80 câu hỏi)
 ```bash
 # 1. Chạy đánh giá End-to-End Traditional RAG Baseline:
 python evaluation/runner/baseline_runner.py

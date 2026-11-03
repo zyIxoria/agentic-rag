@@ -89,6 +89,14 @@ class QueryHistoryDatabase:
                         metadata TEXT
                     )
                 """)
+                cursor.execute("""
+                    CREATE TABLE IF NOT EXISTS chat_sessions (
+                        session_id TEXT PRIMARY KEY,
+                        title TEXT NOT NULL,
+                        created_at TEXT NOT NULL,
+                        updated_at TEXT NOT NULL
+                    )
+                """)
 
                 # Chỉ mục tăng tốc tìm kiếm và tổng hợp
                 cursor.execute("CREATE INDEX IF NOT EXISTS idx_qh_timestamp ON query_history(timestamp)")
@@ -96,6 +104,7 @@ class QueryHistoryDatabase:
                 cursor.execute("CREATE INDEX IF NOT EXISTS idx_qh_session ON query_history(session_id)")
                 cursor.execute("CREATE INDEX IF NOT EXISTS idx_qh_route ON query_history(route_taken)")
                 cursor.execute("CREATE INDEX IF NOT EXISTS idx_qh_refused ON query_history(is_refused)")
+                cursor.execute("CREATE INDEX IF NOT EXISTS idx_chat_sessions_updated ON chat_sessions(updated_at)")
                 conn.commit()
 
     @staticmethod
@@ -167,6 +176,90 @@ class QueryHistoryDatabase:
             if not row:
                 return None
             return self._row_to_record(row)
+
+    def ensure_chat_session(self, session_id: str, title: str) -> None:
+        """Create a chat title on first use and refresh its last-used timestamp."""
+        clean_title = title.strip()
+        if not session_id or not clean_title:
+            raise ValueError("Mã phiên và tiêu đề hội thoại không được để trống.")
+
+        now = datetime.now(timezone.utc).isoformat()
+        with self._lock:
+            with self._connection() as conn:
+                conn.execute(
+                    """
+                    INSERT INTO chat_sessions (session_id, title, created_at, updated_at)
+                    VALUES (?, ?, ?, ?)
+                    ON CONFLICT(session_id) DO UPDATE SET updated_at = excluded.updated_at
+                    """,
+                    (session_id, clean_title, now, now),
+                )
+                conn.commit()
+
+    def rename_chat_session(self, session_id: str, title: str) -> None:
+        """Set a user-defined title for a chat session."""
+        clean_title = title.strip()
+        if not session_id or not clean_title:
+            raise ValueError("Mã phiên và tiêu đề hội thoại không được để trống.")
+
+        now = datetime.now(timezone.utc).isoformat()
+        with self._lock:
+            with self._connection() as conn:
+                conn.execute(
+                    """
+                    INSERT INTO chat_sessions (session_id, title, created_at, updated_at)
+                    VALUES (?, ?, ?, ?)
+                    ON CONFLICT(session_id) DO UPDATE SET
+                        title = excluded.title,
+                        updated_at = excluded.updated_at
+                    """,
+                    (session_id, clean_title, now, now),
+                )
+                conn.commit()
+
+    def get_chat_sessions(self, search_keyword: Optional[str] = None, limit: int = 100) -> List[Dict[str, Any]]:
+        """List persisted sessions, including legacy sessions without a title row."""
+        if limit < 1:
+            raise ValueError("Giới hạn danh sách phiên phải lớn hơn 0.")
+
+        keyword = f"%{search_keyword.strip()}%" if search_keyword and search_keyword.strip() else None
+        sql = """
+            WITH grouped AS (
+                SELECT session_id, COUNT(*) AS query_count, MAX(id) AS latest_id
+                FROM query_history
+                WHERE session_id IS NOT NULL
+                GROUP BY session_id
+            )
+            SELECT
+                grouped.session_id,
+                COALESCE(
+                    NULLIF(chat_sessions.title, ''),
+                    (SELECT query FROM query_history first_record
+                     WHERE first_record.session_id = grouped.session_id
+                     ORDER BY first_record.id ASC LIMIT 1)
+                ) AS title,
+                (SELECT timestamp FROM query_history latest_record
+                 WHERE latest_record.id = grouped.latest_id) AS updated_at,
+                grouped.query_count,
+                (SELECT query FROM query_history latest_record
+                 WHERE latest_record.id = grouped.latest_id) AS last_query
+            FROM grouped
+            LEFT JOIN chat_sessions ON chat_sessions.session_id = grouped.session_id
+            WHERE (
+                ? IS NULL
+                OR COALESCE(chat_sessions.title, '') LIKE ?
+                OR EXISTS (
+                    SELECT 1 FROM query_history matching_record
+                    WHERE matching_record.session_id = grouped.session_id
+                      AND (matching_record.query LIKE ? OR matching_record.answer LIKE ?)
+                )
+            )
+            ORDER BY grouped.latest_id DESC
+            LIMIT ?
+        """
+        with self._connection() as conn:
+            rows = conn.execute(sql, (keyword, keyword, keyword, keyword, limit)).fetchall()
+            return [dict(row) for row in rows]
 
     def get_history(self, filter_opts: Optional[HistoryFilter] = None) -> List[QueryHistoryRecord]:
         """Truy vấn danh sách lịch sử có hỗ trợ lọc, tìm kiếm và phân trang."""
