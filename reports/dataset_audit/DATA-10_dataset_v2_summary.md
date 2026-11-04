@@ -2,7 +2,7 @@
 
 **Dự án**: Nghiên cứu cơ chế điều phối thích ứng trong hệ thống Agentic RAG tích hợp Corrective RAG hỗ trợ tra cứu pháp luật lao động Việt Nam.  
 **Nhiệm vụ**: TASK DATA-10 — Build Legal Dataset V2.  
-**Thời gian tạo**: 2026-11-02T06:06:29Z.  
+**Thời gian tạo**: 2026-11-04T18:59:43Z.  
 **Trạng thái**: Hoàn tất thành công (100% Validated & Verified).
 
 ---
@@ -53,7 +53,7 @@ Bảng đối chiếu toàn diện các chỉ số kỹ thuật và chất lư�
 
 ## 4. TÍNH TOÀN VẸN & BẢO TỒN NGUYÊN VẸN DATASET V1
 
-- **Tệp Baseline V1**: `D:\Filehoc\KLCN\agentic-rag\Data_Processing\KhoaLuan_Data_HoanChinh.json`
+- **Tệp Baseline V1**: `D:\KLCN\agentic-rag\Data_Processing\KhoaLuan_Data_HoanChinh.json`
 - **Mã SHA-256**: `7bdb170543734804c64945a02d5388a32399dd391ff3b2a3d029add1d3fe3fb4`
 - **Xác nhận**: **HOÀN TOÀN ĐÓNG BĂNG VÀ KHÔNG BỊ SỬA ĐỔI (100% UNCHANGED)**.
 

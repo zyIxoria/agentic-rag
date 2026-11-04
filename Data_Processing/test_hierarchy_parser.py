@@ -271,7 +271,7 @@ class TestHierarchyParser(unittest.TestCase):
         5. Toàn bộ 220 Điều luật thực tế của BLLD 2019 được bóc tách chuẩn xác (loại bỏ 7 citation nhầm lẫn).
         """
         import os
-        blld_path = r"D:\Filehoc\KLCN\agentic-rag\Data_Processing\data_corpus_raw\BLLD_2019.txt"
+        blld_path = r"D:\KLCN\agentic-rag\Data_Processing\data_corpus_raw\BLLD_2019.txt"
         if not os.path.exists(blld_path):
             self.skipTest("BLLD_2019.txt không tồn tại")
 
