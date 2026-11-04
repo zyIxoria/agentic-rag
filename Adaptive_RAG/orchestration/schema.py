@@ -28,8 +28,12 @@ class OrchestrationTrace(BaseModel):
     query: str
     classification: ClassificationResult
     route_chosen: RoutingDecision
+    original_route: Optional[RoutingDecision] = None
+    escalated: bool = False
+    escalation_reason: Optional[str] = None
     plan: Optional[DecompositionPlan] = None
     sub_executions: List[SubQueryExecutionRecord] = Field(default_factory=list)
+    agent_steps: List[Any] = Field(default_factory=list)
     routing_latency_ms: float = 0.0
     execution_latency_ms: float = 0.0
     synthesis_latency_ms: float = 0.0
@@ -50,3 +54,5 @@ class AdaptiveRAGResponse(BaseModel):
     latency_ms: float = 0.0
     refused: bool = False
     refusal_reason: Optional[str] = None
+    escalated: bool = False
+    escalation_reason: Optional[str] = None

@@ -94,7 +94,7 @@ class TestAdaptiveOrchestrator(unittest.TestCase):
 
     def test_orchestrator_traditional_rag(self):
         """Kiểm tra điều phối TRADITIONAL_RAG cho câu hỏi tra cứu đơn giản 1 điều luật."""
-        q = "Điều 125 Bộ luật Lao động quy định về gì?"
+        q = "Điều 25 Bộ luật Lao động quy định về gì?"
         resp: AdaptiveRAGResponse = self.orchestrator.route_and_execute(q)
 
         self.assertEqual(resp.route_taken, RoutingDecision.TRADITIONAL_RAG)

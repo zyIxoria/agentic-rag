@@ -1,6 +1,8 @@
 """
 Adaptive RAG Orchestrator.
-Bộ điều phối thích ứng đa luồng (Adaptive Multi-Routing Orchestrator).
+Bộ điều phối thích ứng đa luồng (Adaptive Multi-Routing Orchestrator)
+kết hợp Tác tử Trung tâm (Central ReAct Agent), Cơ chế phản hồi 2 chiều (Dynamic Feedback Loop)
+và Đánh giá độ tin cậy sau truy xuất (Post-Retrieval Confidence Evaluation).
 """
 
 from __future__ import annotations
@@ -9,11 +11,15 @@ import logging
 from typing import Optional, Dict, Any, List
 
 from RAG.pipeline.traditional_rag import TraditionalRAGPipeline
+from RAG.pipeline.config import PipelineConfig
 from RAG.retriever.dense_retriever import DenseTopKRetriever
+from RAG.retriever.schema import RetrievedChunk
 from RAG.generator.factory import get_generator
 from RAG.generator.base import BaseLegalGenerator
 from RAG.citation.resolver import CitationResolver
 from CRAG.pipeline.crag_pipeline import CRAGPipeline
+from CRAG.config import CRAGConfig
+from CRAG.search.web_searcher import LegalWebSearcher
 
 from Adaptive_RAG.config import AdaptiveRAGConfig, adaptive_config
 from Adaptive_RAG.classifier.schema import (
@@ -30,6 +36,14 @@ from Adaptive_RAG.orchestration.schema import (
     SubQueryExecutionRecord,
 )
 from Adaptive_RAG.orchestration.synthesizer import MultiHopSynthesizer
+from Adaptive_RAG.orchestration.feedback_evaluator import (
+    PostRetrievalConfidenceEvaluator,
+    ConfidenceLevel,
+    EscalationTarget,
+    PostRetrievalEvaluation,
+)
+from Adaptive_RAG.agent.central_agent import CentralAgentController, AgentResponse
+from Adaptive_RAG.agent.tool_registry import LegalToolRegistry
 
 logger = logging.getLogger("Adaptive_RAG.orchestration.orchestrator")
 
@@ -38,13 +52,16 @@ class AdaptiveOrchestrator:
     """
     Bộ điều phối thích ứng thông minh (Adaptive Agentic Brain):
     1. Tiếp nhận câu hỏi và phân loại độ phức tạp tức thì qua HybridQueryClassifier.
-    2. Định tuyến theo 5 nhánh chuyên biệt:
+    2. Điều phối theo 5 nhánh chuyên biệt:
        - DIRECT_ANSWER: Phản hồi chào hỏi/xã giao (0 ms retrieval).
        - DIRECT_REFUSAL: Từ chối dứt khoát câu hỏi ngoài phạm vi (0 ms retrieval/generation).
-       - TRADITIONAL_RAG: Chuyển tiếp tới Baseline cho câu hỏi đơn giản 1 điều luật.
-       - CORRECTIVE_RAG: Chuyển tiếp tới CRAG cho câu hỏi thủ tục, loại bỏ nhiễu nội bộ.
-       - DECOMPOSE_AGENTIC: Phân rã câu hỏi đa chặng $\to$ Tra cứu song song $\to$ Tổng hợp.
-    3. Ghi lại đầy đủ dấu vết điều phối (Orchestration Trace) phục vụ giải trình học thuật.
+       - TRADITIONAL_RAG: Baseline 1 điều luật, kiểm định chất lượng sau truy xuất (Post-Retrieval Gate).
+       - CORRECTIVE_RAG: CRAG cho câu hỏi thủ tục, loại bỏ nhiễu nội bộ, web search fallback.
+       - DECOMPOSE_AGENTIC: Phân rã câu hỏi đa chặng $\to$ Tra cứu có kiểm định chất lượng $\to$ Tổng hợp.
+    3. Cơ chế phản hồi 2 chiều (Dynamic Feedback Loop):
+       - Tự động nâng cấp (Escalate) từ TRADITIONAL_RAG sang CRAG/DECOMPOSE nếu retrieval bị lạc đề hoặc rỗng.
+       - Tự động kích hoạt Web Search Fallback cho các sub-queries bị thiếu văn bản trong DECOMPOSE_AGENTIC.
+    4. Tích hợp Central ReAct Agent & Symbolic Calculator cho câu hỏi định lượng tính toán số học.
     """
 
     def __init__(
@@ -100,9 +117,23 @@ class AdaptiveOrchestrator:
             citation_resolver=self.citation_resolver,
         )
 
+        # Đánh giá phản hồi 2 chiều sau truy xuất (Dynamic Feedback Loop)
+        self.post_evaluator = PostRetrievalConfidenceEvaluator(crag_cfg=self.crag_config)
+
+        # Tác tử trung tâm & Công cụ tìm kiếm
+        self.web_searcher = LegalWebSearcher()
+        self.tool_registry = LegalToolRegistry(
+            retriever=self.retriever,
+            web_searcher=self.web_searcher,
+        )
+        self.agent_controller = CentralAgentController(
+            tool_registry=self.tool_registry,
+            generator=self.generator,
+        )
+
     def route_and_execute(self, query: str) -> AdaptiveRAGResponse:
         """
-        Thực hiện toàn bộ quy trình: Phân loại ý định $\to$ Định tuyến $\to$ Thực thi $\to$ Phản hồi.
+        Thực hiện toàn bộ quy trình: Phân loại ý định $\to$ Định tuyến $\to$ Kiểm định 2 chiều $\to$ Thực thi $\to$ Phản hồi.
         """
         t_start = time.perf_counter()
         if not query or not query.strip():
@@ -110,7 +141,7 @@ class AdaptiveOrchestrator:
 
         clean_query = query.strip()
 
-        # BƯỚC 1: Phân loại độ phức tạp & ý định câu hỏi (Tốc độ < 1ms)
+        # BƯỚC 1: Phân loại độ phức tạp & ý định câu hỏi
         t_route_0 = time.perf_counter()
         classification = self.classifier.classify(clean_query)
         route = classification.suggested_route
@@ -120,6 +151,7 @@ class AdaptiveOrchestrator:
             query=clean_query,
             classification=classification,
             route_chosen=route,
+            original_route=route,
             routing_latency_ms=round(t_routing_ms, 2),
         )
 
@@ -166,30 +198,101 @@ class AdaptiveOrchestrator:
                 refusal_reason=classification.reasoning,
             )
 
-        # 2.3. Nhánh TRADITIONAL_RAG (Câu hỏi đơn giản 1 điều luật)
-        if route == RoutingDecision.TRADITIONAL_RAG:
-            t_exec_0 = time.perf_counter()
-            trad_res = self.traditional_pipeline.answer(clean_query)
-            t_exec_ms = (time.perf_counter() - t_exec_0) * 1000.0
+        # 2.3. KIỂM TRA ĐẶC BIỆT: Câu hỏi định lượng tính toán số học
+        # Chuyển quyền xử lý cho Central Autonomous Agent (Symbolic Legal Calculator)
+        q_lower = clean_query.lower()
+        is_calc_required = any(
+            kw in q_lower
+            for kw in [
+                "làm thêm", "tăng ca", "thêm giờ", "bồi thường tai nạn",
+                "trợ cấp thôi việc", "trợ cấp mất việc", "thôi việc được bao nhiêu",
+                "thất nghiệp được bao nhiêu", "trợ cấp thất nghiệp",
+            ]
+        ) and any(kw in q_lower for kw in ["bao nhiêu", "tính", "được nhận", "hưởng", "lương", "đồng", "triệu"])
+
+        if is_calc_required and route not in [RoutingDecision.DIRECT_ANSWER, RoutingDecision.DIRECT_REFUSAL]:
+            logger.info("Phát hiện câu hỏi định lượng tính toán số học. Chuyển quyền điều phối cho Central Agent!")
+            t_agent_0 = time.perf_counter()
+            agent_res: AgentResponse = self.agent_controller.run(clean_query)
+            t_exec_ms = (time.perf_counter() - t_agent_0) * 1000.0
             t_total_ms = (time.perf_counter() - t_start) * 1000.0
 
+            trace.agent_steps = [s.__dict__ if hasattr(s, "__dict__") else s for s in agent_res.steps]
             trace.execution_latency_ms = round(t_exec_ms, 2)
             trace.total_latency_ms = round(t_total_ms, 2)
 
             return AdaptiveRAGResponse(
                 question=clean_query,
-                answer=trad_res.answer,
-                citations=trad_res.citations,
-                retrieved_chunks=trad_res.retrieved_chunks,
-                route_taken=route,
+                answer=agent_res.answer,
+                citations=agent_res.citations,
+                retrieved_chunks=[],
+                route_taken=RoutingDecision.DECOMPOSE_AGENTIC,
                 classification=classification,
                 trace=trace,
                 latency_ms=round(t_total_ms, 2),
-                refused=trad_res.refused,
-                refusal_reason=trad_res.refusal_reason,
+                refused=False,
             )
 
-        # 2.4. Nhánh CORRECTIVE_RAG (Câu hỏi thủ tục, cần lọc nhiễu dải tri thức)
+        # 2.4. Nhánh TRADITIONAL_RAG (kết hợp Post-Retrieval Confidence Gate & Escalation)
+        if route == RoutingDecision.TRADITIONAL_RAG:
+            t_exec_0 = time.perf_counter()
+            
+            # Thực hiện truy xuất thử nghiệm
+            top_k = self.pipeline_config.TOP_K if self.pipeline_config else 3
+            initial_chunks = self.retriever.retrieve(clean_query, top_k=top_k)
+
+            # Đánh giá phản hồi 2 chiều sau truy xuất
+            post_eval: PostRetrievalEvaluation = self.post_evaluator.evaluate(
+                query=clean_query,
+                chunks=initial_chunks,
+                is_multi_hop_query=len(classification.detected_conditions) > 0,
+            )
+
+            # KIỂM ĐỊNH NÂNG CẤP (DYNAMIC ESCALATION):
+            if post_eval.recommended_action == EscalationTarget.ESCALATE_TO_CRAG:
+                logger.warning(
+                    f"Dynamic Feedback Loop: Đánh giá confidence {post_eval.confidence_level.value}. "
+                    f"Tự động ESCALATE từ TRADITIONAL_RAG sang CORRECTIVE_RAG! (Lý do: {post_eval.reason})"
+                )
+                trace.escalated = True
+                trace.escalation_reason = post_eval.reason
+                route = RoutingDecision.CORRECTIVE_RAG
+                trace.route_chosen = route
+
+            elif post_eval.recommended_action == EscalationTarget.ESCALATE_TO_DECOMPOSE:
+                logger.warning(
+                    f"Dynamic Feedback Loop: Đánh giá confidence {post_eval.confidence_level.value}. "
+                    f"Tự động ESCALATE từ TRADITIONAL_RAG sang DECOMPOSE_AGENTIC! (Lý do: {post_eval.reason})"
+                )
+                trace.escalated = True
+                trace.escalation_reason = post_eval.reason
+                route = RoutingDecision.DECOMPOSE_AGENTIC
+                trace.route_chosen = route
+
+            else:
+                # Độ tin cậy CAO -> Thực thi hoàn tất qua Traditional Pipeline
+                trad_res = self.traditional_pipeline.answer(clean_query)
+                t_exec_ms = (time.perf_counter() - t_exec_0) * 1000.0
+                t_total_ms = (time.perf_counter() - t_start) * 1000.0
+
+                trace.execution_latency_ms = round(t_exec_ms, 2)
+                trace.total_latency_ms = round(t_total_ms, 2)
+
+                return AdaptiveRAGResponse(
+                    question=clean_query,
+                    answer=trad_res.answer,
+                    citations=trad_res.citations,
+                    retrieved_chunks=trad_res.retrieved_chunks,
+                    route_taken=route,
+                    classification=classification,
+                    trace=trace,
+                    latency_ms=round(t_total_ms, 2),
+                    refused=trad_res.refused,
+                    refusal_reason=trad_res.refusal_reason,
+                    escalated=False,
+                )
+
+        # 2.5. Nhánh CORRECTIVE_RAG (Được định tuyến trực tiếp hoặc do ESCALATE chuyển sang)
         if route == RoutingDecision.CORRECTIVE_RAG:
             t_exec_0 = time.perf_counter()
             crag_res = self.crag_pipeline.answer(clean_query)
@@ -210,9 +313,11 @@ class AdaptiveOrchestrator:
                 latency_ms=round(t_total_ms, 2),
                 refused=crag_res.refused,
                 refusal_reason=crag_res.refusal_reason,
+                escalated=trace.escalated,
+                escalation_reason=trace.escalation_reason,
             )
 
-        # 2.5. Nhánh DECOMPOSE_AGENTIC (Câu hỏi đa chặng, đa văn bản, đa điều kiện)
+        # 2.6. Nhánh DECOMPOSE_AGENTIC (Được định tuyến trực tiếp hoặc do ESCALATE chuyển sang)
         if route == RoutingDecision.DECOMPOSE_AGENTIC:
             t_exec_0 = time.perf_counter()
             plan: DecompositionPlan = self.decomposer.decompose(clean_query)
@@ -222,13 +327,36 @@ class AdaptiveOrchestrator:
             for sub_q in plan.sub_queries:
                 t_sub_0 = time.perf_counter()
                 chunks = self.retriever.retrieve(query=sub_q.text, top_k=3)
-                sub_elapsed = (time.perf_counter() - t_sub_0) * 1000.0
+                action_taken = "DENSE_RETRIEVAL"
 
+                # Sub-chunk quality validation & dynamic recovery
+                sub_eval: PostRetrievalEvaluation = self.post_evaluator.evaluate_subquery(sub_q.text, chunks)
+                if sub_eval.recommended_action == EscalationTarget.WEB_SEARCH_SUBQUERY:
+                    logger.info(f"Sub-query '{sub_q.text}' có confidence thấp ({sub_eval.confidence_level.value}). Kích hoạt Web Search Fallback!")
+                    web_resp = self.web_searcher.search(query=sub_q.text, top_k=2)
+                    action_taken = "DENSE_RETRIEVAL_ESCALATED_WEB_SEARCH"
+                    for idx, w_res in enumerate(web_resp.results, start=1):
+                        chunks.append(
+                            RetrievedChunk(
+                                chunk_id=f"WEB_FALLBACK_SUB_{sub_q.id}_{idx}",
+                                content=f"[{w_res.source_name}] {w_res.title}: {w_res.snippet}",
+                                score=w_res.score,
+                                rank=len(chunks) + 1,
+                                metadata={
+                                    "document_name": w_res.source_name,
+                                    "title": w_res.title,
+                                    "source": w_res.url,
+                                    "article": "Trích lục Web Search",
+                                },
+                            )
+                        )
+
+                sub_elapsed = (time.perf_counter() - t_sub_0) * 1000.0
                 sub_records.append(
                     SubQueryExecutionRecord(
                         sub_query=sub_q,
                         retrieved_chunks=chunks,
-                        action_taken="DENSE_RETRIEVAL",
+                        action_taken=action_taken,
                         latency_ms=round(sub_elapsed, 2),
                     )
                 )
@@ -260,6 +388,8 @@ class AdaptiveOrchestrator:
                 trace=trace,
                 latency_ms=round(t_total_ms, 2),
                 refused=False,
+                escalated=trace.escalated,
+                escalation_reason=trace.escalation_reason,
             )
 
         # Fallback an toàn về CRAG
@@ -276,4 +406,6 @@ class AdaptiveOrchestrator:
             latency_ms=round(t_total_ms, 2),
             refused=crag_fallback.refused,
             refusal_reason=crag_fallback.refusal_reason,
+            escalated=trace.escalated,
+            escalation_reason=trace.escalation_reason,
         )
