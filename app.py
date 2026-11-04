@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import json
 import tempfile
 import uuid
 from pathlib import Path
@@ -29,6 +30,8 @@ MODES = {
 SAMPLE_QUESTIONS = [
     "Thời giờ làm việc bình thường của người lao động là bao nhiêu?",
     "Người lao động làm việc 5 năm thì được bao nhiêu ngày nghỉ phép năm?",
+    "Tôi làm thêm 3 giờ ban đêm vào ngày nghỉ hàng tuần, lương 50.000 đồng/giờ thì được bao nhiêu tiền?",
+    "Tôi làm việc được 4 năm, lương 10 triệu đồng/tháng, khi thôi việc được nhận bao nhiêu tiền trợ cấp thôi việc?",
     "So sánh quy định về thời giờ làm việc và làm thêm giờ trong Bộ luật Lao động 2019 và Nghị định 145/2020.",
 ]
 
@@ -172,14 +175,20 @@ def render_sources(chunks: list[Any]) -> None:
             document = (
                 metadata.get("document_title")
                 or metadata.get("document_id")
+                or metadata.get("document_name")
                 or get_value(chunk, "document_id")
                 or "Văn bản pháp luật"
             )
-            article = metadata.get("article_number") or get_value(chunk, "article_number")
+            article = metadata.get("article_number") or metadata.get("article") or get_value(chunk, "article_number")
             score = get_value(chunk, "score")
-            heading = f"{index:02d} · {document}"
+            chunk_id = str(get_value(chunk, "chunk_id", ""))
+            
+            is_web = "WEB_FALLBACK" in chunk_id or "thuvienphapluat" in str(metadata) or metadata.get("source_url")
+            badge = " 🌐 [Live Web Search]" if is_web else " 🏛️ [Nội bộ]"
+            
+            heading = f"{index:02d} · {document}{badge}"
             if article:
-                heading += f" · Điều {article}"
+                heading += f" · {article}"
             if score is not None:
                 heading += f" · độ phù hợp {float(score):.2f}"
 
@@ -191,49 +200,100 @@ def render_sources(chunks: list[Any]) -> None:
 
 
 def render_trace(response: Any, mode: str) -> None:
-    items: list[tuple[str, str]] = []
+    trace = get_value(response, "trace")
 
+    # 1. Hiển thị cảnh báo Dynamic Feedback Loop (Escalation) nếu có
+    if trace and get_value(trace, "escalated"):
+        orig = enum_text(get_value(trace, "original_route"))
+        chosen = enum_text(get_value(response, "route_taken"))
+        reason = get_value(trace, "escalation_reason") or get_value(response, "escalation_reason")
+        st.warning(
+            f"🔄 **Cơ chế phản hồi 2 chiều (Dynamic Feedback Loop - Escalation)**:\n\n"
+            f"Hệ thống phát hiện độ tin cậy thấp tại nhánh ban đầu **{orig}**, "
+            f"đã tự động **NÂNG CẤP (ESCALATE)** sang nhánh chuyên sâu **{chosen}**!\n\n"
+            f"*Căn cứ đánh giá*: {reason}"
+        )
+
+    # 2. Hiển thị Chu trình Tác tử Trung tâm (Central ReAct Agent & Tool Calling) nếu có
+    agent_steps = get_value(trace, "agent_steps", []) if trace else []
+    if agent_steps:
+        with st.expander("🤖 Dấu vết Tác tử Trung tâm (Central ReAct Agent Controller & Tool Calling)", expanded=True):
+            st.caption("Chu trình suy luận đa bước kết hợp công cụ tính toán số học biểu tượng (Symbolic Legal Calculator):")
+            for step in agent_steps:
+                it = get_value(step, "iteration", 1)
+                thought = get_value(step, "thought", "")
+                action = get_value(step, "action")
+                action_input = get_value(step, "action_input")
+                obs = get_value(step, "observation")
+
+                st.markdown(f"**Vòng lặp {it} - Suy luận (Thought)**: {thought}")
+                if action:
+                    st.info(f"🛠️ **Gọi công cụ (Action)**: `{action}`\n\n**Tham số (Action Input)**: `{json.dumps(action_input, ensure_ascii=False) if isinstance(action_input, dict) else str(action_input)}`")
+                if obs:
+                    with st.container(border=True):
+                        st.markdown(f"**Kết quả thực thi (Observation)**:\n\n{obs}")
+
+    # 3. Hiển thị Cây phân rã câu hỏi (Query Decomposition DAG) nếu có
+    plan = get_value(trace, "plan") if trace else None
+    if plan:
+        sub_queries = get_value(plan, "sub_queries", [])
+        if sub_queries:
+            with st.expander("🌳 Cây phân rã câu hỏi đa chặng (Query Decomposition DAG Tree)", expanded=True):
+                st.markdown(f"**Chiến lược phân rã**: `{enum_text(get_value(plan, 'strategy'))}` | **Độ phức tạp**: `{enum_text(get_value(plan, 'complexity_level'))}`")
+                
+                # Mermaid flowchart
+                mermaid_lines = ["graph TD", '    Orig["❓ Câu hỏi gốc"]']
+                for idx, sq in enumerate(sub_queries, start=1):
+                    sq_id = get_value(sq, "id", f"sq_{idx}")
+                    sq_text = get_value(sq, "text", "")[:40] + "..."
+                    mermaid_lines.append(f'    Orig --> Node_{idx}["📌 Bước {idx}: {sq_text}"]')
+                    mermaid_lines.append(f'    Node_{idx} --> Syn["⚖️ Tổng hợp đa chặng (Synthesizer)"]')
+                
+                st.markdown(f"```mermaid\n" + "\n".join(mermaid_lines) + "\n```")
+
+                # Danh sách chi tiết các câu hỏi con
+                for idx, sq in enumerate(sub_queries, start=1):
+                    text = get_value(sq, "text", "")
+                    purpose = get_value(sq, "purpose", "")
+                    st.markdown(f"- **Bước {idx}**: {text}")
+                    if purpose:
+                        st.caption(f"  *Mục tiêu pháp lý*: {purpose}")
+
+    # 4. Thông tin điều phối tổng hợp
+    items: list[tuple[str, str]] = []
     if mode == "adaptive":
         classification = get_value(response, "classification")
-        trace = get_value(response, "trace")
         if classification:
             items.extend(
                 [
-                    ("Nhánh xử lý", enum_text(get_value(response, "route_taken"))),
-                    ("Ý định", enum_text(get_value(classification, "intent"))),
-                    ("Độ phức tạp", enum_text(get_value(classification, "complexity"))),
+                    ("Nhánh điều phối đã chọn", enum_text(get_value(response, "route_taken"))),
+                    ("Ý định câu hỏi (Intent)", enum_text(get_value(classification, "intent"))),
+                    ("Độ phức tạp (Complexity)", enum_text(get_value(classification, "complexity"))),
                 ]
             )
             reasoning = get_value(classification, "reasoning")
             if reasoning:
-                items.append(("Lý do phân loại", str(reasoning)))
-
-        plan = get_value(trace, "plan") if trace else None
-        sub_queries = get_value(plan, "sub_queries", []) if plan else []
-        if sub_queries:
-            items.append(
-                ("Các bước tra cứu", "\n".join(f"- {get_value(query, 'text', query)}" for query in sub_queries))
-            )
+                items.append(("Căn cứ phân loại của Module 0", str(reasoning)))
     elif mode == "corrective":
         evaluation = get_value(response, "initial_evaluation")
         if evaluation:
             items.extend(
                 [
-                    ("Đánh giá lượt đầu", enum_text(get_value(evaluation, "status"))),
+                    ("Đánh giá lượt đầu (Grader)", enum_text(get_value(evaluation, "status"))),
                     (
-                        "Hiệu chỉnh truy vấn",
-                        "Đã thực hiện" if get_value(response, "corrective_triggered") else "Không cần thiết",
+                        "Hiệu chỉnh truy vấn (Query Rewriter)",
+                        "Đã kích hoạt" if get_value(response, "corrective_triggered") else "Không cần thiết",
                     ),
                 ]
             )
             rewritten_query = get_value(response, "rewritten_query")
             if rewritten_query:
-                items.append(("Truy vấn hiệu chỉnh", str(rewritten_query)))
+                items.append(("Truy vấn hiệu chỉnh ngoài", str(rewritten_query)))
     else:
-        items.append(("Nhánh xử lý", "Truy xuất ngữ nghĩa"))
+        items.append(("Nhánh xử lý", "Truy xuất tuyến tính 1 chặng (Traditional RAG Baseline)"))
 
     if items:
-        with st.expander("Thông tin xử lý"):
+        with st.expander("ℹ️ Thông tin điều phối chi tiết (Orchestration Trace)"):
             for label, value in items:
                 st.markdown(f"**{label}**")
                 st.markdown(value)
@@ -804,9 +864,10 @@ with chat_tab:
 
     if not st.session_state.messages:
         st.markdown("#### Bắt đầu với một câu hỏi")
-        suggestion_columns = st.columns(3)
+        suggestion_columns = st.columns(min(len(SAMPLE_QUESTIONS), 3))
         for index, sample in enumerate(SAMPLE_QUESTIONS):
-            if suggestion_columns[index].button(sample, key=f"sample_{index}", width="stretch"):
+            col = suggestion_columns[index % len(suggestion_columns)]
+            if col.button(sample, key=f"sample_{index}", use_container_width=True):
                 st.session_state.pending_question = sample
                 st.rerun()
 

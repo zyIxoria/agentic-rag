@@ -1,8 +1,9 @@
-"""refusal_guard.py - Chốt chặn an toàn và cơ chế từ chối (Refusal Guard) cho Traditional RAG.
+"""refusal_guard.py - Chốt chặn an toàn, cơ chế từ chối (Refusal Guard) và kiểm chứng ảo giác (Hallucination Verifier).
 
-Đảm bảo an toàn 2 tầng:
+Đảm bảo an toàn 3 tầng:
 1. Pre-generation Guard: Chặn trước khi gọi LLM nếu retrieval rỗng hoặc độ tương đồng quá thấp.
-2. Post-generation Guard: Kiểm tra tính hợp lệ của trích dẫn và tính nhất quán của trạng thái từ chối.
+2. Post-generation Citation Guard: Kiểm tra tính hợp lệ của trích dẫn và tính nhất quán của trạng thái từ chối.
+3. Post-generation Faithfulness Guard: Kiểm chứng tính trung thực thời gian thực (Self-Reflection / Faithfulness Gate), phát hiện và chặn đứng ảo giác (hallucination).
 """
 
 from __future__ import annotations
@@ -14,6 +15,7 @@ from RAG.retriever.schema import RetrievedChunk
 from RAG.generator.schema import GenerationResult
 from RAG.citation.schema import CitationResolutionResult
 from RAG.guards.config import GuardConfig, default_guard_config
+from RAG.guards.hallucination_verifier import RealTimeHallucinationVerifier, FaithfulnessVerificationReport
 
 logger = logging.getLogger(__name__)
 
@@ -31,8 +33,13 @@ class GuardCheckResult(BaseModel):
 class RefusalGuard:
     """Lớp quản lý chốt chặn an toàn và cơ chế từ chối của hệ thống RAG."""
 
-    def __init__(self, config: Optional[GuardConfig] = None):
+    def __init__(
+        self,
+        config: Optional[GuardConfig] = None,
+        hallucination_verifier: Optional[RealTimeHallucinationVerifier] = None,
+    ):
         self.config = config or default_guard_config
+        self.hallucination_verifier = hallucination_verifier or RealTimeHallucinationVerifier()
 
     def check_pre_generation(self, retrieved_chunks: List[RetrievedChunk]) -> GuardCheckResult:
         """Kiểm tra chốt chặn an toàn TRƯỚC KHI sinh câu trả lời bằng LLM.
@@ -86,13 +93,15 @@ class RefusalGuard:
     def check_post_generation(
         self,
         generation_result: GenerationResult,
-        citation_result: CitationResolutionResult
+        citation_result: CitationResolutionResult,
+        context_text: Optional[str] = None,
     ) -> GuardCheckResult:
         """Kiểm tra chốt chặn an toàn SAU KHI sinh câu trả lời bằng LLM.
         
         Args:
             generation_result: Kết quả sinh từ Generator (RAG-05).
             citation_result: Kết quả phân giải trích dẫn từ CitationResolver (RAG-06).
+            context_text: Toàn bộ ngữ cảnh tài liệu pháp luật cung cấp cho LLM (dùng để kiểm chứng ảo giác).
             
         Returns:
             GuardCheckResult.
@@ -124,13 +133,43 @@ class RefusalGuard:
                     metrics={"invalid_citations": citation_result.invalid_citations}
                 )
 
+        # Kiểm chứng tính trung thực và phát hiện ảo giác (Real-time Hallucination Verifier)
+        faith_metrics: Dict[str, Any] = {
+            "valid_citations_count": citation_result.citations_count,
+            "has_invalid_citations": citation_result.has_invalid_citations
+        }
+
+        if context_text and not generation_result.refused:
+            faith_report: FaithfulnessVerificationReport = self.hallucination_verifier.verify(
+                answer=generation_result.answer,
+                context=context_text,
+            )
+            faith_metrics.update({
+                "faithfulness_score": faith_report.faithfulness_score,
+                "hallucination_detected": faith_report.hallucination_detected,
+                "contradicted_count": faith_report.contradicted_count,
+                "unsupported_count": faith_report.unsupported_count,
+                "action_taken": faith_report.action_taken,
+            })
+
+            # Nếu phát hiện ảo giác nghiêm trọng (bịa đặt số điều luật hoặc tỷ lệ trung thực quá thấp)
+            if not faith_report.passed:
+                logger.warning(
+                    "Post-generation Guard: Phát hiện ảo giác câu trả lời (%s). Cưỡng chế từ chối.",
+                    faith_report.reason
+                )
+                return GuardCheckResult(
+                    passed=False,
+                    trigger_refusal=True,
+                    reason=faith_report.reason,
+                    refusal_message=self.config.REFUSAL_MESSAGE,
+                    metrics=faith_metrics,
+                )
+
         return GuardCheckResult(
             passed=True,
             trigger_refusal=False,
-            metrics={
-                "valid_citations_count": citation_result.citations_count,
-                "has_invalid_citations": citation_result.has_invalid_citations
-            }
+            metrics=faith_metrics,
         )
 
     def create_refusal_response(

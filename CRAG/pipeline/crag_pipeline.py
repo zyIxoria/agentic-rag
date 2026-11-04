@@ -279,7 +279,7 @@ class CRAGPipeline:
         )
 
         # BƯỚC 6: Chốt chặn an toàn sau khi sinh (Post-Generation Guard)
-        post_guard_res = self.guard.check_post_generation(gen_result, citation_result)
+        post_guard_res = self.guard.check_post_generation(gen_result, citation_result, context_text=context_text)
 
         if post_guard_res.trigger_refusal and not gen_result.refused:
             final_answer = self.guard.config.REFUSAL_MESSAGE

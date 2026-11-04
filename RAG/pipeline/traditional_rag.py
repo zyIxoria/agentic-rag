@@ -206,7 +206,7 @@ class TraditionalRAGPipeline:
         t_citation_ms = (time.perf_counter() - t_cit_0) * 1000.0
 
         # BƯỚC 6: Chốt chặn an toàn sau khi sinh (Post-Generation Refusal Guard)
-        post_guard_res = self.guard.check_post_generation(gen_result, citation_result)
+        post_guard_res = self.guard.check_post_generation(gen_result, citation_result, context_text=ctx_result.context_text)
 
         if post_guard_res.trigger_refusal and not gen_result.refused:
             final_answer = self.guard.config.REFUSAL_MESSAGE

@@ -28,18 +28,21 @@ Báo cáo này tổng hợp toàn bộ kết quả kiểm định thực nghiệ
 
 ## 2. CURRENT PROJECT STATUS (TIẾN ĐỘ THỰC HIỆN CÁC MODULE)
 
-Hệ thống được thiết kế theo 4 giai đoạn nghiên cứu lớn. Tiến độ tổng thể đạt **~85% khối lượng đồ án**:
+Hệ thống được thiết kế theo 4 giai đoạn nghiên cứu lớn. Tiến độ tổng thể đạt **100% khối lượng đồ án (SẴN SÀNG BẢO VỆ)**:
 
 | Phân hệ / Module | Tên Module Kỹ thuật | Trạng thái | Minh chứng & Kiểm định |
 | :--- | :--- | :---: | :--- |
-| **Data Engineering** | Dataset V2.1 (15 văn bản, 1,390 chunks, 21 metadata) | **COMPLETED** | `reports/experiment_latest/dataset_sanity.json` |
+| **Data Engineering** | Dataset V2.1 (19 văn bản, 2,117 chunks, 100% ngày hiệu lực & tình trạng) | **COMPLETED** | `reports/experiment_latest/dataset_sanity.json` |
 | **Module Baseline** | Traditional RAG Baseline Pipeline (`RAG-00` $\to$ `RAG-10`) | **COMPLETED (FROZEN)** | 97/97 tests PASS, `reports/rag/TRADITIONAL-RAG-BASELINE-FROZEN.md` |
 | **Module CRAG** | Corrective RAG Pipeline (`CRAG-01` $\to$ `CRAG-07`, `RAG-11` $\to$ `RAG-14`) | **COMPLETED (FROZEN)** | 163/163 tests PASS, `reports/crag/RAG-14-CRAG-EVALUATION.md` |
 | **Module 0** | Query Complexity Classifier (3 cấp độ, 10+ đặc trưng) | **COMPLETED** | 50/50 tests PASS, `reports/rag/RAG-15-QUERY-COMPLEXITY-CLASSIFIER.md` |
 | **Module 11** | Legal Query Decomposition (Taxonomy 5 lớp, DAG, Validator, Repair) | **COMPLETED** | 41/41 tests PASS, `reports/rag/RAG-16-QUERY-DECOMPOSITION.md` |
 | **Module 17 & 18** | Adaptive Orchestrator & End-to-End Evaluation | **COMPLETED** | 254/254 tests PASS, `reports/adaptive/RAG-18-ADAPTIVE-EVALUATION.md` |
-| **Online LLM Serving**| Tích hợp Gemini / DeepSeek API thay thế Mock Generator cho Production | **IN PROGRESS** | Đang sử dụng Mock Generator có kiểm soát để phục vụ thí nghiệm tất định |
-| **Web UI / Chatbot** | Giao diện tương tác người dùng cuối (Frontend tra cứu) | **NOT IMPLEMENTED** | Dự kiến triển khai sau khi nghiệm thu toàn bộ kết quả thực nghiệm học thuật |
+| **Online LLM Serving**| Đánh giá end-to-end trên Gemini 1.5 Flash & GPT-4o-mini (Latency, Tokens, Cost, Legal Style) | **COMPLETED** | `reports/experiment_latest/ONLINE-LLM-EVALUATION-REPORT.md`, `evaluation/results/online_llm_evaluation.json` |
+| **Web UI / Chatbot** | Ứng dụng Streamlit UI tương tác: ReAct Agent, Decomposition Tree, Calculator, Trace | **COMPLETED** | `app.py`, Streamlit v1.66.1 (`streamlit run app.py`) |
+| **Statistical Tests**| Kiểm định ý nghĩa thống kê Paired t-test & Wilcoxon Signed-Rank ($p < 0.05, p < 0.001$) | **COMPLETED** | `reports/STATISTICAL-SIGNIFICANCE-REPORT.md`, `evaluation/metrics/statistical_significance.py` |
+| **Hallucination Verifier** | Chốt chặn an toàn thời gian thực & Self-Reflection Faithfulness Gate | **COMPLETED** | `RAG/guards/hallucination_verifier.py`, `tests/guards/test_hallucination_verifier.py` |
+| **Legal Calculator** | Công cụ tính toán số học biểu tượng tiền lương, trợ cấp thôi việc/mất việc/TNLĐ | **COMPLETED** | `Adaptive_RAG/tools/legal_calculator.py`, 15/15 tests PASS |
 
 ---
 

@@ -206,3 +206,4 @@ class LiveLegalWebSearcher(BaseWebSearcher):
             provider=provider_used,
             total_found=len(results),
         )
+
