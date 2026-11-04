@@ -238,6 +238,11 @@ class SentenceTransformerEmbeddingProvider(BaseEmbeddingProvider):
             actual_device = self.device
             logger.info("Khởi tạo SentenceTransformer với device: %s", actual_device)
             self._model = SentenceTransformer(self.model_name, device=actual_device)
+            # Tự động giới hạn max_seq_length cho các mô hình dựa trên kiến trúc PhoBERT
+            if any(k in self.model_name.lower() for k in ['phobert', 'bkai', 'vietnamese-bi-encoder']):
+                self._model.max_seq_length = 256
+                if hasattr(self._model, 'tokenizer') and self._model.tokenizer is not None:
+                    self._model.tokenizer.model_max_length = 256
             self._dim = self._model.get_sentence_embedding_dimension()
         except ImportError as e:
             raise ImportError(

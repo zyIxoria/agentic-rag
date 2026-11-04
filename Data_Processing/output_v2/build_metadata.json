@@ -1,12 +1,16 @@
 {
   "status": "SUCCESS",
-  "build_timestamp": "2026-09-09T07:50:11Z",
-  "elapsed_seconds": 0.529,
+  "build_timestamp": "2026-11-02T06:06:29Z",
+  "elapsed_seconds": 1.793,
   "input": {
     "raw_dir": "D:\\Filehoc\\KLCN\\agentic-rag\\Data_Processing\\data_corpus_raw",
-    "total_documents": 15,
+    "total_documents": 19,
     "document_ids": [
       "BLLD_2019",
+      "LUAT_ATVSLD_2015",
+      "LUAT_BHXH_2014",
+      "LUAT_BHXH_2024",
+      "LUAT_VIEC_LAM_2013",
       "ND_12_2022",
       "ND_135_2020",
       "ND_145_2020",
@@ -25,30 +29,30 @@
   },
   "output": {
     "json_path": "D:\\Filehoc\\KLCN\\agentic-rag\\Data_Processing\\output_v2\\legal_dataset_v2.json",
-    "json_sha256": "e48c6a3bece6819a0e25da8d985c8391ec162561c985e26d69dc3d13f2c87d92",
+    "json_sha256": "e9b9095274e893365cefc0622f9a691454835f570f4efd0610f5aad2d1f610ea",
     "jsonl_path": "D:\\Filehoc\\KLCN\\agentic-rag\\Data_Processing\\output_v2\\legal_dataset_v2.jsonl",
-    "jsonl_sha256": "bcd6d0f05b0239b6250a6aa30e93d27093599d6da08bf80344cfd3a8ce834265",
-    "total_chunks": 1390,
-    "unique_chunk_ids": 1390,
+    "jsonl_sha256": "d484c890f58d2f34b3ce42de1921f25fcff914816ebefc0ff0dc71e82f3e9040",
+    "total_chunks": 2117,
+    "unique_chunk_ids": 2117,
     "collisions_count": 0
   },
   "token_statistics": {
     "min_tokens": 26,
     "max_tokens": 800,
-    "avg_tokens": 264.75,
-    "median_tokens": 211.0,
+    "avg_tokens": 242.75,
+    "median_tokens": 201,
     "distribution": {
       "under_100_tokens": {
-        "count": 145,
-        "percentage": 10.43
+        "count": 214,
+        "percentage": 10.11
       },
       "100_to_350_tokens": {
-        "count": 987,
-        "percentage": 71.01
+        "count": 1602,
+        "percentage": 75.67
       },
       "350_to_800_tokens": {
-        "count": 258,
-        "percentage": 18.56
+        "count": 301,
+        "percentage": 14.22
       },
       "over_800_tokens": {
         "count": 0,
@@ -57,36 +61,36 @@
     }
   },
   "content_type_distribution": {
-    "article": 1390
+    "article": 2117
   },
   "metadata_coverage": {
     "document_number": {
-      "count": 1390,
+      "count": 2117,
       "pct": 100.0
     },
     "document_type": {
-      "count": 1390,
+      "count": 2117,
       "pct": 100.0
     },
     "issue_date": {
-      "count": 0,
-      "pct": 0.0
+      "count": 2117,
+      "pct": 100.0
     },
     "effective_from": {
-      "count": 294,
-      "pct": 21.15
+      "count": 2117,
+      "pct": 100.0
     },
     "source_url": {
-      "count": 1390,
+      "count": 2117,
       "pct": 100.0
     },
     "known_legal_status": {
-      "count": 294,
-      "pct": 21.15
+      "count": 2117,
+      "pct": 100.0
     },
     "unknown_legal_status": {
-      "count": 1096,
-      "pct": 78.85
+      "count": 0,
+      "pct": 0.0
     }
   },
   "v1_preservation": {

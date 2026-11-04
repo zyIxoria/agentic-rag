@@ -358,6 +358,8 @@ class LegalChunkV2(BaseModel):
 
             "content": self.content,
 
+            "issue_date": self.issue_date,
+
             "effective_from": self.effective_from,
             "effective_to": self.effective_to,
             "legal_status": self.legal_status,

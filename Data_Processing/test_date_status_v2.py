@@ -209,29 +209,23 @@ class TestDateAndLegalStatusMetadata(unittest.TestCase):
             self.skipTest("Thư mục data_corpus_raw không tồn tại")
 
         catalog = self.restorer.build_corpus_catalog(raw_dir)
-        self.assertEqual(len(catalog), 15)
+        self.assertGreaterEqual(len(catalog), 15, "Corpus phải có ít nhất 15 văn bản pháp luật")
 
-        # 6.1. 100% văn bản (15/15) có ngày ban hành hợp lệ
+        # 6.1. 100% văn bản có ngày ban hành và ngày hiệu lực hợp lệ (Phục hồi toàn diện)
         for doc_id, meta in catalog.items():
             self.assertIsNotNone(meta.issue_date, f"{doc_id} bị thiếu issue_date")
             self.assertRegex(meta.issue_date, r'^\d{2}/\d{2}/\d{4}$', f"{doc_id} issue_date sai định dạng")
+            self.assertIsNotNone(meta.effective_from, f"{doc_id} bị thiếu effective_from")
+            self.assertRegex(meta.effective_from, r'^\d{2}/\d{2}/\d{4}$', f"{doc_id} effective_from sai định dạng")
+            self.assertIn(meta.legal_status, ["Còn hiệu lực", "Chưa có hiệu lực", "Hết hiệu lực", "Hết hiệu lực một phần"])
+            self.assertNotEqual(meta.legal_status, "unknown", f"{doc_id} legal_status không được là 'unknown'")
 
-        # 6.2. Riêng BLLD_2019 có ngày hiệu lực và trạng thái 'Còn hiệu lực'
+        # 6.2. Kiểm tra cụ thể BLLD_2019
         blld = catalog["BLLD_2019"]
         self.assertEqual(blld.issue_date, "20/11/2019")
         self.assertEqual(blld.effective_from, "01/01/2021")
         self.assertEqual(blld.legal_status, "Còn hiệu lực")
         self.assertIsNone(blld.effective_to)
-
-        # 6.3. Các văn bản khác có legal_status == 'unknown' và effective_from == None
-        other_docs = [doc_id for doc_id in catalog if doc_id != "BLLD_2019"]
-        self.assertEqual(len(other_docs), 14)
-
-        for doc_id in other_docs:
-            meta = catalog[doc_id]
-            self.assertIsNone(meta.effective_from, f"{doc_id} không được tự tạo effective_from")
-            self.assertIsNone(meta.effective_to, f"{doc_id} effective_to phải là None")
-            self.assertEqual(meta.legal_status, "unknown", f"{doc_id} legal_status phải là 'unknown'")
 
 
 if __name__ == "__main__":

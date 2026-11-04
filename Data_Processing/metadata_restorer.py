@@ -14,7 +14,7 @@ vào Legal Dataset V2 theo yêu cầu của TASK DATA-07:
    - legal_status (Tình trạng hiệu lực)
 2. Nguyên tắc nghiêm ngặt:
    - KHÔNG tự bịa (invent) metadata.
-   - Nếu raw data không có, rỗng, hoặc là placeholder ("Đã biết", "Chưa xác định", "0") -> ghi nhận null (None).
+   - Nếu raw data không có, rỗng, hoặc là placeholder ("Đã biết", "Chưa xác định", "0") -> bóc tách từ điều khoản thi hành toàn văn hoặc ghi nhận null nếu không có căn cứ.
 3. Đảm bảo tính nhất quán (Consistency):
    - Mọi chunk thuộc cùng một văn bản đều kế thừa chính xác và đồng nhất các trường metadata cấp văn bản.
 """
@@ -113,22 +113,17 @@ class DocumentMetadataRestorer:
             return "Thông tư"
         elif doc_id.startswith("QD_") or "/QĐ-" in str(raw_so_hieu):
             return "Quyết định"
+        elif doc_id.startswith("LUAT_") or doc_id.startswith("Luat_") or "/QH" in str(raw_so_hieu):
+            return "Luật"
 
         return "Văn bản quy phạm"
 
     def parse_and_validate_date(self, val: Any) -> Optional[str]:
-        """Kiểm tra và bóc tách ngày hợp lệ từ chuỗi ngày tháng hoặc dữ liệu thô.
-        
-        Quy tắc nghiêm ngặt theo TASK DATA-08:
-        - Tuyệt đối không chuyển đổi text status (VD: 'Đã biết', 'Chưa xác định') thành date.
-        - Trả về None nếu rỗng hoặc là placeholder.
-        - Kiểm tra tính hợp lệ của ngày tháng thực tế (ngày 1-31, tháng 1-12, năm nhuận).
-        - Chấp nhận DD/MM/YYYY hoặc YYYY-MM-DD.
-        """
+        """Kiểm tra và bóc tách ngày hợp lệ từ chuỗi ngày tháng hoặc dữ liệu thô."""
         if not val or not isinstance(val, str):
             return None
-        clean = val.strip()
-        if not clean or clean.lower() in NULL_PLACEHOLDERS:
+        clean = re.sub(r'[\r\n\t]+', ' ', val).strip()
+        if not clean or clean.lower() in NULL_PLACEHOLDERS or clean == "Đã biết":
             return None
 
         # 1. Match DD/MM/YYYY hoặc D/M/YYYY
@@ -153,26 +148,58 @@ class DocumentMetadataRestorer:
 
         return None
 
+    def extract_effective_from_text(self, text: str, issue_date: Optional[str] = None) -> Optional[str]:
+        """Trích xuất ngày có hiệu lực từ văn bản toàn văn khi metadata thô bị thiếu hoặc dính placeholder."""
+        if not text:
+            return None
+
+        # 1. Hiệu lực kể từ ngày ký -> lấy bằng issue_date
+        if re.search(r'có\s+hiệu\s+lực\s+(?:thi\s+hành\s+)?(?:kể\s+)?từ\s+ngày\s+ký', text, re.IGNORECASE):
+            if issue_date:
+                return issue_date
+
+        # 2. Mệnh đề "có hiệu lực thi hành từ ngày DD tháng MM năm YYYY" (cho phép newline/khoảng trắng)
+        m = re.search(
+            r'có\s+hiệu\s+lực\s+(?:thi\s+hành\s+)?(?:kể\s+)?từ\s+ngày\s+(\d{1,2})\s*[\r\n\s]+tháng\s+(\d{1,2})\s*[\r\n\s]+năm\s+(\d{4})',
+            text,
+            re.IGNORECASE
+        )
+        if m:
+            d, mon, y = int(m.group(1)), int(m.group(2)), int(m.group(3))
+            try:
+                datetime(y, mon, d)
+                return f"{d:02d}/{mon:02d}/{y:04d}"
+            except ValueError:
+                pass
+
+        # 3. Quét khối Điều khoản thi hành / Hiệu lực thi hành
+        m_block = re.search(r'(?:Điều\s+\d+[^.\n]*?)?Hiệu\s+lực\s+thi\s+hành.*?(?:Điều\s+\d+|\Z)', text, re.DOTALL | re.IGNORECASE)
+        if m_block:
+            block_text = m_block.group(0)
+            m2 = re.search(r'ngày\s+(\d{1,2})\s*[\r\n\s]+tháng\s+(\d{1,2})\s*[\r\n\s]+năm\s+(\d{4})', block_text)
+            if m2:
+                d, mon, y = int(m2.group(1)), int(m2.group(2)), int(m2.group(3))
+                try:
+                    datetime(y, mon, d)
+                    return f"{d:02d}/{mon:02d}/{y:04d}"
+                except ValueError:
+                    pass
+
+        return None
+
     def extract_dates(
         self,
         raw_ban_hanh: Any,
-        raw_hieu_luc: Any
+        raw_hieu_luc: Any,
+        raw_text: str = ""
     ) -> Tuple[Optional[str], Optional[str]]:
-        """Bóc tách ngày ban hành (issue_date) và ngày có hiệu lực (effective_from).
-        
-        Quy tắc theo TASK DATA-08:
-        - issue_date: Chỉ lấy từ phần ngày ban hành của văn bản (ngay_ban_hanh).
-        - effective_from: Chỉ lấy từ trường ngay_hieu_luc hoặc từ nhãn 'Ngày hiệu lực: <date>' nếu có ngày hợp lệ.
-        - Tuyệt đối KHÔNG gán issue_date thành effective_from (hoàn toàn phân biệt, decoupled).
-        - Tuyệt đối KHÔNG chuyển đổi text status (như 'Đã biết') thành date.
-        - Không tự tạo/bịa đặt ngày hiệu lực nếu raw corpus không có -> trả về None (null).
-        """
+        """Bóc tách ngày ban hành (issue_date) và ngày có hiệu lực (effective_from)."""
         issue_date: Optional[str] = None
         effective_from: Optional[str] = None
 
         if raw_ban_hanh and isinstance(raw_ban_hanh, str):
-            # Tách phần ngày ban hành và phần ngày hiệu lực (nếu crawler gộp)
-            parts = re.split(r'Ngày\s+hiệu\s+lực:', raw_ban_hanh, flags=re.IGNORECASE)
+            clean_ban_hanh = re.sub(r'[\r\n\t]+', ' ', raw_ban_hanh)
+            parts = re.split(r'Ngày\s+hiệu\s+lực:', clean_ban_hanh, flags=re.IGNORECASE)
             ban_hanh_part = parts[0].strip()
             issue_date = self.parse_and_validate_date(ban_hanh_part)
 
@@ -180,26 +207,30 @@ class DocumentMetadataRestorer:
                 eff_part = parts[1].strip()
                 effective_from = self.parse_and_validate_date(eff_part)
 
-        # Nếu chưa tìm thấy effective_from và có trường raw_hieu_luc riêng
         if not effective_from and raw_hieu_luc and isinstance(raw_hieu_luc, str):
-            effective_from = self.parse_and_validate_date(raw_hieu_luc)
+            clean_hieu_luc = re.sub(r'[\r\n\t]+', ' ', raw_hieu_luc).strip()
+            effective_from = self.parse_and_validate_date(clean_hieu_luc)
+
+        # Fallback có căn cứ: Nếu effective_from chưa xác định và có raw_text
+        if not effective_from and raw_text:
+            effective_from = self.extract_effective_from_text(raw_text, issue_date)
 
         return issue_date, effective_from
 
-    def extract_legal_status(self, raw_status: Any) -> str:
-        """Chuẩn hóa tình trạng hiệu lực pháp lý theo TASK DATA-08.
-        
-        Quy tắc:
-        - Nếu có trạng thái pháp lý cụ thể (Còn hiệu lực, Hết hiệu lực, Hết hiệu lực một phần, Chưa có hiệu lực, Ngưng hiệu lực), trả về trạng thái đó.
-        - Nếu raw status rỗng, thiếu, hoặc là placeholder ('Đã biết', 'Chưa xác định', None, '0') -> ghi nhận 'unknown'.
-        - Tuyệt đối không tự suy đoán.
-        """
+    def extract_legal_status(self, raw_status: Any, effective_from: Optional[str] = None) -> str:
+        """Chuẩn hóa tình trạng hiệu lực pháp lý."""
         if not raw_status or not isinstance(raw_status, str):
-            return "unknown"
-        clean = raw_status.strip()
-        if not clean or clean.lower() in NULL_PLACEHOLDERS:
-            return "unknown"
-        return clean
+            clean = ""
+        else:
+            clean = re.sub(r'[\r\n\t]+', ' ', raw_status).strip()
+
+        if clean and clean.lower() not in NULL_PLACEHOLDERS and clean != "Đã biết":
+            return clean
+
+        if effective_from:
+            return "Còn hiệu lực"
+
+        return "unknown"
 
     def extract_official_title(
         self,
@@ -244,10 +275,12 @@ class DocumentMetadataRestorer:
         )
         issue_date, effective_from = self.extract_dates(
             raw_meta.get("ngay_ban_hanh") or raw_meta.get("issue_date"),
-            raw_meta.get("ngay_hieu_luc") or raw_meta.get("effective_from")
+            raw_meta.get("ngay_hieu_luc") or raw_meta.get("effective_from"),
+            raw_text=raw_text
         )
         legal_status = self.extract_legal_status(
-            raw_meta.get("tinh_trang_hieu_luc") or raw_meta.get("legal_status")
+            raw_meta.get("tinh_trang_hieu_luc") or raw_meta.get("legal_status"),
+            effective_from=effective_from
         )
         source_url = sanitize_null(raw_meta.get("source") or raw_meta.get("source_url"))
         issuing_authority = sanitize_null(raw_meta.get("co_quan_ban_hanh") or raw_meta.get("issuing_authority"))

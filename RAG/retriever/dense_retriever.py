@@ -10,7 +10,8 @@ Tuân thủ nghiêm ngặt các nguyên tắc của TASK RAG-03:
 
 from __future__ import annotations
 import logging
-from typing import List, Optional, Dict, Any
+from datetime import date
+from typing import List, Optional, Dict, Any, Union
 
 from RAG.retriever.schema import RetrievedChunk
 from RAG.retriever.base import BaseRetriever
@@ -58,6 +59,8 @@ class DenseTopKRetriever(BaseRetriever):
         query: str,
         top_k: Optional[int] = None,
         score_threshold: Optional[float] = None,
+        as_of_date: Optional[Union[str, date]] = None,
+        auto_temporal: bool = False,
     ) -> List[RetrievedChunk]:
         """Thu hồi danh sách Top-K chunks pháp lý có độ tương đồng ngữ nghĩa cao nhất với câu hỏi.
         
@@ -89,8 +92,10 @@ class DenseTopKRetriever(BaseRetriever):
             logger.warning("Vector store hiện tại rỗng (0 bản ghi). Trả về danh sách rỗng.")
             return []
 
-        # Giới hạn k tối đa bằng quy mô corpus (Tránh lỗi ChromaDB n_results > count)
-        actual_k = min(k, total_chunks)
+        # Xác định số lượng ứng viên cần kéo từ ChromaDB
+        is_temporal = (as_of_date is not None) or auto_temporal
+        fetch_k = min(total_chunks, max(k * 3, 20)) if is_temporal else min(k, total_chunks)
+        actual_k = fetch_k
 
         # 4. Sinh vector cho câu hỏi (Dense Query Embedding)
         query_vector = self.embedding_provider.embed_text(query.strip())
@@ -146,11 +151,23 @@ class DenseTopKRetriever(BaseRetriever):
         # 7. Đảm bảo sắp xếp giảm dần theo score (Rank Assignment)
         candidates.sort(key=lambda c: c.score, reverse=True)
 
-        # Giới hạn chính xác top_k sau khi lọc ngưỡng và gán thứ hạng 1..K
-        final_results: List[RetrievedChunk] = []
-        for rank_idx, chunk in enumerate(candidates[:k], start=1):
+        final_results = candidates
+
+        # Áp dụng Temporal Legal Filtering nếu có yêu cầu
+        target_date = as_of_date
+        if target_date is None and auto_temporal:
+            from RAG.retriever.temporal_filter import TemporalLegalFilter
+            target_date, _ = TemporalLegalFilter.extract_temporal_intent(query)
+
+        if target_date is not None:
+            from RAG.retriever.temporal_filter import TemporalLegalFilter
+            t_filter = TemporalLegalFilter()
+            final_results = t_filter.filter_chunks(final_results, as_of_date=target_date)
+
+        # Giới hạn chính xác top_k sau khi lọc và cập nhật thứ hạng 1..K
+        final_results = final_results[:k]
+        for rank_idx, chunk in enumerate(final_results, start=1):
             chunk.rank = rank_idx
-            final_results.append(chunk)
 
         logger.debug(
             f"Query '{query[:30]}...' -> Thu hồi {len(final_results)}/{k} chunks (Threshold: {threshold})."

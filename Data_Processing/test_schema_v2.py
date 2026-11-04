@@ -406,13 +406,14 @@ class TestLegalDatasetV2Schema(unittest.TestCase):
             "article_number", "article_title",
             "clause_number", "point_number",
             "content",
+            "issue_date",
             "effective_from", "effective_to", "legal_status",
             "source_url",
             "parent_document", "parent_article",
             "chunk_index"
         }
         self.assertEqual(set(target_dict.keys()), expected_keys)
-        self.assertEqual(len(target_dict), 21)
+        self.assertEqual(len(target_dict), 22)
 
     def test_12_json_serialization_produces_literal_null(self):
         """Kiểm thử tệp JSON xuất ra chứa literal 'null' cho các trường rỗng, không phải 'None' hay ''."""

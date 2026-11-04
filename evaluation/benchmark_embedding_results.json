@@ -1,0 +1,1898 @@
+{
+  "all-MiniLM-L6-v2": {
+    "model_name": "all-MiniLM-L6-v2",
+    "hf_path": "sentence-transformers/all-MiniLM-L6-v2",
+    "dimension": 384,
+    "latency_ms_per_doc": 48.39,
+    "hit_at_1": 20.0,
+    "hit_at_3": 20.0,
+    "hit_at_5": 20.0,
+    "mrr_at_5": 0.2125,
+    "precision_at_5": 6.0,
+    "avg_semantic_margin": 0.1121,
+    "detailed_queries": [
+      {
+        "query_id": "Q1",
+        "query": "Tôi nghỉ việc thì có được nhận trợ cấp không?",
+        "first_gold_rank": null,
+        "mrr": 0.0,
+        "avg_pos_score": 0.6206,
+        "avg_neg_score": 0.6242,
+        "margin": -0.0037,
+        "top5": [
+          {
+            "rank": 1,
+            "chunk_id": "ND_219_2025_Điều7_Khoản12_15",
+            "score": 0.8007,
+            "is_gold": false,
+            "is_hard_negative": false
+          },
+          {
+            "rank": 2,
+            "chunk_id": "ND_219_2025_Điều11_26",
+            "score": 0.7613,
+            "is_gold": false,
+            "is_hard_negative": false
+          },
+          {
+            "rank": 3,
+            "chunk_id": "ND_152_2020_Điều17_Khoản1_51",
+            "score": 0.7564,
+            "is_gold": false,
+            "is_hard_negative": false
+          },
+          {
+            "rank": 4,
+            "chunk_id": "ND_12_2022_Điều41_Khoản1_153",
+            "score": 0.7526,
+            "is_gold": false,
+            "is_hard_negative": false
+          },
+          {
+            "rank": 5,
+            "chunk_id": "ND_12_2022_Điều32_Khoản2_125",
+            "score": 0.7387,
+            "is_gold": false,
+            "is_hard_negative": false
+          }
+        ]
+      },
+      {
+        "query_id": "Q2",
+        "query": "Người lao động bị tai nạn lao động trong giờ làm việc được bồi thường, trợ cấp thế nào?",
+        "first_gold_rank": 1,
+        "mrr": 1.0,
+        "avg_pos_score": 0.7383,
+        "avg_neg_score": 0.6471,
+        "margin": 0.0911,
+        "top5": [
+          {
+            "rank": 1,
+            "chunk_id": "LUAT_ATVSLD_2015_Điều38_Khoản1_101",
+            "score": 0.811,
+            "is_gold": true,
+            "is_hard_negative": false
+          },
+          {
+            "rank": 2,
+            "chunk_id": "ND_219_2025_Điều7_Khoản12_15",
+            "score": 0.8095,
+            "is_gold": false,
+            "is_hard_negative": false
+          },
+          {
+            "rank": 3,
+            "chunk_id": "ND_219_2025_Điều11_26",
+            "score": 0.8026,
+            "is_gold": false,
+            "is_hard_negative": false
+          },
+          {
+            "rank": 4,
+            "chunk_id": "ND_219_2025_Điều30_64",
+            "score": 0.7885,
+            "is_gold": false,
+            "is_hard_negative": false
+          },
+          {
+            "rank": 5,
+            "chunk_id": "ND_152_2020_Điều8_Khoản1_24",
+            "score": 0.781,
+            "is_gold": false,
+            "is_hard_negative": false
+          }
+        ]
+      },
+      {
+        "query_id": "Q3",
+        "query": "Lao động nữ sinh con cần đóng bảo hiểm xã hội bao lâu để được hưởng chế độ thai sản?",
+        "first_gold_rank": 1,
+        "mrr": 1.0,
+        "avg_pos_score": 0.7948,
+        "avg_neg_score": 0.7067,
+        "margin": 0.0881,
+        "top5": [
+          {
+            "rank": 1,
+            "chunk_id": "LUAT_BHXH_2014_Điều31_Khoản1_47",
+            "score": 0.8457,
+            "is_gold": true,
+            "is_hard_negative": false
+          },
+          {
+            "rank": 2,
+            "chunk_id": "LUAT_ATVSLD_2015_Điều57_137",
+            "score": 0.83,
+            "is_gold": false,
+            "is_hard_negative": false
+          },
+          {
+            "rank": 3,
+            "chunk_id": "LUAT_BHXH_2014_Điều60_Khoản3_89",
+            "score": 0.7984,
+            "is_gold": false,
+            "is_hard_negative": false
+          },
+          {
+            "rank": 4,
+            "chunk_id": "LUAT_BHXH_2014_Điều31_Khoản2_48",
+            "score": 0.7967,
+            "is_gold": true,
+            "is_hard_negative": false
+          },
+          {
+            "rank": 5,
+            "chunk_id": "ND_12_2022_Điều41_Khoản1_153",
+            "score": 0.7922,
+            "is_gold": false,
+            "is_hard_negative": false
+          }
+        ]
+      },
+      {
+        "query_id": "Q4",
+        "query": "Thời giờ làm việc bình thường của người lao động tối đa bao nhiêu giờ trong một ngày và một tuần?",
+        "first_gold_rank": null,
+        "mrr": 0.0,
+        "avg_pos_score": 0.7063,
+        "avg_neg_score": 0.6323,
+        "margin": 0.074,
+        "top5": [
+          {
+            "rank": 1,
+            "chunk_id": "TT_09_2020_Điều3_Khoản6_5",
+            "score": 0.7852,
+            "is_gold": false,
+            "is_hard_negative": false
+          },
+          {
+            "rank": 2,
+            "chunk_id": "ND_74_2024_Điều1_0",
+            "score": 0.7589,
+            "is_gold": false,
+            "is_hard_negative": false
+          },
+          {
+            "rank": 3,
+            "chunk_id": "ND_12_2022_Điều19_Khoản1_59",
+            "score": 0.7569,
+            "is_gold": false,
+            "is_hard_negative": false
+          },
+          {
+            "rank": 4,
+            "chunk_id": "BLLD_2019_Điều2_1",
+            "score": 0.7527,
+            "is_gold": false,
+            "is_hard_negative": false
+          },
+          {
+            "rank": 5,
+            "chunk_id": "BLLD_2019_Điều40_56",
+            "score": 0.7507,
+            "is_gold": false,
+            "is_hard_negative": false
+          }
+        ]
+      },
+      {
+        "query_id": "Q5",
+        "query": "Thời gian thử việc tối đa đối với người làm công việc quản lý doanh nghiệp là bao lâu?",
+        "first_gold_rank": 8,
+        "mrr": 0.125,
+        "avg_pos_score": 0.7275,
+        "avg_neg_score": 0.6525,
+        "margin": 0.0751,
+        "top5": [
+          {
+            "rank": 1,
+            "chunk_id": "BLLD_2019_Điều9_15",
+            "score": 0.7604,
+            "is_gold": false,
+            "is_hard_negative": false
+          },
+          {
+            "rank": 2,
+            "chunk_id": "ND_152_2020_Điều3_Khoản2_6",
+            "score": 0.7521,
+            "is_gold": false,
+            "is_hard_negative": false
+          },
+          {
+            "rank": 3,
+            "chunk_id": "LUAT_VIEC_LAM_2013_Điều6_5",
+            "score": 0.7487,
+            "is_gold": false,
+            "is_hard_negative": false
+          },
+          {
+            "rank": 4,
+            "chunk_id": "LUAT_BHXH_2014_Điều82_116",
+            "score": 0.7485,
+            "is_gold": false,
+            "is_hard_negative": false
+          },
+          {
+            "rank": 5,
+            "chunk_id": "ND_219_2025_Điều3_Khoản2_3",
+            "score": 0.7454,
+            "is_gold": false,
+            "is_hard_negative": false
+          }
+        ]
+      },
+      {
+        "query_id": "Q6",
+        "query": "Người lao động có được quyền đơn phương chấm dứt hợp đồng lao động không cần báo trước trong những trường hợp nào?",
+        "first_gold_rank": null,
+        "mrr": 0.0,
+        "avg_pos_score": 0.7328,
+        "avg_neg_score": 0.7747,
+        "margin": -0.042,
+        "top5": [
+          {
+            "rank": 1,
+            "chunk_id": "LUAT_VIEC_LAM_2013_Điều49_Khoản1_47",
+            "score": 0.8328,
+            "is_gold": false,
+            "is_hard_negative": false
+          },
+          {
+            "rank": 2,
+            "chunk_id": "BLLD_2019_Điều40_56",
+            "score": 0.8188,
+            "is_gold": false,
+            "is_hard_negative": false
+          },
+          {
+            "rank": 3,
+            "chunk_id": "ND_145_2020_Điều37_Khoản5_85",
+            "score": 0.8041,
+            "is_gold": false,
+            "is_hard_negative": false
+          },
+          {
+            "rank": 4,
+            "chunk_id": "TT_20_2023_Điều11_12",
+            "score": 0.8022,
+            "is_gold": false,
+            "is_hard_negative": false
+          },
+          {
+            "rank": 5,
+            "chunk_id": "BLLD_2019_Điều1_0",
+            "score": 0.7907,
+            "is_gold": false,
+            "is_hard_negative": false
+          }
+        ]
+      },
+      {
+        "query_id": "Q7",
+        "query": "Thời hạn nộp hồ sơ hưởng trợ cấp thất nghiệp sau khi chấm dứt hợp đồng lao động là bao lâu?",
+        "first_gold_rank": null,
+        "mrr": 0.0,
+        "avg_pos_score": 0.7513,
+        "avg_neg_score": 0.6832,
+        "margin": 0.0681,
+        "top5": [
+          {
+            "rank": 1,
+            "chunk_id": "BLLD_2019_Điều40_56",
+            "score": 0.7903,
+            "is_gold": false,
+            "is_hard_negative": false
+          },
+          {
+            "rank": 2,
+            "chunk_id": "LUAT_BHXH_2024_Điều75_Khoản1_164",
+            "score": 0.7839,
+            "is_gold": false,
+            "is_hard_negative": false
+          },
+          {
+            "rank": 3,
+            "chunk_id": "ND_12_2022_Điều41_Khoản1_153",
+            "score": 0.7775,
+            "is_gold": false,
+            "is_hard_negative": false
+          },
+          {
+            "rank": 4,
+            "chunk_id": "LUAT_BHXH_2014_Điều67_Khoản1_98",
+            "score": 0.7737,
+            "is_gold": false,
+            "is_hard_negative": false
+          },
+          {
+            "rank": 5,
+            "chunk_id": "LUAT_VIEC_LAM_2013_Điều49_Khoản1_47",
+            "score": 0.7722,
+            "is_gold": false,
+            "is_hard_negative": false
+          }
+        ]
+      },
+      {
+        "query_id": "Q8",
+        "query": "Điều kiện để người lao động được rút bảo hiểm xã hội một lần sau khi nghỉ việc?",
+        "first_gold_rank": null,
+        "mrr": 0.0,
+        "avg_pos_score": 0.6609,
+        "avg_neg_score": 0.6472,
+        "margin": 0.0137,
+        "top5": [
+          {
+            "rank": 1,
+            "chunk_id": "LUAT_BHXH_2014_Điều60_Khoản3_89",
+            "score": 0.7624,
+            "is_gold": false,
+            "is_hard_negative": false
+          },
+          {
+            "rank": 2,
+            "chunk_id": "LUAT_ATVSLD_2015_Điều57_137",
+            "score": 0.7514,
+            "is_gold": false,
+            "is_hard_negative": false
+          },
+          {
+            "rank": 3,
+            "chunk_id": "ND_12_2022_Điều44_Khoản8_196",
+            "score": 0.746,
+            "is_gold": false,
+            "is_hard_negative": false
+          },
+          {
+            "rank": 4,
+            "chunk_id": "LUAT_BHXH_2014_Điều82_116",
+            "score": 0.7449,
+            "is_gold": false,
+            "is_hard_negative": false
+          },
+          {
+            "rank": 5,
+            "chunk_id": "ND_12_2022_Điều41_Khoản1_153",
+            "score": 0.7426,
+            "is_gold": false,
+            "is_hard_negative": false
+          }
+        ]
+      },
+      {
+        "query_id": "Q9",
+        "query": "Người sử dụng lao động được áp dụng hình thức xử lý kỷ luật sa thải trong những trường hợp nào?",
+        "first_gold_rank": null,
+        "mrr": 0.0,
+        "avg_pos_score": 0.7425,
+        "avg_neg_score": 0.0,
+        "margin": 0.7425,
+        "top5": [
+          {
+            "rank": 1,
+            "chunk_id": "BLLD_2019_Điều40_56",
+            "score": 0.8192,
+            "is_gold": false,
+            "is_hard_negative": false
+          },
+          {
+            "rank": 2,
+            "chunk_id": "ND_152_2020_Điều20_56",
+            "score": 0.7944,
+            "is_gold": false,
+            "is_hard_negative": false
+          },
+          {
+            "rank": 3,
+            "chunk_id": "BLLD_2019_Điều2_1",
+            "score": 0.7808,
+            "is_gold": false,
+            "is_hard_negative": false
+          },
+          {
+            "rank": 4,
+            "chunk_id": "TT_20_2023_Điều11_12",
+            "score": 0.7787,
+            "is_gold": false,
+            "is_hard_negative": false
+          },
+          {
+            "rank": 5,
+            "chunk_id": "ND_219_2025_Điều30_64",
+            "score": 0.7743,
+            "is_gold": false,
+            "is_hard_negative": false
+          }
+        ]
+      },
+      {
+        "query_id": "Q10",
+        "query": "Hợp đồng lao động xác định thời hạn được ký tối đa bao nhiêu lần?",
+        "first_gold_rank": null,
+        "mrr": 0.0,
+        "avg_pos_score": 0.6844,
+        "avg_neg_score": 0.6707,
+        "margin": 0.0137,
+        "top5": [
+          {
+            "rank": 1,
+            "chunk_id": "LUAT_BHXH_2014_Điều60_Khoản3_89",
+            "score": 0.7976,
+            "is_gold": false,
+            "is_hard_negative": false
+          },
+          {
+            "rank": 2,
+            "chunk_id": "LUAT_ATVSLD_2015_Điều57_137",
+            "score": 0.7746,
+            "is_gold": false,
+            "is_hard_negative": false
+          },
+          {
+            "rank": 3,
+            "chunk_id": "LUAT_BHXH_2014_Điều31_Khoản1_47",
+            "score": 0.7694,
+            "is_gold": false,
+            "is_hard_negative": false
+          },
+          {
+            "rank": 4,
+            "chunk_id": "LUAT_BHXH_2014_Điều54_Khoản3_76",
+            "score": 0.7564,
+            "is_gold": false,
+            "is_hard_negative": false
+          },
+          {
+            "rank": 5,
+            "chunk_id": "LUAT_BHXH_2014_Điều82_116",
+            "score": 0.753,
+            "is_gold": false,
+            "is_hard_negative": false
+          }
+        ]
+      }
+    ]
+  },
+  "bkai-vietnamese-bi-encoder": {
+    "model_name": "bkai-vietnamese-bi-encoder",
+    "hf_path": "bkai-foundation-models/vietnamese-bi-encoder",
+    "dimension": 768,
+    "latency_ms_per_doc": 194.22,
+    "hit_at_1": 80.0,
+    "hit_at_3": 80.0,
+    "hit_at_5": 90.0,
+    "mrr_at_5": 0.8367,
+    "precision_at_5": 30.0,
+    "avg_semantic_margin": 0.3976,
+    "detailed_queries": [
+      {
+        "query_id": "Q1",
+        "query": "Tôi nghỉ việc thì có được nhận trợ cấp không?",
+        "first_gold_rank": 5,
+        "mrr": 0.2,
+        "avg_pos_score": 0.4015,
+        "avg_neg_score": 0.2176,
+        "margin": 0.1839,
+        "top5": [
+          {
+            "rank": 1,
+            "chunk_id": "ND_145_2020_Điều8_Khoản3_P1_17",
+            "score": 0.5367,
+            "is_gold": false,
+            "is_hard_negative": false
+          },
+          {
+            "rank": 2,
+            "chunk_id": "LUAT_BHXH_2024_Điều75_Khoản1_164",
+            "score": 0.4981,
+            "is_gold": false,
+            "is_hard_negative": false
+          },
+          {
+            "rank": 3,
+            "chunk_id": "LUAT_BHXH_2014_Điều50_70",
+            "score": 0.4963,
+            "is_gold": false,
+            "is_hard_negative": false
+          },
+          {
+            "rank": 4,
+            "chunk_id": "LUAT_VIEC_LAM_2013_Điều53_Khoản3_54",
+            "score": 0.4868,
+            "is_gold": false,
+            "is_hard_negative": false
+          },
+          {
+            "rank": 5,
+            "chunk_id": "BLLD_2019_Điều46_66",
+            "score": 0.4719,
+            "is_gold": true,
+            "is_hard_negative": false
+          }
+        ]
+      },
+      {
+        "query_id": "Q2",
+        "query": "Người lao động bị tai nạn lao động trong giờ làm việc được bồi thường, trợ cấp thế nào?",
+        "first_gold_rank": 1,
+        "mrr": 1.0,
+        "avg_pos_score": 0.5472,
+        "avg_neg_score": 0.2449,
+        "margin": 0.3023,
+        "top5": [
+          {
+            "rank": 1,
+            "chunk_id": "LUAT_ATVSLD_2015_Điều39_Khoản1_108",
+            "score": 0.6597,
+            "is_gold": true,
+            "is_hard_negative": false
+          },
+          {
+            "rank": 2,
+            "chunk_id": "LUAT_ATVSLD_2015_Điều39_Khoản2_109",
+            "score": 0.6541,
+            "is_gold": true,
+            "is_hard_negative": false
+          },
+          {
+            "rank": 3,
+            "chunk_id": "LUAT_ATVSLD_2015_Điều53_130",
+            "score": 0.568,
+            "is_gold": false,
+            "is_hard_negative": false
+          },
+          {
+            "rank": 4,
+            "chunk_id": "ND_12_2022_Điều41_Khoản1_153",
+            "score": 0.5537,
+            "is_gold": false,
+            "is_hard_negative": false
+          },
+          {
+            "rank": 5,
+            "chunk_id": "LUAT_ATVSLD_2015_Điều38_Khoản1_101",
+            "score": 0.5444,
+            "is_gold": true,
+            "is_hard_negative": false
+          }
+        ]
+      },
+      {
+        "query_id": "Q3",
+        "query": "Lao động nữ sinh con cần đóng bảo hiểm xã hội bao lâu để được hưởng chế độ thai sản?",
+        "first_gold_rank": 1,
+        "mrr": 1.0,
+        "avg_pos_score": 0.6979,
+        "avg_neg_score": 0.3371,
+        "margin": 0.3608,
+        "top5": [
+          {
+            "rank": 1,
+            "chunk_id": "LUAT_BHXH_2014_Điều31_Khoản2_48",
+            "score": 0.7837,
+            "is_gold": true,
+            "is_hard_negative": false
+          },
+          {
+            "rank": 2,
+            "chunk_id": "LUAT_BHXH_2024_Điều50_Khoản2_111",
+            "score": 0.7672,
+            "is_gold": true,
+            "is_hard_negative": false
+          },
+          {
+            "rank": 3,
+            "chunk_id": "LUAT_BHXH_2024_Điều53_Khoản2_116",
+            "score": 0.6897,
+            "is_gold": false,
+            "is_hard_negative": false
+          },
+          {
+            "rank": 4,
+            "chunk_id": "LUAT_BHXH_2024_Điều50_Khoản1_110",
+            "score": 0.6209,
+            "is_gold": true,
+            "is_hard_negative": false
+          },
+          {
+            "rank": 5,
+            "chunk_id": "LUAT_BHXH_2014_Điều31_Khoản1_47",
+            "score": 0.6199,
+            "is_gold": true,
+            "is_hard_negative": false
+          }
+        ]
+      },
+      {
+        "query_id": "Q4",
+        "query": "Thời giờ làm việc bình thường của người lao động tối đa bao nhiêu giờ trong một ngày và một tuần?",
+        "first_gold_rank": 1,
+        "mrr": 1.0,
+        "avg_pos_score": 0.6544,
+        "avg_neg_score": 0.233,
+        "margin": 0.4214,
+        "top5": [
+          {
+            "rank": 1,
+            "chunk_id": "BLLD_2019_Điều105_139",
+            "score": 0.6544,
+            "is_gold": true,
+            "is_hard_negative": false
+          },
+          {
+            "rank": 2,
+            "chunk_id": "TT_20_2023_Điều4_3",
+            "score": 0.5345,
+            "is_gold": false,
+            "is_hard_negative": false
+          },
+          {
+            "rank": 3,
+            "chunk_id": "LUAT_ATVSLD_2015_Điều67_Khoản2_150",
+            "score": 0.3502,
+            "is_gold": false,
+            "is_hard_negative": false
+          },
+          {
+            "rank": 4,
+            "chunk_id": "TT_20_2023_Điều6_7",
+            "score": 0.3402,
+            "is_gold": false,
+            "is_hard_negative": false
+          },
+          {
+            "rank": 5,
+            "chunk_id": "BLLD_2019_Điều150_198",
+            "score": 0.33,
+            "is_gold": false,
+            "is_hard_negative": false
+          }
+        ]
+      },
+      {
+        "query_id": "Q5",
+        "query": "Thời gian thử việc tối đa đối với người làm công việc quản lý doanh nghiệp là bao lâu?",
+        "first_gold_rank": 1,
+        "mrr": 1.0,
+        "avg_pos_score": 0.6731,
+        "avg_neg_score": 0.1891,
+        "margin": 0.484,
+        "top5": [
+          {
+            "rank": 1,
+            "chunk_id": "BLLD_2019_Điều25_35",
+            "score": 0.6731,
+            "is_gold": true,
+            "is_hard_negative": false
+          },
+          {
+            "rank": 2,
+            "chunk_id": "ND_219_2025_Điều3_Khoản2_3",
+            "score": 0.3737,
+            "is_gold": false,
+            "is_hard_negative": false
+          },
+          {
+            "rank": 3,
+            "chunk_id": "TT_20_2023_Điều4_3",
+            "score": 0.3219,
+            "is_gold": false,
+            "is_hard_negative": false
+          },
+          {
+            "rank": 4,
+            "chunk_id": "BLLD_2019_Điều107_Khoản3_143",
+            "score": 0.3175,
+            "is_gold": false,
+            "is_hard_negative": false
+          },
+          {
+            "rank": 5,
+            "chunk_id": "BLLD_2019_Điều125_Khoản3_168",
+            "score": 0.31,
+            "is_gold": false,
+            "is_hard_negative": false
+          }
+        ]
+      },
+      {
+        "query_id": "Q6",
+        "query": "Người lao động có được quyền đơn phương chấm dứt hợp đồng lao động không cần báo trước trong những trường hợp nào?",
+        "first_gold_rank": 1,
+        "mrr": 1.0,
+        "avg_pos_score": 0.7835,
+        "avg_neg_score": 0.249,
+        "margin": 0.5346,
+        "top5": [
+          {
+            "rank": 1,
+            "chunk_id": "BLLD_2019_Điều35_Khoản2_49",
+            "score": 0.7835,
+            "is_gold": true,
+            "is_hard_negative": false
+          },
+          {
+            "rank": 2,
+            "chunk_id": "BLLD_2019_Điều40_56",
+            "score": 0.5267,
+            "is_gold": false,
+            "is_hard_negative": false
+          },
+          {
+            "rank": 3,
+            "chunk_id": "BLLD_2019_Điều177_Khoản1_230",
+            "score": 0.4642,
+            "is_gold": false,
+            "is_hard_negative": false
+          },
+          {
+            "rank": 4,
+            "chunk_id": "BLLD_2019_Điều203_269",
+            "score": 0.4412,
+            "is_gold": false,
+            "is_hard_negative": false
+          },
+          {
+            "rank": 5,
+            "chunk_id": "ND_145_2020_Điều10_Khoản4_28",
+            "score": 0.439,
+            "is_gold": false,
+            "is_hard_negative": false
+          }
+        ]
+      },
+      {
+        "query_id": "Q7",
+        "query": "Thời hạn nộp hồ sơ hưởng trợ cấp thất nghiệp sau khi chấm dứt hợp đồng lao động là bao lâu?",
+        "first_gold_rank": 1,
+        "mrr": 1.0,
+        "avg_pos_score": 0.7287,
+        "avg_neg_score": 0.1151,
+        "margin": 0.6135,
+        "top5": [
+          {
+            "rank": 1,
+            "chunk_id": "LUAT_VIEC_LAM_2013_Điều46_44",
+            "score": 0.7287,
+            "is_gold": true,
+            "is_hard_negative": false
+          },
+          {
+            "rank": 2,
+            "chunk_id": "LUAT_VIEC_LAM_2013_Điều50_50",
+            "score": 0.6075,
+            "is_gold": false,
+            "is_hard_negative": false
+          },
+          {
+            "rank": 3,
+            "chunk_id": "LUAT_VIEC_LAM_2013_Điều49_Khoản2_48",
+            "score": 0.606,
+            "is_gold": false,
+            "is_hard_negative": false
+          },
+          {
+            "rank": 4,
+            "chunk_id": "LUAT_VIEC_LAM_2013_Điều53_Khoản3_54",
+            "score": 0.5226,
+            "is_gold": false,
+            "is_hard_negative": false
+          },
+          {
+            "rank": 5,
+            "chunk_id": "LUAT_BHXH_2024_Điều107_Khoản1_219",
+            "score": 0.4863,
+            "is_gold": false,
+            "is_hard_negative": false
+          }
+        ]
+      },
+      {
+        "query_id": "Q8",
+        "query": "Điều kiện để người lao động được rút bảo hiểm xã hội một lần sau khi nghỉ việc?",
+        "first_gold_rank": 6,
+        "mrr": 0.1667,
+        "avg_pos_score": 0.5332,
+        "avg_neg_score": 0.3488,
+        "margin": 0.1844,
+        "top5": [
+          {
+            "rank": 1,
+            "chunk_id": "LUAT_BHXH_2024_Điều71_158",
+            "score": 0.654,
+            "is_gold": false,
+            "is_hard_negative": false
+          },
+          {
+            "rank": 2,
+            "chunk_id": "LUAT_BHXH_2024_Điều107_Khoản1_219",
+            "score": 0.6207,
+            "is_gold": false,
+            "is_hard_negative": false
+          },
+          {
+            "rank": 3,
+            "chunk_id": "LUAT_BHXH_2024_Điều79_177",
+            "score": 0.5852,
+            "is_gold": false,
+            "is_hard_negative": false
+          },
+          {
+            "rank": 4,
+            "chunk_id": "LUAT_BHXH_2024_Điều75_Khoản1_164",
+            "score": 0.5836,
+            "is_gold": false,
+            "is_hard_negative": false
+          },
+          {
+            "rank": 5,
+            "chunk_id": "LUAT_BHXH_2024_Điều70_Khoản2_154",
+            "score": 0.566,
+            "is_gold": false,
+            "is_hard_negative": false
+          }
+        ]
+      },
+      {
+        "query_id": "Q9",
+        "query": "Người sử dụng lao động được áp dụng hình thức xử lý kỷ luật sa thải trong những trường hợp nào?",
+        "first_gold_rank": 1,
+        "mrr": 1.0,
+        "avg_pos_score": 0.6016,
+        "avg_neg_score": 0.0,
+        "margin": 0.6016,
+        "top5": [
+          {
+            "rank": 1,
+            "chunk_id": "BLLD_2019_Điều125_Khoản1_167",
+            "score": 0.6599,
+            "is_gold": true,
+            "is_hard_negative": false
+          },
+          {
+            "rank": 2,
+            "chunk_id": "ND_145_2020_Điều89_Khoản6_P2_197",
+            "score": 0.5448,
+            "is_gold": false,
+            "is_hard_negative": false
+          },
+          {
+            "rank": 3,
+            "chunk_id": "BLLD_2019_Điều125_Khoản3_168",
+            "score": 0.5432,
+            "is_gold": true,
+            "is_hard_negative": false
+          },
+          {
+            "rank": 4,
+            "chunk_id": "LUAT_VIEC_LAM_2013_Điều9_8",
+            "score": 0.5247,
+            "is_gold": false,
+            "is_hard_negative": false
+          },
+          {
+            "rank": 5,
+            "chunk_id": "ND_12_2022_Điều19_Khoản1_59",
+            "score": 0.487,
+            "is_gold": false,
+            "is_hard_negative": false
+          }
+        ]
+      },
+      {
+        "query_id": "Q10",
+        "query": "Hợp đồng lao động xác định thời hạn được ký tối đa bao nhiêu lần?",
+        "first_gold_rank": 1,
+        "mrr": 1.0,
+        "avg_pos_score": 0.5467,
+        "avg_neg_score": 0.2568,
+        "margin": 0.2899,
+        "top5": [
+          {
+            "rank": 1,
+            "chunk_id": "BLLD_2019_Điều20_Khoản2_29",
+            "score": 0.5467,
+            "is_gold": true,
+            "is_hard_negative": false
+          },
+          {
+            "rank": 2,
+            "chunk_id": "LUAT_VIEC_LAM_2013_Điều49_Khoản2_48",
+            "score": 0.3894,
+            "is_gold": false,
+            "is_hard_negative": false
+          },
+          {
+            "rank": 3,
+            "chunk_id": "BLLD_2019_Điều177_Khoản1_230",
+            "score": 0.3802,
+            "is_gold": false,
+            "is_hard_negative": false
+          },
+          {
+            "rank": 4,
+            "chunk_id": "BLLD_2019_Điều55_77",
+            "score": 0.3799,
+            "is_gold": false,
+            "is_hard_negative": false
+          },
+          {
+            "rank": 5,
+            "chunk_id": "LUAT_BHXH_2024_Điều34_Khoản4_84",
+            "score": 0.3768,
+            "is_gold": false,
+            "is_hard_negative": false
+          }
+        ]
+      }
+    ]
+  },
+  "bge-m3": {
+    "model_name": "bge-m3",
+    "hf_path": "BAAI/bge-m3",
+    "dimension": 1024,
+    "latency_ms_per_doc": 778.52,
+    "hit_at_1": 100.0,
+    "hit_at_3": 100.0,
+    "hit_at_5": 100.0,
+    "mrr_at_5": 1.0,
+    "precision_at_5": 34.0,
+    "avg_semantic_margin": 0.2852,
+    "detailed_queries": [
+      {
+        "query_id": "Q1",
+        "query": "Tôi nghỉ việc thì có được nhận trợ cấp không?",
+        "first_gold_rank": 1,
+        "mrr": 1.0,
+        "avg_pos_score": 0.677,
+        "avg_neg_score": 0.5186,
+        "margin": 0.1584,
+        "top5": [
+          {
+            "rank": 1,
+            "chunk_id": "BLLD_2019_Điều46_66",
+            "score": 0.7227,
+            "is_gold": true,
+            "is_hard_negative": false
+          },
+          {
+            "rank": 2,
+            "chunk_id": "ND_145_2020_Điều8_Khoản3_P1_17",
+            "score": 0.7174,
+            "is_gold": false,
+            "is_hard_negative": false
+          },
+          {
+            "rank": 3,
+            "chunk_id": "LUAT_VIEC_LAM_2013_Điều53_Khoản3_54",
+            "score": 0.712,
+            "is_gold": false,
+            "is_hard_negative": false
+          },
+          {
+            "rank": 4,
+            "chunk_id": "BLLD_2019_Điều47_67",
+            "score": 0.7024,
+            "is_gold": true,
+            "is_hard_negative": false
+          },
+          {
+            "rank": 5,
+            "chunk_id": "LUAT_BHXH_2014_Điều58_85",
+            "score": 0.6791,
+            "is_gold": false,
+            "is_hard_negative": false
+          }
+        ]
+      },
+      {
+        "query_id": "Q2",
+        "query": "Người lao động bị tai nạn lao động trong giờ làm việc được bồi thường, trợ cấp thế nào?",
+        "first_gold_rank": 1,
+        "mrr": 1.0,
+        "avg_pos_score": 0.6565,
+        "avg_neg_score": 0.4945,
+        "margin": 0.1621,
+        "top5": [
+          {
+            "rank": 1,
+            "chunk_id": "LUAT_ATVSLD_2015_Điều39_Khoản1_108",
+            "score": 0.6729,
+            "is_gold": true,
+            "is_hard_negative": false
+          },
+          {
+            "rank": 2,
+            "chunk_id": "LUAT_ATVSLD_2015_Điều53_130",
+            "score": 0.6714,
+            "is_gold": false,
+            "is_hard_negative": false
+          },
+          {
+            "rank": 3,
+            "chunk_id": "LUAT_ATVSLD_2015_Điều39_Khoản2_109",
+            "score": 0.6666,
+            "is_gold": true,
+            "is_hard_negative": false
+          },
+          {
+            "rank": 4,
+            "chunk_id": "LUAT_ATVSLD_2015_Điều38_Khoản1_101",
+            "score": 0.6534,
+            "is_gold": true,
+            "is_hard_negative": false
+          },
+          {
+            "rank": 5,
+            "chunk_id": "ND_145_2020_Điều8_Khoản3_P1_17",
+            "score": 0.6407,
+            "is_gold": false,
+            "is_hard_negative": false
+          }
+        ]
+      },
+      {
+        "query_id": "Q3",
+        "query": "Lao động nữ sinh con cần đóng bảo hiểm xã hội bao lâu để được hưởng chế độ thai sản?",
+        "first_gold_rank": 1,
+        "mrr": 1.0,
+        "avg_pos_score": 0.7342,
+        "avg_neg_score": 0.5507,
+        "margin": 0.1835,
+        "top5": [
+          {
+            "rank": 1,
+            "chunk_id": "LUAT_BHXH_2014_Điều31_Khoản2_48",
+            "score": 0.7798,
+            "is_gold": true,
+            "is_hard_negative": false
+          },
+          {
+            "rank": 2,
+            "chunk_id": "LUAT_BHXH_2024_Điều50_Khoản2_111",
+            "score": 0.7683,
+            "is_gold": true,
+            "is_hard_negative": false
+          },
+          {
+            "rank": 3,
+            "chunk_id": "LUAT_BHXH_2014_Điều34_Khoản5_55",
+            "score": 0.7262,
+            "is_gold": false,
+            "is_hard_negative": false
+          },
+          {
+            "rank": 4,
+            "chunk_id": "LUAT_BHXH_2024_Điều53_Khoản2_116",
+            "score": 0.704,
+            "is_gold": false,
+            "is_hard_negative": false
+          },
+          {
+            "rank": 5,
+            "chunk_id": "LUAT_BHXH_2014_Điều31_Khoản1_47",
+            "score": 0.702,
+            "is_gold": true,
+            "is_hard_negative": false
+          }
+        ]
+      },
+      {
+        "query_id": "Q4",
+        "query": "Thời giờ làm việc bình thường của người lao động tối đa bao nhiêu giờ trong một ngày và một tuần?",
+        "first_gold_rank": 1,
+        "mrr": 1.0,
+        "avg_pos_score": 0.7522,
+        "avg_neg_score": 0.5074,
+        "margin": 0.2448,
+        "top5": [
+          {
+            "rank": 1,
+            "chunk_id": "BLLD_2019_Điều105_139",
+            "score": 0.7522,
+            "is_gold": true,
+            "is_hard_negative": false
+          },
+          {
+            "rank": 2,
+            "chunk_id": "TT_20_2023_Điều4_3",
+            "score": 0.6716,
+            "is_gold": false,
+            "is_hard_negative": false
+          },
+          {
+            "rank": 3,
+            "chunk_id": "TT_20_2023_Điều6_7",
+            "score": 0.6482,
+            "is_gold": false,
+            "is_hard_negative": false
+          },
+          {
+            "rank": 4,
+            "chunk_id": "BLLD_2019_Điều107_Khoản3_143",
+            "score": 0.6356,
+            "is_gold": false,
+            "is_hard_negative": false
+          },
+          {
+            "rank": 5,
+            "chunk_id": "ND_145_2020_Điều68_139",
+            "score": 0.6065,
+            "is_gold": false,
+            "is_hard_negative": false
+          }
+        ]
+      },
+      {
+        "query_id": "Q5",
+        "query": "Thời gian thử việc tối đa đối với người làm công việc quản lý doanh nghiệp là bao lâu?",
+        "first_gold_rank": 1,
+        "mrr": 1.0,
+        "avg_pos_score": 0.7655,
+        "avg_neg_score": 0.4124,
+        "margin": 0.3532,
+        "top5": [
+          {
+            "rank": 1,
+            "chunk_id": "BLLD_2019_Điều25_35",
+            "score": 0.7655,
+            "is_gold": true,
+            "is_hard_negative": false
+          },
+          {
+            "rank": 2,
+            "chunk_id": "BLLD_2019_Điều105_139",
+            "score": 0.527,
+            "is_gold": false,
+            "is_hard_negative": false
+          },
+          {
+            "rank": 3,
+            "chunk_id": "ND_152_2020_Phụ_lục_P10_93",
+            "score": 0.5224,
+            "is_gold": false,
+            "is_hard_negative": false
+          },
+          {
+            "rank": 4,
+            "chunk_id": "LUAT_BHXH_2014_Điều32_50",
+            "score": 0.5112,
+            "is_gold": false,
+            "is_hard_negative": false
+          },
+          {
+            "rank": 5,
+            "chunk_id": "TT_20_2023_Điều4_3",
+            "score": 0.5081,
+            "is_gold": false,
+            "is_hard_negative": false
+          }
+        ]
+      },
+      {
+        "query_id": "Q6",
+        "query": "Người lao động có được quyền đơn phương chấm dứt hợp đồng lao động không cần báo trước trong những trường hợp nào?",
+        "first_gold_rank": 1,
+        "mrr": 1.0,
+        "avg_pos_score": 0.7936,
+        "avg_neg_score": 0.5162,
+        "margin": 0.2774,
+        "top5": [
+          {
+            "rank": 1,
+            "chunk_id": "BLLD_2019_Điều35_Khoản2_49",
+            "score": 0.7936,
+            "is_gold": true,
+            "is_hard_negative": false
+          },
+          {
+            "rank": 2,
+            "chunk_id": "BLLD_2019_Điều40_56",
+            "score": 0.6404,
+            "is_gold": false,
+            "is_hard_negative": false
+          },
+          {
+            "rank": 3,
+            "chunk_id": "LUAT_VIEC_LAM_2013_Điều49_Khoản1_47",
+            "score": 0.6366,
+            "is_gold": false,
+            "is_hard_negative": false
+          },
+          {
+            "rank": 4,
+            "chunk_id": "BLLD_2019_Điều20_Khoản2_29",
+            "score": 0.617,
+            "is_gold": false,
+            "is_hard_negative": false
+          },
+          {
+            "rank": 5,
+            "chunk_id": "BLLD_2019_Điều203_269",
+            "score": 0.6038,
+            "is_gold": false,
+            "is_hard_negative": false
+          }
+        ]
+      },
+      {
+        "query_id": "Q7",
+        "query": "Thời hạn nộp hồ sơ hưởng trợ cấp thất nghiệp sau khi chấm dứt hợp đồng lao động là bao lâu?",
+        "first_gold_rank": 1,
+        "mrr": 1.0,
+        "avg_pos_score": 0.7717,
+        "avg_neg_score": 0.477,
+        "margin": 0.2947,
+        "top5": [
+          {
+            "rank": 1,
+            "chunk_id": "LUAT_VIEC_LAM_2013_Điều46_44",
+            "score": 0.7717,
+            "is_gold": true,
+            "is_hard_negative": false
+          },
+          {
+            "rank": 2,
+            "chunk_id": "LUAT_VIEC_LAM_2013_Điều50_50",
+            "score": 0.7163,
+            "is_gold": false,
+            "is_hard_negative": false
+          },
+          {
+            "rank": 3,
+            "chunk_id": "LUAT_VIEC_LAM_2013_Điều53_Khoản3_54",
+            "score": 0.687,
+            "is_gold": false,
+            "is_hard_negative": false
+          },
+          {
+            "rank": 4,
+            "chunk_id": "BLLD_2019_Điều46_66",
+            "score": 0.6849,
+            "is_gold": false,
+            "is_hard_negative": false
+          },
+          {
+            "rank": 5,
+            "chunk_id": "LUAT_VIEC_LAM_2013_Điều49_Khoản2_48",
+            "score": 0.6823,
+            "is_gold": false,
+            "is_hard_negative": false
+          }
+        ]
+      },
+      {
+        "query_id": "Q8",
+        "query": "Điều kiện để người lao động được rút bảo hiểm xã hội một lần sau khi nghỉ việc?",
+        "first_gold_rank": 1,
+        "mrr": 1.0,
+        "avg_pos_score": 0.7043,
+        "avg_neg_score": 0.4768,
+        "margin": 0.2275,
+        "top5": [
+          {
+            "rank": 1,
+            "chunk_id": "LUAT_BHXH_2024_Điều70_Khoản1_153",
+            "score": 0.705,
+            "is_gold": true,
+            "is_hard_negative": false
+          },
+          {
+            "rank": 2,
+            "chunk_id": "LUAT_BHXH_2014_Điều60_Khoản1_87",
+            "score": 0.7036,
+            "is_gold": true,
+            "is_hard_negative": false
+          },
+          {
+            "rank": 3,
+            "chunk_id": "LUAT_BHXH_2024_Điều70_Khoản2_154",
+            "score": 0.6812,
+            "is_gold": false,
+            "is_hard_negative": false
+          },
+          {
+            "rank": 4,
+            "chunk_id": "LUAT_BHXH_2024_Điều107_Khoản1_219",
+            "score": 0.6634,
+            "is_gold": false,
+            "is_hard_negative": false
+          },
+          {
+            "rank": 5,
+            "chunk_id": "LUAT_BHXH_2024_Điều79_177",
+            "score": 0.6506,
+            "is_gold": false,
+            "is_hard_negative": false
+          }
+        ]
+      },
+      {
+        "query_id": "Q9",
+        "query": "Người sử dụng lao động được áp dụng hình thức xử lý kỷ luật sa thải trong những trường hợp nào?",
+        "first_gold_rank": 1,
+        "mrr": 1.0,
+        "avg_pos_score": 0.7053,
+        "avg_neg_score": 0.0,
+        "margin": 0.7053,
+        "top5": [
+          {
+            "rank": 1,
+            "chunk_id": "BLLD_2019_Điều125_Khoản1_167",
+            "score": 0.7366,
+            "is_gold": true,
+            "is_hard_negative": false
+          },
+          {
+            "rank": 2,
+            "chunk_id": "BLLD_2019_Điều125_Khoản3_168",
+            "score": 0.6739,
+            "is_gold": true,
+            "is_hard_negative": false
+          },
+          {
+            "rank": 3,
+            "chunk_id": "ND_145_2020_Điều89_Khoản6_P2_197",
+            "score": 0.6571,
+            "is_gold": false,
+            "is_hard_negative": false
+          },
+          {
+            "rank": 4,
+            "chunk_id": "ND_12_2022_Điều19_Khoản2_60",
+            "score": 0.645,
+            "is_gold": false,
+            "is_hard_negative": false
+          },
+          {
+            "rank": 5,
+            "chunk_id": "ND_12_2022_Điều41_Khoản7_P1_158",
+            "score": 0.6163,
+            "is_gold": false,
+            "is_hard_negative": false
+          }
+        ]
+      },
+      {
+        "query_id": "Q10",
+        "query": "Hợp đồng lao động xác định thời hạn được ký tối đa bao nhiêu lần?",
+        "first_gold_rank": 1,
+        "mrr": 1.0,
+        "avg_pos_score": 0.6667,
+        "avg_neg_score": 0.4211,
+        "margin": 0.2456,
+        "top5": [
+          {
+            "rank": 1,
+            "chunk_id": "BLLD_2019_Điều20_Khoản2_29",
+            "score": 0.6667,
+            "is_gold": true,
+            "is_hard_negative": false
+          },
+          {
+            "rank": 2,
+            "chunk_id": "ND_152_2020_Phụ_lục_P10_93",
+            "score": 0.6098,
+            "is_gold": false,
+            "is_hard_negative": false
+          },
+          {
+            "rank": 3,
+            "chunk_id": "BLLD_2019_Điều55_77",
+            "score": 0.5871,
+            "is_gold": false,
+            "is_hard_negative": false
+          },
+          {
+            "rank": 4,
+            "chunk_id": "BLLD_2019_Điều107_Khoản3_143",
+            "score": 0.5822,
+            "is_gold": false,
+            "is_hard_negative": false
+          },
+          {
+            "rank": 5,
+            "chunk_id": "TT_10_2020_Điều3_Khoản6_9",
+            "score": 0.5793,
+            "is_gold": false,
+            "is_hard_negative": false
+          }
+        ]
+      }
+    ]
+  },
+  "phobert-base": {
+    "model_name": "phobert-base",
+    "hf_path": "vinai/phobert-base",
+    "dimension": 768,
+    "latency_ms_per_doc": 198.59,
+    "hit_at_1": 30.0,
+    "hit_at_3": 60.0,
+    "hit_at_5": 70.0,
+    "mrr_at_5": 0.4417,
+    "precision_at_5": 20.0,
+    "avg_semantic_margin": 0.1249,
+    "detailed_queries": [
+      {
+        "query_id": "Q1",
+        "query": "Tôi nghỉ việc thì có được nhận trợ cấp không?",
+        "first_gold_rank": null,
+        "mrr": 0.0,
+        "avg_pos_score": 0.615,
+        "avg_neg_score": 0.6021,
+        "margin": 0.0129,
+        "top5": [
+          {
+            "rank": 1,
+            "chunk_id": "LUAT_BHXH_2024_Điều53_Khoản6_119",
+            "score": 0.6889,
+            "is_gold": false,
+            "is_hard_negative": false
+          },
+          {
+            "rank": 2,
+            "chunk_id": "LUAT_BHXH_2024_Điều53_Khoản2_116",
+            "score": 0.6799,
+            "is_gold": false,
+            "is_hard_negative": false
+          },
+          {
+            "rank": 3,
+            "chunk_id": "LUAT_BHXH_2014_Điều58_85",
+            "score": 0.6779,
+            "is_gold": false,
+            "is_hard_negative": false
+          },
+          {
+            "rank": 4,
+            "chunk_id": "LUAT_BHXH_2024_Điều71_158",
+            "score": 0.6763,
+            "is_gold": false,
+            "is_hard_negative": false
+          },
+          {
+            "rank": 5,
+            "chunk_id": "LUAT_BHXH_2014_Điều31_Khoản2_48",
+            "score": 0.676,
+            "is_gold": false,
+            "is_hard_negative": false
+          }
+        ]
+      },
+      {
+        "query_id": "Q2",
+        "query": "Người lao động bị tai nạn lao động trong giờ làm việc được bồi thường, trợ cấp thế nào?",
+        "first_gold_rank": 1,
+        "mrr": 1.0,
+        "avg_pos_score": 0.8338,
+        "avg_neg_score": 0.7338,
+        "margin": 0.1,
+        "top5": [
+          {
+            "rank": 1,
+            "chunk_id": "LUAT_ATVSLD_2015_Điều39_Khoản2_109",
+            "score": 0.8534,
+            "is_gold": true,
+            "is_hard_negative": false
+          },
+          {
+            "rank": 2,
+            "chunk_id": "LUAT_ATVSLD_2015_Điều39_Khoản1_108",
+            "score": 0.8519,
+            "is_gold": true,
+            "is_hard_negative": false
+          },
+          {
+            "rank": 3,
+            "chunk_id": "LUAT_ATVSLD_2015_Điều38_Khoản1_101",
+            "score": 0.8397,
+            "is_gold": true,
+            "is_hard_negative": false
+          },
+          {
+            "rank": 4,
+            "chunk_id": "LUAT_ATVSLD_2015_Điều53_130",
+            "score": 0.8322,
+            "is_gold": false,
+            "is_hard_negative": false
+          },
+          {
+            "rank": 5,
+            "chunk_id": "ND_12_2022_Điều41_Khoản1_153",
+            "score": 0.83,
+            "is_gold": false,
+            "is_hard_negative": false
+          }
+        ]
+      },
+      {
+        "query_id": "Q3",
+        "query": "Lao động nữ sinh con cần đóng bảo hiểm xã hội bao lâu để được hưởng chế độ thai sản?",
+        "first_gold_rank": 2,
+        "mrr": 0.5,
+        "avg_pos_score": 0.782,
+        "avg_neg_score": 0.7564,
+        "margin": 0.0256,
+        "top5": [
+          {
+            "rank": 1,
+            "chunk_id": "LUAT_BHXH_2024_Điều5_Khoản3_20",
+            "score": 0.8048,
+            "is_gold": false,
+            "is_hard_negative": false
+          },
+          {
+            "rank": 2,
+            "chunk_id": "LUAT_BHXH_2014_Điều31_Khoản2_48",
+            "score": 0.7957,
+            "is_gold": true,
+            "is_hard_negative": false
+          },
+          {
+            "rank": 3,
+            "chunk_id": "LUAT_BHXH_2024_Điều50_Khoản2_111",
+            "score": 0.7932,
+            "is_gold": true,
+            "is_hard_negative": false
+          },
+          {
+            "rank": 4,
+            "chunk_id": "LUAT_BHXH_2024_Điều37_Khoản2_89",
+            "score": 0.7903,
+            "is_gold": false,
+            "is_hard_negative": false
+          },
+          {
+            "rank": 5,
+            "chunk_id": "LUAT_BHXH_2024_Điều70_Khoản3_155",
+            "score": 0.7892,
+            "is_gold": false,
+            "is_hard_negative": false
+          }
+        ]
+      },
+      {
+        "query_id": "Q4",
+        "query": "Thời giờ làm việc bình thường của người lao động tối đa bao nhiêu giờ trong một ngày và một tuần?",
+        "first_gold_rank": 1,
+        "mrr": 1.0,
+        "avg_pos_score": 0.8065,
+        "avg_neg_score": 0.6849,
+        "margin": 0.1216,
+        "top5": [
+          {
+            "rank": 1,
+            "chunk_id": "BLLD_2019_Điều105_139",
+            "score": 0.8065,
+            "is_gold": true,
+            "is_hard_negative": false
+          },
+          {
+            "rank": 2,
+            "chunk_id": "TT_20_2023_Điều4_3",
+            "score": 0.8052,
+            "is_gold": false,
+            "is_hard_negative": false
+          },
+          {
+            "rank": 3,
+            "chunk_id": "TT_20_2023_Điều6_7",
+            "score": 0.799,
+            "is_gold": false,
+            "is_hard_negative": false
+          },
+          {
+            "rank": 4,
+            "chunk_id": "LUAT_BHXH_2024_Điều44_Khoản4_102",
+            "score": 0.79,
+            "is_gold": false,
+            "is_hard_negative": false
+          },
+          {
+            "rank": 5,
+            "chunk_id": "BLLD_2019_Điều47_67",
+            "score": 0.7895,
+            "is_gold": false,
+            "is_hard_negative": false
+          }
+        ]
+      },
+      {
+        "query_id": "Q5",
+        "query": "Thời gian thử việc tối đa đối với người làm công việc quản lý doanh nghiệp là bao lâu?",
+        "first_gold_rank": 1,
+        "mrr": 1.0,
+        "avg_pos_score": 0.7957,
+        "avg_neg_score": 0.7186,
+        "margin": 0.0771,
+        "top5": [
+          {
+            "rank": 1,
+            "chunk_id": "BLLD_2019_Điều25_35",
+            "score": 0.7957,
+            "is_gold": true,
+            "is_hard_negative": false
+          },
+          {
+            "rank": 2,
+            "chunk_id": "ND_219_2025_Điều3_Khoản2_3",
+            "score": 0.77,
+            "is_gold": false,
+            "is_hard_negative": false
+          },
+          {
+            "rank": 3,
+            "chunk_id": "BLLD_2019_Điều105_139",
+            "score": 0.7681,
+            "is_gold": false,
+            "is_hard_negative": false
+          },
+          {
+            "rank": 4,
+            "chunk_id": "BLLD_2019_Điều101_135",
+            "score": 0.7677,
+            "is_gold": false,
+            "is_hard_negative": false
+          },
+          {
+            "rank": 5,
+            "chunk_id": "ND_12_2022_Điều14_Khoản1_P1_43",
+            "score": 0.7647,
+            "is_gold": false,
+            "is_hard_negative": false
+          }
+        ]
+      },
+      {
+        "query_id": "Q6",
+        "query": "Người lao động có được quyền đơn phương chấm dứt hợp đồng lao động không cần báo trước trong những trường hợp nào?",
+        "first_gold_rank": null,
+        "mrr": 0.0,
+        "avg_pos_score": 0.7679,
+        "avg_neg_score": 0.7322,
+        "margin": 0.0357,
+        "top5": [
+          {
+            "rank": 1,
+            "chunk_id": "BLLD_2019_Điều40_56",
+            "score": 0.8349,
+            "is_gold": false,
+            "is_hard_negative": false
+          },
+          {
+            "rank": 2,
+            "chunk_id": "ND_219_2025_Điều28_Khoản4_62",
+            "score": 0.8158,
+            "is_gold": false,
+            "is_hard_negative": false
+          },
+          {
+            "rank": 3,
+            "chunk_id": "LUAT_ATVSLD_2015_Điều39_Khoản2_109",
+            "score": 0.809,
+            "is_gold": false,
+            "is_hard_negative": false
+          },
+          {
+            "rank": 4,
+            "chunk_id": "BLLD_2019_Điều20_Khoản2_29",
+            "score": 0.8088,
+            "is_gold": false,
+            "is_hard_negative": false
+          },
+          {
+            "rank": 5,
+            "chunk_id": "LUAT_ATVSLD_2015_Điều39_Khoản1_108",
+            "score": 0.8083,
+            "is_gold": false,
+            "is_hard_negative": false
+          }
+        ]
+      },
+      {
+        "query_id": "Q7",
+        "query": "Thời hạn nộp hồ sơ hưởng trợ cấp thất nghiệp sau khi chấm dứt hợp đồng lao động là bao lâu?",
+        "first_gold_rank": 4,
+        "mrr": 0.25,
+        "avg_pos_score": 0.8046,
+        "avg_neg_score": 0.7644,
+        "margin": 0.0403,
+        "top5": [
+          {
+            "rank": 1,
+            "chunk_id": "BLLD_2019_Điều40_56",
+            "score": 0.8301,
+            "is_gold": false,
+            "is_hard_negative": false
+          },
+          {
+            "rank": 2,
+            "chunk_id": "LUAT_BHXH_2024_Điều13_Khoản1_35",
+            "score": 0.8247,
+            "is_gold": false,
+            "is_hard_negative": false
+          },
+          {
+            "rank": 3,
+            "chunk_id": "ND_12_2022_Điều41_Khoản1_153",
+            "score": 0.8158,
+            "is_gold": false,
+            "is_hard_negative": false
+          },
+          {
+            "rank": 4,
+            "chunk_id": "LUAT_VIEC_LAM_2013_Điều46_44",
+            "score": 0.8046,
+            "is_gold": true,
+            "is_hard_negative": false
+          },
+          {
+            "rank": 5,
+            "chunk_id": "LUAT_ATVSLD_2015_Điều57_137",
+            "score": 0.8003,
+            "is_gold": false,
+            "is_hard_negative": false
+          }
+        ]
+      },
+      {
+        "query_id": "Q8",
+        "query": "Điều kiện để người lao động được rút bảo hiểm xã hội một lần sau khi nghỉ việc?",
+        "first_gold_rank": 3,
+        "mrr": 0.3333,
+        "avg_pos_score": 0.8022,
+        "avg_neg_score": 0.7545,
+        "margin": 0.0476,
+        "top5": [
+          {
+            "rank": 1,
+            "chunk_id": "LUAT_BHXH_2024_Điều37_Khoản2_89",
+            "score": 0.8237,
+            "is_gold": false,
+            "is_hard_negative": false
+          },
+          {
+            "rank": 2,
+            "chunk_id": "LUAT_BHXH_2024_Điều13_Khoản1_35",
+            "score": 0.8108,
+            "is_gold": false,
+            "is_hard_negative": false
+          },
+          {
+            "rank": 3,
+            "chunk_id": "LUAT_BHXH_2024_Điều70_Khoản1_153",
+            "score": 0.8107,
+            "is_gold": true,
+            "is_hard_negative": false
+          },
+          {
+            "rank": 4,
+            "chunk_id": "LUAT_BHXH_2014_Điều54_Khoản3_76",
+            "score": 0.8098,
+            "is_gold": false,
+            "is_hard_negative": false
+          },
+          {
+            "rank": 5,
+            "chunk_id": "LUAT_BHXH_2024_Điều79_177",
+            "score": 0.8094,
+            "is_gold": false,
+            "is_hard_negative": false
+          }
+        ]
+      },
+      {
+        "query_id": "Q9",
+        "query": "Người sử dụng lao động được áp dụng hình thức xử lý kỷ luật sa thải trong những trường hợp nào?",
+        "first_gold_rank": null,
+        "mrr": 0.0,
+        "avg_pos_score": 0.7637,
+        "avg_neg_score": 0.0,
+        "margin": 0.7637,
+        "top5": [
+          {
+            "rank": 1,
+            "chunk_id": "LUAT_ATVSLD_2015_Điều39_Khoản1_108",
+            "score": 0.8099,
+            "is_gold": false,
+            "is_hard_negative": false
+          },
+          {
+            "rank": 2,
+            "chunk_id": "LUAT_ATVSLD_2015_Điều4_Khoản1_6",
+            "score": 0.8066,
+            "is_gold": false,
+            "is_hard_negative": false
+          },
+          {
+            "rank": 3,
+            "chunk_id": "ND_12_2022_Điều21_Khoản1_64",
+            "score": 0.8065,
+            "is_gold": false,
+            "is_hard_negative": false
+          },
+          {
+            "rank": 4,
+            "chunk_id": "ND_12_2022_Điều19_Khoản1_59",
+            "score": 0.8064,
+            "is_gold": false,
+            "is_hard_negative": false
+          },
+          {
+            "rank": 5,
+            "chunk_id": "ND_145_2020_Điều89_Khoản6_P2_197",
+            "score": 0.8061,
+            "is_gold": false,
+            "is_hard_negative": false
+          }
+        ]
+      },
+      {
+        "query_id": "Q10",
+        "query": "Hợp đồng lao động xác định thời hạn được ký tối đa bao nhiêu lần?",
+        "first_gold_rank": 3,
+        "mrr": 0.3333,
+        "avg_pos_score": 0.7939,
+        "avg_neg_score": 0.7698,
+        "margin": 0.0241,
+        "top5": [
+          {
+            "rank": 1,
+            "chunk_id": "ND_219_2025_Điều28_Khoản4_62",
+            "score": 0.8103,
+            "is_gold": false,
+            "is_hard_negative": false
+          },
+          {
+            "rank": 2,
+            "chunk_id": "LUAT_BHXH_2024_Điều13_Khoản1_35",
+            "score": 0.7979,
+            "is_gold": false,
+            "is_hard_negative": false
+          },
+          {
+            "rank": 3,
+            "chunk_id": "BLLD_2019_Điều20_Khoản2_29",
+            "score": 0.7939,
+            "is_gold": true,
+            "is_hard_negative": false
+          },
+          {
+            "rank": 4,
+            "chunk_id": "BLLD_2019_Điều193_Khoản3_257",
+            "score": 0.7933,
+            "is_gold": false,
+            "is_hard_negative": false
+          },
+          {
+            "rank": 5,
+            "chunk_id": "BLLD_2019_Điều40_56",
+            "score": 0.7932,
+            "is_gold": false,
+            "is_hard_negative": false
+          }
+        ]
+      }
+    ]
+  }
+}

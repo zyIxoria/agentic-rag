@@ -173,7 +173,7 @@ class TestDocumentMetadataRestorer(unittest.TestCase):
             self.skipTest("data_corpus_raw không tồn tại")
 
         catalog = self.restorer.build_corpus_catalog(raw_dir)
-        self.assertEqual(len(catalog), 15, "Số lượng văn bản trong catalog phải đúng 15")
+        self.assertGreaterEqual(len(catalog), 15, "Số lượng văn bản trong catalog phải từ 15 trở lên")
 
         for doc_id, doc_meta in catalog.items():
             # 1. Số hiệu văn bản phải tồn tại và đúng định dạng

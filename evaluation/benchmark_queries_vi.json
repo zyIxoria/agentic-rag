@@ -1,0 +1,129 @@
+[
+  {
+    "query_id": "Q1",
+    "query": "Tôi nghỉ việc thì có được nhận trợ cấp không?",
+    "category": "Trợ cấp thôi việc & Thất nghiệp",
+    "relevant_chunk_ids": [
+      "BLLD_2019_Điều46_66",
+      "BLLD_2019_Điều47_67",
+      "LUAT_VIEC_LAM_2013_Điều49_Khoản1_47",
+      "LUAT_VIEC_LAM_2013_Điều49_Khoản2_48",
+      "LUAT_VIEC_LAM_2013_Điều50_50"
+    ],
+    "hard_negative_chunk_ids": [
+      "ND_152_2020_Điều7_Khoản1_19",
+      "ND_152_2020_Điều4_Khoản1_12",
+      "ND_219_2025_Điều30_64"
+    ]
+  },
+  {
+    "query_id": "Q2",
+    "query": "Người lao động bị tai nạn lao động trong giờ làm việc được bồi thường, trợ cấp thế nào?",
+    "category": "Tai nạn lao động & ATVSLĐ",
+    "relevant_chunk_ids": [
+      "LUAT_ATVSLD_2015_Điều38_Khoản1_101",
+      "LUAT_ATVSLD_2015_Điều38_Khoản2_102",
+      "LUAT_ATVSLD_2015_Điều39_Khoản1_108",
+      "LUAT_ATVSLD_2015_Điều39_Khoản2_109"
+    ],
+    "hard_negative_chunk_ids": [
+      "ND_12_2022_Điều1_1",
+      "TT_10_2020_Điều1_0"
+    ]
+  },
+  {
+    "query_id": "Q3",
+    "query": "Lao động nữ sinh con cần đóng bảo hiểm xã hội bao lâu để được hưởng chế độ thai sản?",
+    "category": "Chế độ thai sản (BHXH)",
+    "relevant_chunk_ids": [
+      "LUAT_BHXH_2014_Điều31_Khoản1_47",
+      "LUAT_BHXH_2014_Điều31_Khoản2_48",
+      "LUAT_BHXH_2024_Điều50_Khoản1_110",
+      "LUAT_BHXH_2024_Điều50_Khoản2_111"
+    ],
+    "hard_negative_chunk_ids": [
+      "LUAT_BHXH_2014_Điều70_Khoản1_104",
+      "LUAT_BHXH_2024_Điều31_Khoản1_P1_74"
+    ]
+  },
+  {
+    "query_id": "Q4",
+    "query": "Thời giờ làm việc bình thường của người lao động tối đa bao nhiêu giờ trong một ngày và một tuần?",
+    "category": "Thời giờ làm việc",
+    "relevant_chunk_ids": [
+      "BLLD_2019_Điều105_139"
+    ],
+    "hard_negative_chunk_ids": [
+      "ND_145_2020_Điều1_0"
+    ]
+  },
+  {
+    "query_id": "Q5",
+    "query": "Thời gian thử việc tối đa đối với người làm công việc quản lý doanh nghiệp là bao lâu?",
+    "category": "Thử việc",
+    "relevant_chunk_ids": [
+      "BLLD_2019_Điều25_35"
+    ],
+    "hard_negative_chunk_ids": [
+      "BLLD_2019_Điều1_0"
+    ]
+  },
+  {
+    "query_id": "Q6",
+    "query": "Người lao động có được quyền đơn phương chấm dứt hợp đồng lao động không cần báo trước trong những trường hợp nào?",
+    "category": "Chấm dứt hợp đồng lao động",
+    "relevant_chunk_ids": [
+      "BLLD_2019_Điều35_Khoản2_49"
+    ],
+    "hard_negative_chunk_ids": [
+      "BLLD_2019_Điều2_1"
+    ]
+  },
+  {
+    "query_id": "Q7",
+    "query": "Thời hạn nộp hồ sơ hưởng trợ cấp thất nghiệp sau khi chấm dứt hợp đồng lao động là bao lâu?",
+    "category": "Bảo hiểm thất nghiệp",
+    "relevant_chunk_ids": [
+      "LUAT_VIEC_LAM_2013_Điều46_44"
+    ],
+    "hard_negative_chunk_ids": [
+      "ND_152_2020_Điều8_Khoản1_24"
+    ]
+  },
+  {
+    "query_id": "Q8",
+    "query": "Điều kiện để người lao động được rút bảo hiểm xã hội một lần sau khi nghỉ việc?",
+    "category": "Bảo hiểm xã hội một lần",
+    "relevant_chunk_ids": [
+      "LUAT_BHXH_2014_Điều60_Khoản1_87",
+      "LUAT_BHXH_2024_Điều70_Khoản1_153"
+    ],
+    "hard_negative_chunk_ids": [
+      "LUAT_BHXH_2014_Điều50_70"
+    ]
+  },
+  {
+    "query_id": "Q9",
+    "query": "Người sử dụng lao động được áp dụng hình thức xử lý kỷ luật sa thải trong những trường hợp nào?",
+    "category": "Kỷ luật lao động",
+    "relevant_chunk_ids": [
+      "BLLD_2019_Điều125_Khoản1_167",
+      "BLLD_2019_Điều125_Khoản3_168"
+    ],
+    "hard_negative_chunk_ids": [
+      "ND_12_2022_Điều1_1"
+    ]
+  },
+  {
+    "query_id": "Q10",
+    "query": "Hợp đồng lao động xác định thời hạn được ký tối đa bao nhiêu lần?",
+    "category": "Hợp đồng lao động",
+    "relevant_chunk_ids": [
+      "BLLD_2019_Điều20_Khoản2_29"
+    ],
+    "hard_negative_chunk_ids": [
+      "BLLD_2019_Điều204_270"
+    ]
+  }
+]
+

@@ -11,7 +11,8 @@
 from __future__ import annotations
 import logging
 from collections import defaultdict
-from typing import Any, Dict, List, Optional, Tuple
+from datetime import date
+from typing import Any, Dict, List, Optional, Tuple, Union
 
 from RAG.retriever.base import BaseRetriever
 from RAG.retriever.bm25_retriever import BM25OkapiRetriever
@@ -60,6 +61,8 @@ class HybridRetriever(BaseRetriever):
         top_k: Optional[int] = None,
         score_threshold: Optional[float] = None,
         where: Optional[Dict[str, Any]] = None,
+        as_of_date: Optional[Union[str, date]] = None,
+        auto_temporal: bool = False,
     ) -> List[RetrievedChunk]:
         """Thực hiện truy xuất văn bản dựa trên chế độ cấu hình."""
         k = top_k or self.config.TOP_K
@@ -141,4 +144,15 @@ class HybridRetriever(BaseRetriever):
             if len(fused_results) >= k:
                 break
 
-        return fused_results
+        # Áp dụng Temporal Legal Filtering nếu có yêu cầu
+        target_date = as_of_date
+        if target_date is None and auto_temporal:
+            from RAG.retriever.temporal_filter import TemporalLegalFilter
+            target_date, _ = TemporalLegalFilter.extract_temporal_intent(query)
+
+        if target_date is not None:
+            from RAG.retriever.temporal_filter import TemporalLegalFilter
+            t_filter = TemporalLegalFilter()
+            fused_results = t_filter.filter_chunks(fused_results, as_of_date=target_date)
+
+        return fused_results[:k]

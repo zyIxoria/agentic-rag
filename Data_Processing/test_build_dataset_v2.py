@@ -85,14 +85,14 @@ class TestBuildLegalDatasetV2(unittest.TestCase):
             "article_number", "article_title",
             "clause_number", "point_number",
             "content",
-            "effective_from", "effective_to", "legal_status",
+            "issue_date", "effective_from", "effective_to", "legal_status",
             "source_url",
             "parent_document", "parent_article",
             "chunk_index"
         }
         for chunk in self.v2_data[:50]:
             self.assertEqual(set(chunk.keys()), expected_keys)
-            self.assertEqual(len(chunk), 21)
+            self.assertEqual(len(chunk), 22)
 
     # -------------------------------------------------------------------------
     # 3. TEST NO LOST DOCUMENTS & CONTENT
@@ -100,12 +100,13 @@ class TestBuildLegalDatasetV2(unittest.TestCase):
     def test_03_no_lost_documents_and_no_empty_content(self):
         """Kiểm thử: Toàn bộ 15 văn bản raw đều có mặt đầy đủ trong Dataset V2 và không có chunk rỗng."""
         doc_ids_in_v2 = set(c["document_id"] for c in self.v2_data)
-        self.assertEqual(len(doc_ids_in_v2), 15, f"Số văn bản trong V2 ({len(doc_ids_in_v2)}) khác 15")
+        self.assertGreaterEqual(len(doc_ids_in_v2), 15, f"Số văn bản trong V2 ({len(doc_ids_in_v2)}) ít hơn 15")
 
         expected_docs = [
             "BLLD_2019", "ND_12_2022", "ND_135_2020", "ND_145_2020", "ND_152_2020",
             "ND_219_2025", "ND_70_2023", "ND_74_2024", "ND_83_2022", "ND_99_2024",
-            "QD_992_2025", "TT_09_2020", "TT_10_2020", "TT_11_2020", "TT_20_2023"
+            "QD_992_2025", "TT_09_2020", "TT_10_2020", "TT_11_2020", "TT_20_2023",
+            "LUAT_VIEC_LAM_2013", "LUAT_ATVSLD_2015", "LUAT_BHXH_2014"
         ]
         for doc in expected_docs:
             self.assertIn(doc, doc_ids_in_v2, f"Thiếu văn bản {doc} trong Dataset V2")
@@ -155,15 +156,14 @@ class TestBuildLegalDatasetV2(unittest.TestCase):
             self.assertIsNotNone(c["document_title"], f"Thiếu tiêu đề ở chunk {c['chunk_id']}")
             self.assertIsNotNone(c["document_type"], f"Thiếu loại văn bản ở chunk {c['chunk_id']}")
             self.assertIsNotNone(c["source_url"], f"Thiếu URL nguồn ở chunk {c['chunk_id']}")
-            self.assertIn(c["legal_status"], ["Còn hiệu lực", "unknown"])
+            self.assertIsNotNone(c["issue_date"], f"Thiếu issue_date ở chunk {c['chunk_id']}")
+            self.assertIsNotNone(c["effective_from"], f"Thiếu effective_from ở chunk {c['chunk_id']}")
+            self.assertIn(c["legal_status"], ["Còn hiệu lực", "Chưa có hiệu lực", "Hết hiệu lực", "Hết hiệu lực một phần"])
+            self.assertNotEqual(c["legal_status"], "unknown", f"legal_status bị unknown ở {c['chunk_id']}")
 
-            # Riêng BLLD 2019 có ngày hiệu lực 01/01/2021
             if c["document_id"] == "BLLD_2019":
                 self.assertEqual(c["effective_from"], "01/01/2021")
                 self.assertEqual(c["legal_status"], "Còn hiệu lực")
-            else:
-                self.assertIsNone(c["effective_from"], f"Không được tự bịa ngày hiệu lực cho {c['document_id']}")
-                self.assertEqual(c["legal_status"], "unknown")
 
     # -------------------------------------------------------------------------
     # 7. TEST APPENDIX PRESERVED
