@@ -31,11 +31,17 @@ TARGET_DOCS = [
     {"id": "TT_10_2020", "url": "https://thuvienphapluat.vn/van-ban/Lao-dong-Tien-luong/Thong-tu-10-2020-TT-BLDTBXH-huong-dan-Bo-luat-Lao-dong-noi-dung-hop-dong-lao-dong-454406.aspx"},
     {"id": "TT_09_2020", "url": "https://thuvienphapluat.vn/van-ban/Lao-dong-Tien-luong/Thong-tu-09-2020-TT-BLDTBXH-huong-dan-Bo-luat-Lao-dong-ve-lao-dong-chua-thanh-nien-466418.aspx"},
     {"id": "TT_20_2023", "url": "https://thuvienphapluat.vn/van-ban/Lao-dong-Tien-luong/Thong-tu-20-2023-TT-BCT-thoi-gio-lam-viec-cong-viec-dac-biet-linh-vuc-tham-do-khai-thac-dau-khi-tren-bien-582969.aspx"},
-    {"id": "QD_992_2025", "url": "https://thuvienphapluat.vn/van-ban/Lao-dong-Tien-luong/Quyet-dinh-992-QD-TTg-2025-kien-toan-Hoi-dong-tien-luong-quoc-gia-658031.aspx"}
+    {"id": "QD_992_2025", "url": "https://thuvienphapluat.vn/van-ban/Lao-dong-Tien-luong/Quyet-dinh-992-QD-TTg-2025-kien-toan-Hoi-dong-tien-luong-quoc-gia-658031.aspx"},
+    {"id": "LUAT_VIEC_LAM_2013", "url": "https://thuvienphapluat.vn/van-ban/Lao-dong-Tien-luong/Luat-viec-lam-2013-216503.aspx"},
+    {"id": "LUAT_ATVSLD_2015", "url": "https://thuvienphapluat.vn/van-ban/Lao-dong-Tien-luong/Luat-an-toan-ve-sinh-lao-dong-2015-282387.aspx"},
+    {"id": "LUAT_BHXH_2014", "url": "https://thuvienphapluat.vn/van-ban/Bao-hiem/Luat-Bao-hiem-xa-hoi-2014-259711.aspx"},
+    {"id": "LUAT_BHXH_2024", "url": "https://thuvienphapluat.vn/van-ban/Bao-hiem/Luat-Bao-hiem-xa-hoi-2024-41-2024-QH15-525995.aspx"}
 ]
 
 class TVPLPlaywrightScraper:
-    def __init__(self, output_dir: str = r"C:\data_corpus_raw"):
+    def __init__(self, output_dir: str = None):
+        if output_dir is None:
+            output_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), "data_corpus_raw")
         self.output_dir = output_dir
         os.makedirs(self.output_dir, exist_ok=True)
 
@@ -61,11 +67,26 @@ class TVPLPlaywrightScraper:
             "ngày ban hành": "ngay_ban_hanh", "ngày có hiệu lực": "ngay_hieu_luc",
             "hiệu lực": "ngay_hieu_luc", "tình trạng": "tinh_trang_hieu_luc"
         }
-        for row in info_div.find_all(["tr", "li", "div"]):
+        # Trích xuất chính xác theo cặp td hoặc phần tử lá tr, li (tránh outer div gộp nhiều trường)
+        rows = info_div.find_all(["tr", "li"])
+        if not rows:
+            rows = [el for el in info_div.find_all("div") if not el.find(["tr", "li", "div"])]
+        for row in rows:
+            tds = row.find_all("td")
+            if len(tds) >= 2:
+                key = self._clean_text(tds[0].get_text()).lower().rstrip(":")
+                val = self._clean_text(tds[1].get_text())
+                for k, target in field_map.items():
+                    if k in key and not meta[target]:
+                        meta[target] = val
+                        break
+                continue
             raw = self._clean_text(row.get_text())
             if ":" in raw:
                 parts = raw.split(":", 1)
                 key, val = parts[0].strip().lower(), parts[1].strip()
+                if "loại văn bản:" in val.lower():
+                    val = val.split("loại văn bản:", 1)[0].strip()
                 for k, target in field_map.items():
                     if k in key and not meta[target]:
                         meta[target] = val

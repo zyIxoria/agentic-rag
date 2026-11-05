@@ -204,7 +204,7 @@ class TestDateAndLegalStatusMetadata(unittest.TestCase):
     # -------------------------------------------------------------------------
     def test_06_corpus_catalog_date_status_coverage(self):
         """Kiểm tra độ phủ và tính đúng đắn trên toàn bộ 15 văn bản trong raw corpus."""
-        raw_dir = r"D:\Filehoc\KLCN\agentic-rag\Data_Processing\data_corpus_raw"
+        raw_dir = r"D:\KLCN\agentic-rag\Data_Processing\data_corpus_raw"
         if not os.path.exists(raw_dir):
             self.skipTest("Thư mục data_corpus_raw không tồn tại")
 

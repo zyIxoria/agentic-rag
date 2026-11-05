@@ -168,7 +168,7 @@ class TestDocumentMetadataRestorer(unittest.TestCase):
         - 100% văn bản khôi phục được source_url hợp lệ.
         - Mọi chunk trong cùng văn bản có 100% metadata văn bản đồng nhất.
         """
-        raw_dir = r"D:\Filehoc\KLCN\agentic-rag\Data_Processing\data_corpus_raw"
+        raw_dir = r"D:\KLCN\agentic-rag\Data_Processing\data_corpus_raw"
         if not os.path.exists(raw_dir):
             self.skipTest("data_corpus_raw không tồn tại")
 
@@ -196,8 +196,8 @@ class TestDocumentMetadataRestorer(unittest.TestCase):
 
     def test_08_hierarchy_metadata_lineage_consistency(self):
         """Kiểm thử tính liên kết phả hệ cha-con (Lineage): parent_document và parent_article."""
-        blld_path = r"D:\Filehoc\KLCN\agentic-rag\Data_Processing\data_corpus_raw\BLLD_2019.txt"
-        meta_path = r"D:\Filehoc\KLCN\agentic-rag\Data_Processing\data_corpus_raw\BLLD_2019_meta.json"
+        blld_path = r"D:\KLCN\agentic-rag\Data_Processing\data_corpus_raw\BLLD_2019.txt"
+        meta_path = r"D:\KLCN\agentic-rag\Data_Processing\data_corpus_raw\BLLD_2019_meta.json"
         if not os.path.exists(blld_path):
             self.skipTest("BLLD_2019.txt không tồn tại")
 
