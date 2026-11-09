@@ -210,8 +210,8 @@ class CentralAgentController:
             tools_called.append("retrieve_legal_doc")
 
             # Bóc tách tham số tính toán từ câu hỏi
-            wage = self._extract_number(q_lower, [r"(\d+[\d\.,]*)\s*(?:đ|đồng|vnđ|nghìn|triệu)?/giờ", r"lương\s*(\d+[\d\.,]*)"]) or 50000.0
-            hours = self._extract_number(q_lower, [r"(\d+(?:\.\d+)?)\s*(?:giờ|tiếng|h)"]) or 2.0
+            wage = self._extract_number(q_lower, [r"(\d+[\d\.,]*)\s*(?:đ|đồng|vnđ|nghìn|triệu)?/giờ", r"lương\s*(\d+[\d\.,]*)"], check_currency_multiplier=True) or 50000.0
+            hours = self._extract_number(q_lower, [r"(\d+(?:\.\d+)?)\s*(?:giờ|tiếng|h)"], check_currency_multiplier=False) or 2.0
             is_night = any(w in q_lower for w in ["đêm", "ca đêm", "khuya", "tối"])
             
             day_type = "normal"
@@ -223,6 +223,7 @@ class CentralAgentController:
             thought_2 = f"Đã có căn cứ pháp lý. Bước 2: Gọi công cụ tính toán số học với wage={wage}, hours={hours}, day_type={day_type}, is_night={is_night}."
             calc_args = {"hourly_wage": wage, "hours": hours, "day_type": day_type, "is_night": is_night}
             res_calc = self.tool_registry.execute_tool("calculate_overtime_pay", calc_args)
+            tools_called.append("calculate_overtime_pay")
             steps.append(
                 AgentStep(iteration=2, thought=thought_2, action="calculate_overtime_pay", action_input=calc_args, observation=res_calc.output_text)
             )
@@ -238,8 +239,8 @@ class CentralAgentController:
         # 2. Nhận diện bài toán tính trợ cấp thôi việc / mất việc làm
         elif any(kw in q_lower for kw in ["trợ cấp thôi việc", "trợ cấp mất việc", "thôi việc được bao nhiêu"]):
             thought_1 = "Phát hiện câu hỏi về trợ cấp thôi việc/mất việc làm. Cần tra cứu Điều 46, Điều 47 BLLĐ 2019 và gọi công cụ tính toán."
-            salary = self._extract_number(q_lower, [r"lương\s*(\d+[\d\.,]*)", r"(\d+[\d\.,]*)\s*(?:triệu|nghìn|đồng)"]) or 10000000.0
-            years = self._extract_number(q_lower, [r"(\d+(?:\.\d+)?)\s*năm", r"(\d+)\s*tháng"]) or 3.0
+            salary = self._extract_number(q_lower, [r"lương\s*(\d+[\d\.,]*)", r"(\d+[\d\.,]*)\s*(?:triệu|nghìn|đồng)"], check_currency_multiplier=True) or 10000000.0
+            years = self._extract_number(q_lower, [r"(\d+(?:\.\d+)?)\s*năm", r"(\d+)\s*tháng"], check_currency_multiplier=False) or 3.0
             months_worked = years * 12.0 if "năm" in q_lower else years
 
             calc_args = {
@@ -280,7 +281,12 @@ class CentralAgentController:
 
             return AgentResponse(query=query, answer=ans, steps=steps, tools_called=tools_called, citations=self._extract_citations(ans))
 
-    def _extract_number(self, text: str, patterns: List[str]) -> Optional[float]:
+    def _extract_number(
+        self,
+        text: str,
+        patterns: List[str],
+        check_currency_multiplier: bool = True
+    ) -> Optional[float]:
         """Trợ giúp bóc tách số liệu từ text."""
         for pat in patterns:
             m = re.search(pat, text)
@@ -288,10 +294,13 @@ class CentralAgentController:
                 raw = m.group(1).replace(".", "").replace(",", "")
                 try:
                     num = float(raw)
-                    if "triệu" in text and num < 1000:
-                        num = num * 1000000.0
-                    elif "nghìn" in text and num < 1000:
-                        num = num * 1000.0
+                    if check_currency_multiplier:
+                        # Chỉ nhân triệu/nghìn nếu từ đó nằm ngay gần cụm khớp số
+                        matched_span = text[max(0, m.start() - 5):min(len(text), m.end() + 10)]
+                        if "triệu" in matched_span and num < 1000:
+                            num = num * 1000000.0
+                        elif "nghìn" in matched_span and num < 1000:
+                            num = num * 1000.0
                     return num
                 except ValueError:
                     continue

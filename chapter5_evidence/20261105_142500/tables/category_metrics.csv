@@ -1,0 +1,8 @@
+category,total_questions,trad_answer_correctness,crag_answer_correctness,adapt_answer_correctness,trad_faithfulness,crag_faithfulness,adapt_faithfulness,trad_refusal_acc,crag_refusal_acc,adapt_refusal_acc,trad_mean_latency_ms,crag_mean_latency_ms,adapt_mean_latency_ms
+single_article,18,0.3889,,,0.9444,,,,1.0,1.0,,,
+single_doc_multi_chunk,12,0.5833,,,0.9167,,,,1.0,1.0,,,
+multi_document,12,0.5833,,,1.0,,,,1.0,1.0,,,
+cross_reference,10,0.6,,,1.0,,,,1.0,1.0,,,
+complex_conditions,12,0.4167,,,0.8333,,,,1.0,1.0,,,
+insufficient_evidence,8,,,,,,,0.0,0.0,0.0,,,
+out_of_scope,8,,,,,,,0.875,1.0,1.0,,,

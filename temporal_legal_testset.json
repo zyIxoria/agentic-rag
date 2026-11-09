@@ -1,0 +1,240 @@
+{
+  "metadata": {
+    "title": "Bộ Kiểm thử Chuyên biệt về Hiệu lực Pháp luật và Thời điểm Tra cứu (Temporal Legal Testset)",
+    "version": "1.0",
+    "created_date": "2026-11-08",
+    "total_test_cases": 14,
+    "description": "Bộ câu hỏi kiểm thử chuyên sâu nhằm phát hiện lỗi sử dụng quy định cũ, kiểm tra năng lực suy luận thời gian (Temporal Legal Reasoning) của hệ thống RAG đối với 7 kịch bản hiệu lực pháp luật."
+  },
+  "test_cases": [
+    {
+      "test_id": "TLT_001",
+      "scenario_type": 1,
+      "scenario_name": "Câu hỏi hiện hành khi văn bản cũ đã bị thay thế",
+      "question": "Theo quy định pháp luật hiện nay, người lao động tham gia bảo hiểm xã hội bắt buộc cần đóng tối thiểu bao nhiêu năm để đủ điều kiện hưởng lương hưu khi đủ tuổi nghỉ hưu?",
+      "temporal_anchor": "hiện nay (năm 2026, sau ngày 01/07/2025)",
+      "applicable_document": "LUAT_BHXH_2024",
+      "applicable_articles": "Điều 64 khoản 1 điểm a",
+      "applicable_chunk_ids": [
+        "LUAT_BHXH_2024_Điều64_Khoản1_P1_143"
+      ],
+      "deprecated_or_excluded_document": "LUAT_BHXH_2014",
+      "exclusion_reason": "Luật BHXH 2014 (Điều 54 yêu cầu 20 năm đóng BHXH) đã hết hiệu lực từ ngày 01/07/2025 theo Điều 140 Luật BHXH 2024. Hệ thống không được dùng quy định 20 năm của luật cũ.",
+      "reference_answer": "Theo quy định pháp luật hiện hành tại điểm a khoản 1 Điều 64 Luật Bảo hiểm xã hội 2024 (số 41/2024/QH15, có hiệu lực từ 01/07/2025), người lao động khi đủ tuổi nghỉ hưu theo quy định mà có thời gian đóng bảo hiểm xã hội bắt buộc từ đủ 15 năm trở lên thì được hưởng lương hưu hằng tháng (đã giảm từ 20 năm xuống 15 năm so với Luật BHXH 2014 trước đây).",
+      "expected_system_behavior": "Hệ thống phải nhận diện câu hỏi hỏi về 'hiện nay' (2026), loại bỏ các chunk từ LUAT_BHXH_2014 Điều 54, trích xuất chính xác LUAT_BHXH_2024 Điều 64 và khẳng định điều kiện là 15 năm."
+    },
+    {
+      "test_id": "TLT_002",
+      "scenario_type": 1,
+      "scenario_name": "Câu hỏi hiện hành khi văn bản cũ đã bị thay thế",
+      "question": "Mức lương tối thiểu tháng hiện nay áp dụng đối với người lao động làm việc cho người sử dụng lao động tại Vùng I là bao nhiêu tiền một tháng?",
+      "temporal_anchor": "hiện nay (năm 2026, sau ngày 01/07/2024)",
+      "applicable_document": "ND_74_2024",
+      "applicable_articles": "Điều 3 khoản 1 điểm a",
+      "applicable_chunk_ids": [
+        "ND_74_2024_Điều3_Khoản1_2"
+      ],
+      "deprecated_or_excluded_document": "ND_38_2022 (nếu có trong dữ liệu) hoặc các mức lương cũ",
+      "exclusion_reason": "Nghị định 74/2024/NĐ-CP có hiệu lực từ 01/07/2024 thay thế Nghị định 38/2022/NĐ-CP (mức cũ 4.680.000 đồng). Không được trả lời mức lương cũ.",
+      "reference_answer": "Căn cứ quy định tại điểm a khoản 1 Điều 3 Nghị định số 74/2024/NĐ-CP (có hiệu lực từ ngày 01/07/2024), mức lương tối thiểu tháng hiện hành áp dụng đối với người lao động làm việc cho người sử dụng lao động thuộc Vùng I là 4.960.000 đồng/tháng (mức lương tối thiểu giờ tương ứng là 23.800 đồng/giờ).",
+      "expected_system_behavior": "Hệ thống nhận diện mốc hiện tại, trích xuất đúng mức 4.960.000 đồng từ Nghị định 74/2024/NĐ-CP."
+    },
+    {
+      "test_id": "TLT_003",
+      "scenario_type": 2,
+      "scenario_name": "Câu hỏi về sự kiện xảy ra trong quá khứ trước khi văn bản mới có hiệu lực",
+      "question": "Người lao động nghỉ việc vào tháng 03 năm 2023, sau 1 năm không tham gia BHXH và có yêu cầu rút BHXH một lần vào tháng 04 năm 2024 thì điều kiện hưởng và mức hưởng được giải quyết theo quy định nào?",
+      "temporal_anchor": "tháng 03/2023 - tháng 04/2024 (trước ngày 01/07/2025)",
+      "applicable_document": "LUAT_BHXH_2014",
+      "applicable_articles": "Điều 60 khoản 1 điểm b; Nghị quyết 93/2015/QH13",
+      "applicable_chunk_ids": [
+        "LUAT_BHXH_2014_Điều60_Khoản1_102"
+      ],
+      "deprecated_or_excluded_document": "LUAT_BHXH_2024",
+      "exclusion_reason": "Sự kiện pháp lý hoàn thành vào tháng 04/2024, trước khi Luật BHXH 2024 có hiệu lực (01/07/2025). Do đó không được áp dụng quy định rút BHXH một lần của Luật BHXH 2024 (Điều 70) cho sự việc này.",
+      "reference_answer": "Do sự kiện người lao động nghỉ việc vào tháng 03/2023 và nộp hồ sơ hưởng BHXH một lần vào tháng 04/2024 (thời điểm trước ngày 01/07/2025), chế độ được giải quyết theo quy định của Luật Bảo hiểm xã hội 2014 (Điều 60) và Nghị quyết số 93/2015/QH13: sau một năm nghỉ việc mà chưa đủ 20 năm đóng BHXH và không tiếp tục tham gia BHXH thì được nhận BHXH một lần, mức hưởng tính theo số năm đã đóng (1,5 tháng mức bình quân tiền lương cho những năm đóng trước 2014 và 02 tháng cho những năm đóng từ 2014 trở đi).",
+      "expected_system_behavior": "Hệ thống phát hiện mốc thời gian quá khứ 'năm 2023 / tháng 04 năm 2024', kích hoạt Temporal Filter chọn LUAT_BHXH_2014, từ chối áp dụng Luật BHXH 2024."
+    },
+    {
+      "test_id": "TLT_004",
+      "scenario_type": 2,
+      "scenario_name": "Câu hỏi về sự kiện xảy ra trong quá khứ trước khi văn bản mới có hiệu lực",
+      "question": "Vào tháng 11 năm 2023, doanh nghiệp có nhu cầu tuyển dụng chuyên gia nước ngoài thì thời hạn nộp báo cáo giải trình nhu cầu sử dụng lao động nước ngoài là bao nhiêu ngày trước ngày dự kiến sử dụng?",
+      "temporal_anchor": "tháng 11/2023 (thời điểm NĐ 70/2023 đang có hiệu lực, trước NĐ 219/2025)",
+      "applicable_document": "ND_70_2023",
+      "applicable_articles": "Điều 1 khoản 2",
+      "applicable_chunk_ids": [
+        "ND_70_2023_Điều1_Khoản2_P1_1"
+      ],
+      "deprecated_or_excluded_document": "ND_152_2020 (khoản 1 Điều 4 quy định cũ 30 ngày) và ND_219_2025 (chưa có hiệu lực)",
+      "exclusion_reason": "Vào tháng 11/2023, NĐ 70/2023/NĐ-CP đã có hiệu lực (từ 18/09/2023) sửa đổi thời hạn từ 30 ngày xuống 15 ngày. NĐ 219/2025 đến tháng 08/2025 mới có hiệu lực nên không áp dụng cho tháng 11/2023.",
+      "reference_answer": "Vào thời điểm tháng 11 năm 2023, áp dụng quy định tại khoản 2 Điều 1 Nghị định số 70/2023/NĐ-CP (sửa đổi Điều 4 Nghị định số 152/2020/NĐ-CP có hiệu lực từ ngày 18/09/2023): người sử dụng lao động có trách nhiệm xác định nhu cầu sử dụng người lao động nước ngoài và báo cáo giải trình trước ít nhất 15 ngày kể từ ngày dự kiến sử dụng người lao động nước ngoài (thay vì trước ít nhất 30 ngày theo quy định gốc ban đầu của Nghị định 152/2020/NĐ-CP).",
+      "expected_system_behavior": "Hệ thống chọn đúng Nghị định 70/2023/NĐ-CP cho mốc tháng 11/2023."
+    },
+    {
+      "test_id": "TLT_005",
+      "scenario_type": 3,
+      "scenario_name": "Câu hỏi về điều khoản bị sửa đổi, bổ sung một phần",
+      "question": "Ủy viên Ban Thường vụ Thành ủy Thành phố Hồ Chí Minh có thuộc đối tượng được nghỉ hưu ở tuổi cao hơn đối với cán bộ, công chức giữ chức vụ lãnh đạo không?",
+      "temporal_anchor": "hiện hành (sau ngày 26/07/2024)",
+      "applicable_document": "ND_99_2024 kết hợp ND_83_2022",
+      "applicable_articles": "ND_99_2024 Điều 1; ND_83_2022 Điều 2 khoản 1 điểm p",
+      "applicable_chunk_ids": [
+        "ND_99_2024_Điều1_0",
+        "ND_83_2022_Điều2_Khoản1_1"
+      ],
+      "deprecated_or_excluded_document": "ND_83_2022 điểm p nguyên bản chưa sửa đổi",
+      "exclusion_reason": "Nghị định 99/2024/NĐ-CP đã sửa đổi trực tiếp điểm p khoản 1 Điều 2 NĐ 83/2022/NĐ-CP từ ngày 26/07/2024.",
+      "reference_answer": "Có. Căn cứ theo Điều 1 Nghị định số 99/2024/NĐ-CP ngày 26/07/2024 sửa đổi điểm p khoản 1 Điều 2 của Nghị định số 83/2022/NĐ-CP, Ủy viên Ban Thường vụ Thành ủy thành phố Hà Nội và Thành phố Hồ Chí Minh là đối tượng được nghỉ hưu ở tuổi cao hơn (thời gian công tác khi nghỉ hưu ở tuổi cao hơn không quá 05 năm theo Điều 4 Nghị định 83/2022/NĐ-CP).",
+      "expected_system_behavior": "Hệ thống kết hợp quy định gốc của NĐ 83/2022 và nội dung sửa đổi mới của NĐ 99/2024."
+    },
+    {
+      "test_id": "TLT_006",
+      "scenario_type": 3,
+      "scenario_name": "Câu hỏi về văn bản hết hiệu lực một phần nhưng vẫn còn phần có hiệu lực",
+      "question": "Tổ chức phi chính phủ nước ngoài tại Việt Nam khi tuyển dụng người lao động Việt Nam có bắt buộc phải tuyển dụng thông qua tổ chức có thẩm quyền tuyển dụng, quản lý người lao động Việt Nam không?",
+      "temporal_anchor": "hiện hành (năm 2026)",
+      "applicable_document": "ND_152_2020",
+      "applicable_articles": "Điều 20, Điều 21 Chương IV",
+      "applicable_chunk_ids": [
+        "ND_152_2020_Điều20_Khoản1_56",
+        "ND_152_2020_Điều21_Khoản1_57"
+      ],
+      "deprecated_or_excluded_document": "Không được nhầm lẫn toàn bộ NĐ 152/2020 đã hết hiệu lực",
+      "exclusion_reason": "Nghị định 219/2025/NĐ-CP chỉ bãi bỏ nội dung về lao động nước ngoài tại NĐ 152/2020. Chương IV (Điều 19 - 29) về tuyển dụng, quản lý người lao động Việt Nam làm việc cho tổ chức nước ngoài VẪN CÒN NGUYÊN HIỆU LỰC.",
+      "reference_answer": "Có. Căn cứ Điều 20 và Điều 21 Nghị định số 152/2020/NĐ-CP (nội dung Chương IV về quản lý người lao động Việt Nam làm việc cho tổ chức nước ngoài vẫn đang còn hiệu lực thi hành, không bị thay thế bởi Nghị định 219/2025/NĐ-CP): tổ chức, cá nhân nước ngoài phải gửi văn bản đề nghị tuyển người lao động Việt Nam đến tổ chức có thẩm quyền tuyển dụng, quản lý người lao động Việt Nam (như Trung tâm Dịch vụ việc làm hoặc Trung tâm đối ngoại). Hết thời hạn 15 ngày làm việc mà tổ chức có thẩm quyền không tuyển chọn, giới thiệu được thì tổ chức nước ngoài mới được trực tiếp tuyển dụng.",
+      "expected_system_behavior": "Hệ thống không đánh đồng việc có NĐ 219/2025 là toàn bộ NĐ 152/2020 hết hiệu lực, trích xuất đúng Chương IV NĐ 152/2020."
+    },
+    {
+      "test_id": "TLT_007",
+      "scenario_type": 4,
+      "scenario_name": "Câu hỏi về quy định chuyển tiếp giấy phép",
+      "question": "Giấy phép lao động của chuyên gia người nước ngoài được cấp vào tháng 12 năm 2024 có thời hạn đến tháng 12 năm 2026. Khi Nghị định 219/2025/NĐ-CP có hiệu lực từ ngày 07/08/2025 thì giấy phép này có tiếp tục được sử dụng không hay phải làm thủ tục cấp lại?",
+      "temporal_anchor": "giao thoa giữa 2024 và 2026 (chuyển tiếp qua mốc 07/08/2025)",
+      "applicable_document": "ND_219_2025",
+      "applicable_articles": "Điều 34 khoản 1",
+      "applicable_chunk_ids": [
+        "ND_219_2025_Điều34_Khoản1_82"
+      ],
+      "deprecated_or_excluded_document": "Không yêu cầu cấp mới theo các điều kiện mới của NĐ 219/2025",
+      "exclusion_reason": "Quy định chuyển tiếp tại Điều 34 khoản 1 NĐ 219/2025 bảo lưu giá trị pháp lý của GPLĐ đã cấp trước thời điểm Nghị định mới có hiệu lực.",
+      "reference_answer": "Giấy phép lao động đã cấp tiếp tục được sử dụng đến khi hết thời hạn mà không phải làm thủ tục cấp lại ngay. Căn cứ khoản 1 Điều 34 (Quy định chuyển tiếp) Nghị định số 219/2025/NĐ-CP: Giấy xác nhận không thuộc diện cấp giấy phép lao động và giấy phép lao động đã được cấp, cấp lại, gia hạn theo quy định tại Nghị định số 152/2020/NĐ-CP được sửa đổi, bổ sung tại Nghị định số 70/2023/NĐ-CP được tiếp tục sử dụng đến khi hết thời hạn và sẽ được cấp, cấp lại, gia hạn theo quy định tại Nghị định 219/2025/NĐ-CP khi hết hạn.",
+      "expected_system_behavior": "Hệ thống trích dẫn đúng điều khoản chuyển tiếp Điều 34 NĐ 219/2025, giải thích rõ cơ chế duy trì hiệu lực giấy tờ cũ."
+    },
+    {
+      "test_id": "TLT_008",
+      "scenario_type": 4,
+      "scenario_name": "Câu hỏi về quy định chuyển tiếp thời gian công tác và bảo hiểm",
+      "question": "Người lao động có thời gian công tác và tham gia bảo hiểm xã hội trước ngày 01 tháng 01 năm 1995 tại nơi có phụ cấp khu vực thì khi giải quyết hưởng lương hưu từ sau ngày 01/07/2025 được hưởng chế độ phụ cấp khu vực như thế nào?",
+      "temporal_anchor": "quá trình đóng trước 1995, giải quyết lương hưu từ 01/07/2025",
+      "applicable_document": "LUAT_BHXH_2024",
+      "applicable_articles": "Điều 141 khoản 3",
+      "applicable_chunk_ids": [
+        "LUAT_BHXH_2024_Điều141_Khoản3_272"
+      ],
+      "deprecated_or_excluded_document": "Không áp dụng thuần túy quy định chung không có chuyển tiếp",
+      "exclusion_reason": "Áp dụng điều khoản chuyển tiếp riêng biệt cho thời kỳ trước 1995 tại Điều 141 Luật BHXH 2024.",
+      "reference_answer": "Căn cứ theo quy định chuyển tiếp tại khoản 3 Điều 141 Luật Bảo hiểm xã hội 2024: Người lao động đã có thời gian công tác và tham gia bảo hiểm xã hội trước ngày 01 tháng 01 năm 1995 tại nơi có phụ cấp khu vực (hoặc có thời gian đóng BHXH bao gồm phụ cấp khu vực trước ngày 01/01/2007) thì được hưởng trợ cấp khu vực một lần khi giải quyết hưởng lương hưu hoặc hưởng bảo hiểm xã hội một lần hoặc hưởng chế độ tử tuất.",
+      "expected_system_behavior": "Hệ thống tìm kiếm trong điều khoản chuyển tiếp Điều 141 Luật BHXH 2024 thay vì các điều khoản hưu trí thông thường."
+    },
+    {
+      "test_id": "TLT_009",
+      "scenario_type": 5,
+      "scenario_name": "So sánh hai văn bản cùng điều chỉnh một vấn đề tại hai mốc thời gian",
+      "question": "Quy định về số năm đóng bảo hiểm xã hội tối thiểu để hưởng lương hưu khi đủ tuổi nghỉ hưu vào năm 2023 khác như thế nào so với quy định áp dụng từ ngày 01/07/2025?",
+      "temporal_anchor": "so sánh 2 mốc: năm 2023 (Luật 2014) và từ 01/07/2025 (Luật 2024)",
+      "applicable_document": "LUAT_BHXH_2014 và LUAT_BHXH_2024",
+      "applicable_articles": "LUAT_BHXH_2014 Điều 54; LUAT_BHXH_2024 Điều 64",
+      "applicable_chunk_ids": [
+        "LUAT_BHXH_2014_Điều54_Khoản1_84",
+        "LUAT_BHXH_2024_Điều64_Khoản1_P1_143"
+      ],
+      "deprecated_or_excluded_document": "Cả hai đều có giá trị tương ứng với mốc thời gian so sánh",
+      "exclusion_reason": "Cần đối chiếu rõ ràng hai phiên bản pháp luật tại hai thời điểm lịch sử.",
+      "reference_answer": "Có sự khác biệt căn bản về số năm đóng BHXH tối thiểu: 1. Vào năm 2023 (áp dụng Luật BHXH 2014, Điều 54): Người lao động đủ tuổi nghỉ hưu phải có đủ 20 năm đóng bảo hiểm xã hội trở lên mới đủ điều kiện hưởng lương hưu hằng tháng. 2. Từ ngày 01/07/2025 (áp dụng Luật BHXH 2024, điểm a khoản 1 Điều 64): Thời gian đóng BHXH tối thiểu được giảm xuống từ đủ 15 năm trở lên đã đủ điều kiện hưởng lương hưu hằng tháng khi đủ tuổi.",
+      "expected_system_behavior": "Hệ thống truy xuất cả 2 văn bản và phân định rõ ràng văn bản nào áp dụng cho năm 2023, văn bản nào áp dụng từ 01/07/2025."
+    },
+    {
+      "test_id": "TLT_010",
+      "scenario_type": 5,
+      "scenario_name": "So sánh hai văn bản cùng điều chỉnh một vấn đề tại hai mốc thời gian",
+      "question": "Trước ngày 18/09/2023 và sau ngày 18/09/2023, thời hạn người sử dụng lao động phải nộp báo cáo giải trình nhu cầu sử dụng lao động nước ngoài có sự thay đổi như thế nào?",
+      "temporal_anchor": "trước và sau ngày 18/09/2023",
+      "applicable_document": "ND_152_2020 và ND_70_2023",
+      "applicable_articles": "ND_152_2020 Điều 4; ND_70_2023 Điều 1 khoản 2",
+      "applicable_chunk_ids": [
+        "ND_152_2020_Điều4_Khoản1_12",
+        "ND_70_2023_Điều1_Khoản2_P1_1"
+      ],
+      "deprecated_or_excluded_document": "ND_219_2025 (thời điểm sau)",
+      "exclusion_reason": "Câu hỏi tập trung vào mốc sửa đổi ngày 18/09/2023 của NĐ 70/2023 đối với NĐ 152/2020.",
+      "reference_answer": "Thời hạn đã được rút ngắn từ 30 ngày xuống 15 ngày: 1. Trước ngày 18/09/2023 (theo Điều 4 NĐ 152/2020/NĐ-CP): Người sử dụng lao động phải báo cáo giải trình trước ít nhất 30 ngày kể từ ngày dự kiến sử dụng lao động nước ngoài. 2. Từ ngày 18/09/2023 (theo khoản 2 Điều 1 NĐ 70/2023/NĐ-CP sửa đổi Điều 4 NĐ 152/2020): Thời hạn được rút ngắn xuống trước ít nhất 15 ngày kể từ ngày dự kiến sử dụng.",
+      "expected_system_behavior": "Hệ thống phân định rành mạch nội dung trước và sau thời điểm 18/09/2023."
+    },
+    {
+      "test_id": "TLT_011",
+      "scenario_type": 6,
+      "scenario_name": "Câu hỏi không nêu thời điểm -> mặc định áp dụng pháp luật hiện hành",
+      "question": "Người lao động làm việc theo hợp đồng lao động xác định thời hạn có được quyền đơn phương chấm dứt hợp đồng lao động mà không cần lý do hay không?",
+      "temporal_anchor": "không nêu mốc thời gian -> mặc định quy định hiện hành (BLLĐ 2019)",
+      "applicable_document": "BLLD_2019",
+      "applicable_articles": "Điều 35 khoản 1",
+      "applicable_chunk_ids": [
+        "BLLD_2019_Điều35_46"
+      ],
+      "deprecated_or_excluded_document": "BLLD 2012 (cần lý do luật định tại Điều 37 cũ)",
+      "exclusion_reason": "BLLD 2012 đã hết hiệu lực từ 01/01/2021. Mặc định áp dụng BLLD 2019 hiện hành cho phép người lao động đơn phương chấm dứt HĐLĐ không cần lý do, chỉ cần báo trước.",
+      "reference_answer": "Có. Theo quy định pháp luật lao động hiện hành (khoản 1 Điều 35 Bộ luật Lao động 2019), người lao động có quyền đơn phương chấm dứt hợp đồng lao động không cần phải có lý do, chỉ cần báo trước cho người sử dụng lao động: ít nhất 30 ngày nếu làm việc theo hợp đồng xác định thời hạn có thời hạn từ 12 tháng đến 36 tháng; ít nhất 03 ngày làm việc nếu làm việc theo hợp đồng xác định thời hạn có thời hạn dưới 12 tháng (trừ một số ngành nghề đặc thù có thời hạn báo trước riêng).",
+      "expected_system_behavior": "Mặc định hiểu câu hỏi áp dụng pháp luật hiện hành, trích dẫn BLLĐ 2019, không áp đặt các lý do khắt khe của luật cũ."
+    },
+    {
+      "test_id": "TLT_012",
+      "scenario_type": 6,
+      "scenario_name": "Câu hỏi không nêu thời điểm -> mặc định áp dụng pháp luật hiện hành",
+      "question": "Người sử dụng lao động không đóng bảo hiểm xã hội bắt buộc cho người lao động thì bị xử phạt vi phạm hành chính như thế nào?",
+      "temporal_anchor": "không nêu thời điểm -> mặc định hiện hành",
+      "applicable_document": "ND_12_2022",
+      "applicable_articles": "Điều 39 khoản 5, khoản 7",
+      "applicable_chunk_ids": [
+        "ND_12_2022_Điều39_Khoản5_146"
+      ],
+      "deprecated_or_excluded_document": "Nghị định 28/2020/NĐ-CP (đã hết hiệu lực)",
+      "exclusion_reason": "Nghị định 28/2020 đã hết hiệu lực từ 17/01/2022, bị thay thế bởi Nghị định 12/2022/NĐ-CP.",
+      "reference_answer": "Căn cứ quy định hiện hành tại khoản 5 và khoản 7 Điều 39 Nghị định số 12/2022/NĐ-CP: Phạt tiền từ 12% đến 15% tổng số tiền phải đóng bảo hiểm xã hội bắt buộc, bảo hiểm thất nghiệp tại thời điểm lập biên bản vi phạm hành chính nhưng tối đa không quá 75.000.000 đồng đối với người sử dụng lao động có hành vi không đóng bảo hiểm xã hội bắt buộc, bảo hiểm thất nghiệp cho toàn bộ người lao động thuộc diện tham gia mà chưa đến mức truy cứu trách nhiệm hình sự; đồng thời buộc truy nộp số tiền chưa đóng và tiền lãi chậm đóng.",
+      "expected_system_behavior": "Áp dụng chế tài hiện hành tại Nghị định 12/2022/NĐ-CP."
+    },
+    {
+      "test_id": "TLT_013",
+      "scenario_type": 7,
+      "scenario_name": "Câu hỏi thiếu dữ kiện thời điểm cần phân nhánh giải định",
+      "question": "Tôi đã đóng bảo hiểm xã hội được 16 năm và đã đủ tuổi nghỉ hưu, tôi có được hưởng lương hưu hàng tháng không?",
+      "temporal_anchor": "thiếu thời điểm nghỉ hưu -> ranh giới trước hay sau ngày 01/07/2025",
+      "applicable_document": "Cần làm rõ thời điểm hoặc nêu 2 trường hợp: LUAT_BHXH_2014 vs LUAT_BHXH_2024",
+      "applicable_articles": "LUAT_BHXH_2014 Điều 54; LUAT_BHXH_2024 Điều 64",
+      "applicable_chunk_ids": [
+        "LUAT_BHXH_2014_Điều54_Khoản1_84",
+        "LUAT_BHXH_2024_Điều64_Khoản1_P1_143"
+      ],
+      "deprecated_or_excluded_document": "Cần nêu rõ điều kiện thời gian áp dụng",
+      "exclusion_reason": "Câu hỏi không cung cấp thời điểm nghỉ hưu, dẫn đến kết luận trái ngược nhau tùy thuộc vào thời điểm trước hay sau 01/07/2025.",
+      "reference_answer": "Do câu hỏi không nêu rõ thời điểm bạn nghỉ hưu, câu trả lời sẽ phụ thuộc vào thời điểm bạn giải quyết chế độ hưu trí: 1. Nếu thời điểm bạn đủ tuổi và nộp hồ sơ nghỉ hưu trước ngày 01/07/2025: Theo Luật BHXH 2014 (Điều 54), bạn CHƯA ĐỦ ĐIỀU KIỆN hưởng lương hưu hàng tháng vì luật cũ yêu cầu tối thiểu đủ 20 năm đóng BHXH. Bạn có thể bảo lưu thời gian đóng hoặc đóng tiếp BHXH tự nguyện. 2. Nếu thời điểm bạn đủ tuổi và giải quyết chế độ từ ngày 01/07/2025 trở đi: Theo Luật BHXH 2024 (điểm a khoản 1 Điều 64), bạn ĐÃ ĐỦ ĐIỀU KIỆN hưởng lương hưu hàng tháng vì luật mới chỉ yêu cầu thời gian đóng BHXH tối thiểu từ đủ 15 năm.",
+      "expected_system_behavior": "Hệ thống phát hiện câu hỏi phụ thuộc ranh giới thay đổi luật pháp (01/07/2025), chủ động phân nhánh 2 trường hợp trước và sau để tư vấn chính xác thay vì chỉ trả lời một chiều."
+    },
+    {
+      "test_id": "TLT_014",
+      "scenario_type": 7,
+      "scenario_name": "Câu hỏi thiếu dữ kiện thời điểm cần phân nhánh giải định",
+      "question": "Doanh nghiệp tôi không báo cáo giải trình nhu cầu sử dụng người lao động nước ngoài mà đã tuyển dụng lao động nước ngoài thì bị xử phạt theo căn cứ nào?",
+      "temporal_anchor": "thiếu thời điểm thực hiện hành vi vi phạm",
+      "applicable_document": "ND_12_2022 Điều 32 kết hợp ND_152/2020 hoặc ND_219/2025",
+      "applicable_articles": "ND_12_2022 Điều 32",
+      "applicable_chunk_ids": [
+        "ND_12_2022_Điều32_Khoản1_118"
+      ],
+      "deprecated_or_excluded_document": "Cần xác định thời điểm để viện dẫn nghĩa vụ gốc",
+      "exclusion_reason": "Nghĩa vụ giải trình được quy định tại NĐ 152/2020 (được sửa bởi NĐ 70/2023) cho hành vi trước 07/08/2025, và quy định tại NĐ 219/2025 cho hành vi từ 07/08/2025.",
+      "reference_answer": "Căn cứ khoản 1 Điều 32 Nghị định số 12/2022/NĐ-CP, hành vi không báo cáo giải trình nhu cầu sử dụng người lao động nước ngoài hoặc báo cáo không đúng thời hạn bị phạt tiền từ 1.000.000 đồng đến 3.000.000 đồng (đối với cá nhân, nhân đôi đối với tổ chức). Về nghĩa vụ báo cáo: nếu hành vi xảy ra trước ngày 07/08/2025, căn cứ theo Điều 4 Nghị định 152/2020/NĐ-CP (sửa đổi tại NĐ 70/2023); nếu xảy ra từ ngày 07/08/2025 trở đi, áp dụng theo Nghị định số 219/2025/NĐ-CP.",
+      "expected_system_behavior": "Hệ thống viện dẫn đúng điều khoản xử phạt của NĐ 12/2022 và phân biệt căn cứ nghĩa vụ nội dung theo thời điểm xảy ra hành vi."
+    }
+  ]
+}

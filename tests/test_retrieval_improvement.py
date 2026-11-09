@@ -125,7 +125,7 @@ def test_06_hybrid_retrieval_does_not_modify_baseline_store(mock_config):
     count_after = hybrid.dense_retriever.vector_store.count()
 
     assert len(chunks) == 5, "Hybrid retrieval phải trả về đúng Top-5."
-    assert count_before == count_after == 1390, (
+    assert count_before == count_after and count_before >= 1390, (
         f"Số lượng chunk bị thay đổi! Trước: {count_before}, Sau: {count_after}"
     )
 

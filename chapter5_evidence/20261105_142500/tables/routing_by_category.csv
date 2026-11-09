@@ -1,0 +1,8 @@
+category,total,CORRECTIVE_RAG,DECOMPOSE_AGENTIC,DIRECT_REFUSAL,TRADITIONAL_RAG
+complex_conditions,12,12,0,0,0
+cross_reference,10,6,4,0,0
+insufficient_evidence,8,8,0,0,0
+multi_document,12,0,12,0,0
+out_of_scope,8,1,0,7,0
+single_article,18,7,6,0,5
+single_doc_multi_chunk,12,9,3,0,0

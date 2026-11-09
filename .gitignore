@@ -23,3 +23,5 @@ scratch/
 
 # Local databases
 data/history/*.db
+data/history.db
+data/chroma_db_backup_15docs/

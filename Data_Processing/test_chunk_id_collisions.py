@@ -147,7 +147,7 @@ class TestChunkIdCollisions(unittest.TestCase):
     # -------------------------------------------------------------------------
     def test_06_corpus_total_chunks_equals_unique_chunk_ids(self):
         """Tiêu chí chấp thuận: total_chunks == unique_chunk_ids trên toàn bộ 15 văn bản thật."""
-        raw_dir = r"D:\KLCN\agentic-rag\Data_Processing\data_corpus_raw"
+        raw_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), "data_corpus_raw")
         if not os.path.exists(raw_dir):
             self.skipTest("Thư mục data_corpus_raw không tồn tại")
 

@@ -1,0 +1,21 @@
+artifact_name,category,relative_path,size_bytes,sha256,file_modified_time,declared_version,verification_status
+Corpus V2.1 Clean,Data Engineering,Data_Processing\output_v2\legal_dataset_v2.json,4949369,e9b9095274e893365cefc0622f9a691454835f570f4efd0610f5aad2d1f610ea,2026-11-05T12:25:44.110825+07:00,V2.1,VERIFIED
+Corpus V2.1 JSONL,Data Engineering,Data_Processing\output_v2\legal_dataset_v2.jsonl,4699560,d484c890f58d2f34b3ce42de1921f25fcff914816ebefc0ff0dc71e82f3e9040,2026-11-05T12:25:44.193334+07:00,V2.1,VERIFIED
+Corpus V1 Legacy,Data Engineering,Data_Processing\KhoaLuan_Data_HoanChinh.json,2781988,7bdb170543734804c64945a02d5388a32399dd391ff3b2a3d029add1d3fe3fb4,2026-09-04T15:06:46.145843+07:00,V1.0,VERIFIED
+Build Metadata V2,Data Engineering,Data_Processing\output_v2\build_metadata.json,2552,08a05e85d0fd40f80f7d02130fa78b8bccf1bc1a4fb73bb0721b68acd89a842a,2026-11-05T12:25:44.258538+07:00,V2.1,VERIFIED
+Vector Store SQLite,Vector Index,data\chroma_db\chroma.sqlite3,18964480,7cc7e5fb846a4904667bce4b882c2f4de649125dc7658c0b2debdb65ef4702a4,2026-11-05T14:31:14.269892+07:00,Chroma 1.5.9,VERIFIED
+Benchmark Dataset,Benchmark,evaluation\dataset\legal_qa.json,94191,cedaceab52308b649551c9ddc611cbd29e24ea86dd8473bbbe3499b99084146a,2026-10-13T20:11:54.037377+07:00,RAG-08,VERIFIED
+Benchmark Schema,Benchmark,evaluation\dataset\schema.json,2797,637b4e444d0d408e3d783a02ae16ffa046a4a2de590906cd2a3d9b9c6dde1de2,2026-10-13T20:11:54.037377+07:00,RAG-08,VERIFIED
+Traditional Baseline Eval,Evaluation Run,evaluation\results\traditional_baseline_full_eval.json,1891481,02df89597cbbe92b9fd1ad3db93b5980aa3cc49a0b134a23ecb21beb790e975b,2026-10-13T20:11:54.062168+07:00,RAG-10,VERIFIED
+CRAG Integrated Eval,Evaluation Run,evaluation\results\crag_evaluation.json,894105,bb520ad5cc82522e92445f022f75ee170bf09a7fe9f3630d8b2ce56d41ed3bab,2026-10-13T20:11:54.049317+07:00,RAG-14,VERIFIED
+Adaptive Agentic Eval,Evaluation Run,evaluation\results\adaptive_evaluation.json,923847,bc390d2643d463aeeebf975e9bb59a40b820958743e73b0bf710b6591ad583fe,2026-10-13T20:11:54.039703+07:00,RAG-18,VERIFIED
+Corrective Internal Eval,Evaluation Run,evaluation\results\corrective_full_eval.json,2617874,84eb7e9374d3a938dd1d102f208afbf622683fa475acfd3b71aea4c1424a604c,2026-10-13T20:11:54.049317+07:00,CRAG-07,VERIFIED
+Online LLM Eval,Evaluation Run,evaluation\results\online_llm_evaluation.json,78109,1cec5853166ae61a30e5207dc982475ddab32379554bfccdc455aaa395270a6a,2026-11-04T11:35:04.997255+07:00,Gemini-Flash,VERIFIED
+Retrieval Baseline Eval,Evaluation Run,evaluation\results\retrieval_baseline.json,385772,0bed5e2183a0894cd530fa32adea64da53f196c6f4c8f986800a7e54655661ed,2026-10-13T20:11:54.049317+07:00,RAG-09,VERIFIED
+Corrective Retrieval Eval,Evaluation Run,evaluation\results\corrective_retrieval.json,39603,16ec3d47fe4b3d131c98d5e56e4c778c5e0d95fa06f1bebd10cca058e61acfd0,2026-10-13T20:11:54.049317+07:00,CRAG-06,VERIFIED
+Query Complexity Eval,Evaluation Run,evaluation\results\query_complexity_evaluation.json,76027,515f7bc781acc4537ad36b99674a096cacd190b1a6eb177acf2be4c049d14c97,2026-10-13T20:11:54.049317+07:00,Module 0,VERIFIED
+Query Decomposition Eval,Evaluation Run,evaluation\results\query_decomposition_evaluation.json,47893,1bbfedad259bb94506de3b0d187ef7afaeddbad6b93434d3a004db0ae15b415e,2026-10-13T20:11:54.049317+07:00,Module 11,VERIFIED
+Report Latest Experiment,Report,reports\experiment_latest\LATEST-EXPERIMENT-REPORT.md,30022,bac6bb5fccf3240aa61758d84238c88b0baf4fcd01976313514924bab7433583,2026-11-04T13:00:28.524433+07:00,Latest,VERIFIED
+Report Statistical Significance,Report,reports\STATISTICAL-SIGNIFICANCE-REPORT.md,6258,8f57b27265059600ea73995670746624d795c09d07f4b6c41820eb963571971f,2026-11-04T11:29:31.586103+07:00,Latest,VERIFIED
+Report CRAG Comparison,Report,reports\rag\CRAG-07-COMPARISON.md,10438,e089347f9713b58a187b733b4f63956241212082ace97c41277243c3171987fb,2026-10-13T20:11:54.082214+07:00,CRAG-07,VERIFIED
+Report Frozen Baseline,Report,reports\rag\TRADITIONAL-RAG-BASELINE-FROZEN.md,8034,d08c8e8843fdee8c72a0883bac0475c54e1b03764d7eb94a279e5ea7bea46dc0,2026-10-13T20:11:54.100379+07:00,RAG-10,VERIFIED

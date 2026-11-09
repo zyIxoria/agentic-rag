@@ -20,7 +20,7 @@ class GeminiLegalGenerator(BaseLegalGenerator):
 
     def __init__(
         self,
-        model_name: str = "gemini-1.5-flash",
+        model_name: str = "gemini-3.5-flash-lite",
         api_key: Optional[str] = None,
         timeout_seconds: int = 30
     ):
@@ -67,8 +67,19 @@ class GeminiLegalGenerator(BaseLegalGenerator):
             elapsed_ms = (time.perf_counter() - start_time) * 1000.0
 
             if resp.status_code != 200:
+                err_msg = resp.text
+                try:
+                    err_json = resp.json()
+                    err_msg = err_json.get("error", {}).get("message", resp.text)
+                except Exception:
+                    pass
+                if resp.status_code == 402:
+                    raise RuntimeError(
+                        f"Gemini API báo lỗi 402 (Hết số dư tín dụng dự án): {err_msg}. "
+                        "Gợi ý: Hãy vào https://aistudio.google.com/app/apikey và bấm 'Create API key in new project' để nhận khóa API miễn phí 100%."
+                    )
                 raise RuntimeError(
-                    f"Gemini API trả về mã lỗi HTTP {resp.status_code}: {resp.text}"
+                    f"Gemini API trả về mã lỗi HTTP {resp.status_code}: {err_msg}"
                 )
 
             data = resp.json()

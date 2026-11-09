@@ -105,11 +105,24 @@ class DenseTopKRetriever(BaseRetriever):
         if not hasattr(self.vector_store, "collection") or self.vector_store.collection is None:
             raise RuntimeError("Collection chưa được kích hoạt trong Vector Store.")
 
-        chroma_res = self.vector_store.collection.query(
-            query_embeddings=[query_vector],
-            n_results=actual_k,
-            include=["documents", "metadatas", "distances"],
-        )
+        try:
+            chroma_res = self.vector_store.collection.query(
+                query_embeddings=[query_vector],
+                n_results=actual_k,
+                include=["documents", "metadatas", "distances"],
+            )
+        except AttributeError as ae:
+            if "bindings" in str(ae):
+                logger.warning("Gặp lỗi RustBindingsAPI bindings trong quá trình query. Đang tự động phục hồi và thử lại...")
+                if hasattr(self.vector_store, "_ensure_active_connection"):
+                    self.vector_store._ensure_active_connection()
+                chroma_res = self.vector_store.collection.query(
+                    query_embeddings=[query_vector],
+                    n_results=actual_k,
+                    include=["documents", "metadatas", "distances"],
+                )
+            else:
+                raise ae
 
         raw_ids = chroma_res.get("ids", [[]])[0]
         raw_docs = chroma_res.get("documents", [[]])[0]

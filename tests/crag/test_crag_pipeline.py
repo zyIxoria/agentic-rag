@@ -17,7 +17,7 @@ from CRAG.pipeline.schema import CRAGResponse
 class MockLegalGenerator(BaseLegalGenerator):
     """Generator giả lập phục vụ unit test tức thì và tất định."""
 
-    def __init__(self, response_text: str = "Theo quy định tại [SOURCE 1], thời gian thử việc tối đa là 180 ngày."):
+    def __init__(self, response_text: str = "Theo quy định tại [SOURCE 1], người lao động bị xử lý kỷ luật sa thải theo Điều 125."):
         self.model_name = "mock-model"
         self.provider = "mock"
         self.response_text = response_text

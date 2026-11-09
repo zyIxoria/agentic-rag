@@ -1,0 +1,1637 @@
+[
+  {
+    "question_id": "Q001",
+    "question": "Người sử dụng lao động có quyền áp dụng hình thức xử lý kỷ luật sa thải trong những trường hợp nào?",
+    "category": "single_article",
+    "gold_sources": [
+      {
+        "document_id": "BLLD_2019",
+        "article_number": "Điều 125",
+        "chunk_ids": [
+          "BLLD_2019_Điều125_Khoản1_167",
+          "BLLD_2019_Điều125_Khoản3_168"
+        ]
+      }
+    ],
+    "reference_answer": "Căn cứ theo Điều 125 Bộ luật Lao động 2019, hình thức xử lý kỷ luật sa thải được người sử dụng lao động áp dụng trong các trường hợp: 1. Người lao động có hành vi trộm cắp, tham ô, đánh bạc, cố ý gây thương tích, sử dụng ma túy tại nơi làm việc; 2. Có hành vi tiết lộ bí mật kinh doanh, bí mật công nghệ, xâm phạm quyền sở hữu trí tuệ của người sử dụng lao động, có hành vi gây thiệt hại nghiêm trọng hoặc đe dọa gây thiệt hại đặc biệt nghiêm trọng về tài sản, lợi ích của người sử dụng lao động hoặc quấy rối tình dục tại nơi làm việc; 3. Bị xử lý kỷ luật kéo dài thời hạn nâng lương hoặc cách chức mà tái phạm trong thời gian chưa xóa kỷ luật; 4. Tự ý bỏ việc 05 ngày cộng dồn trong thời hạn 30 ngày hoặc 20 ngày cộng dồn trong thời hạn 365 ngày tính từ ngày đầu tiên tự ý bỏ việc mà không có lý do chính đáng.",
+    "requires_refusal": false
+  },
+  {
+    "question_id": "Q002",
+    "question": "Thời giờ làm việc bình thường của người lao động được quy định tối đa bao nhiêu giờ trong một ngày và một tuần?",
+    "category": "single_article",
+    "gold_sources": [
+      {
+        "document_id": "BLLD_2019",
+        "article_number": "Điều 105",
+        "chunk_ids": [
+          "BLLD_2019_Điều105_139"
+        ]
+      }
+    ],
+    "reference_answer": "Theo quy định tại Điều 105 Bộ luật Lao động 2019, thời giờ làm việc bình thường không quá 08 giờ trong 01 ngày và không quá 48 giờ trong 01 tuần. Người sử dụng lao động có quyền quy định thời giờ làm việc theo giờ hoặc ngày hoặc tuần; trường hợp theo tuần thì thời giờ làm việc bình thường không quá 10 giờ trong 01 ngày và không quá 48 giờ trong 01 tuần. Nhà nước khuyến khích người sử dụng lao động thực hiện tuần làm việc 40 giờ đối với người lao động.",
+    "requires_refusal": false
+  },
+  {
+    "question_id": "Q003",
+    "question": "Số giờ làm thêm của người lao động được quy định bảo đảm không quá bao nhiêu giờ trong một ngày và trong một tháng?",
+    "category": "single_article",
+    "gold_sources": [
+      {
+        "document_id": "BLLD_2019",
+        "article_number": "Điều 107",
+        "chunk_ids": [
+          "BLLD_2019_Điều107_Khoản1_141",
+          "BLLD_2019_Điều107_Khoản2_142",
+          "BLLD_2019_Điều107_Khoản3_143"
+        ]
+      }
+    ],
+    "reference_answer": "Căn cứ theo Điều 107 Bộ luật Lao động 2019, khi tổ chức làm thêm giờ, người sử dụng lao động phải bảo đảm: số giờ làm thêm không quá 50% số giờ làm việc bình thường trong 01 ngày; trường hợp áp dụng quy định thời giờ làm việc bình thường theo tuần thì tổng số giờ làm việc bình thường và số giờ làm thêm không quá 12 giờ trong 01 ngày; không quá 40 giờ trong 01 tháng.",
+    "requires_refusal": false
+  },
+  {
+    "question_id": "Q004",
+    "question": "Lao động nữ sinh con được nghỉ chế độ thai sản trước và sau khi sinh là bao nhiêu tháng?",
+    "category": "single_article",
+    "gold_sources": [
+      {
+        "document_id": "BLLD_2019",
+        "article_number": "Điều 139",
+        "chunk_ids": [
+          "BLLD_2019_Điều139_Khoản1_184",
+          "BLLD_2019_Điều139_Khoản3_185"
+        ]
+      }
+    ],
+    "reference_answer": "Theo quy định tại Điều 139 Bộ luật Lao động 2019, lao động nữ được nghỉ thai sản trước và sau khi sinh con là 06 tháng; thời gian nghỉ trước khi sinh không quá 02 tháng. Trường hợp lao động nữ sinh đôi trở lên thì tính từ con thứ 02 trở đi, cứ mỗi con, người mẹ được nghỉ thêm 01 tháng.",
+    "requires_refusal": false
+  },
+  {
+    "question_id": "Q005",
+    "question": "Người lao động làm việc theo hợp đồng lao động xác định thời hạn có quyền đơn phương chấm dứt hợp đồng lao động phải báo trước bao nhiêu ngày?",
+    "category": "single_article",
+    "gold_sources": [
+      {
+        "document_id": "BLLD_2019",
+        "article_number": "Điều 35",
+        "chunk_ids": [
+          "BLLD_2019_Điều35_Khoản1_48",
+          "BLLD_2019_Điều35_Khoản2_49"
+        ]
+      }
+    ],
+    "reference_answer": "Căn cứ theo Điều 35 Bộ luật Lao động 2019, người lao động có quyền đơn phương chấm dứt hợp đồng lao động nhưng phải báo trước cho người sử dụng lao động ít nhất 30 ngày nếu làm việc theo hợp đồng lao động xác định thời hạn có thời hạn từ 12 tháng đến 36 tháng; ít nhất 03 ngày làm việc nếu làm việc theo hợp đồng lao động xác định thời hạn có thời hạn dưới 12 tháng.",
+    "requires_refusal": false
+  },
+  {
+    "question_id": "Q006",
+    "question": "Người sử dụng lao động có quyền đơn phương chấm dứt hợp đồng lao động trong những trường hợp nào?",
+    "category": "single_article",
+    "gold_sources": [
+      {
+        "document_id": "BLLD_2019",
+        "article_number": "Điều 36",
+        "chunk_ids": [
+          "BLLD_2019_Điều36_Khoản1_P1_50",
+          "BLLD_2019_Điều36_Khoản1_P2_51",
+          "BLLD_2019_Điều36_Khoản2_52"
+        ]
+      }
+    ],
+    "reference_answer": "Theo Điều 36 Bộ luật Lao động 2019, người sử dụng lao động có quyền đơn phương chấm dứt hợp đồng lao động trong các trường hợp: a) Người lao động thường xuyên không hoàn thành công việc theo hợp đồng lao động; b) Người lao động bị ốm đau, tai nạn đã điều trị trong thời hạn quy định mà khả năng lao động chưa hồi phục; c) Do thiên tai, hỏa hoạn, dịch bệnh nguy hiểm hoặc địch họa mà người sử dụng lao động đã tìm mọi biện pháp khắc phục nhưng vẫn buộc phải thu hẹp sản xuất, giảm chỗ làm việc; d) Người lao động không có mặt tại nơi làm việc sau thời hạn tạm hoãn hợp đồng; đ) Người lao động đủ tuổi nghỉ hưu; e) Người lao động tự ý bỏ việc mà không có lý do chính đáng từ 05 ngày làm việc liên tục trở lên; g) Người lao động cung cấp không trung thực thông tin khi giao kết hợp đồng lao động.",
+    "requires_refusal": false
+  },
+  {
+    "question_id": "Q007",
+    "question": "Người lao động làm thêm giờ vào ngày nghỉ hằng tuần được trả lương tính theo đơn giá tiền lương ít nhất bằng bao nhiêu phần trăm?",
+    "category": "single_article",
+    "gold_sources": [
+      {
+        "document_id": "BLLD_2019",
+        "article_number": "Điều 98",
+        "chunk_ids": [
+          "BLLD_2019_Điều98_132"
+        ]
+      }
+    ],
+    "reference_answer": "Theo Điều 98 Bộ luật Lao động 2019, người lao động làm thêm giờ được trả lương tính theo đơn giá tiền lương hoặc tiền lương thực trả theo công việc đang làm: vào ngày thường, ít nhất bằng 150%; vào ngày nghỉ hằng tuần, ít nhất bằng 200%; vào ngày nghỉ lễ, tết, ngày nghỉ có hưởng lương, ít nhất bằng 300% chưa kể tiền lương ngày lễ, tết, ngày nghỉ có hưởng lương đối với người lao động hưởng lương ngày.",
+    "requires_refusal": false
+  },
+  {
+    "question_id": "Q008",
+    "question": "Số ngày nghỉ hằng năm của người lao động làm việc trong điều kiện bình thường đủ 12 tháng cho một người sử dụng lao động là bao nhiêu ngày?",
+    "category": "single_article",
+    "gold_sources": [
+      {
+        "document_id": "BLLD_2019",
+        "article_number": "Điều 113",
+        "chunk_ids": [
+          "BLLD_2019_Điều113_Khoản1_149",
+          "BLLD_2019_Điều113_Khoản2_150",
+          "BLLD_2019_Điều113_Khoản5_151"
+        ]
+      }
+    ],
+    "reference_answer": "Căn cứ theo Điều 113 Bộ luật Lao động 2019, người lao động làm việc đủ 12 tháng cho một người sử dụng lao động thì được nghỉ hằng năm, hưởng nguyên lương theo hợp đồng lao động: 12 ngày làm việc đối với người làm công việc trong điều kiện bình thường; 14 ngày làm việc đối với người lao động chưa thành niên, lao động là người khuyết tật, người làm nghề, công việc nặng nhọc, độc hại, nguy hiểm; 16 ngày làm việc đối với người làm nghề, công việc đặc biệt nặng nhọc, độc hại, nguy hiểm.",
+    "requires_refusal": false
+  },
+  {
+    "question_id": "Q009",
+    "question": "Những hành vi nào bị nghiêm cấm đối với người sử dụng lao động khi xử lý kỷ luật lao động?",
+    "category": "single_article",
+    "gold_sources": [
+      {
+        "document_id": "BLLD_2019",
+        "article_number": "Điều 127",
+        "chunk_ids": [
+          "BLLD_2019_Điều127_170"
+        ]
+      }
+    ],
+    "reference_answer": "Theo Điều 127 Bộ luật Lao động 2019, các hành vi bị nghiêm cấm khi xử lý kỷ luật lao động bao gồm: 1. Xâm phạm sức khỏe, danh dự, tính mạng, uy tín, nhân phẩm của người lao động; 2. Áp dụng nhiều hình thức xử lý kỷ luật lao động đối với một hành vi vi phạm kỷ luật lao động; 3. Dùng hình thức phạt tiền, cắt lương thay việc xử lý kỷ luật lao động; 4. Xử lý kỷ luật lao động đối với người lao động có hành vi vi phạm không được quy định trong nội quy lao động hoặc không thỏa thuận trong hợp đồng lao động đã giao kết hoặc pháp luật về lao động không có quy định.",
+    "requires_refusal": false
+  },
+  {
+    "question_id": "Q010",
+    "question": "Thời hạn được xóa kỷ luật lao động đối với người lao động bị khiển trách là bao lâu?",
+    "category": "single_article",
+    "gold_sources": [
+      {
+        "document_id": "BLLD_2019",
+        "article_number": "Điều 126",
+        "chunk_ids": [
+          "BLLD_2019_Điều126_169"
+        ]
+      }
+    ],
+    "reference_answer": "Theo Điều 126 Bộ luật Lao động 2019, người lao động bị khiển trách sau 03 tháng hoặc bị kéo dài thời hạn nâng lương sau 06 tháng hoặc bị cách chức sau 03 năm kể từ ngày bị xử lý, nếu không tiếp tục vi phạm kỷ luật lao động thì đương nhiên được xóa kỷ luật.",
+    "requires_refusal": false
+  },
+  {
+    "question_id": "Q011",
+    "question": "Người lao động được nghỉ việc riêng mà vẫn hưởng nguyên lương trong những trường hợp nào?",
+    "category": "single_article",
+    "gold_sources": [
+      {
+        "document_id": "BLLD_2019",
+        "article_number": "Điều 115",
+        "chunk_ids": [
+          "BLLD_2019_Điều115_153"
+        ]
+      }
+    ],
+    "reference_answer": "Căn cứ theo Điều 115 Bộ luật Lao động 2019, người lao động được nghỉ việc riêng mà vẫn hưởng nguyên lương và phải thông báo với người sử dụng lao động trong trường hợp: a) Kết hôn: nghỉ 03 ngày; b) Con đẻ, con nuôi kết hôn: nghỉ 01 ngày; c) Cha đẻ, mẹ đẻ, cha nuôi, mẹ nuôi; cha đẻ, mẹ đẻ, cha nuôi, mẹ nuôi của vợ hoặc chồng; vợ hoặc chồng; con đẻ, con nuôi chết: nghỉ 03 ngày.",
+    "requires_refusal": false
+  },
+  {
+    "question_id": "Q012",
+    "question": "Thời hạn người sử dụng lao động và người lao động có trách nhiệm thanh toán đầy đủ các khoản tiền liên quan đến quyền lợi của mỗi bên sau khi chấm dứt hợp đồng lao động là bao lâu?",
+    "category": "single_article",
+    "gold_sources": [
+      {
+        "document_id": "BLLD_2019",
+        "article_number": "Điều 48",
+        "chunk_ids": [
+          "BLLD_2019_Điều48_Khoản1_68",
+          "BLLD_2019_Điều48_Khoản2_69",
+          "BLLD_2019_Điều48_Khoản3_70"
+        ]
+      }
+    ],
+    "reference_answer": "Theo Điều 48 Bộ luật Lao động 2019, trong thời hạn 14 ngày làm việc kể từ ngày chấm dứt hợp đồng lao động, hai bên có trách nhiệm thanh toán đầy đủ các khoản tiền có liên quan đến quyền lợi của mỗi bên, trừ trường hợp đặc biệt nhưng không quá 30 ngày.",
+    "requires_refusal": false
+  },
+  {
+    "question_id": "Q013",
+    "question": "Điều kiện và mức chi trả trợ cấp thôi việc cho người lao động được quy định như thế nào?",
+    "category": "single_article",
+    "gold_sources": [
+      {
+        "document_id": "BLLD_2019",
+        "article_number": "Điều 46",
+        "chunk_ids": [
+          "BLLD_2019_Điều46_66"
+        ]
+      }
+    ],
+    "reference_answer": "Căn cứ Điều 46 Bộ luật Lao động 2019, khi hợp đồng lao động chấm dứt theo quy định, người sử dụng lao động có trách nhiệm trả trợ cấp thôi việc cho người lao động đã làm việc thường xuyên cho mình từ đủ 12 tháng trở lên, mỗi năm làm việc được trợ cấp một nửa tháng tiền lương, trừ trường hợp đủ điều kiện hưởng lương hưu hoặc người lao động tự ý bỏ việc từ 05 ngày liên tục trở lên.",
+    "requires_refusal": false
+  },
+  {
+    "question_id": "Q014",
+    "question": "Người sử dụng lao động có trách nhiệm trả trợ cấp mất việc làm cho người lao động trong trường hợp nào và mức chi trả tối thiểu là bao nhiêu?",
+    "category": "single_article",
+    "gold_sources": [
+      {
+        "document_id": "BLLD_2019",
+        "article_number": "Điều 47",
+        "chunk_ids": [
+          "BLLD_2019_Điều47_67"
+        ]
+      }
+    ],
+    "reference_answer": "Theo Điều 47 Bộ luật Lao động 2019, người sử dụng lao động trả trợ cấp mất việc làm cho người lao động đã làm việc thường xuyên cho mình từ đủ 12 tháng trở lên mà bị mất việc làm do thay đổi cơ cấu, công nghệ hoặc vì lý do kinh tế; chia, tách, hợp nhất, sáp nhập... Cứ mỗi năm làm việc trả 01 tháng tiền lương nhưng ít nhất bằng 02 tháng tiền lương.",
+    "requires_refusal": false
+  },
+  {
+    "question_id": "Q015",
+    "question": "Điều kiện để lao động là công dân nước ngoài vào làm việc tại Việt Nam là gì?",
+    "category": "single_article",
+    "gold_sources": [
+      {
+        "document_id": "BLLD_2019",
+        "article_number": "Điều 151",
+        "chunk_ids": [
+          "BLLD_2019_Điều151_Khoản1_199",
+          "BLLD_2019_Điều151_Khoản2_200"
+        ]
+      }
+    ],
+    "reference_answer": "Căn cứ theo Điều 151 Bộ luật Lao động 2019, lao động là công dân nước ngoài làm việc tại Việt Nam phải đáp ứng: đủ 18 tuổi trở lên và có năng lực hành vi dân sự đầy đủ; có trình độ chuyên môn, kỹ thuật, tay nghề, kinh nghiệm làm việc; có đủ sức khỏe theo quy định; không phải là người đang trong thời gian chấp hành hình phạt hoặc chưa được xóa án tích; có giấy phép lao động do cơ quan nhà nước có thẩm quyền cấp, trừ trường hợp được miễn.",
+    "requires_refusal": false
+  },
+  {
+    "question_id": "Q016",
+    "question": "Giờ làm việc ban đêm được tính từ mấy giờ đến mấy giờ?",
+    "category": "single_article",
+    "gold_sources": [
+      {
+        "document_id": "BLLD_2019",
+        "article_number": "Điều 106",
+        "chunk_ids": [
+          "BLLD_2019_Điều106_140"
+        ]
+      }
+    ],
+    "reference_answer": "Theo quy định tại Điều 106 Bộ luật Lao động 2019, giờ làm việc ban đêm được tính từ 22 giờ đến 06 giờ sáng ngày hôm sau.",
+    "requires_refusal": false
+  },
+  {
+    "question_id": "Q017",
+    "question": "Các trường hợp tạm hoãn thực hiện hợp đồng lao động theo quy định của pháp luật?",
+    "category": "single_article",
+    "gold_sources": [
+      {
+        "document_id": "BLLD_2019",
+        "article_number": "Điều 30",
+        "chunk_ids": [
+          "BLLD_2019_Điều30_41"
+        ]
+      }
+    ],
+    "reference_answer": "Căn cứ theo Điều 30 Bộ luật Lao động 2019, các trường hợp tạm hoãn thực hiện hợp đồng lao động bao gồm: a) Người lao động thực hiện nghĩa vụ quân sự; b) Người lao động bị tạm giữ, tạm giam; c) Người lao động phải chấp hành quyết định áp dụng biện pháp đưa vào trường giáo dưỡng, cơ sở cai nghiện; d) Lao động nữ mang thai theo quy định tại Điều 138; đ) Người lao động được bổ nhiệm làm người quản lý doanh nghiệp nhà nước; e) Người lao động thực hiện nghĩa vụ tham gia Dân quân tự vệ; g) Các trường hợp khác do hai bên thỏa thuận.",
+    "requires_refusal": false
+  },
+  {
+    "question_id": "Q018",
+    "question": "Có những hình thức xử lý kỷ luật lao động nào được pháp luật quy định?",
+    "category": "single_article",
+    "gold_sources": [
+      {
+        "document_id": "BLLD_2019",
+        "article_number": "Điều 124",
+        "chunk_ids": [
+          "BLLD_2019_Điều124_166"
+        ]
+      }
+    ],
+    "reference_answer": "Theo quy định tại Điều 124 Bộ luật Lao động 2019, các hình thức xử lý kỷ luật lao động gồm: 1. Khiển trách; 2. Kéo dài thời hạn nâng lương không quá 06 tháng; 3. Cách chức; 4. Sa thải.",
+    "requires_refusal": false
+  },
+  {
+    "question_id": "Q019",
+    "question": "Phân loại các loại hợp đồng lao động và hiệu lực của phụ lục hợp đồng lao động được quy định như thế nào?",
+    "category": "single_doc_multi_chunk",
+    "gold_sources": [
+      {
+        "document_id": "BLLD_2019",
+        "article_number": "Điều 20",
+        "chunk_ids": [
+          "BLLD_2019_Điều20_Khoản1_28",
+          "BLLD_2019_Điều20_Khoản2_29"
+        ]
+      },
+      {
+        "document_id": "BLLD_2019",
+        "article_number": "Điều 22",
+        "chunk_ids": [
+          "BLLD_2019_Điều22_32"
+        ]
+      }
+    ],
+    "reference_answer": "Căn cứ Điều 20 Bộ luật Lao động 2019, hợp đồng lao động được giao kết theo 02 loại: hợp đồng lao động không xác định thời hạn và hợp đồng lao động xác định thời hạn (không quá 36 tháng). Theo Điều 22 Bộ luật Lao động 2019, phụ lục hợp đồng lao động là một bộ phận của hợp đồng lao động và có hiệu lực như hợp đồng lao động, quy định chi tiết, sửa đổi, bổ sung một số điều khoản của hợp đồng lao động nhưng không được sửa đổi thời hạn của hợp đồng lao động.",
+    "requires_refusal": false
+  },
+  {
+    "question_id": "Q020",
+    "question": "Quy định về thời gian thử việc tối đa đối với các loại công việc và mức tiền lương trong thời gian thử việc?",
+    "category": "single_doc_multi_chunk",
+    "gold_sources": [
+      {
+        "document_id": "BLLD_2019",
+        "article_number": "Điều 25",
+        "chunk_ids": [
+          "BLLD_2019_Điều25_35"
+        ]
+      },
+      {
+        "document_id": "BLLD_2019",
+        "article_number": "Điều 26",
+        "chunk_ids": [
+          "BLLD_2019_Điều26_36"
+        ]
+      }
+    ],
+    "reference_answer": "Theo Điều 25 Bộ luật Lao động 2019, thời gian thử việc do hai bên thỏa thuận nhưng chỉ được thử việc một lần và không quá: 180 ngày đối với người quản lý doanh nghiệp; 60 ngày đối với công việc có chức danh nghề nghiệp cần trình độ chuyên môn, kỹ thuật từ cao đẳng trở lên; 30 ngày đối với công việc cần trình độ trung cấp; 03 ngày làm việc đối với công việc khác. Theo Điều 26, tiền lương của người lao động trong thời gian thử việc do hai bên thỏa thuận nhưng ít nhất phải bằng 85% mức lương của công việc đó.",
+    "requires_refusal": false
+  },
+  {
+    "question_id": "Q021",
+    "question": "Điều kiện để người sử dụng lao động được tổ chức làm thêm giờ và các trường hợp được làm thêm đến 300 giờ trong một năm?",
+    "category": "single_doc_multi_chunk",
+    "gold_sources": [
+      {
+        "document_id": "BLLD_2019",
+        "article_number": "Điều 107",
+        "chunk_ids": [
+          "BLLD_2019_Điều107_Khoản1_141",
+          "BLLD_2019_Điều107_Khoản2_142",
+          "BLLD_2019_Điều107_Khoản3_143"
+        ]
+      },
+      {
+        "document_id": "BLLD_2019",
+        "article_number": "Điều 108",
+        "chunk_ids": [
+          "BLLD_2019_Điều108_144"
+        ]
+      }
+    ],
+    "reference_answer": "Theo Điều 107 Bộ luật Lao động 2019, người sử dụng lao động được sử dụng người lao động làm thêm giờ khi có sự đồng ý của người lao động; bảo đảm số giờ làm thêm không quá 50% số giờ làm việc bình thường trong ngày, không quá 40 giờ trong tháng và không quá 200 giờ trong năm, trừ một số trường hợp đặc biệt được làm thêm không quá 300 giờ trong năm. Theo Điều 108, người sử dụng lao động có quyền yêu cầu làm thêm giờ vào bất kỳ ngày nào mà không bị giới hạn số giờ làm thêm khi thực hiện lệnh động viên, ứng phó thiên tai, hỏa hoạn, dịch bệnh hoặc bảo vệ tính mạng con người.",
+    "requires_refusal": false
+  },
+  {
+    "question_id": "Q022",
+    "question": "Nguyên tắc xử lý kỷ luật lao động và trình tự, thủ tục tiến hành xử lý kỷ luật lao động?",
+    "category": "single_doc_multi_chunk",
+    "gold_sources": [
+      {
+        "document_id": "BLLD_2019",
+        "article_number": "Điều 122",
+        "chunk_ids": [
+          "BLLD_2019_Điều122_Khoản1_162",
+          "BLLD_2019_Điều122_Khoản2_163",
+          "BLLD_2019_Điều122_Khoản4_164"
+        ]
+      },
+      {
+        "document_id": "BLLD_2019",
+        "article_number": "Điều 123",
+        "chunk_ids": [
+          "BLLD_2019_Điều123_165"
+        ]
+      }
+    ],
+    "reference_answer": "Căn cứ Điều 122 Bộ luật Lao động 2019, người sử dụng lao động phải chứng minh được lỗi của người lao động; phải có sự tham gia của tổ chức đại diện người lao động; người lao động phải có mặt và có quyền tự bào chữa; không áp dụng nhiều hình thức kỷ luật cho một vi phạm. Theo Điều 123, thời hiệu xử lý kỷ luật lao động là 06 tháng kể từ ngày xảy ra hành vi vi phạm, trường hợp vi phạm liên quan trực tiếp đến tài chính, tài sản thì thời hiệu tối đa là 12 tháng.",
+    "requires_refusal": false
+  },
+  {
+    "question_id": "Q023",
+    "question": "Thời gian nghỉ trong giờ làm việc và nghỉ chuyển ca của người lao động được quy định như thế nào?",
+    "category": "single_doc_multi_chunk",
+    "gold_sources": [
+      {
+        "document_id": "BLLD_2019",
+        "article_number": "Điều 109",
+        "chunk_ids": [
+          "BLLD_2019_Điều109_145"
+        ]
+      },
+      {
+        "document_id": "BLLD_2019",
+        "article_number": "Điều 110",
+        "chunk_ids": [
+          "BLLD_2019_Điều110_146"
+        ]
+      }
+    ],
+    "reference_answer": "Theo Điều 109 Bộ luật Lao động 2019, người lao động làm việc theo ca từ 06 giờ trở lên thì được nghỉ giữa giờ ít nhất 30 phút liên tục, làm việc ban đêm được nghỉ ít nhất 45 phút liên tục; trường hợp làm việc theo ca liên tục từ 06 giờ trở lên thì thời gian nghỉ giữa giờ được tính vào giờ làm việc. Theo Điều 110, người lao động làm việc theo ca được nghỉ ít nhất 12 giờ trước khi chuyển sang ca làm việc khác.",
+    "requires_refusal": false
+  },
+  {
+    "question_id": "Q024",
+    "question": "Người sử dụng lao động được tạm thời chuyển người lao động làm công việc khác so với hợp đồng lao động trong trường hợp nào và quyền lợi của người lao động ra sao?",
+    "category": "single_doc_multi_chunk",
+    "gold_sources": [
+      {
+        "document_id": "BLLD_2019",
+        "article_number": "Điều 29",
+        "chunk_ids": [
+          "BLLD_2019_Điều29_Khoản1_39",
+          "BLLD_2019_Điều29_Khoản2_40"
+        ]
+      }
+    ],
+    "reference_answer": "Theo Điều 29 Bộ luật Lao động 2019, khi gặp khó khăn đột xuất do thiên tai, hỏa hoạn, dịch bệnh nguy hiểm hoặc do nhu cầu sản xuất, kinh doanh, người sử dụng lao động được quyền tạm thời chuyển người lao động làm công việc khác nhưng không được quá 60 ngày làm việc cộng dồn trong 01 năm, trừ khi có thỏa thuận bằng văn bản. Người lao động được trả lương theo công việc mới; nếu tiền lương công việc mới thấp hơn công việc cũ thì được giữ nguyên mức lương cũ trong 30 ngày làm việc; tiền lương công việc mới ít nhất bằng 85% mức lương cũ nhưng không thấp hơn lương tối thiểu.",
+    "requires_refusal": false
+  },
+  {
+    "question_id": "Q025",
+    "question": "Quyền và nghĩa vụ cơ bản của người lao động và người sử dụng lao động được quy định tại Bộ luật Lao động?",
+    "category": "single_doc_multi_chunk",
+    "gold_sources": [
+      {
+        "document_id": "BLLD_2019",
+        "article_number": "Điều 5",
+        "chunk_ids": [
+          "BLLD_2019_Điều5_Khoản1_9",
+          "BLLD_2019_Điều5_Khoản2_10"
+        ]
+      },
+      {
+        "document_id": "BLLD_2019",
+        "article_number": "Điều 6",
+        "chunk_ids": [
+          "BLLD_2019_Điều6_Khoản1_11",
+          "BLLD_2019_Điều6_Khoản2_12"
+        ]
+      }
+    ],
+    "reference_answer": "Theo Điều 5 Bộ luật Lao động 2019, người lao động có quyền làm việc, tự do lựa chọn việc làm, hưởng lương phù hợp, từ chối làm việc nếu có nguy cơ rõ ràng đe dọa tính mạng, thành lập tổ chức đại diện; có nghĩa vụ thực hiện hợp đồng, chấp hành kỷ luật lao động. Theo Điều 6, người sử dụng lao động có quyền tuyển dụng, bố trí, quản lý lao động, khen thưởng, xử lý kỷ luật; có nghĩa vụ thực hiện hợp đồng lao động, tôn trọng danh dự, nhân phẩm của người lao động và bảo đảm an toàn vệ sinh lao động.",
+    "requires_refusal": false
+  },
+  {
+    "question_id": "Q026",
+    "question": "Trách nhiệm bồi thường thiệt hại và trình tự bồi thường thiệt hại do làm hư hỏng dụng cụ, thiết bị?",
+    "category": "single_doc_multi_chunk",
+    "gold_sources": [
+      {
+        "document_id": "BLLD_2019",
+        "article_number": "Điều 129",
+        "chunk_ids": [
+          "BLLD_2019_Điều129_172"
+        ]
+      },
+      {
+        "document_id": "BLLD_2019",
+        "article_number": "Điều 130",
+        "chunk_ids": [
+          "BLLD_2019_Điều130_173"
+        ]
+      }
+    ],
+    "reference_answer": "Theo Điều 129 Bộ luật Lao động 2019, người lao động làm hư hỏng dụng cụ, thiết bị phải bồi thường theo quy định; nếu gây thiệt hại không nghiêm trọng do sơ suất với giá trị không quá 10 tháng lương tối thiểu vùng thì mức bồi thường nhiều nhất là 03 tháng tiền lương và bị khấu trừ hằng tháng. Theo Điều 130, việc xem xét, quyết định mức bồi thường thiệt hại phải căn cứ vào lỗi, mức độ thiệt hại thực tế và hoàn cảnh thực tế gia đình, nhân thân của người lao động.",
+    "requires_refusal": false
+  },
+  {
+    "question_id": "Q027",
+    "question": "Lộ trình điều chỉnh tuổi nghỉ hưu của người lao động trong điều kiện lao động bình thường theo Nghị định 135/2020/NĐ-CP?",
+    "category": "single_doc_multi_chunk",
+    "gold_sources": [
+      {
+        "document_id": "ND_135_2020",
+        "article_number": "Điều 4",
+        "chunk_ids": [
+          "ND_135_2020_Điều4_Khoản1_3",
+          "ND_135_2020_Điều4_Khoản2_4"
+        ]
+      }
+    ],
+    "reference_answer": "Theo Điều 4 Nghị định 135/2020/NĐ-CP, kể từ ngày 01/01/2021, tuổi nghỉ hưu của người lao động trong điều kiện bình thường là đủ 60 tuổi 03 tháng đối với lao động nam và đủ 55 tuổi 04 tháng đối với lao động nữ; sau đó, cứ mỗi năm tăng thêm 03 tháng đối với lao động nam cho đến khi đủ 62 tuổi vào năm 2028 và cứ mỗi năm tăng thêm 04 tháng đối với lao động nữ cho đến khi đủ 60 tuổi vào năm 2035.",
+    "requires_refusal": false
+  },
+  {
+    "question_id": "Q028",
+    "question": "Các trường hợp người lao động có thể nghỉ hưu ở tuổi thấp hơn tuổi nghỉ hưu trong điều kiện lao động bình thường theo Nghị định 135/2020/NĐ-CP?",
+    "category": "single_doc_multi_chunk",
+    "gold_sources": [
+      {
+        "document_id": "ND_135_2020",
+        "article_number": "Điều 5",
+        "chunk_ids": [
+          "ND_135_2020_Điều5_Khoản1_5",
+          "ND_135_2020_Điều5_Khoản2_6"
+        ]
+      }
+    ],
+    "reference_answer": "Theo Điều 5 Nghị định 135/2020/NĐ-CP, người lao động có thể nghỉ hưu ở tuổi thấp hơn nhưng không quá 05 tuổi so với tuổi nghỉ hưu trong điều kiện bình thường nếu thuộc các trường hợp: có từ đủ 15 năm trở lên làm nghề, công việc nặng nhọc, độc hại, nguy hiểm hoặc đặc biệt nặng nhọc, độc hại, nguy hiểm; có từ đủ 15 năm trở lên làm việc ở vùng có điều kiện kinh tế - xã hội đặc biệt khó khăn; bị suy giảm khả năng lao động từ 61% trở lên.",
+    "requires_refusal": false
+  },
+  {
+    "question_id": "Q029",
+    "question": "Quy định về thời hiệu và thành phần tham dự phiên họp xử lý kỷ luật lao động theo Nghị định 145/2020/NĐ-CP?",
+    "category": "single_doc_multi_chunk",
+    "gold_sources": [
+      {
+        "document_id": "ND_145_2020",
+        "article_number": "Điều 70",
+        "chunk_ids": [
+          "ND_145_2020_Điều70_Khoản1_145",
+          "ND_145_2020_Điều70_Khoản2_P1_146",
+          "ND_145_2020_Điều70_Khoản2_P2_147",
+          "ND_145_2020_Điều70_Khoản3_148",
+          "ND_145_2020_Điều70_Khoản4_149"
+        ]
+      }
+    ],
+    "reference_answer": "Theo Điều 70 Nghị định 145/2020/NĐ-CP, khi phát hiện người lao động có hành vi vi phạm kỷ luật lao động tại thời điểm xảy ra hành vi, người sử dụng lao động tiến hành lập biên bản vi phạm. Người sử dụng lao động thông báo trước ít nhất 05 ngày làm việc về thời gian, địa điểm tiến hành họp xử lý kỷ luật cho tổ chức đại diện người lao động, người lao động hoặc người đại diện của người lao động.",
+    "requires_refusal": false
+  },
+  {
+    "question_id": "Q030",
+    "question": "Điều kiện và hồ sơ đề nghị cấp giấy phép lao động cho người nước ngoài theo Nghị định 152/2020/NĐ-CP?",
+    "category": "single_doc_multi_chunk",
+    "gold_sources": [
+      {
+        "document_id": "ND_152_2020",
+        "article_number": "Điều 8",
+        "chunk_ids": [
+          "ND_152_2020_Điều8_Khoản1_24",
+          "ND_152_2020_Điều8_Khoản2_25",
+          "ND_152_2020_Điều8_Khoản3_26",
+          "ND_152_2020_Điều8_Khoản4_27"
+        ]
+      },
+      {
+        "document_id": "ND_152_2020",
+        "article_number": "Điều 9",
+        "chunk_ids": [
+          "ND_152_2020_Điều9_Khoản1_28",
+          "ND_152_2020_Điều9_Khoản3_29",
+          "ND_152_2020_Điều9_Khoản4_P1_30",
+          "ND_152_2020_Điều9_Khoản4_P2_31",
+          "ND_152_2020_Điều9_Khoản4_P3_32",
+          "ND_152_2020_Điều9_Khoản6_33",
+          "ND_152_2020_Điều9_Khoản8_P1_34",
+          "ND_152_2020_Điều9_Khoản8_P2_35",
+          "ND_152_2020_Điều9_Khoản9_36",
+          "ND_152_2020_Điều9_Khoản10_37"
+        ]
+      }
+    ],
+    "reference_answer": "Căn cứ Điều 8 và Điều 9 Nghị định 152/2020/NĐ-CP, người lao động nước ngoài phải đáp ứng đủ điều kiện theo quy định tại Điều 151 BLLĐ. Hồ sơ đề nghị cấp giấy phép lao động gồm văn bản đề nghị của người sử dụng lao động, giấy chứng nhận sức khỏe, phiếu lý lịch tư pháp, văn bản chứng minh là nhà quản lý, giám đốc điều hành, chuyên gia hoặc lao động kỹ thuật, 02 ảnh màu và văn bản chấp thuận nhu cầu sử dụng người lao động nước ngoài.",
+    "requires_refusal": false
+  },
+  {
+    "question_id": "Q031",
+    "question": "Người sử dụng lao động không trả hoặc trả không đủ trợ cấp thôi việc theo Bộ luật Lao động bị xử phạt vi phạm hành chính như thế nào theo Nghị định 12/2022/NĐ-CP?",
+    "category": "multi_document",
+    "gold_sources": [
+      {
+        "document_id": "BLLD_2019",
+        "article_number": "Điều 46",
+        "chunk_ids": [
+          "BLLD_2019_Điều46_66"
+        ]
+      },
+      {
+        "document_id": "ND_12_2022",
+        "article_number": "Điều 12",
+        "chunk_ids": [
+          "ND_12_2022_Điều12_Khoản1_29",
+          "ND_12_2022_Điều12_Khoản2_P1_30",
+          "ND_12_2022_Điều12_Khoản3_P1_31",
+          "ND_12_2022_Điều12_Khoản3_P2_32"
+        ]
+      }
+    ],
+    "reference_answer": "Căn cứ Điều 46 Bộ luật Lao động 2019, người sử dụng lao động có trách nhiệm trả trợ cấp thôi việc cho người lao động đủ điều kiện. Theo khoản 2 Điều 12 Nghị định 12/2022/NĐ-CP, hành vi không trả hoặc trả không đủ tiền trợ cấp thôi việc hoặc trợ cấp mất việc làm bị phạt tiền từ 1.000.000 đồng đến 40.000.000 đồng tùy theo số lượng người lao động bị vi phạm, đồng thời buộc phải trả đủ tiền trợ cấp cộng với khoản tiền lãi.",
+    "requires_refusal": false
+  },
+  {
+    "question_id": "Q032",
+    "question": "Thời giờ làm việc đối với người chưa đủ 15 tuổi theo Bộ luật Lao động và Thông tư 09/2020/TT-BLĐTBXH được quy định như thế nào?",
+    "category": "multi_document",
+    "gold_sources": [
+      {
+        "document_id": "BLLD_2019",
+        "article_number": "Điều 146",
+        "chunk_ids": [
+          "BLLD_2019_Điều146_193"
+        ]
+      },
+      {
+        "document_id": "TT_09_2020",
+        "article_number": "Điều 3",
+        "chunk_ids": [
+          "TT_09_2020_Điều3_Khoản1_2",
+          "TT_09_2020_Điều3_Khoản3_3",
+          "TT_09_2020_Điều3_Khoản5_4",
+          "TT_09_2020_Điều3_Khoản6_5"
+        ]
+      }
+    ],
+    "reference_answer": "Căn cứ Điều 146 Bộ luật Lao động 2019, thời giờ làm việc của người chưa đủ 15 tuổi không quá 04 giờ trong 01 ngày và không quá 20 giờ trong 01 tuần; không được làm thêm giờ, làm việc vào ban đêm. Thông tư 09/2020/TT-BLĐTBXH tại Điều 3 hướng dẫn chi tiết về việc bố trí thời giờ làm việc đối với người chưa đủ 15 tuổi phải không ảnh hưởng đến thời gian học tập của trẻ em.",
+    "requires_refusal": false
+  },
+  {
+    "question_id": "Q033",
+    "question": "Các trường hợp giảm tuổi nghỉ hưu do làm nghề, công việc nặng nhọc, độc hại, nguy hiểm theo Nghị định 135/2020/NĐ-CP và Thông tư 11/2020/TT-BLĐTBXH?",
+    "category": "multi_document",
+    "gold_sources": [
+      {
+        "document_id": "ND_135_2020",
+        "article_number": "Điều 5",
+        "chunk_ids": [
+          "ND_135_2020_Điều5_Khoản1_5",
+          "ND_135_2020_Điều5_Khoản2_6"
+        ]
+      },
+      {
+        "document_id": "TT_11_2020",
+        "article_number": "Điều 1",
+        "chunk_ids": [
+          "TT_11_2020_Điều1_0"
+        ]
+      }
+    ],
+    "reference_answer": "Theo Điều 5 Nghị định 135/2020/NĐ-CP, người lao động có từ đủ 15 năm trở lên làm nghề, công việc nặng nhọc, độc hại, nguy hiểm hoặc đặc biệt nặng nhọc, độc hại, nguy hiểm có thể nghỉ hưu ở tuổi thấp hơn tối đa 05 tuổi so với tuổi nghỉ hưu bình thường. Thông tư 11/2020/TT-BLĐTBXH ban hành danh mục chi tiết các nghề, công việc nặng nhọc, độc hại, nguy hiểm và đặc biệt nặng nhọc, độc hại, nguy hiểm làm căn cứ xác định.",
+    "requires_refusal": false
+  },
+  {
+    "question_id": "Q034",
+    "question": "Nội dung bắt buộc phải có trong hợp đồng lao động theo Bộ luật Lao động 2019 và hướng dẫn chi tiết tại Thông tư 10/2020/TT-BLĐTBXH?",
+    "category": "multi_document",
+    "gold_sources": [
+      {
+        "document_id": "BLLD_2019",
+        "article_number": "Điều 21",
+        "chunk_ids": [
+          "BLLD_2019_Điều21_Khoản1_30",
+          "BLLD_2019_Điều21_Khoản2_31"
+        ]
+      },
+      {
+        "document_id": "TT_10_2020",
+        "article_number": "Điều 3",
+        "chunk_ids": [
+          "TT_10_2020_Điều3_Khoản1_P1_2",
+          "TT_10_2020_Điều3_Khoản1_P2_3",
+          "TT_10_2020_Điều3_Khoản2_4",
+          "TT_10_2020_Điều3_Khoản3_5",
+          "TT_10_2020_Điều3_Khoản4_6",
+          "TT_10_2020_Điều3_Khoản5_P1_7",
+          "TT_10_2020_Điều3_Khoản5_P2_8",
+          "TT_10_2020_Điều3_Khoản6_9",
+          "TT_10_2020_Điều3_Khoản8_10"
+        ]
+      }
+    ],
+    "reference_answer": "Theo Điều 21 Bộ luật Lao động 2019, hợp đồng lao động phải có các nội dung chủ yếu: tên, địa chỉ người sử dụng lao động; họ tên, thông tin người lao động; công việc và địa điểm làm việc; thời hạn hợp đồng; mức lương; chế độ nâng lương; thời giờ làm việc; trang bị bảo hộ; BHXH, BHYT. Thông tư 10/2020/TT-BLĐTBXH tại Điều 3 hướng dẫn cụ thể cách ghi chi tiết mức lương theo công việc, các khoản phụ cấp lương và các khoản bổ sung khác.",
+    "requires_refusal": false
+  },
+  {
+    "question_id": "Q035",
+    "question": "Quy định về thời giờ làm việc, thời giờ nghỉ ngơi đối với người lao động làm công việc đặc biệt trong lĩnh vực dầu khí theo Thông tư 20/2023/TT-BCT và Bộ luật Lao động?",
+    "category": "multi_document",
+    "gold_sources": [
+      {
+        "document_id": "BLLD_2019",
+        "article_number": "Điều 116",
+        "chunk_ids": [
+          "BLLD_2019_Điều116_154"
+        ]
+      },
+      {
+        "document_id": "TT_20_2023",
+        "article_number": "Điều 4",
+        "chunk_ids": [
+          "TT_20_2023_Điều4_3"
+        ]
+      }
+    ],
+    "reference_answer": "Theo Điều 116 Bộ luật Lao động 2019, đối với các công việc có tính chất đặc biệt trong lĩnh vực thăm dò, khai thác dầu khí trên biển, thời giờ làm việc do các bộ quản lý ngành quy định sau khi thống nhất với Bộ LĐTBXH. Thông tư 20/2023/TT-BCT tại Điều 4 quy định thời gian làm việc theo ca, phiên làm việc không quá 12 giờ trong một ngày và tối đa không quá 28 ngày cho một phiên làm việc trên biển.",
+    "requires_refusal": false
+  },
+  {
+    "question_id": "Q036",
+    "question": "Người sử dụng lao động yêu cầu thử việc đối với hợp đồng lao động dưới 01 tháng bị xử phạt như thế nào theo Nghị định 12/2022/NĐ-CP đối chiếu Bộ luật Lao động?",
+    "category": "multi_document",
+    "gold_sources": [
+      {
+        "document_id": "BLLD_2019",
+        "article_number": "Điều 24",
+        "chunk_ids": [
+          "BLLD_2019_Điều24_34"
+        ]
+      },
+      {
+        "document_id": "ND_12_2022",
+        "article_number": "Điều 10",
+        "chunk_ids": [
+          "ND_12_2022_Điều10_23"
+        ]
+      }
+    ],
+    "reference_answer": "Căn cứ khoản 3 Điều 24 Bộ luật Lao động 2019, không áp dụng thử việc đối với người lao động giao kết hợp đồng lao động có thời hạn dưới 01 tháng. Theo điểm a khoản 1 Điều 10 Nghị định 12/2022/NĐ-CP, người sử dụng lao động có hành vi yêu cầu thử việc đối với người lao động giao kết hợp đồng lao động có thời hạn dưới 01 tháng bị phạt tiền từ 500.000 đồng đến 1.000.000 đồng.",
+    "requires_refusal": false
+  },
+  {
+    "question_id": "Q037",
+    "question": "Thủ tục tiến hành xử lý kỷ luật lao động sa thải theo Bộ luật Lao động 2019 và Nghị định 145/2020/NĐ-CP?",
+    "category": "multi_document",
+    "gold_sources": [
+      {
+        "document_id": "BLLD_2019",
+        "article_number": "Điều 122",
+        "chunk_ids": [
+          "BLLD_2019_Điều122_Khoản1_162",
+          "BLLD_2019_Điều122_Khoản2_163",
+          "BLLD_2019_Điều122_Khoản4_164"
+        ]
+      },
+      {
+        "document_id": "ND_145_2020",
+        "article_number": "Điều 70",
+        "chunk_ids": [
+          "ND_145_2020_Điều70_Khoản1_145",
+          "ND_145_2020_Điều70_Khoản2_P1_146",
+          "ND_145_2020_Điều70_Khoản2_P2_147",
+          "ND_145_2020_Điều70_Khoản3_148",
+          "ND_145_2020_Điều70_Khoản4_149"
+        ]
+      }
+    ],
+    "reference_answer": "Căn cứ Điều 122 Bộ luật Lao động 2019 và Điều 70 Nghị định 145/2020/NĐ-CP, người sử dụng lao động khi xử lý kỷ luật sa thải phải thông báo nội dung, thời gian, địa điểm cuộc họp trước ít nhất 05 ngày làm việc cho các thành phần bắt buộc (tổ chức đại diện, người lao động); cuộc họp phải được lập biên bản và thông qua trước khi kết thúc; quyết định sa thải phải được ban hành trong thời hiệu quy định.",
+    "requires_refusal": false
+  },
+  {
+    "question_id": "Q038",
+    "question": "Các trường hợp người lao động nước ngoài không thuộc diện cấp giấy phép lao động theo Bộ luật Lao động và Nghị định 152/2020/NĐ-CP?",
+    "category": "multi_document",
+    "gold_sources": [
+      {
+        "document_id": "BLLD_2019",
+        "article_number": "Điều 154",
+        "chunk_ids": [
+          "BLLD_2019_Điều154_203"
+        ]
+      },
+      {
+        "document_id": "ND_152_2020",
+        "article_number": "Điều 7",
+        "chunk_ids": [
+          "ND_152_2020_Điều7_Khoản1_19",
+          "ND_152_2020_Điều7_Khoản4_20",
+          "ND_152_2020_Điều7_Khoản5_21",
+          "ND_152_2020_Điều7_Khoản7_22",
+          "ND_152_2020_Điều7_Khoản10_23"
+        ]
+      }
+    ],
+    "reference_answer": "Căn cứ Điều 154 Bộ luật Lao động 2019 và Điều 7 Nghị định 152/2020/NĐ-CP, người lao động nước ngoài không thuộc diện cấp giấy phép lao động bao gồm: chủ sở hữu hoặc thành viên góp vốn của công ty TNHH có giá trị vốn góp theo quy định; là Trưởng văn phòng đại diện, dự án của tổ chức quốc tế; vào Việt Nam với thời hạn dưới 03 tháng để thực hiện chào bán dịch vụ; vào Việt Nam làm việc tại vị trí chuyên gia, nhà quản lý dưới 30 ngày và không quá 03 lần trong 01 năm.",
+    "requires_refusal": false
+  },
+  {
+    "question_id": "Q039",
+    "question": "Mức xử phạt hành vi vi phạm quy định về thời giờ làm thêm vượt quá quy định theo Nghị định 12/2022/NĐ-CP đối chiếu Bộ luật Lao động?",
+    "category": "multi_document",
+    "gold_sources": [
+      {
+        "document_id": "BLLD_2019",
+        "article_number": "Điều 107",
+        "chunk_ids": [
+          "BLLD_2019_Điều107_Khoản1_141",
+          "BLLD_2019_Điều107_Khoản2_142",
+          "BLLD_2019_Điều107_Khoản3_143"
+        ]
+      },
+      {
+        "document_id": "ND_12_2022",
+        "article_number": "Điều 18",
+        "chunk_ids": [
+          "ND_12_2022_Điều18_Khoản1_55",
+          "ND_12_2022_Điều18_Khoản2_56",
+          "ND_12_2022_Điều18_Khoản3_57",
+          "ND_12_2022_Điều18_Khoản4_58"
+        ]
+      }
+    ],
+    "reference_answer": "Theo Điều 107 Bộ luật Lao động 2019, số giờ làm thêm không quá 40 giờ trong 01 tháng và 200 giờ trong 01 năm (trừ trường hợp đặc biệt không quá 300 giờ). Căn cứ khoản 3, khoản 4 Điều 18 Nghị định 12/2022/NĐ-CP, người sử dụng lao động huy động người lao động làm thêm giờ vượt quá số giờ quy định bị phạt tiền từ 20.000.000 đồng đến 75.000.000 đồng tùy theo mức độ vi phạm.",
+    "requires_refusal": false
+  },
+  {
+    "question_id": "Q040",
+    "question": "Quy định về bảo vệ thai sản và chế độ làm việc rút ngắn cho lao động nữ nuôi con nhỏ theo Bộ luật Lao động và Nghị định 145/2020/NĐ-CP?",
+    "category": "multi_document",
+    "gold_sources": [
+      {
+        "document_id": "BLLD_2019",
+        "article_number": "Điều 137",
+        "chunk_ids": [
+          "BLLD_2019_Điều137_Khoản1_180",
+          "BLLD_2019_Điều137_Khoản2_181",
+          "BLLD_2019_Điều137_Khoản3_182"
+        ]
+      },
+      {
+        "document_id": "ND_145_2020",
+        "article_number": "Điều 80",
+        "chunk_ids": [
+          "ND_145_2020_Điều80_Khoản1_164",
+          "ND_145_2020_Điều80_Khoản3_165",
+          "ND_145_2020_Điều80_Khoản4_166",
+          "ND_145_2020_Điều80_Khoản5_167"
+        ]
+      }
+    ],
+    "reference_answer": "Theo Điều 137 Bộ luật Lao động 2019 và Điều 80 Nghị định 145/2020/NĐ-CP, lao động nữ trong thời gian nuôi con dưới 12 tháng tuổi được nghỉ mỗi ngày 60 phút trong thời giờ làm việc để cho con bú, vắt sữa, nghỉ ngơi mà vẫn được hưởng đủ tiền lương theo hợp đồng lao động. Người sử dụng lao động không được sa thải hoặc đơn phương chấm dứt hợp đồng lao động vì lý do kết hôn, mang thai, nghỉ thai sản hoặc nuôi con dưới 12 tháng tuổi.",
+    "requires_refusal": false
+  },
+  {
+    "question_id": "Q041",
+    "question": "Danh mục nơi làm việc cấm sử dụng người lao động từ 15 tuổi đến chưa đủ 18 tuổi theo Bộ luật Lao động và Thông tư 09/2020/TT-BLĐTBXH?",
+    "category": "multi_document",
+    "gold_sources": [
+      {
+        "document_id": "BLLD_2019",
+        "article_number": "Điều 147",
+        "chunk_ids": [
+          "BLLD_2019_Điều147_Khoản1_194",
+          "BLLD_2019_Điều147_Khoản2_195"
+        ]
+      },
+      {
+        "document_id": "TT_09_2020",
+        "article_number": "Điều 4",
+        "chunk_ids": [
+          "TT_09_2020_Điều4_Khoản1_6",
+          "TT_09_2020_Điều4_Khoản2_7"
+        ]
+      }
+    ],
+    "reference_answer": "Theo Điều 147 Bộ luật Lao động 2019, cấm sử dụng người lao động từ đủ 15 tuổi đến chưa đủ 18 tuổi làm việc ở dưới nước, dưới lòng đất, trong hang động; công trường xây dựng; cơ sở sản xuất, kinh doanh rượu, bia, vũ trường, sòng bạc. Thông tư 09/2020/TT-BLĐTBXH tại Phụ lục ban hành danh mục chi tiết các nơi làm việc gây tổn hại đến sự phát triển thể lực, trí lực, nhân cách của người chưa thành niên.",
+    "requires_refusal": false
+  },
+  {
+    "question_id": "Q042",
+    "question": "Mức xử phạt đối với hành vi phân biệt đối xử trong lao động theo Nghị định 12/2022/NĐ-CP đối chiếu quy định cấm tại Bộ luật Lao động?",
+    "category": "multi_document",
+    "gold_sources": [
+      {
+        "document_id": "BLLD_2019",
+        "article_number": "Điều 8",
+        "chunk_ids": [
+          "BLLD_2019_Điều8_14"
+        ]
+      },
+      {
+        "document_id": "ND_12_2022",
+        "article_number": "Điều 8",
+        "chunk_ids": [
+          "ND_12_2022_Điều8_Khoản1_16",
+          "ND_12_2022_Điều8_Khoản2_17",
+          "ND_12_2022_Điều8_Khoản3_18"
+        ]
+      }
+    ],
+    "reference_answer": "Căn cứ khoản 1 Điều 8 Bộ luật Lao động 2019, hành vi phân biệt đối xử trong lao động là hành vi bị nghiêm cấm. Theo điểm a khoản 2 Điều 8 Nghị định 12/2022/NĐ-CP, người sử dụng lao động có hành vi phân biệt đối xử trong lao động vì lý do giới tính, dân tộc, màu da, thành phần xã hội, tình trạng hôn nhân, tín ngưỡng, tôn giáo... bị phạt tiền từ 5.000.000 đồng đến 10.000.000 đồng.",
+    "requires_refusal": false
+  },
+  {
+    "question_id": "Q043",
+    "question": "Nghị định 70/2023/NĐ-CP sửa đổi, bổ sung quy định nào về giải trình nhu cầu sử dụng người lao động nước ngoài tại Nghị định 152/2020/NĐ-CP?",
+    "category": "cross_reference",
+    "gold_sources": [
+      {
+        "document_id": "ND_152_2020",
+        "article_number": "Điều 4",
+        "chunk_ids": [
+          "ND_152_2020_Điều4_Khoản1_12",
+          "ND_152_2020_Điều4_Khoản2_13"
+        ]
+      },
+      {
+        "document_id": "ND_70_2023",
+        "article_number": "Điều 1",
+        "chunk_ids": [
+          "ND_70_2023_Điều1_Khoản1_0",
+          "ND_70_2023_Điều1_Khoản2_P1_1",
+          "ND_70_2023_Điều1_Khoản2_P2_2",
+          "ND_70_2023_Điều1_Khoản2_P3_3",
+          "ND_70_2023_Điều1_Khoản3_4",
+          "ND_70_2023_Điều1_Khoản4_5",
+          "ND_70_2023_Điều1_Khoản5_P1_6",
+          "ND_70_2023_Điều1_Khoản5_P2_7",
+          "ND_70_2023_Điều1_Khoản5_P3_8",
+          "ND_70_2023_Điều1_Khoản5_P4_9",
+          "ND_70_2023_Điều1_Khoản6_10",
+          "ND_70_2023_Điều1_Khoản7_11",
+          "ND_70_2023_Điều1_Khoản9_12",
+          "ND_70_2023_Điều1_Khoản11_P1_13",
+          "ND_70_2023_Điều1_Khoản11_P2_14",
+          "ND_70_2023_Điều1_Khoản11_P3_15",
+          "ND_70_2023_Điều1_Khoản12_16",
+          "ND_70_2023_Điều1_Khoản13_P1_17",
+          "ND_70_2023_Điều1_Khoản13_P2_18",
+          "ND_70_2023_Điều1_Khoản13_P3_19",
+          "ND_70_2023_Điều1_Khoản14_20"
+        ]
+      }
+    ],
+    "reference_answer": "Nghị định 70/2023/NĐ-CP tại Điều 1 đã sửa đổi Điều 4 Nghị định 152/2020/NĐ-CP: trước ít nhất 15 ngày kể từ ngày dự kiến sử dụng người lao động nước ngoài, người sử dụng lao động phải báo cáo giải trình nhu cầu sử dụng người lao động nước ngoài (thay vì trước ít nhất 30 ngày như trước đây); đồng thời bổ sung quy định từ ngày 01/01/2024 phải thông báo tuyển dụng lao động Việt Nam vào các vị trí dự kiến tuyển dụng người lao động nước ngoài trên Cổng thông tin điện tử.",
+    "requires_refusal": false
+  },
+  {
+    "question_id": "Q044",
+    "question": "Dẫn chiếu quyền đơn phương chấm dứt hợp đồng lao động không cần báo trước do bị quấy rối tình dục theo Điều 35 BLLĐ và định nghĩa quấy rối tình dục theo Nghị định 145/2020/NĐ-CP?",
+    "category": "cross_reference",
+    "gold_sources": [
+      {
+        "document_id": "BLLD_2019",
+        "article_number": "Điều 35",
+        "chunk_ids": [
+          "BLLD_2019_Điều35_Khoản1_48",
+          "BLLD_2019_Điều35_Khoản2_49"
+        ]
+      },
+      {
+        "document_id": "ND_145_2020",
+        "article_number": "Điều 84",
+        "chunk_ids": [
+          "ND_145_2020_Điều84_Khoản1_173",
+          "ND_145_2020_Điều84_Khoản2_174",
+          "ND_145_2020_Điều84_Khoản3_175"
+        ]
+      }
+    ],
+    "reference_answer": "Căn cứ điểm d khoản 2 Điều 35 Bộ luật Lao động 2019, người lao động có quyền đơn phương chấm dứt hợp đồng lao động không cần báo trước nếu bị quấy rối tình dục tại nơi làm việc. Khái niệm quấy rối tình dục tại nơi làm việc được dẫn chiếu và quy định chi tiết tại Điều 84 Nghị định 145/2020/NĐ-CP là hành vi có tính chất tình dục của bất kỳ người nào đối với người khác tại nơi làm việc mà không được người đó mong muốn hoặc chấp nhận.",
+    "requires_refusal": false
+  },
+  {
+    "question_id": "Q045",
+    "question": "Quy định về thời hạn báo trước khi đơn phương chấm dứt hợp đồng lao động đối với ngành, nghề, công việc đặc thù được Chính phủ quy định chi tiết tại Nghị định 145/2020/NĐ-CP?",
+    "category": "cross_reference",
+    "gold_sources": [
+      {
+        "document_id": "BLLD_2019",
+        "article_number": "Điều 35",
+        "chunk_ids": [
+          "BLLD_2019_Điều35_Khoản1_48",
+          "BLLD_2019_Điều35_Khoản2_49"
+        ]
+      },
+      {
+        "document_id": "ND_145_2020",
+        "article_number": "Điều 7",
+        "chunk_ids": [
+          "ND_145_2020_Điều7_Khoản1_13",
+          "ND_145_2020_Điều7_Khoản2_14"
+        ]
+      }
+    ],
+    "reference_answer": "Theo điểm d khoản 1 Điều 35 Bộ luật Lao động 2019, đối với ngành, nghề, công việc đặc thù thì thời hạn báo trước được thực hiện theo quy định của Chính phủ. Dẫn chiếu Điều 7 Nghị định 145/2020/NĐ-CP, ngành nghề công việc đặc thù gồm thành viên tổ lái tàu bay, nhân viên bảo dưỡng máy bay, người quản lý doanh nghiệp... thì thời hạn báo trước ít nhất là 120 ngày đối với hợp đồng không xác định thời hạn hoặc hợp đồng từ 12 tháng trở lên; ít nhất bằng một phần tư thời hạn hợp đồng đối với hợp đồng dưới 12 tháng.",
+    "requires_refusal": false
+  },
+  {
+    "question_id": "Q046",
+    "question": "Quy định trả lương khi ngừng việc do sự cố điện, nước hoặc nguyên nhân khách quan theo Điều 99 Bộ luật Lao động 2019?",
+    "category": "cross_reference",
+    "gold_sources": [
+      {
+        "document_id": "BLLD_2019",
+        "article_number": "Điều 99",
+        "chunk_ids": [
+          "BLLD_2019_Điều99_133"
+        ]
+      }
+    ],
+    "reference_answer": "Căn cứ Điều 99 Bộ luật Lao động 2019, trường hợp phải ngừng việc do lỗi của người sử dụng lao động thì người lao động được trả đủ tiền lương theo hợp đồng lao động. Nếu do lỗi của người lao động thì người đó không được trả lương; người lao động khác trong cùng đơn vị phải ngừng việc thì được trả lương theo mức do hai bên thỏa thuận nhưng không thấp hơn mức lương tối thiểu. Nếu vì sự cố điện, nước mà không do lỗi của người sử dụng lao động hoặc do thiên tai, dịch bệnh thì tiền lương do hai bên thỏa thuận nhưng không thấp hơn lương tối thiểu trong 14 ngày đầu.",
+    "requires_refusal": false
+  },
+  {
+    "question_id": "Q047",
+    "question": "Nghị định 70/2023/NĐ-CP sửa đổi điều kiện xác định chuyên gia và lao động kỹ thuật nước ngoài tại Nghị định 152/2020/NĐ-CP như thế nào?",
+    "category": "cross_reference",
+    "gold_sources": [
+      {
+        "document_id": "ND_152_2020",
+        "article_number": "Điều 3",
+        "chunk_ids": [
+          "ND_152_2020_Điều3_Khoản1_5",
+          "ND_152_2020_Điều3_Khoản2_6",
+          "ND_152_2020_Điều3_Khoản3_7",
+          "ND_152_2020_Điều3_Khoản4_8",
+          "ND_152_2020_Điều3_Khoản6_9",
+          "ND_152_2020_Điều3_Khoản7_10",
+          "ND_152_2020_Điều3_Khoản9_11"
+        ]
+      },
+      {
+        "document_id": "ND_70_2023",
+        "article_number": "Điều 1",
+        "chunk_ids": [
+          "ND_70_2023_Điều1_Khoản1_0",
+          "ND_70_2023_Điều1_Khoản2_P1_1",
+          "ND_70_2023_Điều1_Khoản2_P2_2",
+          "ND_70_2023_Điều1_Khoản2_P3_3",
+          "ND_70_2023_Điều1_Khoản3_4",
+          "ND_70_2023_Điều1_Khoản4_5",
+          "ND_70_2023_Điều1_Khoản5_P1_6",
+          "ND_70_2023_Điều1_Khoản5_P2_7",
+          "ND_70_2023_Điều1_Khoản5_P3_8",
+          "ND_70_2023_Điều1_Khoản5_P4_9",
+          "ND_70_2023_Điều1_Khoản6_10",
+          "ND_70_2023_Điều1_Khoản7_11",
+          "ND_70_2023_Điều1_Khoản9_12",
+          "ND_70_2023_Điều1_Khoản11_P1_13",
+          "ND_70_2023_Điều1_Khoản11_P2_14",
+          "ND_70_2023_Điều1_Khoản11_P3_15",
+          "ND_70_2023_Điều1_Khoản12_16",
+          "ND_70_2023_Điều1_Khoản13_P1_17",
+          "ND_70_2023_Điều1_Khoản13_P2_18",
+          "ND_70_2023_Điều1_Khoản13_P3_19",
+          "ND_70_2023_Điều1_Khoản14_20"
+        ]
+      }
+    ],
+    "reference_answer": "Nghị định 70/2023/NĐ-CP sửa đổi khoản 3, khoản 6 Điều 3 Nghị định 152/2020/NĐ-CP theo hướng tạo điều kiện thuận lợi hơn: chuyên gia là người tốt nghiệp đại học trở lên hoặc tương đương và có ít nhất 03 năm kinh nghiệm làm việc phù hợp với vị trí công việc dự kiến làm việc tại Việt Nam (không còn bắt buộc kinh nghiệm phải đúng chuyên ngành đào tạo đại học); lao động kỹ thuật là người được đào tạo ít nhất 01 năm và có ít nhất 03 năm kinh nghiệm phù hợp với vị trí công việc.",
+    "requires_refusal": false
+  },
+  {
+    "question_id": "Q048",
+    "question": "Mối liên hệ giữa hành vi cưỡng bức lao động bị cấm theo Điều 8 BLLĐ và mức phạt hành chính theo Nghị định 12/2022/NĐ-CP?",
+    "category": "cross_reference",
+    "gold_sources": [
+      {
+        "document_id": "BLLD_2019",
+        "article_number": "Điều 8",
+        "chunk_ids": [
+          "BLLD_2019_Điều8_14"
+        ]
+      },
+      {
+        "document_id": "ND_12_2022",
+        "article_number": "Điều 11",
+        "chunk_ids": [
+          "ND_12_2022_Điều11_Khoản1_24",
+          "ND_12_2022_Điều11_Khoản2_25",
+          "ND_12_2022_Điều11_Khoản3_26",
+          "ND_12_2022_Điều11_Khoản4_27",
+          "ND_12_2022_Điều11_Khoản5_28"
+        ]
+      }
+    ],
+    "reference_answer": "Khoản 3 Điều 8 Bộ luật Lao động 2019 nghiêm cấm hành vi cưỡng bức lao động. Dẫn chiếu khoản 4 Điều 11 Nghị định 12/2022/NĐ-CP, hành vi cưỡng bức lao động, ngược đãi người lao động mà chưa đến mức truy cứu trách nhiệm hình sự bị phạt tiền từ 50.000.000 đồng đến 75.000.000 đồng đối với người sử dụng lao động.",
+    "requires_refusal": false
+  },
+  {
+    "question_id": "Q049",
+    "question": "Tiền lương làm căn cứ tính trả trợ cấp thôi việc, trợ cấp mất việc làm được dẫn chiếu và quy định chi tiết tại Nghị định 145/2020/NĐ-CP?",
+    "category": "cross_reference",
+    "gold_sources": [
+      {
+        "document_id": "BLLD_2019",
+        "article_number": "Điều 46",
+        "chunk_ids": [
+          "BLLD_2019_Điều46_66"
+        ]
+      },
+      {
+        "document_id": "ND_145_2020",
+        "article_number": "Điều 8",
+        "chunk_ids": [
+          "ND_145_2020_Điều8_Khoản1_15",
+          "ND_145_2020_Điều8_Khoản2_16",
+          "ND_145_2020_Điều8_Khoản3_P1_17",
+          "ND_145_2020_Điều8_Khoản3_P2_18",
+          "ND_145_2020_Điều8_Khoản4_P1_19",
+          "ND_145_2020_Điều8_Khoản4_P2_20",
+          "ND_145_2020_Điều8_Khoản4_P3_21",
+          "ND_145_2020_Điều8_Khoản5_22"
+        ]
+      }
+    ],
+    "reference_answer": "Theo khoản 3 Điều 46 Bộ luật Lao động 2019 và hướng dẫn chi tiết tại khoản 5 Điều 8 Nghị định 145/2020/NĐ-CP, tiền lương để tính trợ cấp thôi việc, trợ cấp mất việc làm là tiền lương bình quân của 06 tháng liền kề theo hợp đồng lao động trước khi người lao động thôi việc hoặc mất việc làm, bao gồm mức lương, phụ cấp lương và các khoản bổ sung khác ghi trong hợp đồng.",
+    "requires_refusal": false
+  },
+  {
+    "question_id": "Q050",
+    "question": "Các trường hợp được tổ chức làm thêm từ trên 200 giờ đến 300 giờ trong năm dẫn chiếu giữa Điều 107 BLLĐ và Điều 61 Nghị định 145/2020/NĐ-CP?",
+    "category": "cross_reference",
+    "gold_sources": [
+      {
+        "document_id": "BLLD_2019",
+        "article_number": "Điều 107",
+        "chunk_ids": [
+          "BLLD_2019_Điều107_Khoản1_141",
+          "BLLD_2019_Điều107_Khoản2_142",
+          "BLLD_2019_Điều107_Khoản3_143"
+        ]
+      },
+      {
+        "document_id": "ND_145_2020",
+        "article_number": "Điều 61",
+        "chunk_ids": [
+          "ND_145_2020_Điều61_132"
+        ]
+      }
+    ],
+    "reference_answer": "Khoản 3 Điều 107 Bộ luật Lao động 2019 và Điều 61 Nghị định 145/2020/NĐ-CP quy định các trường hợp được làm thêm đến 300 giờ/năm gồm: sản xuất, gia công xuất khẩu hàng dệt, may, da, giày, điện tử; chế biến nông, lâm, diêm nghiệp, thủy sản; sản xuất, cung cấp điện, viễn thông, lọc dầu; cấp, thoát nước; giải quyết công việc đòi hỏi lao động có trình độ chuyên môn kỹ thuật cao mà thị trường không cung ứng đủ.",
+    "requires_refusal": false
+  },
+  {
+    "question_id": "Q051",
+    "question": "Hậu quả pháp lý khi hợp đồng lao động bị tuyên bố vô hiệu từng phần và vô hiệu toàn bộ theo Bộ luật Lao động 2019?",
+    "category": "cross_reference",
+    "gold_sources": [
+      {
+        "document_id": "BLLD_2019",
+        "article_number": "Điều 50",
+        "chunk_ids": [
+          "BLLD_2019_Điều50_72"
+        ]
+      },
+      {
+        "document_id": "BLLD_2019",
+        "article_number": "Điều 51",
+        "chunk_ids": [
+          "BLLD_2019_Điều51_73"
+        ]
+      }
+    ],
+    "reference_answer": "Theo Điều 50 Bộ luật Lao động 2019, hợp đồng vô hiệu từng phần khi nội dung phần đó vi phạm pháp luật nhưng không ảnh hưởng đến các phần còn lại; vô hiệu toàn bộ khi toàn bộ nội dung vi phạm hoặc người giao kết không đúng thẩm quyền. Theo Điều 51, khi hợp đồng vô hiệu từng phần, quyền, nghĩa vụ và lợi ích của hai bên được giải quyết theo thỏa ước lao động tập thể hoặc pháp luật; hai bên tiến hành sửa đổi, bổ sung phần vô hiệu.",
+    "requires_refusal": false
+  },
+  {
+    "question_id": "Q052",
+    "question": "Thời hạn và thủ tục cấp lại giấy phép lao động cho người lao động nước ngoài theo Nghị định 152/2020/NĐ-CP được sửa đổi bởi Nghị định 70/2023/NĐ-CP?",
+    "category": "cross_reference",
+    "gold_sources": [
+      {
+        "document_id": "ND_152_2020",
+        "article_number": "Điều 13",
+        "chunk_ids": [
+          "ND_152_2020_Điều13_Khoản1_45",
+          "ND_152_2020_Điều13_Khoản3_46",
+          "ND_152_2020_Điều13_Khoản4_47"
+        ]
+      },
+      {
+        "document_id": "ND_70_2023",
+        "article_number": "Điều 1",
+        "chunk_ids": [
+          "ND_70_2023_Điều1_Khoản1_0",
+          "ND_70_2023_Điều1_Khoản2_P1_1",
+          "ND_70_2023_Điều1_Khoản2_P2_2",
+          "ND_70_2023_Điều1_Khoản2_P3_3",
+          "ND_70_2023_Điều1_Khoản3_4",
+          "ND_70_2023_Điều1_Khoản4_5",
+          "ND_70_2023_Điều1_Khoản5_P1_6",
+          "ND_70_2023_Điều1_Khoản5_P2_7",
+          "ND_70_2023_Điều1_Khoản5_P3_8",
+          "ND_70_2023_Điều1_Khoản5_P4_9",
+          "ND_70_2023_Điều1_Khoản6_10",
+          "ND_70_2023_Điều1_Khoản7_11",
+          "ND_70_2023_Điều1_Khoản9_12",
+          "ND_70_2023_Điều1_Khoản11_P1_13",
+          "ND_70_2023_Điều1_Khoản11_P2_14",
+          "ND_70_2023_Điều1_Khoản11_P3_15",
+          "ND_70_2023_Điều1_Khoản12_16",
+          "ND_70_2023_Điều1_Khoản13_P1_17",
+          "ND_70_2023_Điều1_Khoản13_P2_18",
+          "ND_70_2023_Điều1_Khoản13_P3_19",
+          "ND_70_2023_Điều1_Khoản14_20"
+        ]
+      }
+    ],
+    "reference_answer": "Căn cứ Điều 13 Nghị định 152/2020/NĐ-CP được sửa đổi tại Nghị định 70/2023/NĐ-CP, giấy phép lao động được cấp lại trong trường hợp bị mất, bị hỏng hoặc thay đổi họ tên, quốc tịch, số hộ chiếu, địa điểm làm việc. Trong thời hạn 05 ngày làm việc kể từ ngày nhận đủ hồ sơ đề nghị cấp lại giấy phép lao động, Bộ LĐTBXH hoặc Sở LĐTBXH cấp lại giấy phép lao động.",
+    "requires_refusal": false
+  },
+  {
+    "question_id": "Q053",
+    "question": "Điều kiện để lao động nam làm công việc nặng nhọc, độc hại loại V nghỉ hưu vào năm 2026 ở tuổi thấp hơn quy định?",
+    "category": "complex_conditions",
+    "gold_sources": [
+      {
+        "document_id": "ND_135_2020",
+        "article_number": "Điều 4",
+        "chunk_ids": [
+          "ND_135_2020_Điều4_Khoản1_3",
+          "ND_135_2020_Điều4_Khoản2_4"
+        ]
+      },
+      {
+        "document_id": "ND_135_2020",
+        "article_number": "Điều 5",
+        "chunk_ids": [
+          "ND_135_2020_Điều5_Khoản1_5",
+          "ND_135_2020_Điều5_Khoản2_6"
+        ]
+      },
+      {
+        "document_id": "TT_11_2020",
+        "article_number": "Điều 1",
+        "chunk_ids": [
+          "TT_11_2020_Điều1_0"
+        ]
+      }
+    ],
+    "reference_answer": "Căn cứ Điều 4 và Điều 5 Nghị định 135/2020/NĐ-CP, năm 2026 tuổi nghỉ hưu của lao động nam trong điều kiện bình thường là 61 tuổi 06 tháng. Người lao động nam có từ đủ 15 năm trở lên làm nghề, công việc nặng nhọc, độc hại theo danh mục tại Thông tư 11/2020/TT-BLĐTBXH thì được nghỉ hưu ở độ tuổi thấp hơn tối đa 05 tuổi, tức là từ đủ 56 tuổi 06 tháng vào năm 2026, với điều kiện đã đóng đủ bảo hiểm xã hội theo quy định.",
+    "requires_refusal": false
+  },
+  {
+    "question_id": "Q054",
+    "question": "Người sử dụng lao động muốn sa thải người lao động tự ý bỏ việc 05 ngày cộng dồn trong 30 ngày phải đáp ứng những điều kiện và trình tự nào?",
+    "category": "complex_conditions",
+    "gold_sources": [
+      {
+        "document_id": "BLLD_2019",
+        "article_number": "Điều 122",
+        "chunk_ids": [
+          "BLLD_2019_Điều122_Khoản1_162",
+          "BLLD_2019_Điều122_Khoản2_163",
+          "BLLD_2019_Điều122_Khoản4_164"
+        ]
+      },
+      {
+        "document_id": "BLLD_2019",
+        "article_number": "Điều 125",
+        "chunk_ids": [
+          "BLLD_2019_Điều125_Khoản1_167",
+          "BLLD_2019_Điều125_Khoản3_168"
+        ]
+      },
+      {
+        "document_id": "ND_145_2020",
+        "article_number": "Điều 70",
+        "chunk_ids": [
+          "ND_145_2020_Điều70_Khoản1_145",
+          "ND_145_2020_Điều70_Khoản2_P1_146",
+          "ND_145_2020_Điều70_Khoản2_P2_147",
+          "ND_145_2020_Điều70_Khoản3_148",
+          "ND_145_2020_Điều70_Khoản4_149"
+        ]
+      }
+    ],
+    "reference_answer": "Căn cứ Điều 125 khoản 4 BLLĐ 2019, người sử dụng lao động có quyền sa thải nếu người lao động tự ý bỏ việc 05 ngày cộng dồn trong 30 ngày mà không có lý do chính đáng. Về điều kiện và trình tự: phải chứng minh người lao động không có lý do chính đáng (thiên tai, hỏa hoạn, bản thân hoặc thân nhân ốm có xác nhận); phải gửi thông báo mời họp xử lý kỷ luật trước ít nhất 05 ngày làm việc cho tổ chức đại diện và người lao động; lập biên bản cuộc họp và ban hành quyết định sa thải trong thời hiệu quy định.",
+    "requires_refusal": false
+  },
+  {
+    "question_id": "Q055",
+    "question": "Trách nhiệm và nghĩa vụ bồi thường của người sử dụng lao động khi đơn phương chấm dứt hợp đồng lao động trái pháp luật?",
+    "category": "complex_conditions",
+    "gold_sources": [
+      {
+        "document_id": "BLLD_2019",
+        "article_number": "Điều 39",
+        "chunk_ids": [
+          "BLLD_2019_Điều39_55"
+        ]
+      },
+      {
+        "document_id": "BLLD_2019",
+        "article_number": "Điều 41",
+        "chunk_ids": [
+          "BLLD_2019_Điều41_Khoản1_57",
+          "BLLD_2019_Điều41_Khoản2_58"
+        ]
+      }
+    ],
+    "reference_answer": "Theo Điều 41 Bộ luật Lao động 2019, khi đơn phương chấm dứt HĐLĐ trái pháp luật, người sử dụng lao động phải nhận người lao động trở lại làm việc; trả tiền lương, đóng BHXH, BHYT, BHTN trong những ngày người lao động không được làm việc và trả thêm ít nhất 02 tháng tiền lương. Nếu người lao động không muốn làm việc thì được trả trợ cấp thôi việc cộng thêm ít nhất 02 tháng tiền lương. Nếu người sử dụng lao động không muốn nhận lại và người lao động đồng ý thì hai bên thỏa thuận khoản tiền bồi thường thêm ít nhất bằng 02 tháng tiền lương.",
+    "requires_refusal": false
+  },
+  {
+    "question_id": "Q056",
+    "question": "Điều kiện hoạt động cho thuê lại lao động và các trường hợp doanh nghiệp không được cho thuê lại lao động?",
+    "category": "complex_conditions",
+    "gold_sources": [
+      {
+        "document_id": "BLLD_2019",
+        "article_number": "Điều 52",
+        "chunk_ids": [
+          "BLLD_2019_Điều52_74"
+        ]
+      },
+      {
+        "document_id": "BLLD_2019",
+        "article_number": "Điều 53",
+        "chunk_ids": [
+          "BLLD_2019_Điều53_75"
+        ]
+      }
+    ],
+    "reference_answer": "Căn cứ Điều 52 và Điều 53 Bộ luật Lao động 2019, doanh nghiệp cho thuê lại lao động phải ký quỹ và được cấp giấy phép hoạt động cho thuê lại lao động; chỉ được cho thuê lại đối với một số công việc nhất định. Không được cho thuê lại lao động trong các trường hợp: thay thế người lao động đang đình công, giải quyết tranh chấp lao động; thay thế người lao động bị cho thôi việc do thay đổi cơ cấu; cho thuê lao động làm công việc nặng nhọc, độc hại, nguy hiểm trừ khi thuộc danh mục cho phép.",
+    "requires_refusal": false
+  },
+  {
+    "question_id": "Q057",
+    "question": "Quyền lợi của người lao động khi doanh nghiệp chia, tách, hợp nhất, sáp nhập hoặc bán, cho thuê tài sản mà không thể bố trí được việc làm?",
+    "category": "complex_conditions",
+    "gold_sources": [
+      {
+        "document_id": "BLLD_2019",
+        "article_number": "Điều 42",
+        "chunk_ids": [
+          "BLLD_2019_Điều42_Khoản1_59",
+          "BLLD_2019_Điều42_Khoản2_60",
+          "BLLD_2019_Điều42_Khoản3_61",
+          "BLLD_2019_Điều42_Khoản5_62"
+        ]
+      },
+      {
+        "document_id": "BLLD_2019",
+        "article_number": "Điều 47",
+        "chunk_ids": [
+          "BLLD_2019_Điều47_67"
+        ]
+      }
+    ],
+    "reference_answer": "Theo Điều 42 Bộ luật Lao động 2019, khi sáp nhập, hợp nhất, chia, tách doanh nghiệp mà không thể giải quyết được việc làm thì người sử dụng lao động phải xây dựng và thực hiện phương án sử dụng lao động. Trường hợp cho người lao động thôi việc thì phải trả trợ cấp mất việc làm theo Điều 47: cứ mỗi năm làm việc tính bằng 01 tháng tiền lương nhưng ít nhất phải bằng 02 tháng tiền lương.",
+    "requires_refusal": false
+  },
+  {
+    "question_id": "Q058",
+    "question": "Điều kiện sử dụng người chưa đủ 15 tuổi vào làm việc theo quy định của pháp luật lao động?",
+    "category": "complex_conditions",
+    "gold_sources": [
+      {
+        "document_id": "BLLD_2019",
+        "article_number": "Điều 144",
+        "chunk_ids": [
+          "BLLD_2019_Điều144_190"
+        ]
+      },
+      {
+        "document_id": "BLLD_2019",
+        "article_number": "Điều 145",
+        "chunk_ids": [
+          "BLLD_2019_Điều145_Khoản1_191",
+          "BLLD_2019_Điều145_Khoản2_192"
+        ]
+      },
+      {
+        "document_id": "TT_09_2020",
+        "article_number": "Điều 5",
+        "chunk_ids": [
+          "TT_09_2020_Điều5_8"
+        ]
+      }
+    ],
+    "reference_answer": "Căn cứ Điều 144, Điều 145 Bộ luật Lao động 2019 và Thông tư 09/2020/TT-BLĐTBXH, khi sử dụng người chưa đủ 15 tuổi: người giao kết hợp đồng phải có sự đồng ý bằng văn bản của người đại diện theo pháp luật; phải bố trí giờ làm việc không ảnh hưởng đến giờ học; phải có giấy khám sức khỏe; chỉ được làm các công việc nhẹ theo danh mục do Bộ LĐTBXH quy định; đối với người dưới 13 tuổi chỉ được làm các công việc nghệ thuật, thể dục thể thao.",
+    "requires_refusal": false
+  },
+  {
+    "question_id": "Q059",
+    "question": "Người sử dụng lao động muốn tổ chức làm thêm giờ từ trên 200 giờ đến 300 giờ trong năm phải thực hiện những thủ tục gì?",
+    "category": "complex_conditions",
+    "gold_sources": [
+      {
+        "document_id": "BLLD_2019",
+        "article_number": "Điều 107",
+        "chunk_ids": [
+          "BLLD_2019_Điều107_Khoản1_141",
+          "BLLD_2019_Điều107_Khoản2_142",
+          "BLLD_2019_Điều107_Khoản3_143"
+        ]
+      },
+      {
+        "document_id": "ND_145_2020",
+        "article_number": "Điều 62",
+        "chunk_ids": [
+          "ND_145_2020_Điều62_133"
+        ]
+      }
+    ],
+    "reference_answer": "Theo Điều 107 Bộ luật Lao động 2019 và Điều 62 Nghị định 145/2020/NĐ-CP, khi tổ chức làm thêm giờ từ trên 200 giờ đến 300 giờ trong năm: người sử dụng lao động phải thuộc nhóm ngành nghề được phép theo Điều 61; phải thông báo bằng văn bản cho Sở LĐTBXH nơi tổ chức làm thêm giờ và Sở LĐTBXH nơi đặt trụ sở chính chậm nhất sau 15 ngày kể từ ngày thực hiện làm thêm giờ; phải có sự đồng ý của người lao động.",
+    "requires_refusal": false
+  },
+  {
+    "question_id": "Q060",
+    "question": "Quy định về việc tạm thời chuyển người lao động làm công việc khác và quyền từ chối của người lao động khi quá thời hạn 60 ngày?",
+    "category": "complex_conditions",
+    "gold_sources": [
+      {
+        "document_id": "BLLD_2019",
+        "article_number": "Điều 29",
+        "chunk_ids": [
+          "BLLD_2019_Điều29_Khoản1_39",
+          "BLLD_2019_Điều29_Khoản2_40"
+        ]
+      }
+    ],
+    "reference_answer": "Căn cứ Điều 29 Bộ luật Lao động 2019, người sử dụng lao động chỉ được chuyển người lao động làm công việc khác tối đa không quá 60 ngày làm việc cộng dồn trong 01 năm. Nếu chuyển quá 60 ngày làm việc cộng dồn trong 01 năm thì phải được người lao động đồng ý bằng văn bản. Nếu người lao động không đồng ý mà phải ngừng việc thì được người sử dụng lao động trả lương ngừng việc theo quy định.",
+    "requires_refusal": false
+  },
+  {
+    "question_id": "Q061",
+    "question": "Các trường hợp hạn chế quyền xử lý kỷ luật sa thải hoặc chấm dứt hợp đồng lao động đối với lao động nữ mang thai và nuôi con nhỏ?",
+    "category": "complex_conditions",
+    "gold_sources": [
+      {
+        "document_id": "BLLD_2019",
+        "article_number": "Điều 122",
+        "chunk_ids": [
+          "BLLD_2019_Điều122_Khoản1_162",
+          "BLLD_2019_Điều122_Khoản2_163",
+          "BLLD_2019_Điều122_Khoản4_164"
+        ]
+      },
+      {
+        "document_id": "BLLD_2019",
+        "article_number": "Điều 137",
+        "chunk_ids": [
+          "BLLD_2019_Điều137_Khoản1_180",
+          "BLLD_2019_Điều137_Khoản2_181",
+          "BLLD_2019_Điều137_Khoản3_182"
+        ]
+      }
+    ],
+    "reference_answer": "Theo khoản 4 Điều 122 và khoản 3 Điều 137 Bộ luật Lao động 2019, người sử dụng lao động không được xử lý kỷ luật lao động và không được đơn phương chấm dứt hợp đồng lao động đối với người lao động đang trong thời gian mang thai, nghỉ thai sản, nuôi con dưới 12 tháng tuổi. Hết thời gian nuôi con dưới 12 tháng tuổi mà hết thời hiệu xử lý kỷ luật thì được kéo dài thời hiệu xử lý kỷ luật tối đa không quá 60 ngày.",
+    "requires_refusal": false
+  },
+  {
+    "question_id": "Q062",
+    "question": "Điều kiện và giới hạn khấu trừ tiền lương của người lao động khi làm hư hỏng tài sản của người sử dụng lao động?",
+    "category": "complex_conditions",
+    "gold_sources": [
+      {
+        "document_id": "BLLD_2019",
+        "article_number": "Điều 102",
+        "chunk_ids": [
+          "BLLD_2019_Điều102_136"
+        ]
+      },
+      {
+        "document_id": "BLLD_2019",
+        "article_number": "Điều 129",
+        "chunk_ids": [
+          "BLLD_2019_Điều129_172"
+        ]
+      }
+    ],
+    "reference_answer": "Căn cứ Điều 102 và Điều 129 Bộ luật Lao động 2019, người sử dụng lao động chỉ được khấu trừ tiền lương của người lao động để bồi thường thiệt hại do làm hư hỏng dụng cụ, thiết bị, tài sản. Mức khấu trừ tiền lương hằng tháng không được quá 30% tiền lương thực trả hằng tháng của người lao động sau khi đã trích nộp các khoản bảo hiểm xã hội bắt buộc, bảo hiểm y tế, bảo hiểm thất nghiệp, thuế thu nhập cá nhân.",
+    "requires_refusal": false
+  },
+  {
+    "question_id": "Q063",
+    "question": "Điều kiện, thời hạn và chế độ tiền lương trong thời gian tạm đình chỉ công việc của người lao động?",
+    "category": "complex_conditions",
+    "gold_sources": [
+      {
+        "document_id": "BLLD_2019",
+        "article_number": "Điều 128",
+        "chunk_ids": [
+          "BLLD_2019_Điều128_171"
+        ]
+      }
+    ],
+    "reference_answer": "Theo Điều 128 Bộ luật Lao động 2019, người sử dụng lao động có quyền tạm đình chỉ công việc khi vụ việc vi phạm có những tình tiết phức tạp nếu để người lao động tiếp tục làm việc sẽ gây khó khăn cho việc xác minh. Thời hạn tạm đình chỉ không quá 15 ngày, trường hợp đặc biệt không quá 90 ngày. Trong thời gian tạm đình chỉ, người lao động được tạm ứng 50% tiền lương trước khi bị đình chỉ; nếu không bị xử lý kỷ luật thì được trả đủ tiền lương.",
+    "requires_refusal": false
+  },
+  {
+    "question_id": "Q064",
+    "question": "Hành vi giữ bản chính giấy tờ tùy thân, văn bằng, chứng chỉ của người lao động bị xử phạt như thế nào theo Nghị định 12/2022/NĐ-CP?",
+    "category": "complex_conditions",
+    "gold_sources": [
+      {
+        "document_id": "BLLD_2019",
+        "article_number": "Điều 17",
+        "chunk_ids": [
+          "BLLD_2019_Điều17_23"
+        ]
+      },
+      {
+        "document_id": "ND_12_2022",
+        "article_number": "Điều 9",
+        "chunk_ids": [
+          "ND_12_2022_Điều9_Khoản1_19",
+          "ND_12_2022_Điều9_Khoản2_20",
+          "ND_12_2022_Điều9_Khoản3_P1_21",
+          "ND_12_2022_Điều9_Khoản3_P2_22"
+        ]
+      }
+    ],
+    "reference_answer": "Theo Điều 17 Bộ luật Lao động 2019, nghiêm cấm người sử dụng lao động giữ bản chính giấy tờ tùy thân, văn bằng, chứng chỉ của người lao động khi giao kết, thực hiện hợp đồng. Theo điểm a khoản 2 Điều 9 Nghị định 12/2022/NĐ-CP, hành vi này bị phạt tiền từ 20.000.000 đồng đến 25.000.000 đồng và bị áp dụng biện pháp khắc phục hậu quả là buộc trả lại bản chính giấy tờ tùy thân, văn bằng, chứng chỉ cho người lao động.",
+    "requires_refusal": false
+  },
+  {
+    "question_id": "Q065",
+    "question": "Mức đóng kinh phí công đoàn của doanh nghiệp bằng bao nhiêu phần trăm quỹ tiền lương làm căn cứ đóng BHXH theo Luật Công đoàn 2012?",
+    "category": "insufficient_evidence",
+    "gold_sources": [],
+    "reference_answer": "Không tìm thấy đủ căn cứ pháp lý trong dữ liệu được cung cấp để đưa ra kết luận đáng tin cậy.",
+    "requires_refusal": true
+  },
+  {
+    "question_id": "Q066",
+    "question": "Tỷ lệ hưởng lương hưu tối đa của lao động nữ tham gia bảo hiểm xã hội bắt buộc theo Luật Bảo hiểm xã hội 2014 là bao nhiêu phần trăm?",
+    "category": "insufficient_evidence",
+    "gold_sources": [],
+    "reference_answer": "Không tìm thấy đủ căn cứ pháp lý trong dữ liệu được cung cấp để đưa ra kết luận đáng tin cậy.",
+    "requires_refusal": true
+  },
+  {
+    "question_id": "Q067",
+    "question": "Mức trợ cấp một lần đối với người lao động bị suy giảm khả năng lao động 15% do tai nạn lao động theo Luật An toàn, vệ sinh lao động 2015?",
+    "category": "insufficient_evidence",
+    "gold_sources": [],
+    "reference_answer": "Không tìm thấy đủ căn cứ pháp lý trong dữ liệu được cung cấp để đưa ra kết luận đáng tin cậy.",
+    "requires_refusal": true
+  },
+  {
+    "question_id": "Q068",
+    "question": "Thời hạn người lao động phải nộp hồ sơ hưởng trợ cấp thất nghiệp tại Trung tâm Dịch vụ việc làm theo quy định của Luật Việc làm là bao nhiêu tháng kể từ ngày chấm dứt HĐLĐ?",
+    "category": "insufficient_evidence",
+    "gold_sources": [],
+    "reference_answer": "Không tìm thấy đủ căn cứ pháp lý trong dữ liệu được cung cấp để đưa ra kết luận đáng tin cậy.",
+    "requires_refusal": true
+  },
+  {
+    "question_id": "Q069",
+    "question": "Tiêu chuẩn và số lượng thành viên tối thiểu để thành lập tổ chức của người lao động tại doanh nghiệp ngoài hệ thống Công đoàn Việt Nam?",
+    "category": "insufficient_evidence",
+    "gold_sources": [],
+    "reference_answer": "Không tìm thấy đủ căn cứ pháp lý trong dữ liệu được cung cấp để đưa ra kết luận đáng tin cậy.",
+    "requires_refusal": true
+  },
+  {
+    "question_id": "Q070",
+    "question": "Điều kiện để người lao động được hưởng chế độ ốm đau dài ngày và mức trợ cấp theo Luật Bảo hiểm xã hội?",
+    "category": "insufficient_evidence",
+    "gold_sources": [],
+    "reference_answer": "Không tìm thấy đủ căn cứ pháp lý trong dữ liệu được cung cấp để đưa ra kết luận đáng tin cậy.",
+    "requires_refusal": true
+  },
+  {
+    "question_id": "Q071",
+    "question": "Thủ tục đăng ký nội quy an toàn bức xạ và cấp chứng chỉ nhân viên bức xạ trong y tế theo quy định của Luật Năng lượng nguyên tử?",
+    "category": "insufficient_evidence",
+    "gold_sources": [],
+    "reference_answer": "Không tìm thấy đủ căn cứ pháp lý trong dữ liệu được cung cấp để đưa ra kết luận đáng tin cậy.",
+    "requires_refusal": true
+  },
+  {
+    "question_id": "Q072",
+    "question": "Mức hỗ trợ học nghề và đào tạo duy trì việc làm cho người lao động từ Quỹ Bảo hiểm thất nghiệp theo Luật Việc làm?",
+    "category": "insufficient_evidence",
+    "gold_sources": [],
+    "reference_answer": "Không tìm thấy đủ căn cứ pháp lý trong dữ liệu được cung cấp để đưa ra kết luận đáng tin cậy.",
+    "requires_refusal": true
+  },
+  {
+    "question_id": "Q073",
+    "question": "Thủ tục đăng ký bảo hộ nhãn hiệu hàng hóa quốc tế theo Thỏa ước Madrid và Nghị định thư Madrid gồm những bước nào?",
+    "category": "out_of_scope",
+    "gold_sources": [],
+    "reference_answer": "Không tìm thấy đủ căn cứ pháp lý trong dữ liệu được cung cấp để đưa ra kết luận đáng tin cậy.",
+    "requires_refusal": true
+  },
+  {
+    "question_id": "Q074",
+    "question": "Cách mua vé xem trực tiếp các trận bóng đá giải Ngoại hạng Anh mùa giải 2026 dành cho khách du lịch?",
+    "category": "out_of_scope",
+    "gold_sources": [],
+    "reference_answer": "Không tìm thấy đủ căn cứ pháp lý trong dữ liệu được cung cấp để đưa ra kết luận đáng tin cậy.",
+    "requires_refusal": true
+  },
+  {
+    "question_id": "Q075",
+    "question": "Mức xử phạt người điều khiển xe mô tô, xe gắn máy vượt đèn đỏ theo quy định xử phạt vi phạm giao thông đường bộ?",
+    "category": "out_of_scope",
+    "gold_sources": [],
+    "reference_answer": "Không tìm thấy đủ căn cứ pháp lý trong dữ liệu được cung cấp để đưa ra kết luận đáng tin cậy.",
+    "requires_refusal": true
+  },
+  {
+    "question_id": "Q076",
+    "question": "Hồ sơ và thủ tục xin cấp visa du lịch Schengen tại Đại sứ quán Pháp năm 2026 gồm những giấy tờ gì?",
+    "category": "out_of_scope",
+    "gold_sources": [],
+    "reference_answer": "Không tìm thấy đủ căn cứ pháp lý trong dữ liệu được cung cấp để đưa ra kết luận đáng tin cậy.",
+    "requires_refusal": true
+  },
+  {
+    "question_id": "Q077",
+    "question": "Điều kiện và thủ tục đăng ký kết hôn giữa công dân Việt Nam và người nước ngoài theo Luật Hôn nhân và Gia đình?",
+    "category": "out_of_scope",
+    "gold_sources": [],
+    "reference_answer": "Không tìm thấy đủ căn cứ pháp lý trong dữ liệu được cung cấp để đưa ra kết luận đáng tin cậy.",
+    "requires_refusal": true
+  },
+  {
+    "question_id": "Q078",
+    "question": "Mức thuế suất thuế giá trị gia tăng áp dụng đối với dịch vụ viễn thông quốc tế năm 2026 là bao nhiêu phần trăm?",
+    "category": "out_of_scope",
+    "gold_sources": [],
+    "reference_answer": "Không tìm thấy đủ căn cứ pháp lý trong dữ liệu được cung cấp để đưa ra kết luận đáng tin cậy.",
+    "requires_refusal": true
+  },
+  {
+    "question_id": "Q079",
+    "question": "Công thức và quy trình chế biến nước dùng phở bò truyền thống Hà Nội chuẩn vị?",
+    "category": "out_of_scope",
+    "gold_sources": [],
+    "reference_answer": "Không tìm thấy đủ căn cứ pháp lý trong dữ liệu được cung cấp để đưa ra kết luận đáng tin cậy.",
+    "requires_refusal": true
+  },
+  {
+    "question_id": "Q080",
+    "question": "Biểu thuế suất thuế thu nhập cá nhân đối với thu nhập từ chuyển nhượng chứng khoán và đầu tư vốn hiện hành?",
+    "category": "out_of_scope",
+    "gold_sources": [],
+    "reference_answer": "Không tìm thấy đủ căn cứ pháp lý trong dữ liệu được cung cấp để đưa ra kết luận đáng tin cậy.",
+    "requires_refusal": true
+  }
+]

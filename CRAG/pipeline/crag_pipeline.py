@@ -6,6 +6,7 @@ Tích hợp: Retrieval -> Document Grading -> Strip & Filter / Web Fallback -> G
 
 from __future__ import annotations
 import time
+import re
 import logging
 from typing import Optional, Dict, Any, List
 
@@ -216,10 +217,13 @@ class CRAGPipeline:
                 citation_mapping[f"SOURCE {doc.source_index}"] = doc.metadata
             web_start = len(refined_context.documents) + 1
             for ext_idx, ext in enumerate(ext_snippets, start=web_start):
+                title = ext["title"]
+                art_match = re.search(r"(?:Điều|Khoản)\s+\d+(?:[,\s]+(?:Điều\s+)?\d+)*", title, re.IGNORECASE)
                 citation_mapping[f"SOURCE {ext_idx}"] = {
-                    "document_title": ext["title"],
+                    "document_title": title,
                     "document_id": "WEB_EXTERNAL",
-                    "article_number": "Tra cứu ngoài",
+                    "article_number": art_match.group(0).title() if art_match else None,
+                    "article_title": "Nguồn tra cứu ngoài",
                     "source_url": ext["url"],
                 }
 
@@ -253,10 +257,13 @@ class CRAGPipeline:
             context_text = refined_context.raw_context_text
 
             for ext_idx, ext in enumerate(ext_snippets, start=1):
+                title = ext["title"]
+                art_match = re.search(r"(?:Điều|Khoản)\s+\d+(?:[,\s]+(?:Điều\s+)?\d+)*", title, re.IGNORECASE)
                 citation_mapping[f"SOURCE {ext_idx}"] = {
-                    "document_title": ext["title"],
+                    "document_title": title,
                     "document_id": "WEB_EXTERNAL",
-                    "article_number": "Tra cứu ngoài",
+                    "article_number": art_match.group(0).title() if art_match else None,
+                    "article_title": "Nguồn tra cứu ngoài",
                     "source_url": ext["url"],
                 }
 

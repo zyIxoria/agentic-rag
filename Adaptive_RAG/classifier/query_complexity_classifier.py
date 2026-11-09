@@ -47,7 +47,9 @@ class QueryComplexityClassifier:
         "chứng khoán", "cổ phiếu", "tiền ảo", "thuế giá trị gia tăng", "thuế vat",
         "bóng đá", "ngoại hạng", "vé xem", "thời tiết", "nấu ăn", "công thức", "phở bò",
         "du lịch", "căn cước", "cccd", "chứng minh nhân dân", "hộ tịch", "nhãn hiệu",
-        "thương hiệu", "madrid", "sáng chế", "bản quyền", "sở hữu trí tuệ", "thuế thu nhập cá nhân"
+        "thương hiệu", "madrid", "sáng chế", "bản quyền", "sở hữu trí tuệ", "thuế thu nhập cá nhân",
+        "ăn gì", "hôm nay ăn", "ăn uống", "món ăn", "uống gì", "đi chơi", "chơi gì",
+        "quán ăn", "nhà hàng", "thực đơn", "món ngon"
     ]
 
     # Liên từ điều kiện phức hợp
@@ -326,7 +328,7 @@ class QueryComplexityClassifier:
             is_greeting=is_greeting,
         )
 
-    def classify(self, query: str) -> QueryComplexityResult:
+    def classify(self, query: str, chat_history: Optional[Any] = None) -> QueryComplexityResult:
         """Phân loại độ phức tạp câu hỏi theo 3 mức chuẩn tắc: SIMPLE, MODERATE, COMPLEX."""
         t_start = time.perf_counter()
         q_clean = (query or "").strip()

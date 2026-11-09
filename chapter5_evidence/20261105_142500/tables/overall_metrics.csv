@@ -1,0 +1,11 @@
+metric_name,unit,sample_set,traditional_rag,corrective_internal,crag_integrated,adaptive_agentic,notes
+Chunk Recall@5,ratio [0..1],Answerable (N=64),0.1431,0.1417,not_evaluable_in_run,not_evaluable_in_run,Đo trên dense retriever top-5 ban đầu; CRAG/Adaptive không log riêng vector recall thô trong bản ghi cuối
+Article Recall@5,ratio [0..1],Answerable (N=64),0.2109,not_evaluable_in_run,not_evaluable_in_run,not_evaluable_in_run,Đo tỷ lệ điều luật vàng có trong top-5 chunk
+Hit Rate@5,ratio [0..1],Answerable (N=64),0.2969,0.2969,not_evaluable_in_run,not_evaluable_in_run,Tỷ lệ có ít nhất 1 gold chunk trong top-5
+MRR (Chunk-level),score [0..1],Answerable (N=64),0.1932,0.2005,not_evaluable_in_run,not_evaluable_in_run,Thứ hạng nghịch đảo của gold chunk đầu tiên
+Answer Correctness Rate,ratio [0..1],Full benchmark (N=80),0.5,0.5,0.5625,0.4844,Bao gồm cả Correct (1.0) và Partially Correct (0.5)
+Strict Answer Correctness,ratio [0..1],Full benchmark (N=80),0.2656,0.2188,not_evaluable_in_run,not_evaluable_in_run,Chỉ tính điểm tuyệt đối 1.0
+Faithfulness Rate,ratio [0..1],Answerable (N=64),0.9375,1.0,0.1875,0.5781,CRAG tích hợp bị thấp do bộ chấm so sánh với initial chunks thay vì web snippets
+Refusal Accuracy,ratio [0..1],Refusal questions (N=16),0.4375,0.9375,0.5,0.5,Độ chính xác khi từ chối câu hỏi thiếu dữ liệu hoặc ngoài phạm vi
+False Answer Rate,ratio [0..1],Refusal questions (N=16),0.5625,0.0625,0.5,0.5,Tỷ lệ trả lời bừa khi lẽ ra phải từ chối (ảo giác nguy hiểm)
+Mean Total Latency,ms,Full benchmark (N=80),291.46,174.86,182.35,177.71,Thời gian đo CPU thực tế trên cùng máy trạm

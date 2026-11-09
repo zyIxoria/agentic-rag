@@ -131,9 +131,14 @@ class AdaptiveOrchestrator:
             generator=self.generator,
         )
 
-    def route_and_execute(self, query: str) -> AdaptiveRAGResponse:
+    def route_and_execute(
+        self,
+        query: str,
+        chat_history: Optional[Any] = None,
+    ) -> AdaptiveRAGResponse:
         """
         Thực hiện toàn bộ quy trình: Phân loại ý định $\to$ Định tuyến $\to$ Kiểm định 2 chiều $\to$ Thực thi $\to$ Phản hồi.
+        Hỗ trợ nhận thức ngữ cảnh hội thoại đa lượt qua chat_history.
         """
         t_start = time.perf_counter()
         if not query or not query.strip():
@@ -141,9 +146,9 @@ class AdaptiveOrchestrator:
 
         clean_query = query.strip()
 
-        # BƯỚC 1: Phân loại độ phức tạp & ý định câu hỏi
+        # BƯỚC 1: Phân loại độ phức tạp & ý định câu hỏi (có ngữ cảnh hội thoại)
         t_route_0 = time.perf_counter()
-        classification = self.classifier.classify(clean_query)
+        classification = self.classifier.classify(clean_query, chat_history=chat_history)
         route = classification.suggested_route
         t_routing_ms = (time.perf_counter() - t_route_0) * 1000.0
 

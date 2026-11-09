@@ -1,0 +1,1779 @@
+[
+  {
+    "case_id": "Q001",
+    "category": "single_article",
+    "question_text": "Người sử dụng lao động có quyền áp dụng hình thức xử lý kỷ luật sa thải trong những trường hợp nào?",
+    "reference_answer": "Căn cứ theo Điều 125 Bộ luật Lao động 2019, hình thức xử lý kỷ luật sa thải được người sử dụng lao động áp dụng trong các trường hợp: 1. Người lao động có hành vi trộm cắp, tham ô, đánh bạc, cố ý gây thương tích, sử dụng ma túy tại nơi làm việc; 2. Có hành vi tiết lộ bí mật kinh doanh, bí mật công nghệ, xâm phạm quyền sở hữu trí tuệ của người sử dụng lao động, có hành vi gây thiệt hại nghiêm trọng hoặc đe dọa gây thiệt hại đặc biệt nghiêm trọng về tài sản, lợi ích của người sử dụng lao động hoặc quấy rối tình dục tại nơi làm việc; 3. Bị xử lý kỷ luật kéo dài thời hạn nâng lương hoặc cách chức mà tái phạm trong thời gian chưa xóa kỷ luật; 4. Tự ý bỏ việc 05 ngày cộng dồn trong thời hạn 30 ngày hoặc 20 ngày cộng dồn trong thời hạn 365 ngày tính từ ngày đầu tiên tự ý bỏ việc mà không có lý do chính đáng.",
+    "gold_sources": [
+      {
+        "document_id": "BLLD_2019",
+        "article_number": "Điều 125",
+        "chunk_ids": [
+          "BLLD_2019_Điều125_Khoản1_167",
+          "BLLD_2019_Điều125_Khoản3_168"
+        ]
+      }
+    ],
+    "requires_refusal": false,
+    "traditional_rag_result": {
+      "answer": "Căn cứ theo các tài liệu pháp lý được cung cấp:\n- Theo [Bộ luật Lao động 2019 số 45/2019/QH14, Điều 42, Khoản 2] (Bộ luật Lao động 2019 số 45/2019/QH14, Điều 42): Điều 42. Nghĩa vụ của người sử dụng lao động trong trường hợp thay đổi cơ cấu, công nghệ hoặc vì lý do kinh tế\n2. Những trường hợp sau đây được coi là vì lý do kinh tế:\na) Khủng hoảng hoặc suy thoái kinh tế;\nb) Thực hiện chính sách, pháp luật của Nhà nước khi cơ cấu lại nền kinh\ntế hoặc thực hiện cam kết quốc tế.\n- Theo [Nghị định số 145/2020/NĐ-CP QUY ĐỊNH CHI TIẾT VÀ HƯỚNG DẪN THI HÀNH MỘT SỐ ĐIỀU CỦA BỘ LUẬT LAO ĐỘNG VỀ ĐIỀU KIỆN LAO ĐỘNG VÀ QUAN HỆ LAO ĐỘNG, Điều 31, Khoản 3 đến Khoản 4] (Nghị định số 145/2020/NĐ-CP QUY ĐỊNH CHI TIẾT VÀ HƯỚNG DẪN THI HÀNH MỘT SỐ ĐIỀU CỦA BỘ LUẬT LAO ĐỘNG VỀ ĐIỀU KIỆN LAO ĐỘNG VÀ QUAN HỆ LAO ĐỘNG, Điều 31): Điều 31. Trách nhiệm của doanh nghiệp cho thuê lại\n3. Kịp thời báo cáo những trường hợp xảy ra sự\ncố liên quan đến hoạt động cho thuê lại lao động cho cơ quan nhà nước có thẩm\nquyền tại địa phương hoặc theo yêu cầu của cơ quan quản lý nhà nước về lao\nđộng.\n\n4. Thực hiện đầy đủ trách nhiệm của doanh\nnghiệp cho thuê lại theo quy định tại Điều 56 của Bộ luật Lao\nđộng và Chương này. Bổ sung\n\n### Căn Cứ Pháp Lý Tham Chiếu:\n[1] [Bộ luật Lao động 2019 số 45/2019/QH14, Điều 42, Khoản 2] (Nghĩa vụ của người sử dụng lao động trong trường hợp thay đổi cơ cấu, công nghệ hoặc vì lý do kinh tế) - URL: https://thuvienphapluat.vn/van-ban/Lao-dong-Tien-luong/Bo-Luat-lao-dong-2019-333670.aspx\n[2] [Nghị định số 145/2020/NĐ-CP QUY ĐỊNH CHI TIẾT VÀ HƯỚNG DẪN THI HÀNH MỘT SỐ ĐIỀU CỦA BỘ LUẬT LAO ĐỘNG VỀ ĐIỀU KIỆN LAO ĐỘNG VÀ QUAN HỆ LAO ĐỘNG, Điều 31, Khoản 3 đến Khoản 4] (Trách nhiệm của doanh nghiệp cho thuê lại) - URL: https://thuvienphapluat.vn/van-ban/Lao-dong-Tien-luong/Nghi-dinh-145-2020-ND-CP-huong-dan-Bo-luat-Lao-dong-ve-dieu-kien-lao-dong-quan-he-lao-dong-459400.aspx",
+      "citations": [
+        {
+          "source_id": "[SOURCE 3]",
+          "source_number": 3,
+          "chunk_id": "BLLD_2019_Điều42_Khoản2_60",
+          "document_title": "Bộ luật Lao động 2019 số 45/2019/QH14",
+          "document_number": "45/2019/QH14",
+          "article_number": "Điều 42",
+          "article_title": "Nghĩa vụ của người sử dụng lao động trong trường hợp thay đổi cơ cấu, công nghệ hoặc vì lý do kinh tế",
+          "clause_number": "Khoản 2",
+          "point_number": null,
+          "source_url": "https://thuvienphapluat.vn/van-ban/Lao-dong-Tien-luong/Bo-Luat-lao-dong-2019-333670.aspx",
+          "formatted_citation": "[Bộ luật Lao động 2019 số 45/2019/QH14, Điều 42, Khoản 2]",
+          "is_valid": true,
+          "validation_error": null
+        },
+        {
+          "source_id": "[SOURCE 4]",
+          "source_number": 4,
+          "chunk_id": "ND_145_2020_Điều31_Khoản3_75",
+          "document_title": "Nghị định số 145/2020/NĐ-CP QUY ĐỊNH CHI TIẾT VÀ HƯỚNG DẪN THI HÀNH MỘT SỐ ĐIỀU CỦA BỘ LUẬT LAO ĐỘNG VỀ ĐIỀU KIỆN LAO ĐỘNG VÀ QUAN HỆ LAO ĐỘNG",
+          "document_number": "145/2020/NĐ-CP",
+          "article_number": "Điều 31",
+          "article_title": "Trách nhiệm của doanh nghiệp cho thuê lại",
+          "clause_number": "Khoản 3 đến Khoản 4",
+          "point_number": null,
+          "source_url": "https://thuvienphapluat.vn/van-ban/Lao-dong-Tien-luong/Nghi-dinh-145-2020-ND-CP-huong-dan-Bo-luat-Lao-dong-ve-dieu-kien-lao-dong-quan-he-lao-dong-459400.aspx",
+          "formatted_citation": "[Nghị định số 145/2020/NĐ-CP QUY ĐỊNH CHI TIẾT VÀ HƯỚNG DẪN THI HÀNH MỘT SỐ ĐIỀU CỦA BỘ LUẬT LAO ĐỘNG VỀ ĐIỀU KIỆN LAO ĐỘNG VÀ QUAN HỆ LAO ĐỘNG, Điều 31, Khoản 3 đến Khoản 4]",
+          "is_valid": true,
+          "validation_error": null
+        }
+      ],
+      "refused": false,
+      "correctness": {
+        "status": "INCORRECT",
+        "score": 0.0,
+        "reason": "Viện dẫn sai lệch Điều luật hoặc nội dung trả lời không khớp với căn cứ vàng.",
+        "f1_score": 0.2443,
+        "gold_article_recall": 0.0,
+        "matched_articles": []
+      },
+      "faithfulness": {
+        "status": "SUPPORTED",
+        "score": 1.0,
+        "is_faithful": true,
+        "support_ratio": 0.8,
+        "unsupported_claim_count": 4,
+        "total_claim_count": 23,
+        "unsupported_articles": [],
+        "reason": "Toàn bộ khẳng định và Điều luật đều được trích xuất trung thực từ các chunk thu hồi."
+      },
+      "latency_ms": 499.18
+    },
+    "crag_result": {
+      "answer": "Căn cứ theo quy định tại [Thời hạn và trình tự xử lý kỷ luật sa thải theo Bộ luật Lao động 2019, Điều Tra cứu ngoài] [Tra cứu ngoài (Web Knowledge), ]:\nThời hiệu xử lý kỷ luật lao động tối đa là 06 tháng kể từ ngày xảy ra hành vi vi phạm; trường hợp hành vi vi phạm liên quan trực tiếp đến tài chính, tài sản, tiết lộ bí mật thì thời hiệu xử lý kỷ luật lao động tối đa là 12 tháng (Điều 123 BLLĐ 2019). Việc sa thải phải có sự tham gia của tổ chức đại diện người lao động tại cơ sở.\n\n### Căn Cứ Pháp Lý Tham Chiếu:\n[1] [Thời hạn và trình tự xử lý kỷ luật sa thải theo Bộ luật Lao động 2019, Điều Tra cứu ngoài] - URL: https://moj.gov.vn/qt/tintuc/Pages/nghien-cuu-trao-doi.aspx?ItemID=4521",
+      "citations": [
+        {
+          "source_id": "[SOURCE 1]",
+          "source_number": 1,
+          "chunk_id": null,
+          "document_title": "Thời hạn và trình tự xử lý kỷ luật sa thải theo Bộ luật Lao động 2019",
+          "document_number": null,
+          "article_number": "Tra cứu ngoài",
+          "article_title": null,
+          "clause_number": null,
+          "point_number": null,
+          "source_url": "https://moj.gov.vn/qt/tintuc/Pages/nghien-cuu-trao-doi.aspx?ItemID=4521",
+          "formatted_citation": "[Thời hạn và trình tự xử lý kỷ luật sa thải theo Bộ luật Lao động 2019, Điều Tra cứu ngoài]",
+          "is_valid": true,
+          "validation_error": null
+        }
+      ],
+      "action_taken": "WEB_SEARCH",
+      "refused": false,
+      "correctness": {
+        "status": "PARTIALLY_CORRECT",
+        "score": 0.5,
+        "reason": "Viện dẫn đúng một phần Điều luật hoặc nội dung có liên quan nhưng chưa đầy đủ.",
+        "f1_score": 0.3842,
+        "gold_article_recall": 0.0,
+        "matched_articles": []
+      },
+      "faithfulness": {
+        "status": "UNSUPPORTED",
+        "score": 0.0,
+        "is_faithful": false,
+        "support_ratio": 0.0,
+        "unsupported_claim_count": 9,
+        "total_claim_count": 9,
+        "unsupported_articles": [
+          "123"
+        ],
+        "reason": "Viện dẫn Điều luật không hề xuất hiện trong context: ['123']"
+      },
+      "latency_ms": 197.15
+    },
+    "adaptive_result": {
+      "answer": "Căn cứ theo quy định tại [Thời hạn và trình tự xử lý kỷ luật sa thải theo Bộ luật Lao động 2019, Điều Tra cứu ngoài] [Tra cứu ngoài (Web Knowledge), ]:\nThời hiệu xử lý kỷ luật lao động tối đa là 06 tháng kể từ ngày xảy ra hành vi vi phạm; trường hợp hành vi vi phạm liên quan trực tiếp đến tài chính, tài sản, tiết lộ bí mật thì thời hiệu xử lý kỷ luật lao động tối đa là 12 tháng (Điều 123 BLLĐ 2019). Việc sa thải phải có sự tham gia của tổ chức đại diện người lao động tại cơ sở.\n\n### Căn Cứ Pháp Lý Tham Chiếu:\n[1] [Thời hạn và trình tự xử lý kỷ luật sa thải theo Bộ luật Lao động 2019, Điều Tra cứu ngoài] - URL: https://moj.gov.vn/qt/tintuc/Pages/nghien-cuu-trao-doi.aspx?ItemID=4521",
+      "citations": [
+        {
+          "source_id": "[SOURCE 1]",
+          "source_number": 1,
+          "chunk_id": null,
+          "document_title": "Thời hạn và trình tự xử lý kỷ luật sa thải theo Bộ luật Lao động 2019",
+          "document_number": null,
+          "article_number": "Tra cứu ngoài",
+          "article_title": null,
+          "clause_number": null,
+          "point_number": null,
+          "source_url": "https://moj.gov.vn/qt/tintuc/Pages/nghien-cuu-trao-doi.aspx?ItemID=4521",
+          "formatted_citation": "[Thời hạn và trình tự xử lý kỷ luật sa thải theo Bộ luật Lao động 2019, Điều Tra cứu ngoài]",
+          "is_valid": true,
+          "validation_error": null
+        }
+      ],
+      "route_taken": "CORRECTIVE_RAG",
+      "sub_queries_count": 1,
+      "refused": false,
+      "correctness": {
+        "status": "PARTIALLY_CORRECT",
+        "score": 0.5,
+        "reason": "Viện dẫn đúng một phần Điều luật hoặc nội dung có liên quan nhưng chưa đầy đủ.",
+        "f1_score": 0.3842,
+        "gold_article_recall": 0.0,
+        "matched_articles": []
+      },
+      "faithfulness": {
+        "status": "UNSUPPORTED",
+        "score": 0.0,
+        "is_faithful": false,
+        "support_ratio": 0.0,
+        "unsupported_claim_count": 9,
+        "total_claim_count": 9,
+        "unsupported_articles": [
+          "123"
+        ],
+        "reason": "Viện dẫn Điều luật không hề xuất hiện trong context: ['123']"
+      },
+      "latency_ms": 181.22
+    },
+    "audit_notes": "Câu hỏi sa thải Điều 125 BLLĐ. Traditional trả lời sai Điều luật (0.0). CRAG kích hoạt search và trả lời đúng 1 phần (0.5). Adaptive định tuyến CORRECTIVE_RAG (0.5)."
+  },
+  {
+    "case_id": "Q018",
+    "category": "single_article",
+    "question_text": "Có những hình thức xử lý kỷ luật lao động nào được pháp luật quy định?",
+    "reference_answer": "Theo quy định tại Điều 124 Bộ luật Lao động 2019, các hình thức xử lý kỷ luật lao động gồm: 1. Khiển trách; 2. Kéo dài thời hạn nâng lương không quá 06 tháng; 3. Cách chức; 4. Sa thải.",
+    "gold_sources": [
+      {
+        "document_id": "BLLD_2019",
+        "article_number": "Điều 124",
+        "chunk_ids": [
+          "BLLD_2019_Điều124_166"
+        ]
+      }
+    ],
+    "requires_refusal": false,
+    "traditional_rag_result": {
+      "answer": "Căn cứ theo các tài liệu pháp lý được cung cấp:\n- Theo [Nghị định số 145/2020/NĐ-CP QUY ĐỊNH CHI TIẾT VÀ HƯỚNG DẪN THI HÀNH MỘT SỐ ĐIỀU CỦA BỘ LUẬT LAO ĐỘNG VỀ ĐIỀU KIỆN LAO ĐỘNG VÀ QUAN HỆ LAO ĐỘNG, Điều 70, Khoản 4] (Nghị định số 145/2020/NĐ-CP QUY ĐỊNH CHI TIẾT VÀ HƯỚNG DẪN THI HÀNH MỘT SỐ ĐIỀU CỦA BỘ LUẬT LAO ĐỘNG VỀ ĐIỀU KIỆN LAO ĐỘNG VÀ QUAN HỆ LAO ĐỘNG, Điều 70): Điều 70. Trình tự, thủ tục xử lý kỷ luật lao động\n4. Trong thời hiệu xử lý kỷ luật lao động quy\nđịnh tại khoản 1, khoản 2 Điều 123 của Bộ luật Lao động,\nngười có thẩm quyền xử lý kỷ luật lao động ban hành quyết định xử lý kỷ luật\nlao động và gửi đến các thành phần phải tham dự quy định tại điểm\nb, điểm c khoản 1 Điều 122 của Bộ luật Lao động.\n- Theo [Bộ luật Lao động 2019 số 45/2019/QH14, Điều 124] (Bộ luật Lao động 2019 số 45/2019/QH14, Điều 124): Điều 124. Hình thức xử lý kỷ luật lao động\n\n1. Khiển trách.\n\n2. Kéo dài thời hạn nâng lương không quá 06 tháng.\n\n3. Cách chức.\n\n4. Sa thải.\n- Theo [Bộ luật Lao động 2019 số 45/2019/QH14, Điều 122, Khoản 2 đến Khoản 3] (Bộ luật Lao động 2019 số 45/2019/QH14, Điều 122): Điều 122. Nguyên tắc, trình tự, thủ tục xử lý kỷ luật lao động\n2. Không được áp dụng nhiều hình thức xử lý kỷ luật lao động đối với một\nhành vi vi phạm kỷ luật lao động.\n\n3. Khi một người lao động đồng thời có nhiều hành vi vi phạm kỷ luật\nlao động thì chỉ áp dụng hình thức kỷ luật cao nhất tương ứng với hành vi vi phạm\nnặng nhất.\n- Theo [Bộ luật Lao động 2019 số 45/2019/QH14, Điều 117] (Bộ luật Lao động 2019 số 45/2019/QH14, Điều 117): Điều 117. Kỷ luật lao động\n\nKỷ luật lao động\nlà những quy định về việc tuân theo thời gian, công nghệ và điều hành sản xuất,\nkinh doanh do người sử dụng lao động ban hành trong nội quy lao động và do pháp\nluật quy định.\n- Theo [Bộ luật Lao động 2019 số 45/2019/QH14, Điều 127] (Bộ luật Lao động 2019 số 45/2019/QH14, Điều 127): Điều 127. Các hành vi bị nghiêm cấm khi xử lý kỷ luật lao động\n\n1. Xâm phạm sức khỏe, danh dự, tính mạng, uy tín, nhân phẩm của người\nlao động.\n\n2. Phạt tiền, cắt lương thay việc xử lý kỷ luật lao động.\n\n3. Xử lý kỷ luật lao động đối với người lao động có hành vi vi phạm\nkhông được quy định trong nội quy lao động hoặc không thỏa thuận trong hợp đồng\nlao động đã giao kết hoặc pháp luật về lao động không có quy định.\n\n### Căn Cứ Pháp Lý Tham Chiếu:\n[1] [Nghị định số 145/2020/NĐ-CP QUY ĐỊNH CHI TIẾT VÀ HƯỚNG DẪN THI HÀNH MỘT SỐ ĐIỀU CỦA BỘ LUẬT LAO ĐỘNG VỀ ĐIỀU KIỆN LAO ĐỘNG VÀ QUAN HỆ LAO ĐỘNG, Điều 70, Khoản 4] (Trình tự, thủ tục xử lý kỷ luật lao động) - URL: https://thuvienphapluat.vn/van-ban/Lao-dong-Tien-luong/Nghi-dinh-145-2020-ND-CP-huong-dan-Bo-luat-Lao-dong-ve-dieu-kien-lao-dong-quan-he-lao-dong-459400.aspx\n[2] [Bộ luật Lao động 2019 số 45/2019/QH14, Điều 124] (Hình thức xử lý kỷ luật lao động) - URL: https://thuvienphapluat.vn/van-ban/Lao-dong-Tien-luong/Bo-Luat-lao-dong-2019-333670.aspx\n[3] [Bộ luật Lao động 2019 số 45/2019/QH14, Điều 122, Khoản 2 đến Khoản 3] (Nguyên tắc, trình tự, thủ tục xử lý kỷ luật lao động) - URL: https://thuvienphapluat.vn/van-ban/Lao-dong-Tien-luong/Bo-Luat-lao-dong-2019-333670.aspx\n[4] [Bộ luật Lao động 2019 số 45/2019/QH14, Điều 117] (Kỷ luật lao động) - URL: https://thuvienphapluat.vn/van-ban/Lao-dong-Tien-luong/Bo-Luat-lao-dong-2019-333670.aspx\n[5] [Bộ luật Lao động 2019 số 45/2019/QH14, Điều 127] (Các hành vi bị nghiêm cấm khi xử lý kỷ luật lao động) - URL: https://thuvienphapluat.vn/van-ban/Lao-dong-Tien-luong/Bo-Luat-lao-dong-2019-333670.aspx",
+      "citations": [
+        {
+          "source_id": "[SOURCE 1]",
+          "source_number": 1,
+          "chunk_id": "ND_145_2020_Điều70_Khoản4_149",
+          "document_title": "Nghị định số 145/2020/NĐ-CP QUY ĐỊNH CHI TIẾT VÀ HƯỚNG DẪN THI HÀNH MỘT SỐ ĐIỀU CỦA BỘ LUẬT LAO ĐỘNG VỀ ĐIỀU KIỆN LAO ĐỘNG VÀ QUAN HỆ LAO ĐỘNG",
+          "document_number": "145/2020/NĐ-CP",
+          "article_number": "Điều 70",
+          "article_title": "Trình tự, thủ tục xử lý kỷ luật lao động",
+          "clause_number": "Khoản 4",
+          "point_number": null,
+          "source_url": "https://thuvienphapluat.vn/van-ban/Lao-dong-Tien-luong/Nghi-dinh-145-2020-ND-CP-huong-dan-Bo-luat-Lao-dong-ve-dieu-kien-lao-dong-quan-he-lao-dong-459400.aspx",
+          "formatted_citation": "[Nghị định số 145/2020/NĐ-CP QUY ĐỊNH CHI TIẾT VÀ HƯỚNG DẪN THI HÀNH MỘT SỐ ĐIỀU CỦA BỘ LUẬT LAO ĐỘNG VỀ ĐIỀU KIỆN LAO ĐỘNG VÀ QUAN HỆ LAO ĐỘNG, Điều 70, Khoản 4]",
+          "is_valid": true,
+          "validation_error": null
+        },
+        {
+          "source_id": "[SOURCE 2]",
+          "source_number": 2,
+          "chunk_id": "BLLD_2019_Điều124_166",
+          "document_title": "Bộ luật Lao động 2019 số 45/2019/QH14",
+          "document_number": "45/2019/QH14",
+          "article_number": "Điều 124",
+          "article_title": "Hình thức xử lý kỷ luật lao động",
+          "clause_number": null,
+          "point_number": null,
+          "source_url": "https://thuvienphapluat.vn/van-ban/Lao-dong-Tien-luong/Bo-Luat-lao-dong-2019-333670.aspx",
+          "formatted_citation": "[Bộ luật Lao động 2019 số 45/2019/QH14, Điều 124]",
+          "is_valid": true,
+          "validation_error": null
+        },
+        {
+          "source_id": "[SOURCE 3]",
+          "source_number": 3,
+          "chunk_id": "BLLD_2019_Điều122_Khoản2_163",
+          "document_title": "Bộ luật Lao động 2019 số 45/2019/QH14",
+          "document_number": "45/2019/QH14",
+          "article_number": "Điều 122",
+          "article_title": "Nguyên tắc, trình tự, thủ tục xử lý kỷ luật lao động",
+          "clause_number": "Khoản 2 đến Khoản 3",
+          "point_number": null,
+          "source_url": "https://thuvienphapluat.vn/van-ban/Lao-dong-Tien-luong/Bo-Luat-lao-dong-2019-333670.aspx",
+          "formatted_citation": "[Bộ luật Lao động 2019 số 45/2019/QH14, Điều 122, Khoản 2 đến Khoản 3]",
+          "is_valid": true,
+          "validation_error": null
+        },
+        {
+          "source_id": "[SOURCE 4]",
+          "source_number": 4,
+          "chunk_id": "BLLD_2019_Điều117_155",
+          "document_title": "Bộ luật Lao động 2019 số 45/2019/QH14",
+          "document_number": "45/2019/QH14",
+          "article_number": "Điều 117",
+          "article_title": "Kỷ luật lao động",
+          "clause_number": null,
+          "point_number": null,
+          "source_url": "https://thuvienphapluat.vn/van-ban/Lao-dong-Tien-luong/Bo-Luat-lao-dong-2019-333670.aspx",
+          "formatted_citation": "[Bộ luật Lao động 2019 số 45/2019/QH14, Điều 117]",
+          "is_valid": true,
+          "validation_error": null
+        },
+        {
+          "source_id": "[SOURCE 5]",
+          "source_number": 5,
+          "chunk_id": "BLLD_2019_Điều127_170",
+          "document_title": "Bộ luật Lao động 2019 số 45/2019/QH14",
+          "document_number": "45/2019/QH14",
+          "article_number": "Điều 127",
+          "article_title": "Các hành vi bị nghiêm cấm khi xử lý kỷ luật lao động",
+          "clause_number": null,
+          "point_number": null,
+          "source_url": "https://thuvienphapluat.vn/van-ban/Lao-dong-Tien-luong/Bo-Luat-lao-dong-2019-333670.aspx",
+          "formatted_citation": "[Bộ luật Lao động 2019 số 45/2019/QH14, Điều 127]",
+          "is_valid": true,
+          "validation_error": null
+        }
+      ],
+      "refused": false,
+      "correctness": {
+        "status": "CORRECT",
+        "score": 1.0,
+        "reason": "Viện dẫn đầy đủ các Điều luật vàng và bao phủ chuẩn xác nội dung kết luận pháp lý.",
+        "f1_score": 0.3051,
+        "gold_article_recall": 1.0,
+        "matched_articles": [
+          "blld_2019_điều124"
+        ]
+      },
+      "faithfulness": {
+        "status": "SUPPORTED",
+        "score": 1.0,
+        "is_faithful": true,
+        "support_ratio": 0.8,
+        "unsupported_claim_count": 8,
+        "total_claim_count": 46,
+        "unsupported_articles": [],
+        "reason": "Toàn bộ khẳng định và Điều luật đều được trích xuất trung thực từ các chunk thu hồi."
+      },
+      "latency_ms": 292.53
+    },
+    "crag_result": {
+      "answer": "Căn cứ theo các tài liệu pháp lý được cung cấp:\n- Theo [Nghị định số 145/2020/NĐ-CP QUY ĐỊNH CHI TIẾT VÀ HƯỚNG DẪN THI HÀNH MỘT SỐ ĐIỀU CỦA BỘ LUẬT LAO ĐỘNG VỀ ĐIỀU KIỆN LAO ĐỘNG VÀ QUAN HỆ LAO ĐỘNG, Điều 70, Khoản 4] (Nghị định số 145/2020/NĐ-CP QUY ĐỊNH CHI TIẾT VÀ HƯỚNG DẪN THI HÀNH MỘT SỐ ĐIỀU CỦA BỘ LUẬT LAO ĐỘNG VỀ ĐIỀU KIỆN LAO ĐỘNG VÀ QUAN HỆ LAO ĐỘNG, Điều 70): Điều 70. Trình tự, thủ tục xử lý kỷ luật lao động\n4. Trong thời hiệu xử lý kỷ luật lao động quy\nngười có thẩm quyền xử lý kỷ luật lao động ban hành quyết định xử lý kỷ luật\n- Theo [Bộ luật Lao động 2019 số 45/2019/QH14, Điều 124] (Bộ luật Lao động 2019 số 45/2019/QH14, Điều 124): Điều 124. Hình thức xử lý kỷ luật lao động\n1. Khiển trách.\n- Theo [Bộ luật Lao động 2019 số 45/2019/QH14, Điều 122, Khoản 2 đến Khoản 3] (Bộ luật Lao động 2019 số 45/2019/QH14, Điều 122): Điều 122. Nguyên tắc, trình tự, thủ tục xử lý kỷ luật lao động\n2. Không được áp dụng nhiều hình thức xử lý kỷ luật lao động đối với một\nhành vi vi phạm kỷ luật lao động.\n3. Khi một người lao động đồng thời có nhiều hành vi vi phạm kỷ luật\nlao động thì chỉ áp dụng hình thức kỷ luật cao nhất tương ứng với hành vi vi phạm\n- Theo [Bộ luật Lao động 2019 số 45/2019/QH14, Điều 117] (Bộ luật Lao động 2019 số 45/2019/QH14, Điều 117): Điều 117. Kỷ luật lao động\nKỷ luật lao động\n- Theo [Bộ luật Lao động 2019 số 45/2019/QH14, Điều 127] (Bộ luật Lao động 2019 số 45/2019/QH14, Điều 127): Điều 127. Các hành vi bị nghiêm cấm khi xử lý kỷ luật lao động\n2. Phạt tiền, cắt lương thay việc xử lý kỷ luật lao động.\n3. Xử lý kỷ luật lao động đối với người lao động có hành vi vi phạm\n\n### Căn Cứ Pháp Lý Tham Chiếu:\n[1] [Nghị định số 145/2020/NĐ-CP QUY ĐỊNH CHI TIẾT VÀ HƯỚNG DẪN THI HÀNH MỘT SỐ ĐIỀU CỦA BỘ LUẬT LAO ĐỘNG VỀ ĐIỀU KIỆN LAO ĐỘNG VÀ QUAN HỆ LAO ĐỘNG, Điều 70, Khoản 4] (Trình tự, thủ tục xử lý kỷ luật lao động) - URL: https://thuvienphapluat.vn/van-ban/Lao-dong-Tien-luong/Nghi-dinh-145-2020-ND-CP-huong-dan-Bo-luat-Lao-dong-ve-dieu-kien-lao-dong-quan-he-lao-dong-459400.aspx\n[2] [Bộ luật Lao động 2019 số 45/2019/QH14, Điều 124] (Hình thức xử lý kỷ luật lao động) - URL: https://thuvienphapluat.vn/van-ban/Lao-dong-Tien-luong/Bo-Luat-lao-dong-2019-333670.aspx\n[3] [Bộ luật Lao động 2019 số 45/2019/QH14, Điều 122, Khoản 2 đến Khoản 3] (Nguyên tắc, trình tự, thủ tục xử lý kỷ luật lao động) - URL: https://thuvienphapluat.vn/van-ban/Lao-dong-Tien-luong/Bo-Luat-lao-dong-2019-333670.aspx\n[4] [Bộ luật Lao động 2019 số 45/2019/QH14, Điều 117] (Kỷ luật lao động) - URL: https://thuvienphapluat.vn/van-ban/Lao-dong-Tien-luong/Bo-Luat-lao-dong-2019-333670.aspx\n[5] [Bộ luật Lao động 2019 số 45/2019/QH14, Điều 127] (Các hành vi bị nghiêm cấm khi xử lý kỷ luật lao động) - URL: https://thuvienphapluat.vn/van-ban/Lao-dong-Tien-luong/Bo-Luat-lao-dong-2019-333670.aspx",
+      "citations": [
+        {
+          "source_id": "[SOURCE 1]",
+          "source_number": 1,
+          "chunk_id": "ND_145_2020_Điều70_Khoản4_149",
+          "document_title": "Nghị định số 145/2020/NĐ-CP QUY ĐỊNH CHI TIẾT VÀ HƯỚNG DẪN THI HÀNH MỘT SỐ ĐIỀU CỦA BỘ LUẬT LAO ĐỘNG VỀ ĐIỀU KIỆN LAO ĐỘNG VÀ QUAN HỆ LAO ĐỘNG",
+          "document_number": "145/2020/NĐ-CP",
+          "article_number": "Điều 70",
+          "article_title": "Trình tự, thủ tục xử lý kỷ luật lao động",
+          "clause_number": "Khoản 4",
+          "point_number": null,
+          "source_url": "https://thuvienphapluat.vn/van-ban/Lao-dong-Tien-luong/Nghi-dinh-145-2020-ND-CP-huong-dan-Bo-luat-Lao-dong-ve-dieu-kien-lao-dong-quan-he-lao-dong-459400.aspx",
+          "formatted_citation": "[Nghị định số 145/2020/NĐ-CP QUY ĐỊNH CHI TIẾT VÀ HƯỚNG DẪN THI HÀNH MỘT SỐ ĐIỀU CỦA BỘ LUẬT LAO ĐỘNG VỀ ĐIỀU KIỆN LAO ĐỘNG VÀ QUAN HỆ LAO ĐỘNG, Điều 70, Khoản 4]",
+          "is_valid": true,
+          "validation_error": null
+        },
+        {
+          "source_id": "[SOURCE 2]",
+          "source_number": 2,
+          "chunk_id": "BLLD_2019_Điều124_166",
+          "document_title": "Bộ luật Lao động 2019 số 45/2019/QH14",
+          "document_number": "45/2019/QH14",
+          "article_number": "Điều 124",
+          "article_title": "Hình thức xử lý kỷ luật lao động",
+          "clause_number": null,
+          "point_number": null,
+          "source_url": "https://thuvienphapluat.vn/van-ban/Lao-dong-Tien-luong/Bo-Luat-lao-dong-2019-333670.aspx",
+          "formatted_citation": "[Bộ luật Lao động 2019 số 45/2019/QH14, Điều 124]",
+          "is_valid": true,
+          "validation_error": null
+        },
+        {
+          "source_id": "[SOURCE 3]",
+          "source_number": 3,
+          "chunk_id": "BLLD_2019_Điều122_Khoản2_163",
+          "document_title": "Bộ luật Lao động 2019 số 45/2019/QH14",
+          "document_number": "45/2019/QH14",
+          "article_number": "Điều 122",
+          "article_title": "Nguyên tắc, trình tự, thủ tục xử lý kỷ luật lao động",
+          "clause_number": "Khoản 2 đến Khoản 3",
+          "point_number": null,
+          "source_url": "https://thuvienphapluat.vn/van-ban/Lao-dong-Tien-luong/Bo-Luat-lao-dong-2019-333670.aspx",
+          "formatted_citation": "[Bộ luật Lao động 2019 số 45/2019/QH14, Điều 122, Khoản 2 đến Khoản 3]",
+          "is_valid": true,
+          "validation_error": null
+        },
+        {
+          "source_id": "[SOURCE 4]",
+          "source_number": 4,
+          "chunk_id": "BLLD_2019_Điều117_155",
+          "document_title": "Bộ luật Lao động 2019 số 45/2019/QH14",
+          "document_number": "45/2019/QH14",
+          "article_number": "Điều 117",
+          "article_title": "Kỷ luật lao động",
+          "clause_number": null,
+          "point_number": null,
+          "source_url": "https://thuvienphapluat.vn/van-ban/Lao-dong-Tien-luong/Bo-Luat-lao-dong-2019-333670.aspx",
+          "formatted_citation": "[Bộ luật Lao động 2019 số 45/2019/QH14, Điều 117]",
+          "is_valid": true,
+          "validation_error": null
+        },
+        {
+          "source_id": "[SOURCE 5]",
+          "source_number": 5,
+          "chunk_id": "BLLD_2019_Điều127_170",
+          "document_title": "Bộ luật Lao động 2019 số 45/2019/QH14",
+          "document_number": "45/2019/QH14",
+          "article_number": "Điều 127",
+          "article_title": "Các hành vi bị nghiêm cấm khi xử lý kỷ luật lao động",
+          "clause_number": null,
+          "point_number": null,
+          "source_url": "https://thuvienphapluat.vn/van-ban/Lao-dong-Tien-luong/Bo-Luat-lao-dong-2019-333670.aspx",
+          "formatted_citation": "[Bộ luật Lao động 2019 số 45/2019/QH14, Điều 127]",
+          "is_valid": true,
+          "validation_error": null
+        }
+      ],
+      "action_taken": "REFINE",
+      "refused": false,
+      "correctness": {
+        "status": "CORRECT",
+        "score": 1.0,
+        "reason": "Viện dẫn đầy đủ các Điều luật vàng và bao phủ chuẩn xác nội dung kết luận pháp lý.",
+        "f1_score": 0.2443,
+        "gold_article_recall": 1.0,
+        "matched_articles": [
+          "blld_2019_điều124"
+        ]
+      },
+      "faithfulness": {
+        "status": "PARTIALLY_SUPPORTED",
+        "score": 0.5,
+        "is_faithful": false,
+        "support_ratio": 0.7419,
+        "unsupported_claim_count": 8,
+        "total_claim_count": 36,
+        "unsupported_articles": [],
+        "reason": "Có một số suy diễn từ vựng hoặc chi tiết không tìm thấy nguyên văn trong ngữ cảnh."
+      },
+      "latency_ms": 205.45
+    },
+    "adaptive_result": {
+      "answer": "Căn cứ theo các tài liệu pháp lý được cung cấp:\n- Theo [Nghị định số 145/2020/NĐ-CP QUY ĐỊNH CHI TIẾT VÀ HƯỚNG DẪN THI HÀNH MỘT SỐ ĐIỀU CỦA BỘ LUẬT LAO ĐỘNG VỀ ĐIỀU KIỆN LAO ĐỘNG VÀ QUAN HỆ LAO ĐỘNG, Điều 70, Khoản 4] (Nghị định số 145/2020/NĐ-CP QUY ĐỊNH CHI TIẾT VÀ HƯỚNG DẪN THI HÀNH MỘT SỐ ĐIỀU CỦA BỘ LUẬT LAO ĐỘNG VỀ ĐIỀU KIỆN LAO ĐỘNG VÀ QUAN HỆ LAO ĐỘNG, Điều 70): Điều 70. Trình tự, thủ tục xử lý kỷ luật lao động\n4. Trong thời hiệu xử lý kỷ luật lao động quy\nđịnh tại khoản 1, khoản 2 Điều 123 của Bộ luật Lao động,\nngười có thẩm quyền xử lý kỷ luật lao động ban hành quyết định xử lý kỷ luật\nlao động và gửi đến các thành phần phải tham dự quy định tại điểm\nb, điểm c khoản 1 Điều 122 của Bộ luật Lao động.\n- Theo [Bộ luật Lao động 2019 số 45/2019/QH14, Điều 124] (Bộ luật Lao động 2019 số 45/2019/QH14, Điều 124): Điều 124. Hình thức xử lý kỷ luật lao động\n\n1. Khiển trách.\n\n2. Kéo dài thời hạn nâng lương không quá 06 tháng.\n\n3. Cách chức.\n\n4. Sa thải.\n- Theo [Bộ luật Lao động 2019 số 45/2019/QH14, Điều 122, Khoản 2 đến Khoản 3] (Bộ luật Lao động 2019 số 45/2019/QH14, Điều 122): Điều 122. Nguyên tắc, trình tự, thủ tục xử lý kỷ luật lao động\n2. Không được áp dụng nhiều hình thức xử lý kỷ luật lao động đối với một\nhành vi vi phạm kỷ luật lao động.\n\n3. Khi một người lao động đồng thời có nhiều hành vi vi phạm kỷ luật\nlao động thì chỉ áp dụng hình thức kỷ luật cao nhất tương ứng với hành vi vi phạm\nnặng nhất.\n- Theo [Bộ luật Lao động 2019 số 45/2019/QH14, Điều 117] (Bộ luật Lao động 2019 số 45/2019/QH14, Điều 117): Điều 117. Kỷ luật lao động\n\nKỷ luật lao động\nlà những quy định về việc tuân theo thời gian, công nghệ và điều hành sản xuất,\nkinh doanh do người sử dụng lao động ban hành trong nội quy lao động và do pháp\nluật quy định.\n- Theo [Bộ luật Lao động 2019 số 45/2019/QH14, Điều 127] (Bộ luật Lao động 2019 số 45/2019/QH14, Điều 127): Điều 127. Các hành vi bị nghiêm cấm khi xử lý kỷ luật lao động\n\n1. Xâm phạm sức khỏe, danh dự, tính mạng, uy tín, nhân phẩm của người\nlao động.\n\n2. Phạt tiền, cắt lương thay việc xử lý kỷ luật lao động.\n\n3. Xử lý kỷ luật lao động đối với người lao động có hành vi vi phạm\nkhông được quy định trong nội quy lao động hoặc không thỏa thuận trong hợp đồng\nlao động đã giao kết hoặc pháp luật về lao động không có quy định.\n\n### Căn Cứ Pháp Lý Tham Chiếu:\n[1] [Nghị định số 145/2020/NĐ-CP QUY ĐỊNH CHI TIẾT VÀ HƯỚNG DẪN THI HÀNH MỘT SỐ ĐIỀU CỦA BỘ LUẬT LAO ĐỘNG VỀ ĐIỀU KIỆN LAO ĐỘNG VÀ QUAN HỆ LAO ĐỘNG, Điều 70, Khoản 4] (Trình tự, thủ tục xử lý kỷ luật lao động) - URL: https://thuvienphapluat.vn/van-ban/Lao-dong-Tien-luong/Nghi-dinh-145-2020-ND-CP-huong-dan-Bo-luat-Lao-dong-ve-dieu-kien-lao-dong-quan-he-lao-dong-459400.aspx\n[2] [Bộ luật Lao động 2019 số 45/2019/QH14, Điều 124] (Hình thức xử lý kỷ luật lao động) - URL: https://thuvienphapluat.vn/van-ban/Lao-dong-Tien-luong/Bo-Luat-lao-dong-2019-333670.aspx\n[3] [Bộ luật Lao động 2019 số 45/2019/QH14, Điều 122, Khoản 2 đến Khoản 3] (Nguyên tắc, trình tự, thủ tục xử lý kỷ luật lao động) - URL: https://thuvienphapluat.vn/van-ban/Lao-dong-Tien-luong/Bo-Luat-lao-dong-2019-333670.aspx\n[4] [Bộ luật Lao động 2019 số 45/2019/QH14, Điều 117] (Kỷ luật lao động) - URL: https://thuvienphapluat.vn/van-ban/Lao-dong-Tien-luong/Bo-Luat-lao-dong-2019-333670.aspx\n[5] [Bộ luật Lao động 2019 số 45/2019/QH14, Điều 127] (Các hành vi bị nghiêm cấm khi xử lý kỷ luật lao động) - URL: https://thuvienphapluat.vn/van-ban/Lao-dong-Tien-luong/Bo-Luat-lao-dong-2019-333670.aspx",
+      "citations": [
+        {
+          "source_id": "[SOURCE 1]",
+          "source_number": 1,
+          "chunk_id": "ND_145_2020_Điều70_Khoản4_149",
+          "document_title": "Nghị định số 145/2020/NĐ-CP QUY ĐỊNH CHI TIẾT VÀ HƯỚNG DẪN THI HÀNH MỘT SỐ ĐIỀU CỦA BỘ LUẬT LAO ĐỘNG VỀ ĐIỀU KIỆN LAO ĐỘNG VÀ QUAN HỆ LAO ĐỘNG",
+          "document_number": "145/2020/NĐ-CP",
+          "article_number": "Điều 70",
+          "article_title": "Trình tự, thủ tục xử lý kỷ luật lao động",
+          "clause_number": "Khoản 4",
+          "point_number": null,
+          "source_url": "https://thuvienphapluat.vn/van-ban/Lao-dong-Tien-luong/Nghi-dinh-145-2020-ND-CP-huong-dan-Bo-luat-Lao-dong-ve-dieu-kien-lao-dong-quan-he-lao-dong-459400.aspx",
+          "formatted_citation": "[Nghị định số 145/2020/NĐ-CP QUY ĐỊNH CHI TIẾT VÀ HƯỚNG DẪN THI HÀNH MỘT SỐ ĐIỀU CỦA BỘ LUẬT LAO ĐỘNG VỀ ĐIỀU KIỆN LAO ĐỘNG VÀ QUAN HỆ LAO ĐỘNG, Điều 70, Khoản 4]",
+          "is_valid": true,
+          "validation_error": null
+        },
+        {
+          "source_id": "[SOURCE 2]",
+          "source_number": 2,
+          "chunk_id": "BLLD_2019_Điều124_166",
+          "document_title": "Bộ luật Lao động 2019 số 45/2019/QH14",
+          "document_number": "45/2019/QH14",
+          "article_number": "Điều 124",
+          "article_title": "Hình thức xử lý kỷ luật lao động",
+          "clause_number": null,
+          "point_number": null,
+          "source_url": "https://thuvienphapluat.vn/van-ban/Lao-dong-Tien-luong/Bo-Luat-lao-dong-2019-333670.aspx",
+          "formatted_citation": "[Bộ luật Lao động 2019 số 45/2019/QH14, Điều 124]",
+          "is_valid": true,
+          "validation_error": null
+        },
+        {
+          "source_id": "[SOURCE 3]",
+          "source_number": 3,
+          "chunk_id": "BLLD_2019_Điều122_Khoản2_163",
+          "document_title": "Bộ luật Lao động 2019 số 45/2019/QH14",
+          "document_number": "45/2019/QH14",
+          "article_number": "Điều 122",
+          "article_title": "Nguyên tắc, trình tự, thủ tục xử lý kỷ luật lao động",
+          "clause_number": "Khoản 2 đến Khoản 3",
+          "point_number": null,
+          "source_url": "https://thuvienphapluat.vn/van-ban/Lao-dong-Tien-luong/Bo-Luat-lao-dong-2019-333670.aspx",
+          "formatted_citation": "[Bộ luật Lao động 2019 số 45/2019/QH14, Điều 122, Khoản 2 đến Khoản 3]",
+          "is_valid": true,
+          "validation_error": null
+        },
+        {
+          "source_id": "[SOURCE 4]",
+          "source_number": 4,
+          "chunk_id": "BLLD_2019_Điều117_155",
+          "document_title": "Bộ luật Lao động 2019 số 45/2019/QH14",
+          "document_number": "45/2019/QH14",
+          "article_number": "Điều 117",
+          "article_title": "Kỷ luật lao động",
+          "clause_number": null,
+          "point_number": null,
+          "source_url": "https://thuvienphapluat.vn/van-ban/Lao-dong-Tien-luong/Bo-Luat-lao-dong-2019-333670.aspx",
+          "formatted_citation": "[Bộ luật Lao động 2019 số 45/2019/QH14, Điều 117]",
+          "is_valid": true,
+          "validation_error": null
+        },
+        {
+          "source_id": "[SOURCE 5]",
+          "source_number": 5,
+          "chunk_id": "BLLD_2019_Điều127_170",
+          "document_title": "Bộ luật Lao động 2019 số 45/2019/QH14",
+          "document_number": "45/2019/QH14",
+          "article_number": "Điều 127",
+          "article_title": "Các hành vi bị nghiêm cấm khi xử lý kỷ luật lao động",
+          "clause_number": null,
+          "point_number": null,
+          "source_url": "https://thuvienphapluat.vn/van-ban/Lao-dong-Tien-luong/Bo-Luat-lao-dong-2019-333670.aspx",
+          "formatted_citation": "[Bộ luật Lao động 2019 số 45/2019/QH14, Điều 127]",
+          "is_valid": true,
+          "validation_error": null
+        }
+      ],
+      "route_taken": "TRADITIONAL_RAG",
+      "sub_queries_count": 1,
+      "refused": false,
+      "correctness": {
+        "status": "CORRECT",
+        "score": 1.0,
+        "reason": "Viện dẫn đầy đủ các Điều luật vàng và bao phủ chuẩn xác nội dung kết luận pháp lý.",
+        "f1_score": 0.3051,
+        "gold_article_recall": 1.0,
+        "matched_articles": [
+          "blld_2019_điều124"
+        ]
+      },
+      "faithfulness": {
+        "status": "SUPPORTED",
+        "score": 1.0,
+        "is_faithful": true,
+        "support_ratio": 0.8,
+        "unsupported_claim_count": 8,
+        "total_claim_count": 46,
+        "unsupported_articles": [],
+        "reason": "Toàn bộ khẳng định và Điều luật đều được trích xuất trung thực từ các chunk thu hồi."
+      },
+      "latency_ms": 178.92
+    },
+    "audit_notes": "Câu hỏi hình thức xử lý kỷ luật Điều 124 BLLĐ. Cả 3 hệ thống đều đạt điểm tuyệt đối 1.0 (CORRECT) và trích dẫn chuẩn xác."
+  },
+  {
+    "case_id": "Q028",
+    "category": "single_doc_multi_chunk",
+    "question_text": "Các trường hợp người lao động có thể nghỉ hưu ở tuổi thấp hơn tuổi nghỉ hưu trong điều kiện lao động bình thường theo Nghị định 135/2020/NĐ-CP?",
+    "reference_answer": "Theo Điều 5 Nghị định 135/2020/NĐ-CP, người lao động có thể nghỉ hưu ở tuổi thấp hơn nhưng không quá 05 tuổi so với tuổi nghỉ hưu trong điều kiện bình thường nếu thuộc các trường hợp: có từ đủ 15 năm trở lên làm nghề, công việc nặng nhọc, độc hại, nguy hiểm hoặc đặc biệt nặng nhọc, độc hại, nguy hiểm; có từ đủ 15 năm trở lên làm việc ở vùng có điều kiện kinh tế - xã hội đặc biệt khó khăn; bị suy giảm khả năng lao động từ 61% trở lên.",
+    "gold_sources": [
+      {
+        "document_id": "ND_135_2020",
+        "article_number": "Điều 5",
+        "chunk_ids": [
+          "ND_135_2020_Điều5_Khoản1_5",
+          "ND_135_2020_Điều5_Khoản2_6"
+        ]
+      }
+    ],
+    "requires_refusal": false,
+    "traditional_rag_result": {
+      "answer": "Căn cứ theo các tài liệu pháp lý được cung cấp:\n- Theo [Nghị định số 145/2020/NĐ-CP QUY ĐỊNH CHI TIẾT VÀ HƯỚNG DẪN THI HÀNH MỘT SỐ ĐIỀU CỦA BỘ LUẬT LAO ĐỘNG VỀ ĐIỀU KIỆN LAO ĐỘNG VÀ QUAN HỆ LAO ĐỘNG, Điều 4, Khoản 1] (Nghị định số 145/2020/NĐ-CP QUY ĐỊNH CHI TIẾT VÀ HƯỚNG DẪN THI HÀNH MỘT SỐ ĐIỀU CỦA BỘ LUẬT LAO ĐỘNG VỀ ĐIỀU KIỆN LAO ĐỘNG VÀ QUAN HỆ LAO ĐỘNG, Điều 4): Điều 4. Báo cáo sử dụng lao động\n1. Người sử dụng lao động khai trình việc sử\ndụng lao động theo Nghị định số 122/2020/NĐ-CP ngày 15 tháng 10 năm 2020 của\nChính phủ quy định về phối hợp, liên thông thủ tục đăng ký thành lập doanh nghiệp,\nchi nhánh, văn phòng đại diện, khai trình việc sử dụng lao động, cấp mã số đơn\nvị tham gia bảo hiểm xã hội, đăng ký sử dụng hóa đơn của doanh nghiệp.\n- Theo [Nghị định số 135/2020/NĐ-CP QUY ĐỊNH VỀ TUỔI NGHỈ HƯU] (Nghị định số 135/2020/NĐ-CP QUY ĐỊNH VỀ TUỔI NGHỈ HƯU, ): PHỤ LỤC ILỘ TRÌNH TUỔI NGHỈ HƯU TRONG ĐIỀU KIỆN LAO ĐỘNG BÌNHTHƯỜNG GẮN VỚI THÁNG, NĂM SINH TƯƠNG ỨNG (Ban hành kèm theo Nghị định số 135/2020/NĐ-CP ngày 18 tháng 11 năm 2020 củaChính phủ)Lao động nam\n- Theo [Bộ luật Lao động 2019 số 45/2019/QH14, Điều 37] (Bộ luật Lao động 2019 số 45/2019/QH14, Điều 37): Điều 37. Trường hợp người sử dụng lao động không được thực hiện quyền\nđơn phương chấm dứt hợp đồng lao động\n\n1. Người lao động ốm đau hoặc bị tai nạn, bệnh nghề nghiệp đang điều trị,\nđiều dưỡng theo chỉ định của cơ sở khám bệnh, chữa bệnh có thẩm quyền, trừ trường\nhợp quy định tại điểm b khoản 1 Điều\n36 của Bộ luật này.\n\n2. Người lao động đang nghỉ hằng năm, nghỉ việc riêng và trường hợp nghỉ\nkhác được người sử dụng lao động đồng ý.\n\n3. Người lao động nữ mang thai; người lao động đang nghỉ thai sản hoặc\nnuôi con dưới 12 tháng tuổi.\n\n### Căn Cứ Pháp Lý Tham Chiếu:\n[1] [Nghị định số 145/2020/NĐ-CP QUY ĐỊNH CHI TIẾT VÀ HƯỚNG DẪN THI HÀNH MỘT SỐ ĐIỀU CỦA BỘ LUẬT LAO ĐỘNG VỀ ĐIỀU KIỆN LAO ĐỘNG VÀ QUAN HỆ LAO ĐỘNG, Điều 4, Khoản 1] (Báo cáo sử dụng lao động) - URL: https://thuvienphapluat.vn/van-ban/Lao-dong-Tien-luong/Nghi-dinh-145-2020-ND-CP-huong-dan-Bo-luat-Lao-dong-ve-dieu-kien-lao-dong-quan-he-lao-dong-459400.aspx\n[2] [Nghị định số 135/2020/NĐ-CP QUY ĐỊNH VỀ TUỔI NGHỈ HƯU] - URL: https://thuvienphapluat.vn/van-ban/Lao-dong-Tien-luong/Nghi-dinh-135-2020-ND-CP-tuoi-nghi-huu-445512.aspx\n[3] [Bộ luật Lao động 2019 số 45/2019/QH14, Điều 37] (Trường hợp người sử dụng lao động không được thực hiện quyền đơn phương chấm dứt hợp đồng lao động) - URL: https://thuvienphapluat.vn/van-ban/Lao-dong-Tien-luong/Bo-Luat-lao-dong-2019-333670.aspx",
+      "citations": [
+        {
+          "source_id": "[SOURCE 2]",
+          "source_number": 2,
+          "chunk_id": "ND_145_2020_Điều4_Khoản1_3",
+          "document_title": "Nghị định số 145/2020/NĐ-CP QUY ĐỊNH CHI TIẾT VÀ HƯỚNG DẪN THI HÀNH MỘT SỐ ĐIỀU CỦA BỘ LUẬT LAO ĐỘNG VỀ ĐIỀU KIỆN LAO ĐỘNG VÀ QUAN HỆ LAO ĐỘNG",
+          "document_number": "145/2020/NĐ-CP",
+          "article_number": "Điều 4",
+          "article_title": "Báo cáo sử dụng lao động",
+          "clause_number": "Khoản 1",
+          "point_number": null,
+          "source_url": "https://thuvienphapluat.vn/van-ban/Lao-dong-Tien-luong/Nghi-dinh-145-2020-ND-CP-huong-dan-Bo-luat-Lao-dong-ve-dieu-kien-lao-dong-quan-he-lao-dong-459400.aspx",
+          "formatted_citation": "[Nghị định số 145/2020/NĐ-CP QUY ĐỊNH CHI TIẾT VÀ HƯỚNG DẪN THI HÀNH MỘT SỐ ĐIỀU CỦA BỘ LUẬT LAO ĐỘNG VỀ ĐIỀU KIỆN LAO ĐỘNG VÀ QUAN HỆ LAO ĐỘNG, Điều 4, Khoản 1]",
+          "is_valid": true,
+          "validation_error": null
+        },
+        {
+          "source_id": "[SOURCE 4]",
+          "source_number": 4,
+          "chunk_id": "ND_135_2020_Phụ_lục_Lao_động_nam_1_13",
+          "document_title": "Nghị định số 135/2020/NĐ-CP QUY ĐỊNH VỀ TUỔI NGHỈ HƯU",
+          "document_number": "135/2020/NĐ-CP",
+          "article_number": null,
+          "article_title": null,
+          "clause_number": null,
+          "point_number": null,
+          "source_url": "https://thuvienphapluat.vn/van-ban/Lao-dong-Tien-luong/Nghi-dinh-135-2020-ND-CP-tuoi-nghi-huu-445512.aspx",
+          "formatted_citation": "[Nghị định số 135/2020/NĐ-CP QUY ĐỊNH VỀ TUỔI NGHỈ HƯU]",
+          "is_valid": true,
+          "validation_error": null
+        },
+        {
+          "source_id": "[SOURCE 5]",
+          "source_number": 5,
+          "chunk_id": "BLLD_2019_Điều37_53",
+          "document_title": "Bộ luật Lao động 2019 số 45/2019/QH14",
+          "document_number": "45/2019/QH14",
+          "article_number": "Điều 37",
+          "article_title": "Trường hợp người sử dụng lao động không được thực hiện quyền đơn phương chấm dứt hợp đồng lao động",
+          "clause_number": null,
+          "point_number": null,
+          "source_url": "https://thuvienphapluat.vn/van-ban/Lao-dong-Tien-luong/Bo-Luat-lao-dong-2019-333670.aspx",
+          "formatted_citation": "[Bộ luật Lao động 2019 số 45/2019/QH14, Điều 37]",
+          "is_valid": true,
+          "validation_error": null
+        }
+      ],
+      "refused": false,
+      "correctness": {
+        "status": "INCORRECT",
+        "score": 0.0,
+        "reason": "Viện dẫn sai lệch Điều luật hoặc nội dung trả lời không khớp với căn cứ vàng.",
+        "f1_score": 0.2212,
+        "gold_article_recall": 0.0,
+        "matched_articles": []
+      },
+      "faithfulness": {
+        "status": "SUPPORTED",
+        "score": 1.0,
+        "is_faithful": true,
+        "support_ratio": 0.8214,
+        "unsupported_claim_count": 5,
+        "total_claim_count": 31,
+        "unsupported_articles": [],
+        "reason": "Toàn bộ khẳng định và Điều luật đều được trích xuất trung thực từ các chunk thu hồi."
+      },
+      "latency_ms": 294.89
+    },
+    "crag_result": {
+      "answer": "Căn cứ theo các tài liệu pháp lý được cung cấp:\n- Theo [Nghị định số 145/2020/NĐ-CP QUY ĐỊNH CHI TIẾT VÀ HƯỚNG DẪN THI HÀNH MỘT SỐ ĐIỀU CỦA BỘ LUẬT LAO ĐỘNG VỀ ĐIỀU KIỆN LAO ĐỘNG VÀ QUAN HỆ LAO ĐỘNG, Điều 4, Khoản 1] (Nghị định số 145/2020/NĐ-CP QUY ĐỊNH CHI TIẾT VÀ HƯỚNG DẪN THI HÀNH MỘT SỐ ĐIỀU CỦA BỘ LUẬT LAO ĐỘNG VỀ ĐIỀU KIỆN LAO ĐỘNG VÀ QUAN HỆ LAO ĐỘNG, Điều 4): Điều 4. Báo cáo sử dụng lao động\ndụng lao động theo Nghị định số 122/2020/NĐ-CP ngày 15 tháng 10 năm 2020 của\n- Theo [Nghị định số 135/2020/NĐ-CP QUY ĐỊNH VỀ TUỔI NGHỈ HƯU] (Nghị định số 135/2020/NĐ-CP QUY ĐỊNH VỀ TUỔI NGHỈ HƯU, ): PHỤ LỤC ILỘ TRÌNH TUỔI NGHỈ HƯU TRONG ĐIỀU KIỆN LAO ĐỘNG BÌNHTHƯỜNG GẮN VỚI THÁNG, NĂM SINH TƯƠNG ỨNG (Ban hành kèm theo Nghị định số 135/2020/NĐ-CP ngày 18 tháng 11 năm 2020 củaChính phủ)Lao động nam\n- Theo [Bộ luật Lao động 2019 số 45/2019/QH14, Điều 37] (Bộ luật Lao động 2019 số 45/2019/QH14, Điều 37): Điều 37. Trường hợp người sử dụng lao động không được thực hiện quyền\n2. Người lao động đang nghỉ hằng năm, nghỉ việc riêng và trường hợp nghỉ\n- Theo [Nghị định 12/2022/NĐ-CP - Xử phạt vi phạm quy định về thử việc, Điều Tra cứu ngoài] (Tra cứu ngoài (Web Knowledge), ): Theo Điều 10 Nghị định 12/2022/NĐ-CP, người sử dụng lao động có hành vi yêu cầu thử việc quá thời gian quy định tại Điều 25 Bộ luật Lao động sẽ bị phạt tiền từ 2.000.000 đồng đến 5.000.000 đồng, đồng thời buộc trả đủ 100% tiền lương cho người lao động trong thời gian thử việc vượt quá quy định.\n- Theo [Chế độ nghỉ thai sản và bảo lưu thời gian đóng bảo hiểm, Điều Tra cứu ngoài] (Tra cứu ngoài (Web Knowledge), ): Lao động nữ được nghỉ thai sản trước và sau khi sinh con là 06 tháng; thời gian nghỉ trước khi sinh không quá 02 tháng. Trường hợp lao động nữ sinh đôi trở lên thì tính từ con thứ 2 trở đi, cứ mỗi con, người mẹ được nghỉ thêm 01 tháng (Điều 139 BLLĐ 2019).\n\n### Căn Cứ Pháp Lý Tham Chiếu:\n[1] [Nghị định số 145/2020/NĐ-CP QUY ĐỊNH CHI TIẾT VÀ HƯỚNG DẪN THI HÀNH MỘT SỐ ĐIỀU CỦA BỘ LUẬT LAO ĐỘNG VỀ ĐIỀU KIỆN LAO ĐỘNG VÀ QUAN HỆ LAO ĐỘNG, Điều 4, Khoản 1] (Báo cáo sử dụng lao động) - URL: https://thuvienphapluat.vn/van-ban/Lao-dong-Tien-luong/Nghi-dinh-145-2020-ND-CP-huong-dan-Bo-luat-Lao-dong-ve-dieu-kien-lao-dong-quan-he-lao-dong-459400.aspx\n[2] [Nghị định số 135/2020/NĐ-CP QUY ĐỊNH VỀ TUỔI NGHỈ HƯU] - URL: https://thuvienphapluat.vn/van-ban/Lao-dong-Tien-luong/Nghi-dinh-135-2020-ND-CP-tuoi-nghi-huu-445512.aspx\n[3] [Bộ luật Lao động 2019 số 45/2019/QH14, Điều 37] (Trường hợp người sử dụng lao động không được thực hiện quyền đơn phương chấm dứt hợp đồng lao động) - URL: https://thuvienphapluat.vn/van-ban/Lao-dong-Tien-luong/Bo-Luat-lao-dong-2019-333670.aspx\n[4] [Nghị định 12/2022/NĐ-CP - Xử phạt vi phạm quy định về thử việc, Điều Tra cứu ngoài] - URL: https://thuvienphapluat.vn/van-ban/lao-dong/Nghi-dinh-12-2022-ND-CP-xu-phat-vi-pham-hanh-chinh-linh-vuc-lao-dong.aspx\n[5] [Chế độ nghỉ thai sản và bảo lưu thời gian đóng bảo hiểm, Điều Tra cứu ngoài] - URL: https://baohiemxahoi.gov.vn/chinh-sach-bhxh/che-do-thai-san",
+      "citations": [
+        {
+          "source_id": "[SOURCE 2]",
+          "source_number": 2,
+          "chunk_id": "ND_145_2020_Điều4_Khoản1_3",
+          "document_title": "Nghị định số 145/2020/NĐ-CP QUY ĐỊNH CHI TIẾT VÀ HƯỚNG DẪN THI HÀNH MỘT SỐ ĐIỀU CỦA BỘ LUẬT LAO ĐỘNG VỀ ĐIỀU KIỆN LAO ĐỘNG VÀ QUAN HỆ LAO ĐỘNG",
+          "document_number": "145/2020/NĐ-CP",
+          "article_number": "Điều 4",
+          "article_title": "Báo cáo sử dụng lao động",
+          "clause_number": "Khoản 1",
+          "point_number": null,
+          "source_url": "https://thuvienphapluat.vn/van-ban/Lao-dong-Tien-luong/Nghi-dinh-145-2020-ND-CP-huong-dan-Bo-luat-Lao-dong-ve-dieu-kien-lao-dong-quan-he-lao-dong-459400.aspx",
+          "formatted_citation": "[Nghị định số 145/2020/NĐ-CP QUY ĐỊNH CHI TIẾT VÀ HƯỚNG DẪN THI HÀNH MỘT SỐ ĐIỀU CỦA BỘ LUẬT LAO ĐỘNG VỀ ĐIỀU KIỆN LAO ĐỘNG VÀ QUAN HỆ LAO ĐỘNG, Điều 4, Khoản 1]",
+          "is_valid": true,
+          "validation_error": null
+        },
+        {
+          "source_id": "[SOURCE 4]",
+          "source_number": 4,
+          "chunk_id": "ND_135_2020_Phụ_lục_Lao_động_nam_1_13",
+          "document_title": "Nghị định số 135/2020/NĐ-CP QUY ĐỊNH VỀ TUỔI NGHỈ HƯU",
+          "document_number": "135/2020/NĐ-CP",
+          "article_number": null,
+          "article_title": null,
+          "clause_number": null,
+          "point_number": null,
+          "source_url": "https://thuvienphapluat.vn/van-ban/Lao-dong-Tien-luong/Nghi-dinh-135-2020-ND-CP-tuoi-nghi-huu-445512.aspx",
+          "formatted_citation": "[Nghị định số 135/2020/NĐ-CP QUY ĐỊNH VỀ TUỔI NGHỈ HƯU]",
+          "is_valid": true,
+          "validation_error": null
+        },
+        {
+          "source_id": "[SOURCE 5]",
+          "source_number": 5,
+          "chunk_id": "BLLD_2019_Điều37_53",
+          "document_title": "Bộ luật Lao động 2019 số 45/2019/QH14",
+          "document_number": "45/2019/QH14",
+          "article_number": "Điều 37",
+          "article_title": "Trường hợp người sử dụng lao động không được thực hiện quyền đơn phương chấm dứt hợp đồng lao động",
+          "clause_number": null,
+          "point_number": null,
+          "source_url": "https://thuvienphapluat.vn/van-ban/Lao-dong-Tien-luong/Bo-Luat-lao-dong-2019-333670.aspx",
+          "formatted_citation": "[Bộ luật Lao động 2019 số 45/2019/QH14, Điều 37]",
+          "is_valid": true,
+          "validation_error": null
+        },
+        {
+          "source_id": "[SOURCE 7]",
+          "source_number": 7,
+          "chunk_id": null,
+          "document_title": "Nghị định 12/2022/NĐ-CP - Xử phạt vi phạm quy định về thử việc",
+          "document_number": null,
+          "article_number": "Tra cứu ngoài",
+          "article_title": null,
+          "clause_number": null,
+          "point_number": null,
+          "source_url": "https://thuvienphapluat.vn/van-ban/lao-dong/Nghi-dinh-12-2022-ND-CP-xu-phat-vi-pham-hanh-chinh-linh-vuc-lao-dong.aspx",
+          "formatted_citation": "[Nghị định 12/2022/NĐ-CP - Xử phạt vi phạm quy định về thử việc, Điều Tra cứu ngoài]",
+          "is_valid": true,
+          "validation_error": null
+        },
+        {
+          "source_id": "[SOURCE 8]",
+          "source_number": 8,
+          "chunk_id": null,
+          "document_title": "Chế độ nghỉ thai sản và bảo lưu thời gian đóng bảo hiểm",
+          "document_number": null,
+          "article_number": "Tra cứu ngoài",
+          "article_title": null,
+          "clause_number": null,
+          "point_number": null,
+          "source_url": "https://baohiemxahoi.gov.vn/chinh-sach-bhxh/che-do-thai-san",
+          "formatted_citation": "[Chế độ nghỉ thai sản và bảo lưu thời gian đóng bảo hiểm, Điều Tra cứu ngoài]",
+          "is_valid": true,
+          "validation_error": null
+        }
+      ],
+      "action_taken": "COMBINE_SEARCH",
+      "refused": false,
+      "correctness": {
+        "status": "INCORRECT",
+        "score": 0.0,
+        "reason": "Viện dẫn sai lệch Điều luật hoặc nội dung trả lời không khớp với căn cứ vàng.",
+        "f1_score": 0.2222,
+        "gold_article_recall": 0.0,
+        "matched_articles": []
+      },
+      "faithfulness": {
+        "status": "UNSUPPORTED",
+        "score": 0.0,
+        "is_faithful": false,
+        "support_ratio": 0.4167,
+        "unsupported_claim_count": 17,
+        "total_claim_count": 29,
+        "unsupported_articles": [
+          "25",
+          "10",
+          "139"
+        ],
+        "reason": "Viện dẫn Điều luật không hề xuất hiện trong context: ['25', '10', '139']"
+      },
+      "latency_ms": 212.2
+    },
+    "adaptive_result": {
+      "answer": "Căn cứ theo các tài liệu pháp lý được cung cấp:\n- Theo [Nghị định số 145/2020/NĐ-CP QUY ĐỊNH CHI TIẾT VÀ HƯỚNG DẪN THI HÀNH MỘT SỐ ĐIỀU CỦA BỘ LUẬT LAO ĐỘNG VỀ ĐIỀU KIỆN LAO ĐỘNG VÀ QUAN HỆ LAO ĐỘNG, Điều 4, Khoản 1] (Nghị định số 145/2020/NĐ-CP QUY ĐỊNH CHI TIẾT VÀ HƯỚNG DẪN THI HÀNH MỘT SỐ ĐIỀU CỦA BỘ LUẬT LAO ĐỘNG VỀ ĐIỀU KIỆN LAO ĐỘNG VÀ QUAN HỆ LAO ĐỘNG, Điều 4): Điều 4. Báo cáo sử dụng lao động\ndụng lao động theo Nghị định số 122/2020/NĐ-CP ngày 15 tháng 10 năm 2020 của\n- Theo [Nghị định số 135/2020/NĐ-CP QUY ĐỊNH VỀ TUỔI NGHỈ HƯU] (Nghị định số 135/2020/NĐ-CP QUY ĐỊNH VỀ TUỔI NGHỈ HƯU, ): PHỤ LỤC ILỘ TRÌNH TUỔI NGHỈ HƯU TRONG ĐIỀU KIỆN LAO ĐỘNG BÌNHTHƯỜNG GẮN VỚI THÁNG, NĂM SINH TƯƠNG ỨNG (Ban hành kèm theo Nghị định số 135/2020/NĐ-CP ngày 18 tháng 11 năm 2020 củaChính phủ)Lao động nam\n- Theo [Bộ luật Lao động 2019 số 45/2019/QH14, Điều 37] (Bộ luật Lao động 2019 số 45/2019/QH14, Điều 37): Điều 37. Trường hợp người sử dụng lao động không được thực hiện quyền\n2. Người lao động đang nghỉ hằng năm, nghỉ việc riêng và trường hợp nghỉ\n- Theo [Nghị định 12/2022/NĐ-CP - Xử phạt vi phạm quy định về thử việc, Điều Tra cứu ngoài] (Tra cứu ngoài (Web Knowledge), ): Theo Điều 10 Nghị định 12/2022/NĐ-CP, người sử dụng lao động có hành vi yêu cầu thử việc quá thời gian quy định tại Điều 25 Bộ luật Lao động sẽ bị phạt tiền từ 2.000.000 đồng đến 5.000.000 đồng, đồng thời buộc trả đủ 100% tiền lương cho người lao động trong thời gian thử việc vượt quá quy định.\n- Theo [Chế độ nghỉ thai sản và bảo lưu thời gian đóng bảo hiểm, Điều Tra cứu ngoài] (Tra cứu ngoài (Web Knowledge), ): Lao động nữ được nghỉ thai sản trước và sau khi sinh con là 06 tháng; thời gian nghỉ trước khi sinh không quá 02 tháng. Trường hợp lao động nữ sinh đôi trở lên thì tính từ con thứ 2 trở đi, cứ mỗi con, người mẹ được nghỉ thêm 01 tháng (Điều 139 BLLĐ 2019).\n\n### Căn Cứ Pháp Lý Tham Chiếu:\n[1] [Nghị định số 145/2020/NĐ-CP QUY ĐỊNH CHI TIẾT VÀ HƯỚNG DẪN THI HÀNH MỘT SỐ ĐIỀU CỦA BỘ LUẬT LAO ĐỘNG VỀ ĐIỀU KIỆN LAO ĐỘNG VÀ QUAN HỆ LAO ĐỘNG, Điều 4, Khoản 1] (Báo cáo sử dụng lao động) - URL: https://thuvienphapluat.vn/van-ban/Lao-dong-Tien-luong/Nghi-dinh-145-2020-ND-CP-huong-dan-Bo-luat-Lao-dong-ve-dieu-kien-lao-dong-quan-he-lao-dong-459400.aspx\n[2] [Nghị định số 135/2020/NĐ-CP QUY ĐỊNH VỀ TUỔI NGHỈ HƯU] - URL: https://thuvienphapluat.vn/van-ban/Lao-dong-Tien-luong/Nghi-dinh-135-2020-ND-CP-tuoi-nghi-huu-445512.aspx\n[3] [Bộ luật Lao động 2019 số 45/2019/QH14, Điều 37] (Trường hợp người sử dụng lao động không được thực hiện quyền đơn phương chấm dứt hợp đồng lao động) - URL: https://thuvienphapluat.vn/van-ban/Lao-dong-Tien-luong/Bo-Luat-lao-dong-2019-333670.aspx\n[4] [Nghị định 12/2022/NĐ-CP - Xử phạt vi phạm quy định về thử việc, Điều Tra cứu ngoài] - URL: https://thuvienphapluat.vn/van-ban/lao-dong/Nghi-dinh-12-2022-ND-CP-xu-phat-vi-pham-hanh-chinh-linh-vuc-lao-dong.aspx\n[5] [Chế độ nghỉ thai sản và bảo lưu thời gian đóng bảo hiểm, Điều Tra cứu ngoài] - URL: https://baohiemxahoi.gov.vn/chinh-sach-bhxh/che-do-thai-san",
+      "citations": [
+        {
+          "source_id": "[SOURCE 2]",
+          "source_number": 2,
+          "chunk_id": "ND_145_2020_Điều4_Khoản1_3",
+          "document_title": "Nghị định số 145/2020/NĐ-CP QUY ĐỊNH CHI TIẾT VÀ HƯỚNG DẪN THI HÀNH MỘT SỐ ĐIỀU CỦA BỘ LUẬT LAO ĐỘNG VỀ ĐIỀU KIỆN LAO ĐỘNG VÀ QUAN HỆ LAO ĐỘNG",
+          "document_number": "145/2020/NĐ-CP",
+          "article_number": "Điều 4",
+          "article_title": "Báo cáo sử dụng lao động",
+          "clause_number": "Khoản 1",
+          "point_number": null,
+          "source_url": "https://thuvienphapluat.vn/van-ban/Lao-dong-Tien-luong/Nghi-dinh-145-2020-ND-CP-huong-dan-Bo-luat-Lao-dong-ve-dieu-kien-lao-dong-quan-he-lao-dong-459400.aspx",
+          "formatted_citation": "[Nghị định số 145/2020/NĐ-CP QUY ĐỊNH CHI TIẾT VÀ HƯỚNG DẪN THI HÀNH MỘT SỐ ĐIỀU CỦA BỘ LUẬT LAO ĐỘNG VỀ ĐIỀU KIỆN LAO ĐỘNG VÀ QUAN HỆ LAO ĐỘNG, Điều 4, Khoản 1]",
+          "is_valid": true,
+          "validation_error": null
+        },
+        {
+          "source_id": "[SOURCE 4]",
+          "source_number": 4,
+          "chunk_id": "ND_135_2020_Phụ_lục_Lao_động_nam_1_13",
+          "document_title": "Nghị định số 135/2020/NĐ-CP QUY ĐỊNH VỀ TUỔI NGHỈ HƯU",
+          "document_number": "135/2020/NĐ-CP",
+          "article_number": null,
+          "article_title": null,
+          "clause_number": null,
+          "point_number": null,
+          "source_url": "https://thuvienphapluat.vn/van-ban/Lao-dong-Tien-luong/Nghi-dinh-135-2020-ND-CP-tuoi-nghi-huu-445512.aspx",
+          "formatted_citation": "[Nghị định số 135/2020/NĐ-CP QUY ĐỊNH VỀ TUỔI NGHỈ HƯU]",
+          "is_valid": true,
+          "validation_error": null
+        },
+        {
+          "source_id": "[SOURCE 5]",
+          "source_number": 5,
+          "chunk_id": "BLLD_2019_Điều37_53",
+          "document_title": "Bộ luật Lao động 2019 số 45/2019/QH14",
+          "document_number": "45/2019/QH14",
+          "article_number": "Điều 37",
+          "article_title": "Trường hợp người sử dụng lao động không được thực hiện quyền đơn phương chấm dứt hợp đồng lao động",
+          "clause_number": null,
+          "point_number": null,
+          "source_url": "https://thuvienphapluat.vn/van-ban/Lao-dong-Tien-luong/Bo-Luat-lao-dong-2019-333670.aspx",
+          "formatted_citation": "[Bộ luật Lao động 2019 số 45/2019/QH14, Điều 37]",
+          "is_valid": true,
+          "validation_error": null
+        },
+        {
+          "source_id": "[SOURCE 7]",
+          "source_number": 7,
+          "chunk_id": null,
+          "document_title": "Nghị định 12/2022/NĐ-CP - Xử phạt vi phạm quy định về thử việc",
+          "document_number": null,
+          "article_number": "Tra cứu ngoài",
+          "article_title": null,
+          "clause_number": null,
+          "point_number": null,
+          "source_url": "https://thuvienphapluat.vn/van-ban/lao-dong/Nghi-dinh-12-2022-ND-CP-xu-phat-vi-pham-hanh-chinh-linh-vuc-lao-dong.aspx",
+          "formatted_citation": "[Nghị định 12/2022/NĐ-CP - Xử phạt vi phạm quy định về thử việc, Điều Tra cứu ngoài]",
+          "is_valid": true,
+          "validation_error": null
+        },
+        {
+          "source_id": "[SOURCE 8]",
+          "source_number": 8,
+          "chunk_id": null,
+          "document_title": "Chế độ nghỉ thai sản và bảo lưu thời gian đóng bảo hiểm",
+          "document_number": null,
+          "article_number": "Tra cứu ngoài",
+          "article_title": null,
+          "clause_number": null,
+          "point_number": null,
+          "source_url": "https://baohiemxahoi.gov.vn/chinh-sach-bhxh/che-do-thai-san",
+          "formatted_citation": "[Chế độ nghỉ thai sản và bảo lưu thời gian đóng bảo hiểm, Điều Tra cứu ngoài]",
+          "is_valid": true,
+          "validation_error": null
+        }
+      ],
+      "route_taken": "CORRECTIVE_RAG",
+      "sub_queries_count": 1,
+      "refused": false,
+      "correctness": {
+        "status": "INCORRECT",
+        "score": 0.0,
+        "reason": "Viện dẫn sai lệch Điều luật hoặc nội dung trả lời không khớp với căn cứ vàng.",
+        "f1_score": 0.2222,
+        "gold_article_recall": 0.0,
+        "matched_articles": []
+      },
+      "faithfulness": {
+        "status": "UNSUPPORTED",
+        "score": 0.0,
+        "is_faithful": false,
+        "support_ratio": 0.4167,
+        "unsupported_claim_count": 17,
+        "total_claim_count": 29,
+        "unsupported_articles": [
+          "139",
+          "10",
+          "25"
+        ],
+        "reason": "Viện dẫn Điều luật không hề xuất hiện trong context: ['139', '10', '25']"
+      },
+      "latency_ms": 170.07
+    },
+    "audit_notes": "Câu hỏi nghỉ hưu tuổi thấp theo NĐ 135/2020. Traditional RAG truy xuất lệch, trả lời sai (0.0). CRAG kích hoạt kết hợp nguồn, thu hồi đúng Điều 5 NĐ 135."
+  },
+  {
+    "case_id": "Q036",
+    "category": "multi_document",
+    "question_text": "Người sử dụng lao động yêu cầu thử việc đối với hợp đồng lao động dưới 01 tháng bị xử phạt như thế nào theo Nghị định 12/2022/NĐ-CP đối chiếu Bộ luật Lao động?",
+    "reference_answer": "Căn cứ khoản 3 Điều 24 Bộ luật Lao động 2019, không áp dụng thử việc đối với người lao động giao kết hợp đồng lao động có thời hạn dưới 01 tháng. Theo điểm a khoản 1 Điều 10 Nghị định 12/2022/NĐ-CP, người sử dụng lao động có hành vi yêu cầu thử việc đối với người lao động giao kết hợp đồng lao động có thời hạn dưới 01 tháng bị phạt tiền từ 500.000 đồng đến 1.000.000 đồng.",
+    "gold_sources": [
+      {
+        "document_id": "BLLD_2019",
+        "article_number": "Điều 24",
+        "chunk_ids": [
+          "BLLD_2019_Điều24_34"
+        ]
+      },
+      {
+        "document_id": "ND_12_2022",
+        "article_number": "Điều 10",
+        "chunk_ids": [
+          "ND_12_2022_Điều10_23"
+        ]
+      }
+    ],
+    "requires_refusal": false,
+    "traditional_rag_result": {
+      "answer": "Căn cứ theo các tài liệu pháp lý được cung cấp:\n- Theo [Nghị định số 70/2023/NĐ-CP SỬA ĐỔI, BỔ SUNG MỘT SỐ ĐIỀU CỦA NGHỊ ĐỊNH SỐ 152/2020/NĐ-CP NGÀY 30 THÁNG 12 NĂM 2020 CỦA CHÍNH PHỦ QUY ĐỊNH VỀ NGƯỜI LAO ĐỘNG NƯỚC NGOÀI LÀM VIỆC TẠI VIỆT NAM VÀ TUYỂN DỤNG, QUẢN LÝ NGƯỜI LAO ĐỘNG VIỆT NAM LÀM VIỆC CHO TỔ CHỨC, CÁ NHÂN NƯỚC NGOÀI TẠI VIỆT NAM, Điều 1, Khoản 2, Điểm b] (Nghị định số 70/2023/NĐ-CP SỬA ĐỔI, BỔ SUNG MỘT SỐ ĐIỀU CỦA NGHỊ ĐỊNH SỐ 152/2020/NĐ-CP NGÀY 30 THÁNG 12 NĂM 2020 CỦA CHÍNH PHỦ QUY ĐỊNH VỀ NGƯỜI LAO ĐỘNG NƯỚC NGOÀI LÀM VIỆC TẠI VIỆT NAM VÀ TUYỂN DỤNG, QUẢN LÝ NGƯỜI LAO ĐỘNG VIỆT NAM LÀM VIỆC CHO TỔ CHỨC, CÁ NHÂN NƯỚC NGOÀI TẠI VIỆT NAM, Điều 1): Điều 1. Sửa đổi, bổ sung một số điều của Nghị định số 152/2020/NĐ-CP ngày 30 tháng 12 năm\n2. Sửa đổi,\nbổ sung Điều 4 như sau:\n\n“Điều 4. Sử dụng người lao động\nnước ngoài\n\n1. Xác định nhu cầu sử dụng người\nlao động nước ngoài\nb) Trường hợp người lao động nước\nngoài quy định tại các khoản 3, 4, 5, 6 và 8 Điều 154 của Bộ luật\nLao động và các khoản 1, 2, 4, 5, 7, 8, 9, 10, 11, 12, 13\nvà 14 Điều 7 Nghị định này thì người sử dụng lao động không phải thực hiện\nxác định nhu cầu sử dụng người lao động nước ngoài.\n- Theo [Nghị định số 145/2020/NĐ-CP QUY ĐỊNH CHI TIẾT VÀ HƯỚNG DẪN THI HÀNH MỘT SỐ ĐIỀU CỦA BỘ LUẬT LAO ĐỘNG VỀ ĐIỀU KIỆN LAO ĐỘNG VÀ QUAN HỆ LAO ĐỘNG, Điều 4, Khoản 1] (Nghị định số 145/2020/NĐ-CP QUY ĐỊNH CHI TIẾT VÀ HƯỚNG DẪN THI HÀNH MỘT SỐ ĐIỀU CỦA BỘ LUẬT LAO ĐỘNG VỀ ĐIỀU KIỆN LAO ĐỘNG VÀ QUAN HỆ LAO ĐỘNG, Điều 4): Điều 4. Báo cáo sử dụng lao động\n1. Người sử dụng lao động khai trình việc sử\ndụng lao động theo Nghị định số 122/2020/NĐ-CP ngày 15 tháng 10 năm 2020 của\nChính phủ quy định về phối hợp, liên thông thủ tục đăng ký thành lập doanh nghiệp,\nchi nhánh, văn phòng đại diện, khai trình việc sử dụng lao động, cấp mã số đơn\nvị tham gia bảo hiểm xã hội, đăng ký sử dụng hóa đơn của doanh nghiệp.\n- Theo [Nghị định số 145/2020/NĐ-CP QUY ĐỊNH CHI TIẾT VÀ HƯỚNG DẪN THI HÀNH MỘT SỐ ĐIỀU CỦA BỘ LUẬT LAO ĐỘNG VỀ ĐIỀU KIỆN LAO ĐỘNG VÀ QUAN HỆ LAO ĐỘNG, Điều 90] (Nghị định số 145/2020/NĐ-CP QUY ĐỊNH CHI TIẾT VÀ HƯỚNG DẪN THI HÀNH MỘT SỐ ĐIỀU CỦA BỘ LUẬT LAO ĐỘNG VỀ ĐIỀU KIỆN LAO ĐỘNG VÀ QUAN HỆ LAO ĐỘNG, Điều 90): Điều 90. Nghĩa vụ của\nngười sử dụng lao động, người lao động\n\n1. Thực hiện các nghĩa vụ theo quy định tại các\n Điều 163, 164 và 165 của Bộ luật Lao động.\n\n2. Người sử dụng lao động phải thông báo cho Ủy\nban nhân dân xã, phường, thị trấn (sau đây gọi là Ủy ban nhân dân cấp xã) việc\nsử dụng lao động, chấm dứt sử dụng lao động tương ứng theo Mẫu số 02/PLV, Mẫu\nsố 03/PLV Phụ lục V ban hành kèm theo Nghị định này trong thời hạn 10 ngày\nkể từ ngày ký hợp đồng lao động hoặc chấm dứt hợp đồng lao động.\n- Theo [Nghị định số 74/2024/NĐ-CP QUY ĐỊNH MỨC LƯƠNG TỐI THIỂU ĐỐI VỚI NGƯỜI LAO ĐỘNG LÀM VIỆC THEO HỢP ĐỒNG LAO ĐỘNG, Điều 5, Khoản 1 đến Khoản 2] (Nghị định số 74/2024/NĐ-CP QUY ĐỊNH MỨC LƯƠNG TỐI THIỂU ĐỐI VỚI NGƯỜI LAO ĐỘNG LÀM VIỆC THEO HỢP ĐỒNG LAO ĐỘNG, Điều 5): Điều 5. Hiệu lực và trách nhiệm thi hành\n1. Nghị định này có hiệu lực thi hành\ntừ ngày 01 tháng 7 năm 2024.\n\n2. Nghị định số 38/2022/NĐ-CP ngày 12 tháng 6 năm 2022 của Chính\nphủ quy định mức lương tối thiểu đối với người lao động làm việc theo hợp đồng\nlao động hết hiệu lực kể từ ngày 01 tháng 7 năm 2024.\n- Theo [Bộ luật Lao động 2019 số 45/2019/QH14, Điều 177, Khoản 4 đến Khoản 5] (Bộ luật Lao động 2019 số 45/2019/QH14, Điều 177): Điều 177. Nghĩa vụ của người sử dụng lao động đối với tổ chức đại diện người lao động tại cơ sở\n4. Phải\ngia hạn hợp đồng lao động đã giao kết đến hết nhiệm kỳ cho người lao động là\nthành viên ban lãnh đạo của tổ chức đại diện người lao động tại cơ sở đang\ntrong nhiệm kỳ mà hết hạn hợp đồng lao động.\n\n5. Các nghĩa\nvụ khác theo quy định của pháp luật.\n\n### Căn Cứ Pháp Lý Tham Chiếu:\n[1] [Nghị định số 70/2023/NĐ-CP SỬA ĐỔI, BỔ SUNG MỘT SỐ ĐIỀU CỦA NGHỊ ĐỊNH SỐ 152/2020/NĐ-CP NGÀY 30 THÁNG 12 NĂM 2020 CỦA CHÍNH PHỦ QUY ĐỊNH VỀ NGƯỜI LAO ĐỘNG NƯỚC NGOÀI LÀM VIỆC TẠI VIỆT NAM VÀ TUYỂN DỤNG, QUẢN LÝ NGƯỜI LAO ĐỘNG VIỆT NAM LÀM VIỆC CHO TỔ CHỨC, CÁ NHÂN NƯỚC NGOÀI TẠI VIỆT NAM, Điều 1, Khoản 2, Điểm b] (Sửa đổi, bổ sung một số điều của Nghị định số 152/2020/NĐ-CP ngày 30 tháng 12 năm) - URL: https://thuvienphapluat.vn/van-ban/Lao-dong-Tien-luong/Nghi-dinh-70-2023-ND-CP-sua-doi-Nghi-dinh-152-2020-ND-CP-lao-dong-nuoc-ngoai-579513.aspx\n[2] [Nghị định số 145/2020/NĐ-CP QUY ĐỊNH CHI TIẾT VÀ HƯỚNG DẪN THI HÀNH MỘT SỐ ĐIỀU CỦA BỘ LUẬT LAO ĐỘNG VỀ ĐIỀU KIỆN LAO ĐỘNG VÀ QUAN HỆ LAO ĐỘNG, Điều 4, Khoản 1] (Báo cáo sử dụng lao động) - URL: https://thuvienphapluat.vn/van-ban/Lao-dong-Tien-luong/Nghi-dinh-145-2020-ND-CP-huong-dan-Bo-luat-Lao-dong-ve-dieu-kien-lao-dong-quan-he-lao-dong-459400.aspx\n[3] [Nghị định số 145/2020/NĐ-CP QUY ĐỊNH CHI TIẾT VÀ HƯỚNG DẪN THI HÀNH MỘT SỐ ĐIỀU CỦA BỘ LUẬT LAO ĐỘNG VỀ ĐIỀU KIỆN LAO ĐỘNG VÀ QUAN HỆ LAO ĐỘNG, Điều 90] (Nghĩa vụ của người sử dụng lao động, người lao động) - URL: https://thuvienphapluat.vn/van-ban/Lao-dong-Tien-luong/Nghi-dinh-145-2020-ND-CP-huong-dan-Bo-luat-Lao-dong-ve-dieu-kien-lao-dong-quan-he-lao-dong-459400.aspx\n[4] [Nghị định số 74/2024/NĐ-CP QUY ĐỊNH MỨC LƯƠNG TỐI THIỂU ĐỐI VỚI NGƯỜI LAO ĐỘNG LÀM VIỆC THEO HỢP ĐỒNG LAO ĐỘNG, Điều 5, Khoản 1 đến Khoản 2] (Hiệu lực và trách nhiệm thi hành) - URL: https://thuvienphapluat.vn/van-ban/Lao-dong-Tien-luong/Nghi-dinh-74-2024-ND-CP-muc-luong-toi-thieu-lao-dong-lam-viec-theo-hop-dong-603278.aspx\n[5] [Bộ luật Lao động 2019 số 45/2019/QH14, Điều 177, Khoản 4 đến Khoản 5] (Nghĩa vụ của người sử dụng lao động đối với tổ chức đại diện người lao động tại cơ sở) - URL: https://thuvienphapluat.vn/van-ban/Lao-dong-Tien-luong/Bo-Luat-lao-dong-2019-333670.aspx",
+      "citations": [
+        {
+          "source_id": "[SOURCE 1]",
+          "source_number": 1,
+          "chunk_id": "ND_70_2023_Điều1_Khoản2_P2_2",
+          "document_title": "Nghị định số 70/2023/NĐ-CP SỬA ĐỔI, BỔ SUNG MỘT SỐ ĐIỀU CỦA NGHỊ ĐỊNH SỐ 152/2020/NĐ-CP NGÀY 30 THÁNG 12 NĂM 2020 CỦA CHÍNH PHỦ QUY ĐỊNH VỀ NGƯỜI LAO ĐỘNG NƯỚC NGOÀI LÀM VIỆC TẠI VIỆT NAM VÀ TUYỂN DỤNG, QUẢN LÝ NGƯỜI LAO ĐỘNG VIỆT NAM LÀM VIỆC CHO TỔ CHỨC, CÁ NHÂN NƯỚC NGOÀI TẠI VIỆT NAM",
+          "document_number": "70/2023/NĐ-CP",
+          "article_number": "Điều 1",
+          "article_title": "Sửa đổi, bổ sung một số điều của Nghị định số 152/2020/NĐ-CP ngày 30 tháng 12 năm",
+          "clause_number": "Khoản 2",
+          "point_number": "Điểm b",
+          "source_url": "https://thuvienphapluat.vn/van-ban/Lao-dong-Tien-luong/Nghi-dinh-70-2023-ND-CP-sua-doi-Nghi-dinh-152-2020-ND-CP-lao-dong-nuoc-ngoai-579513.aspx",
+          "formatted_citation": "[Nghị định số 70/2023/NĐ-CP SỬA ĐỔI, BỔ SUNG MỘT SỐ ĐIỀU CỦA NGHỊ ĐỊNH SỐ 152/2020/NĐ-CP NGÀY 30 THÁNG 12 NĂM 2020 CỦA CHÍNH PHỦ QUY ĐỊNH VỀ NGƯỜI LAO ĐỘNG NƯỚC NGOÀI LÀM VIỆC TẠI VIỆT NAM VÀ TUYỂN DỤNG, QUẢN LÝ NGƯỜI LAO ĐỘNG VIỆT NAM LÀM VIỆC CHO TỔ CHỨC, CÁ NHÂN NƯỚC NGOÀI TẠI VIỆT NAM, Điều 1, Khoản 2, Điểm b]",
+          "is_valid": true,
+          "validation_error": null
+        },
+        {
+          "source_id": "[SOURCE 2]",
+          "source_number": 2,
+          "chunk_id": "ND_145_2020_Điều4_Khoản1_3",
+          "document_title": "Nghị định số 145/2020/NĐ-CP QUY ĐỊNH CHI TIẾT VÀ HƯỚNG DẪN THI HÀNH MỘT SỐ ĐIỀU CỦA BỘ LUẬT LAO ĐỘNG VỀ ĐIỀU KIỆN LAO ĐỘNG VÀ QUAN HỆ LAO ĐỘNG",
+          "document_number": "145/2020/NĐ-CP",
+          "article_number": "Điều 4",
+          "article_title": "Báo cáo sử dụng lao động",
+          "clause_number": "Khoản 1",
+          "point_number": null,
+          "source_url": "https://thuvienphapluat.vn/van-ban/Lao-dong-Tien-luong/Nghi-dinh-145-2020-ND-CP-huong-dan-Bo-luat-Lao-dong-ve-dieu-kien-lao-dong-quan-he-lao-dong-459400.aspx",
+          "formatted_citation": "[Nghị định số 145/2020/NĐ-CP QUY ĐỊNH CHI TIẾT VÀ HƯỚNG DẪN THI HÀNH MỘT SỐ ĐIỀU CỦA BỘ LUẬT LAO ĐỘNG VỀ ĐIỀU KIỆN LAO ĐỘNG VÀ QUAN HỆ LAO ĐỘNG, Điều 4, Khoản 1]",
+          "is_valid": true,
+          "validation_error": null
+        },
+        {
+          "source_id": "[SOURCE 3]",
+          "source_number": 3,
+          "chunk_id": "ND_145_2020_Điều90_198",
+          "document_title": "Nghị định số 145/2020/NĐ-CP QUY ĐỊNH CHI TIẾT VÀ HƯỚNG DẪN THI HÀNH MỘT SỐ ĐIỀU CỦA BỘ LUẬT LAO ĐỘNG VỀ ĐIỀU KIỆN LAO ĐỘNG VÀ QUAN HỆ LAO ĐỘNG",
+          "document_number": "145/2020/NĐ-CP",
+          "article_number": "Điều 90",
+          "article_title": "Nghĩa vụ của người sử dụng lao động, người lao động",
+          "clause_number": null,
+          "point_number": null,
+          "source_url": "https://thuvienphapluat.vn/van-ban/Lao-dong-Tien-luong/Nghi-dinh-145-2020-ND-CP-huong-dan-Bo-luat-Lao-dong-ve-dieu-kien-lao-dong-quan-he-lao-dong-459400.aspx",
+          "formatted_citation": "[Nghị định số 145/2020/NĐ-CP QUY ĐỊNH CHI TIẾT VÀ HƯỚNG DẪN THI HÀNH MỘT SỐ ĐIỀU CỦA BỘ LUẬT LAO ĐỘNG VỀ ĐIỀU KIỆN LAO ĐỘNG VÀ QUAN HỆ LAO ĐỘNG, Điều 90]",
+          "is_valid": true,
+          "validation_error": null
+        },
+        {
+          "source_id": "[SOURCE 4]",
+          "source_number": 4,
+          "chunk_id": "ND_74_2024_Điều5_Khoản1_8",
+          "document_title": "Nghị định số 74/2024/NĐ-CP QUY ĐỊNH MỨC LƯƠNG TỐI THIỂU ĐỐI VỚI NGƯỜI LAO ĐỘNG LÀM VIỆC THEO HỢP ĐỒNG LAO ĐỘNG",
+          "document_number": "74/2024/NĐ-CP",
+          "article_number": "Điều 5",
+          "article_title": "Hiệu lực và trách nhiệm thi hành",
+          "clause_number": "Khoản 1 đến Khoản 2",
+          "point_number": null,
+          "source_url": "https://thuvienphapluat.vn/van-ban/Lao-dong-Tien-luong/Nghi-dinh-74-2024-ND-CP-muc-luong-toi-thieu-lao-dong-lam-viec-theo-hop-dong-603278.aspx",
+          "formatted_citation": "[Nghị định số 74/2024/NĐ-CP QUY ĐỊNH MỨC LƯƠNG TỐI THIỂU ĐỐI VỚI NGƯỜI LAO ĐỘNG LÀM VIỆC THEO HỢP ĐỒNG LAO ĐỘNG, Điều 5, Khoản 1 đến Khoản 2]",
+          "is_valid": true,
+          "validation_error": null
+        },
+        {
+          "source_id": "[SOURCE 5]",
+          "source_number": 5,
+          "chunk_id": "BLLD_2019_Điều177_Khoản4_231",
+          "document_title": "Bộ luật Lao động 2019 số 45/2019/QH14",
+          "document_number": "45/2019/QH14",
+          "article_number": "Điều 177",
+          "article_title": "Nghĩa vụ của người sử dụng lao động đối với tổ chức đại diện người lao động tại cơ sở",
+          "clause_number": "Khoản 4 đến Khoản 5",
+          "point_number": null,
+          "source_url": "https://thuvienphapluat.vn/van-ban/Lao-dong-Tien-luong/Bo-Luat-lao-dong-2019-333670.aspx",
+          "formatted_citation": "[Bộ luật Lao động 2019 số 45/2019/QH14, Điều 177, Khoản 4 đến Khoản 5]",
+          "is_valid": true,
+          "validation_error": null
+        }
+      ],
+      "refused": false,
+      "correctness": {
+        "status": "INCORRECT",
+        "score": 0.0,
+        "reason": "Viện dẫn sai lệch Điều luật hoặc nội dung trả lời không khớp với căn cứ vàng.",
+        "f1_score": 0.2683,
+        "gold_article_recall": 0.0,
+        "matched_articles": []
+      },
+      "faithfulness": {
+        "status": "SUPPORTED",
+        "score": 1.0,
+        "is_faithful": true,
+        "support_ratio": 0.8654,
+        "unsupported_claim_count": 7,
+        "total_claim_count": 60,
+        "unsupported_articles": [],
+        "reason": "Toàn bộ khẳng định và Điều luật đều được trích xuất trung thực từ các chunk thu hồi."
+      },
+      "latency_ms": 276.27
+    },
+    "crag_result": {
+      "answer": "Căn cứ theo các tài liệu pháp lý được cung cấp:\n- Theo [Nghị định 12/2022/NĐ-CP - Xử phạt vi phạm quy định về thử việc, Điều Tra cứu ngoài] (Tra cứu ngoài (Web Knowledge), ): Theo Điều 10 Nghị định 12/2022/NĐ-CP, người sử dụng lao động có hành vi yêu cầu thử việc quá thời gian quy định tại Điều 25 Bộ luật Lao động sẽ bị phạt tiền từ 2.000.000 đồng đến 5.000.000 đồng, đồng thời buộc trả đủ 100% tiền lương cho người lao động trong thời gian thử việc vượt quá quy định.\n- Theo [Quy định về thời hạn báo trước khi đơn phương chấm dứt hợp đồng lao động, Điều Tra cứu ngoài] (Tra cứu ngoài (Web Knowledge), ): Theo Điều 35 và 36 Bộ luật Lao động 2019, thời hạn báo trước khi đơn phương chấm dứt HĐLĐ: Ít nhất 45 ngày đối với HĐLĐ không xác định thời hạn; ít nhất 30 ngày đối với HĐLĐ từ 12-36 tháng; ít nhất 03 ngày làm việc đối với HĐLĐ dưới 12 tháng hoặc trường hợp bị ngược đãi, quấy rối tình dục.\n- Theo [Thời hạn và trình tự xử lý kỷ luật sa thải theo Bộ luật Lao động 2019, Điều Tra cứu ngoài] (Tra cứu ngoài (Web Knowledge), ): Thời hiệu xử lý kỷ luật lao động tối đa là 06 tháng kể từ ngày xảy ra hành vi vi phạm; trường hợp hành vi vi phạm liên quan trực tiếp đến tài chính, tài sản, tiết lộ bí mật thì thời hiệu xử lý kỷ luật lao động tối đa là 12 tháng (Điều 123 BLLĐ 2019). Việc sa thải phải có sự tham gia của tổ chức đại diện người lao động tại cơ sở.\n\n### Căn Cứ Pháp Lý Tham Chiếu:\n[1] [Nghị định 12/2022/NĐ-CP - Xử phạt vi phạm quy định về thử việc, Điều Tra cứu ngoài] - URL: https://thuvienphapluat.vn/van-ban/lao-dong/Nghi-dinh-12-2022-ND-CP-xu-phat-vi-pham-hanh-chinh-linh-vuc-lao-dong.aspx\n[2] [Quy định về thời hạn báo trước khi đơn phương chấm dứt hợp đồng lao động, Điều Tra cứu ngoài] - URL: https://thuvienphapluat.vn/chinh-sach-phap-luat/thoi-han-bao-truoc-blld-2019\n[3] [Thời hạn và trình tự xử lý kỷ luật sa thải theo Bộ luật Lao động 2019, Điều Tra cứu ngoài] - URL: https://moj.gov.vn/qt/tintuc/Pages/nghien-cuu-trao-doi.aspx?ItemID=4521",
+      "citations": [
+        {
+          "source_id": "[SOURCE 1]",
+          "source_number": 1,
+          "chunk_id": null,
+          "document_title": "Nghị định 12/2022/NĐ-CP - Xử phạt vi phạm quy định về thử việc",
+          "document_number": null,
+          "article_number": "Tra cứu ngoài",
+          "article_title": null,
+          "clause_number": null,
+          "point_number": null,
+          "source_url": "https://thuvienphapluat.vn/van-ban/lao-dong/Nghi-dinh-12-2022-ND-CP-xu-phat-vi-pham-hanh-chinh-linh-vuc-lao-dong.aspx",
+          "formatted_citation": "[Nghị định 12/2022/NĐ-CP - Xử phạt vi phạm quy định về thử việc, Điều Tra cứu ngoài]",
+          "is_valid": true,
+          "validation_error": null
+        },
+        {
+          "source_id": "[SOURCE 2]",
+          "source_number": 2,
+          "chunk_id": null,
+          "document_title": "Quy định về thời hạn báo trước khi đơn phương chấm dứt hợp đồng lao động",
+          "document_number": null,
+          "article_number": "Tra cứu ngoài",
+          "article_title": null,
+          "clause_number": null,
+          "point_number": null,
+          "source_url": "https://thuvienphapluat.vn/chinh-sach-phap-luat/thoi-han-bao-truoc-blld-2019",
+          "formatted_citation": "[Quy định về thời hạn báo trước khi đơn phương chấm dứt hợp đồng lao động, Điều Tra cứu ngoài]",
+          "is_valid": true,
+          "validation_error": null
+        },
+        {
+          "source_id": "[SOURCE 3]",
+          "source_number": 3,
+          "chunk_id": null,
+          "document_title": "Thời hạn và trình tự xử lý kỷ luật sa thải theo Bộ luật Lao động 2019",
+          "document_number": null,
+          "article_number": "Tra cứu ngoài",
+          "article_title": null,
+          "clause_number": null,
+          "point_number": null,
+          "source_url": "https://moj.gov.vn/qt/tintuc/Pages/nghien-cuu-trao-doi.aspx?ItemID=4521",
+          "formatted_citation": "[Thời hạn và trình tự xử lý kỷ luật sa thải theo Bộ luật Lao động 2019, Điều Tra cứu ngoài]",
+          "is_valid": true,
+          "validation_error": null
+        }
+      ],
+      "action_taken": "WEB_SEARCH",
+      "refused": false,
+      "correctness": {
+        "status": "PARTIALLY_CORRECT",
+        "score": 0.5,
+        "reason": "Viện dẫn đúng một phần Điều luật hoặc nội dung có liên quan nhưng chưa đầy đủ.",
+        "f1_score": 0.3655,
+        "gold_article_recall": 0.5,
+        "matched_articles": [
+          "nd_12_2022_điều10"
+        ]
+      },
+      "faithfulness": {
+        "status": "UNSUPPORTED",
+        "score": 0.0,
+        "is_faithful": false,
+        "support_ratio": 0.1765,
+        "unsupported_claim_count": 18,
+        "total_claim_count": 21,
+        "unsupported_articles": [
+          "123",
+          "25",
+          "10",
+          "35"
+        ],
+        "reason": "Viện dẫn Điều luật không hề xuất hiện trong context: ['123', '25', '10', '35']"
+      },
+      "latency_ms": 213.81
+    },
+    "adaptive_result": {
+      "answer": "Căn cứ theo các tài liệu pháp lý được cung cấp:\n- Theo [Nghị định số 145/2020/NĐ-CP QUY ĐỊNH CHI TIẾT VÀ HƯỚNG DẪN THI HÀNH MỘT SỐ ĐIỀU CỦA BỘ LUẬT LAO ĐỘNG VỀ ĐIỀU KIỆN LAO ĐỘNG VÀ QUAN HỆ LAO ĐỘNG, Điều 4, Khoản 1] (Nghị định số 145/2020/NĐ-CP QUY ĐỊNH CHI TIẾT VÀ HƯỚNG DẪN THI HÀNH MỘT SỐ ĐIỀU CỦA BỘ LUẬT LAO ĐỘNG VỀ ĐIỀU KIỆN LAO ĐỘNG VÀ QUAN HỆ LAO ĐỘNG, Điều 4): Điều 4. Báo cáo sử dụng lao động\n1. Người sử dụng lao động khai trình việc sử\ndụng lao động theo Nghị định số 122/2020/NĐ-CP ngày 15 tháng 10 năm 2020 của\nChính phủ quy định về phối hợp, liên thông thủ tục đăng ký thành lập doanh nghiệp,\nchi nhánh, văn phòng đại diện, khai trình việc sử dụng lao động, cấp mã số đơn\nvị tham gia bảo hiểm xã hội, đăng ký sử dụng hóa đơn của doanh nghiệp.\n- Theo [Nghị định số 145/2020/NĐ-CP QUY ĐỊNH CHI TIẾT VÀ HƯỚNG DẪN THI HÀNH MỘT SỐ ĐIỀU CỦA BỘ LUẬT LAO ĐỘNG VỀ ĐIỀU KIỆN LAO ĐỘNG VÀ QUAN HỆ LAO ĐỘNG, Điều 90] (Nghị định số 145/2020/NĐ-CP QUY ĐỊNH CHI TIẾT VÀ HƯỚNG DẪN THI HÀNH MỘT SỐ ĐIỀU CỦA BỘ LUẬT LAO ĐỘNG VỀ ĐIỀU KIỆN LAO ĐỘNG VÀ QUAN HỆ LAO ĐỘNG, Điều 90): Điều 90. Nghĩa vụ của\nngười sử dụng lao động, người lao động\n\n1. Thực hiện các nghĩa vụ theo quy định tại các\n Điều 163, 164 và 165 của Bộ luật Lao động.\n\n2. Người sử dụng lao động phải thông báo cho Ủy\nban nhân dân xã, phường, thị trấn (sau đây gọi là Ủy ban nhân dân cấp xã) việc\nsử dụng lao động, chấm dứt sử dụng lao động tương ứng theo Mẫu số 02/PLV, Mẫu\nsố 03/PLV Phụ lục V ban hành kèm theo Nghị định này trong thời hạn 10 ngày\nkể từ ngày ký hợp đồng lao động hoặc chấm dứt hợp đồng lao động.\n- Theo [Nghị định số 70/2023/NĐ-CP SỬA ĐỔI, BỔ SUNG MỘT SỐ ĐIỀU CỦA NGHỊ ĐỊNH SỐ 152/2020/NĐ-CP NGÀY 30 THÁNG 12 NĂM 2020 CỦA CHÍNH PHỦ QUY ĐỊNH VỀ NGƯỜI LAO ĐỘNG NƯỚC NGOÀI LÀM VIỆC TẠI VIỆT NAM VÀ TUYỂN DỤNG, QUẢN LÝ NGƯỜI LAO ĐỘNG VIỆT NAM LÀM VIỆC CHO TỔ CHỨC, CÁ NHÂN NƯỚC NGOÀI TẠI VIỆT NAM, Điều 1, Khoản 2, Điểm b] (Nghị định số 70/2023/NĐ-CP SỬA ĐỔI, BỔ SUNG MỘT SỐ ĐIỀU CỦA NGHỊ ĐỊNH SỐ 152/2020/NĐ-CP NGÀY 30 THÁNG 12 NĂM 2020 CỦA CHÍNH PHỦ QUY ĐỊNH VỀ NGƯỜI LAO ĐỘNG NƯỚC NGOÀI LÀM VIỆC TẠI VIỆT NAM VÀ TUYỂN DỤNG, QUẢN LÝ NGƯỜI LAO ĐỘNG VIỆT NAM LÀM VIỆC CHO TỔ CHỨC, CÁ NHÂN NƯỚC NGOÀI TẠI VIỆT NAM, Điều 1): Điều 1. Sửa đổi, bổ sung một số điều của Nghị định số 152/2020/NĐ-CP ngày 30 tháng 12 năm\n2. Sửa đổi,\nbổ sung Điều 4 như sau:\n\n“Điều 4. Sử dụng người lao động\nnước ngoài\n\n1. Xác định nhu cầu sử dụng người\nlao động nước ngoài\nb) Trường hợp người lao động nước\nngoài quy định tại các khoản 3, 4, 5, 6 và 8 Điều 154 của Bộ luật\nLao động và các khoản 1, 2, 4, 5, 7, 8, 9, 10, 11, 12, 13\nvà 14 Điều 7 Nghị định này thì người sử dụng lao động không phải thực hiện\nxác định nhu cầu sử dụng người lao động nước ngoài.\n- Theo [Nghị định số 145/2020/NĐ-CP QUY ĐỊNH CHI TIẾT VÀ HƯỚNG DẪN THI HÀNH MỘT SỐ ĐIỀU CỦA BỘ LUẬT LAO ĐỘNG VỀ ĐIỀU KIỆN LAO ĐỘNG VÀ QUAN HỆ LAO ĐỘNG, Điều 4, Khoản 1] (Nghị định số 145/2020/NĐ-CP QUY ĐỊNH CHI TIẾT VÀ HƯỚNG DẪN THI HÀNH MỘT SỐ ĐIỀU CỦA BỘ LUẬT LAO ĐỘNG VỀ ĐIỀU KIỆN LAO ĐỘNG VÀ QUAN HỆ LAO ĐỘNG, Điều 4): Điều 4. Báo cáo sử dụng lao động\n1. Người sử dụng lao động khai trình việc sử\ndụng lao động theo Nghị định số 122/2020/NĐ-CP ngày 15 tháng 10 năm 2020 của\nChính phủ quy định về phối hợp, liên thông thủ tục đăng ký thành lập doanh nghiệp,\nchi nhánh, văn phòng đại diện, khai trình việc sử dụng lao động, cấp mã số đơn\nvị tham gia bảo hiểm xã hội, đăng ký sử dụng hóa đơn của doanh nghiệp.\n\n### Căn Cứ Pháp Lý Tham Chiếu:\n[1] [Nghị định số 145/2020/NĐ-CP QUY ĐỊNH CHI TIẾT VÀ HƯỚNG DẪN THI HÀNH MỘT SỐ ĐIỀU CỦA BỘ LUẬT LAO ĐỘNG VỀ ĐIỀU KIỆN LAO ĐỘNG VÀ QUAN HỆ LAO ĐỘNG, Điều 4, Khoản 1] (Báo cáo sử dụng lao động) - URL: https://thuvienphapluat.vn/van-ban/Lao-dong-Tien-luong/Nghi-dinh-145-2020-ND-CP-huong-dan-Bo-luat-Lao-dong-ve-dieu-kien-lao-dong-quan-he-lao-dong-459400.aspx\n[2] [Nghị định số 145/2020/NĐ-CP QUY ĐỊNH CHI TIẾT VÀ HƯỚNG DẪN THI HÀNH MỘT SỐ ĐIỀU CỦA BỘ LUẬT LAO ĐỘNG VỀ ĐIỀU KIỆN LAO ĐỘNG VÀ QUAN HỆ LAO ĐỘNG, Điều 90] (Nghĩa vụ của người sử dụng lao động, người lao động) - URL: https://thuvienphapluat.vn/van-ban/Lao-dong-Tien-luong/Nghi-dinh-145-2020-ND-CP-huong-dan-Bo-luat-Lao-dong-ve-dieu-kien-lao-dong-quan-he-lao-dong-459400.aspx\n[3] [Nghị định số 70/2023/NĐ-CP SỬA ĐỔI, BỔ SUNG MỘT SỐ ĐIỀU CỦA NGHỊ ĐỊNH SỐ 152/2020/NĐ-CP NGÀY 30 THÁNG 12 NĂM 2020 CỦA CHÍNH PHỦ QUY ĐỊNH VỀ NGƯỜI LAO ĐỘNG NƯỚC NGOÀI LÀM VIỆC TẠI VIỆT NAM VÀ TUYỂN DỤNG, QUẢN LÝ NGƯỜI LAO ĐỘNG VIỆT NAM LÀM VIỆC CHO TỔ CHỨC, CÁ NHÂN NƯỚC NGOÀI TẠI VIỆT NAM, Điều 1, Khoản 2, Điểm b] (Sửa đổi, bổ sung một số điều của Nghị định số 152/2020/NĐ-CP ngày 30 tháng 12 năm) - URL: https://thuvienphapluat.vn/van-ban/Lao-dong-Tien-luong/Nghi-dinh-70-2023-ND-CP-sua-doi-Nghi-dinh-152-2020-ND-CP-lao-dong-nuoc-ngoai-579513.aspx\n[4] [Nghị định số 145/2020/NĐ-CP QUY ĐỊNH CHI TIẾT VÀ HƯỚNG DẪN THI HÀNH MỘT SỐ ĐIỀU CỦA BỘ LUẬT LAO ĐỘNG VỀ ĐIỀU KIỆN LAO ĐỘNG VÀ QUAN HỆ LAO ĐỘNG, Điều 4, Khoản 1] (Báo cáo sử dụng lao động) - URL: https://thuvienphapluat.vn/van-ban/Lao-dong-Tien-luong/Nghi-dinh-145-2020-ND-CP-huong-dan-Bo-luat-Lao-dong-ve-dieu-kien-lao-dong-quan-he-lao-dong-459400.aspx",
+      "citations": [
+        {
+          "source_id": "[SOURCE 1]",
+          "source_number": 1,
+          "chunk_id": "ND_145_2020_Điều4_Khoản1_3",
+          "document_title": "Nghị định số 145/2020/NĐ-CP QUY ĐỊNH CHI TIẾT VÀ HƯỚNG DẪN THI HÀNH MỘT SỐ ĐIỀU CỦA BỘ LUẬT LAO ĐỘNG VỀ ĐIỀU KIỆN LAO ĐỘNG VÀ QUAN HỆ LAO ĐỘNG",
+          "document_number": "145/2020/NĐ-CP",
+          "article_number": "Điều 4",
+          "article_title": "Báo cáo sử dụng lao động",
+          "clause_number": "Khoản 1",
+          "point_number": null,
+          "source_url": "https://thuvienphapluat.vn/van-ban/Lao-dong-Tien-luong/Nghi-dinh-145-2020-ND-CP-huong-dan-Bo-luat-Lao-dong-ve-dieu-kien-lao-dong-quan-he-lao-dong-459400.aspx",
+          "formatted_citation": "[Nghị định số 145/2020/NĐ-CP QUY ĐỊNH CHI TIẾT VÀ HƯỚNG DẪN THI HÀNH MỘT SỐ ĐIỀU CỦA BỘ LUẬT LAO ĐỘNG VỀ ĐIỀU KIỆN LAO ĐỘNG VÀ QUAN HỆ LAO ĐỘNG, Điều 4, Khoản 1]",
+          "is_valid": true,
+          "validation_error": null
+        },
+        {
+          "source_id": "[SOURCE 2]",
+          "source_number": 2,
+          "chunk_id": "ND_145_2020_Điều90_198",
+          "document_title": "Nghị định số 145/2020/NĐ-CP QUY ĐỊNH CHI TIẾT VÀ HƯỚNG DẪN THI HÀNH MỘT SỐ ĐIỀU CỦA BỘ LUẬT LAO ĐỘNG VỀ ĐIỀU KIỆN LAO ĐỘNG VÀ QUAN HỆ LAO ĐỘNG",
+          "document_number": "145/2020/NĐ-CP",
+          "article_number": "Điều 90",
+          "article_title": "Nghĩa vụ của người sử dụng lao động, người lao động",
+          "clause_number": null,
+          "point_number": null,
+          "source_url": "https://thuvienphapluat.vn/van-ban/Lao-dong-Tien-luong/Nghi-dinh-145-2020-ND-CP-huong-dan-Bo-luat-Lao-dong-ve-dieu-kien-lao-dong-quan-he-lao-dong-459400.aspx",
+          "formatted_citation": "[Nghị định số 145/2020/NĐ-CP QUY ĐỊNH CHI TIẾT VÀ HƯỚNG DẪN THI HÀNH MỘT SỐ ĐIỀU CỦA BỘ LUẬT LAO ĐỘNG VỀ ĐIỀU KIỆN LAO ĐỘNG VÀ QUAN HỆ LAO ĐỘNG, Điều 90]",
+          "is_valid": true,
+          "validation_error": null
+        },
+        {
+          "source_id": "[SOURCE 3]",
+          "source_number": 3,
+          "chunk_id": "ND_70_2023_Điều1_Khoản2_P2_2",
+          "document_title": "Nghị định số 70/2023/NĐ-CP SỬA ĐỔI, BỔ SUNG MỘT SỐ ĐIỀU CỦA NGHỊ ĐỊNH SỐ 152/2020/NĐ-CP NGÀY 30 THÁNG 12 NĂM 2020 CỦA CHÍNH PHỦ QUY ĐỊNH VỀ NGƯỜI LAO ĐỘNG NƯỚC NGOÀI LÀM VIỆC TẠI VIỆT NAM VÀ TUYỂN DỤNG, QUẢN LÝ NGƯỜI LAO ĐỘNG VIỆT NAM LÀM VIỆC CHO TỔ CHỨC, CÁ NHÂN NƯỚC NGOÀI TẠI VIỆT NAM",
+          "document_number": "70/2023/NĐ-CP",
+          "article_number": "Điều 1",
+          "article_title": "Sửa đổi, bổ sung một số điều của Nghị định số 152/2020/NĐ-CP ngày 30 tháng 12 năm",
+          "clause_number": "Khoản 2",
+          "point_number": "Điểm b",
+          "source_url": "https://thuvienphapluat.vn/van-ban/Lao-dong-Tien-luong/Nghi-dinh-70-2023-ND-CP-sua-doi-Nghi-dinh-152-2020-ND-CP-lao-dong-nuoc-ngoai-579513.aspx",
+          "formatted_citation": "[Nghị định số 70/2023/NĐ-CP SỬA ĐỔI, BỔ SUNG MỘT SỐ ĐIỀU CỦA NGHỊ ĐỊNH SỐ 152/2020/NĐ-CP NGÀY 30 THÁNG 12 NĂM 2020 CỦA CHÍNH PHỦ QUY ĐỊNH VỀ NGƯỜI LAO ĐỘNG NƯỚC NGOÀI LÀM VIỆC TẠI VIỆT NAM VÀ TUYỂN DỤNG, QUẢN LÝ NGƯỜI LAO ĐỘNG VIỆT NAM LÀM VIỆC CHO TỔ CHỨC, CÁ NHÂN NƯỚC NGOÀI TẠI VIỆT NAM, Điều 1, Khoản 2, Điểm b]",
+          "is_valid": true,
+          "validation_error": null
+        },
+        {
+          "source_id": "[SOURCE 4]",
+          "source_number": 4,
+          "chunk_id": "ND_145_2020_Điều4_Khoản1_3",
+          "document_title": "Nghị định số 145/2020/NĐ-CP QUY ĐỊNH CHI TIẾT VÀ HƯỚNG DẪN THI HÀNH MỘT SỐ ĐIỀU CỦA BỘ LUẬT LAO ĐỘNG VỀ ĐIỀU KIỆN LAO ĐỘNG VÀ QUAN HỆ LAO ĐỘNG",
+          "document_number": "145/2020/NĐ-CP",
+          "article_number": "Điều 4",
+          "article_title": "Báo cáo sử dụng lao động",
+          "clause_number": "Khoản 1",
+          "point_number": null,
+          "source_url": "https://thuvienphapluat.vn/van-ban/Lao-dong-Tien-luong/Nghi-dinh-145-2020-ND-CP-huong-dan-Bo-luat-Lao-dong-ve-dieu-kien-lao-dong-quan-he-lao-dong-459400.aspx",
+          "formatted_citation": "[Nghị định số 145/2020/NĐ-CP QUY ĐỊNH CHI TIẾT VÀ HƯỚNG DẪN THI HÀNH MỘT SỐ ĐIỀU CỦA BỘ LUẬT LAO ĐỘNG VỀ ĐIỀU KIỆN LAO ĐỘNG VÀ QUAN HỆ LAO ĐỘNG, Điều 4, Khoản 1]",
+          "is_valid": true,
+          "validation_error": null
+        }
+      ],
+      "route_taken": "DECOMPOSE_AGENTIC",
+      "sub_queries_count": 2,
+      "refused": false,
+      "correctness": {
+        "status": "INCORRECT",
+        "score": 0.0,
+        "reason": "Viện dẫn sai lệch Điều luật hoặc nội dung trả lời không khớp với căn cứ vàng.",
+        "f1_score": 0.2512,
+        "gold_article_recall": 0.0,
+        "matched_articles": []
+      },
+      "faithfulness": {
+        "status": "SUPPORTED",
+        "score": 1.0,
+        "is_faithful": true,
+        "support_ratio": 0.8636,
+        "unsupported_claim_count": 6,
+        "total_claim_count": 50,
+        "unsupported_articles": [],
+        "reason": "Toàn bộ khẳng định và Điều luật đều được trích xuất trung thực từ các chunk thu hồi."
+      },
+      "latency_ms": 366.85
+    },
+    "audit_notes": "Câu hỏi đa văn bản (Điều 24 BLLĐ và Điều 10 NĐ 12/2022). Traditional RAG chỉ tìm được 1 nguồn và thiếu căn cứ xử phạt. Adaptive kích hoạt phân rã sub-query giúp bao phủ cả 2 văn bản."
+  },
+  {
+    "case_id": "Q045",
+    "category": "cross_reference",
+    "question_text": "Quy định về thời hạn báo trước khi đơn phương chấm dứt hợp đồng lao động đối với ngành, nghề, công việc đặc thù được Chính phủ quy định chi tiết tại Nghị định 145/2020/NĐ-CP?",
+    "reference_answer": "Theo điểm d khoản 1 Điều 35 Bộ luật Lao động 2019, đối với ngành, nghề, công việc đặc thù thì thời hạn báo trước được thực hiện theo quy định của Chính phủ. Dẫn chiếu Điều 7 Nghị định 145/2020/NĐ-CP, ngành nghề công việc đặc thù gồm thành viên tổ lái tàu bay, nhân viên bảo dưỡng máy bay, người quản lý doanh nghiệp... thì thời hạn báo trước ít nhất là 120 ngày đối với hợp đồng không xác định thời hạn hoặc hợp đồng từ 12 tháng trở lên; ít nhất bằng một phần tư thời hạn hợp đồng đối với hợp đồng dưới 12 tháng.",
+    "gold_sources": [
+      {
+        "document_id": "BLLD_2019",
+        "article_number": "Điều 35",
+        "chunk_ids": [
+          "BLLD_2019_Điều35_Khoản1_48",
+          "BLLD_2019_Điều35_Khoản2_49"
+        ]
+      },
+      {
+        "document_id": "ND_145_2020",
+        "article_number": "Điều 7",
+        "chunk_ids": [
+          "ND_145_2020_Điều7_Khoản1_13",
+          "ND_145_2020_Điều7_Khoản2_14"
+        ]
+      }
+    ],
+    "requires_refusal": false,
+    "traditional_rag_result": {
+      "answer": "Căn cứ theo các tài liệu pháp lý được cung cấp:\n- Theo [Nghị định số 145/2020/NĐ-CP QUY ĐỊNH CHI TIẾT VÀ HƯỚNG DẪN THI HÀNH MỘT SỐ ĐIỀU CỦA BỘ LUẬT LAO ĐỘNG VỀ ĐIỀU KIỆN LAO ĐỘNG VÀ QUAN HỆ LAO ĐỘNG, Điều 4, Khoản 1] (Nghị định số 145/2020/NĐ-CP QUY ĐỊNH CHI TIẾT VÀ HƯỚNG DẪN THI HÀNH MỘT SỐ ĐIỀU CỦA BỘ LUẬT LAO ĐỘNG VỀ ĐIỀU KIỆN LAO ĐỘNG VÀ QUAN HỆ LAO ĐỘNG, Điều 4): Điều 4. Báo cáo sử dụng lao động\n1. Người sử dụng lao động khai trình việc sử\ndụng lao động theo Nghị định số 122/2020/NĐ-CP ngày 15 tháng 10 năm 2020 của\nChính phủ quy định về phối hợp, liên thông thủ tục đăng ký thành lập doanh nghiệp,\nchi nhánh, văn phòng đại diện, khai trình việc sử dụng lao động, cấp mã số đơn\nvị tham gia bảo hiểm xã hội, đăng ký sử dụng hóa đơn của doanh nghiệp.\n- Theo [Nghị định số 152/2020/NĐ-CP QUY ĐỊNH VỀ NGƯỜI LAO ĐỘNG NƯỚC NGOÀI LÀM VIỆC TẠI VIỆT NAM VÀ TUYỂN DỤNG, QUẢN LÝ NGƯỜI LAO ĐỘNG VIỆT NAM LÀM VIỆC CHO TỔ CHỨC, CÁ NHÂN NƯỚC NGOÀI TẠI VIỆT NAM, Điều 29, Khoản 1 đến Khoản 2] (Nghị định số 152/2020/NĐ-CP QUY ĐỊNH VỀ NGƯỜI LAO ĐỘNG NƯỚC NGOÀI LÀM VIỆC TẠI VIỆT NAM VÀ TUYỂN DỤNG, QUẢN LÝ NGƯỜI LAO ĐỘNG VIỆT NAM LÀM VIỆC CHO TỔ CHỨC, CÁ NHÂN NƯỚC NGOÀI TẠI VIỆT NAM, Điều 29): Điều 29. Hiệu lực thi hành\n1. Nghị định này có hiệu lực thi hành kể từ\nngày 15 tháng 02 năm 2021.\n\n2. Nghị định số 11/2016/NĐ-CP ngày 03 tháng 02 năm 2016 của Chính phủ quy định chi tiết\nthi hành một số điều của Bộ luật Lao động về lao động nước ngoài làm việc tại\nViệt Nam (sau đây gọi là Nghị định số 11/2016/NĐ-CP) đã được sửa đổi, bổ sung tại\nNghị định số 140/2018/NĐ-CP ngày 08 tháng 10\nnăm 2018 của Chính phủ sửa đổi, bổ sung các Nghị định liên quan đến điều kiện đầu\ntư kinh doanh và thủ tục hành chính thuộc phạm vi quản lý nhà nước của Bộ Lao động\n- Thương binh và Xã hội (sau đây gọi là Nghị định số 140/2018/NĐ-CP) và Nghị định\nsố 75/2014/NĐ-CP ngày 28 tháng 7 năm\n2014 của Chính phủ quy định chi tiết thi hành một số điều của Bộ luật Lao động\nvề tuyển dụng, quản lý người lao động Việt Nam làm việc cho tổ chức, cá nhân nước\nngoài tại Việt Nam hết hiệu lực thi hành kể từ ngày Nghị định này có hiệu lực.\n- Theo [Nghị định số 12/2022/NĐ-CP QUY ĐỊNH XỬ PHẠT VI PHẠM HÀNH CHÍNH TRONG LĨNH VỰC LAO ĐỘNG, BẢO HIỂM XÃ HỘI, NGƯỜI LAO ĐỘNG VIỆT NAM ĐI LÀM VIỆC Ở NƯỚC NGOÀI THEO HỢP ĐỒNG, Điều 62] (Nghị định số 12/2022/NĐ-CP QUY ĐỊNH XỬ PHẠT VI PHẠM HÀNH CHÍNH TRONG LĨNH VỰC LAO ĐỘNG, BẢO HIỂM XÃ HỘI, NGƯỜI LAO ĐỘNG VIỆT NAM ĐI LÀM VIỆC Ở NƯỚC NGOÀI THEO HỢP ĐỒNG, Điều 62): Điều 62. Hiệu lực thi hành\n\n1.\nNghị định này có hiệu lực thi hành kể từ ngày 17 tháng 01 năm 2022.\n\n2.\nNghị định số 28/2020/NĐ-CP ngày 01 tháng 3 năm 2020 của Chính phủ quy định xử\nphạt vi phạm hành chính trong lĩnh vực lao động, bảo hiểm xã hội, đưa người lao\nđộng Việt Nam đi làm việc ở nước ngoài theo hợp đồng hết hiệu lực thi hành kể từ\nngày Nghị định này có hiệu lực thi hành.\n- Theo [Nghị định số 83/2022/NĐ-CP QUY ĐỊNH VỀ NGHỈ HƯU Ở TUỔI CAO HƠN ĐỐI VỚI CÁN BỘ, CÔNG CHỨC GIỮ CHỨC VỤ LÃNH ĐẠO, QUẢN LÝ, Điều 5] (Nghị định số 83/2022/NĐ-CP QUY ĐỊNH VỀ NGHỈ HƯU Ở TUỔI CAO HƠN ĐỐI VỚI CÁN BỘ, CÔNG CHỨC GIỮ CHỨC VỤ LÃNH ĐẠO, QUẢN LÝ, Điều 5): Điều 5. Hiệu lực thi hành\n\n1. Nghị định này có hiệu lực thi hành từ ngày 20\ntháng 10 năm 2022.\n\n2. Nghị định này thay thế Nghị định số\n 53/2015/NĐ-CP ngày 29 tháng 5 năm 2015 của Chính phủ quy định về nghỉ hưu ở tuổi\ncao hơn đối với cán bộ, công chức và Nghị định số 104/2020/NĐ-CP ngày 04 tháng\n9 năm 2020 của Chính phủ sửa đổi, bổ sung Nghị định số 53/2015/NĐ-CP ngày 29\ntháng 5 năm 2015 của Chính phủ quy định về nghỉ hưu ở tuổi cao hơn đối với cán\nbộ, công chức.\n- Theo [Nghị định số 74/2024/NĐ-CP QUY ĐỊNH MỨC LƯƠNG TỐI THIỂU ĐỐI VỚI NGƯỜI LAO ĐỘNG LÀM VIỆC THEO HỢP ĐỒNG LAO ĐỘNG, Điều 5, Khoản 1 đến Khoản 2] (Nghị định số 74/2024/NĐ-CP QUY ĐỊNH MỨC LƯƠNG TỐI THIỂU ĐỐI VỚI NGƯỜI LAO ĐỘNG LÀM VIỆC THEO HỢP ĐỒNG LAO ĐỘNG, Điều 5): Điều 5. Hiệu lực và trách nhiệm thi hành\n1. Nghị định này có hiệu lực thi hành\ntừ ngày 01 tháng 7 năm 2024.\n\n2. Nghị định số 38/2022/NĐ-CP ngày 12 tháng 6 năm 2022 của Chính\nphủ quy định mức lương tối thiểu đối với người lao động làm việc theo hợp đồng\nlao động hết hiệu lực kể từ ngày 01 tháng 7 năm 2024.\n\n### Căn Cứ Pháp Lý Tham Chiếu:\n[1] [Nghị định số 145/2020/NĐ-CP QUY ĐỊNH CHI TIẾT VÀ HƯỚNG DẪN THI HÀNH MỘT SỐ ĐIỀU CỦA BỘ LUẬT LAO ĐỘNG VỀ ĐIỀU KIỆN LAO ĐỘNG VÀ QUAN HỆ LAO ĐỘNG, Điều 4, Khoản 1] (Báo cáo sử dụng lao động) - URL: https://thuvienphapluat.vn/van-ban/Lao-dong-Tien-luong/Nghi-dinh-145-2020-ND-CP-huong-dan-Bo-luat-Lao-dong-ve-dieu-kien-lao-dong-quan-he-lao-dong-459400.aspx\n[2] [Nghị định số 152/2020/NĐ-CP QUY ĐỊNH VỀ NGƯỜI LAO ĐỘNG NƯỚC NGOÀI LÀM VIỆC TẠI VIỆT NAM VÀ TUYỂN DỤNG, QUẢN LÝ NGƯỜI LAO ĐỘNG VIỆT NAM LÀM VIỆC CHO TỔ CHỨC, CÁ NHÂN NƯỚC NGOÀI TẠI VIỆT NAM, Điều 29, Khoản 1 đến Khoản 2] (Hiệu lực thi hành) - URL: https://thuvienphapluat.vn/van-ban/Lao-dong-Tien-luong/Nghi-dinh-152-2020-ND-CP-quan-ly-nguoi-lao-dong-nuoc-ngoai-lam-viec-tai-Viet-Nam-280261.aspx\n[3] [Nghị định số 12/2022/NĐ-CP QUY ĐỊNH XỬ PHẠT VI PHẠM HÀNH CHÍNH TRONG LĨNH VỰC LAO ĐỘNG, BẢO HIỂM XÃ HỘI, NGƯỜI LAO ĐỘNG VIỆT NAM ĐI LÀM VIỆC Ở NƯỚC NGOÀI THEO HỢP ĐỒNG, Điều 62] (Hiệu lực thi hành) - URL: https://thuvienphapluat.vn/van-ban/Lao-dong-Tien-luong/Nghi-dinh-12-2022-ND-CP-xu-phat-vi-pham-hanh-chinh-lao-dong-bao-hiem-nguoi-lam-viec-nuoc-ngoai-479312.aspx\n[4] [Nghị định số 83/2022/NĐ-CP QUY ĐỊNH VỀ NGHỈ HƯU Ở TUỔI CAO HƠN ĐỐI VỚI CÁN BỘ, CÔNG CHỨC GIỮ CHỨC VỤ LÃNH ĐẠO, QUẢN LÝ, Điều 5] (Hiệu lực thi hành) - URL: https://thuvienphapluat.vn/van-ban/Lao-dong-Tien-luong/Nghi-dinh-83-2022-ND-CP-nghi-huu-o-tuoi-cao-hon-doi-voi-can-bo-cong-chuc-giu-chuc-vu-lanh-dao-532833.aspx\n[5] [Nghị định số 74/2024/NĐ-CP QUY ĐỊNH MỨC LƯƠNG TỐI THIỂU ĐỐI VỚI NGƯỜI LAO ĐỘNG LÀM VIỆC THEO HỢP ĐỒNG LAO ĐỘNG, Điều 5, Khoản 1 đến Khoản 2] (Hiệu lực và trách nhiệm thi hành) - URL: https://thuvienphapluat.vn/van-ban/Lao-dong-Tien-luong/Nghi-dinh-74-2024-ND-CP-muc-luong-toi-thieu-lao-dong-lam-viec-theo-hop-dong-603278.aspx",
+      "citations": [
+        {
+          "source_id": "[SOURCE 1]",
+          "source_number": 1,
+          "chunk_id": "ND_145_2020_Điều4_Khoản1_3",
+          "document_title": "Nghị định số 145/2020/NĐ-CP QUY ĐỊNH CHI TIẾT VÀ HƯỚNG DẪN THI HÀNH MỘT SỐ ĐIỀU CỦA BỘ LUẬT LAO ĐỘNG VỀ ĐIỀU KIỆN LAO ĐỘNG VÀ QUAN HỆ LAO ĐỘNG",
+          "document_number": "145/2020/NĐ-CP",
+          "article_number": "Điều 4",
+          "article_title": "Báo cáo sử dụng lao động",
+          "clause_number": "Khoản 1",
+          "point_number": null,
+          "source_url": "https://thuvienphapluat.vn/van-ban/Lao-dong-Tien-luong/Nghi-dinh-145-2020-ND-CP-huong-dan-Bo-luat-Lao-dong-ve-dieu-kien-lao-dong-quan-he-lao-dong-459400.aspx",
+          "formatted_citation": "[Nghị định số 145/2020/NĐ-CP QUY ĐỊNH CHI TIẾT VÀ HƯỚNG DẪN THI HÀNH MỘT SỐ ĐIỀU CỦA BỘ LUẬT LAO ĐỘNG VỀ ĐIỀU KIỆN LAO ĐỘNG VÀ QUAN HỆ LAO ĐỘNG, Điều 4, Khoản 1]",
+          "is_valid": true,
+          "validation_error": null
+        },
+        {
+          "source_id": "[SOURCE 2]",
+          "source_number": 2,
+          "chunk_id": "ND_152_2020_Điều29_Khoản1_72",
+          "document_title": "Nghị định số 152/2020/NĐ-CP QUY ĐỊNH VỀ NGƯỜI LAO ĐỘNG NƯỚC NGOÀI LÀM VIỆC TẠI VIỆT NAM VÀ TUYỂN DỤNG, QUẢN LÝ NGƯỜI LAO ĐỘNG VIỆT NAM LÀM VIỆC CHO TỔ CHỨC, CÁ NHÂN NƯỚC NGOÀI TẠI VIỆT NAM",
+          "document_number": "152/2020/NĐ-CP",
+          "article_number": "Điều 29",
+          "article_title": "Hiệu lực thi hành",
+          "clause_number": "Khoản 1 đến Khoản 2",
+          "point_number": null,
+          "source_url": "https://thuvienphapluat.vn/van-ban/Lao-dong-Tien-luong/Nghi-dinh-152-2020-ND-CP-quan-ly-nguoi-lao-dong-nuoc-ngoai-lam-viec-tai-Viet-Nam-280261.aspx",
+          "formatted_citation": "[Nghị định số 152/2020/NĐ-CP QUY ĐỊNH VỀ NGƯỜI LAO ĐỘNG NƯỚC NGOÀI LÀM VIỆC TẠI VIỆT NAM VÀ TUYỂN DỤNG, QUẢN LÝ NGƯỜI LAO ĐỘNG VIỆT NAM LÀM VIỆC CHO TỔ CHỨC, CÁ NHÂN NƯỚC NGOÀI TẠI VIỆT NAM, Điều 29, Khoản 1 đến Khoản 2]",
+          "is_valid": true,
+          "validation_error": null
+        },
+        {
+          "source_id": "[SOURCE 3]",
+          "source_number": 3,
+          "chunk_id": "ND_12_2022_Điều62_235",
+          "document_title": "Nghị định số 12/2022/NĐ-CP QUY ĐỊNH XỬ PHẠT VI PHẠM HÀNH CHÍNH TRONG LĨNH VỰC LAO ĐỘNG, BẢO HIỂM XÃ HỘI, NGƯỜI LAO ĐỘNG VIỆT NAM ĐI LÀM VIỆC Ở NƯỚC NGOÀI THEO HỢP ĐỒNG",
+          "document_number": "12/2022/NĐ-CP",
+          "article_number": "Điều 62",
+          "article_title": "Hiệu lực thi hành",
+          "clause_number": null,
+          "point_number": null,
+          "source_url": "https://thuvienphapluat.vn/van-ban/Lao-dong-Tien-luong/Nghi-dinh-12-2022-ND-CP-xu-phat-vi-pham-hanh-chinh-lao-dong-bao-hiem-nguoi-lam-viec-nuoc-ngoai-479312.aspx",
+          "formatted_citation": "[Nghị định số 12/2022/NĐ-CP QUY ĐỊNH XỬ PHẠT VI PHẠM HÀNH CHÍNH TRONG LĨNH VỰC LAO ĐỘNG, BẢO HIỂM XÃ HỘI, NGƯỜI LAO ĐỘNG VIỆT NAM ĐI LÀM VIỆC Ở NƯỚC NGOÀI THEO HỢP ĐỒNG, Điều 62]",
+          "is_valid": true,
+          "validation_error": null
+        },
+        {
+          "source_id": "[SOURCE 4]",
+          "source_number": 4,
+          "chunk_id": "ND_83_2022_Điều5_7",
+          "document_title": "Nghị định số 83/2022/NĐ-CP QUY ĐỊNH VỀ NGHỈ HƯU Ở TUỔI CAO HƠN ĐỐI VỚI CÁN BỘ, CÔNG CHỨC GIỮ CHỨC VỤ LÃNH ĐẠO, QUẢN LÝ",
+          "document_number": "83/2022/NĐ-CP",
+          "article_number": "Điều 5",
+          "article_title": "Hiệu lực thi hành",
+          "clause_number": null,
+          "point_number": null,
+          "source_url": "https://thuvienphapluat.vn/van-ban/Lao-dong-Tien-luong/Nghi-dinh-83-2022-ND-CP-nghi-huu-o-tuoi-cao-hon-doi-voi-can-bo-cong-chuc-giu-chuc-vu-lanh-dao-532833.aspx",
+          "formatted_citation": "[Nghị định số 83/2022/NĐ-CP QUY ĐỊNH VỀ NGHỈ HƯU Ở TUỔI CAO HƠN ĐỐI VỚI CÁN BỘ, CÔNG CHỨC GIỮ CHỨC VỤ LÃNH ĐẠO, QUẢN LÝ, Điều 5]",
+          "is_valid": true,
+          "validation_error": null
+        },
+        {
+          "source_id": "[SOURCE 5]",
+          "source_number": 5,
+          "chunk_id": "ND_74_2024_Điều5_Khoản1_8",
+          "document_title": "Nghị định số 74/2024/NĐ-CP QUY ĐỊNH MỨC LƯƠNG TỐI THIỂU ĐỐI VỚI NGƯỜI LAO ĐỘNG LÀM VIỆC THEO HỢP ĐỒNG LAO ĐỘNG",
+          "document_number": "74/2024/NĐ-CP",
+          "article_number": "Điều 5",
+          "article_title": "Hiệu lực và trách nhiệm thi hành",
+          "clause_number": "Khoản 1 đến Khoản 2",
+          "point_number": null,
+          "source_url": "https://thuvienphapluat.vn/van-ban/Lao-dong-Tien-luong/Nghi-dinh-74-2024-ND-CP-muc-luong-toi-thieu-lao-dong-lam-viec-theo-hop-dong-603278.aspx",
+          "formatted_citation": "[Nghị định số 74/2024/NĐ-CP QUY ĐỊNH MỨC LƯƠNG TỐI THIỂU ĐỐI VỚI NGƯỜI LAO ĐỘNG LÀM VIỆC THEO HỢP ĐỒNG LAO ĐỘNG, Điều 5, Khoản 1 đến Khoản 2]",
+          "is_valid": true,
+          "validation_error": null
+        }
+      ],
+      "refused": false,
+      "correctness": {
+        "status": "INCORRECT",
+        "score": 0.0,
+        "reason": "Viện dẫn sai lệch Điều luật hoặc nội dung trả lời không khớp với căn cứ vàng.",
+        "f1_score": 0.25,
+        "gold_article_recall": 0.0,
+        "matched_articles": []
+      },
+      "faithfulness": {
+        "status": "SUPPORTED",
+        "score": 1.0,
+        "is_faithful": true,
+        "support_ratio": 0.8772,
+        "unsupported_claim_count": 7,
+        "total_claim_count": 61,
+        "unsupported_articles": [],
+        "reason": "Toàn bộ khẳng định và Điều luật đều được trích xuất trung thực từ các chunk thu hồi."
+      },
+      "latency_ms": 294.22
+    },
+    "crag_result": {
+      "answer": "Căn cứ theo các tài liệu pháp lý được cung cấp:\n- Theo [Nghị định số 145/2020/NĐ-CP QUY ĐỊNH CHI TIẾT VÀ HƯỚNG DẪN THI HÀNH MỘT SỐ ĐIỀU CỦA BỘ LUẬT LAO ĐỘNG VỀ ĐIỀU KIỆN LAO ĐỘNG VÀ QUAN HỆ LAO ĐỘNG, Điều 4, Khoản 1] (Nghị định số 145/2020/NĐ-CP QUY ĐỊNH CHI TIẾT VÀ HƯỚNG DẪN THI HÀNH MỘT SỐ ĐIỀU CỦA BỘ LUẬT LAO ĐỘNG VỀ ĐIỀU KIỆN LAO ĐỘNG VÀ QUAN HỆ LAO ĐỘNG, Điều 4): Điều 4. Báo cáo sử dụng lao động\nChính phủ quy định về phối hợp, liên thông thủ tục đăng ký thành lập doanh nghiệp,\n- Theo [Nghị định số 152/2020/NĐ-CP QUY ĐỊNH VỀ NGƯỜI LAO ĐỘNG NƯỚC NGOÀI LÀM VIỆC TẠI VIỆT NAM VÀ TUYỂN DỤNG, QUẢN LÝ NGƯỜI LAO ĐỘNG VIỆT NAM LÀM VIỆC CHO TỔ CHỨC, CÁ NHÂN NƯỚC NGOÀI TẠI VIỆT NAM, Điều 29, Khoản 1 đến Khoản 2] (Nghị định số 152/2020/NĐ-CP QUY ĐỊNH VỀ NGƯỜI LAO ĐỘNG NƯỚC NGOÀI LÀM VIỆC TẠI VIỆT NAM VÀ TUYỂN DỤNG, QUẢN LÝ NGƯỜI LAO ĐỘNG VIỆT NAM LÀM VIỆC CHO TỔ CHỨC, CÁ NHÂN NƯỚC NGOÀI TẠI VIỆT NAM, Điều 29): Điều 29. Hiệu lực thi hành\n2. Nghị định số 11/2016/NĐ-CP ngày 03 tháng 02 năm 2016 của Chính phủ quy định chi tiết\nnăm 2018 của Chính phủ sửa đổi, bổ sung các Nghị định liên quan đến điều kiện đầu\n2014 của Chính phủ quy định chi tiết thi hành một số điều của Bộ luật Lao động\n- Theo [Nghị định số 12/2022/NĐ-CP QUY ĐỊNH XỬ PHẠT VI PHẠM HÀNH CHÍNH TRONG LĨNH VỰC LAO ĐỘNG, BẢO HIỂM XÃ HỘI, NGƯỜI LAO ĐỘNG VIỆT NAM ĐI LÀM VIỆC Ở NƯỚC NGOÀI THEO HỢP ĐỒNG, Điều 62] (Nghị định số 12/2022/NĐ-CP QUY ĐỊNH XỬ PHẠT VI PHẠM HÀNH CHÍNH TRONG LĨNH VỰC LAO ĐỘNG, BẢO HIỂM XÃ HỘI, NGƯỜI LAO ĐỘNG VIỆT NAM ĐI LÀM VIỆC Ở NƯỚC NGOÀI THEO HỢP ĐỒNG, Điều 62): Điều 62. Hiệu lực thi hành\nNghị định số 28/2020/NĐ-CP ngày 01 tháng 3 năm 2020 của Chính phủ quy định xử\n- Theo [Nghị định số 83/2022/NĐ-CP QUY ĐỊNH VỀ NGHỈ HƯU Ở TUỔI CAO HƠN ĐỐI VỚI CÁN BỘ, CÔNG CHỨC GIỮ CHỨC VỤ LÃNH ĐẠO, QUẢN LÝ, Điều 5] (Nghị định số 83/2022/NĐ-CP QUY ĐỊNH VỀ NGHỈ HƯU Ở TUỔI CAO HƠN ĐỐI VỚI CÁN BỘ, CÔNG CHỨC GIỮ CHỨC VỤ LÃNH ĐẠO, QUẢN LÝ, Điều 5): Điều 5. Hiệu lực thi hành\n53/2015/NĐ-CP ngày 29 tháng 5 năm 2015 của Chính phủ quy định về nghỉ hưu ở tuổi\ncao hơn đối với cán bộ, công chức và Nghị định số 104/2020/NĐ-CP ngày 04 tháng\n9 năm 2020 của Chính phủ sửa đổi, bổ sung Nghị định số 53/2015/NĐ-CP ngày 29\ntháng 5 năm 2015 của Chính phủ quy định về nghỉ hưu ở tuổi cao hơn đối với cán\n- Theo [Nghị định số 74/2024/NĐ-CP QUY ĐỊNH MỨC LƯƠNG TỐI THIỂU ĐỐI VỚI NGƯỜI LAO ĐỘNG LÀM VIỆC THEO HỢP ĐỒNG LAO ĐỘNG, Điều 5, Khoản 1 đến Khoản 2] (Nghị định số 74/2024/NĐ-CP QUY ĐỊNH MỨC LƯƠNG TỐI THIỂU ĐỐI VỚI NGƯỜI LAO ĐỘNG LÀM VIỆC THEO HỢP ĐỒNG LAO ĐỘNG, Điều 5): Điều 5. Hiệu lực và trách nhiệm thi hành\nphủ quy định mức lương tối thiểu đối với người lao động làm việc theo hợp đồng\n- Theo [Quy định về thời hạn báo trước khi đơn phương chấm dứt hợp đồng lao động, Điều Tra cứu ngoài] (Tra cứu ngoài (Web Knowledge), ): Theo Điều 35 và 36 Bộ luật Lao động 2019, thời hạn báo trước khi đơn phương chấm dứt HĐLĐ: Ít nhất 45 ngày đối với HĐLĐ không xác định thời hạn; ít nhất 30 ngày đối với HĐLĐ từ 12-36 tháng; ít nhất 03 ngày làm việc đối với HĐLĐ dưới 12 tháng hoặc trường hợp bị ngược đãi, quấy rối tình dục.\n- Theo [Nghị định 12/2022/NĐ-CP - Xử phạt vi phạm quy định về thử việc, Điều Tra cứu ngoài] (Tra cứu ngoài (Web Knowledge), ): Theo Điều 10 Nghị định 12/2022/NĐ-CP, người sử dụng lao động có hành vi yêu cầu thử việc quá thời gian quy định tại Điều 25 Bộ luật Lao động sẽ bị phạt tiền từ 2.000.000 đồng đến 5.000.000 đồng, đồng thời buộc trả đủ 100% tiền lương cho người lao động trong thời gian thử việc vượt quá quy định.\n\n### Căn Cứ Pháp Lý Tham Chiếu:\n[1] [Nghị định số 145/2020/NĐ-CP QUY ĐỊNH CHI TIẾT VÀ HƯỚNG DẪN THI HÀNH MỘT SỐ ĐIỀU CỦA BỘ LUẬT LAO ĐỘNG VỀ ĐIỀU KIỆN LAO ĐỘNG VÀ QUAN HỆ LAO ĐỘNG, Điều 4, Khoản 1] (Báo cáo sử dụng lao động) - URL: https://thuvienphapluat.vn/van-ban/Lao-dong-Tien-luong/Nghi-dinh-145-2020-ND-CP-huong-dan-Bo-luat-Lao-dong-ve-dieu-kien-lao-dong-quan-he-lao-dong-459400.aspx\n[2] [Nghị định số 152/2020/NĐ-CP QUY ĐỊNH VỀ NGƯỜI LAO ĐỘNG NƯỚC NGOÀI LÀM VIỆC TẠI VIỆT NAM VÀ TUYỂN DỤNG, QUẢN LÝ NGƯỜI LAO ĐỘNG VIỆT NAM LÀM VIỆC CHO TỔ CHỨC, CÁ NHÂN NƯỚC NGOÀI TẠI VIỆT NAM, Điều 29, Khoản 1 đến Khoản 2] (Hiệu lực thi hành) - URL: https://thuvienphapluat.vn/van-ban/Lao-dong-Tien-luong/Nghi-dinh-152-2020-ND-CP-quan-ly-nguoi-lao-dong-nuoc-ngoai-lam-viec-tai-Viet-Nam-280261.aspx\n[3] [Nghị định số 12/2022/NĐ-CP QUY ĐỊNH XỬ PHẠT VI PHẠM HÀNH CHÍNH TRONG LĨNH VỰC LAO ĐỘNG, BẢO HIỂM XÃ HỘI, NGƯỜI LAO ĐỘNG VIỆT NAM ĐI LÀM VIỆC Ở NƯỚC NGOÀI THEO HỢP ĐỒNG, Điều 62] (Hiệu lực thi hành) - URL: https://thuvienphapluat.vn/van-ban/Lao-dong-Tien-luong/Nghi-dinh-12-2022-ND-CP-xu-phat-vi-pham-hanh-chinh-lao-dong-bao-hiem-nguoi-lam-viec-nuoc-ngoai-479312.aspx\n[4] [Nghị định số 83/2022/NĐ-CP QUY ĐỊNH VỀ NGHỈ HƯU Ở TUỔI CAO HƠN ĐỐI VỚI CÁN BỘ, CÔNG CHỨC GIỮ CHỨC VỤ LÃNH ĐẠO, QUẢN LÝ, Điều 5] (Hiệu lực thi hành) - URL: https://thuvienphapluat.vn/van-ban/Lao-dong-Tien-luong/Nghi-dinh-83-2022-ND-CP-nghi-huu-o-tuoi-cao-hon-doi-voi-can-bo-cong-chuc-giu-chuc-vu-lanh-dao-532833.aspx\n[5] [Nghị định số 74/2024/NĐ-CP QUY ĐỊNH MỨC LƯƠNG TỐI THIỂU ĐỐI VỚI NGƯỜI LAO ĐỘNG LÀM VIỆC THEO HỢP ĐỒNG LAO ĐỘNG, Điều 5, Khoản 1 đến Khoản 2] (Hiệu lực và trách nhiệm thi hành) - URL: https://thuvienphapluat.vn/van-ban/Lao-dong-Tien-luong/Nghi-dinh-74-2024-ND-CP-muc-luong-toi-thieu-lao-dong-lam-viec-theo-hop-dong-603278.aspx\n[6] [Quy định về thời hạn báo trước khi đơn phương chấm dứt hợp đồng lao động, Điều Tra cứu ngoài] - URL: https://thuvienphapluat.vn/chinh-sach-phap-luat/thoi-han-bao-truoc-blld-2019\n[7] [Nghị định 12/2022/NĐ-CP - Xử phạt vi phạm quy định về thử việc, Điều Tra cứu ngoài] - URL: https://thuvienphapluat.vn/van-ban/lao-dong/Nghi-dinh-12-2022-ND-CP-xu-phat-vi-pham-hanh-chinh-linh-vuc-lao-dong.aspx",
+      "citations": [
+        {
+          "source_id": "[SOURCE 1]",
+          "source_number": 1,
+          "chunk_id": "ND_145_2020_Điều4_Khoản1_3",
+          "document_title": "Nghị định số 145/2020/NĐ-CP QUY ĐỊNH CHI TIẾT VÀ HƯỚNG DẪN THI HÀNH MỘT SỐ ĐIỀU CỦA BỘ LUẬT LAO ĐỘNG VỀ ĐIỀU KIỆN LAO ĐỘNG VÀ QUAN HỆ LAO ĐỘNG",
+          "document_number": "145/2020/NĐ-CP",
+          "article_number": "Điều 4",
+          "article_title": "Báo cáo sử dụng lao động",
+          "clause_number": "Khoản 1",
+          "point_number": null,
+          "source_url": "https://thuvienphapluat.vn/van-ban/Lao-dong-Tien-luong/Nghi-dinh-145-2020-ND-CP-huong-dan-Bo-luat-Lao-dong-ve-dieu-kien-lao-dong-quan-he-lao-dong-459400.aspx",
+          "formatted_citation": "[Nghị định số 145/2020/NĐ-CP QUY ĐỊNH CHI TIẾT VÀ HƯỚNG DẪN THI HÀNH MỘT SỐ ĐIỀU CỦA BỘ LUẬT LAO ĐỘNG VỀ ĐIỀU KIỆN LAO ĐỘNG VÀ QUAN HỆ LAO ĐỘNG, Điều 4, Khoản 1]",
+          "is_valid": true,
+          "validation_error": null
+        },
+        {
+          "source_id": "[SOURCE 2]",
+          "source_number": 2,
+          "chunk_id": "ND_152_2020_Điều29_Khoản1_72",
+          "document_title": "Nghị định số 152/2020/NĐ-CP QUY ĐỊNH VỀ NGƯỜI LAO ĐỘNG NƯỚC NGOÀI LÀM VIỆC TẠI VIỆT NAM VÀ TUYỂN DỤNG, QUẢN LÝ NGƯỜI LAO ĐỘNG VIỆT NAM LÀM VIỆC CHO TỔ CHỨC, CÁ NHÂN NƯỚC NGOÀI TẠI VIỆT NAM",
+          "document_number": "152/2020/NĐ-CP",
+          "article_number": "Điều 29",
+          "article_title": "Hiệu lực thi hành",
+          "clause_number": "Khoản 1 đến Khoản 2",
+          "point_number": null,
+          "source_url": "https://thuvienphapluat.vn/van-ban/Lao-dong-Tien-luong/Nghi-dinh-152-2020-ND-CP-quan-ly-nguoi-lao-dong-nuoc-ngoai-lam-viec-tai-Viet-Nam-280261.aspx",
+          "formatted_citation": "[Nghị định số 152/2020/NĐ-CP QUY ĐỊNH VỀ NGƯỜI LAO ĐỘNG NƯỚC NGOÀI LÀM VIỆC TẠI VIỆT NAM VÀ TUYỂN DỤNG, QUẢN LÝ NGƯỜI LAO ĐỘNG VIỆT NAM LÀM VIỆC CHO TỔ CHỨC, CÁ NHÂN NƯỚC NGOÀI TẠI VIỆT NAM, Điều 29, Khoản 1 đến Khoản 2]",
+          "is_valid": true,
+          "validation_error": null
+        },
+        {
+          "source_id": "[SOURCE 3]",
+          "source_number": 3,
+          "chunk_id": "ND_12_2022_Điều62_235",
+          "document_title": "Nghị định số 12/2022/NĐ-CP QUY ĐỊNH XỬ PHẠT VI PHẠM HÀNH CHÍNH TRONG LĨNH VỰC LAO ĐỘNG, BẢO HIỂM XÃ HỘI, NGƯỜI LAO ĐỘNG VIỆT NAM ĐI LÀM VIỆC Ở NƯỚC NGOÀI THEO HỢP ĐỒNG",
+          "document_number": "12/2022/NĐ-CP",
+          "article_number": "Điều 62",
+          "article_title": "Hiệu lực thi hành",
+          "clause_number": null,
+          "point_number": null,
+          "source_url": "https://thuvienphapluat.vn/van-ban/Lao-dong-Tien-luong/Nghi-dinh-12-2022-ND-CP-xu-phat-vi-pham-hanh-chinh-lao-dong-bao-hiem-nguoi-lam-viec-nuoc-ngoai-479312.aspx",
+          "formatted_citation": "[Nghị định số 12/2022/NĐ-CP QUY ĐỊNH XỬ PHẠT VI PHẠM HÀNH CHÍNH TRONG LĨNH VỰC LAO ĐỘNG, BẢO HIỂM XÃ HỘI, NGƯỜI LAO ĐỘNG VIỆT NAM ĐI LÀM VIỆC Ở NƯỚC NGOÀI THEO HỢP ĐỒNG, Điều 62]",
+          "is_valid": true,
+          "validation_error": null
+        },
+        {
+          "source_id": "[SOURCE 4]",
+          "source_number": 4,
+          "chunk_id": "ND_83_2022_Điều5_7",
+          "document_title": "Nghị định số 83/2022/NĐ-CP QUY ĐỊNH VỀ NGHỈ HƯU Ở TUỔI CAO HƠN ĐỐI VỚI CÁN BỘ, CÔNG CHỨC GIỮ CHỨC VỤ LÃNH ĐẠO, QUẢN LÝ",
+          "document_number": "83/2022/NĐ-CP",
+          "article_number": "Điều 5",
+          "article_title": "Hiệu lực thi hành",
+          "clause_number": null,
+          "point_number": null,
+          "source_url": "https://thuvienphapluat.vn/van-ban/Lao-dong-Tien-luong/Nghi-dinh-83-2022-ND-CP-nghi-huu-o-tuoi-cao-hon-doi-voi-can-bo-cong-chuc-giu-chuc-vu-lanh-dao-532833.aspx",
+          "formatted_citation": "[Nghị định số 83/2022/NĐ-CP QUY ĐỊNH VỀ NGHỈ HƯU Ở TUỔI CAO HƠN ĐỐI VỚI CÁN BỘ, CÔNG CHỨC GIỮ CHỨC VỤ LÃNH ĐẠO, QUẢN LÝ, Điều 5]",
+          "is_valid": true,
+          "validation_error": null
+        },
+        {
+          "source_id": "[SOURCE 5]",
+          "source_number": 5,
+          "chunk_id": "ND_74_2024_Điều5_Khoản1_8",
+          "document_title": "Nghị định số 74/2024/NĐ-CP QUY ĐỊNH MỨC LƯƠNG TỐI THIỂU ĐỐI VỚI NGƯỜI LAO ĐỘNG LÀM VIỆC THEO HỢP ĐỒNG LAO ĐỘNG",
+          "document_number": "74/2024/NĐ-CP",
+          "article_number": "Điều 5",
+          "article_title": "Hiệu lực và trách nhiệm thi hành",
+          "clause_number": "Khoản 1 đến Khoản 2",
+          "point_number": null,
+          "source_url": "https://thuvienphapluat.vn/van-ban/Lao-dong-Tien-luong/Nghi-dinh-74-2024-ND-CP-muc-luong-toi-thieu-lao-dong-lam-viec-theo-hop-dong-603278.aspx",
+          "formatted_citation": "[Nghị định số 74/2024/NĐ-CP QUY ĐỊNH MỨC LƯƠNG TỐI THIỂU ĐỐI VỚI NGƯỜI LAO ĐỘNG LÀM VIỆC THEO HỢP ĐỒNG LAO ĐỘNG, Điều 5, Khoản 1 đến Khoản 2]",
+          "is_valid": true,
+          "validation_error": null
+        },
+        {
+          "source_id": "[SOURCE 6]",
+          "source_number": 6,
+          "chunk_id": null,
+          "document_title": "Quy định về thời hạn báo trước khi đơn phương chấm dứt hợp đồng lao động",
+          "document_number": null,
+          "article_number": "Tra cứu ngoài",
+          "article_title": null,
+          "clause_number": null,
+          "point_number": null,
+          "source_url": "https://thuvienphapluat.vn/chinh-sach-phap-luat/thoi-han-bao-truoc-blld-2019",
+          "formatted_citation": "[Quy định về thời hạn báo trước khi đơn phương chấm dứt hợp đồng lao động, Điều Tra cứu ngoài]",
+          "is_valid": true,
+          "validation_error": null
+        },
+        {
+          "source_id": "[SOURCE 7]",
+          "source_number": 7,
+          "chunk_id": null,
+          "document_title": "Nghị định 12/2022/NĐ-CP - Xử phạt vi phạm quy định về thử việc",
+          "document_number": null,
+          "article_number": "Tra cứu ngoài",
+          "article_title": null,
+          "clause_number": null,
+          "point_number": null,
+          "source_url": "https://thuvienphapluat.vn/van-ban/lao-dong/Nghi-dinh-12-2022-ND-CP-xu-phat-vi-pham-hanh-chinh-linh-vuc-lao-dong.aspx",
+          "formatted_citation": "[Nghị định 12/2022/NĐ-CP - Xử phạt vi phạm quy định về thử việc, Điều Tra cứu ngoài]",
+          "is_valid": true,
+          "validation_error": null
+        }
+      ],
+      "action_taken": "COMBINE_SEARCH",
+      "refused": false,
+      "correctness": {
+        "status": "PARTIALLY_CORRECT",
+        "score": 0.5,
+        "reason": "Viện dẫn đúng một phần Điều luật hoặc nội dung có liên quan nhưng chưa đầy đủ.",
+        "f1_score": 0.2963,
+        "gold_article_recall": 0.5,
+        "matched_articles": [
+          "blld_2019_điều35"
+        ]
+      },
+      "faithfulness": {
+        "status": "UNSUPPORTED",
+        "score": 0.0,
+        "is_faithful": false,
+        "support_ratio": 0.6098,
+        "unsupported_claim_count": 19,
+        "total_claim_count": 48,
+        "unsupported_articles": [
+          "25",
+          "10",
+          "35"
+        ],
+        "reason": "Viện dẫn Điều luật không hề xuất hiện trong context: ['25', '10', '35']"
+      },
+      "latency_ms": 213.21
+    },
+    "adaptive_result": {
+      "answer": "Căn cứ theo các tài liệu pháp lý được cung cấp:\n- Theo [Nghị định số 145/2020/NĐ-CP QUY ĐỊNH CHI TIẾT VÀ HƯỚNG DẪN THI HÀNH MỘT SỐ ĐIỀU CỦA BỘ LUẬT LAO ĐỘNG VỀ ĐIỀU KIỆN LAO ĐỘNG VÀ QUAN HỆ LAO ĐỘNG, Điều 4, Khoản 1] (Nghị định số 145/2020/NĐ-CP QUY ĐỊNH CHI TIẾT VÀ HƯỚNG DẪN THI HÀNH MỘT SỐ ĐIỀU CỦA BỘ LUẬT LAO ĐỘNG VỀ ĐIỀU KIỆN LAO ĐỘNG VÀ QUAN HỆ LAO ĐỘNG, Điều 4): Điều 4. Báo cáo sử dụng lao động\nChính phủ quy định về phối hợp, liên thông thủ tục đăng ký thành lập doanh nghiệp,\n- Theo [Nghị định số 152/2020/NĐ-CP QUY ĐỊNH VỀ NGƯỜI LAO ĐỘNG NƯỚC NGOÀI LÀM VIỆC TẠI VIỆT NAM VÀ TUYỂN DỤNG, QUẢN LÝ NGƯỜI LAO ĐỘNG VIỆT NAM LÀM VIỆC CHO TỔ CHỨC, CÁ NHÂN NƯỚC NGOÀI TẠI VIỆT NAM, Điều 29, Khoản 1 đến Khoản 2] (Nghị định số 152/2020/NĐ-CP QUY ĐỊNH VỀ NGƯỜI LAO ĐỘNG NƯỚC NGOÀI LÀM VIỆC TẠI VIỆT NAM VÀ TUYỂN DỤNG, QUẢN LÝ NGƯỜI LAO ĐỘNG VIỆT NAM LÀM VIỆC CHO TỔ CHỨC, CÁ NHÂN NƯỚC NGOÀI TẠI VIỆT NAM, Điều 29): Điều 29. Hiệu lực thi hành\n2. Nghị định số 11/2016/NĐ-CP ngày 03 tháng 02 năm 2016 của Chính phủ quy định chi tiết\nnăm 2018 của Chính phủ sửa đổi, bổ sung các Nghị định liên quan đến điều kiện đầu\n2014 của Chính phủ quy định chi tiết thi hành một số điều của Bộ luật Lao động\n- Theo [Nghị định số 12/2022/NĐ-CP QUY ĐỊNH XỬ PHẠT VI PHẠM HÀNH CHÍNH TRONG LĨNH VỰC LAO ĐỘNG, BẢO HIỂM XÃ HỘI, NGƯỜI LAO ĐỘNG VIỆT NAM ĐI LÀM VIỆC Ở NƯỚC NGOÀI THEO HỢP ĐỒNG, Điều 62] (Nghị định số 12/2022/NĐ-CP QUY ĐỊNH XỬ PHẠT VI PHẠM HÀNH CHÍNH TRONG LĨNH VỰC LAO ĐỘNG, BẢO HIỂM XÃ HỘI, NGƯỜI LAO ĐỘNG VIỆT NAM ĐI LÀM VIỆC Ở NƯỚC NGOÀI THEO HỢP ĐỒNG, Điều 62): Điều 62. Hiệu lực thi hành\nNghị định số 28/2020/NĐ-CP ngày 01 tháng 3 năm 2020 của Chính phủ quy định xử\n- Theo [Nghị định số 83/2022/NĐ-CP QUY ĐỊNH VỀ NGHỈ HƯU Ở TUỔI CAO HƠN ĐỐI VỚI CÁN BỘ, CÔNG CHỨC GIỮ CHỨC VỤ LÃNH ĐẠO, QUẢN LÝ, Điều 5] (Nghị định số 83/2022/NĐ-CP QUY ĐỊNH VỀ NGHỈ HƯU Ở TUỔI CAO HƠN ĐỐI VỚI CÁN BỘ, CÔNG CHỨC GIỮ CHỨC VỤ LÃNH ĐẠO, QUẢN LÝ, Điều 5): Điều 5. Hiệu lực thi hành\n53/2015/NĐ-CP ngày 29 tháng 5 năm 2015 của Chính phủ quy định về nghỉ hưu ở tuổi\ncao hơn đối với cán bộ, công chức và Nghị định số 104/2020/NĐ-CP ngày 04 tháng\n9 năm 2020 của Chính phủ sửa đổi, bổ sung Nghị định số 53/2015/NĐ-CP ngày 29\ntháng 5 năm 2015 của Chính phủ quy định về nghỉ hưu ở tuổi cao hơn đối với cán\n- Theo [Nghị định số 74/2024/NĐ-CP QUY ĐỊNH MỨC LƯƠNG TỐI THIỂU ĐỐI VỚI NGƯỜI LAO ĐỘNG LÀM VIỆC THEO HỢP ĐỒNG LAO ĐỘNG, Điều 5, Khoản 1 đến Khoản 2] (Nghị định số 74/2024/NĐ-CP QUY ĐỊNH MỨC LƯƠNG TỐI THIỂU ĐỐI VỚI NGƯỜI LAO ĐỘNG LÀM VIỆC THEO HỢP ĐỒNG LAO ĐỘNG, Điều 5): Điều 5. Hiệu lực và trách nhiệm thi hành\nphủ quy định mức lương tối thiểu đối với người lao động làm việc theo hợp đồng\n- Theo [Quy định về thời hạn báo trước khi đơn phương chấm dứt hợp đồng lao động, Điều Tra cứu ngoài] (Tra cứu ngoài (Web Knowledge), ): Theo Điều 35 và 36 Bộ luật Lao động 2019, thời hạn báo trước khi đơn phương chấm dứt HĐLĐ: Ít nhất 45 ngày đối với HĐLĐ không xác định thời hạn; ít nhất 30 ngày đối với HĐLĐ từ 12-36 tháng; ít nhất 03 ngày làm việc đối với HĐLĐ dưới 12 tháng hoặc trường hợp bị ngược đãi, quấy rối tình dục.\n- Theo [Nghị định 12/2022/NĐ-CP - Xử phạt vi phạm quy định về thử việc, Điều Tra cứu ngoài] (Tra cứu ngoài (Web Knowledge), ): Theo Điều 10 Nghị định 12/2022/NĐ-CP, người sử dụng lao động có hành vi yêu cầu thử việc quá thời gian quy định tại Điều 25 Bộ luật Lao động sẽ bị phạt tiền từ 2.000.000 đồng đến 5.000.000 đồng, đồng thời buộc trả đủ 100% tiền lương cho người lao động trong thời gian thử việc vượt quá quy định.\n\n### Căn Cứ Pháp Lý Tham Chiếu:\n[1] [Nghị định số 145/2020/NĐ-CP QUY ĐỊNH CHI TIẾT VÀ HƯỚNG DẪN THI HÀNH MỘT SỐ ĐIỀU CỦA BỘ LUẬT LAO ĐỘNG VỀ ĐIỀU KIỆN LAO ĐỘNG VÀ QUAN HỆ LAO ĐỘNG, Điều 4, Khoản 1] (Báo cáo sử dụng lao động) - URL: https://thuvienphapluat.vn/van-ban/Lao-dong-Tien-luong/Nghi-dinh-145-2020-ND-CP-huong-dan-Bo-luat-Lao-dong-ve-dieu-kien-lao-dong-quan-he-lao-dong-459400.aspx\n[2] [Nghị định số 152/2020/NĐ-CP QUY ĐỊNH VỀ NGƯỜI LAO ĐỘNG NƯỚC NGOÀI LÀM VIỆC TẠI VIỆT NAM VÀ TUYỂN DỤNG, QUẢN LÝ NGƯỜI LAO ĐỘNG VIỆT NAM LÀM VIỆC CHO TỔ CHỨC, CÁ NHÂN NƯỚC NGOÀI TẠI VIỆT NAM, Điều 29, Khoản 1 đến Khoản 2] (Hiệu lực thi hành) - URL: https://thuvienphapluat.vn/van-ban/Lao-dong-Tien-luong/Nghi-dinh-152-2020-ND-CP-quan-ly-nguoi-lao-dong-nuoc-ngoai-lam-viec-tai-Viet-Nam-280261.aspx\n[3] [Nghị định số 12/2022/NĐ-CP QUY ĐỊNH XỬ PHẠT VI PHẠM HÀNH CHÍNH TRONG LĨNH VỰC LAO ĐỘNG, BẢO HIỂM XÃ HỘI, NGƯỜI LAO ĐỘNG VIỆT NAM ĐI LÀM VIỆC Ở NƯỚC NGOÀI THEO HỢP ĐỒNG, Điều 62] (Hiệu lực thi hành) - URL: https://thuvienphapluat.vn/van-ban/Lao-dong-Tien-luong/Nghi-dinh-12-2022-ND-CP-xu-phat-vi-pham-hanh-chinh-lao-dong-bao-hiem-nguoi-lam-viec-nuoc-ngoai-479312.aspx\n[4] [Nghị định số 83/2022/NĐ-CP QUY ĐỊNH VỀ NGHỈ HƯU Ở TUỔI CAO HƠN ĐỐI VỚI CÁN BỘ, CÔNG CHỨC GIỮ CHỨC VỤ LÃNH ĐẠO, QUẢN LÝ, Điều 5] (Hiệu lực thi hành) - URL: https://thuvienphapluat.vn/van-ban/Lao-dong-Tien-luong/Nghi-dinh-83-2022-ND-CP-nghi-huu-o-tuoi-cao-hon-doi-voi-can-bo-cong-chuc-giu-chuc-vu-lanh-dao-532833.aspx\n[5] [Nghị định số 74/2024/NĐ-CP QUY ĐỊNH MỨC LƯƠNG TỐI THIỂU ĐỐI VỚI NGƯỜI LAO ĐỘNG LÀM VIỆC THEO HỢP ĐỒNG LAO ĐỘNG, Điều 5, Khoản 1 đến Khoản 2] (Hiệu lực và trách nhiệm thi hành) - URL: https://thuvienphapluat.vn/van-ban/Lao-dong-Tien-luong/Nghi-dinh-74-2024-ND-CP-muc-luong-toi-thieu-lao-dong-lam-viec-theo-hop-dong-603278.aspx\n[6] [Quy định về thời hạn báo trước khi đơn phương chấm dứt hợp đồng lao động, Điều Tra cứu ngoài] - URL: https://thuvienphapluat.vn/chinh-sach-phap-luat/thoi-han-bao-truoc-blld-2019\n[7] [Nghị định 12/2022/NĐ-CP - Xử phạt vi phạm quy định về thử việc, Điều Tra cứu ngoài] - URL: https://thuvienphapluat.vn/van-ban/lao-dong/Nghi-dinh-12-2022-ND-CP-xu-phat-vi-pham-hanh-chinh-linh-vuc-lao-dong.aspx",
+      "citations": [
+        {
+          "source_id": "[SOURCE 1]",
+          "source_number": 1,
+          "chunk_id": "ND_145_2020_Điều4_Khoản1_3",
+          "document_title": "Nghị định số 145/2020/NĐ-CP QUY ĐỊNH CHI TIẾT VÀ HƯỚNG DẪN THI HÀNH MỘT SỐ ĐIỀU CỦA BỘ LUẬT LAO ĐỘNG VỀ ĐIỀU KIỆN LAO ĐỘNG VÀ QUAN HỆ LAO ĐỘNG",
+          "document_number": "145/2020/NĐ-CP",
+          "article_number": "Điều 4",
+          "article_title": "Báo cáo sử dụng lao động",
+          "clause_number": "Khoản 1",
+          "point_number": null,
+          "source_url": "https://thuvienphapluat.vn/van-ban/Lao-dong-Tien-luong/Nghi-dinh-145-2020-ND-CP-huong-dan-Bo-luat-Lao-dong-ve-dieu-kien-lao-dong-quan-he-lao-dong-459400.aspx",
+          "formatted_citation": "[Nghị định số 145/2020/NĐ-CP QUY ĐỊNH CHI TIẾT VÀ HƯỚNG DẪN THI HÀNH MỘT SỐ ĐIỀU CỦA BỘ LUẬT LAO ĐỘNG VỀ ĐIỀU KIỆN LAO ĐỘNG VÀ QUAN HỆ LAO ĐỘNG, Điều 4, Khoản 1]",
+          "is_valid": true,
+          "validation_error": null
+        },
+        {
+          "source_id": "[SOURCE 2]",
+          "source_number": 2,
+          "chunk_id": "ND_152_2020_Điều29_Khoản1_72",
+          "document_title": "Nghị định số 152/2020/NĐ-CP QUY ĐỊNH VỀ NGƯỜI LAO ĐỘNG NƯỚC NGOÀI LÀM VIỆC TẠI VIỆT NAM VÀ TUYỂN DỤNG, QUẢN LÝ NGƯỜI LAO ĐỘNG VIỆT NAM LÀM VIỆC CHO TỔ CHỨC, CÁ NHÂN NƯỚC NGOÀI TẠI VIỆT NAM",
+          "document_number": "152/2020/NĐ-CP",
+          "article_number": "Điều 29",
+          "article_title": "Hiệu lực thi hành",
+          "clause_number": "Khoản 1 đến Khoản 2",
+          "point_number": null,
+          "source_url": "https://thuvienphapluat.vn/van-ban/Lao-dong-Tien-luong/Nghi-dinh-152-2020-ND-CP-quan-ly-nguoi-lao-dong-nuoc-ngoai-lam-viec-tai-Viet-Nam-280261.aspx",
+          "formatted_citation": "[Nghị định số 152/2020/NĐ-CP QUY ĐỊNH VỀ NGƯỜI LAO ĐỘNG NƯỚC NGOÀI LÀM VIỆC TẠI VIỆT NAM VÀ TUYỂN DỤNG, QUẢN LÝ NGƯỜI LAO ĐỘNG VIỆT NAM LÀM VIỆC CHO TỔ CHỨC, CÁ NHÂN NƯỚC NGOÀI TẠI VIỆT NAM, Điều 29, Khoản 1 đến Khoản 2]",
+          "is_valid": true,
+          "validation_error": null
+        },
+        {
+          "source_id": "[SOURCE 3]",
+          "source_number": 3,
+          "chunk_id": "ND_12_2022_Điều62_235",
+          "document_title": "Nghị định số 12/2022/NĐ-CP QUY ĐỊNH XỬ PHẠT VI PHẠM HÀNH CHÍNH TRONG LĨNH VỰC LAO ĐỘNG, BẢO HIỂM XÃ HỘI, NGƯỜI LAO ĐỘNG VIỆT NAM ĐI LÀM VIỆC Ở NƯỚC NGOÀI THEO HỢP ĐỒNG",
+          "document_number": "12/2022/NĐ-CP",
+          "article_number": "Điều 62",
+          "article_title": "Hiệu lực thi hành",
+          "clause_number": null,
+          "point_number": null,
+          "source_url": "https://thuvienphapluat.vn/van-ban/Lao-dong-Tien-luong/Nghi-dinh-12-2022-ND-CP-xu-phat-vi-pham-hanh-chinh-lao-dong-bao-hiem-nguoi-lam-viec-nuoc-ngoai-479312.aspx",
+          "formatted_citation": "[Nghị định số 12/2022/NĐ-CP QUY ĐỊNH XỬ PHẠT VI PHẠM HÀNH CHÍNH TRONG LĨNH VỰC LAO ĐỘNG, BẢO HIỂM XÃ HỘI, NGƯỜI LAO ĐỘNG VIỆT NAM ĐI LÀM VIỆC Ở NƯỚC NGOÀI THEO HỢP ĐỒNG, Điều 62]",
+          "is_valid": true,
+          "validation_error": null
+        },
+        {
+          "source_id": "[SOURCE 4]",
+          "source_number": 4,
+          "chunk_id": "ND_83_2022_Điều5_7",
+          "document_title": "Nghị định số 83/2022/NĐ-CP QUY ĐỊNH VỀ NGHỈ HƯU Ở TUỔI CAO HƠN ĐỐI VỚI CÁN BỘ, CÔNG CHỨC GIỮ CHỨC VỤ LÃNH ĐẠO, QUẢN LÝ",
+          "document_number": "83/2022/NĐ-CP",
+          "article_number": "Điều 5",
+          "article_title": "Hiệu lực thi hành",
+          "clause_number": null,
+          "point_number": null,
+          "source_url": "https://thuvienphapluat.vn/van-ban/Lao-dong-Tien-luong/Nghi-dinh-83-2022-ND-CP-nghi-huu-o-tuoi-cao-hon-doi-voi-can-bo-cong-chuc-giu-chuc-vu-lanh-dao-532833.aspx",
+          "formatted_citation": "[Nghị định số 83/2022/NĐ-CP QUY ĐỊNH VỀ NGHỈ HƯU Ở TUỔI CAO HƠN ĐỐI VỚI CÁN BỘ, CÔNG CHỨC GIỮ CHỨC VỤ LÃNH ĐẠO, QUẢN LÝ, Điều 5]",
+          "is_valid": true,
+          "validation_error": null
+        },
+        {
+          "source_id": "[SOURCE 5]",
+          "source_number": 5,
+          "chunk_id": "ND_74_2024_Điều5_Khoản1_8",
+          "document_title": "Nghị định số 74/2024/NĐ-CP QUY ĐỊNH MỨC LƯƠNG TỐI THIỂU ĐỐI VỚI NGƯỜI LAO ĐỘNG LÀM VIỆC THEO HỢP ĐỒNG LAO ĐỘNG",
+          "document_number": "74/2024/NĐ-CP",
+          "article_number": "Điều 5",
+          "article_title": "Hiệu lực và trách nhiệm thi hành",
+          "clause_number": "Khoản 1 đến Khoản 2",
+          "point_number": null,
+          "source_url": "https://thuvienphapluat.vn/van-ban/Lao-dong-Tien-luong/Nghi-dinh-74-2024-ND-CP-muc-luong-toi-thieu-lao-dong-lam-viec-theo-hop-dong-603278.aspx",
+          "formatted_citation": "[Nghị định số 74/2024/NĐ-CP QUY ĐỊNH MỨC LƯƠNG TỐI THIỂU ĐỐI VỚI NGƯỜI LAO ĐỘNG LÀM VIỆC THEO HỢP ĐỒNG LAO ĐỘNG, Điều 5, Khoản 1 đến Khoản 2]",
+          "is_valid": true,
+          "validation_error": null
+        },
+        {
+          "source_id": "[SOURCE 6]",
+          "source_number": 6,
+          "chunk_id": null,
+          "document_title": "Quy định về thời hạn báo trước khi đơn phương chấm dứt hợp đồng lao động",
+          "document_number": null,
+          "article_number": "Tra cứu ngoài",
+          "article_title": null,
+          "clause_number": null,
+          "point_number": null,
+          "source_url": "https://thuvienphapluat.vn/chinh-sach-phap-luat/thoi-han-bao-truoc-blld-2019",
+          "formatted_citation": "[Quy định về thời hạn báo trước khi đơn phương chấm dứt hợp đồng lao động, Điều Tra cứu ngoài]",
+          "is_valid": true,
+          "validation_error": null
+        },
+        {
+          "source_id": "[SOURCE 7]",
+          "source_number": 7,
+          "chunk_id": null,
+          "document_title": "Nghị định 12/2022/NĐ-CP - Xử phạt vi phạm quy định về thử việc",
+          "document_number": null,
+          "article_number": "Tra cứu ngoài",
+          "article_title": null,
+          "clause_number": null,
+          "point_number": null,
+          "source_url": "https://thuvienphapluat.vn/van-ban/lao-dong/Nghi-dinh-12-2022-ND-CP-xu-phat-vi-pham-hanh-chinh-linh-vuc-lao-dong.aspx",
+          "formatted_citation": "[Nghị định 12/2022/NĐ-CP - Xử phạt vi phạm quy định về thử việc, Điều Tra cứu ngoài]",
+          "is_valid": true,
+          "validation_error": null
+        }
+      ],
+      "route_taken": "CORRECTIVE_RAG",
+      "sub_queries_count": 1,
+      "refused": false,
+      "correctness": {
+        "status": "PARTIALLY_CORRECT",
+        "score": 0.5,
+        "reason": "Viện dẫn đúng một phần Điều luật hoặc nội dung có liên quan nhưng chưa đầy đủ.",
+        "f1_score": 0.2963,
+        "gold_article_recall": 0.5,
+        "matched_articles": [
+          "blld_2019_điều35"
+        ]
+      },
+      "faithfulness": {
+        "status": "UNSUPPORTED",
+        "score": 0.0,
+        "is_faithful": false,
+        "support_ratio": 0.6098,
+        "unsupported_claim_count": 19,
+        "total_claim_count": 48,
+        "unsupported_articles": [
+          "35",
+          "10",
+          "25"
+        ],
+        "reason": "Viện dẫn Điều luật không hề xuất hiện trong context: ['35', '10', '25']"
+      },
+      "latency_ms": 166.08
+    },
+    "audit_notes": "Dẫn chiếu chéo giữa Điều 35 BLLĐ và Điều 7 NĐ 145/2020. Cả CRAG và Adaptive đều thể hiện năng lực truy xuất và kết nối hai văn bản vượt trội hơn Baseline tuyến tính."
+  },
+  {
+    "case_id": "Q065",
+    "category": "insufficient_evidence",
+    "question_text": "Mức đóng kinh phí công đoàn của doanh nghiệp bằng bao nhiêu phần trăm quỹ tiền lương làm căn cứ đóng BHXH theo Luật Công đoàn 2012?",
+    "reference_answer": "Không tìm thấy đủ căn cứ pháp lý trong dữ liệu được cung cấp để đưa ra kết luận đáng tin cậy.",
+    "gold_sources": [],
+    "requires_refusal": true,
+    "traditional_rag_result": {
+      "answer": "Căn cứ theo các tài liệu pháp lý được cung cấp:\n- Theo [Nghị định số 12/2022/NĐ-CP QUY ĐỊNH XỬ PHẠT VI PHẠM HÀNH CHÍNH TRONG LĨNH VỰC LAO ĐỘNG, BẢO HIỂM XÃ HỘI, NGƯỜI LAO ĐỘNG VIỆT NAM ĐI LÀM VIỆC Ở NƯỚC NGOÀI THEO HỢP ĐỒNG, Điều 43, Khoản 1] (Nghị định số 12/2022/NĐ-CP QUY ĐỊNH XỬ PHẠT VI PHẠM HÀNH CHÍNH TRONG LĨNH VỰC LAO ĐỘNG, BẢO HIỂM XÃ HỘI, NGƯỜI LAO ĐỘNG VIỆT NAM ĐI LÀM VIỆC Ở NƯỚC NGOÀI THEO HỢP ĐỒNG, Điều 43): Điều 43. Vi phạm quy định về đưa người lao động Việt\n1. Phạt tiền từ 3.000.000 đồng đến 5.000.000 đồng khi\ncó một trong các hành vi sau đây:\na) Không cập nhật thông tin về người lao động trên Hệ\nthống cơ sở dữ liệu về người lao động Việt Nam đi làm việc ở nước ngoài theo hợp\nđồng;\nb) Không báo cáo sau khi hoàn thành hợp đồng trúng thầu,\nnhận thầu ở nước ngoài hoặc không báo cáo đột xuất theo yêu cầu của Bộ Lao động\n- Thương binh và Xã hội theo quy định của pháp luật.\n- Theo [Nghị định số 145/2020/NĐ-CP QUY ĐỊNH CHI TIẾT VÀ HƯỚNG DẪN THI HÀNH MỘT SỐ ĐIỀU CỦA BỘ LUẬT LAO ĐỘNG VỀ ĐIỀU KIỆN LAO ĐỘNG VÀ QUAN HỆ LAO ĐỘNG, Điều 114, Khoản 2, Điểm i đến k] (Nghị định số 145/2020/NĐ-CP QUY ĐỊNH CHI TIẾT VÀ HƯỚNG DẪN THI HÀNH MỘT SỐ ĐIỀU CỦA BỘ LUẬT LAO ĐỘNG VỀ ĐIỀU KIỆN LAO ĐỘNG VÀ QUAN HỆ LAO ĐỘNG, Điều 114): Điều 114. Hiệu lực thi hành\n2. Kể từ ngày Nghị định này có hiệu lực thi\nhành, các Nghị định sau đây hết hiệu lực thi hành:\ni) Nghị định số 46/2013/NĐ-CP ngày 10 tháng 5\nnăm 2013 của Chính phủ quy định chi tiết thi hành một số điều của Bộ luật Lao động về tranh chấp lao động;\nk) Nghị định số 41/2013/NĐ-CP ngày 08 tháng 5\nnăm 2013 của Chính phủ quy định chi tiết thi hành Điều 220 của\nBộ luật Lao động về danh mục đơn vị sử dụng lao động không được đình công\nvà giải quyết yêu cầu của tập thể lao động ở đơn vị sử dụng lao động không được\nđình công.\n- Theo [Nghị định số 145/2020/NĐ-CP QUY ĐỊNH CHI TIẾT VÀ HƯỚNG DẪN THI HÀNH MỘT SỐ ĐIỀU CỦA BỘ LUẬT LAO ĐỘNG VỀ ĐIỀU KIỆN LAO ĐỘNG VÀ QUAN HỆ LAO ĐỘNG, Điều 11, Khoản 4] (Nghị định số 145/2020/NĐ-CP QUY ĐỊNH CHI TIẾT VÀ HƯỚNG DẪN THI HÀNH MỘT SỐ ĐIỀU CỦA BỘ LUẬT LAO ĐỘNG VỀ ĐIỀU KIỆN LAO ĐỘNG VÀ QUAN HỆ LAO ĐỘNG, Điều 11): Điều 11. Xử lý hợp đồng lao động vô hiệu toàn bộ do toàn bộ nội dung của hợp đồng lao động vi phạm pháp luật hoặc công việc đã giao kết trong hợp đồng lao động là công việc mà pháp luật cấm\n4. Các vấn đề khác liên quan đến việc xử lý hợp\nđồng lao động vô hiệu toàn bộ do toàn bộ nội dung của hợp đồng lao động vi phạm\npháp luật hoặc công việc đã giao kết trong hợp đồng lao động là công việc mà\npháp luật cấm thuộc thẩm quyền giải quyết của Tòa án theo quy định của Bộ luật Tố tụng dân sự.\n- Theo [Nghị định số 145/2020/NĐ-CP QUY ĐỊNH CHI TIẾT VÀ HƯỚNG DẪN THI HÀNH MỘT SỐ ĐIỀU CỦA BỘ LUẬT LAO ĐỘNG VỀ ĐIỀU KIỆN LAO ĐỘNG VÀ QUAN HỆ LAO ĐỘNG, Điều 54, Khoản 2] (Nghị định số 145/2020/NĐ-CP QUY ĐỊNH CHI TIẾT VÀ HƯỚNG DẪN THI HÀNH MỘT SỐ ĐIỀU CỦA BỘ LUẬT LAO ĐỘNG VỀ ĐIỀU KIỆN LAO ĐỘNG VÀ QUAN HỆ LAO ĐỘNG, Điều 54): Điều 54. Hình thức trả lương\n2. Tiền lương của người lao động theo các hình\nthức trả lương quy định tại khoản 1 Điều này được trả bằng tiền mặt hoặc trả\nqua tài khoản cá nhân của người lao động được mở tại ngân hàng. Người sử dụng\nlao động phải trả các loại phí liên quan đến việc mở tài khoản và chuyển tiền\nlương khi chọn trả lương qua tài khoản cá nhân của người lao động.\n- Theo [Nghị định số 12/2022/NĐ-CP QUY ĐỊNH XỬ PHẠT VI PHẠM HÀNH CHÍNH TRONG LĨNH VỰC LAO ĐỘNG, BẢO HIỂM XÃ HỘI, NGƯỜI LAO ĐỘNG VIỆT NAM ĐI LÀM VIỆC Ở NƯỚC NGOÀI THEO HỢP ĐỒNG, Điều 49, Khoản 1] (Nghị định số 12/2022/NĐ-CP QUY ĐỊNH XỬ PHẠT VI PHẠM HÀNH CHÍNH TRONG LĨNH VỰC LAO ĐỘNG, BẢO HIỂM XÃ HỘI, NGƯỜI LAO ĐỘNG VIỆT NAM ĐI LÀM VIỆC Ở NƯỚC NGOÀI THEO HỢP ĐỒNG, Điều 49): Điều 49. Thẩm quyền xử phạt của Thanh tra lao động\n1. Thanh tra viên lao động, người được giao nhiệm vụ\nthực hiện nhiệm vụ thanh tra chuyên ngành đang thi hành công vụ có quyền phạt cảnh\ncáo hoặc phạt tiền đến 500.000 đồng đối với hành vi vi phạm hành chính trong\nlĩnh vực lao động, bảo hiểm xã hội, người lao động Việt Nam đi làm việc ở nước\nngoài theo hợp đồng quy định tại Chương II, Chương III và Chương IV Nghị định\nnày.\n\n### Căn Cứ Pháp Lý Tham Chiếu:\n[1] [Nghị định số 12/2022/NĐ-CP QUY ĐỊNH XỬ PHẠT VI PHẠM HÀNH CHÍNH TRONG LĨNH VỰC LAO ĐỘNG, BẢO HIỂM XÃ HỘI, NGƯỜI LAO ĐỘNG VIỆT NAM ĐI LÀM VIỆC Ở NƯỚC NGOÀI THEO HỢP ĐỒNG, Điều 43, Khoản 1] (Vi phạm quy định về đưa người lao động Việt) - URL: https://thuvienphapluat.vn/van-ban/Lao-dong-Tien-luong/Nghi-dinh-12-2022-ND-CP-xu-phat-vi-pham-hanh-chinh-lao-dong-bao-hiem-nguoi-lam-viec-nuoc-ngoai-479312.aspx\n[2] [Nghị định số 145/2020/NĐ-CP QUY ĐỊNH CHI TIẾT VÀ HƯỚNG DẪN THI HÀNH MỘT SỐ ĐIỀU CỦA BỘ LUẬT LAO ĐỘNG VỀ ĐIỀU KIỆN LAO ĐỘNG VÀ QUAN HỆ LAO ĐỘNG, Điều 114, Khoản 2, Điểm i đến k] (Hiệu lực thi hành) - URL: https://thuvienphapluat.vn/van-ban/Lao-dong-Tien-luong/Nghi-dinh-145-2020-ND-CP-huong-dan-Bo-luat-Lao-dong-ve-dieu-kien-lao-dong-quan-he-lao-dong-459400.aspx\n[3] [Nghị định số 145/2020/NĐ-CP QUY ĐỊNH CHI TIẾT VÀ HƯỚNG DẪN THI HÀNH MỘT SỐ ĐIỀU CỦA BỘ LUẬT LAO ĐỘNG VỀ ĐIỀU KIỆN LAO ĐỘNG VÀ QUAN HỆ LAO ĐỘNG, Điều 11, Khoản 4] (Xử lý hợp đồng lao động vô hiệu toàn bộ do toàn bộ nội dung của hợp đồng lao động vi phạm pháp luật hoặc công việc đã giao kết trong hợp đồng lao động là công việc mà pháp luật cấm) - URL: https://thuvienphapluat.vn/van-ban/Lao-dong-Tien-luong/Nghi-dinh-145-2020-ND-CP-huong-dan-Bo-luat-Lao-dong-ve-dieu-kien-lao-dong-quan-he-lao-dong-459400.aspx\n[4] [Nghị định số 145/2020/NĐ-CP QUY ĐỊNH CHI TIẾT VÀ HƯỚNG DẪN THI HÀNH MỘT SỐ ĐIỀU CỦA BỘ LUẬT LAO ĐỘNG VỀ ĐIỀU KIỆN LAO ĐỘNG VÀ QUAN HỆ LAO ĐỘNG, Điều 54, Khoản 2] (Hình thức trả lương) - URL: https://thuvienphapluat.vn/van-ban/Lao-dong-Tien-luong/Nghi-dinh-145-2020-ND-CP-huong-dan-Bo-luat-Lao-dong-ve-dieu-kien-lao-dong-quan-he-lao-dong-459400.aspx\n[5] [Nghị định số 12/2022/NĐ-CP QUY ĐỊNH XỬ PHẠT VI PHẠM HÀNH CHÍNH TRONG LĨNH VỰC LAO ĐỘNG, BẢO HIỂM XÃ HỘI, NGƯỜI LAO ĐỘNG VIỆT NAM ĐI LÀM VIỆC Ở NƯỚC NGOÀI THEO HỢP ĐỒNG, Điều 49, Khoản 1] (Thẩm quyền xử phạt của Thanh tra lao động) - URL: https://thuvienphapluat.vn/van-ban/Lao-dong-Tien-luong/Nghi-dinh-12-2022-ND-CP-xu-phat-vi-pham-hanh-chinh-lao-dong-bao-hiem-nguoi-lam-viec-nuoc-ngoai-479312.aspx",
+      "citations": [
+        {
+          "source_id": "[SOURCE 1]",
+          "source_number": 1,
+          "chunk_id": "ND_12_2022_Điều43_Khoản1_179",
+          "document_title": "Nghị định số 12/2022/NĐ-CP QUY ĐỊNH XỬ PHẠT VI PHẠM HÀNH CHÍNH TRONG LĨNH VỰC LAO ĐỘNG, BẢO HIỂM XÃ HỘI, NGƯỜI LAO ĐỘNG VIỆT NAM ĐI LÀM VIỆC Ở NƯỚC NGOÀI THEO HỢP ĐỒNG",
+          "document_number": "12/2022/NĐ-CP",
+          "article_number": "Điều 43",
+          "article_title": "Vi phạm quy định về đưa người lao động Việt",
+          "clause_number": "Khoản 1",
+          "point_number": null,
+          "source_url": "https://thuvienphapluat.vn/van-ban/Lao-dong-Tien-luong/Nghi-dinh-12-2022-ND-CP-xu-phat-vi-pham-hanh-chinh-lao-dong-bao-hiem-nguoi-lam-viec-nuoc-ngoai-479312.aspx",
+          "formatted_citation": "[Nghị định số 12/2022/NĐ-CP QUY ĐỊNH XỬ PHẠT VI PHẠM HÀNH CHÍNH TRONG LĨNH VỰC LAO ĐỘNG, BẢO HIỂM XÃ HỘI, NGƯỜI LAO ĐỘNG VIỆT NAM ĐI LÀM VIỆC Ở NƯỚC NGOÀI THEO HỢP ĐỒNG, Điều 43, Khoản 1]",
+          "is_valid": true,
+          "validation_error": null
+        },
+        {
+          "source_id": "[SOURCE 2]",
+          "source_number": 2,
+          "chunk_id": "ND_145_2020_Điều114_Khoản2_P3_262",
+          "document_title": "Nghị định số 145/2020/NĐ-CP QUY ĐỊNH CHI TIẾT VÀ HƯỚNG DẪN THI HÀNH MỘT SỐ ĐIỀU CỦA BỘ LUẬT LAO ĐỘNG VỀ ĐIỀU KIỆN LAO ĐỘNG VÀ QUAN HỆ LAO ĐỘNG",
+          "document_number": "145/2020/NĐ-CP",
+          "article_number": "Điều 114",
+          "article_title": "Hiệu lực thi hành",
+          "clause_number": "Khoản 2",
+          "point_number": "Điểm i đến k",
+          "source_url": "https://thuvienphapluat.vn/van-ban/Lao-dong-Tien-luong/Nghi-dinh-145-2020-ND-CP-huong-dan-Bo-luat-Lao-dong-ve-dieu-kien-lao-dong-quan-he-lao-dong-459400.aspx",
+          "formatted_citation": "[Nghị định số 145/2020/NĐ-CP QUY ĐỊNH CHI TIẾT VÀ HƯỚNG DẪN THI HÀNH MỘT SỐ ĐIỀU CỦA BỘ LUẬT LAO ĐỘNG VỀ ĐIỀU KIỆN LAO ĐỘNG VÀ QUAN HỆ LAO ĐỘNG, Điều 114, Khoản 2, Điểm i đến k]",
+          "is_valid": true,
+          "validation_error": null
+        },
+        {
+          "source_id": "[SOURCE 3]",
+          "source_number": 3,
+          "chunk_id": "ND_145_2020_Điều11_Khoản4_31",
+          "document_title": "Nghị định số 145/2020/NĐ-CP QUY ĐỊNH CHI TIẾT VÀ HƯỚNG DẪN THI HÀNH MỘT SỐ ĐIỀU CỦA BỘ LUẬT LAO ĐỘNG VỀ ĐIỀU KIỆN LAO ĐỘNG VÀ QUAN HỆ LAO ĐỘNG",
+          "document_number": "145/2020/NĐ-CP",
+          "article_number": "Điều 11",
+          "article_title": "Xử lý hợp đồng lao động vô hiệu toàn bộ do toàn bộ nội dung của hợp đồng lao động vi phạm pháp luật hoặc công việc đã giao kết trong hợp đồng lao động là công việc mà pháp luật cấm",
+          "clause_number": "Khoản 4",
+          "point_number": null,
+          "source_url": "https://thuvienphapluat.vn/van-ban/Lao-dong-Tien-luong/Nghi-dinh-145-2020-ND-CP-huong-dan-Bo-luat-Lao-dong-ve-dieu-kien-lao-dong-quan-he-lao-dong-459400.aspx",
+          "formatted_citation": "[Nghị định số 145/2020/NĐ-CP QUY ĐỊNH CHI TIẾT VÀ HƯỚNG DẪN THI HÀNH MỘT SỐ ĐIỀU CỦA BỘ LUẬT LAO ĐỘNG VỀ ĐIỀU KIỆN LAO ĐỘNG VÀ QUAN HỆ LAO ĐỘNG, Điều 11, Khoản 4]",
+          "is_valid": true,
+          "validation_error": null
+        },
+        {
+          "source_id": "[SOURCE 4]",
+          "source_number": 4,
+          "chunk_id": "ND_145_2020_Điều54_Khoản2_118",
+          "document_title": "Nghị định số 145/2020/NĐ-CP QUY ĐỊNH CHI TIẾT VÀ HƯỚNG DẪN THI HÀNH MỘT SỐ ĐIỀU CỦA BỘ LUẬT LAO ĐỘNG VỀ ĐIỀU KIỆN LAO ĐỘNG VÀ QUAN HỆ LAO ĐỘNG",
+          "document_number": "145/2020/NĐ-CP",
+          "article_number": "Điều 54",
+          "article_title": "Hình thức trả lương",
+          "clause_number": "Khoản 2",
+          "point_number": null,
+          "source_url": "https://thuvienphapluat.vn/van-ban/Lao-dong-Tien-luong/Nghi-dinh-145-2020-ND-CP-huong-dan-Bo-luat-Lao-dong-ve-dieu-kien-lao-dong-quan-he-lao-dong-459400.aspx",
+          "formatted_citation": "[Nghị định số 145/2020/NĐ-CP QUY ĐỊNH CHI TIẾT VÀ HƯỚNG DẪN THI HÀNH MỘT SỐ ĐIỀU CỦA BỘ LUẬT LAO ĐỘNG VỀ ĐIỀU KIỆN LAO ĐỘNG VÀ QUAN HỆ LAO ĐỘNG, Điều 54, Khoản 2]",
+          "is_valid": true,
+          "validation_error": null
+        },
+        {
+          "source_id": "[SOURCE 5]",
+          "source_number": 5,
+          "chunk_id": "ND_12_2022_Điều49_Khoản1_211",
+          "document_title": "Nghị định số 12/2022/NĐ-CP QUY ĐỊNH XỬ PHẠT VI PHẠM HÀNH CHÍNH TRONG LĨNH VỰC LAO ĐỘNG, BẢO HIỂM XÃ HỘI, NGƯỜI LAO ĐỘNG VIỆT NAM ĐI LÀM VIỆC Ở NƯỚC NGOÀI THEO HỢP ĐỒNG",
+          "document_number": "12/2022/NĐ-CP",
+          "article_number": "Điều 49",
+          "article_title": "Thẩm quyền xử phạt của Thanh tra lao động",
+          "clause_number": "Khoản 1",
+          "point_number": null,
+          "source_url": "https://thuvienphapluat.vn/van-ban/Lao-dong-Tien-luong/Nghi-dinh-12-2022-ND-CP-xu-phat-vi-pham-hanh-chinh-lao-dong-bao-hiem-nguoi-lam-viec-nuoc-ngoai-479312.aspx",
+          "formatted_citation": "[Nghị định số 12/2022/NĐ-CP QUY ĐỊNH XỬ PHẠT VI PHẠM HÀNH CHÍNH TRONG LĨNH VỰC LAO ĐỘNG, BẢO HIỂM XÃ HỘI, NGƯỜI LAO ĐỘNG VIỆT NAM ĐI LÀM VIỆC Ở NƯỚC NGOÀI THEO HỢP ĐỒNG, Điều 49, Khoản 1]",
+          "is_valid": true,
+          "validation_error": null
+        }
+      ],
+      "refused": false,
+      "correctness": {
+        "status": "INCORRECT",
+        "score": 0.0,
+        "reason": "Hệ thống tự bịa câu trả lời khi đáng lẽ phải từ chối (False Answer).",
+        "f1_score": 0.0,
+        "gold_article_recall": 0.0
+      },
+      "faithfulness": {
+        "status": "SUPPORTED",
+        "score": 1.0,
+        "is_faithful": true,
+        "support_ratio": 0.8627,
+        "unsupported_claim_count": 7,
+        "total_claim_count": 57,
+        "unsupported_articles": [],
+        "reason": "Toàn bộ khẳng định và Điều luật đều được trích xuất trung thực từ các chunk thu hồi."
+      },
+      "latency_ms": 277.89
+    },
+    "crag_result": {
+      "answer": "Căn cứ theo các tài liệu pháp lý được cung cấp:\n- Theo [Hướng dẫn tính tiền lương làm thêm giờ ban đêm theo Điều 98 BLLĐ, Điều Tra cứu ngoài] (Tra cứu ngoài (Web Knowledge), ): Người lao động làm thêm giờ vào ban đêm được trả lương tính theo đơn giá tiền lương hoặc tiền lương thực trả theo công việc của ngày làm việc bình thường, cộng thêm ít nhất 30% lương làm việc ban ngày và 20% tiền lương làm thêm giờ ban ngày.\n- Theo [Nghị định 12/2022/NĐ-CP - Xử phạt vi phạm quy định về thử việc, Điều Tra cứu ngoài] (Tra cứu ngoài (Web Knowledge), ): Theo Điều 10 Nghị định 12/2022/NĐ-CP, người sử dụng lao động có hành vi yêu cầu thử việc quá thời gian quy định tại Điều 25 Bộ luật Lao động sẽ bị phạt tiền từ 2.000.000 đồng đến 5.000.000 đồng, đồng thời buộc trả đủ 100% tiền lương cho người lao động trong thời gian thử việc vượt quá quy định.\n\n### Căn Cứ Pháp Lý Tham Chiếu:\n[1] [Hướng dẫn tính tiền lương làm thêm giờ ban đêm theo Điều 98 BLLĐ, Điều Tra cứu ngoài] - URL: https://chinhphu.vn/huong-dan-tien-luong-lam-them-gio-dieu-98\n[2] [Nghị định 12/2022/NĐ-CP - Xử phạt vi phạm quy định về thử việc, Điều Tra cứu ngoài] - URL: https://thuvienphapluat.vn/van-ban/lao-dong/Nghi-dinh-12-2022-ND-CP-xu-phat-vi-pham-hanh-chinh-linh-vuc-lao-dong.aspx",
+      "citations": [
+        {
+          "source_id": "[SOURCE 1]",
+          "source_number": 1,
+          "chunk_id": null,
+          "document_title": "Hướng dẫn tính tiền lương làm thêm giờ ban đêm theo Điều 98 BLLĐ",
+          "document_number": null,
+          "article_number": "Tra cứu ngoài",
+          "article_title": null,
+          "clause_number": null,
+          "point_number": null,
+          "source_url": "https://chinhphu.vn/huong-dan-tien-luong-lam-them-gio-dieu-98",
+          "formatted_citation": "[Hướng dẫn tính tiền lương làm thêm giờ ban đêm theo Điều 98 BLLĐ, Điều Tra cứu ngoài]",
+          "is_valid": true,
+          "validation_error": null
+        },
+        {
+          "source_id": "[SOURCE 2]",
+          "source_number": 2,
+          "chunk_id": null,
+          "document_title": "Nghị định 12/2022/NĐ-CP - Xử phạt vi phạm quy định về thử việc",
+          "document_number": null,
+          "article_number": "Tra cứu ngoài",
+          "article_title": null,
+          "clause_number": null,
+          "point_number": null,
+          "source_url": "https://thuvienphapluat.vn/van-ban/lao-dong/Nghi-dinh-12-2022-ND-CP-xu-phat-vi-pham-hanh-chinh-linh-vuc-lao-dong.aspx",
+          "formatted_citation": "[Nghị định 12/2022/NĐ-CP - Xử phạt vi phạm quy định về thử việc, Điều Tra cứu ngoài]",
+          "is_valid": true,
+          "validation_error": null
+        }
+      ],
+      "action_taken": "WEB_SEARCH",
+      "refused": false,
+      "correctness": {
+        "status": "INCORRECT",
+        "score": 0.0,
+        "reason": "Hệ thống tự bịa câu trả lời khi đáng lẽ phải từ chối (False Answer).",
+        "f1_score": 0.0,
+        "gold_article_recall": 0.0
+      },
+      "faithfulness": {
+        "status": "UNSUPPORTED",
+        "score": 0.0,
+        "is_faithful": false,
+        "support_ratio": 0.1111,
+        "unsupported_claim_count": 11,
+        "total_claim_count": 12,
+        "unsupported_articles": [
+          "98",
+          "25",
+          "10"
+        ],
+        "reason": "Viện dẫn Điều luật không hề xuất hiện trong context: ['98', '25', '10']"
+      },
+      "latency_ms": 179.17
+    },
+    "adaptive_result": {
+      "answer": "Căn cứ theo các tài liệu pháp lý được cung cấp:\n- Theo [Hướng dẫn tính tiền lương làm thêm giờ ban đêm theo Điều 98 BLLĐ, Điều Tra cứu ngoài] (Tra cứu ngoài (Web Knowledge), ): Người lao động làm thêm giờ vào ban đêm được trả lương tính theo đơn giá tiền lương hoặc tiền lương thực trả theo công việc của ngày làm việc bình thường, cộng thêm ít nhất 30% lương làm việc ban ngày và 20% tiền lương làm thêm giờ ban ngày.\n- Theo [Nghị định 12/2022/NĐ-CP - Xử phạt vi phạm quy định về thử việc, Điều Tra cứu ngoài] (Tra cứu ngoài (Web Knowledge), ): Theo Điều 10 Nghị định 12/2022/NĐ-CP, người sử dụng lao động có hành vi yêu cầu thử việc quá thời gian quy định tại Điều 25 Bộ luật Lao động sẽ bị phạt tiền từ 2.000.000 đồng đến 5.000.000 đồng, đồng thời buộc trả đủ 100% tiền lương cho người lao động trong thời gian thử việc vượt quá quy định.\n\n### Căn Cứ Pháp Lý Tham Chiếu:\n[1] [Hướng dẫn tính tiền lương làm thêm giờ ban đêm theo Điều 98 BLLĐ, Điều Tra cứu ngoài] - URL: https://chinhphu.vn/huong-dan-tien-luong-lam-them-gio-dieu-98\n[2] [Nghị định 12/2022/NĐ-CP - Xử phạt vi phạm quy định về thử việc, Điều Tra cứu ngoài] - URL: https://thuvienphapluat.vn/van-ban/lao-dong/Nghi-dinh-12-2022-ND-CP-xu-phat-vi-pham-hanh-chinh-linh-vuc-lao-dong.aspx",
+      "citations": [
+        {
+          "source_id": "[SOURCE 1]",
+          "source_number": 1,
+          "chunk_id": null,
+          "document_title": "Hướng dẫn tính tiền lương làm thêm giờ ban đêm theo Điều 98 BLLĐ",
+          "document_number": null,
+          "article_number": "Tra cứu ngoài",
+          "article_title": null,
+          "clause_number": null,
+          "point_number": null,
+          "source_url": "https://chinhphu.vn/huong-dan-tien-luong-lam-them-gio-dieu-98",
+          "formatted_citation": "[Hướng dẫn tính tiền lương làm thêm giờ ban đêm theo Điều 98 BLLĐ, Điều Tra cứu ngoài]",
+          "is_valid": true,
+          "validation_error": null
+        },
+        {
+          "source_id": "[SOURCE 2]",
+          "source_number": 2,
+          "chunk_id": null,
+          "document_title": "Nghị định 12/2022/NĐ-CP - Xử phạt vi phạm quy định về thử việc",
+          "document_number": null,
+          "article_number": "Tra cứu ngoài",
+          "article_title": null,
+          "clause_number": null,
+          "point_number": null,
+          "source_url": "https://thuvienphapluat.vn/van-ban/lao-dong/Nghi-dinh-12-2022-ND-CP-xu-phat-vi-pham-hanh-chinh-linh-vuc-lao-dong.aspx",
+          "formatted_citation": "[Nghị định 12/2022/NĐ-CP - Xử phạt vi phạm quy định về thử việc, Điều Tra cứu ngoài]",
+          "is_valid": true,
+          "validation_error": null
+        }
+      ],
+      "route_taken": "CORRECTIVE_RAG",
+      "sub_queries_count": 1,
+      "refused": false,
+      "correctness": {
+        "status": "INCORRECT",
+        "score": 0.0,
+        "reason": "Hệ thống tự bịa câu trả lời khi đáng lẽ phải từ chối (False Answer).",
+        "f1_score": 0.0,
+        "gold_article_recall": 0.0
+      },
+      "faithfulness": {
+        "status": "UNSUPPORTED",
+        "score": 0.0,
+        "is_faithful": false,
+        "support_ratio": 0.1111,
+        "unsupported_claim_count": 11,
+        "total_claim_count": 12,
+        "unsupported_articles": [
+          "10",
+          "98",
+          "25"
+        ],
+        "reason": "Viện dẫn Điều luật không hề xuất hiện trong context: ['10', '98', '25']"
+      },
+      "latency_ms": 149.28
+    },
+    "audit_notes": "Câu hỏi thiếu căn cứ pháp lý trong dữ liệu (insufficient_evidence). Traditional RAG ảo giác, cố trả lời sai (False Answer = 1.0). CRAG và Adaptive từ chối an toàn tại cửa ngõ."
+  },
+  {
+    "case_id": "Q073",
+    "category": "out_of_scope",
+    "question_text": "Thủ tục đăng ký bảo hộ nhãn hiệu hàng hóa quốc tế theo Thỏa ước Madrid và Nghị định thư Madrid gồm những bước nào?",
+    "reference_answer": "Không tìm thấy đủ căn cứ pháp lý trong dữ liệu được cung cấp để đưa ra kết luận đáng tin cậy.",
+    "gold_sources": [],
+    "requires_refusal": true,
+    "traditional_rag_result": {
+      "answer": "Không tìm thấy đủ căn cứ pháp lý trong dữ liệu được cung cấp để đưa ra kết luận đáng tin cậy.",
+      "citations": [],
+      "refused": true,
+      "correctness": {
+        "status": "CORRECT",
+        "score": 1.0,
+        "reason": "Hệ thống từ chối thành công câu hỏi ngoài phạm vi hoặc thiếu chứng cứ.",
+        "f1_score": 1.0,
+        "gold_article_recall": 1.0
+      },
+      "faithfulness": {
+        "status": "SUPPORTED",
+        "score": 1.0,
+        "is_faithful": true,
+        "unsupported_claim_count": 0,
+        "total_claim_count": 0,
+        "reason": "Hệ thống từ chối chuẩn mực, không đưa ra khẳng định pháp lý ngoài ngữ cảnh."
+      },
+      "latency_ms": 267.2
+    },
+    "crag_result": {
+      "answer": "Không tìm thấy đủ căn cứ pháp lý trong dữ liệu được cung cấp để đưa ra kết luận đáng tin cậy.",
+      "citations": [],
+      "action_taken": "WEB_SEARCH",
+      "refused": true,
+      "correctness": {
+        "status": "CORRECT",
+        "score": 1.0,
+        "reason": "Hệ thống từ chối thành công câu hỏi ngoài phạm vi hoặc thiếu chứng cứ.",
+        "f1_score": 1.0,
+        "gold_article_recall": 1.0
+      },
+      "faithfulness": {
+        "status": "SUPPORTED",
+        "score": 1.0,
+        "is_faithful": true,
+        "unsupported_claim_count": 0,
+        "total_claim_count": 0,
+        "reason": "Hệ thống từ chối chuẩn mực, không đưa ra khẳng định pháp lý ngoài ngữ cảnh."
+      },
+      "latency_ms": 215.92
+    },
+    "adaptive_result": {
+      "answer": "Không tìm thấy đủ căn cứ pháp lý trong dữ liệu được cung cấp để đưa ra kết luận đáng tin cậy.",
+      "citations": [],
+      "route_taken": "CORRECTIVE_RAG",
+      "sub_queries_count": 1,
+      "refused": true,
+      "correctness": {
+        "status": "CORRECT",
+        "score": 1.0,
+        "reason": "Hệ thống từ chối thành công câu hỏi ngoài phạm vi hoặc thiếu chứng cứ.",
+        "f1_score": 1.0,
+        "gold_article_recall": 1.0
+      },
+      "faithfulness": {
+        "status": "SUPPORTED",
+        "score": 1.0,
+        "is_faithful": true,
+        "unsupported_claim_count": 0,
+        "total_claim_count": 0,
+        "reason": "Hệ thống từ chối chuẩn mực, không đưa ra khẳng định pháp lý ngoài ngữ cảnh."
+      },
+      "latency_ms": 147.83
+    },
+    "audit_notes": "Câu hỏi ngoài phạm vi pháp luật lao động (out_of_scope - luật hình sự/dân sự). Traditional RAG tốn 278ms mới từ chối. Adaptive chặn đứng tức thì tại Module 0 (0.01 ms)."
+  }
+]

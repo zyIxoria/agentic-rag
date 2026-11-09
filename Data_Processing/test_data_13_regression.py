@@ -17,7 +17,7 @@ from Data_Processing.hierarchy_parser import HierarchyParser
 from Data_Processing.chunker_v2 import LegalAwareChunkerV2
 from Data_Processing.schema_v2 import ContentType
 
-RAW_DIR = r"D:\KLCN\agentic-rag\Data_Processing\data_corpus_raw"
+RAW_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "data_corpus_raw")
 
 
 class TestData13Regression(unittest.TestCase):

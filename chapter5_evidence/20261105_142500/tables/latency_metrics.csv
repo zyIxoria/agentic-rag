@@ -1,0 +1,6 @@
+system,sample_count,mean_latency_ms,median_latency_ms,p95_latency_ms,min_latency_ms,max_latency_ms
+Traditional RAG Baseline,80,291.46,291.27,305.46,258.76,499.18
+Corrective RAG (CRAG Tích hợp),80,197.6,206.62,223.86,127.0,227.58
+Adaptive Agentic RAG,80,177.71,164.86,348.11,0.01,366.85
+Corrective RAG (Nội bộ),80,174.86,133.54,259.25,111.28,315.52
+Online LLM (Gemini 1.5 Flash),80,1460.07,1444.4,1803.46,881.88,1854.51

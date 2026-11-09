@@ -233,7 +233,7 @@ class TestLegalAwareChunkerV2(unittest.TestCase):
         - 100% chunk IDs là duy nhất.
         - Mọi chunk đều pass Pydantic validation (LegalChunkV2).
         """
-        blld_path = r"D:\KLCN\agentic-rag\Data_Processing\data_corpus_raw\BLLD_2019.txt"
+        blld_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "data_corpus_raw", "BLLD_2019.txt")
         if not os.path.exists(blld_path):
             self.skipTest("BLLD_2019.txt không tồn tại")
 

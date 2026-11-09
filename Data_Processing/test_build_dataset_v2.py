@@ -31,12 +31,12 @@ class TestBuildLegalDatasetV2(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         """Khởi chạy pipeline tạo Dataset V2 trước khi chạy các kiểm thử."""
-        cls.raw_dir = r"D:\KLCN\agentic-rag\Data_Processing\data_corpus_raw"
-        cls.output_dir = r"D:\KLCN\agentic-rag\Data_Processing\output_v2"
+        cls.raw_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), "data_corpus_raw")
+        cls.output_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), "output_v2")
         cls.json_path = os.path.join(cls.output_dir, "legal_dataset_v2.json")
         cls.jsonl_path = os.path.join(cls.output_dir, "legal_dataset_v2.jsonl")
         cls.meta_path = os.path.join(cls.output_dir, "build_metadata.json")
-        cls.report_path = r"D:\KLCN\agentic-rag\reports\dataset_audit\DATA-10_dataset_v2_summary.md"
+        cls.report_path = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "reports", "dataset_audit", "DATA-10_dataset_v2_summary.md")
 
         # Thực thi pipeline nếu tệp chưa có hoặc chạy lại để đảm bảo tính mới
         cls.summary = build_legal_dataset_v2(

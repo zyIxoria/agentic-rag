@@ -1,0 +1,75 @@
+{
+  "status": "AUDITED_VERIFIED",
+  "timestamp": "2026-11-05T14:31:13.970522+07:00",
+  "chroma_dir": "data\\chroma_db",
+  "collections_found": [
+    {
+      "name": "legal_labor_baseline_minilm",
+      "count": 1390,
+      "metadata": {
+        "hnsw:space": "cosine",
+        "created_at": "2026-09-14T20:07:11.671932+00:00",
+        "source_dataset": "Data_Processing/output_v2/legal_dataset_v2.json",
+        "dataset_version": "v2.1",
+        "embedding_dimension": 384,
+        "description": "Legal Labor Law Baseline Vector Store",
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
+      }
+    }
+  ],
+  "baseline_collection": {
+    "name": "legal_labor_baseline_minilm",
+    "record_count": 1390,
+    "vector_dimension": 384,
+    "distance_metric": "cosine",
+    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "declared_dataset_version": "v2.1",
+    "metadata": {
+      "hnsw:space": "cosine",
+      "created_at": "2026-09-14T20:07:11.671932+00:00",
+      "source_dataset": "Data_Processing/output_v2/legal_dataset_v2.json",
+      "dataset_version": "v2.1",
+      "embedding_dimension": 384,
+      "description": "Legal Labor Law Baseline Vector Store",
+      "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
+    },
+    "corpus_alignment": {
+      "total_vectors": 1390,
+      "matched_with_v2_corpus": 1390,
+      "orphan_vectors_count": 0,
+      "unindexed_chunks_in_v2": 727,
+      "unindexed_breakdown_by_document": {
+        "LUAT_ATVSLD_2015": 203,
+        "LUAT_BHXH_2014": 181,
+        "LUAT_BHXH_2024": 278,
+        "LUAT_VIEC_LAM_2013": 65
+      },
+      "indexed_documents_count": 15,
+      "indexed_documents_list": [
+        "BLLD_2019",
+        "ND_12_2022",
+        "ND_135_2020",
+        "ND_145_2020",
+        "ND_152_2020",
+        "ND_219_2025",
+        "ND_70_2023",
+        "ND_74_2024",
+        "ND_83_2022",
+        "ND_99_2024",
+        "QD_992_2025",
+        "TT_09_2020",
+        "TT_10_2020",
+        "TT_11_2020",
+        "TT_20_2023"
+      ],
+      "unindexed_documents_count": 4,
+      "unindexed_documents_list": [
+        "LUAT_ATVSLD_2015",
+        "LUAT_BHXH_2014",
+        "LUAT_BHXH_2024",
+        "LUAT_VIEC_LAM_2013"
+      ]
+    },
+    "findings": "Kho véc-tơ hiện tại (legal_labor_baseline_minilm) chứa đúng 1.390 véc-tơ thuộc 15 văn bản pháp luật gốc đã đóng băng cho thí nghiệm Baseline. 4 văn bản mới được bổ sung trong đợt mở rộng corpus (LUAT_ATVSLD_2015, LUAT_BHXH_2014, LUAT_BHXH_2024, LUAT_VIEC_LAM_2013 = 727 chunks) chưa được nạp vào collection này để bảo toàn tính toàn vẹn và tất định của 80 câu hỏi benchmark ban đầu."
+  }
+}

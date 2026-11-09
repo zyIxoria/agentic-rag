@@ -44,9 +44,10 @@ def format_legal_citation(meta: Dict[str, Any]) -> str:
     parts = [doc_title]
     if art:
         art_clean = str(art).strip()
-        if not art_clean.lower().startswith("điều"):
-            art_clean = f"Điều {art_clean}"
-        parts.append(art_clean)
+        if not any(k in art_clean.lower() for k in ["tra cứu", "ngoài", "web", "none"]):
+            if not art_clean.lower().startswith("điều"):
+                art_clean = f"Điều {art_clean}"
+            parts.append(art_clean)
 
     if clause:
         clause_clean = str(clause).strip()
@@ -196,17 +197,21 @@ class CitationResolver:
         footnotes: List[str] = []
         if valid_citations:
             for idx, cit in enumerate(valid_citations, start=1):
-                fn_parts = [f"{cit.formatted_citation}"]
+                item_parts = [f"**[{idx}]** {cit.formatted_citation}"]
                 if cit.article_title:
-                    fn_parts.append(f"({cit.article_title})")
+                    item_parts.append(f"*({cit.article_title})*")
+                header_line = " ".join(item_parts)
                 if cit.source_url:
-                    fn_parts.append(f"- URL: {cit.source_url}")
-                footnotes.append(f"[{idx}] {' '.join(fn_parts)}")
+                    # Xuống dòng riêng cho URL với thụt lề và 2 dấu cách cuối dòng để Markdown ngắt dòng chuẩn xác
+                    fn_item = f"{header_line}  \n   - **URL:** {cit.source_url}"
+                else:
+                    fn_item = header_line
+                footnotes.append(fn_item)
 
         if do_footnotes and footnotes and not answer.startswith("Không tìm thấy đủ căn cứ pháp lý"):
             enriched_text = (
                 f"{enriched_text}\n\n"
-                f"### Căn Cứ Pháp Lý Tham Chiếu:\n" + "\n".join(footnotes)
+                f"### Căn Cứ Pháp Lý Tham Chiếu:\n\n" + "\n\n".join(footnotes)
             )
 
         return CitationResolutionResult(

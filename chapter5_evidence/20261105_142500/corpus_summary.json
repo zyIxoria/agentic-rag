@@ -1,0 +1,173 @@
+{
+  "status": "VERIFIED_DIRECT_COUNT",
+  "timestamp": "2026-11-05T14:31:13.970522+07:00",
+  "v2_dataset": {
+    "path": "Data_Processing\\output_v2\\legal_dataset_v2.json",
+    "sha256": "e9b9095274e893365cefc0622f9a691454835f570f4efd0610f5aad2d1f610ea",
+    "total_documents": 19,
+    "total_chunks": 2117,
+    "unique_chunk_ids": 2117,
+    "duplicate_chunk_ids": 0,
+    "fields_present_count": 22,
+    "fields_list": [
+      "article_number",
+      "article_title",
+      "chapter_number",
+      "chapter_title",
+      "chunk_id",
+      "chunk_index",
+      "clause_number",
+      "content",
+      "document_id",
+      "document_number",
+      "document_title",
+      "document_type",
+      "effective_from",
+      "effective_to",
+      "issue_date",
+      "legal_status",
+      "parent_article",
+      "parent_document",
+      "point_number",
+      "section_number",
+      "section_title",
+      "source_url"
+    ],
+    "field_coverage": {
+      "article_number": {
+        "present_count": 1828,
+        "missing_count": 289,
+        "coverage_pct": 86.35
+      },
+      "article_title": {
+        "present_count": 1826,
+        "missing_count": 291,
+        "coverage_pct": 86.25
+      },
+      "chapter_number": {
+        "present_count": 1639,
+        "missing_count": 478,
+        "coverage_pct": 77.42
+      },
+      "chapter_title": {
+        "present_count": 1639,
+        "missing_count": 478,
+        "coverage_pct": 77.42
+      },
+      "chunk_id": {
+        "present_count": 2117,
+        "missing_count": 0,
+        "coverage_pct": 100.0
+      },
+      "chunk_index": {
+        "present_count": 2117,
+        "missing_count": 0,
+        "coverage_pct": 100.0
+      },
+      "clause_number": {
+        "present_count": 1235,
+        "missing_count": 882,
+        "coverage_pct": 58.34
+      },
+      "content": {
+        "present_count": 2117,
+        "missing_count": 0,
+        "coverage_pct": 100.0
+      },
+      "document_id": {
+        "present_count": 2117,
+        "missing_count": 0,
+        "coverage_pct": 100.0
+      },
+      "document_number": {
+        "present_count": 2117,
+        "missing_count": 0,
+        "coverage_pct": 100.0
+      },
+      "document_title": {
+        "present_count": 2117,
+        "missing_count": 0,
+        "coverage_pct": 100.0
+      },
+      "document_type": {
+        "present_count": 2117,
+        "missing_count": 0,
+        "coverage_pct": 100.0
+      },
+      "effective_from": {
+        "present_count": 2117,
+        "missing_count": 0,
+        "coverage_pct": 100.0
+      },
+      "effective_to": {
+        "present_count": 0,
+        "missing_count": 2117,
+        "coverage_pct": 0.0
+      },
+      "issue_date": {
+        "present_count": 2117,
+        "missing_count": 0,
+        "coverage_pct": 100.0
+      },
+      "legal_status": {
+        "present_count": 2117,
+        "missing_count": 0,
+        "coverage_pct": 100.0
+      },
+      "parent_article": {
+        "present_count": 1828,
+        "missing_count": 289,
+        "coverage_pct": 86.35
+      },
+      "parent_document": {
+        "present_count": 2117,
+        "missing_count": 0,
+        "coverage_pct": 100.0
+      },
+      "point_number": {
+        "present_count": 217,
+        "missing_count": 1900,
+        "coverage_pct": 10.25
+      },
+      "section_number": {
+        "present_count": 510,
+        "missing_count": 1607,
+        "coverage_pct": 24.09
+      },
+      "section_title": {
+        "present_count": 510,
+        "missing_count": 1607,
+        "coverage_pct": 24.09
+      },
+      "source_url": {
+        "present_count": 2117,
+        "missing_count": 0,
+        "coverage_pct": 100.0
+      }
+    },
+    "character_length_stats": {
+      "min": 83,
+      "max": 5432,
+      "mean": 868.47,
+      "median": 696,
+      "p95": 2490
+    },
+    "word_length_stats": {
+      "min": 20,
+      "max": 615,
+      "mean": 186.37,
+      "median": 154,
+      "p95": 522
+    },
+    "length_counting_method": "Character length = len(content); Word count = len(content.split())",
+    "content_type_distribution": {
+      "article": 2117
+    }
+  },
+  "v1_dataset": {
+    "path": "Data_Processing\\KhoaLuan_Data_HoanChinh.json",
+    "sha256": "7bdb170543734804c64945a02d5388a32399dd391ff3b2a3d029add1d3fe3fb4",
+    "total_chunks": 2765,
+    "status": "LEGACY_FROZEN"
+  }
+}

@@ -1,9 +1,9 @@
 {
   "status": "SUCCESS",
-  "build_timestamp": "2026-11-04T18:59:43Z",
-  "elapsed_seconds": 1.423,
+  "build_timestamp": "2026-11-08T05:46:28Z",
+  "elapsed_seconds": 1.713,
   "input": {
-    "raw_dir": "D:\\KLCN\\agentic-rag\\Data_Processing\\data_corpus_raw",
+    "raw_dir": "D:\\Filehoc\\KLCN\\agentic-rag\\Data_Processing\\data_corpus_raw",
     "total_documents": 19,
     "document_ids": [
       "BLLD_2019",
@@ -28,10 +28,10 @@
     ]
   },
   "output": {
-    "json_path": "D:\\KLCN\\agentic-rag\\Data_Processing\\output_v2\\legal_dataset_v2.json",
-    "json_sha256": "e9b9095274e893365cefc0622f9a691454835f570f4efd0610f5aad2d1f610ea",
-    "jsonl_path": "D:\\KLCN\\agentic-rag\\Data_Processing\\output_v2\\legal_dataset_v2.jsonl",
-    "jsonl_sha256": "d484c890f58d2f34b3ce42de1921f25fcff914816ebefc0ff0dc71e82f3e9040",
+    "json_path": "D:\\Filehoc\\KLCN\\agentic-rag\\Data_Processing\\output_v2\\legal_dataset_v2.json",
+    "json_sha256": "8d18b7a8010c1489f042c7a57cdccf80e42743e2e5526a63f85f147554b88cc2",
+    "jsonl_path": "D:\\Filehoc\\KLCN\\agentic-rag\\Data_Processing\\output_v2\\legal_dataset_v2.jsonl",
+    "jsonl_sha256": "41029c187b31a68ea9a99195c9c6b78aaf33473fb76c7fdd0ebd9266cdb7906e",
     "total_chunks": 2117,
     "unique_chunk_ids": 2117,
     "collisions_count": 0
@@ -94,7 +94,7 @@
     }
   },
   "v1_preservation": {
-    "v1_path": "D:\\KLCN\\agentic-rag\\Data_Processing\\KhoaLuan_Data_HoanChinh.json",
+    "v1_path": "D:\\Filehoc\\KLCN\\agentic-rag\\Data_Processing\\KhoaLuan_Data_HoanChinh.json",
     "v1_sha256": "7bdb170543734804c64945a02d5388a32399dd391ff3b2a3d029add1d3fe3fb4",
     "is_frozen": true
   }

@@ -1,0 +1,120 @@
+{
+  "benchmark_name": "Vietnamese Labour Law Evaluation Benchmark (Benchmark-250)",
+  "version": "2.1",
+  "created_at": "2026-11-08",
+  "summary": {
+    "total_questions": 250,
+    "answerable_questions": 200,
+    "refusal_questions": 50,
+    "unique_chunks_cited": 297,
+    "missing_chunks": 0,
+    "schema_compliant": true,
+    "id_sequence_continuous": true
+  },
+  "category_distribution": {
+    "single_article": 35,
+    "single_doc_multi_chunk": 35,
+    "multi_document": 45,
+    "cross_reference": 35,
+    "complex_conditions": 50,
+    "insufficient_evidence": 25,
+    "out_of_scope": 25
+  },
+  "document_coverage": {
+    "BLLD_2019": {
+      "title": "Bộ luật Lao động số 45/2019/QH14",
+      "total_chunks_in_corpus": 294,
+      "citations_in_benchmark": 182
+    },
+    "LUAT_ATVSLD_2015": {
+      "title": "Luật An toàn, vệ sinh lao động số 84/2015/QH13",
+      "total_chunks_in_corpus": 203,
+      "citations_in_benchmark": 21
+    },
+    "LUAT_BHXH_2014": {
+      "title": "Luật Bảo hiểm xã hội số 58/2014/QH13",
+      "total_chunks_in_corpus": 181,
+      "citations_in_benchmark": 4
+    },
+    "LUAT_BHXH_2024": {
+      "title": "Luật Bảo hiểm xã hội số 41/2024/QH15",
+      "total_chunks_in_corpus": 278,
+      "citations_in_benchmark": 30
+    },
+    "LUAT_VIEC_LAM_2013": {
+      "title": "Luật Việc làm số 38/2013/QH13",
+      "total_chunks_in_corpus": 65,
+      "citations_in_benchmark": 12
+    },
+    "ND_12_2022": {
+      "title": "Nghị định 12/2022/NĐ-CP xử phạt vi phạm hành chính lao động, BHXH",
+      "total_chunks_in_corpus": 238,
+      "citations_in_benchmark": 35
+    },
+    "ND_135_2020": {
+      "title": "Nghị định 135/2020/NĐ-CP quy định về tuổi nghỉ hưu",
+      "total_chunks_in_corpus": 22,
+      "citations_in_benchmark": 17
+    },
+    "ND_145_2020": {
+      "title": "Nghị định 145/2020/NĐ-CP hướng dẫn Bộ luật Lao động",
+      "total_chunks_in_corpus": 267,
+      "citations_in_benchmark": 52
+    },
+    "ND_152_2020": {
+      "title": "Nghị định 152/2020/NĐ-CP về người lao động nước ngoài làm việc tại VN",
+      "total_chunks_in_corpus": 108,
+      "citations_in_benchmark": 36
+    },
+    "ND_219_2025": {
+      "title": "Nghị định 219/2025/NĐ-CP sửa đổi bổ sung về quản lý lao động nước ngoài",
+      "total_chunks_in_corpus": 91,
+      "citations_in_benchmark": 9
+    },
+    "ND_70_2023": {
+      "title": "Nghị định 70/2023/NĐ-CP sửa đổi, bổ sung Nghị định 152/2020/NĐ-CP",
+      "total_chunks_in_corpus": 39,
+      "citations_in_benchmark": 65
+    },
+    "ND_74_2024": {
+      "title": "Nghị định 74/2024/NĐ-CP quy định mức lương tối thiểu vùng",
+      "total_chunks_in_corpus": 15,
+      "citations_in_benchmark": 9
+    },
+    "ND_83_2022": {
+      "title": "Nghị định 83/2022/NĐ-CP quy định về tiền lương và trợ cấp",
+      "total_chunks_in_corpus": 9,
+      "citations_in_benchmark": 6
+    },
+    "ND_99_2024": {
+      "title": "Nghị định 99/2024/NĐ-CP hướng dẫn chế độ tài chính, chính sách lao động",
+      "total_chunks_in_corpus": 3,
+      "citations_in_benchmark": 2
+    },
+    "QD_992_2025": {
+      "title": "Quyết định 992/QĐ-TTg về công bố danh mục ngành nghề ưu tiên hỗ trợ",
+      "total_chunks_in_corpus": 6,
+      "citations_in_benchmark": 2
+    },
+    "TT_09_2020": {
+      "title": "Thông tư 09/2020/TT-BLĐTBXH hướng dẫn danh mục vùng, nghề nặng nhọc",
+      "total_chunks_in_corpus": 37,
+      "citations_in_benchmark": 13
+    },
+    "TT_10_2020": {
+      "title": "Thông tư 10/2020/TT-BLĐTBXH hướng dẫn nội dung hợp đồng lao động, kỷ luật",
+      "total_chunks_in_corpus": 37,
+      "citations_in_benchmark": 12
+    },
+    "TT_11_2020": {
+      "title": "Thông tư 11/2020/TT-BLĐTBXH danh mục nghề nguy hiểm cho lao động chưa thành niên",
+      "total_chunks_in_corpus": 209,
+      "citations_in_benchmark": 4
+    },
+    "TT_20_2023": {
+      "title": "Thông tư 20/2023/TT-BLĐTBXH quy định mức điều chỉnh tiền lương đóng BHXH",
+      "total_chunks_in_corpus": 15,
+      "citations_in_benchmark": 7
+    }
+  }
+}

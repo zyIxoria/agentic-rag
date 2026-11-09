@@ -1,0 +1,3 @@
+variant,total_questions,refine_count,combine_search_count,web_search_count,refuse_count,corrective_triggered_count,correction_success_count,recovery_rate_pct,unnecessary_correction_rate_pct,average_retry_count,notes
+CRAG Tích hợp (crag_evaluation.json),80,23,26,23,8,,,,,,Hành động phân loại bởi Document Grader dựa trên ngưỡng tin cậy tương đồng
+Corrective RAG Nội bộ (corrective_full_eval.json),80,,,,,35,1,2.86,0.0,0.4375,"Chỉ viết lại truy vấn và truy xuất lại nội bộ, không có nguồn ngoài"

@@ -19,6 +19,35 @@ class MockLegalWebSearcher(BaseWebSearcher):
 
     MOCK_KNOWLEDGE_BASE = [
         {
+            "title": "Bộ luật Lao động 2019 số 45/2019/QH14 - Điều 105: Thời giờ làm việc bình thường",
+            "url": "https://thuvienphapluat.vn/van-ban/Lao-dong-Tien-luong/Bo-Luat-lao-dong-2019-333670.aspx",
+            "source_name": "Bộ luật Lao động 2019",
+            "keywords": [
+                "thời giờ làm việc", "thời giờ làm việc bình thường", "giờ làm việc",
+                "105", "48 giờ", "8 giờ", "giờ/ngày", "giờ/tuần",
+                "tối đa", "bao nhiêu tiếng", "bao nhiêu giờ", "tiếng", "tuần", "làm việc tối đa"
+            ],
+            "snippet": (
+                "Theo Điều 105 Bộ luật Lao động 2019, thời giờ làm việc bình thường của người lao động: "
+                "1. Không quá 08 giờ trong 01 ngày và không quá 48 giờ trong 01 tuần. "
+                "2. Người sử dụng lao động có quyền quy định thời giờ làm việc theo ngày hoặc theo tuần nhưng phải thông báo cho người lao động biết; "
+                "trường hợp theo tuần thì thời giờ làm việc bình thường không quá 10 giờ trong 01 ngày và không quá 48 giờ trong 01 tuần. "
+                "Nhà nước khuyến khích người sử dụng lao động thực hiện tuần làm việc 40 giờ đối với người lao động."
+            ),
+        },
+        {
+            "title": "Bộ luật Lao động 2019 số 45/2019/QH14 - Điều 113, 114: Quy định về ngày nghỉ hằng năm và nghỉ phép theo thâm niên làm việc",
+            "url": "https://thuvienphapluat.vn/van-ban/Lao-dong-Tien-luong/Bo-Luat-lao-dong-2019-333670.aspx",
+            "source_name": "Bộ luật Lao động 2019",
+            "keywords": ["nghỉ phép", "nghỉ hằng năm", "nghỉ phép năm", "5 năm", "thâm niên", "113", "114", "ngày nghỉ", "nghỉ hàng năm"],
+            "snippet": (
+                "Theo quy định tại Điều 113 và Điều 114 Bộ luật Lao động 2019: "
+                "Người lao động làm việc đủ 12 tháng cho một người sử dụng lao động trong điều kiện bình thường được nghỉ hằng năm là 12 ngày làm việc (khoản 1 Điều 113). "
+                "Cứ đủ 05 năm làm việc cho một người sử dụng lao động thì số ngày nghỉ hằng năm của người lao động được tăng thêm tương ứng 01 ngày (Điều 114). "
+                "Như vậy, người lao động làm việc đủ 5 năm thì được hưởng 13 ngày nghỉ phép năm (12 ngày phép năm cơ bản + 1 ngày nghỉ tăng thêm do thâm niên làm việc)."
+            ),
+        },
+        {
             "title": "Nghị định 12/2022/NĐ-CP - Xử phạt vi phạm quy định về thử việc",
             "url": "https://thuvienphapluat.vn/van-ban/lao-dong/Nghi-dinh-12-2022-ND-CP-xu-phat-vi-pham-hanh-chinh-linh-vuc-lao-dong.aspx",
             "source_name": "Thư Viện Pháp Luật",
@@ -46,7 +75,7 @@ class MockLegalWebSearcher(BaseWebSearcher):
             "title": "Hướng dẫn tính tiền lương làm thêm giờ ban đêm theo Điều 98 BLLĐ",
             "url": "https://chinhphu.vn/huong-dan-tien-luong-lam-them-gio-dieu-98",
             "source_name": "Cổng Thông Tin Điện Tử Chính Phủ",
-            "keywords": ["làm thêm giờ", "tiền lương", "ban đêm", "98", "tính lương"],
+            "keywords": ["làm thêm giờ", "tiền lương", "ban đêm", "98", "tính lương", "thêm giờ"],
             "snippet": (
                 "Người lao động làm thêm giờ vào ban đêm được trả lương tính theo đơn giá tiền lương "
                 "hoặc tiền lương thực trả theo công việc của ngày làm việc bình thường, cộng thêm ít nhất 30% "
@@ -86,17 +115,18 @@ class MockLegalWebSearcher(BaseWebSearcher):
         scored_results = []
         for item in self.MOCK_KNOWLEDGE_BASE:
             score = 0.0
-            # Kiểm tra trùng khớp từ khóa
-            for kw in item["keywords"]:
-                if kw in target_text:
-                    score += 0.3
-            # Kiểm tra trùng khớp trong tiêu đề / snippet
-            words = re.findall(r"\w+", target_text)
-            for w in words:
-                if len(w) > 2 and w in item["snippet"].lower():
-                    score += 0.05
+            # Kiểm tra trùng khớp từ khóa chuyên biệt (trọng số cao)
+            kw_hits = [kw for kw in item["keywords"] if kw in target_text]
+            if kw_hits:
+                score += len(kw_hits) * 1.0
 
-            if score > 0:
+            # Kiểm tra trùng cụm từ trong tiêu đề
+            title_words = [w for w in re.findall(r"\w+", item["title"].lower()) if len(w) > 3]
+            for tw in title_words:
+                if tw in target_text:
+                    score += 0.2
+
+            if score >= 0.4:
                 scored_results.append((score, item))
 
         # Sắp xếp điểm giảm dần
@@ -111,19 +141,6 @@ class MockLegalWebSearcher(BaseWebSearcher):
                     url=item["url"],
                     source_name=item["source_name"],
                     score=round(score, 4),
-                )
-            )
-
-        # Nếu không có kết quả khớp trực tiếp, trả về mục mặc định uy tín nhất
-        if not results:
-            item = self.MOCK_KNOWLEDGE_BASE[0]
-            results.append(
-                WebSearchResult(
-                    title=item["title"],
-                    snippet=item["snippet"],
-                    url=item["url"],
-                    source_name=item["source_name"],
-                    score=0.1,
                 )
             )
 

@@ -2,7 +2,7 @@
 
 **Dự án**: Nghiên cứu cơ chế điều phối thích ứng trong hệ thống Agentic RAG tích hợp Corrective RAG hỗ trợ tra cứu pháp luật lao động Việt Nam.  
 **Nhiệm vụ**: TASK DATA-10 — Build Legal Dataset V2.  
-**Thời gian tạo**: 2026-11-04T18:59:43Z.  
+**Thời gian tạo**: 2026-11-08T05:46:28Z.  
 **Trạng thái**: Hoàn tất thành công (100% Validated & Verified).
 
 ---
@@ -53,7 +53,7 @@ Bảng đối chiếu toàn diện các chỉ số kỹ thuật và chất lư�
 
 ## 4. TÍNH TOÀN VẸN & BẢO TỒN NGUYÊN VẸN DATASET V1
 
-- **Tệp Baseline V1**: `D:\KLCN\agentic-rag\Data_Processing\KhoaLuan_Data_HoanChinh.json`
+- **Tệp Baseline V1**: `D:\Filehoc\KLCN\agentic-rag\Data_Processing\KhoaLuan_Data_HoanChinh.json`
 - **Mã SHA-256**: `7bdb170543734804c64945a02d5388a32399dd391ff3b2a3d029add1d3fe3fb4`
 - **Xác nhận**: **HOÀN TOÀN ĐÓNG BĂNG VÀ KHÔNG BỊ SỬA ĐỔI (100% UNCHANGED)**.
 
@@ -61,9 +61,9 @@ Bảng đối chiếu toàn diện các chỉ số kỹ thuật và chất lư�
 
 1. **`Data_Processing/output_v2/legal_dataset_v2.json`**
    - Định dạng: JSON Array chuẩn với đúng 21 trường cốt lõi theo đặc tả TASK DATA-02.
-   - SHA-256: `e9b9095274e893365cefc0622f9a691454835f570f4efd0610f5aad2d1f610ea`
+   - SHA-256: `8d18b7a8010c1489f042c7a57cdccf80e42743e2e5526a63f85f147554b88cc2`
 2. **`Data_Processing/output_v2/legal_dataset_v2.jsonl`**
    - Định dạng: JSON Lines (mỗi dòng là một chunk JSON).
-   - SHA-256: `d484c890f58d2f34b3ce42de1921f25fcff914816ebefc0ff0dc71e82f3e9040`
+   - SHA-256: `41029c187b31a68ea9a99195c9c6b78aaf33473fb76c7fdd0ebd9266cdb7906e`
 3. **`Data_Processing/output_v2/build_metadata.json`**
    - Siêu dữ liệu build máy đọc (thời gian, phân phối, cấu hình).

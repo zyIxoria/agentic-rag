@@ -32,11 +32,11 @@ class PipelineConfig(BaseSettings):
     # 3. Tham số mô hình ngôn ngữ (LLM Generation)
     LLM_PROVIDER: str = Field(
         default="auto",
-        description="Nhà cung cấp LLM: 'auto', 'openai', 'gemini', hoặc 'mock'."
+        description="Nhà cung cấp LLM: 'auto', 'gemini', hoặc 'mock'."
     )
     LLM_MODEL: Optional[str] = Field(
         default=None,
-        description="Tên mô hình LLM cụ thể (VD: 'gpt-4o-mini', 'gemini-1.5-flash')."
+        description="Tên mô hình LLM cụ thể (VD: 'gemini-1.5-flash', 'gemini-1.5-pro')."
     )
     TEMPERATURE: float = Field(
         default=0.0,

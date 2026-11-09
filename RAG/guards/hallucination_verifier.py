@@ -88,8 +88,8 @@ class RealTimeHallucinationVerifier:
 
         for s in raw_sentences:
             s_clean = s.strip()
-            # Bỏ qua câu quá ngắn hoặc mang tính thủ tục xã giao
-            if len(s_clean) < 15:
+            # Bỏ qua câu quá ngắn, câu thủ tục xã giao, hoặc dòng tiêu đề dẫn nhập kết thúc bằng dấu hai chấm
+            if len(s_clean) < 15 or s_clean.endswith(":"):
                 continue
             if any(re.search(pat, s_clean.lower()) for pat in ignore_patterns):
                 continue
@@ -236,3 +236,4 @@ class RealTimeHallucinationVerifier:
             filtered_answer=cleaned_answer,
             reason=reason,
         )
+

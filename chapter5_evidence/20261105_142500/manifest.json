@@ -1,0 +1,103 @@
+{
+  "manifest_version": "1.0.0",
+  "timestamp": "2026-11-05T14:31:13.970522+07:00",
+  "thesis_title": "NGHIÊN CỨU CƠ CHẾ ĐIỀU PHỐI THÍCH ỨNG TRONG HỆ THỐNG AGENTIC RAG TÍCH HỢP CORRECTIVE RAG HỖ TRỢ TRA CỨU PHÁP LUẬT LAO ĐỘNG VIỆT NAM",
+  "purpose": "Evidence Package for Chapter 5 - Experiments and Evaluation",
+  "git_state": {
+    "commit": "7edd2a8c004c42e094603f6e93a708425748ab2f",
+    "branch": "main",
+    "author": "zyIxoria <2fv68fn2kd@privaterelay.appleid.com>",
+    "commit_date": "Thu Nov 5 11:46:38 2026 +0700",
+    "commit_message": "Merge pull request #2 from zyIxoria/feature/linh-metadata-fix-and-corpus-expansion",
+    "uncommitted_changes": [
+      "M CRAG/pipeline/crag_pipeline.py",
+      "M CRAG/refinement/recomposer.py",
+      "M CRAG/search/mock_searcher.py",
+      "M CRAG/transformation/query_rewriter.py",
+      "M Data_Processing/chroma_db/chroma.sqlite3",
+      "M Data_Processing/output_v2/build_metadata.json",
+      "M Data_Processing/test_build_dataset_v2.py",
+      "M Data_Processing/test_chunk_id_collisions.py",
+      "M Data_Processing/test_chunker_v2.py",
+      "M Data_Processing/test_data_13_regression.py",
+      "M Data_Processing/test_date_status_v2.py",
+      "M Data_Processing/test_hierarchy_parser.py",
+      "M Data_Processing/test_metadata_restorer.py",
+      "M RAG/citation/resolver.py",
+      "M RAG/generator/mock_generator.py",
+      "M RAG/guards/hallucination_verifier.py",
+      "M app.py",
+      "M data/chroma_db/chroma.sqlite3",
+      "M evaluation/runner/online_llm_evaluator.py",
+      "M reports/dataset_audit/DATA-10_dataset_v2_summary.md",
+      "M tests/crag/test_crag_pipeline.py",
+      "?? Data_Processing/__init__.py",
+      "?? chapter5_evidence/",
+      "?? pytest.ini",
+      "?? ui/"
+    ],
+    "is_dirty": true
+  },
+  "environment": {
+    "python_version": "3.13.0 (tags/v3.13.0:60403a5, Oct  7 2024, 09:38:07) [MSC v.1941 64 bit (AMD64)]",
+    "os_platform": "Windows-11-10.0.26200-SP0",
+    "machine": "AMD64",
+    "processor": "AMD64 Family 26 Model 96 Stepping 0, AuthenticAMD",
+    "packages": {
+      "chromadb": "1.5.9",
+      "sentence_transformers": "6.2.0",
+      "transformers": "5.22.1",
+      "torch": "2.15.0+cpu",
+      "onnxruntime": "1.29.0",
+      "pydantic": "2.13.5",
+      "pytest": "9.1.1",
+      "streamlit": "1.66.1",
+      "scipy": "1.18.1",
+      "sklearn": "1.9.1",
+      "pandas": "3.1.0",
+      "numpy": "2.5.4"
+    },
+    "torch_cuda_available": false
+  },
+  "corpus_info": {
+    "v2_clean_path": "Data_Processing/output_v2/legal_dataset_v2.json",
+    "v2_sha256": "e9b9095274e893365cefc0622f9a691454835f570f4efd0610f5aad2d1f610ea",
+    "v2_documents_count": 19,
+    "v2_chunks_count": 2117,
+    "vector_store_collection": "legal_labor_baseline_minilm",
+    "vector_store_count": 1390
+  },
+  "benchmark_info": {
+    "benchmark_path": "evaluation/dataset/legal_qa.json",
+    "benchmark_sha256": "cedaceab52308b649551c9ddc611cbd29e24ea86dd8473bbbe3499b99084146a",
+    "total_questions": 80,
+    "categories_count": 7
+  },
+  "selected_runs": {
+    "traditional_baseline": {
+      "file": "evaluation/results/traditional_baseline_full_eval.json",
+      "sha256": "02df89597cbbe92b9fd1ad3db93b5980aa3cc49a0b134a23ecb21beb790e975b",
+      "classification": "CONTROLLED_COMPARABLE"
+    },
+    "crag_integrated": {
+      "file": "evaluation/results/crag_evaluation.json",
+      "sha256": "bb520ad5cc82522e92445f022f75ee170bf09a7fe9f3630d8b2ce56d41ed3bab",
+      "classification": "CONTROLLED_COMPARABLE"
+    },
+    "adaptive_agentic": {
+      "file": "evaluation/results/adaptive_evaluation.json",
+      "sha256": "bc390d2643d463aeeebf975e9bb59a40b820958743e73b0bf710b6591ad583fe",
+      "classification": "CONTROLLED_COMPARABLE"
+    },
+    "corrective_internal": {
+      "file": "evaluation/results/corrective_full_eval.json",
+      "sha256": "84eb7e9374d3a938dd1d102f208afbf622683fa475acfd3b71aea4c1424a604c",
+      "classification": "DESCRIPTIVE_CONTRAST"
+    },
+    "online_llm": {
+      "file": "evaluation/results/online_llm_evaluation.json",
+      "sha256": "1cec5853166ae61a30e5207dc982475ddab32379554bfccdc455aaa395270a6a",
+      "classification": "DESCRIPTIVE_CONTRAST"
+    }
+  }
+}

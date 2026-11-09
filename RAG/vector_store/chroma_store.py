@@ -66,14 +66,27 @@ class PersistentChromaStore(BaseVectorStore):
         """Đường dẫn thư mục lưu trữ bền vững."""
         return self._persist_directory
 
+    def _ensure_active_connection(self) -> None:
+        """Tự động khôi phục kết nối Rust bindings của ChromaDB nếu bị gián đoạn hoặc stop() do Streamlit reload/caching."""
+        try:
+            if hasattr(self._client, "_server"):
+                server = self._client._server
+                if not hasattr(server, "bindings") and hasattr(server, "start"):
+                    logger.warning("Phát hiện ChromaDB RustBindingsAPI bị mất kết nối (del self.bindings). Đang tự động khôi phục bindings...")
+                    server.start()
+        except Exception as e:
+            logger.error(f"Lỗi khi tự động khôi phục kết nối ChromaDB Rust bindings: {e}")
+
     @property
     def client(self) -> chromadb.PersistentClient:
         """Truy cập đối tượng client ChromaDB cấp thấp."""
+        self._ensure_active_connection()
         return self._client
 
     @property
     def collection(self) -> Optional[chromadb.Collection]:
         """Truy cập đối tượng collection ChromaDB đang hoạt động."""
+        self._ensure_active_connection()
         return self._collection
 
     @property
@@ -376,6 +389,7 @@ class PersistentChromaStore(BaseVectorStore):
 
     def count(self) -> int:
         """Trả về tổng số bản ghi véc-tơ hiện có trong collection đang hoạt động."""
+        self._ensure_active_connection()
         if self._collection is None:
             raise VectorStoreError("Chưa kích hoạt collection nào. Vui lòng nạp hoặc tạo collection trước.")
         return self._collection.count()

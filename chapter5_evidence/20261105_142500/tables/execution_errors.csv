@@ -1,0 +1,165 @@
+system,question_id,category,error_type,error_details
+traditional_baseline,Q001,single_article,RETRIEVAL_ERROR,Retriever không thu hồi được bất kỳ chunk vàng nào trong Top-K.
+traditional_baseline,Q002,single_article,RETRIEVAL_ERROR,Retriever không thu hồi được bất kỳ chunk vàng nào trong Top-K.
+traditional_baseline,Q003,single_article,RETRIEVAL_ERROR,Retriever không thu hồi được bất kỳ chunk vàng nào trong Top-K.
+traditional_baseline,Q006,single_article,RETRIEVAL_ERROR,Retriever không thu hồi được bất kỳ chunk vàng nào trong Top-K.
+traditional_baseline,Q007,single_article,RETRIEVAL_ERROR,Retriever không thu hồi được bất kỳ chunk vàng nào trong Top-K.
+traditional_baseline,Q011,single_article,RETRIEVAL_ERROR,Retriever không thu hồi được bất kỳ chunk vàng nào trong Top-K.
+traditional_baseline,Q012,single_article,RETRIEVAL_ERROR,Retriever không thu hồi được bất kỳ chunk vàng nào trong Top-K.
+traditional_baseline,Q013,single_article,RETRIEVAL_ERROR,Retriever không thu hồi được bất kỳ chunk vàng nào trong Top-K.
+traditional_baseline,Q014,single_article,RETRIEVAL_ERROR,Retriever không thu hồi được bất kỳ chunk vàng nào trong Top-K.
+traditional_baseline,Q015,single_article,RETRIEVAL_ERROR,Retriever không thu hồi được bất kỳ chunk vàng nào trong Top-K.
+traditional_baseline,Q017,single_article,RETRIEVAL_ERROR,Retriever không thu hồi được bất kỳ chunk vàng nào trong Top-K.
+traditional_baseline,Q023,single_doc_multi_chunk,RETRIEVAL_ERROR,Retriever không thu hồi được bất kỳ chunk vàng nào trong Top-K.
+traditional_baseline,Q024,single_doc_multi_chunk,RETRIEVAL_ERROR,Retriever không thu hồi được bất kỳ chunk vàng nào trong Top-K.
+traditional_baseline,Q025,single_doc_multi_chunk,RETRIEVAL_ERROR,Retriever không thu hồi được bất kỳ chunk vàng nào trong Top-K.
+traditional_baseline,Q027,single_doc_multi_chunk,CITATION_ERROR,Có 2 trích dẫn không hợp lệ hoặc không có trong ngữ cảnh.
+traditional_baseline,Q028,single_doc_multi_chunk,RETRIEVAL_ERROR,Retriever không thu hồi được bất kỳ chunk vàng nào trong Top-K.
+traditional_baseline,Q029,single_doc_multi_chunk,RETRIEVAL_ERROR,Retriever không thu hồi được bất kỳ chunk vàng nào trong Top-K.
+traditional_baseline,Q030,single_doc_multi_chunk,GENERATION_ERROR,Câu trả lời chứa khẳng định không được bảo chứng bởi ngữ cảnh thu hồi (Ungrounded Claim).
+traditional_baseline,Q031,multi_document,RETRIEVAL_ERROR,Retriever không thu hồi được bất kỳ chunk vàng nào trong Top-K.
+traditional_baseline,Q032,multi_document,CITATION_ERROR,Có 1 trích dẫn không hợp lệ hoặc không có trong ngữ cảnh.
+traditional_baseline,Q033,multi_document,CITATION_ERROR,Có 1 trích dẫn không hợp lệ hoặc không có trong ngữ cảnh.
+traditional_baseline,Q034,multi_document,CITATION_ERROR,Có 1 trích dẫn không hợp lệ hoặc không có trong ngữ cảnh.
+traditional_baseline,Q036,multi_document,RETRIEVAL_ERROR,Retriever không thu hồi được bất kỳ chunk vàng nào trong Top-K.
+traditional_baseline,Q037,multi_document,CITATION_ERROR,Có 1 trích dẫn không hợp lệ hoặc không có trong ngữ cảnh.
+traditional_baseline,Q039,multi_document,RETRIEVAL_ERROR,Retriever không thu hồi được bất kỳ chunk vàng nào trong Top-K.
+traditional_baseline,Q040,multi_document,RETRIEVAL_ERROR,Retriever không thu hồi được bất kỳ chunk vàng nào trong Top-K.
+traditional_baseline,Q042,multi_document,RETRIEVAL_ERROR,Retriever không thu hồi được bất kỳ chunk vàng nào trong Top-K.
+traditional_baseline,Q044,cross_reference,RETRIEVAL_ERROR,Retriever không thu hồi được bất kỳ chunk vàng nào trong Top-K.
+traditional_baseline,Q045,cross_reference,RETRIEVAL_ERROR,Retriever không thu hồi được bất kỳ chunk vàng nào trong Top-K.
+traditional_baseline,Q046,cross_reference,RETRIEVAL_ERROR,Retriever không thu hồi được bất kỳ chunk vàng nào trong Top-K.
+traditional_baseline,Q047,cross_reference,CITATION_ERROR,Có 1 trích dẫn không hợp lệ hoặc không có trong ngữ cảnh.
+traditional_baseline,Q049,cross_reference,RETRIEVAL_ERROR,Retriever không thu hồi được bất kỳ chunk vàng nào trong Top-K.
+traditional_baseline,Q054,complex_conditions,RETRIEVAL_ERROR,Retriever không thu hồi được bất kỳ chunk vàng nào trong Top-K.
+traditional_baseline,Q056,complex_conditions,RETRIEVAL_ERROR,Retriever không thu hồi được bất kỳ chunk vàng nào trong Top-K.
+traditional_baseline,Q057,complex_conditions,RETRIEVAL_ERROR,Retriever không thu hồi được bất kỳ chunk vàng nào trong Top-K.
+traditional_baseline,Q060,complex_conditions,RETRIEVAL_ERROR,Retriever không thu hồi được bất kỳ chunk vàng nào trong Top-K.
+traditional_baseline,Q061,complex_conditions,RETRIEVAL_ERROR,Retriever không thu hồi được bất kỳ chunk vàng nào trong Top-K.
+traditional_baseline,Q062,complex_conditions,RETRIEVAL_ERROR,Retriever không thu hồi được bất kỳ chunk vàng nào trong Top-K.
+traditional_baseline,Q063,complex_conditions,RETRIEVAL_ERROR,Retriever không thu hồi được bất kỳ chunk vàng nào trong Top-K.
+traditional_baseline,Q064,complex_conditions,CITATION_ERROR,Có 2 trích dẫn không hợp lệ hoặc không có trong ngữ cảnh.
+traditional_baseline,Q065,insufficient_evidence,REFUSAL_ERROR,Câu hỏi ngoài phạm vi hoặc thiếu chứng cứ nhưng hệ thống không từ chối (False Answer).
+traditional_baseline,Q066,insufficient_evidence,REFUSAL_ERROR,Câu hỏi ngoài phạm vi hoặc thiếu chứng cứ nhưng hệ thống không từ chối (False Answer).
+traditional_baseline,Q067,insufficient_evidence,REFUSAL_ERROR,Câu hỏi ngoài phạm vi hoặc thiếu chứng cứ nhưng hệ thống không từ chối (False Answer).
+traditional_baseline,Q068,insufficient_evidence,REFUSAL_ERROR,Câu hỏi ngoài phạm vi hoặc thiếu chứng cứ nhưng hệ thống không từ chối (False Answer).
+traditional_baseline,Q069,insufficient_evidence,REFUSAL_ERROR,Câu hỏi ngoài phạm vi hoặc thiếu chứng cứ nhưng hệ thống không từ chối (False Answer).
+traditional_baseline,Q070,insufficient_evidence,REFUSAL_ERROR,Câu hỏi ngoài phạm vi hoặc thiếu chứng cứ nhưng hệ thống không từ chối (False Answer).
+traditional_baseline,Q071,insufficient_evidence,REFUSAL_ERROR,Câu hỏi ngoài phạm vi hoặc thiếu chứng cứ nhưng hệ thống không từ chối (False Answer).
+traditional_baseline,Q072,insufficient_evidence,REFUSAL_ERROR,Câu hỏi ngoài phạm vi hoặc thiếu chứng cứ nhưng hệ thống không từ chối (False Answer).
+traditional_baseline,Q079,out_of_scope,REFUSAL_ERROR,Câu hỏi ngoài phạm vi hoặc thiếu chứng cứ nhưng hệ thống không từ chối (False Answer).
+crag_integrated,Q001,single_article,CITATION_ERROR,Có 1 trích dẫn không hợp lệ hoặc không có trong ngữ cảnh.
+crag_integrated,Q002,single_article,RETRIEVAL_ERROR,Retriever không thu hồi được bất kỳ chunk vàng nào trong Top-K.
+crag_integrated,Q003,single_article,RETRIEVAL_ERROR,Retriever không thu hồi được bất kỳ chunk vàng nào trong Top-K.
+crag_integrated,Q004,single_article,GENERATION_ERROR,Câu trả lời chứa khẳng định không được bảo chứng bởi ngữ cảnh thu hồi (Ungrounded Claim).
+crag_integrated,Q005,single_article,GENERATION_ERROR,Câu trả lời chứa khẳng định không được bảo chứng bởi ngữ cảnh thu hồi (Ungrounded Claim).
+crag_integrated,Q006,single_article,RETRIEVAL_ERROR,Retriever không thu hồi được bất kỳ chunk vàng nào trong Top-K.
+crag_integrated,Q007,single_article,CITATION_ERROR,Có 2 trích dẫn không hợp lệ hoặc không có trong ngữ cảnh.
+crag_integrated,Q009,single_article,GENERATION_ERROR,Câu trả lời chứa khẳng định không được bảo chứng bởi ngữ cảnh thu hồi (Ungrounded Claim).
+crag_integrated,Q011,single_article,RETRIEVAL_ERROR,Retriever không thu hồi được bất kỳ chunk vàng nào trong Top-K.
+crag_integrated,Q012,single_article,RETRIEVAL_ERROR,Retriever không thu hồi được bất kỳ chunk vàng nào trong Top-K.
+crag_integrated,Q013,single_article,RETRIEVAL_ERROR,Retriever không thu hồi được bất kỳ chunk vàng nào trong Top-K.
+crag_integrated,Q014,single_article,RETRIEVAL_ERROR,Retriever không thu hồi được bất kỳ chunk vàng nào trong Top-K.
+crag_integrated,Q015,single_article,REFUSAL_ERROR,Từ chối nhầm câu hỏi hợp lệ (False Refusal) do: Hệ thống xác định câu hỏi nằm ngoài phạm vi pháp luật lao động Việt Nam.
+crag_integrated,Q016,single_article,GENERATION_ERROR,Câu trả lời chứa khẳng định không được bảo chứng bởi ngữ cảnh thu hồi (Ungrounded Claim).
+crag_integrated,Q017,single_article,RETRIEVAL_ERROR,Retriever không thu hồi được bất kỳ chunk vàng nào trong Top-K.
+crag_integrated,Q018,single_article,GENERATION_ERROR,Câu trả lời chứa khẳng định không được bảo chứng bởi ngữ cảnh thu hồi (Ungrounded Claim).
+crag_integrated,Q019,single_doc_multi_chunk,CITATION_ERROR,Có 1 trích dẫn không hợp lệ hoặc không có trong ngữ cảnh.
+crag_integrated,Q021,single_doc_multi_chunk,RETRIEVAL_ERROR,Retriever không thu hồi được bất kỳ chunk vàng nào trong Top-K.
+crag_integrated,Q023,single_doc_multi_chunk,CITATION_ERROR,Có 2 trích dẫn không hợp lệ hoặc không có trong ngữ cảnh.
+crag_integrated,Q024,single_doc_multi_chunk,RETRIEVAL_ERROR,Retriever không thu hồi được bất kỳ chunk vàng nào trong Top-K.
+crag_integrated,Q025,single_doc_multi_chunk,RETRIEVAL_ERROR,Retriever không thu hồi được bất kỳ chunk vàng nào trong Top-K.
+crag_integrated,Q027,single_doc_multi_chunk,CITATION_ERROR,Có 3 trích dẫn không hợp lệ hoặc không có trong ngữ cảnh.
+crag_integrated,Q028,single_doc_multi_chunk,RETRIEVAL_ERROR,Retriever không thu hồi được bất kỳ chunk vàng nào trong Top-K.
+crag_integrated,Q029,single_doc_multi_chunk,RETRIEVAL_ERROR,Retriever không thu hồi được bất kỳ chunk vàng nào trong Top-K.
+crag_integrated,Q030,single_doc_multi_chunk,GENERATION_ERROR,Câu trả lời chứa khẳng định không được bảo chứng bởi ngữ cảnh thu hồi (Ungrounded Claim).
+crag_integrated,Q031,multi_document,RETRIEVAL_ERROR,Retriever không thu hồi được bất kỳ chunk vàng nào trong Top-K.
+crag_integrated,Q032,multi_document,CITATION_ERROR,Có 3 trích dẫn không hợp lệ hoặc không có trong ngữ cảnh.
+crag_integrated,Q033,multi_document,CITATION_ERROR,Có 3 trích dẫn không hợp lệ hoặc không có trong ngữ cảnh.
+crag_integrated,Q034,multi_document,CITATION_ERROR,Có 3 trích dẫn không hợp lệ hoặc không có trong ngữ cảnh.
+crag_integrated,Q035,multi_document,CITATION_ERROR,Có 2 trích dẫn không hợp lệ hoặc không có trong ngữ cảnh.
+crag_integrated,Q036,multi_document,CITATION_ERROR,Có 3 trích dẫn không hợp lệ hoặc không có trong ngữ cảnh.
+crag_integrated,Q037,multi_document,CITATION_ERROR,Có 4 trích dẫn không hợp lệ hoặc không có trong ngữ cảnh.
+crag_integrated,Q039,multi_document,RETRIEVAL_ERROR,Retriever không thu hồi được bất kỳ chunk vàng nào trong Top-K.
+crag_integrated,Q040,multi_document,CITATION_ERROR,Có 3 trích dẫn không hợp lệ hoặc không có trong ngữ cảnh.
+crag_integrated,Q041,multi_document,RETRIEVAL_ERROR,Retriever không thu hồi được bất kỳ chunk vàng nào trong Top-K.
+crag_integrated,Q042,multi_document,RETRIEVAL_ERROR,Retriever không thu hồi được bất kỳ chunk vàng nào trong Top-K.
+crag_integrated,Q043,cross_reference,CITATION_ERROR,Có 1 trích dẫn không hợp lệ hoặc không có trong ngữ cảnh.
+crag_integrated,Q044,cross_reference,CITATION_ERROR,Có 3 trích dẫn không hợp lệ hoặc không có trong ngữ cảnh.
+crag_integrated,Q045,cross_reference,CITATION_ERROR,Có 2 trích dẫn không hợp lệ hoặc không có trong ngữ cảnh.
+crag_integrated,Q046,cross_reference,RETRIEVAL_ERROR,Retriever không thu hồi được bất kỳ chunk vàng nào trong Top-K.
+crag_integrated,Q047,cross_reference,CITATION_ERROR,Có 3 trích dẫn không hợp lệ hoặc không có trong ngữ cảnh.
+crag_integrated,Q048,cross_reference,GENERATION_ERROR,Câu trả lời chứa khẳng định không được bảo chứng bởi ngữ cảnh thu hồi (Ungrounded Claim).
+crag_integrated,Q049,cross_reference,RETRIEVAL_ERROR,Retriever không thu hồi được bất kỳ chunk vàng nào trong Top-K.
+crag_integrated,Q050,cross_reference,GENERATION_ERROR,Câu trả lời chứa khẳng định không được bảo chứng bởi ngữ cảnh thu hồi (Ungrounded Claim).
+crag_integrated,Q052,cross_reference,CITATION_ERROR,Có 2 trích dẫn không hợp lệ hoặc không có trong ngữ cảnh.
+crag_integrated,Q053,complex_conditions,REFUSAL_ERROR,Từ chối nhầm câu hỏi hợp lệ (False Refusal) do: Dữ liệu ngữ cảnh không chứa điều khoản hay căn cứ trả lời câu hỏi.
+crag_integrated,Q054,complex_conditions,CITATION_ERROR,Có 2 trích dẫn không hợp lệ hoặc không có trong ngữ cảnh.
+crag_integrated,Q056,complex_conditions,RETRIEVAL_ERROR,Retriever không thu hồi được bất kỳ chunk vàng nào trong Top-K.
+crag_integrated,Q057,complex_conditions,RETRIEVAL_ERROR,Retriever không thu hồi được bất kỳ chunk vàng nào trong Top-K.
+crag_integrated,Q059,complex_conditions,GENERATION_ERROR,Câu trả lời chứa khẳng định không được bảo chứng bởi ngữ cảnh thu hồi (Ungrounded Claim).
+crag_integrated,Q060,complex_conditions,RETRIEVAL_ERROR,Retriever không thu hồi được bất kỳ chunk vàng nào trong Top-K.
+crag_integrated,Q061,complex_conditions,RETRIEVAL_ERROR,Retriever không thu hồi được bất kỳ chunk vàng nào trong Top-K.
+crag_integrated,Q062,complex_conditions,RETRIEVAL_ERROR,Retriever không thu hồi được bất kỳ chunk vàng nào trong Top-K.
+crag_integrated,Q063,complex_conditions,RETRIEVAL_ERROR,Retriever không thu hồi được bất kỳ chunk vàng nào trong Top-K.
+crag_integrated,Q064,complex_conditions,RETRIEVAL_ERROR,Retriever không thu hồi được bất kỳ chunk vàng nào trong Top-K.
+crag_integrated,Q065,insufficient_evidence,REFUSAL_ERROR,Câu hỏi ngoài phạm vi hoặc thiếu chứng cứ nhưng hệ thống không từ chối (False Answer).
+crag_integrated,Q066,insufficient_evidence,REFUSAL_ERROR,Câu hỏi ngoài phạm vi hoặc thiếu chứng cứ nhưng hệ thống không từ chối (False Answer).
+crag_integrated,Q067,insufficient_evidence,REFUSAL_ERROR,Câu hỏi ngoài phạm vi hoặc thiếu chứng cứ nhưng hệ thống không từ chối (False Answer).
+crag_integrated,Q068,insufficient_evidence,REFUSAL_ERROR,Câu hỏi ngoài phạm vi hoặc thiếu chứng cứ nhưng hệ thống không từ chối (False Answer).
+crag_integrated,Q069,insufficient_evidence,REFUSAL_ERROR,Câu hỏi ngoài phạm vi hoặc thiếu chứng cứ nhưng hệ thống không từ chối (False Answer).
+crag_integrated,Q070,insufficient_evidence,REFUSAL_ERROR,Câu hỏi ngoài phạm vi hoặc thiếu chứng cứ nhưng hệ thống không từ chối (False Answer).
+crag_integrated,Q071,insufficient_evidence,REFUSAL_ERROR,Câu hỏi ngoài phạm vi hoặc thiếu chứng cứ nhưng hệ thống không từ chối (False Answer).
+crag_integrated,Q072,insufficient_evidence,REFUSAL_ERROR,Câu hỏi ngoài phạm vi hoặc thiếu chứng cứ nhưng hệ thống không từ chối (False Answer).
+adaptive_agentic,Q001,single_article,CITATION_ERROR,Có 1 trích dẫn không hợp lệ hoặc không có trong ngữ cảnh.
+adaptive_agentic,Q002,single_article,RETRIEVAL_ERROR,Retriever không thu hồi được bất kỳ chunk vàng nào trong Top-K.
+adaptive_agentic,Q003,single_article,RETRIEVAL_ERROR,Retriever không thu hồi được bất kỳ chunk vàng nào trong Top-K.
+adaptive_agentic,Q005,single_article,GENERATION_ERROR,Câu trả lời chứa khẳng định không được bảo chứng bởi ngữ cảnh thu hồi (Ungrounded Claim).
+adaptive_agentic,Q006,single_article,RETRIEVAL_ERROR,Retriever không thu hồi được bất kỳ chunk vàng nào trong Top-K.
+adaptive_agentic,Q007,single_article,RETRIEVAL_ERROR,Retriever không thu hồi được bất kỳ chunk vàng nào trong Top-K.
+adaptive_agentic,Q009,single_article,GENERATION_ERROR,Câu trả lời chứa khẳng định không được bảo chứng bởi ngữ cảnh thu hồi (Ungrounded Claim).
+adaptive_agentic,Q011,single_article,RETRIEVAL_ERROR,Retriever không thu hồi được bất kỳ chunk vàng nào trong Top-K.
+adaptive_agentic,Q012,single_article,RETRIEVAL_ERROR,Retriever không thu hồi được bất kỳ chunk vàng nào trong Top-K.
+adaptive_agentic,Q013,single_article,RETRIEVAL_ERROR,Retriever không thu hồi được bất kỳ chunk vàng nào trong Top-K.
+adaptive_agentic,Q014,single_article,RETRIEVAL_ERROR,Retriever không thu hồi được bất kỳ chunk vàng nào trong Top-K.
+adaptive_agentic,Q015,single_article,RETRIEVAL_ERROR,Retriever không thu hồi được bất kỳ chunk vàng nào trong Top-K.
+adaptive_agentic,Q017,single_article,RETRIEVAL_ERROR,Retriever không thu hồi được bất kỳ chunk vàng nào trong Top-K.
+adaptive_agentic,Q021,single_doc_multi_chunk,RETRIEVAL_ERROR,Retriever không thu hồi được bất kỳ chunk vàng nào trong Top-K.
+adaptive_agentic,Q023,single_doc_multi_chunk,RETRIEVAL_ERROR,Retriever không thu hồi được bất kỳ chunk vàng nào trong Top-K.
+adaptive_agentic,Q024,single_doc_multi_chunk,RETRIEVAL_ERROR,Retriever không thu hồi được bất kỳ chunk vàng nào trong Top-K.
+adaptive_agentic,Q025,single_doc_multi_chunk,RETRIEVAL_ERROR,Retriever không thu hồi được bất kỳ chunk vàng nào trong Top-K.
+adaptive_agentic,Q027,single_doc_multi_chunk,CITATION_ERROR,Có 3 trích dẫn không hợp lệ hoặc không có trong ngữ cảnh.
+adaptive_agentic,Q028,single_doc_multi_chunk,RETRIEVAL_ERROR,Retriever không thu hồi được bất kỳ chunk vàng nào trong Top-K.
+adaptive_agentic,Q029,single_doc_multi_chunk,RETRIEVAL_ERROR,Retriever không thu hồi được bất kỳ chunk vàng nào trong Top-K.
+adaptive_agentic,Q030,single_doc_multi_chunk,GENERATION_ERROR,Câu trả lời chứa khẳng định không được bảo chứng bởi ngữ cảnh thu hồi (Ungrounded Claim).
+adaptive_agentic,Q031,multi_document,RETRIEVAL_ERROR,Retriever không thu hồi được bất kỳ chunk vàng nào trong Top-K.
+adaptive_agentic,Q032,multi_document,RETRIEVAL_ERROR,Retriever không thu hồi được bất kỳ chunk vàng nào trong Top-K.
+adaptive_agentic,Q034,multi_document,CITATION_ERROR,Có 2 trích dẫn không hợp lệ hoặc không có trong ngữ cảnh.
+adaptive_agentic,Q036,multi_document,RETRIEVAL_ERROR,Retriever không thu hồi được bất kỳ chunk vàng nào trong Top-K.
+adaptive_agentic,Q037,multi_document,GENERATION_ERROR,Retriever có thu hồi được chunk vàng nhưng Generator sinh sai hoặc bỏ sót kết luận.
+adaptive_agentic,Q040,multi_document,RETRIEVAL_ERROR,Retriever không thu hồi được bất kỳ chunk vàng nào trong Top-K.
+adaptive_agentic,Q042,multi_document,RETRIEVAL_ERROR,Retriever không thu hồi được bất kỳ chunk vàng nào trong Top-K.
+adaptive_agentic,Q044,cross_reference,CITATION_ERROR,Có 3 trích dẫn không hợp lệ hoặc không có trong ngữ cảnh.
+adaptive_agentic,Q045,cross_reference,CITATION_ERROR,Có 2 trích dẫn không hợp lệ hoặc không có trong ngữ cảnh.
+adaptive_agentic,Q046,cross_reference,RETRIEVAL_ERROR,Retriever không thu hồi được bất kỳ chunk vàng nào trong Top-K.
+adaptive_agentic,Q047,cross_reference,RETRIEVAL_ERROR,Retriever không thu hồi được bất kỳ chunk vàng nào trong Top-K.
+adaptive_agentic,Q048,cross_reference,GENERATION_ERROR,Câu trả lời chứa khẳng định không được bảo chứng bởi ngữ cảnh thu hồi (Ungrounded Claim).
+adaptive_agentic,Q049,cross_reference,RETRIEVAL_ERROR,Retriever không thu hồi được bất kỳ chunk vàng nào trong Top-K.
+adaptive_agentic,Q053,complex_conditions,REFUSAL_ERROR,Từ chối nhầm câu hỏi hợp lệ (False Refusal) do: Dữ liệu ngữ cảnh không chứa điều khoản hay căn cứ trả lời câu hỏi.
+adaptive_agentic,Q054,complex_conditions,CITATION_ERROR,Có 2 trích dẫn không hợp lệ hoặc không có trong ngữ cảnh.
+adaptive_agentic,Q056,complex_conditions,RETRIEVAL_ERROR,Retriever không thu hồi được bất kỳ chunk vàng nào trong Top-K.
+adaptive_agentic,Q057,complex_conditions,RETRIEVAL_ERROR,Retriever không thu hồi được bất kỳ chunk vàng nào trong Top-K.
+adaptive_agentic,Q059,complex_conditions,GENERATION_ERROR,Câu trả lời chứa khẳng định không được bảo chứng bởi ngữ cảnh thu hồi (Ungrounded Claim).
+adaptive_agentic,Q060,complex_conditions,RETRIEVAL_ERROR,Retriever không thu hồi được bất kỳ chunk vàng nào trong Top-K.
+adaptive_agentic,Q061,complex_conditions,RETRIEVAL_ERROR,Retriever không thu hồi được bất kỳ chunk vàng nào trong Top-K.
+adaptive_agentic,Q062,complex_conditions,RETRIEVAL_ERROR,Retriever không thu hồi được bất kỳ chunk vàng nào trong Top-K.
+adaptive_agentic,Q063,complex_conditions,RETRIEVAL_ERROR,Retriever không thu hồi được bất kỳ chunk vàng nào trong Top-K.
+adaptive_agentic,Q064,complex_conditions,RETRIEVAL_ERROR,Retriever không thu hồi được bất kỳ chunk vàng nào trong Top-K.
+adaptive_agentic,Q065,insufficient_evidence,REFUSAL_ERROR,Câu hỏi ngoài phạm vi hoặc thiếu chứng cứ nhưng hệ thống không từ chối (False Answer).
+adaptive_agentic,Q066,insufficient_evidence,REFUSAL_ERROR,Câu hỏi ngoài phạm vi hoặc thiếu chứng cứ nhưng hệ thống không từ chối (False Answer).
+adaptive_agentic,Q067,insufficient_evidence,REFUSAL_ERROR,Câu hỏi ngoài phạm vi hoặc thiếu chứng cứ nhưng hệ thống không từ chối (False Answer).
+adaptive_agentic,Q068,insufficient_evidence,REFUSAL_ERROR,Câu hỏi ngoài phạm vi hoặc thiếu chứng cứ nhưng hệ thống không từ chối (False Answer).
+adaptive_agentic,Q069,insufficient_evidence,REFUSAL_ERROR,Câu hỏi ngoài phạm vi hoặc thiếu chứng cứ nhưng hệ thống không từ chối (False Answer).
+adaptive_agentic,Q070,insufficient_evidence,REFUSAL_ERROR,Câu hỏi ngoài phạm vi hoặc thiếu chứng cứ nhưng hệ thống không từ chối (False Answer).
+adaptive_agentic,Q071,insufficient_evidence,REFUSAL_ERROR,Câu hỏi ngoài phạm vi hoặc thiếu chứng cứ nhưng hệ thống không từ chối (False Answer).
+adaptive_agentic,Q072,insufficient_evidence,REFUSAL_ERROR,Câu hỏi ngoài phạm vi hoặc thiếu chứng cứ nhưng hệ thống không từ chối (False Answer).

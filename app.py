@@ -3,10 +3,18 @@
 from __future__ import annotations
 
 import json
+import os
+import re
 import tempfile
 import uuid
 from pathlib import Path
 from typing import Any, Optional
+
+try:
+    from dotenv import load_dotenv
+    load_dotenv(override=True)
+except Exception:
+    pass
 
 import streamlit as st
 
@@ -19,6 +27,7 @@ from RAG.pipeline.config import PipelineConfig
 from RAG.pipeline.traditional_rag import TraditionalRAGPipeline
 from storage.schema import HistoryFilter
 from storage.query_history import QueryHistoryDatabase
+from ui.experiments_dashboard import render_confusion_matrix_dashboard, render_experiment_dashboard
 
 
 MODES = {
@@ -82,11 +91,12 @@ def get_pipeline(
     top_k: int,
     similarity_threshold: float,
 ) -> Any:
+    effective_model = model_name or (os.getenv("GEMINI_MODEL", "gemini-3.5-flash-lite") if provider == "gemini" else None)
     pipeline_config = PipelineConfig(
         TOP_K=top_k,
         SIMILARITY_THRESHOLD=similarity_threshold,
         LLM_PROVIDER=provider,
-        LLM_MODEL=model_name,
+        LLM_MODEL=effective_model,
         TEMPERATURE=0.0,
         ENABLE_PRE_GUARD=True,
         ENABLE_POST_GUARD=True,
@@ -100,7 +110,7 @@ def get_pipeline(
             TOP_K=top_k,
             SIMILARITY_THRESHOLD=similarity_threshold,
             LLM_PROVIDER=provider,
-            LLM_MODEL=model_name or "mock-legal-generator-v1",
+            LLM_MODEL=effective_model or "mock-legal-generator-v1",
             TEMPERATURE=0.0,
             ENABLE_PRE_GUARD=True,
             ENABLE_POST_GUARD=True,
@@ -184,7 +194,7 @@ def render_sources(chunks: list[Any]) -> None:
             chunk_id = str(get_value(chunk, "chunk_id", ""))
             
             is_web = "WEB_FALLBACK" in chunk_id or "thuvienphapluat" in str(metadata) or metadata.get("source_url")
-            badge = " 🌐 [Live Web Search]" if is_web else " 🏛️ [Nội bộ]"
+            badge = " [Live Web Search]" if is_web else " [Nội bộ]"
             
             heading = f"{index:02d} · {document}{badge}"
             if article:
@@ -208,7 +218,7 @@ def render_trace(response: Any, mode: str) -> None:
         chosen = enum_text(get_value(response, "route_taken"))
         reason = get_value(trace, "escalation_reason") or get_value(response, "escalation_reason")
         st.warning(
-            f"🔄 **Cơ chế phản hồi 2 chiều (Dynamic Feedback Loop - Escalation)**:\n\n"
+            f"**Cơ chế phản hồi 2 chiều (Dynamic Feedback Loop - Escalation)**:\n\n"
             f"Hệ thống phát hiện độ tin cậy thấp tại nhánh ban đầu **{orig}**, "
             f"đã tự động **NÂNG CẤP (ESCALATE)** sang nhánh chuyên sâu **{chosen}**!\n\n"
             f"*Căn cứ đánh giá*: {reason}"
@@ -217,7 +227,7 @@ def render_trace(response: Any, mode: str) -> None:
     # 2. Hiển thị Chu trình Tác tử Trung tâm (Central ReAct Agent & Tool Calling) nếu có
     agent_steps = get_value(trace, "agent_steps", []) if trace else []
     if agent_steps:
-        with st.expander("🤖 Dấu vết Tác tử Trung tâm (Central ReAct Agent Controller & Tool Calling)", expanded=True):
+        with st.expander("Dấu vết Tác tử Trung tâm (Central ReAct Agent Controller & Tool Calling)", expanded=True):
             st.caption("Chu trình suy luận đa bước kết hợp công cụ tính toán số học biểu tượng (Symbolic Legal Calculator):")
             for step in agent_steps:
                 it = get_value(step, "iteration", 1)
@@ -228,7 +238,7 @@ def render_trace(response: Any, mode: str) -> None:
 
                 st.markdown(f"**Vòng lặp {it} - Suy luận (Thought)**: {thought}")
                 if action:
-                    st.info(f"🛠️ **Gọi công cụ (Action)**: `{action}`\n\n**Tham số (Action Input)**: `{json.dumps(action_input, ensure_ascii=False) if isinstance(action_input, dict) else str(action_input)}`")
+                    st.info(f"**Gọi công cụ (Action)**: `{action}`\n\n**Tham số (Action Input)**: `{json.dumps(action_input, ensure_ascii=False) if isinstance(action_input, dict) else str(action_input)}`")
                 if obs:
                     with st.container(border=True):
                         st.markdown(f"**Kết quả thực thi (Observation)**:\n\n{obs}")
@@ -238,16 +248,16 @@ def render_trace(response: Any, mode: str) -> None:
     if plan:
         sub_queries = get_value(plan, "sub_queries", [])
         if sub_queries:
-            with st.expander("🌳 Cây phân rã câu hỏi đa chặng (Query Decomposition DAG Tree)", expanded=True):
+            with st.expander("Cây phân rã câu hỏi đa chặng (Query Decomposition DAG Tree)", expanded=True):
                 st.markdown(f"**Chiến lược phân rã**: `{enum_text(get_value(plan, 'strategy'))}` | **Độ phức tạp**: `{enum_text(get_value(plan, 'complexity_level'))}`")
                 
                 # Mermaid flowchart
-                mermaid_lines = ["graph TD", '    Orig["❓ Câu hỏi gốc"]']
+                mermaid_lines = ["graph TD", '    Orig["Câu hỏi gốc"]']
                 for idx, sq in enumerate(sub_queries, start=1):
                     sq_id = get_value(sq, "id", f"sq_{idx}")
                     sq_text = get_value(sq, "text", "")[:40] + "..."
-                    mermaid_lines.append(f'    Orig --> Node_{idx}["📌 Bước {idx}: {sq_text}"]')
-                    mermaid_lines.append(f'    Node_{idx} --> Syn["⚖️ Tổng hợp đa chặng (Synthesizer)"]')
+                    mermaid_lines.append(f'    Orig --> Node_{idx}["Bước {idx}: {sq_text}"]')
+                    mermaid_lines.append(f'    Node_{idx} --> Syn["Tổng hợp đa chặng (Synthesizer)"]')
                 
                 st.markdown(f"```mermaid\n" + "\n".join(mermaid_lines) + "\n```")
 
@@ -293,10 +303,34 @@ def render_trace(response: Any, mode: str) -> None:
         items.append(("Nhánh xử lý", "Truy xuất tuyến tính 1 chặng (Traditional RAG Baseline)"))
 
     if items:
-        with st.expander("ℹ️ Thông tin điều phối chi tiết (Orchestration Trace)"):
+        with st.expander("Thông tin điều phối chi tiết (Orchestration Trace)"):
             for label, value in items:
                 st.markdown(f"**{label}**")
                 st.markdown(value)
+
+
+def format_display_answer(answer: str) -> str:
+    """Đảm bảo phần Căn Cứ Pháp Lý Tham Chiếu và các đề mục xuống dòng chuẩn Markdown."""
+    if not answer:
+        return ""
+    
+    # Làm sạch các đoạn trích dẫn cồng kềnh trong nội dung nếu có
+    answer = re.sub(r",\s*Điều\s+Tra cứu ngoài", "", answer)
+    answer = re.sub(r"\s*\((?:Tra cứu ngoài|Web Knowledge)[^)]*\):\s*", ": ", answer)
+
+    if "Căn Cứ Pháp Lý Tham Chiếu:" in answer:
+        parts = re.split(r"#{1,4}\s*Căn Cứ Pháp Lý Tham Chiếu:|Căn Cứ Pháp Lý Tham Chiếu:", answer, maxsplit=1)
+        body = parts[0].strip()
+        ref_part = parts[1].strip()
+
+        # Chuẩn hóa các số thứ tự [1], [2]... về dạng chuẩn \n\n**[idx]**
+        ref_formatted = re.sub(r"\*{0,2}\[(\d+)\]\*{0,2}", r"**[\1]**", ref_part)
+        ref_formatted = re.sub(r"(?<!^)\s*(\*\*\[\d+\]\*\*)", r"\n\n\1", ref_formatted)
+        # Đưa URL xuống dòng có thụt lề chuẩn Markdown
+        ref_formatted = re.sub(r"\s*-\s*(?:\*\*URL:\*\*|URL:)\s*", r"  \n   - **URL:** ", ref_formatted)
+        prefix = f"{body}\n\n" if body else ""
+        return f"{prefix}### Căn Cứ Pháp Lý Tham Chiếu:\n\n{ref_formatted}"
+    return answer
 
 
 def render_response(response: Any, mode: str) -> None:
@@ -307,7 +341,7 @@ def render_response(response: Any, mode: str) -> None:
         if reason:
             st.caption(str(reason))
     else:
-        st.markdown(answer)
+        st.markdown(format_display_answer(answer))
 
     latency = (
         get_value(response, "latency_ms")
@@ -319,7 +353,8 @@ def render_response(response: Any, mode: str) -> None:
     chunks = get_value(response, "retrieved_chunks", []) or []
 
     metric_columns = st.columns(3)
-    metric_columns[0].metric("Thời gian xử lý", f"{float(latency):,.0f} ms")
+    latency_val = float(latency)
+    metric_columns[0].metric("Thời gian xử lý", f"{latency_val:,.0f} ms ({latency_val / 1000:.2f}s)")
     metric_columns[1].metric("Nguồn đã dùng", len(chunks))
     metric_columns[2].metric("Trích dẫn", len(citations))
 
@@ -337,11 +372,15 @@ def run_query(
     similarity_threshold: float,
     save_history: bool,
 ) -> None:
+    prior_history = list(st.session_state.messages) if st.session_state.messages else None
     st.session_state.messages.append({"role": "user", "content": question})
     try:
         with st.spinner("Đang tra cứu văn bản pháp luật..."):
             pipeline = get_pipeline(mode, provider, model_name, top_k, similarity_threshold)
-            response = pipeline.answer(question)
+            try:
+                response = pipeline.answer(question, chat_history=prior_history)
+            except TypeError:
+                response = pipeline.answer(question)
 
         st.session_state.current_title = st.session_state.get("current_title") or question
         history_error = None
@@ -425,10 +464,10 @@ def render_history_tools(history_db: QueryHistoryDatabase) -> None:
     stats = history_db.get_statistics()
     metrics = st.columns(4)
     metrics[0].metric("Tổng câu hỏi", f"{stats.total_queries:,}")
-    metrics[1].metric("Từ chối", f"{stats.total_refusals:,}", f"{stats.refusal_rate:.1%}")
+    metrics[1].metric("Từ chối", f"{stats.total_refusals:,}")
     metrics[2].metric("Độ trễ trung bình", f"{stats.avg_total_latency_ms:,.0f} ms")
     metrics[3].metric("Chi phí ước tính", f"${stats.total_estimated_cost_usd:.6f}")
-    st.caption(f"Token trung bình mỗi câu: {stats.avg_total_tokens:,.1f}")
+    st.caption(f"Tỷ lệ từ chối: {stats.refusal_rate:.1%} · Token trung bình mỗi câu: {stats.avg_total_tokens:,.1f}")
 
     distribution_tab, records_tab, export_tab = st.tabs(
         ["Phân bổ", "Tìm kiếm & chi tiết", "Xuất & đánh giá"]
@@ -645,7 +684,30 @@ st.markdown(
         border: 1px solid var(--border); border-radius: 8px;
         z-index: 2;
     }}
-    .block-container {{ max-width: 1050px; padding-top: 5rem; padding-bottom: 5rem; }}
+    .block-container {{
+        max-width: 95% !important;
+        width: 95% !important;
+        padding-top: 5.2rem !important;
+        padding-bottom: 4rem !important;
+        padding-left: 2.2rem !important;
+        padding-right: 2.2rem !important;
+    }}
+    /* Tối ưu thanh Tabs để hiển thị rộng rãi, không bị che khuất và không bị tràn */
+    [data-testid="stTabs"] {{
+        margin-top: 0.4rem;
+    }}
+    [data-baseweb="tab-list"] {{
+        gap: 8px;
+        border-bottom: 1px solid var(--border);
+        overflow-x: auto;
+        padding-top: 4px;
+    }}
+    [data-baseweb="tab"] {{
+        padding: 9px 18px !important;
+        font-size: 0.95rem !important;
+        white-space: nowrap !important;
+        border-radius: 6px 6px 0 0;
+    }}
     h1, h2, h3, h4, p, li, label, [data-testid="stMarkdownContainer"] {{
         color: var(--text);
     }}
@@ -654,12 +716,29 @@ st.markdown(
     [data-testid="stCaptionContainer"] p, [data-testid="stMetricLabel"] p {{
         color: var(--muted);
     }}
+    div[data-testid="column"] {{
+        display: flex;
+        flex-direction: column;
+    }}
+    div[data-testid="column"] > div {{
+        flex: 1 1 auto;
+        display: flex;
+        flex-direction: column;
+    }}
     [data-testid="stMetric"], [data-testid="stExpander"],
     [data-testid="stVerticalBlockBorderWrapper"] {{
         background: var(--surface); color: var(--text);
-        border-color: var(--border); border-radius: 12px;
+        border: 1px solid var(--border); border-radius: 12px;
     }}
-    [data-testid="stMetric"] {{ padding: 14px 16px; }}
+    [data-testid="stMetric"] {{
+        padding: 14px 16px;
+        min-height: 98px;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        box-sizing: border-box;
+    }}
     [data-testid="stMetricValue"] {{ color: var(--accent); font-size: 1.35rem; }}
     [data-testid="stAlert"] {{
         background: var(--accent_soft); color: var(--text);
@@ -808,13 +887,13 @@ with st.sidebar:
 
     provider_label = st.selectbox(
         "Bộ tạo câu trả lời",
-        ["Ngoại tuyến", "OpenAI", "Gemini", "Tự động"],
-        help="Chọn OpenAI hoặc Gemini nếu đã cấu hình khóa truy cập trong môi trường.",
+        ["Gemini (Google AI)", "Ngoại tuyến (Offline Mock)", "Tự động"],
+        index=0,
+        help="Sử dụng Google Gemini API để sinh câu trả lời trực tuyến, hoặc Ngoại tuyến để chạy mô phỏng cục bộ không cần API key.",
     )
     provider = {
-        "Ngoại tuyến": "mock",
-        "OpenAI": "openai",
-        "Gemini": "gemini",
+        "Gemini (Google AI)": "gemini",
+        "Ngoại tuyến (Offline Mock)": "mock",
         "Tự động": "auto",
     }[provider_label]
 
@@ -827,14 +906,31 @@ with st.sidebar:
             value=0.45,
             step=0.05,
         )
-        model_name_input = st.text_input("Tên mô hình (không bắt buộc)", placeholder="Để trống để dùng mặc định")
+        model_name_input = st.text_input(
+            "Tên mô hình Gemini (tùy chọn)",
+            placeholder="Mặc định: gemini-3.5-flash-lite",
+        )
+        gemini_key_input = st.text_input(
+            "Khóa Gemini API (tùy chọn ghi đè .env)",
+            type="password",
+            value=os.getenv("GEMINI_API_KEY", ""),
+            placeholder="AIzaSy...",
+            help="Hệ thống đã tự động nạp từ file .env. Chỉ nhập tại đây nếu muốn tạm thời đổi key khác.",
+        )
+        if gemini_key_input:
+            os.environ["GEMINI_API_KEY"] = gemini_key_input.strip()
         save_history = st.toggle("Lưu lịch sử tra cứu", value=True)
 
     st.caption("Nguồn dữ liệu: văn bản pháp luật lao động Việt Nam")
 
 model_name = model_name_input.strip() or None
 
-chat_tab, database_tab = st.tabs(["Tra cứu", "Lịch sử & dữ liệu"])
+chat_tab, experiment_tab, confusion_tab, database_tab = st.tabs([
+    "Tra cứu",
+    "Kết quả thực nghiệm & Đánh giá",
+    "Ma trận nhầm lẫn (Confusion Matrix)",
+    "Lịch sử & dữ liệu",
+])
 with chat_tab:
     current_title = (
         st.session_state.get("current_title")
@@ -929,6 +1025,12 @@ with chat_tab:
             height=0,
             scrolling=False,
         )
+
+with experiment_tab:
+    render_experiment_dashboard()
+
+with confusion_tab:
+    render_confusion_matrix_dashboard()
 
 with database_tab:
     render_history_tools(history_db)

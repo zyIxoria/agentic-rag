@@ -1,3 +1,4 @@
+import re
 """
 CRAG Knowledge Recomposer.
 Tái lập ngữ cảnh tinh lọc từ các Knowledge Strips sống sót sau bước lọc.
@@ -112,10 +113,13 @@ class KnowledgeRecomposer:
                 snippet = ext.get("snippet", "")
                 url = ext.get("url", "")
 
+                art_match = re.search(r"(?:Điều|Khoản)\s+\d+(?:[,\s]+(?:Điều\s+)?\d+)*", title, re.IGNORECASE)
+                art_line = f"Article: {art_match.group(0).title()}\n" if art_match else ""
                 ext_block = (
                     f"[SOURCE {ext_idx}]\n"
                     f"Document: Tra cứu ngoài (Web Knowledge)\n"
                     f"Title: {title}\n"
+                    f"{art_line}"
                     f"Reference: {url}\n"
                     f"Content:\n{snippet}\n"
                 )

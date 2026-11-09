@@ -52,14 +52,19 @@ class AdaptiveRAGPipeline:
             citation_resolver=citation_resolver,
         )
 
-    def answer(self, question: str) -> AdaptiveRAGResponse:
+    def answer(
+        self,
+        question: str,
+        chat_history: Optional[Any] = None,
+    ) -> AdaptiveRAGResponse:
         """
         Thực thi xử lý câu hỏi người dùng qua hệ thống Adaptive Agentic RAG.
         
         Args:
             question: Câu hỏi pháp lý của người dùng.
+            chat_history: Lịch sử hội thoại trước đó (nếu có) phục vụ câu hỏi tiếp nối.
             
         Returns:
             AdaptiveRAGResponse chứa câu trả lời, trích dẫn, route đã chọn và telemetry chi tiết.
         """
-        return self.orchestrator.route_and_execute(question)
+        return self.orchestrator.route_and_execute(question, chat_history=chat_history)

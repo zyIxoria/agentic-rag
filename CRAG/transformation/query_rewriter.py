@@ -80,15 +80,28 @@ class LegalQueryRewriter:
         key_phrases = []
         full_lower = cleaned.lower()
         phrase_candidates = [
+            "thời giờ làm việc bình thường", "thời giờ làm việc", "giờ làm việc",
+            "thời giờ làm việc tối đa", "số giờ làm việc tối đa", "làm việc tối đa",
+            "tối đa bao nhiêu tiếng", "tối đa bao nhiêu giờ", "làm việc theo tuần", "làm việc theo ngày",
+            "nghỉ phép", "nghỉ phép năm", "nghỉ hằng năm", "nghỉ hàng năm", "thâm niên",
             "thử việc", "thời gian thử việc", "hợp đồng thử việc",
             "sa thải", "kỷ luật sa thải", "đơn phương chấm dứt",
             "nghỉ thai sản", "chế độ thai sản", "tai nạn lao động",
-            "tiền lương làm thêm giờ", "làm thêm giờ", "nghỉ hàng năm",
+            "tiền lương làm thêm giờ", "làm thêm giờ",
             "xử phạt vi phạm", "mức phạt tiền", "thời hiệu xử lý kỷ luật"
         ]
         for pc in phrase_candidates:
             if pc in full_lower:
                 key_phrases.append(pc)
+
+        # Chuẩn hóa các câu hỏi tự nhiên về số giờ làm việc tối đa theo ngày/tuần
+        if (
+            ("tối đa" in full_lower or "bao nhiêu" in full_lower)
+            and any(w in full_lower for w in ["tiếng", "giờ"])
+            and any(w in full_lower for w in ["tuần", "ngày", "làm"])
+        ):
+            if "thời giờ làm việc bình thường" not in key_phrases:
+                key_phrases.append("thời giờ làm việc bình thường")
 
         # 5. Xây dựng search query
         search_terms = []
