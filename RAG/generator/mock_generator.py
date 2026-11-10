@@ -63,7 +63,7 @@ class MockLegalGenerator(BaseLegalGenerator):
         out_of_scope_keywords = [
             "nhãn hiệu", "thương hiệu", "madrid", "sáng chế", "bản quyền",
             "sở hữu trí tuệ", "visa", "hộ chiếu", "đại sứ quán", "ly hôn",
-            "kết hôn", "thừa kế", "giao thông", "đất đai", "nhà đất",
+            "đăng ký kết hôn", "thừa kế", "giao thông", "đất đai", "nhà đất",
             "chứng khoán", "tiền ảo", "thuế giá trị gia tăng",
             "bóng đá", "thể thao", "ngoại hạng", "vé xem", "mua vé",
             "ca nhạc", "phim ảnh", "du lịch", "thời tiết", "nấu ăn", "game",
@@ -110,6 +110,8 @@ class MockLegalGenerator(BaseLegalGenerator):
             significant_q_keywords.append("giờ")
         if "tối đa" in q_lower and "không quá" not in significant_q_keywords:
             significant_q_keywords.append("không quá")
+        if "cưới" in q_lower and "kết hôn" not in significant_q_keywords:
+            significant_q_keywords.append("kết hôn")
 
         # Khớp nguồn phù hợp
         is_relevant = False
@@ -130,11 +132,42 @@ class MockLegalGenerator(BaseLegalGenerator):
                     or (overlap_ratio >= 0.5 and len(significant_q_keywords) <= 2)
                     or any(kw in q_lower and kw in src_text for kw in [
                         "sa thải", "thử việc", "làm thêm", "nghỉ phép", "hằng năm",
-                        "nghỉ hàng năm", "thai sản", "thời giờ làm việc", "105", "48 giờ", "08 giờ"
+                        "nghỉ hàng năm", "thai sản", "thời giờ làm việc", "105", "48 giờ", "08 giờ",
+                        "kết hôn", "nghỉ việc riêng"
                     ])
                 ):
                     is_relevant = True
                     matching_sources.append(src)
+
+        # Kiểm tra tính đầy đủ của bằng chứng đối với câu hỏi đòi hỏi thông số định lượng cụ thể:
+        # Nếu câu hỏi hỏi về tỷ lệ %, thời hạn cụ thể, mức trợ cấp cụ thể, số lượng tối thiểu,
+        # nhưng matching_sources không chứa thuộc tính tương ứng -> INSUFFICIENT_EVIDENCE
+        if matching_sources:
+            is_quantitative_query = bool(re.search(
+                r"\b(bao\s+nhiêu\s*(phần\s+trăm|%|ngày|tháng|người)|tỷ\s+lệ\s+hưởng|mức\s+trợ\s+cấp|tối\s+thiểu|danh\s+mục\s+bệnh\s+dài\s+ngày|thời\s+hạn.*nộp\s+hồ\s+sơ)\b",
+                q_lower
+            ))
+            if is_quantitative_query:
+                target_keywords = []
+                if "tỷ lệ" in q_lower or "phần trăm" in q_lower or "%" in q_lower:
+                    target_keywords.extend(["tỷ lệ", "phần trăm", "%"])
+                if "thời hạn" in q_lower or "hạn nộp" in q_lower:
+                    target_keywords.extend(["thời hạn", "hạn", "nộp hồ sơ", "ngày", "tháng"])
+                if "tối thiểu" in q_lower:
+                    target_keywords.extend(["tối thiểu", "ít nhất"])
+                if "mức trợ cấp" in q_lower or "mức hỗ trợ" in q_lower:
+                    target_keywords.extend(["mức trợ cấp", "mức hỗ trợ", "tháng lương", "bằng", "%"])
+                if "danh mục bệnh dài ngày" in q_lower:
+                    target_keywords.extend(["danh mục bệnh", "chữa trị dài ngày"])
+
+                if target_keywords:
+                    has_target = any(
+                        any(tk in s.get("content", "").lower() for tk in target_keywords)
+                        for s in matching_sources
+                    )
+                    if not has_target:
+                        is_relevant = False
+                        matching_sources = []
 
         # Nếu không có nguồn nào chứa thông tin liên quan tới câu hỏi -> Từ chối
         if not is_relevant or not matching_sources:

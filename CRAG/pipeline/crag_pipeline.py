@@ -18,6 +18,10 @@ from RAG.generator.factory import get_generator
 from RAG.citation.resolver import CitationResolver
 from RAG.guards.refusal_guard import RefusalGuard
 from RAG.guards.config import GuardConfig
+from RAG.guards.scope_guard import SharedScopeGuard
+from RAG.guards.document_grounding_gate import NamedLegalDocumentResolver
+from RAG.guards.evidence_gate import PreGenerationEvidenceGate
+from RAG.guards.qa_alignment_guard import PostGenerationQAAlignmentGuard
 
 from CRAG.config import CRAGConfig, crag_config
 from CRAG.evaluator.schema import ActionTrigger, GradeVerdict, RetrievalGradingResult
@@ -120,6 +124,12 @@ class CRAGPipeline:
             )
         )
 
+        # 7. Các chốt chặn đa tầng (Multi-tier Safety Guards)
+        self.scope_guard = SharedScopeGuard()
+        self.document_resolver = NamedLegalDocumentResolver()
+        self.evidence_gate = PreGenerationEvidenceGate()
+        self.qa_alignment_guard = PostGenerationQAAlignmentGuard()
+
     def answer(self, question: str) -> CRAGResponse:
         """
         Thực thi toàn bộ quy trình Corrective RAG cho một câu hỏi.
@@ -131,10 +141,49 @@ class CRAGPipeline:
         clean_question = question.strip()
         telemetry = CRAGTelemetry()
 
+        # CHỐT CHẶN TIER 1: Scope & Intent Boundary Gate (Shared Scope Guard)
+        if getattr(self.crag_config, "ENABLE_TIER1_SHARED_SCOPE_GATE", True):
+            scope_res = self.scope_guard.check_scope(clean_question)
+            if scope_res.trigger_refusal:
+                telemetry.total_latency = round((time.perf_counter() - t_start) * 1000.0, 2)
+                return CRAGResponse(
+                    question=clean_question,
+                    answer=scope_res.refusal_message or self.guard.config.REFUSAL_MESSAGE,
+                    citations=[],
+                    retrieved_chunks=[],
+                    grading_result=None,
+                    action_taken="DIRECT_REFUSAL_SCOPE",
+                    telemetry=telemetry,
+                    refused=True,
+                    refusal_reason=scope_res.refusal_reason,
+                )
+
+        # CHỐT CHẶN TIER 2: Document Coverage & Grounding Gate
+        doc_filter = None
+        if getattr(self.crag_config, "ENABLE_TIER2_DOCUMENT_GROUNDING_GATE", True):
+            doc_res = self.document_resolver.resolve(clean_question)
+            if doc_res.trigger_refusal:
+                telemetry.total_latency = round((time.perf_counter() - t_start) * 1000.0, 2)
+                return CRAGResponse(
+                    question=clean_question,
+                    answer=doc_res.refusal_message or self.guard.config.REFUSAL_MESSAGE,
+                    citations=[],
+                    retrieved_chunks=[],
+                    grading_result=None,
+                    action_taken="DIRECT_REFUSAL_DOC",
+                    telemetry=telemetry,
+                    refused=True,
+                    refusal_reason=doc_res.refusal_reason,
+                )
+            elif doc_res.has_specific_document and doc_res.filter_metadata:
+                doc_filter = doc_res.filter_metadata
+
         # BƯỚC 1: Thu hồi véc-tơ (Dense Retrieval)
         t_ret_0 = time.perf_counter()
         retrieved_chunks = self.retriever.retrieve(
-            query=clean_question, top_k=self.config.TOP_K
+            query=clean_question,
+            top_k=self.config.TOP_K,
+            where=doc_filter,
         )
         telemetry.retrieval_latency = round((time.perf_counter() - t_ret_0) * 1000.0, 2)
 
@@ -267,6 +316,25 @@ class CRAGPipeline:
                     "source_url": ext["url"],
                 }
 
+        # CHỐT CHẶN TIER 3: Pre-Generation Evidence Gate (Kiểm định bằng chứng trước sinh)
+        if getattr(self.crag_config, "ENABLE_TIER3_PRE_GEN_EVIDENCE_GATE", True):
+            evidence_res = self.evidence_gate.evaluate(clean_question, retrieved_chunks)
+            if evidence_res.trigger_refusal:
+                telemetry.total_latency = round((time.perf_counter() - t_start) * 1000.0, 2)
+                return CRAGResponse(
+                    question=clean_question,
+                    answer=evidence_res.refusal_message or self.guard.config.REFUSAL_MESSAGE,
+                    citations=[],
+                    retrieved_chunks=retrieved_chunks,
+                    grading_result=grading_result,
+                    action_taken="REFUSE_UNSUPPORTED_EVIDENCE",
+                    refined_context=refined_context,
+                    search_response=search_res,
+                    telemetry=telemetry,
+                    refused=True,
+                    refusal_reason=evidence_res.refusal_reason,
+                )
+
         # BƯỚC 4: Sinh câu trả lời bảo thủ (LLM Generation)
         t_gen_0 = time.perf_counter()
         gen_result = self.generator.generate(
@@ -285,7 +353,7 @@ class CRAGPipeline:
             append_footnotes=self.config.APPEND_FOOTNOTES,
         )
 
-        # BƯỚC 6: Chốt chặn an toàn sau khi sinh (Post-Generation Guard)
+        # BƯỚC 6: Chốt chặn an toàn sau khi sinh (Post-Generation Guard & Tier 4 QA Alignment)
         post_guard_res = self.guard.check_post_generation(gen_result, citation_result, context_text=context_text)
 
         if post_guard_res.trigger_refusal and not gen_result.refused:
@@ -298,6 +366,17 @@ class CRAGPipeline:
             final_refused = gen_result.refused
             final_reason = gen_result.reason
             final_citations = citation_result.valid_citations
+
+        # TIER 4: Post-Generation QA Alignment Guard
+        if getattr(self.crag_config, "ENABLE_TIER4_QA_ALIGNMENT_GUARD", True) and not final_refused:
+            qa_res = self.qa_alignment_guard.evaluate_answer(clean_question, final_answer, retrieved_chunks)
+            if qa_res.trigger_refusal:
+                final_answer = self.guard.config.REFUSAL_MESSAGE
+                final_refused = True
+                final_reason = qa_res.refusal_reason
+                final_citations = []
+            elif qa_res.pruned_answer:
+                final_answer = qa_res.pruned_answer
 
         telemetry.total_latency = round((time.perf_counter() - t_start) * 1000.0, 2)
 

@@ -1,78 +1,51 @@
 {
-  "comparison_title": "Head-to-Head Comparison: Traditional RAG vs CRAG vs Adaptive Agentic RAG",
+  "comparison_title": "Head-to-Head Comparison: Traditional RAG vs CRAG vs Adaptive Agentic RAG (Benchmark-300)",
+  "total_questions": 300,
   "metrics_comparison": {
     "Hit Rate@5": {
-      "Traditional_RAG": 0.2969,
-      "CRAG": 0.2969,
-      "Adaptive_Agentic_RAG": 0.2969,
-      "delta_crag_vs_trad": 0.0,
-      "delta_adaptive_vs_trad": 0.0,
-      "complex_queries_hit_gain_via_decomposition": "+8.82% (20.59% -> 29.41%)"
+      "Traditional_RAG": 0.248,
+      "CRAG": 0.248,
+      "Adaptive_Agentic_RAG": 0.232
     },
     "Recall@5 (Chunk)": {
-      "Traditional_RAG": 0.1431,
-      "CRAG": 0.1417,
-      "Adaptive_Agentic_RAG": 0.1417,
-      "delta_crag_vs_trad": -0.0014,
-      "delta_adaptive_vs_trad": -0.0014,
-      "complex_queries_chunk_recall_gain": "+2.19% (4.91% -> 7.10%)"
+      "Traditional_RAG": 0.1332,
+      "CRAG": 0.1332,
+      "Adaptive_Agentic_RAG": 0.1267
     },
     "MRR (Chunk)": {
-      "Traditional_RAG": 0.1932,
-      "CRAG": 0.2005,
-      "Adaptive_Agentic_RAG": 0.2005,
-      "delta_crag_vs_trad": 0.0073,
-      "delta_adaptive_vs_trad": 0.0073,
-      "complex_queries_mrr_gain": "+0.0726 (0.0941 -> 0.1667)"
+      "Traditional_RAG": 0.1181,
+      "CRAG": 0.1181,
+      "Adaptive_Agentic_RAG": 0.1246
     },
     "Answer Correctness": {
-      "Traditional_RAG": 0.5,
+      "Traditional_RAG": 0.528,
       "CRAG": 0.5,
-      "Adaptive_Agentic_RAG": 0.4844,
-      "delta_crag_vs_trad": 0.0,
-      "delta_adaptive_vs_trad": -0.0156
+      "Adaptive_Agentic_RAG": 0.56
     },
     "Strict Correctness": {
-      "Traditional_RAG": 0.2656,
-      "CRAG": 0.2188,
-      "Adaptive_Agentic_RAG": 0.2188,
-      "delta_crag_vs_trad": -0.0468,
-      "delta_adaptive_vs_trad": -0.0468
+      "Traditional_RAG": 0.192,
+      "CRAG": 0.156,
+      "Adaptive_Agentic_RAG": 0.204
     },
     "Faithfulness Rate": {
-      "Traditional_RAG": 0.9375,
-      "CRAG": 1.0,
-      "Adaptive_Agentic_RAG": 0.5781,
-      "delta_crag_vs_trad": 0.0625,
-      "delta_adaptive_vs_trad": -0.3594
+      "Traditional_RAG": 0.996,
+      "CRAG": 0.676,
+      "Adaptive_Agentic_RAG": 0.72
     },
     "Refusal Accuracy": {
-      "Traditional_RAG": 0.4375,
-      "CRAG": 0.9375,
-      "Adaptive_Agentic_RAG": 0.5,
-      "delta_crag_vs_trad": 0.5,
-      "delta_adaptive_vs_trad": 0.0625
+      "Traditional_RAG": 0.88,
+      "CRAG": 0.9,
+      "Adaptive_Agentic_RAG": 0.86
     },
     "False Answer Rate": {
-      "Traditional_RAG": 0.5625,
-      "CRAG": 0.0625,
-      "Adaptive_Agentic_RAG": 0.5,
-      "delta_crag_vs_trad": -0.5,
-      "delta_adaptive_vs_trad": -0.0625
-    },
-    "Unsupported Claim Rate": {
-      "Traditional_RAG": 0.0625,
-      "CRAG": 0.0,
-      "Adaptive_Agentic_RAG": 0.4219,
-      "delta_crag_vs_trad": -0.0625,
-      "delta_adaptive_vs_trad": 0.3594
+      "Traditional_RAG": 0.12,
+      "CRAG": 0.1,
+      "Adaptive_Agentic_RAG": 0.14
     },
     "Mean Total Latency (ms)": {
-      "Traditional_RAG": 291.46,
-      "CRAG": 174.05,
-      "Adaptive_Agentic_RAG": 177.71,
-      "delta_crag_vs_trad": -117.41,
-      "delta_adaptive_vs_trad": -113.75
+      "Traditional_RAG": 21.7,
+      "CRAG": 18.74,
+      "Adaptive_Agentic_RAG": 21.38
     }
   }
 }

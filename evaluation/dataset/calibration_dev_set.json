@@ -1,0 +1,512 @@
+[
+  {
+    "dev_id": "DEV_01",
+    "question": "Thời giờ làm việc bình thường của người lao động trong điều kiện lao động bình thường theo Bộ luật Lao động 2019 là bao nhiêu giờ một ngày?",
+    "category": "single_article",
+    "sub_category": "Thời giờ làm việc",
+    "requires_refusal": false,
+    "gold_document_id": "BLLD_2019",
+    "gold_article": "Điều 105"
+  },
+  {
+    "dev_id": "DEV_02",
+    "question": "Người sử dụng lao động có phải trả thêm tiền lương làm việc vào ban đêm cho người lao động ít nhất bao nhiêu phần trăm?",
+    "category": "single_article",
+    "sub_category": "Tiền lương",
+    "requires_refusal": false,
+    "gold_document_id": "BLLD_2019",
+    "gold_article": "Điều 98"
+  },
+  {
+    "dev_id": "DEV_03",
+    "question": "Tiền lương làm thêm giờ vào ngày nghỉ hằng tuần được tính ít nhất bằng bao nhiêu phần trăm đơn giá tiền lương?",
+    "category": "single_article",
+    "sub_category": "Tiền lương",
+    "requires_refusal": false,
+    "gold_document_id": "BLLD_2019",
+    "gold_article": "Điều 98"
+  },
+  {
+    "dev_id": "DEV_04",
+    "question": "Người lao động có hành vi trộm cắp tại nơi làm việc thì bị người sử dụng lao động áp dụng hình thức xử lý kỷ luật nào?",
+    "category": "single_article",
+    "sub_category": "Kỷ luật lao động",
+    "requires_refusal": false,
+    "gold_document_id": "BLLD_2019",
+    "gold_article": "Điều 125"
+  },
+  {
+    "dev_id": "DEV_05",
+    "question": "Thời gian thử việc tối đa đối với công việc có chức danh nghề nghiệp cần trình độ chuyên môn, kỹ thuật từ cao đẳng trở lên là bao lâu?",
+    "category": "single_article",
+    "sub_category": "Thử việc",
+    "requires_refusal": false,
+    "gold_document_id": "BLLD_2019",
+    "gold_article": "Điều 25"
+  },
+  {
+    "dev_id": "DEV_06",
+    "question": "Người lao động có được tạm hoãn thực hiện hợp đồng lao động khi phải thực hiện nghĩa vụ quân sự không?",
+    "category": "single_article",
+    "sub_category": "Tạm hoãn HĐLĐ",
+    "requires_refusal": false,
+    "gold_document_id": "BLLD_2019",
+    "gold_article": "Điều 30"
+  },
+  {
+    "dev_id": "DEV_07",
+    "question": "Thời giờ nghỉ giữa giờ tối thiểu là bao nhiêu phút khi người lao động làm việc ca liên tục 08 giờ trong điều kiện bình thường?",
+    "category": "single_article",
+    "sub_category": "Thời giờ nghỉ ngơi",
+    "requires_refusal": false,
+    "gold_document_id": "BLLD_2019",
+    "gold_article": "Điều 109"
+  },
+  {
+    "dev_id": "DEV_08",
+    "question": "Lao động nữ mang thai từ tháng thứ mấy thì người sử dụng lao động không được bố trí làm thêm giờ hoặc làm việc ban đêm?",
+    "category": "single_article",
+    "sub_category": "Lao động nữ",
+    "requires_refusal": false,
+    "gold_document_id": "BLLD_2019",
+    "gold_article": "Điều 137"
+  },
+  {
+    "dev_id": "DEV_09",
+    "question": "Người lao động làm việc đủ 12 tháng cho một người sử dụng lao động trong điều kiện bình thường thì được nghỉ bao nhiêu ngày phép hằng năm?",
+    "category": "single_article",
+    "sub_category": "Nghỉ phép năm",
+    "requires_refusal": false,
+    "gold_document_id": "BLLD_2019",
+    "gold_article": "Điều 113"
+  },
+  {
+    "dev_id": "DEV_10",
+    "question": "Trường hợp phải ngừng việc do lỗi của người sử dụng lao động thì người lao động được trả tiền lương như thế nào?",
+    "category": "single_article",
+    "sub_category": "Tiền lương ngừng việc",
+    "requires_refusal": false,
+    "gold_document_id": "BLLD_2019",
+    "gold_article": "Điều 99"
+  },
+  {
+    "dev_id": "DEV_11",
+    "question": "Mức phạt tiền đối với hành vi không giao kết hợp đồng lao động bằng văn bản đối với công việc từ 01 tháng trở lên theo Nghị định 12/2022/NĐ-CP?",
+    "category": "single_doc_multi_chunk",
+    "sub_category": "Xử phạt vi phạm",
+    "requires_refusal": false,
+    "gold_document_id": "ND_12_2022",
+    "gold_article": "Điều 9"
+  },
+  {
+    "dev_id": "DEV_12",
+    "question": "Lộ trình điều chỉnh tuổi nghỉ hưu của lao động nam và lao động nữ được quy định cụ thể ra sao theo Nghị định 135/2020/NĐ-CP?",
+    "category": "single_doc_multi_chunk",
+    "sub_category": "Tuổi nghỉ hưu",
+    "requires_refusal": false,
+    "gold_document_id": "ND_135_2020",
+    "gold_article": "Điều 4"
+  },
+  {
+    "dev_id": "DEV_13",
+    "question": "Hồ sơ đề nghị cấp giấy phép lao động cho người nước ngoài làm việc tại Việt Nam gồm các giấy tờ cơ bản nào theo Nghị định 152/2020/NĐ-CP?",
+    "category": "single_doc_multi_chunk",
+    "sub_category": "Lao động nước ngoài",
+    "requires_refusal": false,
+    "gold_document_id": "ND_152_2020",
+    "gold_article": "Điều 9"
+  },
+  {
+    "dev_id": "DEV_14",
+    "question": "Người lao động kết hôn thì được nghỉ việc riêng hưởng nguyên lương trong thời hạn bao nhiêu ngày?",
+    "category": "single_article",
+    "sub_category": "Nghỉ việc riêng",
+    "requires_refusal": false,
+    "gold_document_id": "BLLD_2019",
+    "gold_article": "Điều 115"
+  },
+  {
+    "dev_id": "DEV_15",
+    "question": "Người sử dụng lao động có quyền đơn phương chấm dứt hợp đồng lao động khi người lao động thường xuyên không hoàn thành công việc không?",
+    "category": "single_article",
+    "sub_category": "Đơn phương chấm dứt",
+    "requires_refusal": false,
+    "gold_document_id": "BLLD_2019",
+    "gold_article": "Điều 36"
+  },
+  {
+    "dev_id": "DEV_16",
+    "question": "Em đi làm phụ việc ca tối ở tiệm bánh ngọt thì có được chủ tiệm trả thêm phụ cấp ca đêm không?",
+    "category": "natural_language_labor",
+    "sub_category": "Tiền lương ca đêm",
+    "requires_refusal": false,
+    "gold_document_id": "BLLD_2019",
+    "gold_article": "Điều 98"
+  },
+  {
+    "dev_id": "DEV_17",
+    "question": "Chỗ làm bắt em thử việc liên tục 4 tháng cho vị trí thu ngân thì có đúng quy định không?",
+    "category": "natural_language_labor",
+    "sub_category": "Thử việc kéo dài",
+    "requires_refusal": false,
+    "gold_document_id": "BLLD_2019",
+    "gold_article": "Điều 25"
+  },
+  {
+    "dev_id": "DEV_18",
+    "question": "Sếp trừ luôn 300k tiền công vì hôm qua em quên dập thẻ chấm công lúc về thì có được phép không?",
+    "category": "natural_language_labor",
+    "sub_category": "Khấu trừ lương trái luật",
+    "requires_refusal": false,
+    "gold_document_id": "BLLD_2019",
+    "gold_article": "Điều 102"
+  },
+  {
+    "dev_id": "DEV_19",
+    "question": "Xưởng may trễ lương 3 tháng nay rồi, giờ em muốn bỏ ngang đi tìm chỗ khác thì có vi phạm không?",
+    "category": "natural_language_labor",
+    "sub_category": "Nợ lương & Nghỉ việc",
+    "requires_refusal": false,
+    "gold_document_id": "BLLD_2019",
+    "gold_article": "Điều 35"
+  },
+  {
+    "dev_id": "DEV_20",
+    "question": "Em làm công nhân lắp ráp được 3 năm theo hợp đồng không thời hạn, muốn xin nghỉ thì báo trước bao nhiêu ngày?",
+    "category": "natural_language_labor",
+    "sub_category": "Báo trước khi nghỉ",
+    "requires_refusal": false,
+    "gold_document_id": "BLLD_2019",
+    "gold_article": "Điều 35"
+  },
+  {
+    "dev_id": "DEV_21",
+    "question": "Chủ quán phở giữ bằng tốt nghiệp gốc của em để ép em làm đủ 1 năm mới trả thì em đòi lại thế nào?",
+    "category": "natural_language_labor",
+    "sub_category": "Giữ văn bằng gốc",
+    "requires_refusal": false,
+    "gold_document_id": "BLLD_2019",
+    "gold_article": "Điều 17"
+  },
+  {
+    "dev_id": "DEV_22",
+    "question": "Chị bị hư thai lúc thai được 2 tháng thì có được công ty giải quyết chế độ nghỉ theo bảo hiểm không?",
+    "category": "natural_language_labor",
+    "sub_category": "Thai sản BHXH",
+    "requires_refusal": false,
+    "gold_document_id": "LUAT_BHXH_2014",
+    "gold_article": "Điều 33"
+  },
+  {
+    "dev_id": "DEV_23",
+    "question": "Chú làm bảo vệ gác đêm từ 22h đến 6h sáng hôm sau thì cách tính tiền lương theo luật thế nào?",
+    "category": "natural_language_labor",
+    "sub_category": "Lương làm đêm",
+    "requires_refusal": false,
+    "gold_document_id": "BLLD_2019",
+    "gold_article": "Điều 98"
+  },
+  {
+    "dev_id": "DEV_24",
+    "question": "Sinh viên làm thêm part-time theo giờ ở quán cà phê có được ký hợp đồng bảo đảm quyền lợi không?",
+    "category": "natural_language_labor",
+    "sub_category": "Lao động theo giờ",
+    "requires_refusal": false,
+    "gold_document_id": "BLLD_2019",
+    "gold_article": "Điều 32"
+  },
+  {
+    "dev_id": "DEV_25",
+    "question": "Con em mới được 8 tháng tuổi mà quản lý bắt em đi công tác tỉnh xa 1 tuần thì em được phép từ chối không?",
+    "category": "natural_language_labor",
+    "sub_category": "Nuôi con nhỏ",
+    "requires_refusal": false,
+    "gold_document_id": "BLLD_2019",
+    "gold_article": "Điều 137"
+  },
+  {
+    "dev_id": "DEV_26",
+    "question": "Trên đường chạy xe từ công ty về nhà trọ mà bị va quẹt té xe gãy tay thì có được coi là tai nạn lao động không?",
+    "category": "natural_language_labor",
+    "sub_category": "Tai nạn trên đường",
+    "requires_refusal": false,
+    "gold_document_id": "LUAT_ATVSLD_2015",
+    "gold_article": "Điều 45"
+  },
+  {
+    "dev_id": "DEV_27",
+    "question": "Công ty thỏa thuận miệng là không đóng bảo hiểm xã hội mà trả thêm 500k vào lương mỗi tháng có đúng luật không?",
+    "category": "natural_language_labor",
+    "sub_category": "Trốn đóng BHXH",
+    "requires_refusal": false,
+    "gold_document_id": "BLLD_2019",
+    "gold_article": "Điều 168"
+  },
+  {
+    "dev_id": "DEV_28",
+    "question": "Chủ tiệm cắt tóc đuổi ngang em vì bảo tháng này vắng khách không cần thợ nữa thì phải bồi thường gì?",
+    "category": "natural_language_labor",
+    "sub_category": "Đuổi việc trái luật",
+    "requires_refusal": false,
+    "gold_document_id": "BLLD_2019",
+    "gold_article": "Điều 41"
+  },
+  {
+    "dev_id": "DEV_29",
+    "question": "Dịp tết nguyên đán mà xưởng không có thưởng tháng 13 cho công nhân thì có bị thanh tra phạt không?",
+    "category": "natural_language_labor",
+    "sub_category": "Thưởng tết",
+    "requires_refusal": false,
+    "gold_document_id": "BLLD_2019",
+    "gold_article": "Điều 104"
+  },
+  {
+    "dev_id": "DEV_30",
+    "question": "Anh làm thợ hàn trong hầm lò độc hại thì một năm được bao nhiêu ngày nghỉ phép có hưởng lương?",
+    "category": "natural_language_labor",
+    "sub_category": "Nghỉ phép nghề độc hại",
+    "requires_refusal": false,
+    "gold_document_id": "BLLD_2019",
+    "gold_article": "Điều 113"
+  },
+  {
+    "dev_id": "DEV_31",
+    "question": "Mức hình phạt tù đối với hành vi trộm cắp tài sản trị giá 50 triệu đồng theo Bộ luật Hình sự là bao nhiêu năm?",
+    "category": "out_of_scope",
+    "sub_category": "Hình sự",
+    "requires_refusal": true,
+    "refusal_reason": "Câu hỏi thuộc lĩnh vực pháp luật Hình sự, ngoài phạm vi pháp luật lao động."
+  },
+  {
+    "dev_id": "DEV_32",
+    "question": "Tội tổ chức đánh bạc qua mạng internet với số tiền lớn bị truy cứu trách nhiệm hình sự theo khung nào?",
+    "category": "out_of_scope",
+    "sub_category": "Hình sự",
+    "requires_refusal": true,
+    "refusal_reason": "Câu hỏi thuộc lĩnh vực pháp luật Hình sự, ngoài phạm vi pháp luật lao động."
+  },
+  {
+    "dev_id": "DEV_33",
+    "question": "Người bị kết án phạt tù lần đầu không quá 3 năm có những điều kiện gì để được xem xét cho hưởng án treo?",
+    "category": "out_of_scope",
+    "sub_category": "Hình sự",
+    "requires_refusal": true,
+    "refusal_reason": "Câu hỏi thuộc lĩnh vực pháp luật Tố tụng Hình sự, ngoài phạm vi pháp luật lao động."
+  },
+  {
+    "dev_id": "DEV_34",
+    "question": "Thủ tục nộp hồ sơ xin ly hôn đơn phương tại Tòa án nhân dân cấp huyện cần chuẩn bị những tài liệu gì?",
+    "category": "out_of_scope",
+    "sub_category": "Hôn nhân gia đình",
+    "requires_refusal": true,
+    "refusal_reason": "Câu hỏi thuộc lĩnh vực Hôn nhân và Gia đình, ngoài phạm vi pháp luật lao động."
+  },
+  {
+    "dev_id": "DEV_35",
+    "question": "Con ngoài giá thú đã được nhận cha thì có quyền hưởng phần di sản thừa kế theo pháp luật như con trong giá thú không?",
+    "category": "out_of_scope",
+    "sub_category": "Thừa kế dân sự",
+    "requires_refusal": true,
+    "refusal_reason": "Câu hỏi thuộc lĩnh vực Dân sự và Thừa kế, ngoài phạm vi pháp luật lao động."
+  },
+  {
+    "dev_id": "DEV_36",
+    "question": "Di chúc miệng chỉ được coi là hợp pháp khi người lập di chúc ở trong tình trạng nào và cần bao nhiêu người làm chứng?",
+    "category": "out_of_scope",
+    "sub_category": "Thừa kế dân sự",
+    "requires_refusal": true,
+    "refusal_reason": "Câu hỏi thuộc lĩnh vực Dân sự và Thừa kế, ngoài phạm vi pháp luật lao động."
+  },
+  {
+    "dev_id": "DEV_37",
+    "question": "Hộ gia đình đang sử dụng đất ổn định không có giấy tờ cần điều kiện gì để được cấp sổ đỏ theo Luật Đất đai 2024?",
+    "category": "out_of_scope",
+    "sub_category": "Đất đai",
+    "requires_refusal": true,
+    "refusal_reason": "Câu hỏi thuộc lĩnh vực pháp luật Đất đai, ngoài phạm vi pháp luật lao động."
+  },
+  {
+    "dev_id": "DEV_38",
+    "question": "Cách tính tiền sử dụng đất khi hộ gia đình chuyển mục đích từ đất vườn tạp sang đất ở nông thôn ra sao?",
+    "category": "out_of_scope",
+    "sub_category": "Đất đai",
+    "requires_refusal": true,
+    "refusal_reason": "Câu hỏi thuộc lĩnh vực pháp luật Đất đai, ngoài phạm vi pháp luật lao động."
+  },
+  {
+    "dev_id": "DEV_39",
+    "question": "Thời hạn Nhà nước giao đất nông nghiệp trồng cây hằng năm cho cá nhân trực tiếp sản xuất nông nghiệp là bao lâu?",
+    "category": "out_of_scope",
+    "sub_category": "Đất đai",
+    "requires_refusal": true,
+    "refusal_reason": "Câu hỏi thuộc lĩnh vực pháp luật Đất đai, ngoài phạm vi pháp luật lao động."
+  },
+  {
+    "dev_id": "DEV_40",
+    "question": "Hồ sơ đăng ký thành lập doanh nghiệp công ty TNHH 2 thành viên trở lên tại Phòng Đăng ký kinh doanh gồm những gì?",
+    "category": "out_of_scope",
+    "sub_category": "Doanh nghiệp",
+    "requires_refusal": true,
+    "refusal_reason": "Câu hỏi thuộc lĩnh vực pháp luật Doanh nghiệp, ngoài phạm vi pháp luật lao động."
+  },
+  {
+    "dev_id": "DEV_41",
+    "question": "Doanh nghiệp mất khả năng thanh toán nợ đến hạn trong bao nhiêu tháng thì chủ nợ có quyền nộp đơn yêu cầu mở thủ tục phá sản?",
+    "category": "out_of_scope",
+    "sub_category": "Phá sản thương mại",
+    "requires_refusal": true,
+    "refusal_reason": "Câu hỏi thuộc lĩnh vực pháp luật Phá sản doanh nghiệp, ngoài phạm vi pháp luật lao động."
+  },
+  {
+    "dev_id": "DEV_42",
+    "question": "Điều khoản trọng tài thương mại quốc tế giải quyết tranh chấp hợp đồng mua bán ngoại thương có bắt buộc phải lập thành văn bản không?",
+    "category": "out_of_scope",
+    "sub_category": "Trọng tài thương mại",
+    "requires_refusal": true,
+    "refusal_reason": "Câu hỏi thuộc lĩnh vực Trọng tài Thương mại, ngoài phạm vi pháp luật lao động."
+  },
+  {
+    "dev_id": "DEV_43",
+    "question": "Cá nhân chuyển nhượng căn nhà duy nhất có được miễn thuế thu nhập cá nhân từ chuyển nhượng bất động sản không?",
+    "category": "out_of_scope",
+    "sub_category": "Thuế bất động sản",
+    "requires_refusal": true,
+    "refusal_reason": "Câu hỏi thuộc lĩnh vực Thuế thu nhập cá nhân ngoài lao động, ngoài phạm vi pháp luật lao động."
+  },
+  {
+    "dev_id": "DEV_44",
+    "question": "Mức thuế suất thuế thu nhập cá nhân đối với khoản tiền trúng thưởng xổ số điện toán Vietlott vượt trên 10 triệu đồng là bao nhiêu?",
+    "category": "out_of_scope",
+    "sub_category": "Thuế trúng thưởng",
+    "requires_refusal": true,
+    "refusal_reason": "Câu hỏi thuộc lĩnh vực Thuế trúng thưởng dân sự, ngoài phạm vi pháp luật lao động."
+  },
+  {
+    "dev_id": "DEV_45",
+    "question": "Mức xử phạt hành chính đối với người điều khiển xe máy tham gia giao thông mà trong máu có nồng độ cồn vượt quá 80 mg/100 ml máu?",
+    "category": "out_of_scope",
+    "sub_category": "Giao thông đường bộ",
+    "requires_refusal": true,
+    "refusal_reason": "Câu hỏi thuộc lĩnh vực Giao thông đường bộ, ngoài phạm vi pháp luật lao động."
+  },
+  {
+    "dev_id": "DEV_46",
+    "question": "Doanh nghiệp có bắt buộc phải trích nộp 2% kinh phí công đoàn theo quy định của Luật Công đoàn 2012 không?",
+    "category": "insufficient_evidence",
+    "sub_category": "Luật ngoài kho (Công đoàn)",
+    "requires_refusal": true,
+    "refusal_reason": "Cần tra cứu Luật Công đoàn 2012, văn bản này không có trong cơ sở dữ liệu hiện tại."
+  },
+  {
+    "dev_id": "DEV_47",
+    "question": "Trình tự thủ tục tổ chức đại hội thành lập tổ chức của người lao động tại doanh nghiệp theo quy định tại Thông tư chuyên ngành công đoàn?",
+    "category": "insufficient_evidence",
+    "sub_category": "Thiếu văn bản hướng dẫn",
+    "requires_refusal": true,
+    "refusal_reason": "Quy định chi tiết về tổ chức đại hội công đoàn cơ sở chưa có văn bản hướng dẫn trong kho dữ liệu."
+  },
+  {
+    "dev_id": "DEV_48",
+    "question": "Mức bồi thường tai nạn lao động theo quy định của Nghị định 05/2015/NĐ-CP của Chính phủ là bao nhiêu tháng tiền lương?",
+    "category": "insufficient_evidence",
+    "sub_category": "Văn bản bãi bỏ (NĐ 05/2015)",
+    "requires_refusal": true,
+    "refusal_reason": "Nghị định 05/2015/NĐ-CP đã hết hiệu lực thi hành hoàn toàn, bị thay thế bởi Nghị định 145/2020/NĐ-CP."
+  },
+  {
+    "dev_id": "DEV_49",
+    "question": "Quy định về cấp phát trang phục và phù hiệu chuyên dụng cho Kiểm toán viên nhà nước được áp dụng theo định mức nào?",
+    "category": "insufficient_evidence",
+    "sub_category": "Ngoài kho dữ liệu (Kiểm toán)",
+    "requires_refusal": true,
+    "refusal_reason": "Quy chế trang phục ngành kiểm toán nhà nước không nằm trong kho dữ liệu pháp luật lao động."
+  },
+  {
+    "dev_id": "DEV_50",
+    "question": "Chế độ phụ cấp giờ bay đặc thù đối với tiếp viên hàng không quốc tế được tính toán theo thông tư chuyên ngành nào?",
+    "category": "insufficient_evidence",
+    "sub_category": "Ngoài kho dữ liệu (Hàng không)",
+    "requires_refusal": true,
+    "refusal_reason": "Chế độ phụ cấp giờ bay ngành hàng không là văn bản chuyên ngành đặc thù ngoài kho lưu trữ."
+  },
+  {
+    "dev_id": "DEV_51",
+    "question": "Em đi làm công ty giờ muốn nghỉ thì có được lãnh tiền trợ cấp thôi việc hay không?",
+    "category": "insufficient_evidence",
+    "sub_category": "Thiếu dữ kiện sự kiện",
+    "requires_refusal": true,
+    "refusal_reason": "Thiếu thông tin quyết định: không rõ thời gian làm việc bắt đầu năm nào, lý do thôi việc và thời gian đóng BHTN."
+  },
+  {
+    "dev_id": "DEV_52",
+    "question": "Ngày mai công ty bất ngờ yêu cầu em chuyển sang làm tạp vụ thì có được phép làm vậy không?",
+    "category": "insufficient_evidence",
+    "sub_category": "Thiếu dữ kiện căn cứ điều chuyển",
+    "requires_refusal": true,
+    "refusal_reason": "Thiếu căn cứ thực tế: câu hỏi không nêu lý do thiên tai, dịch bệnh, nhu cầu sản xuất kinh doanh hay thỏa thuận HĐLĐ."
+  },
+  {
+    "dev_id": "DEV_53",
+    "question": "Tháng này công ty tự ý giữ lại tiền thưởng năng suất bán hàng của em có vi phạm quy định pháp luật không?",
+    "category": "insufficient_evidence",
+    "sub_category": "Phụ thuộc quy chế nội bộ",
+    "requires_refusal": true,
+    "refusal_reason": "Quy chế thưởng do người sử dụng lao động quyết định và công bố tại nơi làm việc, luật không quy định con số cụ thể."
+  },
+  {
+    "dev_id": "DEV_54",
+    "question": "Em bị trừ 30% lương tháng này thì bây giờ nộp đơn kiện thẳng lên Tòa án cấp tỉnh được chưa?",
+    "category": "insufficient_evidence",
+    "sub_category": "Thiếu dữ kiện thủ tục tiền tố tụng",
+    "requires_refusal": true,
+    "refusal_reason": "Thiếu dữ kiện về quá trình khiếu nại, hòa giải lao động và thẩm quyền tòa án theo lãnh thổ."
+  },
+  {
+    "dev_id": "DEV_55",
+    "question": "Công ty có được quyền ký tiếp hợp đồng thử việc lần thứ hai với em không?",
+    "category": "insufficient_evidence",
+    "sub_category": "Thiếu dữ kiện tính chất công việc",
+    "requires_refusal": true,
+    "refusal_reason": "Thiếu tình tiết mấu chốt: không rõ thử việc lần 2 cho cùng một công việc cũ hay chuyển sang vị trí công việc mới."
+  },
+  {
+    "dev_id": "DEV_56",
+    "question": "Theo Nghị định số 999/2025/NĐ-CP của Chính phủ thì lịch nghỉ tết âm lịch năm nay kéo dài bao nhiêu ngày?",
+    "category": "insufficient_evidence",
+    "sub_category": "Văn bản hư cấu",
+    "requires_refusal": true,
+    "refusal_reason": "Nghị định số 999/2025/NĐ-CP là văn bản hư cấu, không có trong hệ thống pháp luật Việt Nam."
+  },
+  {
+    "dev_id": "DEV_57",
+    "question": "Căn cứ Thông tư 88/2026/TT-BLĐTBXH, quy trình xét duyệt hưởng trợ cấp thất nghiệp mới nhất được quy định ra sao?",
+    "category": "insufficient_evidence",
+    "sub_category": "Văn bản hư cấu tương lai",
+    "requires_refusal": true,
+    "refusal_reason": "Thông tư 88/2026/TT-BLĐTBXH là văn bản không có thật trong hệ thống pháp luật."
+  },
+  {
+    "dev_id": "DEV_58",
+    "question": "Mức trợ cấp thôi việc của cán bộ công nhân viên chức theo quy định của Pháp lệnh Hợp đồng lao động năm 1990 là bao nhiêu?",
+    "category": "insufficient_evidence",
+    "sub_category": "Văn bản lịch sử đã bãi bỏ",
+    "requires_refusal": true,
+    "refusal_reason": "Pháp lệnh Hợp đồng lao động 1990 đã hết hiệu lực thi hành hoàn toàn và không có trong kho tra cứu."
+  },
+  {
+    "dev_id": "DEV_59",
+    "question": "Căn cứ Quyết định 456/2026/QĐ-TTg, tiêu chuẩn giảm tuổi nghỉ hưu của phi công quân sự chuyển ngạch được áp dụng thế nào?",
+    "category": "insufficient_evidence",
+    "sub_category": "Văn bản hư cấu",
+    "requires_refusal": true,
+    "refusal_reason": "Quyết định 456/2026/QĐ-TTg là văn bản hư cấu không tồn tại."
+  },
+  {
+    "dev_id": "DEV_60",
+    "question": "Mức xử phạt đối với người sử dụng lao động có hành vi giữ văn bằng chứng chỉ gốc của người lao động theo Nghị định 28/2020/NĐ-CP là bao nhiêu?",
+    "category": "insufficient_evidence",
+    "sub_category": "Văn bản bãi bỏ (NĐ 28/2020)",
+    "requires_refusal": true,
+    "refusal_reason": "Nghị định 28/2020/NĐ-CP đã hết hiệu lực thi hành, bị thay thế hoàn toàn bởi Nghị định 12/2022/NĐ-CP."
+  }
+]

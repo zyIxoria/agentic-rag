@@ -58,6 +58,7 @@ class TestCorrectiveLoop:
         mock_rewriter = MagicMock()
 
         pipeline = CorrectiveRAGPipeline(
+            config=CRAGConfig(LLM_PROVIDER="mock"),
             retriever=mock_retriever,
             evaluator=mock_evaluator,
             rewriter=mock_rewriter
@@ -103,6 +104,7 @@ class TestCorrectiveLoop:
         mock_rewriter.rewrite_query.return_value = "Quy định về số ngày nghỉ việc riêng hưởng nguyên lương khi người lao động kết hôn"
 
         pipeline = CorrectiveRAGPipeline(
+            config=CRAGConfig(LLM_PROVIDER="mock"),
             retriever=mock_retriever,
             evaluator=mock_evaluator,
             rewriter=mock_rewriter
@@ -147,6 +149,7 @@ class TestCorrectiveLoop:
         mock_rewriter.rewrite_query.return_value = "Truy vấn đã viết lại"
 
         pipeline = CorrectiveRAGPipeline(
+            config=CRAGConfig(LLM_PROVIDER="mock"),
             retriever=mock_retriever,
             evaluator=mock_evaluator,
             rewriter=mock_rewriter
@@ -195,6 +198,7 @@ class TestCorrectiveLoop:
         mock_rewriter.rewrite_query.return_value = "Quy định về giờ làm việc bình thường và giờ làm thêm tối đa"
 
         pipeline = CorrectiveRAGPipeline(
+            config=CRAGConfig(LLM_PROVIDER="mock"),
             retriever=mock_retriever,
             evaluator=mock_evaluator,
             rewriter=mock_rewriter
@@ -227,6 +231,7 @@ class TestCorrectiveLoop:
         mock_rewriter.rewrite_query.return_value = "Truy vấn không tồn tại"
 
         pipeline = CorrectiveRAGPipeline(
+            config=CRAGConfig(LLM_PROVIDER="mock"),
             retriever=mock_retriever,
             evaluator=mock_evaluator,
             rewriter=mock_rewriter

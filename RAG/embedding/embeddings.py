@@ -237,7 +237,11 @@ class SentenceTransformerEmbeddingProvider(BaseEmbeddingProvider):
             # Fallback thiết bị nếu yêu cầu cuda nhưng torch không có cuda
             actual_device = self.device
             logger.info("Khởi tạo SentenceTransformer với device: %s", actual_device)
-            self._model = SentenceTransformer(self.model_name, device=actual_device)
+            try:
+                self._model = SentenceTransformer(self.model_name, device=actual_device)
+            except Exception as e:
+                logger.warning("Không thể kết nối trực tuyến hoặc timeout, thử nạp SentenceTransformer từ cache local: %s", e)
+                self._model = SentenceTransformer(self.model_name, device=actual_device, local_files_only=True)
             # Tự động giới hạn max_seq_length cho các mô hình dựa trên kiến trúc PhoBERT
             if any(k in self.model_name.lower() for k in ['phobert', 'bkai', 'vietnamese-bi-encoder']):
                 self._model.max_seq_length = 256

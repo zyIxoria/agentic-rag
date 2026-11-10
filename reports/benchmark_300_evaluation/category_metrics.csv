@@ -1,0 +1,9 @@
+﻿category,count,Traditional_Correct,Traditional_Faithful,Traditional_Latency_ms,CRAG_Correct,CRAG_Faithful,CRAG_Latency_ms,Adaptive_Correct,Adaptive_Faithful,Adaptive_Latency_ms
+single_article,35,0.6,0.9714,22.54,0.5143,0.7714,19.89,0.5714,0.7143,20.04
+single_doc_multi_chunk,35,0.7429,1.0,23.54,0.6857,0.8286,22.4,0.5714,0.7429,20.56
+multi_document,45,0.5333,1.0,25.39,0.4667,0.5556,23.38,0.7111,0.8444,30.97
+cross_reference,35,0.5714,1.0,35.03,0.5714,0.7429,24.06,0.7143,0.8571,33.5
+complex_conditions,50,0.58,1.0,26.62,0.56,0.7,23.82,0.56,0.68,25.14
+insufficient_evidence,25,0.76,1.0,9.09,0.8,1.0,8.7,0.72,1.0,8.66
+out_of_scope,25,1.0,1.0,1.33,1.0,1.0,1.29,1.0,1.0,0.36
+natural_language_labor,50,0.24,1.0,18.73,0.28,0.54,16.14,0.3,0.54,18.91

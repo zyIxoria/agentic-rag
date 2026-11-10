@@ -75,6 +75,24 @@ class PipelineConfig(BaseSettings):
         description="Tên collection véc-tơ của Traditional RAG baseline."
     )
 
+    # 7. Hệ thống Cờ cấu hình Tính năng Đa tầng (Multi-Tier Safety Feature Flags)
+    ENABLE_TIER1_SHARED_SCOPE_GATE: bool = Field(
+        default=True,
+        description="Bật bộ lọc phạm vi toàn câu tiền truy xuất (Tier 1)."
+    )
+    ENABLE_TIER2_DOCUMENT_GROUNDING_GATE: bool = Field(
+        default=True,
+        description="Bật chốt chặn văn bản nguồn chỉ định (Tier 2)."
+    )
+    ENABLE_TIER3_PRE_GEN_EVIDENCE_GATE: bool = Field(
+        default=True,
+        description="Bật chốt chặn bằng chứng 5 chiều trước sinh (Tier 3)."
+    )
+    ENABLE_TIER4_QA_ALIGNMENT_GUARD: bool = Field(
+        default=True,
+        description="Bật kiểm chứng Claim và trích dẫn sau sinh (Tier 4)."
+    )
+
     model_config = SettingsConfigDict(
         env_file=".env",
         env_file_encoding="utf-8",

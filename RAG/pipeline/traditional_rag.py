@@ -19,6 +19,10 @@ from RAG.generator.factory import get_generator
 from RAG.citation.resolver import CitationResolver
 from RAG.guards.refusal_guard import RefusalGuard
 from RAG.guards.config import GuardConfig
+from RAG.guards.scope_guard import SharedScopeGuard
+from RAG.guards.document_grounding_gate import NamedLegalDocumentResolver
+from RAG.guards.evidence_gate import PreGenerationEvidenceGate
+from RAG.guards.qa_alignment_guard import PostGenerationQAAlignmentGuard
 
 logger = logging.getLogger("RAG.pipeline.traditional_rag")
 
@@ -110,6 +114,12 @@ class TraditionalRAGPipeline:
                 reject_invalid=True
             )
 
+        # 6. Khởi tạo các chốt chặn đa tầng (Multi-tier Safety Guards)
+        self.scope_guard = SharedScopeGuard()
+        self.document_resolver = NamedLegalDocumentResolver()
+        self.evidence_gate = PreGenerationEvidenceGate()
+        self.qa_alignment_guard = PostGenerationQAAlignmentGuard()
+
     def answer(self, question: str) -> RAGResponse:
         """Thực thi chuỗi hỏi đáp Traditional RAG hoàn chỉnh cho một câu hỏi.
         
@@ -127,55 +137,176 @@ class TraditionalRAGPipeline:
 
         clean_question = question.strip()
 
+        # CHỐT CHẶN TIER 1: Scope & Intent Boundary Gate (Shared Scope Guard)
+        if getattr(self.config, "ENABLE_TIER1_SHARED_SCOPE_GATE", True):
+            scope_res = self.scope_guard.check_scope(clean_question)
+            if scope_res.trigger_refusal:
+                t_total_ms = (time.perf_counter() - t_start) * 1000.0
+                refusal_ans = scope_res.refusal_message or self.guard.config.REFUSAL_MESSAGE
+                self._log_execution(
+                    query=clean_question,
+                    top_k=self.config.TOP_K,
+                    retrieved_chunks=[],
+                    retrieval_latency=0.0,
+                    context_size=0,
+                    generation_latency=0.0,
+                    total_latency=t_total_ms,
+                    refused=True,
+                    citations=[]
+                )
+                return RAGResponse(
+                    question=clean_question,
+                    answer=refusal_ans,
+                    citations=[],
+                    retrieved_chunks=[],
+                    latency=round(t_total_ms, 2),
+                    refused=True,
+                    refusal_reason=scope_res.refusal_reason,
+                    retrieval_latency=0.0,
+                    context_latency=0.0,
+                    generation_latency=0.0,
+                    citation_latency=0.0,
+                    model_name=getattr(self.generator, "model_name", "unknown"),
+                    provider=getattr(self.generator, "provider", "unknown"),
+                    metadata={
+                        "tier1_scope_triggered": True,
+                        "intent": scope_res.intent,
+                        "detected_domain": scope_res.detected_domain,
+                    }
+                )
+
+        # CHỐT CHẶN TIER 2: Document Coverage & Grounding Gate
+        doc_filter = None
+        if getattr(self.config, "ENABLE_TIER2_DOCUMENT_GROUNDING_GATE", True):
+            doc_res = self.document_resolver.resolve(clean_question)
+            if doc_res.trigger_refusal:
+                t_total_ms = (time.perf_counter() - t_start) * 1000.0
+                refusal_ans = doc_res.refusal_message or self.guard.config.REFUSAL_MESSAGE
+                self._log_execution(
+                    query=clean_question,
+                    top_k=self.config.TOP_K,
+                    retrieved_chunks=[],
+                    retrieval_latency=0.0,
+                    context_size=0,
+                    generation_latency=0.0,
+                    total_latency=t_total_ms,
+                    refused=True,
+                    citations=[]
+                )
+                return RAGResponse(
+                    question=clean_question,
+                    answer=refusal_ans,
+                    citations=[],
+                    retrieved_chunks=[],
+                    latency=round(t_total_ms, 2),
+                    refused=True,
+                    refusal_reason=doc_res.refusal_reason,
+                    retrieval_latency=0.0,
+                    context_latency=0.0,
+                    generation_latency=0.0,
+                    citation_latency=0.0,
+                    model_name=getattr(self.generator, "model_name", "unknown"),
+                    provider=getattr(self.generator, "provider", "unknown"),
+                    metadata={
+                        "tier2_grounding_triggered": True,
+                        "document_title": doc_res.document_title,
+                    }
+                )
+            elif doc_res.has_specific_document and doc_res.filter_metadata:
+                doc_filter = doc_res.filter_metadata
+
         # BƯỚC 1: Thu hồi véc-tơ (Dense Retrieval - 1 retrieval call duy nhất)
         t_ret_0 = time.perf_counter()
         retrieved_chunks = self.retriever.retrieve(
             query=clean_question,
-            top_k=self.config.TOP_K
+            top_k=self.config.TOP_K,
+            where=doc_filter,
         )
         t_retrieval_ms = (time.perf_counter() - t_ret_0) * 1000.0
 
-        # BƯỚC 2: Chốt chặn an toàn trước khi sinh (Pre-Generation Refusal Guard)
-        pre_guard_res = self.guard.check_pre_generation(retrieved_chunks)
+        # BƯỚC 2: Chốt chặn Tier 3 Pre-Generation Evidence Gate
+        if getattr(self.config, "ENABLE_TIER3_PRE_GEN_EVIDENCE_GATE", True):
+            evidence_res = self.evidence_gate.evaluate(clean_question, retrieved_chunks)
+            if evidence_res.trigger_refusal:
+                t_total_ms = (time.perf_counter() - t_start) * 1000.0
+                refusal_ans = evidence_res.refusal_message or self.guard.config.REFUSAL_MESSAGE
 
-        if pre_guard_res.trigger_refusal:
-            # DỪNG NGAY LẬP TỨC: Không gọi Context Builder, không gọi LLM Generator
-            t_total_ms = (time.perf_counter() - t_start) * 1000.0
-            refusal_ans = self.guard.config.REFUSAL_MESSAGE
+                self._log_execution(
+                    query=clean_question,
+                    top_k=self.config.TOP_K,
+                    retrieved_chunks=retrieved_chunks,
+                    retrieval_latency=t_retrieval_ms,
+                    context_size=0,
+                    generation_latency=0.0,
+                    total_latency=t_total_ms,
+                    refused=True,
+                    citations=[]
+                )
 
-            self._log_execution(
-                query=clean_question,
-                top_k=self.config.TOP_K,
-                retrieved_chunks=retrieved_chunks,
-                retrieval_latency=t_retrieval_ms,
-                context_size=0,
-                generation_latency=0.0,
-                total_latency=t_total_ms,
-                refused=True,
-                citations=[]
-            )
+                return RAGResponse(
+                    question=clean_question,
+                    answer=refusal_ans,
+                    citations=[],
+                    retrieved_chunks=retrieved_chunks,
+                    latency=round(t_total_ms, 2),
+                    refused=True,
+                    refusal_reason=evidence_res.refusal_reason,
+                    retrieval_latency=round(t_retrieval_ms, 2),
+                    context_latency=0.0,
+                    generation_latency=0.0,
+                    citation_latency=0.0,
+                    model_name=getattr(self.generator, "model_name", "unknown"),
+                    provider=getattr(self.generator, "provider", "unknown"),
+                    metadata={
+                        "tier3_evidence_triggered": True,
+                        "composite_score": evidence_res.composite_evidence_score,
+                        "best_chunk_score": evidence_res.best_chunk_score,
+                        "coverage_bonus": evidence_res.coverage_bonus,
+                        "conflict_resolution_trace": evidence_res.conflict_resolution_trace,
+                        "top_k": self.config.TOP_K,
+                        "chunks_count": len(retrieved_chunks),
+                    }
+                )
+        else:
+            # Fallback về kiểm tra pre-guard truyền thống
+            pre_guard_res = self.guard.check_pre_generation(retrieved_chunks)
+            if pre_guard_res.trigger_refusal:
+                t_total_ms = (time.perf_counter() - t_start) * 1000.0
+                refusal_ans = self.guard.config.REFUSAL_MESSAGE
 
-            return RAGResponse(
-                question=clean_question,
-                answer=refusal_ans,
-                citations=[],
-                retrieved_chunks=retrieved_chunks,
-                latency=round(t_total_ms, 2),
-                refused=True,
-                refusal_reason=pre_guard_res.reason,
-                retrieval_latency=round(t_retrieval_ms, 2),
-                context_latency=0.0,
-                generation_latency=0.0,
-                citation_latency=0.0,
-                model_name=getattr(self.generator, "model_name", "unknown"),
-                provider=getattr(self.generator, "provider", "unknown"),
-                metadata={
-                    "pre_guard_triggered": True,
-                    "pre_guard_reason": pre_guard_res.reason,
-                    "top_k": self.config.TOP_K,
-                    "chunks_count": len(retrieved_chunks),
-                }
-            )
+                self._log_execution(
+                    query=clean_question,
+                    top_k=self.config.TOP_K,
+                    retrieved_chunks=retrieved_chunks,
+                    retrieval_latency=t_retrieval_ms,
+                    context_size=0,
+                    generation_latency=0.0,
+                    total_latency=t_total_ms,
+                    refused=True,
+                    citations=[]
+                )
+
+                return RAGResponse(
+                    question=clean_question,
+                    answer=refusal_ans,
+                    citations=[],
+                    retrieved_chunks=retrieved_chunks,
+                    latency=round(t_total_ms, 2),
+                    refused=True,
+                    refusal_reason=pre_guard_res.reason,
+                    retrieval_latency=round(t_retrieval_ms, 2),
+                    context_latency=0.0,
+                    generation_latency=0.0,
+                    citation_latency=0.0,
+                    model_name=getattr(self.generator, "model_name", "unknown"),
+                    provider=getattr(self.generator, "provider", "unknown"),
+                    metadata={
+                        "pre_guard_triggered": True,
+                        "pre_guard_reason": pre_guard_res.reason,
+                        "top_k": self.config.TOP_K,
+                        "chunks_count": len(retrieved_chunks),
+                    }
+                )
 
         # BƯỚC 3: Đóng gói ngữ cảnh có cấu trúc (Context Building)
         t_ctx_0 = time.perf_counter()
@@ -205,7 +336,7 @@ class TraditionalRAGPipeline:
         )
         t_citation_ms = (time.perf_counter() - t_cit_0) * 1000.0
 
-        # BƯỚC 6: Chốt chặn an toàn sau khi sinh (Post-Generation Refusal Guard)
+        # BƯỚC 6: Chốt chặn an toàn sau khi sinh (Post-Generation Refusal Guard & Tier 4 QA Alignment)
         post_guard_res = self.guard.check_post_generation(gen_result, citation_result, context_text=ctx_result.context_text)
 
         if post_guard_res.trigger_refusal and not gen_result.refused:
@@ -218,6 +349,17 @@ class TraditionalRAGPipeline:
             final_refused = gen_result.refused
             final_reason = gen_result.reason
             final_citations = citation_result.valid_citations
+
+        # TIER 4: Post-Generation QA Alignment Guard (Cắt tỉa nhận định phụ / Từ chối luận điểm sai)
+        if getattr(self.config, "ENABLE_TIER4_QA_ALIGNMENT_GUARD", True) and not final_refused:
+            qa_res = self.qa_alignment_guard.evaluate_answer(clean_question, final_answer, retrieved_chunks)
+            if qa_res.trigger_refusal:
+                final_answer = self.guard.config.REFUSAL_MESSAGE
+                final_refused = True
+                final_reason = qa_res.refusal_reason
+                final_citations = []
+            elif qa_res.pruned_answer:
+                final_answer = qa_res.pruned_answer
 
         t_total_ms = (time.perf_counter() - t_start) * 1000.0
 

@@ -219,13 +219,18 @@ class HybridQueryClassifier(BaseQueryClassifier):
         for domain, patterns in self.OUT_OF_SCOPE_DOMAINS.items():
             for pat in patterns:
                 if re.search(pat, q_lower):
-                    # Ngoại lệ: Nếu câu hỏi thực chất là quyền lợi quan hệ lao động có nhắc đến đời sống
-                    # (Ví dụ: "Công ty có phải thanh toán tiền cơm bữa ăn ca cho người lao động?")
-                    has_strong_labor_terms = any(re.search(lp, q_lower) for lp in [
-                        r"\bngười\s+lao\s+động\b", r"\bbộ\s+luật\s+lao\s+động\b", r"\bhợp\s+đồng\s+lao\s+động\b",
-                        r"\btiền\s+lương\b", r"\bsa\s+thải\b", r"\bkỷ\s+luật\s+lao\s+động\b", r"\bbhxh\b"
+                    # Ngoại lệ: Nếu câu hỏi thực chất là quyền lợi / tranh chấp trong quan hệ lao động
+                    # (Ví dụ: "Công ty có phải thanh toán tiền cơm ca", "Sếp bắt giữ bằng lái xe gốc",
+                    # "Làm phụ bếp ở quán ăn bị đuổi ngang không trả lương", "Con kết hôn được nghỉ làm có lương không")
+                    has_labor_actor = any(re.search(p, q_lower) for p in [
+                        r"\b(công\s+ty|doanh\s+nghiệp|chỗ\s+làm|nơi\s+làm|sếp|quản\s+lý|chủ\s*(quán|xưởng|nhà\s+hàng|doanh\s+nghiệp)?|xưởng|nhân\s+viên|người\s+lao\s+động|thử\s+việc|đi\s+làm|xin\s+nghỉ|nghỉ\s+làm|nghỉ\s+việc|vào\s+làm|phụ\s+bếp)\b"
                     ])
-                    if has_strong_labor_terms and any(t in q_lower for t in ["quy định", "chế độ", "công ty có phải", "được hưởng"]):
+                    has_labor_action = any(re.search(p, q_lower) for p in [
+                        r"\b(lương|tiền\s+lương|trả\s+lương|nợ\s+lương|giam\s+tiền|đuổi\s+việc|đuổi\s+ngang|sa\s+thải|nghỉ\s+phép|tai\s+nạn\s+lao\s+động|ngừng\s+việc|đúng\s+luật|hợp\s+pháp|vi\s+phạm|bồi\s+thường|hưởng\s+nguyên\s+lương|nhận\s+đủ\s+lương|chế\s+độ|quy\s+định|được\s+hưởng)\b",
+                        r"\b(giữ\s+(luôn\s+)?(bản\s+chính|bản\s+gốc|bằng\s+lái|hộ\s+chiếu|giấy\s+tờ|sổ\s+hộ\s+khẩu|cccd|chứng\s+minh))\b",
+                        r"\b(đặt\s+cọc.+giữ\s+chỗ|nộp\s+tiền.+làm\s+việc)\b"
+                    ])
+                    if has_labor_actor and has_labor_action:
                         continue
                     return True, f"Câu hỏi thuộc chủ đề '{domain}' ngoài phạm vi pháp luật lao động Việt Nam."
 

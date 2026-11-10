@@ -48,6 +48,24 @@ class AdaptiveRAGConfig(BaseSettings):
         description="Tự động chuyển tiếp sang luồng CRAG nếu kết quả tổng hợp có độ tin cậy thấp."
     )
 
+    # 4. Hệ thống Cờ cấu hình Tính năng Đa tầng (Multi-Tier Safety Feature Flags)
+    ENABLE_TIER1_DYNAMIC_ROUTING_GATE: bool = Field(
+        default=True,
+        description="Bật Module 0 Dynamic Router xử lý OUT_OF_SCOPE và AMBIGUOUS trước truy xuất."
+    )
+    ENABLE_TIER2_DOCUMENT_GROUNDING_GATE: bool = Field(
+        default=True,
+        description="Bật chốt chặn văn bản nguồn chỉ định trong Adaptive RAG."
+    )
+    ENABLE_TIER3_PRE_GEN_EVIDENCE_GATE: bool = Field(
+        default=True,
+        description="Bật chốt chặn bằng chứng 5 chiều trước sinh trong Adaptive RAG."
+    )
+    ENABLE_TIER4_QA_ALIGNMENT_GUARD: bool = Field(
+        default=True,
+        description="Bật kiểm chứng Claim và trích dẫn sau sinh trong Adaptive RAG."
+    )
+
     model_config = SettingsConfigDict(
         env_file=".env",
         env_file_encoding="utf-8",

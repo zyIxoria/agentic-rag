@@ -24,6 +24,7 @@ from CRAG.search.web_searcher import LegalWebSearcher
 from Adaptive_RAG.config import AdaptiveRAGConfig, adaptive_config
 from Adaptive_RAG.classifier.schema import (
     ClassificationResult,
+    ComplexityLevel,
     QueryIntent,
     RoutingDecision,
 )
@@ -44,6 +45,10 @@ from Adaptive_RAG.orchestration.feedback_evaluator import (
 )
 from Adaptive_RAG.agent.central_agent import CentralAgentController, AgentResponse
 from Adaptive_RAG.agent.tool_registry import LegalToolRegistry
+from RAG.guards.scope_guard import SharedScopeGuard
+from RAG.guards.document_grounding_gate import NamedLegalDocumentResolver
+from RAG.guards.evidence_gate import PreGenerationEvidenceGate
+from RAG.guards.qa_alignment_guard import PostGenerationQAAlignmentGuard
 
 logger = logging.getLogger("Adaptive_RAG.orchestration.orchestrator")
 
@@ -121,7 +126,8 @@ class AdaptiveOrchestrator:
         self.post_evaluator = PostRetrievalConfidenceEvaluator(crag_cfg=self.crag_config)
 
         # Tác tử trung tâm & Công cụ tìm kiếm
-        self.web_searcher = LegalWebSearcher()
+        search_prov = self.crag_config.SEARCH_PROVIDER if self.crag_config else None
+        self.web_searcher = LegalWebSearcher(provider=search_prov)
         self.tool_registry = LegalToolRegistry(
             retriever=self.retriever,
             web_searcher=self.web_searcher,
@@ -130,6 +136,12 @@ class AdaptiveOrchestrator:
             tool_registry=self.tool_registry,
             generator=self.generator,
         )
+
+        # Các chốt chặn đa tầng (Multi-tier Safety Guards)
+        self.scope_guard = SharedScopeGuard()
+        self.document_resolver = NamedLegalDocumentResolver()
+        self.evidence_gate = PreGenerationEvidenceGate()
+        self.qa_alignment_guard = PostGenerationQAAlignmentGuard()
 
     def route_and_execute(
         self,
@@ -145,6 +157,72 @@ class AdaptiveOrchestrator:
             raise ValueError("Câu hỏi người dùng không được rỗng hoặc chỉ chứa khoảng trắng.")
 
         clean_query = query.strip()
+
+        # CHỐT CHẶN TIER 1: Scope & Intent Boundary Gate (Shared Scope Guard)
+        if getattr(self.config, "ENABLE_TIER1_SHARED_SCOPE_GATE", True):
+            scope_res = self.scope_guard.check_scope(clean_query)
+            if scope_res.trigger_refusal:
+                t_total_ms = (time.perf_counter() - t_start) * 1000.0
+                tier1_classification = ClassificationResult(
+                    query=clean_query,
+                    intent=QueryIntent.OUT_OF_SCOPE,
+                    complexity=ComplexityLevel.DIRECT,
+                    suggested_route=RoutingDecision.DIRECT_REFUSAL,
+                    confidence=1.0,
+                    reasoning=f"Tier 1 Scope Guard: {scope_res.refusal_reason}",
+                )
+                trace = OrchestrationTrace(
+                    query=clean_query,
+                    classification=tier1_classification,
+                    route_chosen=RoutingDecision.DIRECT_REFUSAL,
+                    original_route=RoutingDecision.DIRECT_REFUSAL,
+                    total_latency_ms=round(t_total_ms, 2),
+                )
+                return AdaptiveRAGResponse(
+                    question=clean_query,
+                    answer=scope_res.refusal_message or "Câu hỏi thuộc lĩnh vực ngoài phạm vi pháp luật lao động.",
+                    citations=[],
+                    retrieved_chunks=[],
+                    route_taken=RoutingDecision.DIRECT_REFUSAL,
+                    classification=tier1_classification,
+                    trace=trace,
+                    latency_ms=round(t_total_ms, 2),
+                    refused=True,
+                    refusal_reason=scope_res.refusal_reason,
+                )
+
+        # CHỐT CHẶN TIER 2: Document Coverage & Grounding Gate
+        if getattr(self.config, "ENABLE_TIER2_DOCUMENT_GROUNDING_GATE", True):
+            doc_res = self.document_resolver.resolve(clean_query)
+            if doc_res.trigger_refusal:
+                t_total_ms = (time.perf_counter() - t_start) * 1000.0
+                tier2_classification = ClassificationResult(
+                    query=clean_query,
+                    intent=QueryIntent.OUT_OF_SCOPE if not doc_res.is_supported else QueryIntent.LEGAL_INSUFFICIENT,
+                    complexity=ComplexityLevel.DIRECT,
+                    suggested_route=RoutingDecision.DIRECT_REFUSAL,
+                    confidence=1.0,
+                    reasoning=f"Tier 2 Document Grounding Gate: {doc_res.refusal_reason}",
+                )
+                trace = OrchestrationTrace(
+                    query=clean_query,
+                    classification=tier2_classification,
+                    route_chosen=RoutingDecision.DIRECT_REFUSAL,
+                    original_route=RoutingDecision.DIRECT_REFUSAL,
+                    total_latency_ms=round(t_total_ms, 2),
+                )
+                return AdaptiveRAGResponse(
+                    question=clean_query,
+                    answer=doc_res.refusal_message or "Hiện tại hệ thống chưa hỗ trợ tra cứu văn bản này.",
+                    citations=[],
+                    retrieved_chunks=[],
+                    route_taken=RoutingDecision.DIRECT_REFUSAL,
+                    classification=tier2_classification,
+                    trace=trace,
+                    latency_ms=round(t_total_ms, 2),
+                    refused=True,
+                    refusal_reason=doc_res.refusal_reason,
+                )
 
         # BƯỚC 1: Phân loại độ phức tạp & ý định câu hỏi (có ngữ cảnh hội thoại)
         t_route_0 = time.perf_counter()
@@ -383,16 +461,50 @@ class AdaptiveOrchestrator:
             t_total_ms = (time.perf_counter() - t_start) * 1000.0
             trace.total_latency_ms = round(t_total_ms, 2)
 
+            # CHỐT CHẶN TIER 3: Pre-Generation Evidence Gate trên tập bằng chứng tổng hợp
+            if getattr(self.config, "ENABLE_TIER3_PRE_GEN_EVIDENCE_GATE", True):
+                evidence_res = self.evidence_gate.evaluate(clean_query, all_chunks)
+                if evidence_res.trigger_refusal:
+                    return AdaptiveRAGResponse(
+                        question=clean_query,
+                        answer=evidence_res.refusal_message or "Căn cứ cơ sở dữ liệu hiện hành, hệ thống không tìm thấy đủ chứng cứ pháp lý để khẳng định câu trả lời.",
+                        citations=[],
+                        retrieved_chunks=all_chunks,
+                        route_taken=route,
+                        classification=classification,
+                        trace=trace,
+                        latency_ms=round(t_total_ms, 2),
+                        refused=True,
+                        refusal_reason=evidence_res.refusal_reason,
+                        escalated=trace.escalated,
+                        escalation_reason=trace.escalation_reason,
+                    )
+
+            # CHỐT CHẶN TIER 4: Post-Generation QA Alignment Guard
+            final_syn_answer = syn_answer
+            final_syn_refused = False
+            final_syn_reason = None
+            if getattr(self.config, "ENABLE_TIER4_QA_ALIGNMENT_GUARD", True):
+                qa_res = self.qa_alignment_guard.evaluate_answer(clean_query, syn_answer, all_chunks)
+                if qa_res.trigger_refusal:
+                    final_syn_answer = "Căn cứ cơ sở dữ liệu hiện hành, hệ thống không tìm thấy đủ chứng cứ pháp lý để khẳng định câu trả lời."
+                    final_syn_refused = True
+                    final_syn_reason = qa_res.refusal_reason
+                    valid_citations = []
+                elif qa_res.pruned_answer:
+                    final_syn_answer = qa_res.pruned_answer
+
             return AdaptiveRAGResponse(
                 question=clean_query,
-                answer=syn_answer,
+                answer=final_syn_answer,
                 citations=valid_citations,
                 retrieved_chunks=all_chunks,
                 route_taken=route,
                 classification=classification,
                 trace=trace,
                 latency_ms=round(t_total_ms, 2),
-                refused=False,
+                refused=final_syn_refused,
+                refusal_reason=final_syn_reason,
                 escalated=trace.escalated,
                 escalation_reason=trace.escalation_reason,
             )

@@ -61,6 +61,7 @@ class DenseTopKRetriever(BaseRetriever):
         score_threshold: Optional[float] = None,
         as_of_date: Optional[Union[str, date]] = None,
         auto_temporal: bool = False,
+        where: Optional[Dict[str, Any]] = None,
     ) -> List[RetrievedChunk]:
         """Thu hồi danh sách Top-K chunks pháp lý có độ tương đồng ngữ nghĩa cao nhất với câu hỏi.
         
@@ -105,22 +106,22 @@ class DenseTopKRetriever(BaseRetriever):
         if not hasattr(self.vector_store, "collection") or self.vector_store.collection is None:
             raise RuntimeError("Collection chưa được kích hoạt trong Vector Store.")
 
+        query_kwargs: Dict[str, Any] = {
+            "query_embeddings": [query_vector],
+            "n_results": actual_k,
+            "include": ["documents", "metadatas", "distances"],
+        }
+        if where:
+            query_kwargs["where"] = where
+
         try:
-            chroma_res = self.vector_store.collection.query(
-                query_embeddings=[query_vector],
-                n_results=actual_k,
-                include=["documents", "metadatas", "distances"],
-            )
+            chroma_res = self.vector_store.collection.query(**query_kwargs)
         except AttributeError as ae:
             if "bindings" in str(ae):
                 logger.warning("Gặp lỗi RustBindingsAPI bindings trong quá trình query. Đang tự động phục hồi và thử lại...")
                 if hasattr(self.vector_store, "_ensure_active_connection"):
                     self.vector_store._ensure_active_connection()
-                chroma_res = self.vector_store.collection.query(
-                    query_embeddings=[query_vector],
-                    n_results=actual_k,
-                    include=["documents", "metadatas", "distances"],
-                )
+                chroma_res = self.vector_store.collection.query(**query_kwargs)
             else:
                 raise ae
 

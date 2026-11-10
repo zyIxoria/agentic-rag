@@ -1,0 +1,8 @@
+﻿category,total,DIRECT_ANSWER,DIRECT_ANSWER_pct,DIRECT_REFUSAL,DIRECT_REFUSAL_pct,TRADITIONAL_RAG,TRADITIONAL_RAG_pct,CORRECTIVE_RAG,CORRECTIVE_RAG_pct,DECOMPOSE_AGENTIC,DECOMPOSE_AGENTIC_pct
+single_article,35,0,0.0,0,0.0,2,5.7,23,65.7,10,28.6
+single_doc_multi_chunk,35,0,0.0,0,0.0,0,0.0,21,60.0,14,40.0
+multi_document,45,0,0.0,1,2.2,0,0.0,10,22.2,34,75.6
+cross_reference,35,0,0.0,0,0.0,0,0.0,9,25.7,26,74.3
+complex_conditions,50,0,0.0,0,0.0,0,0.0,42,84.0,8,16.0
+insufficient_evidence,25,0,0.0,2,8.0,0,0.0,18,72.0,5,20.0
+out_of_scope,25,0,0.0,14,56.0,0,0.0,8,32.0,3,12.0

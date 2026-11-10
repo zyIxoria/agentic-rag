@@ -1,0 +1,202 @@
+{
+  "audit_metadata": {
+    "dataset": "Benchmark-300 (Tập con Refusal Test)",
+    "total_refusal_questions": 50,
+    "insufficient_evidence_count": 25,
+    "out_of_scope_count": 25,
+    "target_systems": [
+      "Traditional_RAG",
+      "CRAG",
+      "Adaptive_Agentic_RAG"
+    ]
+  },
+  "false_answer_rates": {
+    "Traditional_RAG": {
+      "total_false_answers": 37,
+      "false_answer_rate": 0.74,
+      "refusal_accuracy": 0.26,
+      "insufficient_evidence_false_answers": 23,
+      "insufficient_evidence_rate": 0.92,
+      "out_of_scope_false_answers": 14,
+      "out_of_scope_rate": 0.56
+    },
+    "CRAG": {
+      "total_false_answers": 32,
+      "false_answer_rate": 0.64,
+      "refusal_accuracy": 0.36,
+      "insufficient_evidence_false_answers": 23,
+      "insufficient_evidence_rate": 0.92,
+      "out_of_scope_false_answers": 9,
+      "out_of_scope_rate": 0.36
+    },
+    "Adaptive_Agentic_RAG": {
+      "total_false_answers": 31,
+      "false_answer_rate": 0.62,
+      "refusal_accuracy": 0.38,
+      "insufficient_evidence_false_answers": 23,
+      "insufficient_evidence_rate": 0.92,
+      "out_of_scope_false_answers": 8,
+      "out_of_scope_rate": 0.32
+    }
+  },
+  "error_distribution_by_system": {
+    "Traditional_RAG": {
+      "total_false_answer_cases": 37,
+      "breakdown": {
+        "A": {
+          "name": "Scope Classification Error (Nhận diện sai phạm vi pháp luật lao động)",
+          "count": 14,
+          "percentage_of_false_answers": 37.84,
+          "percentage_of_total_refusal_set": 28.0
+        },
+        "B": {
+          "name": "Routing Error (Router bỏ qua chỉ thị từ chối)",
+          "count": 0,
+          "percentage_of_false_answers": 0.0,
+          "percentage_of_total_refusal_set": 0.0
+        },
+        "C": {
+          "name": "Retrieval Error (Dense Retriever trả về văn bản không liên quan do trùng từ khóa/ảo giác điểm số)",
+          "count": 37,
+          "percentage_of_false_answers": 100.0,
+          "percentage_of_total_refusal_set": 74.0
+        },
+        "D": {
+          "name": "Evidence Validation Error (Chấp nhận tài liệu không hỗ trợ câu hỏi, không kiểm tra văn bản nguồn)",
+          "count": 37,
+          "percentage_of_false_answers": 100.0,
+          "percentage_of_total_refusal_set": 74.0
+        },
+        "E": {
+          "name": "Generation Error (Generator suy diễn khẳng định câu trả lời khi thiếu chứng cứ)",
+          "count": 37,
+          "percentage_of_false_answers": 100.0,
+          "percentage_of_total_refusal_set": 74.0
+        },
+        "F": {
+          "name": "Refusal Guard Error (Post-guard chỉ kiểm tra nhãn trích dẫn mà không kiểm tra sự liên quan nội dung)",
+          "count": 37,
+          "percentage_of_false_answers": 100.0,
+          "percentage_of_total_refusal_set": 74.0
+        }
+      }
+    },
+    "CRAG": {
+      "total_false_answer_cases": 32,
+      "breakdown": {
+        "A": {
+          "name": "Scope Classification Error (Nhận diện sai phạm vi pháp luật lao động)",
+          "count": 9,
+          "percentage_of_false_answers": 28.12,
+          "percentage_of_total_refusal_set": 18.0
+        },
+        "B": {
+          "name": "Routing Error (Router bỏ qua chỉ thị từ chối)",
+          "count": 0,
+          "percentage_of_false_answers": 0.0,
+          "percentage_of_total_refusal_set": 0.0
+        },
+        "C": {
+          "name": "Retrieval Error (Dense Retriever trả về văn bản không liên quan do trùng từ khóa/ảo giác điểm số)",
+          "count": 32,
+          "percentage_of_false_answers": 100.0,
+          "percentage_of_total_refusal_set": 64.0
+        },
+        "D": {
+          "name": "Evidence Validation Error (Chấp nhận tài liệu không hỗ trợ câu hỏi, không kiểm tra văn bản nguồn)",
+          "count": 32,
+          "percentage_of_false_answers": 100.0,
+          "percentage_of_total_refusal_set": 64.0
+        },
+        "E": {
+          "name": "Generation Error (Generator suy diễn khẳng định câu trả lời khi thiếu chứng cứ)",
+          "count": 32,
+          "percentage_of_false_answers": 100.0,
+          "percentage_of_total_refusal_set": 64.0
+        },
+        "F": {
+          "name": "Refusal Guard Error (Post-guard chỉ kiểm tra nhãn trích dẫn mà không kiểm tra sự liên quan nội dung)",
+          "count": 32,
+          "percentage_of_false_answers": 100.0,
+          "percentage_of_total_refusal_set": 64.0
+        }
+      }
+    },
+    "Adaptive_Agentic_RAG": {
+      "total_false_answer_cases": 31,
+      "breakdown": {
+        "A": {
+          "name": "Scope Classification Error (Nhận diện sai phạm vi pháp luật lao động)",
+          "count": 8,
+          "percentage_of_false_answers": 25.81,
+          "percentage_of_total_refusal_set": 16.0
+        },
+        "B": {
+          "name": "Routing Error (Router bỏ qua chỉ thị từ chối)",
+          "count": 0,
+          "percentage_of_false_answers": 0.0,
+          "percentage_of_total_refusal_set": 0.0
+        },
+        "C": {
+          "name": "Retrieval Error (Dense Retriever trả về văn bản không liên quan do trùng từ khóa/ảo giác điểm số)",
+          "count": 31,
+          "percentage_of_false_answers": 100.0,
+          "percentage_of_total_refusal_set": 62.0
+        },
+        "D": {
+          "name": "Evidence Validation Error (Chấp nhận tài liệu không hỗ trợ câu hỏi, không kiểm tra văn bản nguồn)",
+          "count": 31,
+          "percentage_of_false_answers": 100.0,
+          "percentage_of_total_refusal_set": 62.0
+        },
+        "E": {
+          "name": "Generation Error (Generator suy diễn khẳng định câu trả lời khi thiếu chứng cứ)",
+          "count": 31,
+          "percentage_of_false_answers": 100.0,
+          "percentage_of_total_refusal_set": 62.0
+        },
+        "F": {
+          "name": "Refusal Guard Error (Post-guard chỉ kiểm tra nhãn trích dẫn mà không kiểm tra sự liên quan nội dung)",
+          "count": 31,
+          "percentage_of_false_answers": 100.0,
+          "percentage_of_total_refusal_set": 62.0
+        }
+      }
+    }
+  },
+  "combined_error_distribution": {
+    "total_occurrences": 100,
+    "breakdown": {
+      "A": {
+        "name": "Scope Classification Error (Nhận diện sai phạm vi pháp luật lao động)",
+        "total_count": 31,
+        "occurrence_rate": 31.0
+      },
+      "B": {
+        "name": "Routing Error (Router bỏ qua chỉ thị từ chối)",
+        "total_count": 0,
+        "occurrence_rate": 0.0
+      },
+      "C": {
+        "name": "Retrieval Error (Dense Retriever trả về văn bản không liên quan do trùng từ khóa/ảo giác điểm số)",
+        "total_count": 100,
+        "occurrence_rate": 100.0
+      },
+      "D": {
+        "name": "Evidence Validation Error (Chấp nhận tài liệu không hỗ trợ câu hỏi, không kiểm tra văn bản nguồn)",
+        "total_count": 100,
+        "occurrence_rate": 100.0
+      },
+      "E": {
+        "name": "Generation Error (Generator suy diễn khẳng định câu trả lời khi thiếu chứng cứ)",
+        "total_count": 100,
+        "occurrence_rate": 100.0
+      },
+      "F": {
+        "name": "Refusal Guard Error (Post-guard chỉ kiểm tra nhãn trích dẫn mà không kiểm tra sự liên quan nội dung)",
+        "total_count": 100,
+        "occurrence_rate": 100.0
+      }
+    }
+  }
+}

@@ -1,0 +1,190 @@
+{
+  "experiment_title": "THỰC NGHIỆM ĐÁNH GIÁ KHẢ NĂNG PHÂN LOẠI 50 CÂU HỎI NGÔN NGỮ TỰ NHIÊN (SO SÁNH BASELINE VS PROPOSED)",
+  "timestamp": "2026-11-09T22:22:15.070689",
+  "sample_size": 50,
+  "expected_scope": "in_scope (100% - 50/50 câu)",
+  "evaluation_metrics": {
+    "baseline": {
+      "in_scope_predicted": 45,
+      "out_of_scope_predicted": 5,
+      "insufficient_evidence_predicted": 0,
+      "error_count": 0,
+      "recall_in_scope_pct": 90.0,
+      "false_rejection_rate_pct": 10.0,
+      "avg_latency_ms": 0.043,
+      "false_rejection_ids": [
+        "NL15",
+        "NL42",
+        "NL46",
+        "NL48",
+        "NL49"
+      ]
+    },
+    "proposed": {
+      "in_scope_predicted": 50,
+      "out_of_scope_predicted": 0,
+      "insufficient_evidence_predicted": 0,
+      "error_count": 0,
+      "recall_in_scope_pct": 100.0,
+      "false_rejection_rate_pct": 0.0,
+      "avg_latency_ms": 0.106,
+      "false_rejection_ids": []
+    },
+    "improvement_delta": {
+      "delta_recall_pct": 10.0,
+      "delta_false_rejection_rate_pct": -10.0,
+      "speedup_ratio": 0.41
+    }
+  },
+  "category_breakdown": {
+    "Tiền lương & Khấu trừ": {
+      "total": 5,
+      "baseline_correct": 5,
+      "baseline_oos": 0,
+      "proposed_correct": 5,
+      "proposed_oos": 0
+    },
+    "Thời giờ làm việc & Nghỉ ngơi": {
+      "total": 5,
+      "baseline_correct": 5,
+      "baseline_oos": 0,
+      "proposed_correct": 5,
+      "proposed_oos": 0
+    },
+    "Nghỉ phép & Nghỉ việc riêng": {
+      "total": 5,
+      "baseline_correct": 4,
+      "baseline_oos": 1,
+      "proposed_correct": 5,
+      "proposed_oos": 0
+    },
+    "Thử việc & Hợp đồng": {
+      "total": 5,
+      "baseline_correct": 5,
+      "baseline_oos": 0,
+      "proposed_correct": 5,
+      "proposed_oos": 0
+    },
+    "Kỷ luật & Bồi thường": {
+      "total": 5,
+      "baseline_correct": 5,
+      "baseline_oos": 0,
+      "proposed_correct": 5,
+      "proposed_oos": 0
+    },
+    "Chấm dứt HĐLĐ": {
+      "total": 5,
+      "baseline_correct": 5,
+      "baseline_oos": 0,
+      "proposed_correct": 5,
+      "proposed_oos": 0
+    },
+    "Bảo hiểm xã hội": {
+      "total": 5,
+      "baseline_correct": 5,
+      "baseline_oos": 0,
+      "proposed_correct": 5,
+      "proposed_oos": 0
+    },
+    "Lao động nữ": {
+      "total": 5,
+      "baseline_correct": 5,
+      "baseline_oos": 0,
+      "proposed_correct": 5,
+      "proposed_oos": 0
+    },
+    "An toàn & Tai nạn lao động": {
+      "total": 5,
+      "baseline_correct": 4,
+      "baseline_oos": 1,
+      "proposed_correct": 5,
+      "proposed_oos": 0
+    },
+    "Hành vi bị cấm & Nhập nhằng": {
+      "total": 5,
+      "baseline_correct": 2,
+      "baseline_oos": 3,
+      "proposed_correct": 5,
+      "proposed_oos": 0
+    }
+  },
+  "pipeline_execution_verification": {
+    "total_queries_tested": 50,
+    "successfully_executed_in_pipeline": 41,
+    "false_refusal_at_pipeline": 9,
+    "execution_errors": 0,
+    "pipeline_success_rate_pct": 82.0
+  },
+  "multi_turn_conversational_test": {
+    "total_turns": 5,
+    "baseline_accuracy_pct": 80.0,
+    "proposed_accuracy_pct": 100.0,
+    "turn_details": [
+      {
+        "turn": 1,
+        "user_query": "Em làm nhân viên kho ở công ty được 2 năm rồi.",
+        "expected_scope": "in_scope",
+        "baseline_scope": "in_scope",
+        "baseline_intent": "LEGAL_DIRECT_DEF",
+        "baseline_correct": true,
+        "proposed_scope": "in_scope",
+        "proposed_intent": "LEGAL_DIRECT_DEF",
+        "proposed_reasoning": "Câu hỏi tra cứu điều luật trực tiếp hoặc định nghĩa ngắn gọn, Traditional RAG xử lý nhanh và tối ưu nhất.",
+        "proposed_correct": true,
+        "turn_desc": "Khởi tạo ngữ cảnh quan hệ lao động tại doanh nghiệp"
+      },
+      {
+        "turn": 2,
+        "user_query": "Vậy khi xin nghỉ việc em có được nhận khoản tiền hỗ trợ nào không?",
+        "expected_scope": "in_scope",
+        "baseline_scope": "in_scope",
+        "baseline_intent": "LEGAL_DIRECT_DEF",
+        "baseline_correct": true,
+        "proposed_scope": "in_scope",
+        "proposed_intent": "LEGAL_DIRECT_DEF",
+        "proposed_reasoning": "Nhận diện câu hỏi tiếp nối hợp lệ dựa trên chủ đề pháp luật lao động ở lượt trước: 'Em làm nhân viên kho ở công ty được 2 năm rồi.'",
+        "proposed_correct": true,
+        "turn_desc": "Câu hỏi tiếp nối kế thừa ngữ cảnh nhân viên kho làm 2 năm"
+      },
+      {
+        "turn": 3,
+        "user_query": "Nếu công ty không chịu trả thì em phải làm thế nào?",
+        "expected_scope": "in_scope",
+        "baseline_scope": "in_scope",
+        "baseline_intent": "LEGAL_DIRECT_DEF",
+        "baseline_correct": true,
+        "proposed_scope": "in_scope",
+        "proposed_intent": "LEGAL_DIRECT_DEF",
+        "proposed_reasoning": "Câu hỏi tra cứu điều luật trực tiếp hoặc định nghĩa ngắn gọn, Traditional RAG xử lý nhanh và tối ưu nhất.",
+        "proposed_correct": true,
+        "turn_desc": "Câu hỏi tiếp nối tình huống công ty từ chối thanh toán trợ cấp"
+      },
+      {
+        "turn": 4,
+        "user_query": "Hôm nay trưa ăn gì ngon?",
+        "expected_scope": "out_of_scope",
+        "baseline_scope": "in_scope",
+        "baseline_intent": "LEGAL_DIRECT_DEF",
+        "baseline_correct": false,
+        "proposed_scope": "out_of_scope",
+        "proposed_intent": "OUT_OF_SCOPE",
+        "proposed_reasoning": "Câu hỏi thuộc chủ đề 'culinary' ngoài phạm vi pháp luật lao động Việt Nam.",
+        "proposed_correct": true,
+        "turn_desc": "Chuyển chủ đề đột ngột sang ẩm thực (BẮT BUỘC TỪ CHỐI)"
+      },
+      {
+        "turn": 5,
+        "user_query": "Thế công ty có được quyền giữ tiền lương tháng cuối của em không?",
+        "expected_scope": "in_scope",
+        "baseline_scope": "in_scope",
+        "baseline_intent": "LEGAL_DIRECT_DEF",
+        "baseline_correct": true,
+        "proposed_scope": "in_scope",
+        "proposed_intent": "LEGAL_DIRECT_DEF",
+        "proposed_reasoning": "Câu hỏi tra cứu điều luật trực tiếp hoặc định nghĩa ngắn gọn, Traditional RAG xử lý nhanh và tối ưu nhất.",
+        "proposed_correct": true,
+        "turn_desc": "Quay lại chủ đề pháp luật lao động (nhận diện in_scope chính xác)"
+      }
+    ]
+  }
+}

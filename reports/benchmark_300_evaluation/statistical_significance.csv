@@ -1,0 +1,6 @@
+﻿metric_name,comparison,n_samples,mean_a,mean_b,mean_diff,ci_95,t_statistic,p_value_t_test,wilcoxon_stat,p_value_wilcoxon,cohens_d,significance
+Answer Correctness (Score),Adaptive_Agentic_RAG vs Traditional_RAG,250,0.382,0.36,0.022,"[-0.0271, +0.0711]",0.883,0.37800581441421927,1460.0,0.42329997557939636,0.056,ns (không có ý nghĩa)
+Answer F1-Score,Adaptive_Agentic_RAG vs Traditional_RAG,250,0.3375,0.3177,0.0198,"[+0.0008, +0.0388]",2.056,0.04080696482969144,11086.0,0.02972087009067352,0.13,p < 0.05 (*)
+Total Latency (ms),Adaptive_Agentic_RAG vs Traditional_RAG,300,21.3834,21.697,-0.3136,"[-2.2665, +1.6393]",-0.316,0.752214049885713,20627.0,0.6683510965365071,-0.018,ns (không có ý nghĩa)
+Faithfulness (Rate),Adaptive_Agentic_RAG vs CRAG,250,0.72,0.676,0.044,"[-0.0075, +0.0955]",1.684,0.09350677438398347,352.0,0.09481009733616917,0.106,ns (không có ý nghĩa)
+Refusal Accuracy,Adaptive_Agentic_RAG vs Traditional_RAG,50,0.86,0.88,-0.02,"[-0.0901, +0.0501]",-0.573,0.5689544686260504,2.0,0.7728299926844475,-0.081,ns (không có ý nghĩa)

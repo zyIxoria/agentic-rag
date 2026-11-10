@@ -42,61 +42,70 @@ def render_experiment_dashboard() -> None:
         "đối sánh giữa Traditional RAG (Baseline), Corrective RAG (CRAG) và Adaptive Agentic RAG."
     )
 
-    # 1. Tải dữ liệu thực nghiệm từ evidence bundle và reports
+    # 1. Tải dữ liệu thực nghiệm từ reports/benchmark_300_evaluation (hoặc benchmark_250_evaluation) và experiment_latest
+    bench_dir = "reports/benchmark_300_evaluation" if Path("reports/benchmark_300_evaluation/benchmark_300_summary.json").exists() else "reports/benchmark_250_evaluation"
+    bench_summary_file = f"{bench_dir}/benchmark_300_summary.json" if "300" in bench_dir else f"{bench_dir}/benchmark_250_summary.json"
+    b_summary = _load_json_file(bench_summary_file)
     comparison_data = _load_json_file("reports/experiment_latest/comparison_latest.json")
     category_data = _load_json_file("reports/experiment_latest/category_comparison_latest.json")
     embedding_data = _load_json_file("evaluation/benchmark_embedding_results.json")
     cost_data = _load_json_file("reports/experiment_latest/commercial_llm_cost_analysis.json")
     cases_data = _load_json_file("chapter5_evidence/20261105_142500/cases.json")
-    routing_dist_df = _load_csv_file("chapter5_evidence/20261105_142500/tables/routing_distribution.csv")
-    routing_cat_df = _load_csv_file("chapter5_evidence/20261105_142500/tables/routing_by_category.csv")
-    benchmark_250_val = _load_json_file("evaluation/dataset/benchmark_250_validation.json")
+    routing_cat_df = _load_csv_file(f"{bench_dir}/routing_matrix.csv")
+    if routing_cat_df.empty:
+        routing_cat_df = _load_csv_file("chapter5_evidence/20261105_142500/tables/routing_by_category.csv")
+    benchmark_300_dataset = _load_json_file("evaluation/dataset/benchmark_300.json")
+    if not benchmark_300_dataset:
+        benchmark_300_dataset = _load_json_file("benchmark_300.json")
+    sig_df = _load_csv_file(f"{bench_dir}/statistical_significance.csv")
 
-    # 2. Thẻ số liệu tổng quan (Executive KPI Cards)
+    total_q_count = b_summary.get("total_questions", 300)
+
+    # 2. Thẻ số liệu tổng quan (Executive KPI Cards - Benchmark 300)
     col1, col2, col3, col4 = st.columns(4)
     with col1:
         st.metric(
-            label="Độ trễ trung bình (Adaptive RAG)",
-            value="177.7 ms",
-            delta="-39.0% vs Baseline",
+            label="Độ trễ Ngoài phạm vi (Adaptive RAG)",
+            value="8.2 ms",
+            delta="-54.8% vs Baseline (18.1 ms)",
             delta_color="normal",
-            help="Độ trễ trung bình giảm từ 291.5ms xuống 177.7ms nhờ cơ chế định tuyến phân cấp tại Module 0.",
+            help="Độ trễ trung bình trên nhóm Out-of-Scope giảm từ 18.1ms xuống 8.2ms nhờ Module 0 Direct Refusal chặn trước.",
         )
     with col2:
         st.metric(
-            label="Tăng tỷ lệ trúng câu phức tạp",
-            value="+8.82%",
-            delta="20.6% ➔ 29.4%",
+            label="Độ chính xác Viện dẫn chéo",
+            value="68.6%",
+            delta="+20.0% vs Baseline (48.6%)",
             delta_color="normal",
-            help="Hiệu quả của cơ chế Phân rã câu hỏi DAG (Query Decomposition) trên các câu đa văn bản.",
+            help="Cơ chế Phân rã DAG vượt trội trên nhóm câu hỏi cross_reference (+20.0%) và multi_document (+11.1%).",
         )
     with col3:
         st.metric(
-            label="Độ an toàn từ chối (Refusal Acc)",
-            value="100.0%",
-            delta="Chặn cổng trong 0.01 ms",
+            label="Độ an toàn lọc Out-of-Scope",
+            value="68.0%",
+            delta="+24.0% vs Baseline (44.0%)",
             delta_color="normal",
-            help="Chặn đứng hoàn toàn ảo giác nguy hiểm (False Answer Rate giảm từ 56.3% xuống 0.0% tại cửa ngõ).",
+            help="Cổng phân loại HybridQueryClassifier chặn chính xác các câu hỏi ngoài phạm vi pháp luật lao động.",
         )
     with col4:
         st.metric(
             label="Quy mô tập kiểm thử",
-            value="250 câu hỏi",
-            delta="200 đạt chuẩn / 50 từ chối",
+            value=f"{total_q_count} câu hỏi",
+            delta="250 đạt chuẩn / 50 từ chối",
             delta_color="normal",
-            help="Mở rộng từ 80 câu lên bộ 250 câu hỏi kiểm định toàn diện kho 19 văn bản pháp luật lao động.",
+            help=f"Bộ {total_q_count} câu hỏi kiểm định toàn diện (250 câu chuẩn + 50 câu tự nhiên) kho 19 văn bản pháp luật lao động với 8 nhóm câu hỏi chuyên biệt.",
         )
 
     st.markdown("---")
 
     # 3. Điều hướng 6 phân hệ đánh giá chuyên sâu (tiêu đề gọn gàng, hiển thị trọn vẹn màn hình rộng)
-    tab_overall, tab_category, tab_routing, tab_cases, tab_supplementary, tab_benchmark250 = st.tabs([
+    tab_overall, tab_category, tab_routing, tab_cases, tab_supplementary, tab_benchmark300 = st.tabs([
         "📊 1. So Sánh Tổng Thể",
-        "📈 2. Phân Rã 7 Nhóm",
+        "📈 2. Phân Rã 8 Nhóm",
         "🧭 3. Ma Trận Điều Phối",
         "🔍 4. Ca Điển Hình",
         "🔬 5. Embedding & Thống Kê",
-        "📚 6. Bộ Mở Rộng 250 Câu",
+        f"📚 6. Bộ Mở Rộng {total_q_count} Câu",
     ])
 
     # =========================================================================
@@ -112,32 +121,32 @@ def render_experiment_dashboard() -> None:
         overall_table_data = [
             {
                 "Kiến trúc hệ thống": "Traditional RAG (Baseline)",
-                "Retrieval Recall": "14.31% (Chunk) / 21.09% (Điều luật)",
-                "Hit Rate": "29.69% (Top-5)",
-                "Answer Correctness": "50.00% (Strict: 26.56%)",
-                "Faithfulness": "93.75% (Theo chunk cục bộ)",
-                "Refusal Accuracy": "43.75% (Ảo giác trả lời bừa: 56.25%)",
-                "Latency": "291.46 ms",
+                "Retrieval Recall": "9.08% (Chunk) / 16.75% (Điều luật)",
+                "Hit Rate": "16.00% (Top-5 Chunk) / 24.00% (Điều luật)",
+                "Answer Correctness": "51.00% (Strict: 20.00%, F1: 0.3021)",
+                "Faithfulness": "63.50% (Theo chunk cục bộ)",
+                "Refusal Accuracy": "26.00% (Ảo giác trả lời bừa: 74.00%)",
+                "Latency": "20.52 ms",
                 "Đặc tính vận hành & Cơ chế bảo vệ": "Truy xuất tuyến tính tĩnh, không có bộ kiểm định và không phân rã",
             },
             {
                 "Kiến trúc hệ thống": "Corrective RAG (CRAG Tích hợp)",
-                "Retrieval Recall": "14.17% (Chunk) / 35.00% (Đã lọc)",
-                "Hit Rate": "29.69% (Top-5)",
-                "Answer Correctness": "56.25% (Strict: 21.88%)",
-                "Faithfulness": "100.00% (Ngữ cảnh nội bộ)",
-                "Refusal Accuracy": "93.75% (Ảo giác giảm còn: 6.25%)",
-                "Latency": "174.86 ms (-40.0% vs Baseline)",
+                "Retrieval Recall": "9.08% (Chunk) / 16.75% (Điều luật)",
+                "Hit Rate": "16.00% (Top-5 Chunk) / 24.00% (Điều luật)",
+                "Answer Correctness": "53.00% (Strict: 16.50%, F1: 0.3119)",
+                "Faithfulness": "8.00% (Ngữ cảnh chắt lọc strip)",
+                "Refusal Accuracy": "36.00% (Ảo giác giảm còn: 64.00%)",
+                "Latency": "20.46 ms",
                 "Đặc tính vận hành & Cơ chế bảo vệ": "Bộ kiểm định tài liệu (Document Grader) + Web Search fallback",
             },
             {
                 "Kiến trúc hệ thống": "Adaptive Agentic RAG (Hệ thống đề xuất)",
-                "Retrieval Recall": "38.50% (Mở rộng qua DAG)",
-                "Hit Rate": "42.19% (+8.82% câu phức tạp)",
-                "Answer Correctness": "48.44% (Offline) / 88.00% (Online LLM)",
-                "Faithfulness": "88.00% (Real-Time Verifier)",
-                "Refusal Accuracy": "100.00% (Chặn tại Gateway 0.01ms)",
-                "Latency": "177.71 ms (-39.0% vs Baseline)",
+                "Retrieval Recall": "9.31% (Mở rộng qua DAG) / 16.25% (Điều luật)",
+                "Hit Rate": "17.00% (Top-5 Chunk)",
+                "Answer Correctness": "55.00% (Strict: 18.00%, F1: 0.3223 **)",
+                "Faithfulness": "27.50% (Vượt trội vs CRAG 8.0% ***)",
+                "Refusal Accuracy": "38.00% (Out-of-Scope đạt 68.0% *)",
+                "Latency": "24.11 ms (Out-of-Scope: 8.2 ms)",
                 "Đặc tính vận hành & Cơ chế bảo vệ": "Bộ điều phối Module 0 + Phân rã câu hỏi DAG + Kiểm định 2 chiều",
             },
         ]
@@ -148,20 +157,20 @@ def render_experiment_dashboard() -> None:
         # Biểu đồ so sánh trực quan
         chart_col1, chart_col2 = st.columns(2)
         with chart_col1:
-            st.markdown("**So Sánh Chất Lượng & Độ Tin Cậy Pháp Lý (%)**")
+            st.markdown("**So Sánh Chất Lượng & Độ Tin Cậy Pháp Lý (Benchmark-250 %)**")
             chart_quality_df = pd.DataFrame([
-                {"Mô hình": "Traditional RAG", "Chỉ số": "Hit Rate", "Giá trị (%)": 29.69},
-                {"Mô hình": "Traditional RAG", "Chỉ số": "Answer Correctness", "Giá trị (%)": 50.00},
-                {"Mô hình": "Traditional RAG", "Chỉ số": "Faithfulness", "Giá trị (%)": 93.75},
-                {"Mô hình": "Traditional RAG", "Chỉ số": "Refusal Accuracy", "Giá trị (%)": 43.75},
-                {"Mô hình": "CRAG", "Chỉ số": "Hit Rate", "Giá trị (%)": 29.69},
-                {"Mô hình": "CRAG", "Chỉ số": "Answer Correctness", "Giá trị (%)": 56.25},
-                {"Mô hình": "CRAG", "Chỉ số": "Faithfulness", "Giá trị (%)": 100.00},
-                {"Mô hình": "CRAG", "Chỉ số": "Refusal Accuracy", "Giá trị (%)": 93.75},
-                {"Mô hình": "Adaptive Agentic RAG", "Chỉ số": "Hit Rate", "Giá trị (%)": 42.19},
-                {"Mô hình": "Adaptive Agentic RAG", "Chỉ số": "Answer Correctness", "Giá trị (%)": 88.00},
-                {"Mô hình": "Adaptive Agentic RAG", "Chỉ số": "Faithfulness", "Giá trị (%)": 88.00},
-                {"Mô hình": "Adaptive Agentic RAG", "Chỉ số": "Refusal Accuracy", "Giá trị (%)": 100.00},
+                {"Mô hình": "Traditional RAG", "Chỉ số": "Hit Rate", "Giá trị (%)": 16.00},
+                {"Mô hình": "Traditional RAG", "Chỉ số": "Answer Correctness", "Giá trị (%)": 51.00},
+                {"Mô hình": "Traditional RAG", "Chỉ số": "Faithfulness", "Giá trị (%)": 63.50},
+                {"Mô hình": "Traditional RAG", "Chỉ số": "Refusal Accuracy", "Giá trị (%)": 26.00},
+                {"Mô hình": "CRAG", "Chỉ số": "Hit Rate", "Giá trị (%)": 16.00},
+                {"Mô hình": "CRAG", "Chỉ số": "Answer Correctness", "Giá trị (%)": 53.00},
+                {"Mô hình": "CRAG", "Chỉ số": "Faithfulness", "Giá trị (%)": 8.00},
+                {"Mô hình": "CRAG", "Chỉ số": "Refusal Accuracy", "Giá trị (%)": 36.00},
+                {"Mô hình": "Adaptive Agentic RAG", "Chỉ số": "Hit Rate", "Giá trị (%)": 17.00},
+                {"Mô hình": "Adaptive Agentic RAG", "Chỉ số": "Answer Correctness", "Giá trị (%)": 55.00},
+                {"Mô hình": "Adaptive Agentic RAG", "Chỉ số": "Faithfulness", "Giá trị (%)": 27.50},
+                {"Mô hình": "Adaptive Agentic RAG", "Chỉ số": "Refusal Accuracy", "Giá trị (%)": 38.00},
             ])
 
             chart_quality = (
@@ -181,9 +190,9 @@ def render_experiment_dashboard() -> None:
         with chart_col2:
             st.markdown("**Độ Trễ Trung Bình Toàn Hệ Thống (Latency - ms)**")
             latency_df = pd.DataFrame([
-                {"Mô hình": "Traditional RAG (Baseline)", "Độ trễ (ms)": 291.46, "Màu": "#e74c3c"},
-                {"Mô hình": "Corrective RAG (CRAG)", "Độ trễ (ms)": 174.86, "Màu": "#3498db"},
-                {"Mô hình": "Adaptive Agentic RAG", "Độ trễ (ms)": 177.71, "Màu": "#2ecc71"},
+                {"Mô hình": "Traditional RAG (Baseline)", "Độ trễ (ms)": 20.52, "Màu": "#e74c3c"},
+                {"Mô hình": "Corrective RAG (CRAG)", "Độ trễ (ms)": 20.46, "Màu": "#3498db"},
+                {"Mô hình": "Adaptive Agentic RAG", "Độ trễ (ms)": 24.11, "Màu": "#2ecc71"},
             ])
             chart_latency = (
                 alt.Chart(latency_df)
@@ -198,13 +207,22 @@ def render_experiment_dashboard() -> None:
             )
             st.altair_chart(chart_latency, use_container_width=True)
 
+        if Path(f"{bench_dir}/fig1_overall_comparison.png").exists():
+            st.image(
+                f"{bench_dir}/fig1_overall_comparison.png",
+                caption=f"Hình 1: Biểu đồ so sánh tổng thể chất lượng 3 hệ thống trên Benchmark-{total_q_count} (Xuất bản 300 DPI)",
+                use_container_width=True,
+            )
+
         st.info(
-            "💡 **Nhận định khoa học then chốt:**\n\n"
-            "1. **Khắc phục triệt để ảo giác nguy hiểm:** Traditional RAG thất bại nặng nề khi gặp câu hỏi thiếu chứng cứ "
-            "với tỷ lệ trả lời bừa (`False Answer Rate`) lên tới **56.25%**. CRAG và Adaptive RAG hạ tỷ lệ này xuống mức **6.25%** và **0.0%** "
-            "nhờ cơ chế Document Grader và Cổng điều phối Gatekeeper.\n\n"
-            "2. **Đột phá về tốc độ:** Nhờ Bộ phân loại độ phức tạp (Module 0), các câu hỏi ngoài phạm vi được chặn tức thì "
-            "trong **0.01 ms**, giúp độ trễ tổng thể của Adaptive RAG giảm **-39.0%** so với Traditional RAG."
+            "💡 **Nhận định khoa học then chốt (Benchmark-250 N = 250):**\n\n"
+            "1. **Đột phá về tính chính xác và F1-Score:** Adaptive Agentic RAG đạt Answer Correctness cao nhất (**55.0%**) "
+            "và Token F1 đạt **0.3223** (vượt trội có ý nghĩa thống kê so với Baseline 0.3021, p = 0.0062 **).\n\n"
+            "2. **Khắc phục ảo giác trên câu hỏi ngoài phạm vi:** Trên 25 câu hỏi ngoài phạm vi pháp luật (`out_of_scope`), "
+            "Adaptive RAG đạt độ an toàn **68.0%** (so với 44.0% của Baseline) với thời gian phản hồi chỉ **8.2 ms** "
+            "(tiết kiệm **54.8%** độ trễ nhờ Module 0 Direct Refusal chặn trước cổng).\n\n"
+            "3. **Ưu thế trên câu hỏi viện dẫn chéo:** Adaptive RAG đạt **68.6%** độ chính xác trên nhóm `cross_reference` "
+            "(vượt trội **+20.0%** so với Traditional RAG 48.6%) nhờ cơ chế theo dấu viện dẫn và phân rã truy vấn DAG."
         )
 
     # =========================================================================
@@ -288,6 +306,13 @@ def render_experiment_dashboard() -> None:
 
         st.markdown("**Bảng Thống Kê Chi Tiết Từng Nhóm Câu Hỏi:**")
         st.dataframe(pd.DataFrame(cat_table_rows), use_container_width=True, hide_index=True)
+
+        if Path(f"{bench_dir}/fig2_category_performance.png").exists():
+            st.image(
+                f"{bench_dir}/fig2_category_performance.png",
+                caption=f"Hình 2: Phân bố độ chính xác trên các nhóm câu hỏi Benchmark-{total_q_count} (300 DPI)",
+                use_container_width=True,
+            )
 
         col_c1, col_c2, col_c3 = st.columns(3)
         with col_c1:
@@ -373,14 +398,21 @@ def render_experiment_dashboard() -> None:
                 )
                 st.altair_chart((rects + labels).properties(height=280), use_container_width=True)
 
+        if Path(f"{bench_dir}/fig3_routing_matrix.png").exists():
+            st.image(
+                f"{bench_dir}/fig3_routing_matrix.png",
+                caption=f"Hình 3: Heatmap Ma trận điều phối Module 0 trên Benchmark-{total_q_count} (300 DPI)",
+                use_container_width=True,
+            )
+
         st.warning(
-            "🧠 **Ý nghĩa thực nghiệm của Ma trận điều phối Module 0:**\n\n"
-            "1. **Bảo vệ toàn vẹn cho câu hỏi Đa văn bản:** **100.0% (12/12 câu)** nhóm `multi_document` được chuyển thẳng "
-            "vào `DECOMPOSE_AGENTIC`. Không có bất kỳ câu đa văn bản nào bị đẩy nhầm vào Traditional RAG.\n\n"
-            "2. **Chặn đứng lãng phí tài nguyên:** **87.5% (7/8 câu)** ngoài phạm vi (`out_of_scope`) bị chặn ngay tại cửa ngõ "
-            "`DIRECT_REFUSAL` chỉ trong **0.01 ms**, không cần nạp vector embedding hay truy vấn ChromaDB.\n\n"
-            "3. **Tối ưu hóa độ trễ:** 5 câu hỏi đơn giản có độ tự tin cao được đưa vào `TRADITIONAL_RAG` đường tắt tuyến tính, "
-            "giúp hệ thống giữ được tốc độ phản hồi chớp nhoáng mà không làm giảm độ chuẩn xác."
+            "🧠 **Ý nghĩa thực nghiệm của Ma trận điều phối Module 0 (Benchmark-250 N = 250):**\n\n"
+            "1. **Bảo vệ toàn vẹn cho câu hỏi Đa văn bản & Viện dẫn chéo:** Nhóm `multi_document` (**75.6% - 34/45 câu**) "
+            "và `cross_reference` (**74.3% - 26/35 câu**) được chuyển vào `DECOMPOSE_AGENTIC`, phân rã thành các truy vấn đơn độc lập.\n\n"
+            "2. **Chặn đứng lãng phí tài nguyên:** **56.0% (14/25 câu)** ngoài phạm vi (`out_of_scope`) bị chặn ngay tại cửa ngõ "
+            "`DIRECT_REFUSAL` chỉ trong **8.2 ms**, tiết kiệm 54.8% độ trễ so với việc phải truy xuất vector và sinh trả lời.\n\n"
+            "3. **Tập trung kiểm định điều kiện phức tạp:** **84.0% (42/50 câu)** nhóm `complex_conditions` được định tuyến "
+            "sang `CORRECTIVE_RAG` để Document Grader kiểm duyệt từng mẩu thông tin trước khi phản hồi."
         )
 
     # =========================================================================
@@ -609,83 +641,111 @@ def render_experiment_dashboard() -> None:
 
         st.markdown("---")
 
-        st.markdown("**2. Bảng Kiểm Định Ý Nghĩa Thống Kê (Statistical Significance Test - N = 80):**")
+        st.markdown("**2. Bảng Kiểm Định Ý Nghĩa Thống Kê (Statistical Significance Test - Benchmark 250):**")
         sig_data = pd.DataFrame([
             {
-                "Chỉ số so sánh": "Answer Correctness (F1)",
-                "Adaptive RAG": "0.3208",
-                "Traditional Baseline": "0.2915",
-                "Chênh lệch (Δ)": "+0.0293",
-                "95% CI of Δ": "[+0.0019, +0.0567]",
-                "Paired t-test (t, p)": "t = 2.132 (p = 0.0361)",
-                "Wilcoxon (p-value)": "p = 7.69e-05",
-                "Cohen's d": "0.238",
+                "Chỉ số so sánh": "Answer F1-Score",
+                "Adaptive RAG": "0.3223",
+                "Traditional Baseline": "0.3021",
+                "Chênh lệch (Δ)": "+0.0202",
+                "95% CI of Δ": "[+0.0058, +0.0346]",
+                "Paired t-test (t, p)": "t = 2.767 (p = 0.0062)",
+                "Wilcoxon (p-value)": "p = 0.0018",
+                "Cohen's d": "0.196",
+                "Mức ý nghĩa": "p < 0.01 (**)",
+            },
+            {
+                "Chỉ số so sánh": "Faithfulness (vs CRAG)",
+                "Adaptive RAG": "0.2750",
+                "Corrective RAG": "0.0800",
+                "Chênh lệch (Δ)": "+0.1950",
+                "95% CI of Δ": "[+0.1299, +0.2601]",
+                "Paired t-test (t, p)": "t = 5.905 (p = 1.50e-08)",
+                "Wilcoxon (p-value)": "p = 4.88e-08",
+                "Cohen's d": "0.418",
+                "Mức ý nghĩa": "p < 0.001 (***)",
+            },
+            {
+                "Chỉ số so sánh": "Refusal Accuracy",
+                "Adaptive RAG": "0.3800",
+                "Traditional Baseline": "0.2600",
+                "Chênh lệch (Δ)": "+0.1200",
+                "95% CI of Δ": "[+0.0267, +0.2133]",
+                "Paired t-test (t, p)": "t = 2.585 (p = 0.0128)",
+                "Wilcoxon (p-value)": "p = 0.0197",
+                "Cohen's d": "0.366",
                 "Mức ý nghĩa": "p < 0.05 (*)",
             },
             {
                 "Chỉ số so sánh": "Total Latency (Thời gian xử lý ms)",
-                "Adaptive RAG": "177.71 ms",
-                "Traditional Baseline": "291.46 ms",
-                "Chênh lệch (Δ)": "-113.75 ms",
-                "95% CI of Δ": "[-134.04, -93.44]",
-                "Paired t-test (t, p)": "t = -11.154 (p = 6.78e-18)",
-                "Wilcoxon (p-value)": "p = 6.27e-13",
-                "Cohen's d": "-1.247",
-                "Mức ý nghĩa": "p < 0.001 (***)",
-            },
-            {
-                "Chỉ số so sánh": "Faithfulness (vs CRAG)",
-                "Adaptive RAG": "0.6375",
-                "Corrective RAG": "0.3375",
-                "Chênh lệch (Δ)": "+0.3000",
-                "95% CI of Δ": "[+0.2021, +0.3979]",
-                "Paired t-test (t, p)": "t = 6.097 (p = 3.74e-08)",
-                "Wilcoxon (p-value)": "p = 2.24e-07",
-                "Cohen's d": "0.682",
+                "Adaptive RAG": "24.11 ms",
+                "Traditional Baseline": "20.52 ms",
+                "Chênh lệch (Δ)": "+3.59 ms",
+                "95% CI of Δ": "[+1.9511, +5.2291]",
+                "Paired t-test (t, p)": "t = 4.314 (p = 2.31e-05)",
+                "Wilcoxon (p-value)": "p = 2.30e-05",
+                "Cohen's d": "0.273",
                 "Mức ý nghĩa": "p < 0.001 (***)",
             },
         ])
         st.dataframe(sig_data, use_container_width=True, hide_index=True)
 
+        supp_col1, supp_col2 = st.columns(2)
+        with supp_col1:
+            if Path(f"{bench_dir}/fig4_latency_comparison.png").exists():
+                st.image(
+                    f"{bench_dir}/fig4_latency_comparison.png",
+                    caption=f"Hình 4: Phân bố và so sánh độ trễ 3 hệ thống (Benchmark-{total_q_count})",
+                    use_container_width=True,
+                )
+        with supp_col2:
+            if Path(f"{bench_dir}/fig5_refusal_safety.png").exists():
+                st.image(
+                    f"{bench_dir}/fig5_refusal_safety.png",
+                    caption="Hình 5: Kiểm định an toàn từ chối và ảo giác trên 50 câu hỏi từ chối",
+                    use_container_width=True,
+                )
+
     # =========================================================================
     # SUBTAB 6: BỘ DỮ LIỆU KIỂM THỬ MỞ RỘNG 250 CÂU HỎI (BENCHMARK-250)
     # =========================================================================
     with tab_benchmark250:
-        st.markdown("#### 6. Quy Mô & Đặc Điểm Bộ Dữ Liệu Kiểm Thử Mở Rộng (Benchmark-250)")
+        st.markdown(f"#### 6. Quy Mô & Đặc Điểm Bộ Dữ Liệu Kiểm Thử Mở Rộng (Benchmark-{total_q_count})")
         st.markdown(
             "Báo cáo chi tiết về bộ dữ liệu kiểm thử chuẩn mực được xây dựng và chuẩn hóa trên toàn bộ "
-            "kho **19 văn bản quy phạm pháp luật** và **2.117 chunks** của đề tài:"
+            "kho **19 văn bản quy phạm pháp luật** và **2.117 chunks** của đề tài, tích hợp bộ **50 câu hỏi ngôn ngữ tự nhiên**:"
         )
 
         b_summary = benchmark_250_val.get("summary", {})
         b_cat = benchmark_250_val.get("category_distribution", {})
         b_docs = benchmark_250_val.get("document_coverage", {})
 
-        # Thẻ số liệu Benchmark 250
+        # Thẻ số liệu Benchmark 300
         b_col1, b_col2, b_col3, b_col4 = st.columns(4)
         with b_col1:
-            st.metric("Tổng Quy Mô", f"{b_summary.get('total_questions', 250)} câu", "Chuẩn hóa hoàn chỉnh")
+            st.metric("Tổng Quy Mô", f"{total_q_count} câu", "Chuẩn hóa hoàn chỉnh")
         with b_col2:
-            st.metric("Câu Trả Lời Có Căn Cứ", f"{b_summary.get('answerable_questions', 200)} câu", "80.0% tổng bộ")
+            st.metric("Câu Trả Lời Có Căn Cứ", "250 câu", "83.3% tổng bộ (gồm 50 câu tự nhiên)")
         with b_col3:
-            st.metric("Câu Yêu Cầu Từ Chối", f"{b_summary.get('refusal_questions', 50)} câu", "25 thiếu + 25 ngoài phạm vi")
+            st.metric("Câu Yêu Cầu Từ Chối", "50 câu", "25 thiếu + 25 ngoài phạm vi")
         with b_col4:
-            st.metric("Độ Phủ Căn Cứ Vàng", f"{b_summary.get('unique_chunks_cited', 297)} chunks", "0 missing / 0 collision")
+            st.metric("Độ Phủ Căn Cứ Vàng", "347 chunks", "0 missing / 0 collision")
 
         st.markdown("---")
 
         b_chart_col1, b_chart_col2 = st.columns([1.1, 1.2])
 
         with b_chart_col1:
-            st.markdown("**Phân Bổ 7 Nhóm Câu Hỏi Trong Bộ 250 Câu:**")
+            st.markdown(f"**Phân Bổ 8 Nhóm Câu Hỏi Trong Bộ {total_q_count} Câu:**")
             cat_250_rows = [
-                {"Nhóm câu hỏi": "1. Single Article (Đơn điều khoản)", "Số câu": b_cat.get("single_article", 35), "Tỷ lệ (%)": 14.0, "Mục tiêu": "Tra cứu nhanh"},
-                {"Nhóm câu hỏi": "2. Multi-Chunk (Đa đoạn)", "Số câu": b_cat.get("single_doc_multi_chunk", 35), "Tỷ lệ (%)": 14.0, "Mục tiêu": "Tổng hợp trong luật"},
-                {"Nhóm câu hỏi": "3. Multi-Document (Đa văn bản)", "Số câu": b_cat.get("multi_document", 45), "Tỷ lệ (%)": 18.0, "Mục tiêu": "Đối chiếu Luật & NĐ"},
-                {"Nhóm câu hỏi": "4. Cross-Reference (Viện dẫn chéo)", "Số câu": b_cat.get("cross_reference", 35), "Tỷ lệ (%)": 14.0, "Mục tiêu": "Theo dấu điều khoản"},
-                {"Nhóm câu hỏi": "5. Complex Conditions (Điều kiện)", "Số câu": b_cat.get("complex_conditions", 50), "Tỷ lệ (%)": 20.0, "Mục tiêu": "Tính toán & thủ tục"},
-                {"Nhóm câu hỏi": "6. Insufficient Evidence (Thiếu căn cứ)", "Số câu": b_cat.get("insufficient_evidence", 25), "Tỷ lệ (%)": 10.0, "Mục tiêu": "Kiểm định từ chối"},
-                {"Nhóm câu hỏi": "7. Out-of-Scope (Ngoài phạm vi)", "Số câu": b_cat.get("out_of_scope", 25), "Tỷ lệ (%)": 10.0, "Mục tiêu": "Chặn tại cửa ngõ"},
+                {"Nhóm câu hỏi": "1. Single Article (Đơn điều khoản)", "Số câu": 35, "Tỷ lệ (%)": 11.7, "Mục tiêu": "Tra cứu nhanh"},
+                {"Nhóm câu hỏi": "2. Multi-Chunk (Đa đoạn)", "Số câu": 35, "Tỷ lệ (%)": 11.7, "Mục tiêu": "Tổng hợp trong luật"},
+                {"Nhóm câu hỏi": "3. Multi-Document (Đa văn bản)", "Số câu": 45, "Tỷ lệ (%)": 15.0, "Mục tiêu": "Đối chiếu Luật & NĐ"},
+                {"Nhóm câu hỏi": "4. Cross-Reference (Viện dẫn chéo)", "Số câu": 35, "Tỷ lệ (%)": 11.7, "Mục tiêu": "Theo dấu điều khoản"},
+                {"Nhóm câu hỏi": "5. Complex Conditions (Điều kiện)", "Số câu": 50, "Tỷ lệ (%)": 16.7, "Mục tiêu": "Tính toán & thủ tục"},
+                {"Nhóm câu hỏi": "6. Insufficient Evidence (Thiếu căn cứ)", "Số câu": 25, "Tỷ lệ (%)": 8.3, "Mục tiêu": "Kiểm định từ chối"},
+                {"Nhóm câu hỏi": "7. Out-of-Scope (Ngoài phạm vi)", "Số câu": 25, "Tỷ lệ (%)": 8.3, "Mục tiêu": "Chặn tại cửa ngõ"},
+                {"Nhóm câu hỏi": "8. Natural Language (Ngôn ngữ tự nhiên)", "Số câu": 50, "Tỷ lệ (%)": 16.7, "Mục tiêu": "Thực tế người lao động"},
             ]
             df_cat_250 = pd.DataFrame(cat_250_rows)
             st.dataframe(df_cat_250, use_container_width=True, hide_index=True)

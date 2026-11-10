@@ -28,7 +28,7 @@ def get_generator(
     
     Args:
         provider: 'gemini', 'mock', hoặc 'auto' (None).
-        model_name: Tên mô hình LLM tương ứng (mặc định gemini-1.5-flash).
+        model_name: Tên mô hình LLM tương ứng.
         api_key: Khóa API cho cloud provider Gemini.
         **kwargs: Tham số bổ sung cho generator.
         

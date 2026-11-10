@@ -1,0 +1,402 @@
+[
+  {
+    "id": "NL01",
+    "question": "Sếp trừ 500k tiền lương của em vì đi làm trễ 10 phút có đúng luật không?",
+    "category": "Tiền lương & Khấu trừ",
+    "expected_scope": "in_scope",
+    "informal_elements": "Đại từ em/sếp, đơn vị 500k, ngôn ngữ tình huống đời thường",
+    "legal_basis": "Điều 102 Bộ luật Lao động 2019 (Khấu trừ tiền lương)"
+  },
+  {
+    "id": "NL02",
+    "question": "Công ty chậm trả lương cho nhân viên hơn 1 tháng thì có phải trả thêm tiền lãi không?",
+    "category": "Tiền lương & Khấu trừ",
+    "expected_scope": "in_scope",
+    "informal_elements": "Tình huống chậm lương thực tế, không trích dẫn điều khoản",
+    "legal_basis": "Điều 97 Bộ luật Lao động 2019 (Kỳ hạn trả lương & lãi chậm trả)"
+  },
+  {
+    "id": "NL03",
+    "question": "Làm ca đêm ở xưởng sản xuất thì tiền lương được tính thêm bao nhiêu phần trăm?",
+    "category": "Tiền lương & Khấu trừ",
+    "expected_scope": "in_scope",
+    "informal_elements": "Thuật ngữ xưởng sản xuất, ca đêm, tính thêm phần trăm",
+    "legal_basis": "Điều 98 Bộ luật Lao động 2019 (Tiền lương làm thêm giờ, làm việc vào ban đêm)"
+  },
+  {
+    "id": "NL04",
+    "question": "Em làm nhân viên kinh doanh, công ty giam tiền hoa hồng không trả thì em phải đòi thế nào?",
+    "category": "Tiền lương & Khấu trừ",
+    "expected_scope": "in_scope",
+    "informal_elements": "Đại từ em, từ ngữ dân dã giam tiền hoa hồng",
+    "legal_basis": "Điều 90, Điều 94 Bộ luật Lao động 2019 (Nguyên tắc trả lương)"
+  },
+  {
+    "id": "NL05",
+    "question": "Mức lương tối thiểu hiện nay ở Hà Nội và Sài Gòn là bao nhiêu một tháng?",
+    "category": "Tiền lương & Khấu trừ",
+    "expected_scope": "in_scope",
+    "informal_elements": "Địa danh đời thường Hà Nội và Sài Gòn thay vì Vùng I",
+    "legal_basis": "Điều 91 BLLĐ 2019 & Nghị định 74/2024/NĐ-CP (Lương tối thiểu vùng)"
+  },
+  {
+    "id": "NL06",
+    "question": "Công ty bắt làm tăng ca liên tục 4 tiếng mỗi ngày đến kiệt sức thì em có quyền từ chối không?",
+    "category": "Thời giờ làm việc & Nghỉ ngơi",
+    "expected_scope": "in_scope",
+    "informal_elements": "Từ cảm thán kiệt sức, bắt làm tăng ca, đại từ em",
+    "legal_basis": "Điều 107 Bộ luật Lao động 2019 (Làm thêm giờ)"
+  },
+  {
+    "id": "NL07",
+    "question": "Làm thêm giờ vào ngày chủ nhật hoặc ngày nghỉ hàng tuần thì được trả bao nhiêu tiền lương?",
+    "category": "Thời giờ làm việc & Nghỉ ngơi",
+    "expected_scope": "in_scope",
+    "informal_elements": "Cách gọi ngày chủ nhật thay vì ngày nghỉ hằng tuần luật định",
+    "legal_basis": "Điều 98 Bộ luật Lao động 2019 (Tiền lương làm thêm ngày nghỉ hàng tuần ít nhất 200%)"
+  },
+  {
+    "id": "NL08",
+    "question": "Bên em làm việc 12 tiếng một ngày suốt cả tuần không có ngày nghỉ thì có vi phạm không?",
+    "category": "Thời giờ làm việc & Nghỉ ngơi",
+    "expected_scope": "in_scope",
+    "informal_elements": "Đại từ bên em, phản ánh thời lượng làm việc thực tế",
+    "legal_basis": "Điều 105, Điều 111 Bộ luật Lao động 2019 (Thời giờ làm việc bình thường và nghỉ hàng tuần)"
+  },
+  {
+    "id": "NL09",
+    "question": "Mỗi ngày làm việc bình thường thì người lao động được nghỉ giữa ca bao nhiêu phút?",
+    "category": "Thời giờ làm việc & Nghỉ ngơi",
+    "expected_scope": "in_scope",
+    "informal_elements": "Cách hỏi thời lượng nghỉ giữa ca thông thường",
+    "legal_basis": "Điều 109 Bộ luật Lao động 2019 (Nghỉ trong giờ làm việc)"
+  },
+  {
+    "id": "NL10",
+    "question": "Đi làm vào ngày lễ mùng 1 Tết thì tiền lương tăng ca được tính gấp mấy lần ngày thường?",
+    "category": "Thời giờ làm việc & Nghỉ ngơi",
+    "expected_scope": "in_scope",
+    "informal_elements": "Dùng từ dân gian mùng 1 Tết, gấp mấy lần ngày thường",
+    "legal_basis": "Điều 98, Điều 112 Bộ luật Lao động 2019 (Tiền lương làm thêm ngày lễ, tết ít nhất 300%)"
+  },
+  {
+    "id": "NL11",
+    "question": "Em làm việc ở công ty được 1 năm thì được bao nhiêu ngày nghỉ phép có lương?",
+    "category": "Nghỉ phép & Nghỉ việc riêng",
+    "expected_scope": "in_scope",
+    "informal_elements": "Đại từ xưng hô em, thuật ngữ nghỉ phép có lương",
+    "legal_basis": "Điều 113 Bộ luật Lao động 2019 (Nghỉ hằng năm 12 ngày)"
+  },
+  {
+    "id": "NL12",
+    "question": "Sắp tới em làm đám cưới thì ở chỗ làm em được nghỉ mấy ngày hưởng nguyên lương?",
+    "category": "Nghỉ phép & Nghỉ việc riêng",
+    "expected_scope": "in_scope",
+    "informal_elements": "Từ làm đám cưới, chỗ làm (dễ bị nhầm sang hôn nhân gia đình)",
+    "legal_basis": "Điều 115 Bộ luật Lao động 2019 (Nghỉ việc riêng kết hôn được nghỉ 3 ngày)"
+  },
+  {
+    "id": "NL13",
+    "question": "Bố mẹ ruột của em qua đời thì em được nghỉ việc riêng hưởng nguyên lương mấy ngày?",
+    "category": "Nghỉ phép & Nghỉ việc riêng",
+    "expected_scope": "in_scope",
+    "informal_elements": "Từ ngữ đời thường qua đời, bố mẹ ruột",
+    "legal_basis": "Điều 115 Bộ luật Lao động 2019 (Nghỉ việc riêng tang chế được nghỉ 3 ngày)"
+  },
+  {
+    "id": "NL14",
+    "question": "Cuối năm em còn dư 5 ngày phép năm chưa nghỉ hết thì công ty có phải trả tiền cho em không?",
+    "category": "Nghỉ phép & Nghỉ việc riêng",
+    "expected_scope": "in_scope",
+    "informal_elements": "Tình huống cuối năm còn dư ngày phép, thanh toán phép tồn",
+    "legal_basis": "Điều 113 Khoản 6 Bộ luật Lao động 2019 (Thanh toán tiền ngày nghỉ hằng năm chưa nghỉ)"
+  },
+  {
+    "id": "NL15",
+    "question": "Con ruột của em kết hôn thì em có được nghỉ làm mà vẫn nhận đủ lương không?",
+    "category": "Nghỉ phép & Nghỉ việc riêng",
+    "expected_scope": "in_scope",
+    "informal_elements": "Tình huống con kết hôn, cụm từ nhận đủ lương thay vì hưởng nguyên lương",
+    "legal_basis": "Điều 115 Bộ luật Lao động 2019 (Con đẻ kết hôn được nghỉ 1 ngày có lương)"
+  },
+  {
+    "id": "NL16",
+    "question": "Thời gian thử việc cho vị trí nhân viên văn phòng có bằng đại học tối đa là mấy tháng?",
+    "category": "Thử việc & Hợp đồng",
+    "expected_scope": "in_scope",
+    "informal_elements": "Nhắc đến bằng đại học, vị trí nhân viên văn phòng",
+    "legal_basis": "Điều 25 Bộ luật Lao động 2019 (Thời gian thử việc tối đa 60 ngày)"
+  },
+  {
+    "id": "NL17",
+    "question": "Trong thời gian thử việc em thấy không phù hợp muốn nghỉ ngay thì có cần báo trước không?",
+    "category": "Thử việc & Hợp đồng",
+    "expected_scope": "in_scope",
+    "informal_elements": "Tình huống thấy không phù hợp muốn nghỉ ngay",
+    "legal_basis": "Điều 27 Bộ luật Lao động 2019 (Hủy bỏ thỏa thuận thử việc không cần báo trước)"
+  },
+  {
+    "id": "NL18",
+    "question": "Lương thử việc tối thiểu phải bằng bao nhiêu phần trăm so với lương chính thức?",
+    "category": "Thử việc & Hợp đồng",
+    "expected_scope": "in_scope",
+    "informal_elements": "Cụm từ lương chính thức đối lập lương thử việc",
+    "legal_basis": "Điều 26 Bộ luật Lao động 2019 (Tiền lương thử việc ít nhất bằng 85%)"
+  },
+  {
+    "id": "NL19",
+    "question": "Em đi làm hơn nửa năm mà công ty không ký hợp đồng giấy gì cả, chỉ thỏa thuận miệng thì có được không?",
+    "category": "Thử việc & Hợp đồng",
+    "expected_scope": "in_scope",
+    "informal_elements": "Khẩu ngữ hợp đồng giấy, thỏa thuận miệng",
+    "legal_basis": "Điều 14 Bộ luật Lao động 2019 (Hình thức hợp đồng lao động)"
+  },
+  {
+    "id": "NL20",
+    "question": "Công ty được ký hợp đồng thử việc mấy lần đối với một vị trí công việc?",
+    "category": "Thử việc & Hợp đồng",
+    "expected_scope": "in_scope",
+    "informal_elements": "Hỏi số lần ký thử việc thực tế",
+    "legal_basis": "Điều 25 Bộ luật Lao động 2019 (Chỉ được thử việc 01 lần cho một công việc)"
+  },
+  {
+    "id": "NL21",
+    "question": "Em lỡ làm rơi vỡ một cái máy ở xưởng, sếp bắt đền nguyên tháng lương thì có đúng không?",
+    "category": "Kỷ luật & Bồi thường",
+    "expected_scope": "in_scope",
+    "informal_elements": "Từ lỡ làm rơi vỡ, bắt đền nguyên tháng lương, sếp",
+    "legal_basis": "Điều 129, Điều 130 Bộ luật Lao động 2019 (Bồi thường thiệt hại & mức khấu trừ)"
+  },
+  {
+    "id": "NL22",
+    "question": "Sếp nhắn tin Zalo đuổi việc em ngay trong ngày mà không có lý do gì thì em phải làm sao?",
+    "category": "Kỷ luật & Bồi thường",
+    "expected_scope": "in_scope",
+    "informal_elements": "Nhắn tin Zalo đuổi việc, không có lý do gì",
+    "legal_basis": "Điều 36, Điều 39 Bộ luật Lao động 2019 (Đơn phương chấm dứt hợp đồng trái luật)"
+  },
+  {
+    "id": "NL23",
+    "question": "Công ty có quyền phạt tiền hoặc cắt lương của nhân viên thay cho hình thức kỷ luật không?",
+    "category": "Kỷ luật & Bồi thường",
+    "expected_scope": "in_scope",
+    "informal_elements": "Từ phạt tiền hoặc cắt lương thay kỷ luật",
+    "legal_basis": "Điều 127 Bộ luật Lao động 2019 (Các hành vi bị nghiêm cấm khi xử lý kỷ luật lao động)"
+  },
+  {
+    "id": "NL24",
+    "question": "Nghỉ việc không xin phép bao nhiêu ngày thì công ty mới có quyền sa thải đuổi việc?",
+    "category": "Kỷ luật & Bồi thường",
+    "expected_scope": "in_scope",
+    "informal_elements": "Khẩu ngữ sa thải đuổi việc, nghỉ việc không xin phép",
+    "legal_basis": "Điều 125 Khoản 4 Bộ luật Lao động 2019 (Sa thải do tự ý bỏ việc 5 ngày cộng dồn trong 30 ngày)"
+  },
+  {
+    "id": "NL25",
+    "question": "Trước khi họp xử lý kỷ luật đuổi việc thì công ty có phải thông báo trước cho em không?",
+    "category": "Kỷ luật & Bồi thường",
+    "expected_scope": "in_scope",
+    "informal_elements": "Từ họp xử lý kỷ luật đuổi việc, đại từ em",
+    "legal_basis": "Điều 122 BLLĐ 2019 & Điều 70 Nghị định 145/2020/NĐ-CP (Trình tự họp kỷ luật)"
+  },
+  {
+    "id": "NL26",
+    "question": "Em ký hợp đồng vô thời hạn, giờ muốn xin nghỉ việc thì phải nộp đơn báo trước bao nhiêu ngày?",
+    "category": "Chấm dứt HĐLĐ",
+    "expected_scope": "in_scope",
+    "informal_elements": "Dùng từ hợp đồng vô thời hạn thay vì không xác định thời hạn",
+    "legal_basis": "Điều 35 Khoản 1 Điểm a Bộ luật Lao động 2019 (Báo trước ít nhất 45 ngày)"
+  },
+  {
+    "id": "NL27",
+    "question": "Bị công ty đơn phương chấm dứt hợp đồng trái luật thì em được bồi thường những khoản gì?",
+    "category": "Chấm dứt HĐLĐ",
+    "expected_scope": "in_scope",
+    "informal_elements": "Tình huống người lao động bị đuổi trái luật cần biết quyền lợi bồi thường",
+    "legal_basis": "Điều 41 Bộ luật Lao động 2019 (Nghĩa vụ của người sử dụng lao động khi chấm dứt trái luật)"
+  },
+  {
+    "id": "NL28",
+    "question": "Em nộp đơn xin nghỉ việc đúng hạn nhưng sếp không chịu ký duyệt thì em có được nghỉ không?",
+    "category": "Chấm dứt HĐLĐ",
+    "expected_scope": "in_scope",
+    "informal_elements": "Tình huống thực tế sếp không chịu ký duyệt đơn nghỉ",
+    "legal_basis": "Điều 35 Bộ luật Lao động 2019 (Quyền đơn phương chấm dứt hợp đồng của NLĐ)"
+  },
+  {
+    "id": "NL29",
+    "question": "Khi em nghỉ việc thì trong vòng bao lâu công ty phải thanh toán hết tiền lương cho em?",
+    "category": "Chấm dứt HĐLĐ",
+    "expected_scope": "in_scope",
+    "informal_elements": "Hỏi thời hạn thanh toán lương tồn đọng khi thôi việc",
+    "legal_basis": "Điều 48 Bộ luật Lao động 2019 (Thời hạn thanh toán quyền lợi khi chấm dứt hợp đồng)"
+  },
+  {
+    "id": "NL30",
+    "question": "Em đang làm hợp đồng xác định thời hạn 1 năm thì khi muốn nghỉ cần báo trước bao nhiêu ngày?",
+    "category": "Chấm dứt HĐLĐ",
+    "expected_scope": "in_scope",
+    "informal_elements": "Hợp đồng 1 năm, hỏi số ngày báo trước cụ thể",
+    "legal_basis": "Điều 35 Khoản 1 Điểm b Bộ luật Lao động 2019 (Báo trước ít nhất 30 ngày)"
+  },
+  {
+    "id": "NL31",
+    "question": "Công ty trừ tiền lương của em nhưng không đóng bảo hiểm xã hội thì em kiểm tra và kiện ở đâu?",
+    "category": "Bảo hiểm xã hội",
+    "expected_scope": "in_scope",
+    "informal_elements": "Cụm từ trốn đóng BHXH, kiểm tra và kiện ở đâu",
+    "legal_basis": "Điều 17, Điều 18 Luật BHXH 2014 & Điều 168 BLLĐ 2019 (Trách nhiệm tham gia BHXH)"
+  },
+  {
+    "id": "NL32",
+    "question": "Lao động nữ mang thai cần đóng BHXH mấy tháng để được nhận tiền thai sản khi sinh con?",
+    "category": "Bảo hiểm xã hội",
+    "expected_scope": "in_scope",
+    "informal_elements": "Cách hỏi điều kiện hưởng chế độ thai sản thông dụng",
+    "legal_basis": "Điều 31 Luật BHXH 2014 (Đóng BHXH từ đủ 06 tháng trở lên trong 12 tháng trước khi sinh)"
+  },
+  {
+    "id": "NL33",
+    "question": "Vợ em sinh con thì em là chồng được nghỉ làm bao nhiêu ngày theo chế độ bảo hiểm?",
+    "category": "Bảo hiểm xã hội",
+    "expected_scope": "in_scope",
+    "informal_elements": "Tình huống người chồng xin nghỉ khi vợ sinh em bé",
+    "legal_basis": "Điều 34 Khoản 2 Luật BHXH 2014 (Chế độ thai sản đối với lao động nam)"
+  },
+  {
+    "id": "NL34",
+    "question": "Bị ốm đau phải nằm viện điều trị thì tiền bảo hiểm ốm đau được chi trả thế nào?",
+    "category": "Bảo hiểm xã hội",
+    "expected_scope": "in_scope",
+    "informal_elements": "Cách hỏi quyền lợi trợ cấp ốm đau khi đi viện",
+    "legal_basis": "Điều 25, Điều 28 Luật BHXH 2014 (Chế độ ốm đau)"
+  },
+  {
+    "id": "NL35",
+    "question": "Nghỉ việc xong thì bao lâu công ty phải trả lại sổ bảo hiểm xã hội đã chốt cho em?",
+    "category": "Bảo hiểm xã hội",
+    "expected_scope": "in_scope",
+    "informal_elements": "Khẩu ngữ trả lại sổ bảo hiểm xã hội đã chốt",
+    "legal_basis": "Điều 48 Khoản 3 Bộ luật Lao động 2019 (Hoàn thành thủ tục xác nhận thời gian đóng BHXH)"
+  },
+  {
+    "id": "NL36",
+    "question": "Công ty có được quyền sa thải hoặc cho nghỉ việc nhân viên nữ vì lý do mang thai không?",
+    "category": "Lao động nữ",
+    "expected_scope": "in_scope",
+    "informal_elements": "Tình huống mang thai bị đuổi việc phổ biến trên thực tế",
+    "legal_basis": "Điều 137 Khoản 3 Bộ luật Lao động 2019 (Bảo vệ thai sản đối với lao động nữ)"
+  },
+  {
+    "id": "NL37",
+    "question": "Lao động nữ đang nuôi con nhỏ dưới 12 tháng tuổi có được giảm 1 giờ làm việc mỗi ngày không?",
+    "category": "Lao động nữ",
+    "expected_scope": "in_scope",
+    "informal_elements": "Nuôi con nhỏ dưới 12 tháng tuổi, giảm 1 giờ làm việc",
+    "legal_basis": "Điều 137 Khoản 4 Bộ luật Lao động 2019 (Nghỉ mỗi ngày 60 phút khi nuôi con dưới 12 tháng)"
+  },
+  {
+    "id": "NL38",
+    "question": "Trong những ngày hành kinh phụ nữ đi làm có được nghỉ ngơi thêm mỗi ngày không?",
+    "category": "Lao động nữ",
+    "expected_scope": "in_scope",
+    "informal_elements": "Hỏi về chế độ tế nhị trong ngày hành kinh của nữ công nhân",
+    "legal_basis": "Điều 137 Khoản 4 BLLĐ 2019 & Điều 80 Nghị định 145/2020/NĐ-CP (Nghỉ 30 phút mỗi ngày)"
+  },
+  {
+    "id": "NL39",
+    "question": "Công ty có được ép nhân viên nữ làm ca đêm khi đang mang thai từ tháng thứ 7 không?",
+    "category": "Lao động nữ",
+    "expected_scope": "in_scope",
+    "informal_elements": "Cụm từ ép làm ca đêm khi mang thai tháng thứ 7",
+    "legal_basis": "Điều 137 Khoản 1 Bộ luật Lao động 2019 (Cấm sử dụng LĐ nữ mang thai từ tháng thứ 7 làm ca đêm)"
+  },
+  {
+    "id": "NL40",
+    "question": "Hết thời gian nghỉ thai sản 6 tháng em có thể xin nghỉ thêm không hưởng lương được không?",
+    "category": "Lao động nữ",
+    "expected_scope": "in_scope",
+    "informal_elements": "Tình huống xin nghỉ thêm sau 6 tháng nghỉ đẻ",
+    "legal_basis": "Điều 139 Khoản 3 Bộ luật Lao động 2019 (Nghỉ thêm một thời gian không hưởng lương)"
+  },
+  {
+    "id": "NL41",
+    "question": "Em bị máy ép dập đứt ngón tay khi đang làm việc tại xưởng thì công ty phải bồi thường thế nào?",
+    "category": "An toàn & Tai nạn lao động",
+    "expected_scope": "in_scope",
+    "informal_elements": "Mô tả tai nạn thực tế bị máy ép dập đứt ngón tay ở xưởng",
+    "legal_basis": "Điều 38 Luật An toàn, vệ sinh lao động 2015 (Trách nhiệm của người sử dụng lao động)"
+  },
+  {
+    "id": "NL42",
+    "question": "Đi từ nhà đến công ty làm việc mà bị tai nạn giao thông trên đường thì có được tính là tai nạn lao động không?",
+    "category": "An toàn & Tai nạn lao động",
+    "expected_scope": "in_scope",
+    "informal_elements": "Có từ giao thông dễ nhầm ngoài phạm vi, hỏi chế độ trên tuyến đường đi và về",
+    "legal_basis": "Điều 45 Luật An toàn, vệ sinh lao động 2015 (Điều kiện hưởng chế độ tai nạn lao động)"
+  },
+  {
+    "id": "NL43",
+    "question": "Làm việc tại công trường xây dựng mà công ty không phát giày bảo hộ và mũ cứng thì em có quyền từ chối làm không?",
+    "category": "An toàn & Tai nạn lao động",
+    "expected_scope": "in_scope",
+    "informal_elements": "Chi tiết giày bảo hộ, mũ cứng, công trường xây dựng",
+    "legal_basis": "Điều 23 Luật An toàn, vệ sinh lao động 2015 (Quyền từ chối làm việc khi có nguy cơ mất an toàn)"
+  },
+  {
+    "id": "NL44",
+    "question": "Tiền viện phí điều trị tai nạn lao động là do công ty trả hay do người bị nạn tự trả?",
+    "category": "An toàn & Tai nạn lao động",
+    "expected_scope": "in_scope",
+    "informal_elements": "Khẩu ngữ tiền viện phí điều trị, người bị nạn tự trả",
+    "legal_basis": "Điều 38 Khoản 1, 2 Luật ATVSLĐ 2015 (Thanh toán chi phí y tế từ sơ cứu đến điều trị ổn định)"
+  },
+  {
+    "id": "NL45",
+    "question": "Bị suy giảm 10% khả năng lao động do tai nạn ở nơi làm việc thì được nhận trợ cấp bao nhiêu tiền?",
+    "category": "An toàn & Tai nạn lao động",
+    "expected_scope": "in_scope",
+    "informal_elements": "Tình huống giám định thương tật 10%, hỏi mức trợ cấp",
+    "legal_basis": "Điều 48 Luật An toàn, vệ sinh lao động 2015 (Trợ cấp một lần do TNLĐ, BNN)"
+  },
+  {
+    "id": "NL46",
+    "question": "Em vào công ty làm lái xe chở hàng, sếp bắt nộp giữ luôn bằng lái xe gốc của em có đúng luật không?",
+    "category": "Hành vi bị cấm & Nhập nhằng",
+    "expected_scope": "in_scope",
+    "informal_elements": "Chứa từ bằng lái xe (dễ bị nhầm sang giao thông), hỏi hành vi giữ giấy tờ gốc",
+    "legal_basis": "Điều 17 Khoản 1 Bộ luật Lao động 2019 (Hành vi NSDLĐ không được làm khi giao kết, thực hiện HĐLĐ)"
+  },
+  {
+    "id": "NL47",
+    "question": "Công ty yêu cầu em phải nộp tiền đặt cọc 5 triệu đồng để giữ chỗ làm việc thì có hợp pháp không?",
+    "category": "Hành vi bị cấm & Nhập nhằng",
+    "expected_scope": "in_scope",
+    "informal_elements": "Chứa từ đặt cọc (dễ bị nhầm sang hợp đồng dân sự), hỏi việc đặt cọc giữ chỗ làm việc",
+    "legal_basis": "Điều 17 Khoản 2 Bộ luật Lao động 2019 (Cấm yêu cầu người lao động nộp tiền hoặc tài sản bảo đảm)"
+  },
+  {
+    "id": "NL48",
+    "question": "Chủ bắt nộp giữ bản chính chứng minh nhân dân hoặc hộ chiếu khi vào thử việc có vi phạm không?",
+    "category": "Hành vi bị cấm & Nhập nhằng",
+    "expected_scope": "in_scope",
+    "informal_elements": "Chứa từ chứng minh nhân dân, hộ chiếu (dễ bị nhầm sang hộ tịch/xuất nhập cảnh)",
+    "legal_basis": "Điều 17 Khoản 1 Bộ luật Lao động 2019 (Cấm giữ bản chính giấy tờ tùy thân của NLĐ)"
+  },
+  {
+    "id": "NL49",
+    "question": "Em làm việc cho một công ty du lịch lữ hành, bị nợ lương 3 tháng nay thì có quyền ngừng việc không?",
+    "category": "Hành vi bị cấm & Nhập nhằng",
+    "expected_scope": "in_scope",
+    "informal_elements": "Chứa từ công ty du lịch (dễ bị nhầm sang domain du lịch), hỏi quyền lợi lao động nợ lương",
+    "legal_basis": "Điều 35 Khoản 2 Điểm b Bộ luật Lao động 2019 (Không được trả đủ lương hoặc trả lương không đúng hạn)"
+  },
+  {
+    "id": "NL50",
+    "question": "Em làm việc phụ bếp ở quán ăn, bị chủ đuổi ngang không trả lương với lý do không hợp thì phải làm sao?",
+    "category": "Hành vi bị cấm & Nhập nhằng",
+    "expected_scope": "in_scope",
+    "informal_elements": "Chứa từ quán ăn, phụ bếp (dễ bị nhầm sang culinary), hỏi hành vi đuổi ngang quỵt lương",
+    "legal_basis": "Điều 36, Điều 94 Bộ luật Lao động 2019 (Quan hệ lao động và nghĩa vụ trả lương)"
+  }
+]

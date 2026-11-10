@@ -1,0 +1,505 @@
+{
+  "version": "1.0",
+  "updated_at": "2026-11-10",
+  "supported_documents": {
+    "BLLD_2019": {
+      "document_id": "BLLD_2019",
+      "document_number": "45/2019/QH14",
+      "document_title": "Bộ luật Lao động 2019 số 45/2019/QH14",
+      "document_type": "Bộ luật",
+      "effective_from": "2021-01-01",
+      "effective_to": null,
+      "legal_status": "ACTIVE",
+      "authority": "Quốc hội",
+      "aliases": [
+        "bộ luật lao động 2019",
+        "bộ luật lao động",
+        "bllđ 2019",
+        "bllđ",
+        "luật số 45/2019/qh14",
+        "45/2019/qh14",
+        "luật lao động 2019",
+        "luật lao động"
+      ],
+      "regex_patterns": [
+        "\\b(bộ\\s+luật\\s+lao\\s+động(\\s+2019)?|bllđ(\\s+2019)?|45/2019/qh14)\\b"
+      ]
+    },
+    "LUAT_ATVSLD_2015": {
+      "document_id": "LUAT_ATVSLD_2015",
+      "document_number": "84/2015/QH13",
+      "document_title": "Luật số 84/2015/QH13 An toàn, vệ sinh lao động",
+      "document_type": "Luật",
+      "effective_from": "2016-07-01",
+      "effective_to": null,
+      "legal_status": "ACTIVE",
+      "authority": "Quốc hội",
+      "aliases": [
+        "luật an toàn vệ sinh lao động 2015",
+        "luật an toàn vệ sinh lao động",
+        "luật atvsld",
+        "84/2015/qh13",
+        "luật 84/2015"
+      ],
+      "regex_patterns": [
+        "\\b(luật\\s+an\\s+toàn[,\\s]+vệ\\s+sinh\\s+lao\\s+động|luật\\s+atvsld|84/2015/qh13)\\b"
+      ]
+    },
+    "LUAT_BHXH_2014": {
+      "document_id": "LUAT_BHXH_2014",
+      "document_number": "58/2014/QH13",
+      "document_title": "Luật số 58/2014/QH13 Bảo hiểm xã hội",
+      "document_type": "Luật",
+      "effective_from": "2016-01-01",
+      "effective_to": "2025-06-30",
+      "legal_status": "TRANSITIONAL",
+      "authority": "Quốc hội",
+      "replacement_document_id": "LUAT_BHXH_2024",
+      "aliases": [
+        "luật bảo hiểm xã hội 2014",
+        "luật bhxh 2014",
+        "58/2014/qh13",
+        "luật 58/2014"
+      ],
+      "regex_patterns": [
+        "\\b(luật\\s+bảo\\s+hiểm\\s+xã\\s+hội\\s+2014|luật\\s+bhxh\\s+2014|58/2014/qh13)\\b"
+      ]
+    },
+    "LUAT_BHXH_2024": {
+      "document_id": "LUAT_BHXH_2024",
+      "document_number": "41/2024/QH15",
+      "document_title": "Luật số 41/2024/QH15 Bảo hiểm xã hội",
+      "document_type": "Luật",
+      "effective_from": "2025-07-01",
+      "effective_to": null,
+      "legal_status": "FUTURE_ACTIVE",
+      "authority": "Quốc hội",
+      "aliases": [
+        "luật bảo hiểm xã hội 2024",
+        "luật bhxh 2024",
+        "41/2024/qh15",
+        "luật 41/2024"
+      ],
+      "regex_patterns": [
+        "\\b(luật\\s+bảo\\s+hiểm\\s+xã\\s+hội\\s+2024|luật\\s+bhxh\\s+2024|41/2024/qh15)\\b"
+      ]
+    },
+    "LUAT_VIEC_LAM_2013": {
+      "document_id": "LUAT_VIEC_LAM_2013",
+      "document_number": "38/2013/QH13",
+      "document_title": "Luật số 38/2013/QH13 Việc làm",
+      "document_type": "Luật",
+      "effective_from": "2015-01-01",
+      "effective_to": null,
+      "legal_status": "ACTIVE",
+      "authority": "Quốc hội",
+      "aliases": [
+        "luật việc làm 2013",
+        "luật việc làm",
+        "38/2013/qh13",
+        "luật 38/2013"
+      ],
+      "regex_patterns": [
+        "\\b(luật\\s+việc\\s+làm(\\s+2013)?|38/2013/qh13)\\b"
+      ]
+    },
+    "ND_12_2022": {
+      "document_id": "ND_12_2022",
+      "document_number": "12/2022/NĐ-CP",
+      "document_title": "Nghị định số 12/2022/NĐ-CP Xử phạt vi phạm hành chính lĩnh vực lao động, BHXH",
+      "document_type": "Nghị định",
+      "effective_from": "2022-01-17",
+      "effective_to": null,
+      "legal_status": "ACTIVE",
+      "authority": "Chính phủ",
+      "aliases": [
+        "nghị định 12/2022",
+        "nghị định 12/2022/nđ-cp",
+        "nđ 12/2022",
+        "12/2022/nđ-cp"
+      ],
+      "regex_patterns": [
+        "\\b(nghị\\s+định\\s+12/2022|nđ\\s+12/2022|12/2022/nđ-cp)\\b"
+      ]
+    },
+    "ND_135_2020": {
+      "document_id": "ND_135_2020",
+      "document_number": "135/2020/NĐ-CP",
+      "document_title": "Nghị định số 135/2020/NĐ-CP Quy định về tuổi nghỉ hưu",
+      "document_type": "Nghị định",
+      "effective_from": "2021-01-01",
+      "effective_to": null,
+      "legal_status": "ACTIVE",
+      "authority": "Chính phủ",
+      "aliases": [
+        "nghị định 135/2020",
+        "nghị định 135/2020/nđ-cp",
+        "nđ 135/2020",
+        "135/2020/nđ-cp"
+      ],
+      "regex_patterns": [
+        "\\b(nghị\\s+định\\s+135/2020|nđ\\s+135/2020|135/2020/nđ-cp)\\b"
+      ]
+    },
+    "ND_145_2020": {
+      "document_id": "ND_145_2020",
+      "document_number": "145/2020/NĐ-CP",
+      "document_title": "Nghị định số 145/2020/NĐ-CP Hướng dẫn Bộ luật Lao động về điều kiện lao động và quan hệ lao động",
+      "document_type": "Nghị định",
+      "effective_from": "2021-02-01",
+      "effective_to": null,
+      "legal_status": "ACTIVE",
+      "authority": "Chính phủ",
+      "aliases": [
+        "nghị định 145/2020",
+        "nghị định 145/2020/nđ-cp",
+        "nđ 145/2020",
+        "145/2020/nđ-cp"
+      ],
+      "regex_patterns": [
+        "\\b(nghị\\s+định\\s+145/2020|nđ\\s+145/2020|145/2020/nđ-cp)\\b"
+      ]
+    },
+    "ND_152_2020": {
+      "document_id": "ND_152_2020",
+      "document_number": "152/2020/NĐ-CP",
+      "document_title": "Nghị định số 152/2020/NĐ-CP Lao động nước ngoài làm việc tại Việt Nam",
+      "document_type": "Nghị định",
+      "effective_from": "2021-02-15",
+      "effective_to": null,
+      "legal_status": "ACTIVE_AMENDED",
+      "authority": "Chính phủ",
+      "aliases": [
+        "nghị định 152/2020",
+        "nghị định 152/2020/nđ-cp",
+        "nđ 152/2020",
+        "152/2020/nđ-cp"
+      ],
+      "regex_patterns": [
+        "\\b(nghị\\s+định\\s+152/2020|nđ\\s+152/2020|152/2020/nđ-cp)\\b"
+      ]
+    },
+    "ND_219_2025": {
+      "document_id": "ND_219_2025",
+      "document_number": "219/2025/NĐ-CP",
+      "document_title": "Nghị định số 219/2025/NĐ-CP Về người lao động nước ngoài làm việc tại Việt Nam",
+      "document_type": "Nghị định",
+      "effective_from": "2025-01-01",
+      "effective_to": null,
+      "legal_status": "ACTIVE",
+      "authority": "Chính phủ",
+      "aliases": [
+        "nghị định 219/2025",
+        "nghị định 219/2025/nđ-cp",
+        "nđ 219/2025",
+        "219/2025/nđ-cp"
+      ],
+      "regex_patterns": [
+        "\\b(nghị\\s+định\\s+219/2025|nđ\\s+219/2025|219/2025/nđ-cp)\\b"
+      ]
+    },
+    "ND_70_2023": {
+      "document_id": "ND_70_2023",
+      "document_number": "70/2023/NĐ-CP",
+      "document_title": "Nghị định số 70/2023/NĐ-CP Sửa đổi Nghị định 152/2020 về lao động nước ngoài",
+      "document_type": "Nghị định",
+      "effective_from": "2023-09-18",
+      "effective_to": null,
+      "legal_status": "ACTIVE",
+      "authority": "Chính phủ",
+      "aliases": [
+        "nghị định 70/2023",
+        "nghị định 70/2023/nđ-cp",
+        "nđ 70/2023",
+        "70/2023/nđ-cp"
+      ],
+      "regex_patterns": [
+        "\\b(nghị\\s+định\\s+70/2023|nđ\\s+70/2023|70/2023/nđ-cp)\\b"
+      ]
+    },
+    "ND_74_2024": {
+      "document_id": "ND_74_2024",
+      "document_number": "74/2024/NĐ-CP",
+      "document_title": "Nghị định số 74/2024/NĐ-CP Mức lương tối thiểu vùng",
+      "document_type": "Nghị định",
+      "effective_from": "2024-07-01",
+      "effective_to": null,
+      "legal_status": "ACTIVE",
+      "authority": "Chính phủ",
+      "aliases": [
+        "nghị định 74/2024",
+        "nghị định 74/2024/nđ-cp",
+        "nđ 74/2024",
+        "74/2024/nđ-cp"
+      ],
+      "regex_patterns": [
+        "\\b(nghị\\s+định\\s+74/2024|nđ\\s+74/2024|74/2024/nđ-cp)\\b"
+      ]
+    },
+    "ND_83_2022": {
+      "document_id": "ND_83_2022",
+      "document_number": "83/2022/NĐ-CP",
+      "document_title": "Nghị định số 83/2022/NĐ-CP Về nghỉ hưu ở tuổi cao hơn đối với cán bộ, công chức",
+      "document_type": "Nghị định",
+      "effective_from": "2022-10-20",
+      "effective_to": null,
+      "legal_status": "ACTIVE",
+      "authority": "Chính phủ",
+      "aliases": [
+        "nghị định 83/2022",
+        "nghị định 83/2022/nđ-cp",
+        "nđ 83/2022",
+        "83/2022/nđ-cp"
+      ],
+      "regex_patterns": [
+        "\\b(nghị\\s+định\\s+83/2022|nđ\\s+83/2022|83/2022/nđ-cp)\\b"
+      ]
+    },
+    "ND_99_2024": {
+      "document_id": "ND_99_2024",
+      "document_number": "99/2024/NĐ-CP",
+      "document_title": "Nghị định số 99/2024/NĐ-CP Sửa đổi Nghị định 83/2022",
+      "document_type": "Nghị định",
+      "effective_from": "2024-09-20",
+      "effective_to": null,
+      "legal_status": "ACTIVE",
+      "authority": "Chính phủ",
+      "aliases": [
+        "nghị định 99/2024",
+        "nghị định 99/2024/nđ-cp",
+        "nđ 99/2024",
+        "99/2024/nđ-cp"
+      ],
+      "regex_patterns": [
+        "\\b(nghị\\s+định\\s+99/2024|nđ\\s+99/2024|99/2024/nđ-cp)\\b"
+      ]
+    },
+    "QD_992_2025": {
+      "document_id": "QD_992_2025",
+      "document_number": "992/QĐ-TTg",
+      "document_title": "Quyết định số 992/QĐ-TTg Kiện toàn Hội đồng Tiền lương Quốc gia",
+      "document_type": "Quyết định",
+      "effective_from": "2025-01-01",
+      "effective_to": null,
+      "legal_status": "ACTIVE",
+      "authority": "Thủ tướng Chính phủ",
+      "aliases": [
+        "quyết định 992/2025",
+        "quyết định 992/qđ-ttg",
+        "qđ 992/2025",
+        "992/qđ-ttg"
+      ],
+      "regex_patterns": [
+        "\\b(quyết\\s+định\\s+992/2025|quyết\\s+định\\s+992/qđ-ttg|992/qđ-ttg)\\b"
+      ]
+    },
+    "TT_09_2020": {
+      "document_id": "TT_09_2020",
+      "document_number": "09/2020/TT-BLĐTBXH",
+      "document_title": "Thông tư số 09/2020/TT-BLĐTBXH Về lao động chưa thành niên",
+      "document_type": "Thông tư",
+      "effective_from": "2021-03-15",
+      "effective_to": null,
+      "legal_status": "ACTIVE",
+      "authority": "Bộ LĐ-TB&XH",
+      "aliases": [
+        "thông tư 09/2020",
+        "thông tư 09/2020/tt-blđtbxh",
+        "tt 09/2020",
+        "09/2020/tt-blđtbxh"
+      ],
+      "regex_patterns": [
+        "\\b(thông\\s+tư\\s+09/2020|tt\\s+09/2020|09/2020/tt-blđtbxh)\\b"
+      ]
+    },
+    "TT_10_2020": {
+      "document_id": "TT_10_2020",
+      "document_number": "10/2020/TT-BLĐTBXH",
+      "document_title": "Thông tư số 10/2020/TT-BLĐTBXH Về hợp đồng lao động, kỷ luật lao động",
+      "document_type": "Thông tư",
+      "effective_from": "2021-01-01",
+      "effective_to": null,
+      "legal_status": "ACTIVE",
+      "authority": "Bộ LĐ-TB&XH",
+      "aliases": [
+        "thông tư 10/2020",
+        "thông tư 10/2020/tt-blđtbxh",
+        "tt 10/2020",
+        "10/2020/tt-blđtbxh"
+      ],
+      "regex_patterns": [
+        "\\b(thông\\s+tư\\s+10/2020|tt\\s+10/2020|10/2020/tt-blđtbxh)\\b"
+      ]
+    },
+    "TT_11_2020": {
+      "document_id": "TT_11_2020",
+      "document_number": "11/2020/TT-BLĐTBXH",
+      "document_title": "Thông tư số 11/2020/TT-BLĐTBXH Danh mục công việc nặng nhọc, độc hại, nguy hiểm",
+      "document_type": "Thông tư",
+      "effective_from": "2021-03-01",
+      "effective_to": null,
+      "legal_status": "ACTIVE",
+      "authority": "Bộ LĐ-TB&XH",
+      "aliases": [
+        "thông tư 11/2020",
+        "thông tư 11/2020/tt-blđtbxh",
+        "tt 11/2020",
+        "11/2020/tt-blđtbxh"
+      ],
+      "regex_patterns": [
+        "\\b(thông\\s+tư\\s+11/2020|tt\\s+11/2020|11/2020/tt-blđtbxh)\\b"
+      ]
+    },
+    "TT_20_2023": {
+      "document_id": "TT_20_2023",
+      "document_number": "20/2023/TT-BCT",
+      "document_title": "Thông tư số 20/2023/TT-BCT Thời giờ làm việc đối với thăm dò, khai thác dầu khí trên biển",
+      "document_type": "Thông tư",
+      "effective_from": "2024-02-15",
+      "effective_to": null,
+      "legal_status": "ACTIVE",
+      "authority": "Bộ Công Thương",
+      "aliases": [
+        "thông tư 20/2023",
+        "thông tư 20/2023/tt-bct",
+        "tt 20/2023",
+        "20/2023/tt-bct"
+      ],
+      "regex_patterns": [
+        "\\b(thông\\s+tư\\s+20/2023|tt\\s+20/2023|20/2023/tt-bct)\\b"
+      ]
+    }
+  },
+  "unsupported_documents": {
+    "LUAT_CONG_DOAN_2012": {
+      "name": "Luật Công đoàn 2012",
+      "document_number": "12/2012/QH13",
+      "reason": "Văn bản chưa được tích hợp vào cơ sở dữ liệu (thuộc lĩnh vực tổ chức công đoàn)."
+    },
+    "ND_05_2015": {
+      "name": "Nghị định 05/2015/NĐ-CP",
+      "document_number": "05/2015/NĐ-CP",
+      "reason": "Văn bản đã hết hiệu lực thi hành hoàn toàn, bị thay thế bởi Nghị định 145/2020/NĐ-CP."
+    },
+    "ND_28_2020": {
+      "name": "Nghị định 28/2020/NĐ-CP",
+      "document_number": "28/2020/NĐ-CP",
+      "reason": "Văn bản đã hết hiệu lực thi hành hoàn toàn, bị thay thế bởi Nghị định 12/2022/NĐ-CP."
+    },
+    "LUAT_DOANH_NGHIEP_2020": {
+      "name": "Luật Doanh nghiệp 2020",
+      "document_number": "59/2020/QH14",
+      "reason": "Thuộc lĩnh vực pháp luật Doanh nghiệp, ngoài phạm vi pháp luật lao động."
+    },
+    "BO_LUAT_HINH_SU_2015": {
+      "name": "Bộ luật Hình sự 2015",
+      "document_number": "100/2015/QH13",
+      "reason": "Thuộc lĩnh vực pháp luật Hình sự, ngoài phạm vi pháp luật lao động."
+    },
+    "LUAT_DAT_DAI_2024": {
+      "name": "Luật Đất đai 2024",
+      "document_number": "31/2024/QH15",
+      "reason": "Thuộc lĩnh vực pháp luật Đất đai, ngoài phạm vi pháp luật lao động."
+    },
+    "LUAT_HON_NHAN_2014": {
+      "name": "Luật Hôn nhân và Gia đình 2014",
+      "document_number": "52/2014/QH13",
+      "reason": "Thuộc lĩnh vực Hôn nhân và Gia đình, ngoài phạm vi pháp luật lao động."
+    },
+    "LUAT_THUE_TNCN_2007": {
+      "name": "Luật Thuế thu nhập cá nhân 2007",
+      "document_number": "04/2007/QH12",
+      "reason": "Thuộc lĩnh vực pháp luật Thuế, ngoài phạm vi quan hệ lao động."
+    },
+    "DIEU_LE_CONG_DOAN": {
+      "name": "Điều lệ Công đoàn Việt Nam",
+      "document_number": "Điều lệ Công đoàn",
+      "reason": "Văn bản nội bộ của tổ chức chính trị - xã hội, chưa được tích hợp vào cơ sở dữ liệu."
+    },
+    "ND_61_2015": {
+      "name": "Nghị định 61/2015/NĐ-CP",
+      "document_number": "61/2015/NĐ-CP",
+      "reason": "Chính sách hỗ trợ tạo việc làm và Quỹ quốc gia về việc làm chưa được tích hợp trong kho dữ liệu."
+    },
+    "TT_07_2005_BNV": {
+      "name": "Thông tư 07/2005/TT-BNV",
+      "document_number": "07/2005/TT-BNV",
+      "reason": "Quy định về phụ cấp độc hại y tế thuộc văn bản chuyên ngành ngoài kho dữ liệu."
+    },
+    "LUAT_XUAT_NHAP_CANH": {
+      "name": "Luật Xuất nhập cảnh (Thẻ tạm trú)",
+      "document_number": "47/2014/QH13",
+      "reason": "Thuộc lĩnh vực quản lý xuất nhập cảnh của Bộ Công an, ngoài kho dữ liệu lao động."
+    },
+    "LUAT_GDNN": {
+      "name": "Luật Giáo dục nghề nghiệp / NĐ 143/2016",
+      "document_number": "74/2014/QH13",
+      "reason": "Quy chuẩn cơ sở vật chất giáo dục nghề nghiệp chưa được tích hợp trong kho dữ liệu."
+    },
+    "QD_1956_TTG": {
+      "name": "Quyết định 1956/QĐ-TTg",
+      "document_number": "1956/QĐ-TTg",
+      "reason": "Đề án đào tạo nghề cho lao động nông thôn là văn bản cá biệt ngoài kho dữ liệu."
+    },
+    "NQ_954_2020": {
+      "name": "Nghị quyết 954/2020/UBTVQH14",
+      "document_number": "954/2020/UBTVQH14",
+      "reason": "Về giảm trừ gia cảnh thuế TNCN, thuộc lĩnh vực thuế tài chính."
+    },
+    "DVC_QUOC_GIA": {
+      "name": "Cổng Dịch vụ công Quốc gia",
+      "document_number": "DVC_QUOC_GIA",
+      "reason": "Quy trình kỹ thuật của Cổng dịch vụ công không phải văn bản quy phạm pháp luật trong kho."
+    },
+    "ND_204_2004": {
+      "name": "Nghị định 204/2004/NĐ-CP",
+      "document_number": "204/2004/NĐ-CP",
+      "reason": "Về tiền lương cán bộ, công chức, viên chức nhà nước, không thuộc quan hệ lao động doanh nghiệp."
+    },
+    "ND_23_2021": {
+      "name": "Nghị định 23/2021/NĐ-CP",
+      "document_number": "23/2021/NĐ-CP",
+      "reason": "Điều kiện kinh doanh dịch vụ việc làm chưa được tích hợp trong cơ sở dữ liệu."
+    },
+    "LUAT_SHTT": {
+      "name": "Luật Sở hữu trí tuệ",
+      "document_number": "50/2005/QH11",
+      "reason": "Quyền sở hữu công nghiệp và sáng chế thuộc lĩnh vực Luật Sở hữu trí tuệ."
+    },
+    "BO_LUAT_HANG_HAI": {
+      "name": "Bộ luật Hàng hải 2015",
+      "document_number": "95/2015/QH13",
+      "reason": "Chế độ chuyên ngành của thuyền viên hàng hải thuộc Bộ luật Hàng hải, ngoài kho dữ liệu."
+    },
+    "TT_40_2017_BTC": {
+      "name": "Thông tư 40/2017/TT-BTC",
+      "document_number": "40/2017/TT-BTC",
+      "reason": "Chế độ công tác phí cơ quan nhà nước thuộc lĩnh vực tài chính công, ngoài kho dữ liệu."
+    },
+    "QCVN_05_2020_BCT": {
+      "name": "Quy chuẩn kỹ thuật QCVN 05:2020/BCT",
+      "document_number": "QCVN 05:2020/BCT",
+      "reason": "Quy chuẩn kỹ thuật an toàn hóa chất của Bộ Công Thương chưa được tích hợp."
+    },
+    "HD_TONG_LDLD": {
+      "name": "Hướng dẫn của Tổng Liên đoàn Lao động",
+      "document_number": "HD_TLDLD",
+      "reason": "Văn bản hướng dẫn nội bộ công đoàn, chưa được tích hợp trong cơ sở dữ liệu."
+    },
+    "ND_29_2023": {
+      "name": "Nghị định 29/2023/NĐ-CP",
+      "document_number": "29/2023/NĐ-CP",
+      "reason": "Về tinh giản biên chế cán bộ công chức, không áp dụng cho lao động doanh nghiệp."
+    },
+    "QD_17_2021_TTG": {
+      "name": "Quyết định 17/2021/QĐ-TTg",
+      "document_number": "17/2021/QĐ-TTg",
+      "reason": "Mức hỗ trợ học nghề BHTN là văn bản cá biệt chưa được tích hợp trong kho."
+    },
+    "LUAT_NLNT": {
+      "name": "Luật Năng lượng nguyên tử",
+      "document_number": "18/2008/QH12",
+      "reason": "Quy chuẩn chứng chỉ an toàn bức xạ thuộc lĩnh vực KH&CN, ngoài kho dữ liệu."
+    }
+  }
+}

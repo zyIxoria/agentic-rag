@@ -59,6 +59,28 @@ class CRAGConfig(BaseSettings):
         description="Độ dài ký tự tối đa của ngữ cảnh tinh lọc sau khi tái hợp."
     )
 
+    # 5. Hệ thống Cờ cấu hình Tính năng Đa tầng (Multi-Tier Safety Feature Flags)
+    ENABLE_TIER1_SHARED_SCOPE_GATE: bool = Field(
+        default=True,
+        description="Bật bộ lọc phạm vi toàn câu tiền truy xuất trong CRAG."
+    )
+    ENABLE_TIER2_DOCUMENT_GROUNDING_GATE: bool = Field(
+        default=True,
+        description="Bật chốt chặn văn bản nguồn chỉ định trong CRAG."
+    )
+    ENABLE_TIER3_PRE_GEN_EVIDENCE_GATE: bool = Field(
+        default=True,
+        description="Bật chốt chặn bằng chứng 5 chiều trước sinh trong CRAG."
+    )
+    ENABLE_TIER4_QA_ALIGNMENT_GUARD: bool = Field(
+        default=True,
+        description="Bật kiểm chứng Claim và trích dẫn sau sinh trong CRAG."
+    )
+    CRAG_STRICT_WEB_AUTHORITY_FILTER: bool = Field(
+        default=True,
+        description="Bật bộ lọc thẩm quyền và hiệu lực Web Search."
+    )
+
     model_config = SettingsConfigDict(
         env_file=".env",
         env_file_encoding="utf-8",
