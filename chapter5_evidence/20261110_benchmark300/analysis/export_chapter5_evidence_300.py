@@ -1081,7 +1081,7 @@ Chỉ số Faithfulness ở đây được đo bởi bộ đánh giá tự độ
 | **DECOMPOSE_AGENTIC** | 97 | 32,33% | **130,33** | 146,58 | 205,95 | 0,37 |
 | **TRADITIONAL_RAG** | 5 | 1,67% | **165,84** | 166,39 | 190,04 | 0,28 |
 | **DIRECT_ANSWER** | 0 | 0,00% | - | - | - | - |
-| **Toàn bộ hệ thống** | **300** | **100,00%** | **94,18** | **95,78** | **172,01** | **0,33** |
+| **Toàn bộ hệ thống** | **300** | **100,00%** | **94,28** | **91,72** | **190,04** | **0,33** |
 
 ### 3.1. Ý nghĩa kiến trúc:
 1. **Module 0 chốt chặn siêu tốc:** Nhánh `DIRECT_REFUSAL` giải phóng tài nguyên hệ thống chỉ trong **0,47 ms** (chi phí phân loại 0,07 ms), giúp triệt tiêu 100% chi phí truy xuất dense và chi phí suy luận LLM cho các câu hỏi ngoài phạm vi.
@@ -1319,8 +1319,9 @@ else:
     print("Đã xuất manifest.json.")
 
     # Cập nhật lại checksums.sha256 để bao gồm manifest.json
-    all_files.append(EVIDENCE_DIR / "manifest.json")
-    all_files.sort(key=lambda p: str(p.relative_to(EVIDENCE_DIR)))
+    all_files_dict = {str(p.resolve()): p for p in all_files}
+    all_files_dict[str((EVIDENCE_DIR / "manifest.json").resolve())] = EVIDENCE_DIR / "manifest.json"
+    all_files = sorted(list(all_files_dict.values()), key=lambda p: str(p.relative_to(EVIDENCE_DIR)))
     checksum_lines = []
     for fp in all_files:
         h = compute_sha256(fp)

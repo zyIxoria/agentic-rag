@@ -1,6 +1,6 @@
 {
   "status": "AUDITED_VERIFIED_100_PERCENT_MATCH",
-  "timestamp": "2026-11-10T13:33:45.783621+07:00",
+  "timestamp": "2026-11-10T13:53:27.666818+07:00",
   "chroma_dir": "data\\chroma_db",
   "collections_found": [
     {
@@ -8,11 +8,11 @@
       "count": 2117,
       "metadata": {
         "description": "Vietnamese Legal Vector Store using bkai-bi-encoder (768d)",
-        "source_dataset": "Data_Processing/output_v2/legal_dataset_v2.json",
+        "embedding_dimension": 768,
         "embedding_model": "bkai-foundation-models/vietnamese-bi-encoder",
         "created_at": "2026-11-10T03:48:05.985696+00:00",
-        "embedding_dimension": 768,
         "hnsw:space": "cosine",
+        "source_dataset": "Data_Processing/output_v2/legal_dataset_v2.json",
         "dataset_version": "v2.1"
       }
     },
@@ -21,12 +21,12 @@
       "count": 2117,
       "metadata": {
         "created_at": "2026-09-14T20:07:11.671932+00:00",
-        "source_dataset": "Data_Processing/output_v2/legal_dataset_v2.json",
-        "dataset_version": "v2.1",
         "description": "Legal Labor Law Baseline Vector Store",
+        "dataset_version": "v2.1",
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
         "embedding_dimension": 384,
         "hnsw:space": "cosine",
-        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
+        "source_dataset": "Data_Processing/output_v2/legal_dataset_v2.json"
       }
     }
   ],
@@ -39,11 +39,11 @@
     "declared_dataset_version": "v2.1",
     "metadata": {
       "description": "Vietnamese Legal Vector Store using bkai-bi-encoder (768d)",
-      "source_dataset": "Data_Processing/output_v2/legal_dataset_v2.json",
+      "embedding_dimension": 768,
       "embedding_model": "bkai-foundation-models/vietnamese-bi-encoder",
       "created_at": "2026-11-10T03:48:05.985696+00:00",
-      "embedding_dimension": 768,
       "hnsw:space": "cosine",
+      "source_dataset": "Data_Processing/output_v2/legal_dataset_v2.json",
       "dataset_version": "v2.1"
     },
     "corpus_alignment": {

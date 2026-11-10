@@ -1,5 +1,5 @@
 # BÁO CÁO PHÂN TÍCH BẰNG CHỨNG THỰC NGHIỆM CHƯƠNG 5 (BENCHMARK 300)
-**Thời điểm tạo:** 2026-11-10T13:33:45.783621+07:00
+**Thời điểm tạo:** 2026-11-10T13:53:27.666818+07:00
 **Mô hình nhúng thực tế:** `bkai-foundation-models/vietnamese-bi-encoder` (768 chiều, Cosine)
 **Kho véc-tơ:** `legal_labor_vietnamese_bi_encoder` (2.117 véc-tơ / 19 văn bản pháp luật)
 **Bộ dữ liệu kiểm định:** `evaluation/dataset/benchmark_300.json` (300 câu hỏi, 8 nhóm)
@@ -68,7 +68,7 @@ Chỉ số Faithfulness ở đây được đo bởi bộ đánh giá tự độ
 | **DECOMPOSE_AGENTIC** | 97 | 32,33% | **130,33** | 146,58 | 205,95 | 0,37 |
 | **TRADITIONAL_RAG** | 5 | 1,67% | **165,84** | 166,39 | 190,04 | 0,28 |
 | **DIRECT_ANSWER** | 0 | 0,00% | - | - | - | - |
-| **Toàn bộ hệ thống** | **300** | **100,00%** | **94,18** | **95,78** | **172,01** | **0,33** |
+| **Toàn bộ hệ thống** | **300** | **100,00%** | **94,28** | **91,72** | **190,04** | **0,33** |
 
 ### 3.1. Ý nghĩa kiến trúc:
 1. **Module 0 chốt chặn siêu tốc:** Nhánh `DIRECT_REFUSAL` giải phóng tài nguyên hệ thống chỉ trong **0,47 ms** (chi phí phân loại 0,07 ms), giúp triệt tiêu 100% chi phí truy xuất dense và chi phí suy luận LLM cho các câu hỏi ngoài phạm vi.
