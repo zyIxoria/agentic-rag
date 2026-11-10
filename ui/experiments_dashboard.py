@@ -38,13 +38,13 @@ def render_experiment_dashboard() -> None:
     """Hiển thị toàn bộ kết quả thực nghiệm và các biểu đồ so sánh mô hình."""
     st.markdown("### Kết Quả Thực Nghiệm & Đo Lường Đánh Giá Hệ Thống RAG")
     st.caption(
-        "Hệ thống đo lường đối chứng khoa học độc lập trên tập kiểm định chuẩn mực 80 câu hỏi và bộ mở rộng 250 câu hỏi pháp luật lao động, "
+        "Hệ thống đo lường đối chứng khoa học độc lập trên bộ Benchmark-300 chuẩn hóa (250 câu hỏi chuyên sâu và 50 câu hỏi tự nhiên / kiểm thử từ chối), "
         "đối sánh giữa Traditional RAG (Baseline), Corrective RAG (CRAG) và Adaptive Agentic RAG."
     )
 
-    # 1. Tải dữ liệu thực nghiệm từ reports/benchmark_300_evaluation (hoặc benchmark_250_evaluation) và experiment_latest
-    bench_dir = "reports/benchmark_300_evaluation" if Path("reports/benchmark_300_evaluation/benchmark_300_summary.json").exists() else "reports/benchmark_250_evaluation"
-    bench_summary_file = f"{bench_dir}/benchmark_300_summary.json" if "300" in bench_dir else f"{bench_dir}/benchmark_250_summary.json"
+    # 1. Tải dữ liệu thực nghiệm mới nhất từ reports/benchmark_300_evaluation và experiment_latest
+    bench_dir = "reports/benchmark_300_evaluation"
+    bench_summary_file = f"{bench_dir}/benchmark_300_summary.json"
     b_summary = _load_json_file(bench_summary_file)
     comparison_data = _load_json_file("reports/experiment_latest/comparison_latest.json")
     category_data = _load_json_file("reports/experiment_latest/category_comparison_latest.json")
