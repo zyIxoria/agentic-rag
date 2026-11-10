@@ -1,6 +1,6 @@
 {
   "status": "VERIFIED_DIRECT_COUNT",
-  "timestamp": "2026-11-10T13:53:27.666818+07:00",
+  "timestamp": "2026-11-10T14:06:13.674141+07:00",
   "embedding_production_model": "bkai-foundation-models/vietnamese-bi-encoder",
   "embedding_dimension": 768,
   "chroma_collection": "legal_labor_vietnamese_bi_encoder",

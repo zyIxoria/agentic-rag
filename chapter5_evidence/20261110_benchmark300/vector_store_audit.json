@@ -1,31 +1,31 @@
 {
   "status": "AUDITED_VERIFIED_100_PERCENT_MATCH",
-  "timestamp": "2026-11-10T13:53:27.666818+07:00",
+  "timestamp": "2026-11-10T14:06:13.674141+07:00",
   "chroma_dir": "data\\chroma_db",
   "collections_found": [
     {
       "name": "legal_labor_vietnamese_bi_encoder",
       "count": 2117,
       "metadata": {
-        "description": "Vietnamese Legal Vector Store using bkai-bi-encoder (768d)",
-        "embedding_dimension": 768,
         "embedding_model": "bkai-foundation-models/vietnamese-bi-encoder",
-        "created_at": "2026-11-10T03:48:05.985696+00:00",
         "hnsw:space": "cosine",
+        "description": "Vietnamese Legal Vector Store using bkai-bi-encoder (768d)",
+        "created_at": "2026-11-10T03:48:05.985696+00:00",
         "source_dataset": "Data_Processing/output_v2/legal_dataset_v2.json",
-        "dataset_version": "v2.1"
+        "dataset_version": "v2.1",
+        "embedding_dimension": 768
       }
     },
     {
       "name": "legal_labor_baseline_minilm",
       "count": 2117,
       "metadata": {
-        "created_at": "2026-09-14T20:07:11.671932+00:00",
-        "description": "Legal Labor Law Baseline Vector Store",
-        "dataset_version": "v2.1",
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
-        "embedding_dimension": 384,
+        "description": "Legal Labor Law Baseline Vector Store",
         "hnsw:space": "cosine",
+        "dataset_version": "v2.1",
+        "created_at": "2026-09-14T20:07:11.671932+00:00",
+        "embedding_dimension": 384,
         "source_dataset": "Data_Processing/output_v2/legal_dataset_v2.json"
       }
     }
@@ -38,13 +38,13 @@
     "embedding_model": "bkai-foundation-models/vietnamese-bi-encoder",
     "declared_dataset_version": "v2.1",
     "metadata": {
-      "description": "Vietnamese Legal Vector Store using bkai-bi-encoder (768d)",
-      "embedding_dimension": 768,
       "embedding_model": "bkai-foundation-models/vietnamese-bi-encoder",
-      "created_at": "2026-11-10T03:48:05.985696+00:00",
       "hnsw:space": "cosine",
+      "description": "Vietnamese Legal Vector Store using bkai-bi-encoder (768d)",
+      "created_at": "2026-11-10T03:48:05.985696+00:00",
       "source_dataset": "Data_Processing/output_v2/legal_dataset_v2.json",
-      "dataset_version": "v2.1"
+      "dataset_version": "v2.1",
+      "embedding_dimension": 768
     },
     "corpus_alignment": {
       "total_vectors": 2117,

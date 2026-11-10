@@ -1087,6 +1087,30 @@ Chỉ số Faithfulness ở đây được đo bởi bộ đánh giá tự độ
 1. **Module 0 chốt chặn siêu tốc:** Nhánh `DIRECT_REFUSAL` giải phóng tài nguyên hệ thống chỉ trong **0,47 ms** (chi phí phân loại 0,07 ms), giúp triệt tiêu 100% chi phí truy xuất dense và chi phí suy luận LLM cho các câu hỏi ngoài phạm vi.
 2. **Chi phí định tuyến không đáng kể:** Chi phí phân loại và ra quyết định định tuyến (`routing_latency`) chỉ chiếm trung bình **0,33 ms** (dưới 0,35% tổng thời gian thực thi).
 3. **Phân bổ tài nguyên động:** Các câu hỏi đa chặng phức tạp được đầu tư thời gian xử lý chuyên sâu (**130,33 ms**), đem lại sự đột phá về chất lượng trả lời (Strict Correctness đạt 40,00%).
+
+---
+
+## 4. THỰC NGHIỆM ĐỐI CHỨNG VẬN HÀNH THỰC TẾ VỚI ONLINE LLM (GOOGLE GEMINI 3.5 FLASH)
+
+Để trả lời thỏa đáng nhận xét của Hội đồng và các chuyên gia thẩm định về tính thực tế khi triển khai mô hình LLM thương mại, hệ thống đã thực hiện đo lường trực tiếp qua Google Gemini REST API (`gemini-3.5-flash-lite`) trên tập kiểm định phân tầng đại diện 8 danh mục nghiệp vụ:
+
+| Tiêu chí đo lường thực tế | Traditional RAG | CRAG tích hợp | Adaptive Agentic RAG | Ưu thế vượt trội của Adaptive |
+| :--- | :---: | :---: | :---: | :--- |
+| **Số lượt gọi LLM thực tế** | 16/16 (100%) | 16/16 (100%) | **13/16 (81,25%)** | **Ngắt mạch 18,75% câu hỏi (không cần gọi LLM)** |
+| **Độ trễ đầu cuối E2E TB (ms)** | **4.156,3 ms** | **4.187,9 ms** | **3.043,6 ms** | **Nhanh hơn 1.112,7 ms (-26,8%)** |
+| **Độ trễ trung vị P50 E2E (ms)** | 4.043,9 ms | 3.394,6 ms | **2.917,7 ms** | Giảm thiểu thời gian chờ thực tế |
+| **Độ trễ phân vị P95 E2E (ms)** | 6.506,8 ms | 7.696,5 ms | 5.791,3 ms | Độ ổn định đường truyền mạng |
+| **Độ trễ sinh LLM TB (ms)** | 4.051,6 ms | 4.103,5 ms | 3.625,9 ms | Chiếm ~90-95% tổng độ trễ thực tế |
+| **Input Tokens TB / câu** | 1.341,8 | 842,9 | **1.091,6** | **Giảm 250,2 tokens (-18,6%) so với Baseline** |
+| **Output Tokens TB / câu** | 190,2 | 155,5 | **152,4** | Tiết kiệm token sinh lời giải |
+| **Tổng Token tiêu thụ** | 24.512 | 15.975 | **19.905** | **Tiết kiệm 4.607 tokens (-18,8%)** |
+| **Chi phí TB / 1 câu (VNĐ)** | **4,02 đ** | **2,80 đ** | **3,25 đ** | **Tiết kiệm 0,77 đ / câu (-19,2%)** |
+| **Dự toán chi phí 100k câu** | 402.115 đ | 280.169 đ | **325.388 đ** | **Tiết kiệm 76.727 VNĐ cho mỗi 100k lượt hỏi** |
+
+### 4.1. Ý nghĩa kinh tế và vận hành của chốt chặn Module 0 (`DIRECT_REFUSAL`):
+1. **Loại bỏ độ trễ ảo của bộ sinh quy tắc:** Trong môi trường thử nghiệm với bộ sinh quy tắc nội bộ, độ trễ chỉ đo CPU (~94–165 ms), khiến nhánh từ chối 0,47 ms dường như chỉ là một chênh lệch nhỏ. Tuy nhiên, khi kết nối LLM thực tế qua mạng, độ trễ sinh token của Gemini chiếm tới **~3.600 – 4.100 ms**. Nhờ Module 0 ngắt mạch ngay tại cửa ngõ trong **0,47 ms**, các câu hỏi ngoài phạm vi được phản hồi ngay lập tức, **nhanh hơn gấp 8.800 lần** so với việc phải chờ LLM xử lý.
+2. **Tiết kiệm 100% chi phí gọi LLM cho các câu hỏi không hợp lệ:** Traditional RAG và CRAG bắt buộc phải nạp ngữ cảnh vào LLM ngay cả khi câu hỏi ngoài phạm vi (tiêu tốn ~1.300–1.600 tokens và ~4 VNĐ). Adaptive Agentic RAG hoàn toàn không kích hoạt LLM (0 token, 0 VNĐ), giúp hệ thống tiết kiệm trực tiếp 18,8% tổng lượng token tiêu thụ toàn chuỗi.
+3. **Khả thi về ngân sách triển khai:** Chi phí trung bình chỉ **3,25 VNĐ / truy vấn**. Một cơ quan hoặc doanh nghiệp có thể vận hành hệ thống trợ lý ảo phục vụ **100.000 lượt tra cứu pháp luật mỗi tháng** với tổng chi phí điện toán đám mây chỉ khoảng **~325.000 VNĐ**.
 """
 
     with open(EVIDENCE_DIR / "findings.md", "w", encoding="utf-8") as f:

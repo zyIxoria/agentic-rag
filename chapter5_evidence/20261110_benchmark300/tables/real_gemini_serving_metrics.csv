@@ -1,0 +1,15 @@
+metric_key,metric_label,Traditional_RAG,CRAG,Adaptive_Agentic_RAG
+total_questions,Tổng số câu hỏi kiểm định,16,16,16
+llm_calls_count,Số lượt gọi LLM thực tế,16,16,13
+llm_skipped_count,Số lượt ngắt mạch không gọi LLM,0,0,3
+skip_rate_pct,Tỷ lệ ngắt mạch tiết kiệm LLM (%),0.0,0.0,18.75
+mean_e2e_latency_ms,Độ trễ đầu cuối TB (ms),4156.32,4187.94,3043.59
+median_e2e_latency_ms,Độ trễ trung vị P50 E2E (ms),4043.89,3394.55,2917.72
+p95_e2e_latency_ms,Độ trễ phân vị P95 E2E (ms),6506.78,7696.51,5791.3
+mean_llm_latency_ms,Độ trễ sinh văn bản LLM TB (ms),4051.64,4103.49,3625.93
+mean_input_tokens,Input Tokens TB / câu,1341.8,842.9,1091.6
+mean_output_tokens,Output Tokens TB / câu,190.2,155.5,152.4
+mean_total_tokens,Total Tokens TB / câu,1532.0,998.4,1244.1
+total_tokens_consumed,Tổng Token tiêu thụ,24512,15975,19905
+cost_vnd_per_query,Chi phí TB cho 1 câu (VNĐ),4.02,2.8,3.25
+extrapolated_cost_100k_vnd,Dự toán chi phí 100k câu (VNĐ),402115.0,280169.0,325388.0

@@ -1,22 +1,20 @@
 {
   "bundle_version": "20261110_benchmark300",
   "description": "Gói bằng chứng thực nghiệm Chương 5 - Benchmark 300 câu hỏi (Mô hình nhúng Tiếng Việt 768 chiều)",
-  "timestamp": "2026-11-10T13:53:27.666818+07:00",
+  "timestamp": "2026-11-10T14:06:13.674141+07:00",
   "git_metadata": {
-    "commit": "b21f2860d618b2aad743591cdb2fda0b2d27f290",
+    "commit": "566a0ebf85b4ecf77ccb9d1f24d8ce8bad834feb",
     "branch": "main",
     "author": "zyIxoria <lehuuthanhvy205@outlook.com>",
-    "commit_date": "Tue Nov 10 13:35:27 2026 +0700",
-    "commit_message": "feat(evaluation): add full Chapter 5 evidence bundle for Benchmark 300 (Vietnamese Bi-Encoder)",
+    "commit_date": "Tue Nov 10 13:53:55 2026 +0700",
+    "commit_message": "fix(evidence): unify total system latency numbers to 94.28ms / 91.72ms / 190.04ms across findings and summary",
     "uncommitted_changes": [
       "M chapter5_evidence/20261110_benchmark300/analysis/export_chapter5_evidence_300.py",
-      "M chapter5_evidence/20261110_benchmark300/chapter5_evidence_bundle.zip",
-      "M chapter5_evidence/20261110_benchmark300/checksums.sha256",
-      "M chapter5_evidence/20261110_benchmark300/corpus_summary.json",
       "M chapter5_evidence/20261110_benchmark300/findings.md",
-      "M chapter5_evidence/20261110_benchmark300/manifest.json",
-      "M chapter5_evidence/20261110_benchmark300/vector_store_audit.json",
-      "M data/chroma_db/chroma.sqlite3"
+      "?? chapter5_evidence/20261110_benchmark300/real_gemini_serving_report.md",
+      "?? chapter5_evidence/20261110_benchmark300/results/gemini_live_serving_records.json",
+      "?? chapter5_evidence/20261110_benchmark300/tables/real_gemini_serving_metrics.csv",
+      "?? evaluation/runner/run_benchmark_gemini_real.py"
     ],
     "is_dirty": true
   },
@@ -94,5 +92,5 @@
       "mrr_chunk": 0.443
     }
   },
-  "files_count": 28
+  "files_count": 31
 }
