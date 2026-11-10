@@ -1,5 +1,5 @@
 # BÁO CÁO PHÂN TÍCH BẰNG CHỨNG THỰC NGHIỆM CHƯƠNG 5 (BENCHMARK 300)
-**Thời điểm tạo:** 2026-11-10T13:53:27.666818+07:00
+**Thời điểm tạo:** 2026-11-10T15:06:23.045395+07:00
 **Mô hình nhúng thực tế:** `bkai-foundation-models/vietnamese-bi-encoder` (768 chiều, Cosine)
 **Kho véc-tơ:** `legal_labor_vietnamese_bi_encoder` (2.117 véc-tơ / 19 văn bản pháp luật)
 **Bộ dữ liệu kiểm định:** `evaluation/dataset/benchmark_300.json` (300 câu hỏi, 8 nhóm)
@@ -98,4 +98,3 @@ Chỉ số Faithfulness ở đây được đo bởi bộ đánh giá tự độ
 1. **Loại bỏ độ trễ ảo của bộ sinh quy tắc:** Trong môi trường thử nghiệm với bộ sinh quy tắc nội bộ, độ trễ chỉ đo CPU (~94–165 ms), khiến nhánh từ chối 0,47 ms dường như chỉ là một chênh lệch nhỏ. Tuy nhiên, khi kết nối LLM thực tế qua mạng, độ trễ sinh token của Gemini chiếm tới **~3.600 – 4.100 ms**. Nhờ Module 0 ngắt mạch ngay tại cửa ngõ trong **0,47 ms**, các câu hỏi ngoài phạm vi được phản hồi ngay lập tức, **nhanh hơn gấp 8.800 lần** so với việc phải chờ LLM xử lý.
 2. **Tiết kiệm 100% chi phí gọi LLM cho các câu hỏi không hợp lệ:** Traditional RAG và CRAG bắt buộc phải nạp ngữ cảnh vào LLM ngay cả khi câu hỏi ngoài phạm vi (tiêu tốn ~1.300–1.600 tokens và ~4 VNĐ). Adaptive Agentic RAG hoàn toàn không kích hoạt LLM (0 token, 0 VNĐ), giúp hệ thống tiết kiệm trực tiếp 18,8% tổng lượng token tiêu thụ toàn chuỗi.
 3. **Khả thi về ngân sách triển khai:** Chi phí trung bình chỉ **3,25 VNĐ / truy vấn**. Một cơ quan hoặc doanh nghiệp có thể vận hành hệ thống trợ lý ảo phục vụ **100.000 lượt tra cứu pháp luật mỗi tháng** với tổng chi phí điện toán đám mây chỉ khoảng **~325.000 VNĐ**.
-
