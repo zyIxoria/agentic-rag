@@ -1,5 +1,5 @@
 # BÁO CÁO PHÂN TÍCH BẰNG CHỨNG THỰC NGHIỆM CHƯƠNG 5 (BENCHMARK 300)
-**Thời điểm tạo:** 2026-11-10T15:06:23.045395+07:00
+**Thời điểm tạo:** 2026-11-10T15:38:58.812873+07:00
 **Mô hình nhúng thực tế:** `bkai-foundation-models/vietnamese-bi-encoder` (768 chiều, Cosine)
 **Kho véc-tơ:** `legal_labor_vietnamese_bi_encoder` (2.117 véc-tơ / 19 văn bản pháp luật)
 **Bộ dữ liệu kiểm định:** `evaluation/dataset/benchmark_300.json` (300 câu hỏi, 8 nhóm)

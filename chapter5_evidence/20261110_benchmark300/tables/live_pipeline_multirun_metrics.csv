@@ -1,0 +1,9 @@
+metric_key,metric_label,Traditional_RAG,CRAG,Adaptive_Agentic_RAG
+overall_latency_mean_std_ms,Độ trễ đầu cuối E2E (Mean ± Std ms),3195.4 ± 4779.8 ms,2360.6 ± 3819.1 ms,2299.8 ± 2843.1 ms
+median_latency_ms,Độ trễ trung vị P50 (ms),1761.2 ms,1530.5 ms,1714.3 ms
+p95_latency_ms,Độ trễ phân vị P95 (ms),14349.0 ms,8779.7 ms,8263.7 ms
+run_means_lat_breakdown,Độ trễ TB qua 3 đợt chạy (Run 1 / Run 2 / Run 3),3456.19 / 3382.1 / 2747.82 ms,2805.31 / 2189.06 / 2087.47 ms,2591.55 / 1517.26 / 2790.66 ms
+inter_run_lat_std,Độ biến thiên giữa các đợt chạy (Inter-run Std ms),± 317.91 ms,± 317.17 ms,± 559.30 ms
+mean_tokens_consumed,Lượng Token tiêu thụ TB / câu (Mean ± Std),1014.9 ± 692.3,906.2 ± 610.1,861.8 ± 695.9
+route_stability_pct,Tính ổn định định tuyến qua các lần lặp (%),100.0%,100.0%,100.0%
+cost_per_query_vnd,Chi phí tài chính TB / câu (VNĐ),2.91 đ,2.18 đ,2.14 đ

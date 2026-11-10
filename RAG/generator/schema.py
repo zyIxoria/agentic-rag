@@ -61,6 +61,8 @@ class GenerationResult(BaseModel):
     model_name: str = Field(..., description="Tên mô hình LLM đã thực hiện sinh.")
     provider: str = Field(..., description="Nhà cung cấp ('openai', 'gemini', 'mock').")
     latency_ms: Optional[float] = Field(default=None, description="Thời gian thực thi tính bằng mili-giây.")
+    input_tokens: Optional[int] = Field(default=None, description="Số lượng token đầu vào prompt.")
+    output_tokens: Optional[int] = Field(default=None, description="Số lượng token đầu ra sinh bởi LLM.")
 
     def to_legal_answer(self) -> LegalAnswer:
         """Chuyển đổi về dạng LegalAnswer thuần túy."""

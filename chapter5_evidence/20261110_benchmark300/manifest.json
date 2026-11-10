@@ -1,20 +1,22 @@
 {
   "bundle_version": "20261110_benchmark300",
   "description": "Gói bằng chứng thực nghiệm Chương 5 - Benchmark 300 câu hỏi (Mô hình nhúng Tiếng Việt 768 chiều)",
-  "timestamp": "2026-11-10T15:06:23.045395+07:00",
+  "timestamp": "2026-11-10T15:38:58.812873+07:00",
   "git_metadata": {
-    "commit": "9203b5facfe9a0d40bc126213c2d9f88ce1c80db",
+    "commit": "0c988b9ab6674c8958a53ebef94cdb305dc43c79",
     "branch": "main",
     "author": "zyIxoria <lehuuthanhvy205@outlook.com>",
-    "commit_date": "Tue Nov 10 14:08:44 2026 +0700",
-    "commit_message": "f",
+    "commit_date": "Tue Nov 10 15:07:15 2026 +0700",
+    "commit_message": "feat(evaluation): complete full 300-question live Gemini serving benchmark and update Chapter 5 evidence",
     "uncommitted_changes": [
+      "M RAG/generator/gemini_generator.py",
+      "M RAG/generator/schema.py",
       "M chapter5_evidence/20261110_benchmark300/findings.md",
-      "?? chapter5_evidence/20261110_benchmark300/real_gemini_benchmark_300_report.md",
-      "?? chapter5_evidence/20261110_benchmark300/results/gemini_live_benchmark_300_records.json",
-      "?? chapter5_evidence/20261110_benchmark300/tables/real_gemini_benchmark_300_metrics.csv",
-      "?? chapter5_evidence/20261110_benchmark300/tables/real_gemini_category_metrics.csv",
-      "?? evaluation/runner/run_benchmark_gemini_300_full.py"
+      "M data/chroma_db/chroma.sqlite3",
+      "?? chapter5_evidence/20261110_benchmark300/live_pipeline_multirun_report.md",
+      "?? chapter5_evidence/20261110_benchmark300/tables/live_pipeline_multirun_details.csv",
+      "?? chapter5_evidence/20261110_benchmark300/tables/live_pipeline_multirun_metrics.csv",
+      "?? evaluation/runner/run_live_pipeline_multirun.py"
     ],
     "is_dirty": true
   },
@@ -25,16 +27,16 @@
     "processor": "AMD64 Family 26 Model 96 Stepping 0, AuthenticAMD",
     "packages": {
       "chromadb": "1.5.9",
-      "sentence_transformers": "not_installed",
-      "transformers": "not_installed",
-      "torch": "not_installed",
+      "sentence_transformers": "6.2.0",
+      "transformers": "5.22.1",
+      "torch": "2.15.0+cpu",
       "onnxruntime": "1.29.0",
       "pydantic": "2.13.5",
       "pytest": "9.1.1",
-      "streamlit": "not_installed",
+      "streamlit": "1.66.1",
       "scipy": "1.18.1",
-      "sklearn": "not_installed",
-      "pandas": "3.0.6",
+      "sklearn": "1.9.1",
+      "pandas": "3.1.0",
       "numpy": "2.5.4"
     },
     "torch_cuda_available": false
@@ -92,5 +94,5 @@
       "mrr_chunk": 0.443
     }
   },
-  "files_count": 35
+  "files_count": 38
 }
