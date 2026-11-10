@@ -300,3 +300,12 @@ agentic-rag/
 * **Báo cáo đối sánh Baseline vs CRAG**: [`reports/rag/CRAG-07-COMPARISON.md`](file:///d:/Filehoc/KLCN/agentic-rag/reports/rag/CRAG-07-COMPARISON.md)
 * **Báo cáo nghiệm thu Corrective RAG**: [`reports/crag/RAG-14-CRAG-EVALUATION.md`](file:///d:/Filehoc/KLCN/agentic-rag/reports/crag/RAG-14-CRAG-EVALUATION.md)
 * **Báo cáo nghiệm thu Adaptive Agentic RAG**: [`reports/adaptive/RAG-18-ADAPTIVE-EVALUATION.md`](file:///d:/Filehoc/KLCN/agentic-rag/reports/adaptive/RAG-18-ADAPTIVE-EVALUATION.md)
+* **Báo cáo thực nghiệm Benchmark 300 (Vietnamese Bi-Encoder)**: [`reports/benchmark_300_evaluation/BENCHMARK_300_REPORT.md`](file:///d:/Filehoc/KLCN/agentic-rag/reports/benchmark_300_evaluation/BENCHMARK_300_REPORT.md)
+* **Gói Bằng chứng Thực nghiệm phục vụ Chương 5 (Benchmark 300 - Bản chính thức)**: [`chapter5_evidence/20261110_benchmark300/`](file:///d:/Filehoc/KLCN/agentic-rag/chapter5_evidence/20261110_benchmark300/)
+  - `tables/paired_comparison.csv`: Đối chiếu ghép cặp từng câu (300 dòng).
+  - `tables/table_5_6_score_distribution.csv`: Tái hiện và kiểm chứng 100% Bảng 5.6.
+  - `tables/table_5_11_faithfulness.csv`: Tái hiện và kiểm chứng 100% Bảng 5.11.
+  - `tables/branch_latency.csv`: Phân rã độ trễ theo 5 nhánh định tuyến.
+  - `cases.json`: 300 trường hợp kiểm nghiệm thực tế và phân tích học thuật.
+  - `findings.md`: Báo cáo khoa học phân tích nguyên nhân và phát hiện thực nghiệm.
+* **Gói Bằng chứng Thực nghiệm Lịch sử (Benchmark 80 - Bản đối chứng MiniLM)**: [`chapter5_evidence/20261105_142500/`](file:///d:/Filehoc/KLCN/agentic-rag/chapter5_evidence/20261105_142500/)

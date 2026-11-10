@@ -1,0 +1,5 @@
+route_decision,count,percentage,description
+CORRECTIVE_RAG,156,52.0,Hiệu chỉnh qua CRAG Pipeline
+DECOMPOSE_AGENTIC,97,32.33,Phân rã đa chặng qua Multi-Hop Synthesizer
+DIRECT_REFUSAL,42,14.0,Từ chối trực tiếp tại Module 0 (ngoài phạm vi)
+TRADITIONAL_RAG,5,1.67,Tuyến tính 1 văn bản (tự tin cao)

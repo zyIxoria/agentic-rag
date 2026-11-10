@@ -1,0 +1,4 @@
+cau_hinh,so_phan_hoi_duoc_cham_bam_ngu_canh,so_cau_bam_ngu_canh,tong_so_cau_answerable,ty_le_tren_250_cau,ty_le_so_thap_phan,so_cau_khong_bam_ngu_canh,nguyen_nhan_ky_thuat
+Traditional RAG,249/250,249,250,99.60%,99.6,1,"Pipeline tuyến tính khép kín: generator chỉ đọc retrieved chunks ban đầu, không có nguồn ngoài hay suy luận đa chặng"
+CRAG tích hợp,203/250,203,250,81.20%,81.2,47,Kích hoạt Document Grader & Web Search Fallback: bổ sung web snippets ngoài retrieved chunks nội bộ khiến bộ chấm lịch sử coi là lệch context gốc
+Adaptive Agentic RAG,200/250,200,250,80.00%,80.0,50,Kích hoạt Decompose Agentic & Multi-hop Reasoning: sinh sub-queries và tổng hợp tri thức đa văn bản vượt ra ngoài ranh giới lexical của từng chunk đơn lẻ

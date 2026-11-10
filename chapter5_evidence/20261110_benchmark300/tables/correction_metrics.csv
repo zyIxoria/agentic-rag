@@ -1,0 +1,2 @@
+variant,total_questions,refine_count,combine_search_count,web_search_count,refuse_count,notes
+CRAG Tích hợp (Benchmark 300),300,136,40,77,35,Phân loại bởi Document Grader dựa trên ngưỡng tin cậy tương đồng của véc-tơ 768d

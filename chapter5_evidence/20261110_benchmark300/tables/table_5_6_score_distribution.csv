@@ -1,0 +1,4 @@
+he_thong,diem_1_tren_250,diem_0_5_tren_250,diem_0_tren_250,C_plus_A_pct,S_bar_A_x100,diem_refusal_1_tren_50,diem_refusal_0_tren_50,tong_diem_300_cau,S_bar_B_x100
+Traditional RAG,115,94,41,83.6,64.8,40,10,202.0,67.33
+CRAG tích hợp,85,90,75,70.0,52.0,42,8,172.0,57.33
+Adaptive Agentic RAG,101,86,63,74.8,57.6,41,9,185.0,61.67

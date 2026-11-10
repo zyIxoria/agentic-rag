@@ -1,0 +1,92 @@
+{
+  "bundle_version": "20261110_benchmark300",
+  "description": "Gói bằng chứng thực nghiệm Chương 5 - Benchmark 300 câu hỏi (Mô hình nhúng Tiếng Việt 768 chiều)",
+  "timestamp": "2026-11-10T13:33:45.783621+07:00",
+  "git_metadata": {
+    "commit": "ad7cba4064d388523e533c601543e0faf79d5f88",
+    "branch": "main",
+    "author": "zyIxoria <lehuuthanhvy205@outlook.com>",
+    "commit_date": "Tue Nov 10 13:21:48 2026 +0700",
+    "commit_message": "feat(benchmark): add branch latency breakdown to summary json, csv and markdown report",
+    "uncommitted_changes": [
+      "M data/chroma_db/chroma.sqlite3",
+      "?? chapter5_evidence/20261110_benchmark300/"
+    ],
+    "is_dirty": true
+  },
+  "environment": {
+    "python_version": "3.13.0 (tags/v3.13.0:60403a5, Oct  7 2024, 09:38:07) [MSC v.1941 64 bit (AMD64)]",
+    "os_platform": "Windows-11-10.0.26200-SP0",
+    "machine": "AMD64",
+    "processor": "AMD64 Family 26 Model 96 Stepping 0, AuthenticAMD",
+    "packages": {
+      "chromadb": "1.5.9",
+      "sentence_transformers": "not_installed",
+      "transformers": "not_installed",
+      "torch": "not_installed",
+      "onnxruntime": "1.29.0",
+      "pydantic": "2.13.5",
+      "pytest": "9.1.1",
+      "streamlit": "not_installed",
+      "scipy": "1.18.1",
+      "sklearn": "not_installed",
+      "pandas": "3.0.6",
+      "numpy": "2.5.4"
+    },
+    "torch_cuda_available": false
+  },
+  "embedding_configuration": {
+    "model_name": "bkai-foundation-models/vietnamese-bi-encoder",
+    "dimension": 768,
+    "metric": "cosine",
+    "chroma_collection": "legal_labor_vietnamese_bi_encoder",
+    "total_vectors": 2117
+  },
+  "benchmark_summary": {
+    "dataset_file": "evaluation/dataset/benchmark_300.json",
+    "total_questions": 300,
+    "answerable_questions": 250,
+    "refusal_questions": 50,
+    "categories_count": 8
+  },
+  "key_findings": {
+    "table_5_6_score_distribution": {
+      "traditional": {
+        "diem_1": 115,
+        "diem_0_5": 94,
+        "diem_0": 41,
+        "C+_pct": 83.6,
+        "S_bar_A": 64.8,
+        "S_bar_B": 67.33
+      },
+      "crag": {
+        "diem_1": 85,
+        "diem_0_5": 90,
+        "diem_0": 75,
+        "C+_pct": 70.0,
+        "S_bar_A": 52.0,
+        "S_bar_B": 57.33
+      },
+      "adaptive": {
+        "diem_1": 101,
+        "diem_0_5": 86,
+        "diem_0": 63,
+        "C+_pct": 74.8,
+        "S_bar_A": 57.6,
+        "S_bar_B": 61.67
+      }
+    },
+    "table_5_11_faithfulness": {
+      "traditional": "249/250 (99.60%)",
+      "crag": "203/250 (81.20%)",
+      "adaptive": "200/250 (80.00%)"
+    },
+    "retrieval_metrics": {
+      "chunk_recall@5": "50.00%",
+      "chunk_hit_rate@5": "71.20%",
+      "article_recall@5": "68.20%",
+      "mrr_chunk": 0.443
+    }
+  },
+  "files_count": 27
+}

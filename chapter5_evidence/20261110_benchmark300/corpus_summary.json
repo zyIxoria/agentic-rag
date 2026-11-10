@@ -1,0 +1,30 @@
+{
+  "status": "VERIFIED_DIRECT_COUNT",
+  "timestamp": "2026-11-10T13:33:45.783621+07:00",
+  "embedding_production_model": "bkai-foundation-models/vietnamese-bi-encoder",
+  "embedding_dimension": 768,
+  "chroma_collection": "legal_labor_vietnamese_bi_encoder",
+  "v2_dataset": {
+    "path": "Data_Processing\\output_v2\\legal_dataset_v2.json",
+    "sha256": "8d18b7a8010c1489f042c7a57cdccf80e42743e2e5526a63f85f147554b88cc2",
+    "total_documents": 19,
+    "total_chunks": 2117,
+    "unique_chunk_ids": 2117,
+    "duplicate_chunk_ids": 0,
+    "character_length_stats": {
+      "min": 83,
+      "max": 5432,
+      "mean": 868.47,
+      "median": 696,
+      "p95": 2490
+    },
+    "word_length_stats": {
+      "min": 20,
+      "max": 615,
+      "mean": 186.37,
+      "median": 154,
+      "p95": 522
+    },
+    "length_counting_method": "Character length = len(content); Word count = len(content.split())"
+  }
+}

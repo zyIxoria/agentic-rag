@@ -1,0 +1,9 @@
+category,question_count,percentage,answerable_count,refusal_count,refusal_rate_pct
+single_article,35,11.67,35,0,0.0
+single_doc_multi_chunk,35,11.67,35,0,0.0
+multi_document,45,15.0,45,0,0.0
+cross_reference,35,11.67,35,0,0.0
+complex_conditions,50,16.67,50,0,0.0
+insufficient_evidence,25,8.33,0,25,100.0
+out_of_scope,25,8.33,0,25,100.0
+natural_language_labor,50,16.67,50,0,0.0

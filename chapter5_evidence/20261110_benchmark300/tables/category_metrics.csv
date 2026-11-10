@@ -1,0 +1,9 @@
+category,total_questions,trad_answer_correctness,crag_answer_correctness,adapt_answer_correctness,trad_strict_correctness,crag_strict_correctness,adapt_strict_correctness,trad_faithfulness,crag_faithfulness,adapt_faithfulness,trad_hit_rate_at_5,crag_hit_rate_at_5,adapt_hit_rate_at_5,trad_refusal_acc,crag_refusal_acc,adapt_refusal_acc,trad_mean_latency_ms,crag_mean_latency_ms,adapt_mean_latency_ms
+single_article,35,0.9429,0.8857,0.8857,0.8571,0.8286,0.7714,0.9714,0.9429,0.8,0.8857,0.8857,0.7429,,,,116.05,104.67,109.83
+single_doc_multi_chunk,35,0.8571,0.7714,0.7714,0.4,0.3143,0.3714,1.0,0.8286,0.7143,0.7143,0.7143,0.6,,,,101.73,95.66,89.7
+multi_document,45,0.8,0.6667,0.8889,0.1778,0.0889,0.4,1.0,0.6667,0.8889,0.7778,0.7778,0.5778,,,,105.4,92.93,142.09
+cross_reference,35,0.9143,0.8857,0.8571,0.4286,0.2571,0.2857,1.0,0.9143,0.9143,0.7429,0.7429,0.3714,,,,104.99,95.64,141.98
+complex_conditions,50,0.94,0.76,0.8,0.48,0.42,0.44,1.0,0.84,0.8,0.58,0.58,0.54,,,,103.47,93.01,94.1
+insufficient_evidence,25,,,,,,,,,,,,,0.6,0.68,0.64,43.39,39.11,38.69
+out_of_scope,25,,,,,,,,,,,,,1.0,1.0,1.0,6.76,6.19,0.45
+natural_language_labor,50,0.62,0.36,0.38,0.48,0.22,0.22,1.0,0.74,0.7,0.64,0.64,0.6,,,,87.03,75.66,85.1

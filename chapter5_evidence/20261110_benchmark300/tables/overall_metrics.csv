@@ -1,0 +1,12 @@
+metric_name,unit,sample_set,traditional_rag,crag_integrated,adaptive_agentic,notes
+Chunk Recall@5,ratio [0..1],Answerable (N=250),0.5,0.5,0.4145,Đo độ bao phủ của top-5 chunk được truy xuất từ bộ nhúng tiếng Việt 768 chiều so với gold chunks
+Chunk Hit Rate@5,ratio [0..1],Answerable (N=250),0.712,0.712,0.572,Tỷ lệ câu hỏi tìm được ít nhất 1 chunk chuẩn trong top 5 (tăng vọt từ 24.8% lên 71.2%)
+Article Recall@5,ratio [0..1],Answerable (N=250),0.5993,0.5993,0.5213,Đo tỷ lệ điều luật pháp lý chuẩn được truy xuất đúng trong top 5
+Article Hit Rate@5,ratio [0..1],Answerable (N=250),0.772,0.772,0.664,Tỷ lệ có ít nhất 1 Điều luật chuẩn xuất hiện trong top 5
+MRR (Chunk-level),score [0..1],Answerable (N=250),0.5193,0.5193,0.4174,Thứ hạng nghịch đảo trung bình của chunk chuẩn đầu tiên
+Answer Correctness Rate (>=0.5),ratio [0..1],Answerable (N=250),0.836,0.7,0.748,Tỷ lệ phản hồi đáp ứng ít nhất một phần yêu cầu (điểm 1.0 hoặc 0.5) theo bộ chấm tự động
+Strict Answer Correctness (=1.0),ratio [0..1],Answerable (N=250),0.46,0.34,0.404,Tỷ lệ phản hồi hoàn toàn chính xác và đầy đủ các căn cứ pháp lý
+Refusal Accuracy,ratio [0..1],Refusal questions (N=50),0.8,0.84,0.82,Đo độ chính xác từ chối an toàn khi gặp câu hỏi thiếu bằng chứng hoặc ngoài phạm vi
+False Answer Rate,ratio [0..1],Refusal questions (N=50),0.2,0.16,0.18,Tỷ lệ bịa đặt trả lời khi lẽ ra phải từ chối (ảo giác nguy hiểm)
+Faithfulness Rate,ratio [0..1],Answerable (N=250),0.996,0.812,0.8,Tỷ lệ câu trả lời bám sát ngữ cảnh truy xuất ban đầu của bộ chấm lịch sử
+Mean Total Latency,ms,Full benchmark (N=300),89.4,80.36,94.28,Thời gian thực thi trung bình đo bằng CPU trên toàn bộ 300 câu

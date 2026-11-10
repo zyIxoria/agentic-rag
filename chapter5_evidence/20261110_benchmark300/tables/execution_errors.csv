@@ -1,0 +1,2 @@
+system,question_id,category,error_type,error_details
+"ALL_SYSTEMS (Traditional, CRAG, Adaptive)",NONE,NONE,NO_EXECUTION_ERRORS,Tất cả 300 câu hỏi trên 3 hệ thống (tổng cộng 900 lượt thực thi) đều hoàn thành bình thường (0 crash/exception)
