@@ -69,6 +69,16 @@ Module 0 phân loại tức thì và điều phối câu hỏi vào 5 nhánh x�
 | **7. Out-of-Scope (Ngoài phạm vi)** | 25 | 0 | 25 | 0 | 0 | 0 |
 | **8. Natural Language (Ngôn ngữ tự nhiên 50 câu)** | 50 | 0 | 1 | 1 | 45 | 3 |
 
+### 3.1. Phân Rã Độ Trễ Chi Tiết Theo Từng Nhánh Điều Phối (Branch Latency Breakdown)
+
+| Nhánh điều phối (Routing Branch) | Số câu (N=300) | Tỷ lệ (%) | Độ trễ TB (Mean ms) | Trung vị (P50 ms) | Phân vị 95% (P95 ms) | Nhỏ nhất (Min ms) | Lớn nhất (Max ms) | Thời gian định tuyến (Routing ms) |
+| :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| **`DIRECT_ANSWER`** | 0 | 0.0% | 0.00 ms | 0.00 ms | 0.00 ms | 0.00 ms | 0.00 ms | 0.00 ms |
+| **`DIRECT_REFUSAL`** | 42 | 14.00% | **0.47 ms** | **0.40 ms** | **0.82 ms** | 0.08 ms | 2.69 ms | **0.07 ms** |
+| **`CORRECTIVE_RAG`** | 156 | 52.00% | **94.84 ms** | **92.28 ms** | **133.70 ms** | 58.60 ms | 208.17 ms | **0.38 ms** |
+| **`DECOMPOSE_AGENTIC`** | 97 | 32.33% | **130.33 ms** | **146.58 ms** | **205.95 ms** | 1.28 ms | 235.52 ms | **0.37 ms** |
+| **`TRADITIONAL_RAG`** | 5 | 1.67% | **165.84 ms** | **166.39 ms** | **190.04 ms** | 140.71 ms | 190.04 ms | **0.28 ms** |
+
 ---
 
 ## 4. Kiểm Định Ý Nghĩa Thống Kê (Statistical Significance)

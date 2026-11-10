@@ -495,5 +495,57 @@
       "cohens_d": 0.141,
       "significance": "ns (không có ý nghĩa)"
     }
-  ]
+  ],
+  "branch_latency": {
+    "DIRECT_ANSWER": {
+      "count": 0,
+      "percentage": 0.0,
+      "mean_latency_ms": 0.0,
+      "median_latency_ms": 0.0,
+      "p95_latency_ms": 0.0,
+      "min_latency_ms": 0.0,
+      "max_latency_ms": 0.0,
+      "mean_routing_latency_ms": 0.0
+    },
+    "DIRECT_REFUSAL": {
+      "count": 42,
+      "percentage": 14.0,
+      "mean_latency_ms": 0.47,
+      "median_latency_ms": 0.4,
+      "p95_latency_ms": 0.82,
+      "min_latency_ms": 0.08,
+      "max_latency_ms": 2.69,
+      "mean_routing_latency_ms": 0.07
+    },
+    "TRADITIONAL_RAG": {
+      "count": 5,
+      "percentage": 1.67,
+      "mean_latency_ms": 165.84,
+      "median_latency_ms": 166.39,
+      "p95_latency_ms": 190.04,
+      "min_latency_ms": 140.71,
+      "max_latency_ms": 190.04,
+      "mean_routing_latency_ms": 0.28
+    },
+    "CORRECTIVE_RAG": {
+      "count": 156,
+      "percentage": 52.0,
+      "mean_latency_ms": 94.84,
+      "median_latency_ms": 92.28,
+      "p95_latency_ms": 133.7,
+      "min_latency_ms": 58.6,
+      "max_latency_ms": 208.17,
+      "mean_routing_latency_ms": 0.38
+    },
+    "DECOMPOSE_AGENTIC": {
+      "count": 97,
+      "percentage": 32.33,
+      "mean_latency_ms": 130.33,
+      "median_latency_ms": 146.58,
+      "p95_latency_ms": 205.95,
+      "min_latency_ms": 1.28,
+      "max_latency_ms": 235.52,
+      "mean_routing_latency_ms": 0.37
+    }
+  }
 }

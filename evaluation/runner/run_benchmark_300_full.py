@@ -496,6 +496,38 @@ class Benchmark300Orchestrator:
         routing_matrix = {"routes": routes, "categories": categories, "rows": matrix_rows}
 
         # -----------------------------------------------------------------
+        # PHÂN RÃ ĐỘ TRỄ THEO TỪNG NHÁNH ĐIỀU PHỐI (BRANCH LATENCY METRICS)
+        # -----------------------------------------------------------------
+        branch_latency = {}
+        for rt in routes:
+            r_lats = [r["total_latency_ms"] for r in adapt_records if r.get("route_taken") == rt]
+            r_rout = [r.get("routing_latency_ms", 0.0) for r in adapt_records if r.get("route_taken") == rt]
+            if r_lats:
+                n_b = len(r_lats)
+                p95_idx = min(int(n_b * 0.95), n_b - 1)
+                branch_latency[rt] = {
+                    "count": n_b,
+                    "percentage": round(n_b / len(adapt_records) * 100, 2),
+                    "mean_latency_ms": round(statistics.mean(r_lats), 2),
+                    "median_latency_ms": round(statistics.median(r_lats), 2),
+                    "p95_latency_ms": round(sorted(r_lats)[p95_idx], 2),
+                    "min_latency_ms": round(min(r_lats), 2),
+                    "max_latency_ms": round(max(r_lats), 2),
+                    "mean_routing_latency_ms": round(statistics.mean(r_rout), 2) if r_rout else 0.0,
+                }
+            else:
+                branch_latency[rt] = {
+                    "count": 0,
+                    "percentage": 0.0,
+                    "mean_latency_ms": 0.0,
+                    "median_latency_ms": 0.0,
+                    "p95_latency_ms": 0.0,
+                    "min_latency_ms": 0.0,
+                    "max_latency_ms": 0.0,
+                    "mean_routing_latency_ms": 0.0,
+                }
+
+        # -----------------------------------------------------------------
         # KIỂM ĐỊNH Ý NGHĨA THỐNG KÊ (STATISTICAL SIGNIFICANCE TESTS)
         # -----------------------------------------------------------------
         sig_tests = self._compute_statistical_tests(trad_records, crag_records, adapt_records)
@@ -520,6 +552,7 @@ class Benchmark300Orchestrator:
             "overall_metrics": overall_metrics,
             "category_metrics": category_metrics,
             "routing_matrix": routing_matrix,
+            "branch_latency": branch_latency,
             "statistical_significance": sig_tests,
         }
 
@@ -742,6 +775,42 @@ class Benchmark300Orchestrator:
                     "Adaptive_refusal_reason": ar.get("refusal_reason", ""),
                 })
             pd.DataFrame(audit_rows).to_csv(out_dir / "false_answer_audit.csv", index=False, encoding="utf-8-sig")
+
+        # 5. branch_latency.csv
+        if recs_tuple:
+            _, _, adapt_recs = recs_tuple
+            branch_rows = []
+            routes = ["DIRECT_ANSWER", "DIRECT_REFUSAL", "TRADITIONAL_RAG", "CORRECTIVE_RAG", "DECOMPOSE_AGENTIC"]
+            for rt in routes:
+                r_lats = [r["total_latency_ms"] for r in adapt_recs if r.get("route_taken") == rt]
+                r_rout = [r.get("routing_latency_ms", 0.0) for r in adapt_recs if r.get("route_taken") == rt]
+                if r_lats:
+                    n_b = len(r_lats)
+                    p95_idx = min(int(n_b * 0.95), n_b - 1)
+                    branch_rows.append({
+                        "branch": rt,
+                        "count": n_b,
+                        "percentage": round(n_b / len(adapt_recs) * 100, 2),
+                        "mean_latency_ms": round(statistics.mean(r_lats), 2),
+                        "median_latency_ms": round(statistics.median(r_lats), 2),
+                        "p95_latency_ms": round(sorted(r_lats)[p95_idx], 2),
+                        "min_latency_ms": round(min(r_lats), 2),
+                        "max_latency_ms": round(max(r_lats), 2),
+                        "mean_routing_latency_ms": round(statistics.mean(r_rout), 2) if r_rout else 0.0,
+                    })
+                else:
+                    branch_rows.append({
+                        "branch": rt,
+                        "count": 0,
+                        "percentage": 0.0,
+                        "mean_latency_ms": 0.0,
+                        "median_latency_ms": 0.0,
+                        "p95_latency_ms": 0.0,
+                        "min_latency_ms": 0.0,
+                        "max_latency_ms": 0.0,
+                        "mean_routing_latency_ms": 0.0,
+                    })
+            pd.DataFrame(branch_rows).to_csv(out_dir / "branch_latency.csv", index=False, encoding="utf-8-sig")
 
     def _generate_charts(
         self,
@@ -1053,6 +1122,17 @@ Module 0 phân loại tức thì và điều phối câu hỏi vào 5 nhánh x�
         for r in rm["rows"]:
             c_label = code_to_clean.get(r["category"], r["category"])
             report_md += f"| **{c_label}** | {r['total']} | {r['DIRECT_ANSWER']} | {r['DIRECT_REFUSAL']} | {r['TRADITIONAL_RAG']} | {r['CORRECTIVE_RAG']} | {r['DECOMPOSE_AGENTIC']} |\n"
+
+        bl = summary.get("branch_latency", {})
+        if bl:
+            report_md += """
+### 3.1. Phân Rã Độ Trễ Chi Tiết Theo Từng Nhánh Điều Phối (Branch Latency Breakdown)
+
+| Nhánh điều phối (Routing Branch) | Số câu (N=300) | Tỷ lệ (%) | Độ trễ TB (Mean ms) | Trung vị (P50 ms) | Phân vị 95% (P95 ms) | Nhỏ nhất (Min ms) | Lớn nhất (Max ms) | Thời gian định tuyến (Routing ms) |
+| :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+"""
+            for b_name, b_val in bl.items():
+                report_md += f"| **`{b_name}`** | {b_val['count']} | {b_val['percentage']:.2f}% | **{b_val['mean_latency_ms']:.2f} ms** | {b_val['median_latency_ms']:.2f} ms | {b_val['p95_latency_ms']:.2f} ms | {b_val['min_latency_ms']:.2f} ms | {b_val['max_latency_ms']:.2f} ms | **{b_val['mean_routing_latency_ms']:.2f} ms** |\n"
 
         report_md += """
 ---
