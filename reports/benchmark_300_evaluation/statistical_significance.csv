@@ -1,6 +1,6 @@
 ﻿metric_name,comparison,n_samples,mean_a,mean_b,mean_diff,ci_95,t_statistic,p_value_t_test,wilcoxon_stat,p_value_wilcoxon,cohens_d,significance
-Answer Correctness (Score),Adaptive_Agentic_RAG vs Traditional_RAG,250,0.382,0.36,0.022,"[-0.0271, +0.0711]",0.883,0.37800581441421927,1460.0,0.42329997557939636,0.056,ns (không có ý nghĩa)
-Answer F1-Score,Adaptive_Agentic_RAG vs Traditional_RAG,250,0.3375,0.3177,0.0198,"[+0.0008, +0.0388]",2.056,0.04080696482969144,11086.0,0.02972087009067352,0.13,p < 0.05 (*)
-Total Latency (ms),Adaptive_Agentic_RAG vs Traditional_RAG,300,21.3834,21.697,-0.3136,"[-2.2665, +1.6393]",-0.316,0.752214049885713,20627.0,0.6683510965365071,-0.018,ns (không có ý nghĩa)
-Faithfulness (Rate),Adaptive_Agentic_RAG vs CRAG,250,0.72,0.676,0.044,"[-0.0075, +0.0955]",1.684,0.09350677438398347,352.0,0.09481009733616917,0.106,ns (không có ý nghĩa)
-Refusal Accuracy,Adaptive_Agentic_RAG vs Traditional_RAG,50,0.86,0.88,-0.02,"[-0.0901, +0.0501]",-0.573,0.5689544686260504,2.0,0.7728299926844475,-0.081,ns (không có ý nghĩa)
+Answer Correctness (Score),Adaptive_Agentic_RAG vs Traditional_RAG,250,0.576,0.648,-0.072,"[-0.1198, -0.0242]",-2.965,0.003319225219897767,1133.5,0.003600596205833736,-0.188,p < 0.01 (**)
+Answer F1-Score,Adaptive_Agentic_RAG vs Traditional_RAG,250,0.3998,0.379,0.0208,"[+0.0017, +0.0399]",2.142,0.033138971249433456,10895.0,0.02359029421520138,0.135,p < 0.05 (*)
+Total Latency (ms),Adaptive_Agentic_RAG vs Traditional_RAG,300,94.2848,89.3965,4.8883,"[+0.3219, +9.4548]",2.107,0.035981485279020925,21623.5,0.8101817239416752,0.122,p < 0.05 (*)
+Faithfulness (Rate),Adaptive_Agentic_RAG vs CRAG,250,0.8,0.812,-0.012,"[-0.0600, +0.0360]",-0.492,0.6228357426516472,323.0,0.6279995734465105,-0.031,ns (không có ý nghĩa)
+Refusal Accuracy,Adaptive_Agentic_RAG vs Traditional_RAG,50,0.82,0.8,0.02,"[-0.0202, +0.0602]",1.0,0.32222340595067545,0.0,1.0,0.141,ns (không có ý nghĩa)

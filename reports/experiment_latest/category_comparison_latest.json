@@ -5,139 +5,139 @@
     "single_article": {
       "count": 35,
       "Traditional_RAG": {
-        "answer_correctness": 0.6,
-        "strict_correctness": 0.5143,
+        "answer_correctness": 0.9429,
+        "strict_correctness": 0.8571,
         "faithfulness": 0.9714,
-        "hit_rate@5": 0.4,
-        "mean_latency_ms": 22.54
+        "hit_rate@5": 0.8857,
+        "mean_latency_ms": 116.05
       },
       "CRAG": {
-        "answer_correctness": 0.5143,
-        "strict_correctness": 0.4286,
-        "faithfulness": 0.7714,
-        "hit_rate@5": 0.4,
-        "mean_latency_ms": 19.89
+        "answer_correctness": 0.8857,
+        "strict_correctness": 0.8286,
+        "faithfulness": 0.9429,
+        "hit_rate@5": 0.8857,
+        "mean_latency_ms": 104.67
       },
       "Adaptive_Agentic_RAG": {
-        "answer_correctness": 0.5714,
-        "strict_correctness": 0.4286,
-        "faithfulness": 0.7143,
-        "hit_rate@5": 0.3714,
-        "mean_latency_ms": 20.04
+        "answer_correctness": 0.8857,
+        "strict_correctness": 0.7714,
+        "faithfulness": 0.8,
+        "hit_rate@5": 0.7429,
+        "mean_latency_ms": 109.83
       }
     },
     "single_doc_multi_chunk": {
       "count": 35,
       "Traditional_RAG": {
-        "answer_correctness": 0.7429,
-        "strict_correctness": 0.1429,
+        "answer_correctness": 0.8571,
+        "strict_correctness": 0.4,
         "faithfulness": 1.0,
-        "hit_rate@5": 0.3429,
-        "mean_latency_ms": 23.54
+        "hit_rate@5": 0.7143,
+        "mean_latency_ms": 101.73
       },
       "CRAG": {
-        "answer_correctness": 0.6857,
-        "strict_correctness": 0.1143,
+        "answer_correctness": 0.7714,
+        "strict_correctness": 0.3143,
         "faithfulness": 0.8286,
-        "hit_rate@5": 0.3429,
-        "mean_latency_ms": 22.4
+        "hit_rate@5": 0.7143,
+        "mean_latency_ms": 95.66
       },
       "Adaptive_Agentic_RAG": {
-        "answer_correctness": 0.5714,
-        "strict_correctness": 0.1143,
-        "faithfulness": 0.7429,
-        "hit_rate@5": 0.3143,
-        "mean_latency_ms": 20.56
+        "answer_correctness": 0.7714,
+        "strict_correctness": 0.3714,
+        "faithfulness": 0.7143,
+        "hit_rate@5": 0.6,
+        "mean_latency_ms": 89.7
       }
     },
     "multi_document": {
       "count": 45,
       "Traditional_RAG": {
-        "answer_correctness": 0.5333,
-        "strict_correctness": 0.0889,
+        "answer_correctness": 0.8,
+        "strict_correctness": 0.1778,
         "faithfulness": 1.0,
-        "hit_rate@5": 0.3111,
-        "mean_latency_ms": 25.39
+        "hit_rate@5": 0.7778,
+        "mean_latency_ms": 105.4
       },
       "CRAG": {
-        "answer_correctness": 0.4667,
+        "answer_correctness": 0.6667,
         "strict_correctness": 0.0889,
-        "faithfulness": 0.5556,
-        "hit_rate@5": 0.3111,
-        "mean_latency_ms": 23.38
+        "faithfulness": 0.6667,
+        "hit_rate@5": 0.7778,
+        "mean_latency_ms": 92.93
       },
       "Adaptive_Agentic_RAG": {
-        "answer_correctness": 0.7111,
-        "strict_correctness": 0.2,
-        "faithfulness": 0.8444,
-        "hit_rate@5": 0.3111,
-        "mean_latency_ms": 30.97
+        "answer_correctness": 0.8889,
+        "strict_correctness": 0.4,
+        "faithfulness": 0.8889,
+        "hit_rate@5": 0.5778,
+        "mean_latency_ms": 142.09
       }
     },
     "cross_reference": {
       "count": 35,
       "Traditional_RAG": {
-        "answer_correctness": 0.5714,
-        "strict_correctness": 0.0571,
+        "answer_correctness": 0.9143,
+        "strict_correctness": 0.4286,
         "faithfulness": 1.0,
-        "hit_rate@5": 0.2286,
-        "mean_latency_ms": 35.03
+        "hit_rate@5": 0.7429,
+        "mean_latency_ms": 104.99
       },
       "CRAG": {
-        "answer_correctness": 0.5714,
-        "strict_correctness": 0.0286,
-        "faithfulness": 0.7429,
-        "hit_rate@5": 0.2286,
-        "mean_latency_ms": 24.06
+        "answer_correctness": 0.8857,
+        "strict_correctness": 0.2571,
+        "faithfulness": 0.9143,
+        "hit_rate@5": 0.7429,
+        "mean_latency_ms": 95.64
       },
       "Adaptive_Agentic_RAG": {
-        "answer_correctness": 0.7143,
-        "strict_correctness": 0.2286,
-        "faithfulness": 0.8571,
-        "hit_rate@5": 0.1429,
-        "mean_latency_ms": 33.5
+        "answer_correctness": 0.8571,
+        "strict_correctness": 0.2857,
+        "faithfulness": 0.9143,
+        "hit_rate@5": 0.3714,
+        "mean_latency_ms": 141.98
       }
     },
     "complex_conditions": {
       "count": 50,
       "Traditional_RAG": {
-        "answer_correctness": 0.58,
-        "strict_correctness": 0.2,
+        "answer_correctness": 0.94,
+        "strict_correctness": 0.48,
         "faithfulness": 1.0,
-        "hit_rate@5": 0.12,
-        "mean_latency_ms": 26.62
+        "hit_rate@5": 0.58,
+        "mean_latency_ms": 103.47
       },
       "CRAG": {
-        "answer_correctness": 0.56,
-        "strict_correctness": 0.14,
-        "faithfulness": 0.7,
-        "hit_rate@5": 0.12,
-        "mean_latency_ms": 23.82
+        "answer_correctness": 0.76,
+        "strict_correctness": 0.42,
+        "faithfulness": 0.84,
+        "hit_rate@5": 0.58,
+        "mean_latency_ms": 93.01
       },
       "Adaptive_Agentic_RAG": {
-        "answer_correctness": 0.56,
-        "strict_correctness": 0.12,
-        "faithfulness": 0.68,
-        "hit_rate@5": 0.14,
-        "mean_latency_ms": 25.14
+        "answer_correctness": 0.8,
+        "strict_correctness": 0.44,
+        "faithfulness": 0.8,
+        "hit_rate@5": 0.54,
+        "mean_latency_ms": 94.1
       }
     },
     "insufficient_evidence": {
       "count": 25,
       "Traditional_RAG": {
-        "refusal_accuracy": 0.76,
-        "false_answer_rate": 0.24,
-        "mean_latency_ms": 9.09
+        "refusal_accuracy": 0.6,
+        "false_answer_rate": 0.4,
+        "mean_latency_ms": 43.39
       },
       "CRAG": {
-        "refusal_accuracy": 0.8,
-        "false_answer_rate": 0.2,
-        "mean_latency_ms": 8.7
+        "refusal_accuracy": 0.68,
+        "false_answer_rate": 0.32,
+        "mean_latency_ms": 39.11
       },
       "Adaptive_Agentic_RAG": {
-        "refusal_accuracy": 0.72,
-        "false_answer_rate": 0.28,
-        "mean_latency_ms": 8.66
+        "refusal_accuracy": 0.64,
+        "false_answer_rate": 0.36,
+        "mean_latency_ms": 38.69
       }
     },
     "out_of_scope": {
@@ -145,41 +145,41 @@
       "Traditional_RAG": {
         "refusal_accuracy": 1.0,
         "false_answer_rate": 0.0,
-        "mean_latency_ms": 1.33
+        "mean_latency_ms": 6.76
       },
       "CRAG": {
         "refusal_accuracy": 1.0,
         "false_answer_rate": 0.0,
-        "mean_latency_ms": 1.29
+        "mean_latency_ms": 6.19
       },
       "Adaptive_Agentic_RAG": {
         "refusal_accuracy": 1.0,
         "false_answer_rate": 0.0,
-        "mean_latency_ms": 0.36
+        "mean_latency_ms": 0.45
       }
     },
     "natural_language_labor": {
       "count": 50,
       "Traditional_RAG": {
-        "answer_correctness": 0.24,
-        "strict_correctness": 0.18,
+        "answer_correctness": 0.62,
+        "strict_correctness": 0.48,
         "faithfulness": 1.0,
-        "hit_rate@5": 0.16,
-        "mean_latency_ms": 18.73
+        "hit_rate@5": 0.64,
+        "mean_latency_ms": 87.03
       },
       "CRAG": {
-        "answer_correctness": 0.28,
-        "strict_correctness": 0.16,
-        "faithfulness": 0.54,
-        "hit_rate@5": 0.16,
-        "mean_latency_ms": 16.14
+        "answer_correctness": 0.36,
+        "strict_correctness": 0.22,
+        "faithfulness": 0.74,
+        "hit_rate@5": 0.64,
+        "mean_latency_ms": 75.66
       },
       "Adaptive_Agentic_RAG": {
-        "answer_correctness": 0.3,
-        "strict_correctness": 0.18,
-        "faithfulness": 0.54,
-        "hit_rate@5": 0.16,
-        "mean_latency_ms": 18.91
+        "answer_correctness": 0.38,
+        "strict_correctness": 0.22,
+        "faithfulness": 0.7,
+        "hit_rate@5": 0.6,
+        "mean_latency_ms": 85.1
       }
     }
   }

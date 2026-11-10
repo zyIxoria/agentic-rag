@@ -509,6 +509,14 @@ class Benchmark300Orchestrator:
             "total_questions": n,
             "answerable_questions": len([q for q in self.dataset if not q["requires_refusal"]]),
             "refusal_questions": len([q for q in self.dataset if q["requires_refusal"]]),
+            "embedding_metadata": {
+                "model_name": getattr(self.retriever.embedding_provider, "model_name", "bkai-foundation-models/vietnamese-bi-encoder"),
+                "dimension": getattr(self.retriever.embedding_provider, "dimension", 768),
+                "provider": getattr(self.retriever.embedding_provider, "provider_type", "sentence-transformers"),
+                "collection_name": getattr(self.retriever.config, "COLLECTION_NAME", "legal_labor_vietnamese_bi_encoder"),
+                "similarity_metric": "cosine",
+                "similarity_threshold": getattr(self.p_cfg, "SIMILARITY_THRESHOLD", 0.45),
+            },
             "overall_metrics": overall_metrics,
             "category_metrics": category_metrics,
             "routing_matrix": routing_matrix,
@@ -962,10 +970,14 @@ class Benchmark300Orchestrator:
         rm = summary["routing_matrix"]
         sig = summary["statistical_significance"]
 
+        emb_meta = summary.get("embedding_metadata", {})
+        emb_desc = f"`{emb_meta.get('model_name', 'bkai-foundation-models/vietnamese-bi-encoder')}` ({emb_meta.get('dimension', 768)}d, Collection: `{emb_meta.get('collection_name', 'legal_labor_vietnamese_bi_encoder')}`)"
+
         report_md = f"""# BÁO CÁO THỰC NGHIỆM ĐÁNH GIÁ HỆ THỐNG RAG TRÊN BENCHMARK-300 (250 CÂU PHÁP LÝ & 50 CÂU TỰ NHIÊN)
 
 **Hệ thống thực hiện:** Agentic RAG Tra Cứu Pháp Luật Lao Động Việt Nam  
 **Thời điểm thực thi:** {summary['timestamp']}  
+**Mô hình nhúng (Embedding):** {emb_desc}  
 **Tập dữ liệu kiểm định:** `evaluation/dataset/benchmark_300.json` (N = 300 câu hỏi)  
 **Cơ chế vận hành:** Local Offline Evaluator (Tất định 100%, độc lập ngoại tuyến)  
 **Các mô hình đối chứng:** Traditional RAG Baseline, Corrective RAG (CRAG), Adaptive Agentic RAG.

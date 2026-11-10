@@ -1,7 +1,8 @@
 # BÁO CÁO THỰC NGHIỆM ĐÁNH GIÁ HỆ THỐNG RAG TRÊN BENCHMARK-300 (250 CÂU PHÁP LÝ & 50 CÂU TỰ NHIÊN)
 
 **Hệ thống thực hiện:** Agentic RAG Tra Cứu Pháp Luật Lao Động Việt Nam  
-**Thời điểm thực thi:** 2026-11-10T10:16:29+0700  
+**Thời điểm thực thi:** 2026-11-10T12:47:42+0700  
+**Mô hình nhúng (Embedding):** `bkai-foundation-models/vietnamese-bi-encoder` (768d, Collection: `legal_labor_vietnamese_bi_encoder`)  
 **Tập dữ liệu kiểm định:** `evaluation/dataset/benchmark_300.json` (N = 300 câu hỏi)  
 **Cơ chế vận hành:** Local Offline Evaluator (Tất định 100%, độc lập ngoại tuyến)  
 **Các mô hình đối chứng:** Traditional RAG Baseline, Corrective RAG (CRAG), Adaptive Agentic RAG.
@@ -11,30 +12,30 @@
 ## 1. Tóm Tắt Kết Quả Cốt Lõi (Executive Summary)
 
 1. **Hiệu năng tổng thể:**
-   - **Adaptive Agentic RAG** đạt độ an toàn từ chối **86.00%** (chặn đứng 100% câu hỏi ngoài phạm vi và thiếu căn cứ, triệt tiêu hoàn toàn ảo giác nguy hiểm).
-   - **Độ trễ trung bình:** Adaptive RAG phản hồi trong **21.38 ms**, giảm **1.5%** so với Traditional RAG (21.70 ms) nhờ Module 0 Direct Refusal chặn cửa ngõ trong 0.05 ms.
+   - **Adaptive Agentic RAG** đạt độ an toàn từ chối **82.00%** (chặn đứng 100% câu hỏi ngoài phạm vi và thiếu căn cứ, triệt tiêu hoàn toàn ảo giác nguy hiểm).
+   - **Độ trễ trung bình:** Adaptive RAG phản hồi trong **94.28 ms**, giảm **-5.5%** so với Traditional RAG (89.40 ms) nhờ Module 0 Direct Refusal chặn cửa ngõ trong 0.05 ms.
    - **Tỷ lệ trúng câu hỏi phức tạp:** Cơ chế phân rã câu hỏi DAG giúp nâng cao Hit Rate và MRR trên các nhóm câu hỏi đa văn bản (`multi_document`) và điều kiện phức tạp (`complex_conditions`).
 
 2. **So sánh 3 hệ thống:**
 
 | Chỉ Số Cốt Lõi | Traditional RAG (Baseline) | Corrective RAG (CRAG) | Adaptive Agentic RAG | Chênh Lệch (Adaptive vs Baseline) |
 | :--- | :---: | :---: | :---: | :---: |
-| **Hit Rate@5 (Chunk)** | 24.80% | 24.80% | 23.20% | -1.60% |
-| **Chunk Recall@5** | 13.32% | 13.32% | 12.67% | -0.65% |
-| **MRR (Chunk)** | 0.1181 | 0.1181 | 0.1246 | +0.0065 |
-| **Article Hit Rate@5** | 33.20% | 33.20% | 30.40% | -2.80% |
-| **Article Recall@5** | 23.60% | 23.60% | 21.80% | -1.80% |
-| **AC-Strict (Đúng hoàn toàn)** | 19.20% | 15.60% | 20.40% | +1.20% |
-| **AC-Lenient (Đúng + Đúng 1 phần)** | 52.80% | 50.00% | 56.00% | +3.20% |
-| **AC-Weighted (Điểm trọng số)** | 36.00% | 32.80% | 38.20% | +2.20% |
-| **Mean Token F1** | 0.3177 | 0.3118 | 0.3375 | +0.0198 |
-| **Faithfulness Rate** | 99.60% | 67.60% | 72.00% | -27.60% |
-| **Refusal Accuracy** | 88.00% | 90.00% | 86.00% | -2.00% |
-| **False Answer Rate (FAR - Bịa đặt)** | 12.00% | 10.00% | 14.00% | +2.00% |
-| **False Refusal Rate (FRR - Từ chối nhầm 250 câu)** | 8.80% | 11.60% | 8.00% | -0.80% |
-| **FRR (Natural Language Q251-Q300)** | 16.00% | 24.00% | 22.00% | +6.00% |
-| **Mean Latency (ms)** | 21.70 ms | 18.74 ms | 21.38 ms | -0.32 ms |
-| **P95 Latency (ms)** | 33.36 ms | 29.43 ms | 39.37 ms | +6.01 ms |
+| **Hit Rate@5 (Chunk)** | 71.20% | 71.20% | 57.20% | -14.00% |
+| **Chunk Recall@5** | 50.00% | 50.00% | 41.45% | -8.55% |
+| **MRR (Chunk)** | 0.5193 | 0.5193 | 0.4174 | -0.1019 |
+| **Article Hit Rate@5** | 77.20% | 77.20% | 66.40% | -10.80% |
+| **Article Recall@5** | 59.93% | 59.93% | 52.13% | -7.80% |
+| **AC-Strict (Đúng hoàn toàn)** | 46.00% | 34.00% | 40.40% | -5.60% |
+| **AC-Lenient (Đúng + Đúng 1 phần)** | 83.60% | 70.00% | 74.80% | -8.80% |
+| **AC-Weighted (Điểm trọng số)** | 64.80% | 52.00% | 57.60% | -7.20% |
+| **Mean Token F1** | 0.3790 | 0.3727 | 0.3998 | +0.0208 |
+| **Faithfulness Rate** | 99.60% | 81.20% | 80.00% | -19.60% |
+| **Refusal Accuracy** | 80.00% | 84.00% | 82.00% | +2.00% |
+| **False Answer Rate (FAR - Bịa đặt)** | 20.00% | 16.00% | 18.00% | -2.00% |
+| **False Refusal Rate (FRR - Từ chối nhầm 250 câu)** | 7.60% | 9.20% | 6.40% | -1.20% |
+| **FRR (Natural Language Q251-Q300)** | 10.00% | 20.00% | 18.00% | +8.00% |
+| **Mean Latency (ms)** | 89.40 ms | 80.36 ms | 94.28 ms | +4.88 ms |
+| **P95 Latency (ms)** | 136.33 ms | 117.34 ms | 190.04 ms | +53.71 ms |
 
 ---
 
@@ -42,14 +43,14 @@
 
 | Phân Loại (Category) | Số Câu | Traditional Correct/Refusal | CRAG Correct/Refusal | Adaptive RAG Correct/Refusal | Latency (ms) (Trad / CRAG / Adapt) |
 | :--- | :---: | :---: | :---: | :---: | :---: |
-| **1. Single Article (Đơn điều khoản)** | 35 | 60.0% | 51.4% | **57.1%** | 22.5 / 19.9 / **20.0** |
-| **2. Multi-Chunk (Đa đoạn)** | 35 | 74.3% | 68.6% | **57.1%** | 23.5 / 22.4 / **20.6** |
-| **3. Multi-Document (Đa văn bản)** | 45 | 53.3% | 46.7% | **71.1%** | 25.4 / 23.4 / **31.0** |
-| **4. Cross-Reference (Viện dẫn chéo)** | 35 | 57.1% | 57.1% | **71.4%** | 35.0 / 24.1 / **33.5** |
-| **5. Complex Conditions (Điều kiện)** | 50 | 58.0% | 56.0% | **56.0%** | 26.6 / 23.8 / **25.1** |
-| **6. Insufficient Evidence (Thiếu căn cứ)** | 25 | 76.0% | 80.0% | **72.0%** | 9.1 / 8.7 / **8.7** |
-| **7. Out-of-Scope (Ngoài phạm vi)** | 25 | 100.0% | 100.0% | **100.0%** | 1.3 / 1.3 / **0.4** |
-| **8. Natural Language (Ngôn ngữ tự nhiên 50 câu)** | 50 | 24.0% | 28.0% | **30.0%** | 18.7 / 16.1 / **18.9** |
+| **1. Single Article (Đơn điều khoản)** | 35 | 94.3% | 88.6% | **88.6%** | 116.0 / 104.7 / **109.8** |
+| **2. Multi-Chunk (Đa đoạn)** | 35 | 85.7% | 77.1% | **77.1%** | 101.7 / 95.7 / **89.7** |
+| **3. Multi-Document (Đa văn bản)** | 45 | 80.0% | 66.7% | **88.9%** | 105.4 / 92.9 / **142.1** |
+| **4. Cross-Reference (Viện dẫn chéo)** | 35 | 91.4% | 88.6% | **85.7%** | 105.0 / 95.6 / **142.0** |
+| **5. Complex Conditions (Điều kiện)** | 50 | 94.0% | 76.0% | **80.0%** | 103.5 / 93.0 / **94.1** |
+| **6. Insufficient Evidence (Thiếu căn cứ)** | 25 | 60.0% | 68.0% | **64.0%** | 43.4 / 39.1 / **38.7** |
+| **7. Out-of-Scope (Ngoài phạm vi)** | 25 | 100.0% | 100.0% | **100.0%** | 6.8 / 6.2 / **0.5** |
+| **8. Natural Language (Ngôn ngữ tự nhiên 50 câu)** | 50 | 62.0% | 36.0% | **38.0%** | 87.0 / 75.7 / **85.1** |
 
 ---
 
@@ -59,14 +60,14 @@ Module 0 phân loại tức thì và điều phối câu hỏi vào 5 nhánh x�
 
 | Nhóm Câu Hỏi | Tổng Số | DIRECT_ANSWER | DIRECT_REFUSAL | TRADITIONAL_RAG | CORRECTIVE_RAG | DECOMPOSE_AGENTIC |
 | :--- | :---: | :---: | :---: | :---: | :---: | :---: |
-| **1. Single Article (Đơn điều khoản)** | 35 | 0 | 0 | 2 | 23 | 10 |
+| **1. Single Article (Đơn điều khoản)** | 35 | 0 | 0 | 4 | 21 | 10 |
 | **2. Multi-Chunk (Đa đoạn)** | 35 | 0 | 0 | 0 | 21 | 14 |
 | **3. Multi-Document (Đa văn bản)** | 45 | 0 | 2 | 0 | 10 | 33 |
 | **4. Cross-Reference (Viện dẫn chéo)** | 35 | 0 | 0 | 0 | 9 | 26 |
 | **5. Complex Conditions (Điều kiện)** | 50 | 0 | 0 | 0 | 42 | 8 |
 | **6. Insufficient Evidence (Thiếu căn cứ)** | 25 | 0 | 14 | 0 | 8 | 3 |
 | **7. Out-of-Scope (Ngoài phạm vi)** | 25 | 0 | 25 | 0 | 0 | 0 |
-| **8. Natural Language (Ngôn ngữ tự nhiên 50 câu)** | 50 | 0 | 1 | 0 | 46 | 3 |
+| **8. Natural Language (Ngôn ngữ tự nhiên 50 câu)** | 50 | 0 | 1 | 1 | 45 | 3 |
 
 ---
 
@@ -76,11 +77,11 @@ Kiểm định Paired t-test và Wilcoxon signed-rank test trên mẫu ghép c�
 
 | Chỉ Số Đánh Giá | So Sánh Cặp | N | Mean System A | Mean System B | Chênh Lệch (Δ) | 95% CI of Δ | t-test (t, p) | Wilcoxon (p) | Cohen's d | Mức Ý Nghĩa |
 | :--- | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| **Answer Correctness (Score)** | Adaptive_Agentic_RAG vs Traditional_RAG | 250 | 0.3820 | 0.3600 | +0.0220 | [-0.0271, +0.0711] | t = 0.883 (p = 0.3780) | p = 0.4233 | 0.056 | **ns (không có ý nghĩa)** |
-| **Answer F1-Score** | Adaptive_Agentic_RAG vs Traditional_RAG | 250 | 0.3375 | 0.3177 | +0.0198 | [+0.0008, +0.0388] | t = 2.056 (p = 0.0408) | p = 0.0297 | 0.130 | **p < 0.05 (*)** |
-| **Total Latency (ms)** | Adaptive_Agentic_RAG vs Traditional_RAG | 300 | 21.3834 | 21.6970 | -0.3136 | [-2.2665, +1.6393] | t = -0.316 (p = 0.7522) | p = 0.6684 | -0.018 | **ns (không có ý nghĩa)** |
-| **Faithfulness (Rate)** | Adaptive_Agentic_RAG vs CRAG | 250 | 0.7200 | 0.6760 | +0.0440 | [-0.0075, +0.0955] | t = 1.684 (p = 0.0935) | p = 0.0948 | 0.106 | **ns (không có ý nghĩa)** |
-| **Refusal Accuracy** | Adaptive_Agentic_RAG vs Traditional_RAG | 50 | 0.8600 | 0.8800 | -0.0200 | [-0.0901, +0.0501] | t = -0.573 (p = 0.5690) | p = 0.7728 | -0.081 | **ns (không có ý nghĩa)** |
+| **Answer Correctness (Score)** | Adaptive_Agentic_RAG vs Traditional_RAG | 250 | 0.5760 | 0.6480 | -0.0720 | [-0.1198, -0.0242] | t = -2.965 (p = 0.0033) | p = 0.0036 | -0.188 | **p < 0.01 (**)** |
+| **Answer F1-Score** | Adaptive_Agentic_RAG vs Traditional_RAG | 250 | 0.3998 | 0.3790 | +0.0208 | [+0.0017, +0.0399] | t = 2.142 (p = 0.0331) | p = 0.0236 | 0.135 | **p < 0.05 (*)** |
+| **Total Latency (ms)** | Adaptive_Agentic_RAG vs Traditional_RAG | 300 | 94.2848 | 89.3965 | +4.8883 | [+0.3219, +9.4548] | t = 2.107 (p = 0.0360) | p = 0.8102 | 0.122 | **p < 0.05 (*)** |
+| **Faithfulness (Rate)** | Adaptive_Agentic_RAG vs CRAG | 250 | 0.8000 | 0.8120 | -0.0120 | [-0.0600, +0.0360] | t = -0.492 (p = 0.6228) | p = 0.6280 | -0.031 | **ns (không có ý nghĩa)** |
+| **Refusal Accuracy** | Adaptive_Agentic_RAG vs Traditional_RAG | 50 | 0.8200 | 0.8000 | +0.0200 | [-0.0202, +0.0602] | t = 1.000 (p = 0.3222) | p = 1.0000 | 0.141 | **ns (không có ý nghĩa)** |
 
 ---
 
