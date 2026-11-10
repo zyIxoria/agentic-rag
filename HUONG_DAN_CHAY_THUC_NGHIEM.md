@@ -2,7 +2,7 @@
 *(Áp dụng thống nhất cho cả 3 mô hình: Traditional Baseline, Corrective RAG và Adaptive Agentic RAG)*
 
 > **Đề tài**: Nghiên cứu cơ chế điều phối thích ứng trong hệ thống Agentic RAG tích hợp Corrective RAG hỗ trợ tra cứu pháp luật lao động Việt Nam.  
-> **Chế độ chạy**: Offline 100% (sử dụng mô hình ONNX cục bộ `all-MiniLM-L6-v2` và local generator, không cần API key).
+> **Chế độ chạy**: Hỗ trợ đầy đủ Offline/Local Serving. Mặc định toàn hệ thống sử dụng mô hình nhúng tiếng Việt chuyên ngành `bkai-foundation-models/vietnamese-bi-encoder` (768 chiều, collection `legal_labor_vietnamese_bi_encoder`), đồng thời lưu giữ mốc đối chứng cơ sở `all-MiniLM-L6-v2` (384 chiều, collection `legal_labor_baseline_minilm`). Không bắt buộc API key bên ngoài khi chạy ở chế độ kiểm thử cục bộ.
 
 ---
 

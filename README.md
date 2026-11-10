@@ -14,7 +14,41 @@
 | **Traditional RAG Baseline** | `Traditional-RAG-v1` | **FROZEN** | 97/97 PASS | [`TRADITIONAL-RAG-BASELINE-FROZEN.md`](file:///d:/Filehoc/KLCN/agentic-rag/reports/rag/TRADITIONAL-RAG-BASELINE-FROZEN.md) |
 | **Corrective RAG (CRAG)** | `Corrective-RAG-v1` | **FROZEN** | 163/163 PASS | [`RAG-14-CRAG-EVALUATION.md`](file:///d:/Filehoc/KLCN/agentic-rag/reports/crag/RAG-14-CRAG-EVALUATION.md) |
 | **Adaptive Agentic RAG** | `Adaptive-RAG-v1` | **HOÀN THÀNH** | 254/254 PASS | [`RAG-18-ADAPTIVE-EVALUATION.md`](file:///d:/Filehoc/KLCN/agentic-rag/reports/adaptive/RAG-18-ADAPTIVE-EVALUATION.md) |
-| **Toàn bộ dự án** | Bản tổng hợp nghiệm thu | **READY** | **391/391 PASS** | [`LATEST-EXPERIMENT-REPORT.md`](file:///d:/Filehoc/KLCN/agentic-rag/reports/experiment_latest/LATEST-EXPERIMENT-REPORT.md) |
+| **Toàn bộ dự án** | Bản tổng hợp nghiệm thu | **READY** | **332/332 PASS** | [`LATEST-EXPERIMENT-REPORT.md`](file:///d:/Filehoc/KLCN/agentic-rag/reports/experiment_latest/LATEST-EXPERIMENT-REPORT.md) |
+
+---
+
+## 🧠 THÔNG SỐ KỸ THUẬT MÔ HÌNH NHÚNG (EMBEDDING ARCHITECTURE & SPECIFICATIONS)
+
+Hệ thống hỗ trợ cơ chế đa mô hình nhúng (Multi-Embedding Architecture) với tính phân tách rõ ràng giữa **Mô hình triển khai thực tế (Production Default)** và **Mô hình đối chứng cơ sở (Frozen Baseline)**:
+
+| Tiêu chí kỹ thuật | 🇻🇳 Mô hình Thực tế Mặc định (Production) | 🌐 Mô hình Đối chứng Cơ sở (Baseline) |
+| :--- | :--- | :--- |
+| **Tên mô hình chính thức** | `bkai-foundation-models/vietnamese-bi-encoder` | `sentence-transformers/all-MiniLM-L6-v2` |
+| **Đơn vị phát triển** | Viện CNTT&TT BKAI – Đại học Bách khoa Hà Nội | Sentence-Transformers / Hugging Face |
+| **Kiến trúc cốt lõi** | Bi-Encoder chuyên biệt cho tiếng Việt (dựa trên PhoBERT/RoBERTa) | MiniLM Transformer 6 lớp (huấn luyện trên ngữ liệu tiếng Anh) |
+| **Chiều véc-tơ (Dimension)** | **768 chiều** ($d = 768$) | **384 chiều** ($d = 384$) |
+| **Độ đo tương đồng** | Cosine Similarity ($1 - \text{cosine\_distance}$) | Cosine Similarity ($1 - \text{cosine\_distance}$) |
+| **Thư viện thực thi (Runtime)** | `sentence-transformers` (PyTorch) | `onnxruntime` (ONNX) / `sentence-transformers` |
+| **Bộ sưu tập ChromaDB** | `legal_labor_vietnamese_bi_encoder` (2,117 chunks) | `legal_labor_baseline_minilm` (2,117 chunks) |
+| **Độ dài ngữ cảnh tối đa** | 256 tokens | 256 tokens |
+| **Chuẩn hóa véc-tơ** | L2 Normalization (`norm=1.0`) | L2 Normalization (`norm=1.0`) |
+| **Trạng thái cấu hình** | **Mặc định toàn hệ thống** (Default Production) | Lưu trữ kiểm thử đối chứng khoa học (Ablation Benchmark) |
+
+### 1. Cấu hình biến môi trường (`.env`)
+Toàn bộ đường ống (Traditional RAG, CRAG, Adaptive Agentic RAG) mặc định nạp cấu hình từ tệp `.env`:
+```env
+EMBEDDING_PROVIDER=sentence-transformers
+EMBEDDING_MODEL=bkai-foundation-models/vietnamese-bi-encoder
+COLLECTION_NAME=legal_labor_vietnamese_bi_encoder
+EMBEDDING_DEVICE=cpu
+EMBEDDING_BATCH_SIZE=64
+NORMALIZE_EMBEDDINGS=true
+```
+
+### 2. Ý nghĩa khoa học của việc nâng cấp Embedding
+- **Giải quyết nút thắt ngữ nghĩa (Hạn chế 3):** Mô hình `all-MiniLM-L6-v2` vốn chỉ được huấn luyện trên ngữ liệu tiếng Anh, khiến khả năng phân biệt sắc thái pháp lý tiếng Việt rất yếu (dẫn đến Chunk Recall@5 chỉ 14.31% và Hit Rate@5 29.69% ở các phiên bản cũ).
+- **Hiệu quả của `vietnamese-bi-encoder`:** Nhờ được pre-train và fine-tune trực tiếp trên dữ liệu câu hỏi – đoạn văn bản tiếng Việt, mô hình đạt độ nhạy cao đối với cấu trúc điều khoản luật Việt Nam (Điều, Khoản, Điểm) và thuật ngữ chuyên ngành lao động (tiền lương làm thêm giờ, trợ cấp thôi việc, tuổi nghỉ hưu).
 
 ---
 
