@@ -77,10 +77,14 @@ class SharedScopeGuard:
         ]
     }
 
+    GREETING_PATTERNS = [
+        r"^(chào|chào\s+bạn|xin\s+chào|hello|hi|alo|chào\s+ad|chào\s+bot)$",
+    ]
+
     # Các từ khóa nhập nhằng cần kiểm tra ngữ cảnh quan hệ lao động
     AMBIGUOUS_PATTERNS = [
         r"^(hợp\s+đồng(\s+lao\s+động)?|tiền\s+lương|lương|nghỉ\s+việc|sa\s+thải|thử\s+việc|bảo\s+hiểm)$",
-        r"^(em\s+muốn\s+hỏi|tư\s+vấn\s+giúp|cho\s+em\s+hỏi(\s+với)?|alo|chào\s+bạn)$",
+        r"^(em\s+muốn\s+hỏi|tư\s+vấn\s+giúp|cho\s+em\s+hỏi(\s+với)?)$",
     ]
 
     def __init__(self):
@@ -90,6 +94,7 @@ class SharedScopeGuard:
             self._compiled_domains[domain] = [re.compile(p, re.IGNORECASE) for p in pat_list]
 
         self._compiled_ambiguous = [re.compile(p, re.IGNORECASE) for p in self.AMBIGUOUS_PATTERNS]
+        self._compiled_greetings = [re.compile(p, re.IGNORECASE) for p in self.GREETING_PATTERNS]
 
     def check_scope(self, query: str) -> ScopeCheckResult:
         """Kiểm tra phạm vi và ý định của câu hỏi người dùng."""
@@ -105,6 +110,16 @@ class SharedScopeGuard:
         q_clean = query.strip()
         q_lower = q_clean.lower()
         words = q_clean.split()
+
+        # 0. Kiểm tra câu chào hỏi xã giao (GREETING)
+        if len(words) <= 3:
+            for pat in self._compiled_greetings:
+                if pat.search(q_lower):
+                    return ScopeCheckResult(
+                        is_valid_labor=True,
+                        intent="GREETING",
+                        trigger_refusal=False,
+                    )
 
         # 1. Kiểm tra câu hỏi quá cụt lủn hoặc nhập nhằng (AMBIGUOUS)
         if len(words) <= 2:

@@ -182,13 +182,23 @@ class CentralAgentController:
         if not self.generator:
             return False
         cls_name = self.generator.__class__.__name__
-        return "Mock" not in cls_name
+        if "Mock" in cls_name:
+            return False
+        key = getattr(self.generator, "api_key", "") or os.getenv("GEMINI_API_KEY", "")
+        if not key or key.startswith("!") or len(key) < 20:
+            return False
+        return True
 
     def _call_generator(self, prompt: str) -> str:
         """Gọi generator sinh văn bản."""
         if not self.generator:
             return ""
-        return self.generator.generate(prompt)
+        try:
+            res = self.generator.generate(prompt, context="")
+            return res.answer if hasattr(res, "answer") else str(res)
+        except Exception as e:
+            logger.warning(f"Lỗi khi gọi generator trong CentralAgent: {e}")
+            return ""
 
     def _run_symbolic_react_flow(self, query: str) -> AgentResponse:
         """

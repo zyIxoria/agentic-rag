@@ -143,6 +143,14 @@ class AdaptiveOrchestrator:
         self.evidence_gate = PreGenerationEvidenceGate()
         self.qa_alignment_guard = PostGenerationQAAlignmentGuard()
 
+    def answer(
+        self,
+        query: str,
+        chat_history: Optional[Any] = None,
+    ) -> AdaptiveRAGResponse:
+        """Phương thức chuẩn hóa giao diện tương thích với TraditionalRAG và CRAG."""
+        return self.route_and_execute(query, chat_history=chat_history)
+
     def route_and_execute(
         self,
         query: str,

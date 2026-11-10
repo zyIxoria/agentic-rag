@@ -118,8 +118,8 @@ class CRAGConfig(BaseSettings):
         description="Thư mục lưu trữ ChromaDB."
     )
     COLLECTION_NAME: str = Field(
-        default="legal_labor_baseline_minilm",
-        description="Tên collection véc-tơ chuẩn."
+        default="legal_labor_vietnamese_bi_encoder",
+        description="Tên collection véc-tơ chuẩn tiếng Việt (768d)."
     )
 
     model_config = SettingsConfigDict(

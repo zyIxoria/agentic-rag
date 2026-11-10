@@ -21,6 +21,14 @@ class PipelineConfig(BaseSettings):
         le=1.0,
         description="Ngưỡng tương đồng tối thiểu để vượt qua chốt chặn Pre-guard."
     )
+    RETRIEVER_TYPE: str = Field(
+        default="dense",
+        description="Loại bộ thu hồi: 'dense', 'bm25', hoặc 'hybrid' (kết hợp Dense + BM25 + RRF)."
+    )
+    USE_RERANKER: bool = Field(
+        default=False,
+        description="Có áp dụng LegalCrossReranker để tái xếp hạng sâu và khử topic drift hay không."
+    )
 
     # 2. Tham số ngữ cảnh (Context Builder)
     MAX_CONTEXT_TOKENS: int = Field(
@@ -71,8 +79,8 @@ class PipelineConfig(BaseSettings):
         description="Đường dẫn thư mục lưu trữ ChromaDB."
     )
     COLLECTION_NAME: str = Field(
-        default="legal_labor_baseline_minilm",
-        description="Tên collection véc-tơ của Traditional RAG baseline."
+        default="legal_labor_vietnamese_bi_encoder",
+        description="Tên collection véc-tơ mặc định tiếng Việt (768d)."
     )
 
     # 7. Hệ thống Cờ cấu hình Tính năng Đa tầng (Multi-Tier Safety Feature Flags)

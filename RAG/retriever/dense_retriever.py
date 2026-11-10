@@ -47,8 +47,25 @@ class DenseTopKRetriever(BaseRetriever):
             self.vector_store = vector_store
         else:
             chroma = PersistentChromaStore(persist_directory=self.config.PERSIST_DIRECTORY)
+            target_col = self.config.COLLECTION_NAME
+            # Tự động map sang collection tương ứng với dimension của model nếu đang để tên mặc định
+            if target_col == "legal_labor_baseline_minilm":
+                if self.embedding_provider.dimension == 768 or "vietnamese-bi-encoder" in self.embedding_provider.model_name.lower():
+                    target_col = "legal_labor_vietnamese_bi_encoder"
+                elif self.embedding_provider.dimension == 1024 or "bge-m3" in self.embedding_provider.model_name.lower():
+                    target_col = "legal_labor_bge_m3"
+
+            # Kiểm tra nếu collection mục tiêu chưa tồn tại thì fallback an toàn về baseline minilm nếu dim khớp
+            existing_cols = [c.name for c in chroma.client.list_collections()]
+            if target_col not in existing_cols and self.config.COLLECTION_NAME in existing_cols:
+                logger.warning(
+                    "Collection '%s' chưa được khởi tạo trên ChromaDB. Sử dụng collection '%s' (dim=%d).",
+                    target_col, self.config.COLLECTION_NAME, self.embedding_provider.dimension
+                )
+                target_col = self.config.COLLECTION_NAME
+
             chroma.load_collection(
-                name=self.config.COLLECTION_NAME,
+                name=target_col,
                 expected_dimension=self.embedding_provider.dimension,
                 expected_model=self.embedding_provider.model_name,
             )

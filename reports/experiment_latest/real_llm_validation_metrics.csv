@@ -1,0 +1,16 @@
+metric,Traditional_RAG,CRAG,Adaptive_Agentic_RAG
+num_questions,60,60,60
+refused_count,38,41,41
+llm_called_count,22,19,19
+mean_input_tokens,414.8,436.6,388.9
+mean_output_tokens,75.6,71.5,72.3
+mean_total_tokens,490.4,508.1,461.2
+total_tokens_consumed,29425,30489,27673
+mean_cost_usd_per_query,5.4e-05,5.4e-05,5.1e-05
+mean_cost_vnd_per_query,1.37,1.38,1.3
+total_cost_usd,0.0032,0.0033,0.0031
+total_cost_vnd,82.3,82.9,77.8
+latency_mean_ms,558.54,967.91,856.84
+latency_p50_ms,35.58,35.48,35.17
+latency_p95_ms,1682.4,4865.34,4627.54
+latency_p99_ms,1875.52,5583.13,4847.23

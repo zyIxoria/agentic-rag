@@ -27,6 +27,15 @@ from RAG.guards.qa_alignment_guard import PostGenerationQAAlignmentGuard
 logger = logging.getLogger("RAG.pipeline.traditional_rag")
 
 
+def _safe_str(val: Any, default: str = "unknown") -> str:
+    """Đảm bảo giá trị trả về luôn là string hợp lệ, không bị lỗi khi đối tượng là MagicMock."""
+    if isinstance(val, str):
+        return val
+    if hasattr(val, "_mock_name") or type(val).__name__ == "MagicMock":
+        return default
+    return str(val) if val is not None else default
+
+
 class TraditionalRAGPipeline:
     """Đường ống hỏi đáp pháp luật truyền thống (Traditional RAG Baseline).
     
@@ -60,7 +69,7 @@ class TraditionalRAGPipeline:
         """
         self.config = config or default_pipeline_config
 
-        # 1. Khởi tạo Retriever (RAG-03)
+        # 1. Khởi tạo Retriever (RAG-03 / RAG-Retriever Upgrade)
         if retriever is not None:
             self.retriever = retriever
         else:
@@ -71,7 +80,15 @@ class TraditionalRAGPipeline:
                 PERSIST_DIRECTORY=self.config.CHROMA_PERSIST_DIRECTORY,
                 COLLECTION_NAME=self.config.COLLECTION_NAME
             )
-            self.retriever = DenseTopKRetriever(config=ret_config)
+            ret_type = getattr(self.config, "RETRIEVER_TYPE", "dense").lower()
+            if ret_type == "hybrid":
+                from RAG.retriever.hybrid_retriever import HybridRetriever
+                self.retriever = HybridRetriever(config=ret_config, mode="hybrid", rrf_k=60)
+            elif ret_type == "bm25":
+                from RAG.retriever.bm25_retriever import BM25OkapiRetriever
+                self.retriever = BM25OkapiRetriever(config=ret_config)
+            else:
+                self.retriever = DenseTopKRetriever(config=ret_config)
 
         # 2. Khởi tạo Guard (RAG-06)
         if guard is not None:
@@ -166,8 +183,8 @@ class TraditionalRAGPipeline:
                     context_latency=0.0,
                     generation_latency=0.0,
                     citation_latency=0.0,
-                    model_name=getattr(self.generator, "model_name", "unknown"),
-                    provider=getattr(self.generator, "provider", "unknown"),
+                    model_name=_safe_str(getattr(self.generator, "model_name", "unknown")),
+                    provider=_safe_str(getattr(self.generator, "provider", "unknown")),
                     metadata={
                         "tier1_scope_triggered": True,
                         "intent": scope_res.intent,
@@ -205,8 +222,8 @@ class TraditionalRAGPipeline:
                     context_latency=0.0,
                     generation_latency=0.0,
                     citation_latency=0.0,
-                    model_name=getattr(self.generator, "model_name", "unknown"),
-                    provider=getattr(self.generator, "provider", "unknown"),
+                    model_name=_safe_str(getattr(self.generator, "model_name", "unknown")),
+                    provider=_safe_str(getattr(self.generator, "provider", "unknown")),
                     metadata={
                         "tier2_grounding_triggered": True,
                         "document_title": doc_res.document_title,
@@ -215,13 +232,17 @@ class TraditionalRAGPipeline:
             elif doc_res.has_specific_document and doc_res.filter_metadata:
                 doc_filter = doc_res.filter_metadata
 
-        # BƯỚC 1: Thu hồi véc-tơ (Dense Retrieval - 1 retrieval call duy nhất)
+        # BƯỚC 1: Thu hồi véc-tơ / Hybrid (Dense + BM25)
         t_ret_0 = time.perf_counter()
         retrieved_chunks = self.retriever.retrieve(
             query=clean_question,
             top_k=self.config.TOP_K,
             where=doc_filter,
         )
+        if getattr(self.config, "USE_RERANKER", False) and retrieved_chunks:
+            from RAG.retriever.reranker import LegalCrossReranker
+            reranker = LegalCrossReranker(top_k=self.config.TOP_K)
+            retrieved_chunks = reranker.rerank(clean_question, retrieved_chunks, top_k=self.config.TOP_K)
         t_retrieval_ms = (time.perf_counter() - t_ret_0) * 1000.0
 
         # BƯỚC 2: Chốt chặn Tier 3 Pre-Generation Evidence Gate
@@ -255,8 +276,8 @@ class TraditionalRAGPipeline:
                     context_latency=0.0,
                     generation_latency=0.0,
                     citation_latency=0.0,
-                    model_name=getattr(self.generator, "model_name", "unknown"),
-                    provider=getattr(self.generator, "provider", "unknown"),
+                    model_name=_safe_str(getattr(self.generator, "model_name", "unknown")),
+                    provider=_safe_str(getattr(self.generator, "provider", "unknown")),
                     metadata={
                         "tier3_evidence_triggered": True,
                         "composite_score": evidence_res.composite_evidence_score,
@@ -298,8 +319,8 @@ class TraditionalRAGPipeline:
                     context_latency=0.0,
                     generation_latency=0.0,
                     citation_latency=0.0,
-                    model_name=getattr(self.generator, "model_name", "unknown"),
-                    provider=getattr(self.generator, "provider", "unknown"),
+                    model_name=_safe_str(getattr(self.generator, "model_name", "unknown")),
+                    provider=_safe_str(getattr(self.generator, "provider", "unknown")),
                     metadata={
                         "pre_guard_triggered": True,
                         "pre_guard_reason": pre_guard_res.reason,
@@ -388,8 +409,8 @@ class TraditionalRAGPipeline:
             context_latency=round(t_context_ms, 2),
             generation_latency=round(t_generation_ms, 2),
             citation_latency=round(t_citation_ms, 2),
-            model_name=gen_result.model_name,
-            provider=gen_result.provider,
+            model_name=_safe_str(getattr(gen_result, "model_name", "unknown")),
+            provider=_safe_str(getattr(gen_result, "provider", "unknown")),
             metadata={
                 "top_k": self.config.TOP_K,
                 "context_tokens": ctx_result.total_tokens,

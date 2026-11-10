@@ -123,8 +123,9 @@ class TestTraditionalRAGPipeline(unittest.TestCase):
 
     def test_08_no_hidden_intelligence_verification(self):
         """Kiểm tra nguyên tắc No Hidden Intelligence: Đúng 1 retrieval, 1 context build, 1 generation."""
+        q_text = "Thời gian thử việc là bao nhiêu ngày?"
         mock_retriever = MagicMock()
-        mock_retriever.retrieve.return_value = self.pipeline.retriever.retrieve("Thử việc", top_k=3)
+        mock_retriever.retrieve.return_value = self.pipeline.retriever.retrieve(q_text, top_k=3)
 
         mock_context_builder = MagicMock()
         mock_context_builder.build_context.return_value = self.pipeline.context_builder.build_context(
@@ -133,7 +134,7 @@ class TestTraditionalRAGPipeline(unittest.TestCase):
 
         mock_generator = MagicMock()
         mock_generator.generate.return_value = self.pipeline.generator.generate(
-            question="Thử việc",
+            question=q_text,
             context="[SOURCE 1]\nDocument: BLLD\nContent: Thử việc 60 ngày."
         )
 
@@ -144,7 +145,7 @@ class TestTraditionalRAGPipeline(unittest.TestCase):
             generator=mock_generator
         )
 
-        res = test_pipeline.answer("Thời gian thử việc là bao nhiêu ngày?")
+        res = test_pipeline.answer(q_text)
 
         # Xác thực số lần gọi: Đúng 1 lần duy nhất cho mỗi mắt xích
         self.assertEqual(mock_retriever.retrieve.call_count, 1)

@@ -34,10 +34,10 @@ class RetrieverConfig(BaseSettings):
         description="Thư mục lưu trữ cơ sở dữ liệu véc-tơ bền vững."
     )
 
-    # 4. Tên Collection ChromaDB liên kết
+    # 4. Tên Collection ChromaDB liên kết (mặc định vector store tiếng Việt 768d)
     COLLECTION_NAME: str = Field(
-        default="legal_labor_baseline_minilm",
-        description="Tên collection chứa vector embeddings của Dataset V2.1."
+        default="legal_labor_vietnamese_bi_encoder",
+        description="Tên collection chứa vector embeddings tiếng Việt (768d Cosine)."
     )
 
     # 5. Phép đo khoảng cách

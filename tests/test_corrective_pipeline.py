@@ -12,6 +12,7 @@ from RAG.corrective.corrective_rag import CorrectiveRAGPipeline
 from RAG.corrective.schemas import CRAGResponse, EvaluationStatus
 from RAG.corrective.config import CRAGConfig
 from RAG.vector_store.chroma_store import PersistentChromaStore
+from RAG.config import EmbeddingConfig
 from RAG.embedding.embeddings import get_embedding_provider
 from RAG.retriever.dense_retriever import DenseTopKRetriever
 
@@ -28,7 +29,12 @@ def real_crag_pipeline() -> CorrectiveRAGPipeline:
     )
 
     chroma_store = PersistentChromaStore(persist_directory=config.CHROMA_PERSIST_DIRECTORY)
-    embedding_provider = get_embedding_provider()
+    embedding_provider = get_embedding_provider(
+        EmbeddingConfig(
+            EMBEDDING_MODEL="sentence-transformers/all-MiniLM-L6-v2",
+            EMBEDDING_PROVIDER="sentence-transformers"
+        )
+    )
     chroma_store.load_collection(
         name=config.COLLECTION_NAME,
         expected_dimension=embedding_provider.dimension,

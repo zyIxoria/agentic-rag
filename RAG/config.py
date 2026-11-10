@@ -58,10 +58,10 @@ def resolve_device(requested_device: Optional[str] = None) -> str:
 class EmbeddingConfig(BaseSettings):
     """Cấu hình cho phân hệ Embedding theo yêu cầu TASK RAG-01."""
 
-    # 1. Tên định danh mô hình embedding (mặc định all-MiniLM-L6-v2 hoặc BAAI/bge-m3)
+    # 1. Tên định danh mô hình embedding tiếng Việt chuyên ngành mặc định
     EMBEDDING_MODEL: str = Field(
-        default="sentence-transformers/all-MiniLM-L6-v2",
-        description="Tên hoặc đường dẫn mô hình embedding."
+        default="bkai-foundation-models/vietnamese-bi-encoder",
+        description="Mô hình embedding tiếng Việt (bkai-foundation-models/vietnamese-bi-encoder 768d)."
     )
 
     # 2. Thiết bị tính toán ('cuda', 'cpu', 'auto')

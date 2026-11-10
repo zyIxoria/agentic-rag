@@ -1,0 +1,14 @@
+metric,V1_Traditional_RAG,V2_Classifier_Only,V3_Classifier_Decomposer,V4_Full_Adaptive_Agentic
+total_questions,300,300,300,300
+correct_count,242,242,239,225
+correctness_rate,80.67,80.67,79.67,75.0
+faithfulness_count,299,299,280,243
+faithfulness_rate,99.67,99.67,93.33,81.0
+multi_doc_correct,32,32,41,39
+multi_doc_total,45,45,45,45
+multi_doc_acc,71.11,71.11,91.11,86.67
+frr,16.0,16.0,9.2,10.0
+far,0.0,0.0,0.0,0.0
+latency_mean_ms,49.45,49.12,56.42,55.74
+latency_p50_ms,54.56,53.97,55.45,52.54
+latency_p95_ms,75.33,76.27,105.84,120.17

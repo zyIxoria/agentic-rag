@@ -68,7 +68,7 @@ class CRAGPipeline:
         self.config = pipeline_config or default_pipeline_config
         self.crag_config = crag_cfg or crag_config
 
-        # 1. Retriever (kế thừa chính xác từ Traditional RAG)
+        # 1. Retriever (kế thừa chính xác từ Traditional RAG, hỗ trợ Hybrid/BM25)
         if retriever is not None:
             self.retriever = retriever
         else:
@@ -79,7 +79,15 @@ class CRAGPipeline:
                 PERSIST_DIRECTORY=self.config.CHROMA_PERSIST_DIRECTORY,
                 COLLECTION_NAME=self.config.COLLECTION_NAME,
             )
-            self.retriever = DenseTopKRetriever(config=ret_config)
+            ret_type = getattr(self.config, "RETRIEVER_TYPE", "dense").lower()
+            if ret_type == "hybrid":
+                from RAG.retriever.hybrid_retriever import HybridRetriever
+                self.retriever = HybridRetriever(config=ret_config, mode="hybrid", rrf_k=60)
+            elif ret_type == "bm25":
+                from RAG.retriever.bm25_retriever import BM25OkapiRetriever
+                self.retriever = BM25OkapiRetriever(config=ret_config)
+            else:
+                self.retriever = DenseTopKRetriever(config=ret_config)
 
         # 2. Document Grader (RAG-11)
         self.grader = grader or SemanticDocumentGrader(
@@ -152,10 +160,10 @@ class CRAGPipeline:
                     citations=[],
                     retrieved_chunks=[],
                     grading_result=None,
-                    action_taken="DIRECT_REFUSAL_SCOPE",
+                    action_taken="REFUSE",
                     telemetry=telemetry,
                     refused=True,
-                    refusal_reason=scope_res.refusal_reason,
+                    refusal_reason=f"Hệ thống xác định {scope_res.refusal_reason}",
                 )
 
         # CHỐT CHẶN TIER 2: Document Coverage & Grounding Gate
@@ -318,22 +326,24 @@ class CRAGPipeline:
 
         # CHỐT CHẶN TIER 3: Pre-Generation Evidence Gate (Kiểm định bằng chứng trước sinh)
         if getattr(self.crag_config, "ENABLE_TIER3_PRE_GEN_EVIDENCE_GATE", True):
-            evidence_res = self.evidence_gate.evaluate(clean_question, retrieved_chunks)
-            if evidence_res.trigger_refusal:
-                telemetry.total_latency = round((time.perf_counter() - t_start) * 1000.0, 2)
-                return CRAGResponse(
-                    question=clean_question,
-                    answer=evidence_res.refusal_message or self.guard.config.REFUSAL_MESSAGE,
-                    citations=[],
-                    retrieved_chunks=retrieved_chunks,
-                    grading_result=grading_result,
-                    action_taken="REFUSE_UNSUPPORTED_EVIDENCE",
-                    refined_context=refined_context,
-                    search_response=search_res,
-                    telemetry=telemetry,
-                    refused=True,
-                    refusal_reason=evidence_res.refusal_reason,
-                )
+            # Nếu hành động là WEB_SEARCH và có kết quả ngoài thì ưu tiên tri thức ngoài đã recompose
+            if not (action == ActionTrigger.WEB_SEARCH and search_res and search_res.results):
+                evidence_res = self.evidence_gate.evaluate(clean_question, retrieved_chunks)
+                if evidence_res.trigger_refusal:
+                    telemetry.total_latency = round((time.perf_counter() - t_start) * 1000.0, 2)
+                    return CRAGResponse(
+                        question=clean_question,
+                        answer=evidence_res.refusal_message or self.guard.config.REFUSAL_MESSAGE,
+                        citations=[],
+                        retrieved_chunks=retrieved_chunks,
+                        grading_result=grading_result,
+                        action_taken="REFUSE_UNSUPPORTED_EVIDENCE",
+                        refined_context=refined_context,
+                        search_response=search_res,
+                        telemetry=telemetry,
+                        refused=True,
+                        refusal_reason=evidence_res.refusal_reason,
+                    )
 
         # BƯỚC 4: Sinh câu trả lời bảo thủ (LLM Generation)
         t_gen_0 = time.perf_counter()

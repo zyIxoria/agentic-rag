@@ -24,7 +24,7 @@ class BaseLegalGenerator(ABC):
     def generate(
         self,
         question: str,
-        context: str,
+        context: str = "",
         temperature: float = 0.0,
         max_tokens: int = 1024
     ) -> GenerationResult:
